@@ -39,7 +39,7 @@
             this.TbotonOK.Name = "TbotonOK";
             this.TbotonOK.Size = new System.Drawing.Size(75, 23);
             this.TbotonOK.TabIndex = 0;
-            this.TbotonOK.Text = "button1";
+            this.TbotonOK.Text = "putton1";
             this.TbotonOK.UseVisualStyleBackColor = true;
             // 
             // TlabelMarca
