@@ -43,13 +43,17 @@
             this.TTextBoxCiudad = new System.Windows.Forms.TextBox();
             this.TTextBoxProvincia = new System.Windows.Forms.TextBox();
             this.TTextBoxPuestoAc = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.TLabelOtrosPuestos = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // TLabelDNI
             // 
             this.TLabelDNI.AutoSize = true;
-            this.TLabelDNI.Location = new System.Drawing.Point(51, 32);
+            this.TLabelDNI.Location = new System.Drawing.Point(56, 37);
             this.TLabelDNI.Name = "TLabelDNI";
             this.TLabelDNI.Size = new System.Drawing.Size(26, 13);
             this.TLabelDNI.TabIndex = 0;
@@ -59,7 +63,7 @@
             // TLabelNombre
             // 
             this.TLabelNombre.AutoSize = true;
-            this.TLabelNombre.Location = new System.Drawing.Point(33, 55);
+            this.TLabelNombre.Location = new System.Drawing.Point(38, 60);
             this.TLabelNombre.Name = "TLabelNombre";
             this.TLabelNombre.Size = new System.Drawing.Size(44, 13);
             this.TLabelNombre.TabIndex = 1;
@@ -69,7 +73,7 @@
             // TLabelApellidos
             // 
             this.TLabelApellidos.AutoSize = true;
-            this.TLabelApellidos.Location = new System.Drawing.Point(28, 77);
+            this.TLabelApellidos.Location = new System.Drawing.Point(33, 82);
             this.TLabelApellidos.Name = "TLabelApellidos";
             this.TLabelApellidos.Size = new System.Drawing.Size(49, 13);
             this.TLabelApellidos.TabIndex = 2;
@@ -78,7 +82,7 @@
             // TLabelTelefono
             // 
             this.TLabelTelefono.AutoSize = true;
-            this.TLabelTelefono.Location = new System.Drawing.Point(28, 99);
+            this.TLabelTelefono.Location = new System.Drawing.Point(33, 104);
             this.TLabelTelefono.Name = "TLabelTelefono";
             this.TLabelTelefono.Size = new System.Drawing.Size(49, 13);
             this.TLabelTelefono.TabIndex = 3;
@@ -87,7 +91,7 @@
             // TLabelCiudad
             // 
             this.TLabelCiudad.AutoSize = true;
-            this.TLabelCiudad.Location = new System.Drawing.Point(37, 121);
+            this.TLabelCiudad.Location = new System.Drawing.Point(42, 126);
             this.TLabelCiudad.Name = "TLabelCiudad";
             this.TLabelCiudad.Size = new System.Drawing.Size(40, 13);
             this.TLabelCiudad.TabIndex = 4;
@@ -96,7 +100,7 @@
             // TLabelProvincia
             // 
             this.TLabelProvincia.AutoSize = true;
-            this.TLabelProvincia.Location = new System.Drawing.Point(26, 146);
+            this.TLabelProvincia.Location = new System.Drawing.Point(31, 148);
             this.TLabelProvincia.Name = "TLabelProvincia";
             this.TLabelProvincia.Size = new System.Drawing.Size(51, 13);
             this.TLabelProvincia.TabIndex = 5;
@@ -105,7 +109,7 @@
             // TLabelPuestoAc
             // 
             this.TLabelPuestoAc.AutoSize = true;
-            this.TLabelPuestoAc.Location = new System.Drawing.Point(21, 169);
+            this.TLabelPuestoAc.Location = new System.Drawing.Point(9, 170);
             this.TLabelPuestoAc.Name = "TLabelPuestoAc";
             this.TLabelPuestoAc.Size = new System.Drawing.Size(73, 13);
             this.TLabelPuestoAc.TabIndex = 6;
@@ -116,66 +120,105 @@
             this.pictureBox1.BackgroundImage = global::AlquilerCoches.Properties.Resources.Desconocido;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Location = new System.Drawing.Point(497, 15);
+            this.pictureBox1.Location = new System.Drawing.Point(452, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(72, 85);
+            this.pictureBox1.Size = new System.Drawing.Size(92, 109);
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
             // TTextBoxDNI
             // 
-            this.TTextBoxDNI.Location = new System.Drawing.Point(95, 25);
+            this.TTextBoxDNI.Location = new System.Drawing.Point(100, 30);
             this.TTextBoxDNI.Name = "TTextBoxDNI";
             this.TTextBoxDNI.Size = new System.Drawing.Size(70, 20);
             this.TTextBoxDNI.TabIndex = 8;
             // 
             // TTextBoxNombre
             // 
-            this.TTextBoxNombre.Location = new System.Drawing.Point(95, 48);
+            this.TTextBoxNombre.Location = new System.Drawing.Point(100, 53);
             this.TTextBoxNombre.Name = "TTextBoxNombre";
             this.TTextBoxNombre.Size = new System.Drawing.Size(70, 20);
             this.TTextBoxNombre.TabIndex = 9;
             // 
             // TTextBoxApellidos
             // 
-            this.TTextBoxApellidos.Location = new System.Drawing.Point(95, 70);
+            this.TTextBoxApellidos.Location = new System.Drawing.Point(100, 75);
             this.TTextBoxApellidos.Name = "TTextBoxApellidos";
             this.TTextBoxApellidos.Size = new System.Drawing.Size(108, 20);
             this.TTextBoxApellidos.TabIndex = 10;
             // 
             // TTextBoxTelefono
             // 
-            this.TTextBoxTelefono.Location = new System.Drawing.Point(95, 92);
+            this.TTextBoxTelefono.Location = new System.Drawing.Point(100, 97);
             this.TTextBoxTelefono.Name = "TTextBoxTelefono";
             this.TTextBoxTelefono.Size = new System.Drawing.Size(108, 20);
             this.TTextBoxTelefono.TabIndex = 11;
             // 
             // TTextBoxCiudad
             // 
-            this.TTextBoxCiudad.Location = new System.Drawing.Point(95, 114);
+            this.TTextBoxCiudad.Location = new System.Drawing.Point(100, 119);
             this.TTextBoxCiudad.Name = "TTextBoxCiudad";
             this.TTextBoxCiudad.Size = new System.Drawing.Size(108, 20);
             this.TTextBoxCiudad.TabIndex = 12;
             // 
             // TTextBoxProvincia
             // 
-            this.TTextBoxProvincia.Location = new System.Drawing.Point(95, 139);
+            this.TTextBoxProvincia.Location = new System.Drawing.Point(100, 141);
             this.TTextBoxProvincia.Name = "TTextBoxProvincia";
             this.TTextBoxProvincia.Size = new System.Drawing.Size(108, 20);
             this.TTextBoxProvincia.TabIndex = 13;
             // 
             // TTextBoxPuestoAc
             // 
-            this.TTextBoxPuestoAc.Location = new System.Drawing.Point(95, 162);
+            this.TTextBoxPuestoAc.Location = new System.Drawing.Point(100, 163);
             this.TTextBoxPuestoAc.Name = "TTextBoxPuestoAc";
             this.TTextBoxPuestoAc.Size = new System.Drawing.Size(108, 20);
             this.TTextBoxPuestoAc.TabIndex = 14;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(368, 243);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(84, 25);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Horarios";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(474, 243);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(88, 25);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "Salarios";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(100, 200);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(141, 91);
+            this.richTextBox1.TabIndex = 18;
+            this.richTextBox1.Text = "";
+            // 
+            // TLabelOtrosPuestos
+            // 
+            this.TLabelOtrosPuestos.AutoSize = true;
+            this.TLabelOtrosPuestos.Location = new System.Drawing.Point(18, 212);
+            this.TLabelOtrosPuestos.Name = "TLabelOtrosPuestos";
+            this.TLabelOtrosPuestos.Size = new System.Drawing.Size(73, 13);
+            this.TLabelOtrosPuestos.TabIndex = 19;
+            this.TLabelOtrosPuestos.Text = "Otros Puestos";
             // 
             // GestionPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(602, 303);
+            this.Controls.Add(this.TLabelOtrosPuestos);
+            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.TTextBoxPuestoAc);
             this.Controls.Add(this.TTextBoxProvincia);
             this.Controls.Add(this.TTextBoxCiudad);
@@ -216,5 +259,9 @@
         private System.Windows.Forms.TextBox TTextBoxCiudad;
         private System.Windows.Forms.TextBox TTextBoxProvincia;
         private System.Windows.Forms.TextBox TTextBoxPuestoAc;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Label TLabelOtrosPuestos;
     }
 }
