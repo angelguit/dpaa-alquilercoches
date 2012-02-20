@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace AlquilerCoches
 {
-    public partial class Form2 : Form
+    public partial class Facturacion : Form
     {
-        public Form2()
+        public Facturacion()
         {
             InitializeComponent();
         }
