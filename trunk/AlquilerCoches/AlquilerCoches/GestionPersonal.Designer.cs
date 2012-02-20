@@ -132,6 +132,7 @@
             this.TTextBoxDNI.Name = "TTextBoxDNI";
             this.TTextBoxDNI.Size = new System.Drawing.Size(70, 20);
             this.TTextBoxDNI.TabIndex = 8;
+            this.TTextBoxDNI.Text = "xxxxxx";
             // 
             // TTextBoxNombre
             // 
