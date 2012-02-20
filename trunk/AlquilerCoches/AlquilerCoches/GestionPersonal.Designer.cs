@@ -204,7 +204,7 @@
             // TLabelOtrosPuestos
             // 
             this.TLabelOtrosPuestos.AutoSize = true;
-            this.TLabelOtrosPuestos.Location = new System.Drawing.Point(18, 212);
+            this.TLabelOtrosPuestos.Location = new System.Drawing.Point(9, 212);
             this.TLabelOtrosPuestos.Name = "TLabelOtrosPuestos";
             this.TLabelOtrosPuestos.Size = new System.Drawing.Size(73, 13);
             this.TLabelOtrosPuestos.TabIndex = 19;
