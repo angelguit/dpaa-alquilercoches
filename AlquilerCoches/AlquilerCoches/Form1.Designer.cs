@@ -1,6 +1,6 @@
 ﻿namespace AlquilerCoches
 {
-    partial class Form1
+    partial class Login
     {
         /// <summary>
         /// Variable del diseñador requerida.
@@ -29,45 +29,79 @@
         private void InitializeComponent()
         {
             this.TbotonOK = new System.Windows.Forms.Button();
-            this.TlabelMarca = new System.Windows.Forms.Label();
-            this.TtextBoxMarca = new System.Windows.Forms.TextBox();
+            this.TLabelUsuario = new System.Windows.Forms.Label();
+            this.TTextBoxUsuario = new System.Windows.Forms.TextBox();
+            this.TLabelContrasenya = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TButtonSalir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // TbotonOK
             // 
-            this.TbotonOK.Location = new System.Drawing.Point(147, 174);
+            this.TbotonOK.Location = new System.Drawing.Point(62, 178);
             this.TbotonOK.Name = "TbotonOK";
             this.TbotonOK.Size = new System.Drawing.Size(75, 23);
             this.TbotonOK.TabIndex = 0;
-            this.TbotonOK.Text = "putton1";
+            this.TbotonOK.Text = "OK";
             this.TbotonOK.UseVisualStyleBackColor = true;
             // 
-            // TlabelMarca
+            // TLabelUsuario
             // 
-            this.TlabelMarca.AutoSize = true;
-            this.TlabelMarca.Location = new System.Drawing.Point(37, 41);
-            this.TlabelMarca.Name = "TlabelMarca";
-            this.TlabelMarca.Size = new System.Drawing.Size(37, 13);
-            this.TlabelMarca.TabIndex = 1;
-            this.TlabelMarca.Text = "Marca";
+            this.TLabelUsuario.AutoSize = true;
+            this.TLabelUsuario.Location = new System.Drawing.Point(59, 77);
+            this.TLabelUsuario.Name = "TLabelUsuario";
+            this.TLabelUsuario.Size = new System.Drawing.Size(59, 13);
+            this.TLabelUsuario.TabIndex = 1;
+            this.TLabelUsuario.Text = "USUARIO:";
             // 
-            // TtextBoxMarca
+            // TTextBoxUsuario
             // 
-            this.TtextBoxMarca.Location = new System.Drawing.Point(122, 41);
-            this.TtextBoxMarca.Name = "TtextBoxMarca";
-            this.TtextBoxMarca.Size = new System.Drawing.Size(100, 20);
-            this.TtextBoxMarca.TabIndex = 2;
+            this.TTextBoxUsuario.Location = new System.Drawing.Point(141, 74);
+            this.TTextBoxUsuario.Name = "TTextBoxUsuario";
+            this.TTextBoxUsuario.Size = new System.Drawing.Size(100, 20);
+            this.TTextBoxUsuario.TabIndex = 2;
+            this.TTextBoxUsuario.Text = "Usuario";
             // 
-            // Form1
+            // TLabelContrasenya
+            // 
+            this.TLabelContrasenya.AutoSize = true;
+            this.TLabelContrasenya.Location = new System.Drawing.Point(34, 118);
+            this.TLabelContrasenya.Name = "TLabelContrasenya";
+            this.TLabelContrasenya.Size = new System.Drawing.Size(84, 13);
+            this.TLabelContrasenya.TabIndex = 3;
+            this.TLabelContrasenya.Text = "CONTRASEÑA:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(141, 115);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.PasswordChar = '*';
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 4;
+            this.textBox1.Text = "contraseña";
+            // 
+            // TButtonSalir
+            // 
+            this.TButtonSalir.Location = new System.Drawing.Point(166, 178);
+            this.TButtonSalir.Name = "TButtonSalir";
+            this.TButtonSalir.Size = new System.Drawing.Size(75, 23);
+            this.TButtonSalir.TabIndex = 5;
+            this.TButtonSalir.Text = "SALIR";
+            this.TButtonSalir.UseVisualStyleBackColor = true;
+            // 
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
-            this.Controls.Add(this.TtextBoxMarca);
-            this.Controls.Add(this.TlabelMarca);
+            this.Controls.Add(this.TButtonSalir);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TLabelContrasenya);
+            this.Controls.Add(this.TTextBoxUsuario);
+            this.Controls.Add(this.TLabelUsuario);
             this.Controls.Add(this.TbotonOK);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "Login";
+            this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -76,8 +110,11 @@
         #endregion
 
         private System.Windows.Forms.Button TbotonOK;
-        private System.Windows.Forms.Label TlabelMarca;
-        private System.Windows.Forms.TextBox TtextBoxMarca;
+        private System.Windows.Forms.Label TLabelUsuario;
+        private System.Windows.Forms.TextBox TTextBoxUsuario;
+        private System.Windows.Forms.Label TLabelContrasenya;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button TButtonSalir;
     }
 }
 
