@@ -25,5 +25,10 @@ namespace AlquilerCoches
         {
 
         }
+
+        private void TLabelTelefono1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
