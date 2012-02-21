@@ -54,6 +54,12 @@
     <Compile Include="GestionClientes.Designer.cs">
       <DependentUpon>GestionClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="GestionPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionPedidos.Designer.cs">
+      <DependentUpon>GestionPedidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestionProveedores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +71,12 @@
     </Compile>
     <Compile Include="GestionVehiculos.Designer.cs">
       <DependentUpon>GestionVehiculos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionVentas.Designer.cs">
+      <DependentUpon>GestionVentas.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
