@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GestionClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionClientes.Designer.cs">
+      <DependentUpon>GestionClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestionProveedores.cs">
       <SubType>Form</SubType>
     </Compile>
