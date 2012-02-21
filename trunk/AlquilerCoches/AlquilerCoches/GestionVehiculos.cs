@@ -15,5 +15,10 @@ namespace AlquilerCoches
         {
             InitializeComponent();
         }
+
+        private void TListViewMarca_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
