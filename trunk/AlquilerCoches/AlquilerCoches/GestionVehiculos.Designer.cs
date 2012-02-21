@@ -51,6 +51,10 @@
             this.TLabelMarca = new System.Windows.Forms.Label();
             this.TLabelModelo = new System.Windows.Forms.Label();
             this.TLabelMatriculas = new System.Windows.Forms.Label();
+            this.TButtonEditar = new System.Windows.Forms.Button();
+            this.TButtonAnyadir = new System.Windows.Forms.Button();
+            this.TButtonOK = new System.Windows.Forms.Button();
+            this.TButtonCancelar = new System.Windows.Forms.Button();
             this.TGroupBoxDatosVehiculo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -257,11 +261,51 @@
             this.TLabelMatriculas.TabIndex = 22;
             this.TLabelMatriculas.Text = "Matriculas";
             // 
+            // TButtonEditar
+            // 
+            this.TButtonEditar.Location = new System.Drawing.Point(246, 372);
+            this.TButtonEditar.Name = "TButtonEditar";
+            this.TButtonEditar.Size = new System.Drawing.Size(75, 23);
+            this.TButtonEditar.TabIndex = 23;
+            this.TButtonEditar.Text = "Editar";
+            this.TButtonEditar.UseVisualStyleBackColor = true;
+            // 
+            // TButtonAnyadir
+            // 
+            this.TButtonAnyadir.Location = new System.Drawing.Point(327, 372);
+            this.TButtonAnyadir.Name = "TButtonAnyadir";
+            this.TButtonAnyadir.Size = new System.Drawing.Size(75, 23);
+            this.TButtonAnyadir.TabIndex = 24;
+            this.TButtonAnyadir.Text = "Anyadir";
+            this.TButtonAnyadir.UseVisualStyleBackColor = true;
+            // 
+            // TButtonOK
+            // 
+            this.TButtonOK.Location = new System.Drawing.Point(552, 372);
+            this.TButtonOK.Name = "TButtonOK";
+            this.TButtonOK.Size = new System.Drawing.Size(75, 23);
+            this.TButtonOK.TabIndex = 25;
+            this.TButtonOK.Text = "OK";
+            this.TButtonOK.UseVisualStyleBackColor = true;
+            // 
+            // TButtonCancelar
+            // 
+            this.TButtonCancelar.Location = new System.Drawing.Point(633, 372);
+            this.TButtonCancelar.Name = "TButtonCancelar";
+            this.TButtonCancelar.Size = new System.Drawing.Size(75, 23);
+            this.TButtonCancelar.TabIndex = 26;
+            this.TButtonCancelar.Text = "Cancelar";
+            this.TButtonCancelar.UseVisualStyleBackColor = true;
+            // 
             // GestionVehiculos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(740, 455);
+            this.Controls.Add(this.TButtonCancelar);
+            this.Controls.Add(this.TButtonOK);
+            this.Controls.Add(this.TButtonAnyadir);
+            this.Controls.Add(this.TButtonEditar);
             this.Controls.Add(this.TLabelMatriculas);
             this.Controls.Add(this.TLabelModelo);
             this.Controls.Add(this.TLabelMarca);
@@ -303,5 +347,9 @@
         private System.Windows.Forms.Label TLabelMarca;
         private System.Windows.Forms.Label TLabelModelo;
         private System.Windows.Forms.Label TLabelMatriculas;
+        private System.Windows.Forms.Button TButtonEditar;
+        private System.Windows.Forms.Button TButtonAnyadir;
+        private System.Windows.Forms.Button TButtonOK;
+        private System.Windows.Forms.Button TButtonCancelar;
     }
 }
