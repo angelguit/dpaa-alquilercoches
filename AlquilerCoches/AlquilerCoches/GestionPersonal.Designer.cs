@@ -35,7 +35,6 @@
             this.TLabelCiudad = new System.Windows.Forms.Label();
             this.TLabelProvincia = new System.Windows.Forms.Label();
             this.TLabelPuestoAc = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TTextBoxDNI = new System.Windows.Forms.TextBox();
             this.TTextBoxNombre = new System.Windows.Forms.TextBox();
             this.TTextBoxApellidos = new System.Windows.Forms.TextBox();
@@ -50,6 +49,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.TLabelTelefono2 = new System.Windows.Forms.Label();
             this.TButtonFoto = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.TButtonGuardarPersonal = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,17 +120,6 @@
             this.TLabelPuestoAc.TabIndex = 6;
             this.TLabelPuestoAc.Text = "Puesto Actual";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::AlquilerCoches.Properties.Resources.Desconocido;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Location = new System.Drawing.Point(474, 37);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(92, 109);
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
             // TTextBoxDNI
             // 
             this.TTextBoxDNI.Location = new System.Drawing.Point(100, 30);
@@ -181,7 +171,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(383, 279);
+            this.button1.Location = new System.Drawing.Point(404, 331);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(84, 25);
             this.button1.TabIndex = 15;
@@ -190,7 +180,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(489, 279);
+            this.button2.Location = new System.Drawing.Point(510, 331);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(88, 25);
             this.button2.TabIndex = 16;
@@ -201,7 +191,7 @@
             // 
             this.richTextBox1.Location = new System.Drawing.Point(100, 224);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(141, 91);
+            this.richTextBox1.Size = new System.Drawing.Size(141, 63);
             this.richTextBox1.TabIndex = 18;
             this.richTextBox1.Text = "";
             // 
@@ -239,12 +229,33 @@
             this.TButtonFoto.Text = "Foto";
             this.TButtonFoto.UseVisualStyleBackColor = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::AlquilerCoches.Properties.Resources.Desconocido;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox1.Location = new System.Drawing.Point(474, 37);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(92, 109);
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
+            // TButtonGuardarPersonal
+            // 
+            this.TButtonGuardarPersonal.Location = new System.Drawing.Point(12, 332);
+            this.TButtonGuardarPersonal.Name = "TButtonGuardarPersonal";
+            this.TButtonGuardarPersonal.Size = new System.Drawing.Size(77, 24);
+            this.TButtonGuardarPersonal.TabIndex = 24;
+            this.TButtonGuardarPersonal.Text = "Guardar";
+            this.TButtonGuardarPersonal.UseVisualStyleBackColor = true;
+            // 
             // GestionPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(610, 368);
+            this.Controls.Add(this.TButtonGuardarPersonal);
             this.Controls.Add(this.TButtonFoto);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.TLabelTelefono2);
@@ -299,5 +310,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label TLabelTelefono2;
         private System.Windows.Forms.Button TButtonFoto;
+        private System.Windows.Forms.Button TButtonGuardarPersonal;
     }
 }
