@@ -124,7 +124,7 @@
             this.pictureBox1.BackgroundImage = global::AlquilerCoches.Properties.Resources.Desconocido;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Location = new System.Drawing.Point(452, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(474, 37);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(92, 109);
             this.pictureBox1.TabIndex = 7;
@@ -232,7 +232,7 @@
             // 
             // TButtonFoto
             // 
-            this.TButtonFoto.Location = new System.Drawing.Point(460, 132);
+            this.TButtonFoto.Location = new System.Drawing.Point(489, 152);
             this.TButtonFoto.Name = "TButtonFoto";
             this.TButtonFoto.Size = new System.Drawing.Size(68, 19);
             this.TButtonFoto.TabIndex = 22;
@@ -243,7 +243,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(602, 341);
+            this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentcar;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(610, 368);
             this.Controls.Add(this.TButtonFoto);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.TLabelTelefono2);
