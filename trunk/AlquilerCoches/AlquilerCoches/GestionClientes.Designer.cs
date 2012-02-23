@@ -30,6 +30,11 @@
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TGroupBoxCliente = new System.Windows.Forms.GroupBox();
+            this.TLabelVehiculosAlquiler = new System.Windows.Forms.Label();
+            this.listBoxCoches = new System.Windows.Forms.ListBox();
+            this.TLabelSexo = new System.Windows.Forms.Label();
+            this.TRadioButtonM = new System.Windows.Forms.RadioButton();
+            this.TRadioButtonH = new System.Windows.Forms.RadioButton();
             this.TTextBoxDireccion = new System.Windows.Forms.TextBox();
             this.TLabelDireccion = new System.Windows.Forms.Label();
             this.TTextBoxEmail = new System.Windows.Forms.TextBox();
@@ -47,11 +52,6 @@
             this.TLabelNombre = new System.Windows.Forms.Label();
             this.TLabelDNI = new System.Windows.Forms.Label();
             this.TButtonFoto = new System.Windows.Forms.Button();
-            this.TRadioButtonH = new System.Windows.Forms.RadioButton();
-            this.TRadioButtonM = new System.Windows.Forms.RadioButton();
-            this.TLabelSexo = new System.Windows.Forms.Label();
-            this.listBoxCoches = new System.Windows.Forms.ListBox();
-            this.TLabelVehiculosAlquiler = new System.Windows.Forms.Label();
             this.TButtonAceptar = new System.Windows.Forms.Button();
             this.TButtonBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -98,6 +98,55 @@
             this.TGroupBoxCliente.TabIndex = 46;
             this.TGroupBoxCliente.TabStop = false;
             this.TGroupBoxCliente.Text = "Datos Cliente";
+            // 
+            // TLabelVehiculosAlquiler
+            // 
+            this.TLabelVehiculosAlquiler.AutoSize = true;
+            this.TLabelVehiculosAlquiler.Location = new System.Drawing.Point(11, 263);
+            this.TLabelVehiculosAlquiler.Name = "TLabelVehiculosAlquiler";
+            this.TLabelVehiculosAlquiler.Size = new System.Drawing.Size(104, 13);
+            this.TLabelVehiculosAlquiler.TabIndex = 64;
+            this.TLabelVehiculosAlquiler.Text = "Vehiculos en alquiler";
+            this.TLabelVehiculosAlquiler.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // listBoxCoches
+            // 
+            this.listBoxCoches.FormattingEnabled = true;
+            this.listBoxCoches.Location = new System.Drawing.Point(136, 263);
+            this.listBoxCoches.Name = "listBoxCoches";
+            this.listBoxCoches.Size = new System.Drawing.Size(158, 121);
+            this.listBoxCoches.TabIndex = 49;
+            // 
+            // TLabelSexo
+            // 
+            this.TLabelSexo.AutoSize = true;
+            this.TLabelSexo.Location = new System.Drawing.Point(37, 228);
+            this.TLabelSexo.Name = "TLabelSexo";
+            this.TLabelSexo.Size = new System.Drawing.Size(31, 13);
+            this.TLabelSexo.TabIndex = 63;
+            this.TLabelSexo.Text = "Sexo";
+            // 
+            // TRadioButtonM
+            // 
+            this.TRadioButtonM.AutoSize = true;
+            this.TRadioButtonM.Location = new System.Drawing.Point(136, 224);
+            this.TRadioButtonM.Name = "TRadioButtonM";
+            this.TRadioButtonM.Size = new System.Drawing.Size(34, 17);
+            this.TRadioButtonM.TabIndex = 62;
+            this.TRadioButtonM.TabStop = true;
+            this.TRadioButtonM.Text = "M";
+            this.TRadioButtonM.UseVisualStyleBackColor = true;
+            // 
+            // TRadioButtonH
+            // 
+            this.TRadioButtonH.AutoSize = true;
+            this.TRadioButtonH.Location = new System.Drawing.Point(87, 224);
+            this.TRadioButtonH.Name = "TRadioButtonH";
+            this.TRadioButtonH.Size = new System.Drawing.Size(33, 17);
+            this.TRadioButtonH.TabIndex = 61;
+            this.TRadioButtonH.TabStop = true;
+            this.TRadioButtonH.Text = "H";
+            this.TRadioButtonH.UseVisualStyleBackColor = true;
             // 
             // TTextBoxDireccion
             // 
@@ -237,55 +286,6 @@
             this.TButtonFoto.UseVisualStyleBackColor = true;
             this.TButtonFoto.Click += new System.EventHandler(this.button1_Click);
             // 
-            // TRadioButtonH
-            // 
-            this.TRadioButtonH.AutoSize = true;
-            this.TRadioButtonH.Location = new System.Drawing.Point(87, 224);
-            this.TRadioButtonH.Name = "TRadioButtonH";
-            this.TRadioButtonH.Size = new System.Drawing.Size(33, 17);
-            this.TRadioButtonH.TabIndex = 61;
-            this.TRadioButtonH.TabStop = true;
-            this.TRadioButtonH.Text = "H";
-            this.TRadioButtonH.UseVisualStyleBackColor = true;
-            // 
-            // TRadioButtonM
-            // 
-            this.TRadioButtonM.AutoSize = true;
-            this.TRadioButtonM.Location = new System.Drawing.Point(136, 224);
-            this.TRadioButtonM.Name = "TRadioButtonM";
-            this.TRadioButtonM.Size = new System.Drawing.Size(34, 17);
-            this.TRadioButtonM.TabIndex = 62;
-            this.TRadioButtonM.TabStop = true;
-            this.TRadioButtonM.Text = "M";
-            this.TRadioButtonM.UseVisualStyleBackColor = true;
-            // 
-            // TLabelSexo
-            // 
-            this.TLabelSexo.AutoSize = true;
-            this.TLabelSexo.Location = new System.Drawing.Point(37, 228);
-            this.TLabelSexo.Name = "TLabelSexo";
-            this.TLabelSexo.Size = new System.Drawing.Size(31, 13);
-            this.TLabelSexo.TabIndex = 63;
-            this.TLabelSexo.Text = "Sexo";
-            // 
-            // listBoxCoches
-            // 
-            this.listBoxCoches.FormattingEnabled = true;
-            this.listBoxCoches.Location = new System.Drawing.Point(136, 263);
-            this.listBoxCoches.Name = "listBoxCoches";
-            this.listBoxCoches.Size = new System.Drawing.Size(158, 121);
-            this.listBoxCoches.TabIndex = 49;
-            // 
-            // TLabelVehiculosAlquiler
-            // 
-            this.TLabelVehiculosAlquiler.AutoSize = true;
-            this.TLabelVehiculosAlquiler.Location = new System.Drawing.Point(11, 263);
-            this.TLabelVehiculosAlquiler.Name = "TLabelVehiculosAlquiler";
-            this.TLabelVehiculosAlquiler.Size = new System.Drawing.Size(104, 13);
-            this.TLabelVehiculosAlquiler.TabIndex = 64;
-            this.TLabelVehiculosAlquiler.Text = "Vehiculos en alquiler";
-            this.TLabelVehiculosAlquiler.Click += new System.EventHandler(this.label1_Click_1);
-            // 
             // TButtonAceptar
             // 
             this.TButtonAceptar.Location = new System.Drawing.Point(440, 349);
@@ -309,6 +309,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar1;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(718, 414);
             this.Controls.Add(this.TButtonBuscar);
             this.Controls.Add(this.TButtonAceptar);
