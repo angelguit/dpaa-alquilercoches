@@ -20,5 +20,15 @@ namespace AlquilerCoches
         {
 
         }
+
+        private void TGroupBoxDatosVehiculo_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
