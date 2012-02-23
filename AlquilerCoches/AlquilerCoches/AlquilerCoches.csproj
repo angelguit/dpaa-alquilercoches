@@ -104,6 +104,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GestionClientes.resx">
+      <DependentUpon>GestionClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GestionVehiculos.resx">
       <DependentUpon>GestionVehiculos.cs</DependentUpon>
     </EmbeddedResource>
