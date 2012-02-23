@@ -107,6 +107,9 @@
     <EmbeddedResource Include="GestionClientes.resx">
       <DependentUpon>GestionClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GestionPedidos.resx">
+      <DependentUpon>GestionPedidos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GestionVehiculos.resx">
       <DependentUpon>GestionVehiculos.cs</DependentUpon>
     </EmbeddedResource>
