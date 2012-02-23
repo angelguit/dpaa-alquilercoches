@@ -30,5 +30,11 @@ namespace AlquilerCoches
         {
 
         }
+
+        private void GestionVehiculos_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Hide();
+            Dispose();
+        }
     }
 }

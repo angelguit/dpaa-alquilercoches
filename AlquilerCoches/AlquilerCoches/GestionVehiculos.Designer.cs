@@ -30,7 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionVehiculos));
             this.TGroupBoxDatosVehiculo = new System.Windows.Forms.GroupBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TLabelGarantia = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TLabelKM = new System.Windows.Forms.Label();
+            this.TTextBoxModelo = new System.Windows.Forms.TextBox();
+            this.TLabelModelo = new System.Windows.Forms.Label();
+            this.TTextBoxMarca = new System.Windows.Forms.TextBox();
+            this.TLabelMarca = new System.Windows.Forms.Label();
+            this.TButtonCancelar = new System.Windows.Forms.Button();
             this.TRadioButtonRevision = new System.Windows.Forms.RadioButton();
+            this.TButtonOK = new System.Windows.Forms.Button();
             this.TLabelEstado = new System.Windows.Forms.Label();
             this.TRadioButtonEstado = new System.Windows.Forms.RadioButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -49,27 +59,18 @@
             this.TLabelMatriculas = new System.Windows.Forms.Label();
             this.TButtonEditar = new System.Windows.Forms.Button();
             this.TButtonAnyadir = new System.Windows.Forms.Button();
-            this.TButtonOK = new System.Windows.Forms.Button();
-            this.TButtonCancelar = new System.Windows.Forms.Button();
             this.TButtonBuscar = new System.Windows.Forms.Button();
-            this.TTextBoxMarca = new System.Windows.Forms.TextBox();
-            this.TLabelMarca = new System.Windows.Forms.Label();
-            this.TTextBoxModelo = new System.Windows.Forms.TextBox();
-            this.TLabelModelo = new System.Windows.Forms.Label();
             this.TListBoxMarcas = new System.Windows.Forms.ListBox();
             this.TListBoxModelos = new System.Windows.Forms.ListBox();
             this.TListBoxMatriculas = new System.Windows.Forms.ListBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.TLabelKM = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.TLabelGarantia = new System.Windows.Forms.Label();
             this.TGroupBoxDatosVehiculo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // TGroupBoxDatosVehiculo
             // 
-            this.TGroupBoxDatosVehiculo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.TGroupBoxDatosVehiculo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TGroupBoxDatosVehiculo.Controls.Add(this.textBox2);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelGarantia);
@@ -103,8 +104,101 @@
             this.TGroupBoxDatosVehiculo.Text = "DatosVehiculo";
             this.TGroupBoxDatosVehiculo.Enter += new System.EventHandler(this.TGroupBoxDatosVehiculo_Enter);
             // 
+            // textBox2
+            // 
+            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox2.Location = new System.Drawing.Point(128, 234);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 42;
+            // 
+            // TLabelGarantia
+            // 
+            this.TLabelGarantia.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TLabelGarantia.AutoSize = true;
+            this.TLabelGarantia.Location = new System.Drawing.Point(73, 237);
+            this.TLabelGarantia.Name = "TLabelGarantia";
+            this.TLabelGarantia.Size = new System.Drawing.Size(47, 13);
+            this.TLabelGarantia.TabIndex = 41;
+            this.TLabelGarantia.Text = "Garantia";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Location = new System.Drawing.Point(128, 208);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 40;
+            // 
+            // TLabelKM
+            // 
+            this.TLabelKM.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TLabelKM.AutoSize = true;
+            this.TLabelKM.Location = new System.Drawing.Point(97, 215);
+            this.TLabelKM.Name = "TLabelKM";
+            this.TLabelKM.Size = new System.Drawing.Size(23, 13);
+            this.TLabelKM.TabIndex = 39;
+            this.TLabelKM.Text = "KM";
+            // 
+            // TTextBoxModelo
+            // 
+            this.TTextBoxModelo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TTextBoxModelo.Location = new System.Drawing.Point(128, 79);
+            this.TTextBoxModelo.Name = "TTextBoxModelo";
+            this.TTextBoxModelo.Size = new System.Drawing.Size(100, 20);
+            this.TTextBoxModelo.TabIndex = 38;
+            // 
+            // TLabelModelo
+            // 
+            this.TLabelModelo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TLabelModelo.AutoSize = true;
+            this.TLabelModelo.Location = new System.Drawing.Point(78, 84);
+            this.TLabelModelo.Name = "TLabelModelo";
+            this.TLabelModelo.Size = new System.Drawing.Size(42, 13);
+            this.TLabelModelo.TabIndex = 37;
+            this.TLabelModelo.Text = "Modelo";
+            // 
+            // TTextBoxMarca
+            // 
+            this.TTextBoxMarca.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TTextBoxMarca.Location = new System.Drawing.Point(128, 49);
+            this.TTextBoxMarca.Name = "TTextBoxMarca";
+            this.TTextBoxMarca.Size = new System.Drawing.Size(100, 20);
+            this.TTextBoxMarca.TabIndex = 36;
+            // 
+            // TLabelMarca
+            // 
+            this.TLabelMarca.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TLabelMarca.AutoSize = true;
+            this.TLabelMarca.Location = new System.Drawing.Point(83, 56);
+            this.TLabelMarca.Name = "TLabelMarca";
+            this.TLabelMarca.Size = new System.Drawing.Size(37, 13);
+            this.TLabelMarca.TabIndex = 35;
+            this.TLabelMarca.Text = "Marca";
+            this.TLabelMarca.Click += new System.EventHandler(this.TLabel_Click);
+            // 
+            // TButtonCancelar
+            // 
+            this.TButtonCancelar.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.TButtonCancelar.Location = new System.Drawing.Point(366, 292);
+            this.TButtonCancelar.Name = "TButtonCancelar";
+            this.TButtonCancelar.Size = new System.Drawing.Size(75, 23);
+            this.TButtonCancelar.TabIndex = 26;
+            this.TButtonCancelar.Text = "Cancelar";
+            this.TButtonCancelar.UseVisualStyleBackColor = true;
+            // 
             // TRadioButtonRevision
             // 
+            this.TRadioButtonRevision.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TRadioButtonRevision.AutoSize = true;
             this.TRadioButtonRevision.Location = new System.Drawing.Point(208, 258);
             this.TRadioButtonRevision.Name = "TRadioButtonRevision";
@@ -114,8 +208,20 @@
             this.TRadioButtonRevision.Text = "Revision";
             this.TRadioButtonRevision.UseVisualStyleBackColor = true;
             // 
+            // TButtonOK
+            // 
+            this.TButtonOK.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.TButtonOK.Location = new System.Drawing.Point(285, 292);
+            this.TButtonOK.Name = "TButtonOK";
+            this.TButtonOK.Size = new System.Drawing.Size(75, 23);
+            this.TButtonOK.TabIndex = 25;
+            this.TButtonOK.Text = "OK";
+            this.TButtonOK.UseVisualStyleBackColor = true;
+            // 
             // TLabelEstado
             // 
+            this.TLabelEstado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TLabelEstado.AutoSize = true;
             this.TLabelEstado.Location = new System.Drawing.Point(80, 260);
             this.TLabelEstado.Name = "TLabelEstado";
@@ -125,6 +231,8 @@
             // 
             // TRadioButtonEstado
             // 
+            this.TRadioButtonEstado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TRadioButtonEstado.AutoSize = true;
             this.TRadioButtonEstado.Location = new System.Drawing.Point(128, 258);
             this.TRadioButtonEstado.Name = "TRadioButtonEstado";
@@ -136,6 +244,8 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Location = new System.Drawing.Point(308, 23);
@@ -146,6 +256,8 @@
             // 
             // TTextBoxPrecioAlquiler
             // 
+            this.TTextBoxPrecioAlquiler.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TTextBoxPrecioAlquiler.Location = new System.Drawing.Point(128, 182);
             this.TTextBoxPrecioAlquiler.Name = "TTextBoxPrecioAlquiler";
             this.TTextBoxPrecioAlquiler.Size = new System.Drawing.Size(100, 20);
@@ -153,6 +265,8 @@
             // 
             // TLabelPrecioAlquiler
             // 
+            this.TLabelPrecioAlquiler.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TLabelPrecioAlquiler.AutoSize = true;
             this.TLabelPrecioAlquiler.Location = new System.Drawing.Point(49, 189);
             this.TLabelPrecioAlquiler.Name = "TLabelPrecioAlquiler";
@@ -162,6 +276,8 @@
             // 
             // TTextBoxPrecioVenta
             // 
+            this.TTextBoxPrecioVenta.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TTextBoxPrecioVenta.Location = new System.Drawing.Point(128, 156);
             this.TTextBoxPrecioVenta.Name = "TTextBoxPrecioVenta";
             this.TTextBoxPrecioVenta.Size = new System.Drawing.Size(100, 20);
@@ -169,6 +285,8 @@
             // 
             // TLabelPrecioVenta
             // 
+            this.TLabelPrecioVenta.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TLabelPrecioVenta.AutoSize = true;
             this.TLabelPrecioVenta.Location = new System.Drawing.Point(55, 163);
             this.TLabelPrecioVenta.Name = "TLabelPrecioVenta";
@@ -178,6 +296,8 @@
             // 
             // TextBoxPrecioCompra
             // 
+            this.TextBoxPrecioCompra.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TextBoxPrecioCompra.Location = new System.Drawing.Point(128, 131);
             this.TextBoxPrecioCompra.Name = "TextBoxPrecioCompra";
             this.TextBoxPrecioCompra.Size = new System.Drawing.Size(100, 20);
@@ -185,6 +305,8 @@
             // 
             // TLabelPrecioCompra
             // 
+            this.TLabelPrecioCompra.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TLabelPrecioCompra.AutoSize = true;
             this.TLabelPrecioCompra.Location = new System.Drawing.Point(47, 138);
             this.TLabelPrecioCompra.Name = "TLabelPrecioCompra";
@@ -194,6 +316,8 @@
             // 
             // TTextBoxAnyo
             // 
+            this.TTextBoxAnyo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TTextBoxAnyo.Location = new System.Drawing.Point(128, 105);
             this.TTextBoxAnyo.Name = "TTextBoxAnyo";
             this.TTextBoxAnyo.Size = new System.Drawing.Size(100, 20);
@@ -201,6 +325,8 @@
             // 
             // TLabelAnyo
             // 
+            this.TLabelAnyo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TLabelAnyo.AutoSize = true;
             this.TLabelAnyo.Location = new System.Drawing.Point(89, 112);
             this.TLabelAnyo.Name = "TLabelAnyo";
@@ -210,6 +336,8 @@
             // 
             // TextBoxMatricula
             // 
+            this.TextBoxMatricula.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TextBoxMatricula.Location = new System.Drawing.Point(128, 23);
             this.TextBoxMatricula.Name = "TextBoxMatricula";
             this.TextBoxMatricula.Size = new System.Drawing.Size(100, 20);
@@ -217,6 +345,8 @@
             // 
             // TLabelMatricula
             // 
+            this.TLabelMatricula.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TLabelMatricula.AutoSize = true;
             this.TLabelMatricula.Location = new System.Drawing.Point(70, 30);
             this.TLabelMatricula.Name = "TLabelMatricula";
@@ -235,6 +365,7 @@
             // 
             // TLabelModelos
             // 
+            this.TLabelModelos.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TLabelModelos.AutoSize = true;
             this.TLabelModelos.Location = new System.Drawing.Point(265, 46);
             this.TLabelModelos.Name = "TLabelModelos";
@@ -244,6 +375,7 @@
             // 
             // TLabelMatriculas
             // 
+            this.TLabelMatriculas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TLabelMatriculas.AutoSize = true;
             this.TLabelMatriculas.Location = new System.Drawing.Point(487, 46);
             this.TLabelMatriculas.Name = "TLabelMatriculas";
@@ -269,24 +401,6 @@
             this.TButtonAnyadir.Text = "Anyadir";
             this.TButtonAnyadir.UseVisualStyleBackColor = true;
             // 
-            // TButtonOK
-            // 
-            this.TButtonOK.Location = new System.Drawing.Point(285, 292);
-            this.TButtonOK.Name = "TButtonOK";
-            this.TButtonOK.Size = new System.Drawing.Size(75, 23);
-            this.TButtonOK.TabIndex = 25;
-            this.TButtonOK.Text = "OK";
-            this.TButtonOK.UseVisualStyleBackColor = true;
-            // 
-            // TButtonCancelar
-            // 
-            this.TButtonCancelar.Location = new System.Drawing.Point(366, 292);
-            this.TButtonCancelar.Name = "TButtonCancelar";
-            this.TButtonCancelar.Size = new System.Drawing.Size(75, 23);
-            this.TButtonCancelar.TabIndex = 26;
-            this.TButtonCancelar.Text = "Cancelar";
-            this.TButtonCancelar.UseVisualStyleBackColor = true;
-            // 
             // TButtonBuscar
             // 
             this.TButtonBuscar.Location = new System.Drawing.Point(70, 251);
@@ -296,43 +410,8 @@
             this.TButtonBuscar.Text = "Buscar";
             this.TButtonBuscar.UseVisualStyleBackColor = true;
             // 
-            // TTextBoxMarca
-            // 
-            this.TTextBoxMarca.Location = new System.Drawing.Point(128, 49);
-            this.TTextBoxMarca.Name = "TTextBoxMarca";
-            this.TTextBoxMarca.Size = new System.Drawing.Size(100, 20);
-            this.TTextBoxMarca.TabIndex = 36;
-            // 
-            // TLabelMarca
-            // 
-            this.TLabelMarca.AutoSize = true;
-            this.TLabelMarca.Location = new System.Drawing.Point(83, 56);
-            this.TLabelMarca.Name = "TLabelMarca";
-            this.TLabelMarca.Size = new System.Drawing.Size(37, 13);
-            this.TLabelMarca.TabIndex = 35;
-            this.TLabelMarca.Text = "Marca";
-            this.TLabelMarca.Click += new System.EventHandler(this.TLabel_Click);
-            // 
-            // TTextBoxModelo
-            // 
-            this.TTextBoxModelo.Location = new System.Drawing.Point(128, 79);
-            this.TTextBoxModelo.Name = "TTextBoxModelo";
-            this.TTextBoxModelo.Size = new System.Drawing.Size(100, 20);
-            this.TTextBoxModelo.TabIndex = 38;
-            // 
-            // TLabelModelo
-            // 
-            this.TLabelModelo.AutoSize = true;
-            this.TLabelModelo.Location = new System.Drawing.Point(78, 84);
-            this.TLabelModelo.Name = "TLabelModelo";
-            this.TLabelModelo.Size = new System.Drawing.Size(42, 13);
-            this.TLabelModelo.TabIndex = 37;
-            this.TLabelModelo.Text = "Modelo";
-            // 
             // TListBoxMarcas
             // 
-            this.TListBoxMarcas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.TListBoxMarcas.FormattingEnabled = true;
             this.TListBoxMarcas.Items.AddRange(new object[] {
             "FORD",
@@ -346,8 +425,7 @@
             // 
             // TListBoxModelos
             // 
-            this.TListBoxModelos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TListBoxModelos.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TListBoxModelos.FormattingEnabled = true;
             this.TListBoxModelos.Items.AddRange(new object[] {
             "FIESTA",
@@ -359,8 +437,7 @@
             // 
             // TListBoxMatriculas
             // 
-            this.TListBoxMatriculas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TListBoxMatriculas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TListBoxMatriculas.FormattingEnabled = true;
             this.TListBoxMatriculas.Items.AddRange(new object[] {
             "7777 DBD",
@@ -369,38 +446,6 @@
             this.TListBoxMatriculas.Name = "TListBoxMatriculas";
             this.TListBoxMatriculas.Size = new System.Drawing.Size(187, 95);
             this.TListBoxMatriculas.TabIndex = 28;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(128, 208);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 40;
-            // 
-            // TLabelKM
-            // 
-            this.TLabelKM.AutoSize = true;
-            this.TLabelKM.Location = new System.Drawing.Point(97, 215);
-            this.TLabelKM.Name = "TLabelKM";
-            this.TLabelKM.Size = new System.Drawing.Size(23, 13);
-            this.TLabelKM.TabIndex = 39;
-            this.TLabelKM.Text = "KM";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(128, 234);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 42;
-            // 
-            // TLabelGarantia
-            // 
-            this.TLabelGarantia.AutoSize = true;
-            this.TLabelGarantia.Location = new System.Drawing.Point(73, 237);
-            this.TLabelGarantia.Name = "TLabelGarantia";
-            this.TLabelGarantia.Size = new System.Drawing.Size(47, 13);
-            this.TLabelGarantia.TabIndex = 41;
-            this.TLabelGarantia.Text = "Garantia";
             // 
             // GestionVehiculos
             // 
@@ -419,6 +464,7 @@
             this.Controls.Add(this.TGroupBoxDatosVehiculo);
             this.Name = "GestionVehiculos";
             this.Text = "GestionVehiculos";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GestionVehiculos_FormClosing);
             this.TGroupBoxDatosVehiculo.ResumeLayout(false);
             this.TGroupBoxDatosVehiculo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
