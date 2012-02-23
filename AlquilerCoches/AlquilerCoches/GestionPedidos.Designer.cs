@@ -85,7 +85,7 @@
             this.textBox1.BackColor = System.Drawing.SystemColors.Control;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox1.Location = new System.Drawing.Point(150, 16);
+            this.textBox1.Location = new System.Drawing.Point(123, 16);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(100, 13);
@@ -95,7 +95,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(52, 16);
+            this.label1.Location = new System.Drawing.Point(25, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 13);
             this.label1.TabIndex = 4;
@@ -104,7 +104,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(305, 19);
+            this.label2.Location = new System.Drawing.Point(283, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 13);
             this.label2.TabIndex = 5;
@@ -114,7 +114,7 @@
             // 
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox2.Location = new System.Drawing.Point(392, 13);
+            this.textBox2.Location = new System.Drawing.Point(370, 16);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(100, 13);
@@ -236,7 +236,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(52, 41);
+            this.label9.Location = new System.Drawing.Point(25, 41);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(78, 13);
             this.label9.TabIndex = 21;
@@ -247,7 +247,7 @@
             this.textBox8.BackColor = System.Drawing.SystemColors.Control;
             this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox8.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox8.Location = new System.Drawing.Point(150, 41);
+            this.textBox8.Location = new System.Drawing.Point(123, 41);
             this.textBox8.Name = "textBox8";
             this.textBox8.ReadOnly = true;
             this.textBox8.Size = new System.Drawing.Size(100, 13);
