@@ -253,6 +253,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(610, 368);
             this.Controls.Add(this.TButtonGuardarPersonal);
@@ -280,6 +281,7 @@
             this.Controls.Add(this.TLabelDNI);
             this.Name = "GestionPersonal";
             this.Text = "GestionPersonal";
+            this.Load += new System.EventHandler(this.GestionPersonal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

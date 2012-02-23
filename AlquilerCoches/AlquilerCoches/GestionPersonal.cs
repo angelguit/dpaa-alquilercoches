@@ -30,5 +30,10 @@ namespace AlquilerCoches
         {
 
         }
+
+        private void GestionPersonal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
