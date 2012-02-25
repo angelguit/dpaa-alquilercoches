@@ -15,5 +15,10 @@ namespace AlquilerCoches
         {
             InitializeComponent();
         }
+
+        private void GestionProveedores_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
