@@ -79,6 +79,7 @@
             this.TLabelCategoria.Size = new System.Drawing.Size(57, 13);
             this.TLabelCategoria.TabIndex = 2;
             this.TLabelCategoria.Text = "Categoría:";
+            this.TLabelCategoria.Click += new System.EventHandler(this.TLabelCategoria_Click);
             // 
             // TLabelVehiculo
             // 

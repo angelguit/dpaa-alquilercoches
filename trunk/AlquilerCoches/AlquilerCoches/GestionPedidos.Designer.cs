@@ -32,26 +32,26 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.TProveTextBox = new System.Windows.Forms.TextBox();
+            this.TProveLabel = new System.Windows.Forms.Label();
+            this.TEnvioButtonUrgente = new System.Windows.Forms.RadioButton();
+            this.TEnvioButtonOrdinario = new System.Windows.Forms.RadioButton();
+            this.TObservTextBox = new System.Windows.Forms.TextBox();
+            this.TObserLabel = new System.Windows.Forms.Label();
+            this.TCantidadTextBox = new System.Windows.Forms.TextBox();
+            this.TModeloTextBox = new System.Windows.Forms.TextBox();
+            this.TNameTextBox = new System.Windows.Forms.TextBox();
+            this.TEnvioLabel = new System.Windows.Forms.Label();
+            this.TCantidadLabel = new System.Windows.Forms.Label();
+            this.TModeloLabel = new System.Windows.Forms.Label();
+            this.TNombreLabel = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TEstadoTextBox = new System.Windows.Forms.TextBox();
+            this.TEstadoLabel = new System.Windows.Forms.Label();
+            this.TVendedorText = new System.Windows.Forms.TextBox();
+            this.TVendLabel = new System.Windows.Forms.Label();
+            this.TIDlabel = new System.Windows.Forms.Label();
+            this.TIDtextBox = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -86,19 +86,19 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Controls.Add(this.textBox7);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.TProveTextBox);
+            this.groupBox1.Controls.Add(this.TProveLabel);
+            this.groupBox1.Controls.Add(this.TEnvioButtonUrgente);
+            this.groupBox1.Controls.Add(this.TEnvioButtonOrdinario);
+            this.groupBox1.Controls.Add(this.TObservTextBox);
+            this.groupBox1.Controls.Add(this.TObserLabel);
+            this.groupBox1.Controls.Add(this.TCantidadTextBox);
+            this.groupBox1.Controls.Add(this.TModeloTextBox);
+            this.groupBox1.Controls.Add(this.TNameTextBox);
+            this.groupBox1.Controls.Add(this.TEnvioLabel);
+            this.groupBox1.Controls.Add(this.TCantidadLabel);
+            this.groupBox1.Controls.Add(this.TModeloLabel);
+            this.groupBox1.Controls.Add(this.TNombreLabel);
             this.groupBox1.Location = new System.Drawing.Point(75, 122);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(501, 312);
@@ -107,126 +107,126 @@
             this.groupBox1.Text = "Datos Pedido";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // textBox6
+            // TProveTextBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(165, 17);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(152, 20);
-            this.textBox6.TabIndex = 33;
+            this.TProveTextBox.Location = new System.Drawing.Point(165, 17);
+            this.TProveTextBox.Name = "TProveTextBox";
+            this.TProveTextBox.Size = new System.Drawing.Size(152, 20);
+            this.TProveTextBox.TabIndex = 33;
             // 
-            // label8
+            // TProveLabel
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(69, 25);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(56, 13);
-            this.label8.TabIndex = 32;
-            this.label8.Text = "Proveedor";
+            this.TProveLabel.AutoSize = true;
+            this.TProveLabel.Location = new System.Drawing.Point(69, 25);
+            this.TProveLabel.Name = "TProveLabel";
+            this.TProveLabel.Size = new System.Drawing.Size(56, 13);
+            this.TProveLabel.TabIndex = 32;
+            this.TProveLabel.Text = "Proveedor";
             // 
-            // radioButton2
+            // TEnvioButtonUrgente
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(251, 156);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(63, 17);
-            this.radioButton2.TabIndex = 31;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Urgente";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.TEnvioButtonUrgente.AutoSize = true;
+            this.TEnvioButtonUrgente.Location = new System.Drawing.Point(251, 156);
+            this.TEnvioButtonUrgente.Name = "TEnvioButtonUrgente";
+            this.TEnvioButtonUrgente.Size = new System.Drawing.Size(63, 17);
+            this.TEnvioButtonUrgente.TabIndex = 31;
+            this.TEnvioButtonUrgente.TabStop = true;
+            this.TEnvioButtonUrgente.Text = "Urgente";
+            this.TEnvioButtonUrgente.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // TEnvioButtonOrdinario
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(167, 156);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(67, 17);
-            this.radioButton1.TabIndex = 30;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Ordinario";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.TEnvioButtonOrdinario.AutoSize = true;
+            this.TEnvioButtonOrdinario.Location = new System.Drawing.Point(167, 156);
+            this.TEnvioButtonOrdinario.Name = "TEnvioButtonOrdinario";
+            this.TEnvioButtonOrdinario.Size = new System.Drawing.Size(67, 17);
+            this.TEnvioButtonOrdinario.TabIndex = 30;
+            this.TEnvioButtonOrdinario.TabStop = true;
+            this.TEnvioButtonOrdinario.Text = "Ordinario";
+            this.TEnvioButtonOrdinario.UseVisualStyleBackColor = true;
             // 
-            // textBox7
+            // TObservTextBox
             // 
-            this.textBox7.Location = new System.Drawing.Point(165, 196);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(248, 86);
-            this.textBox7.TabIndex = 29;
+            this.TObservTextBox.Location = new System.Drawing.Point(165, 196);
+            this.TObservTextBox.Multiline = true;
+            this.TObservTextBox.Name = "TObservTextBox";
+            this.TObservTextBox.Size = new System.Drawing.Size(248, 86);
+            this.TObservTextBox.TabIndex = 29;
             // 
-            // label7
+            // TObserLabel
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(66, 199);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(78, 13);
-            this.label7.TabIndex = 28;
-            this.label7.Text = "Observaciones";
+            this.TObserLabel.AutoSize = true;
+            this.TObserLabel.Location = new System.Drawing.Point(66, 199);
+            this.TObserLabel.Name = "TObserLabel";
+            this.TObserLabel.Size = new System.Drawing.Size(78, 13);
+            this.TObserLabel.TabIndex = 28;
+            this.TObserLabel.Text = "Observaciones";
             // 
-            // textBox5
+            // TCantidadTextBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(165, 124);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(152, 20);
-            this.textBox5.TabIndex = 27;
+            this.TCantidadTextBox.Location = new System.Drawing.Point(165, 124);
+            this.TCantidadTextBox.Name = "TCantidadTextBox";
+            this.TCantidadTextBox.Size = new System.Drawing.Size(152, 20);
+            this.TCantidadTextBox.TabIndex = 27;
             // 
-            // textBox4
+            // TModeloTextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(165, 86);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(152, 20);
-            this.textBox4.TabIndex = 26;
+            this.TModeloTextBox.Location = new System.Drawing.Point(165, 86);
+            this.TModeloTextBox.Name = "TModeloTextBox";
+            this.TModeloTextBox.Size = new System.Drawing.Size(152, 20);
+            this.TModeloTextBox.TabIndex = 26;
             // 
-            // textBox3
+            // TNameTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(165, 51);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(152, 20);
-            this.textBox3.TabIndex = 25;
+            this.TNameTextBox.Location = new System.Drawing.Point(165, 51);
+            this.TNameTextBox.Name = "TNameTextBox";
+            this.TNameTextBox.Size = new System.Drawing.Size(152, 20);
+            this.TNameTextBox.TabIndex = 25;
             // 
-            // label6
+            // TEnvioLabel
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(66, 160);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(74, 13);
-            this.label6.TabIndex = 24;
-            this.label6.Text = "Tipo de envío";
+            this.TEnvioLabel.AutoSize = true;
+            this.TEnvioLabel.Location = new System.Drawing.Point(66, 160);
+            this.TEnvioLabel.Name = "TEnvioLabel";
+            this.TEnvioLabel.Size = new System.Drawing.Size(74, 13);
+            this.TEnvioLabel.TabIndex = 24;
+            this.TEnvioLabel.Text = "Tipo de envío";
             // 
-            // label5
+            // TCantidadLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(66, 126);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 13);
-            this.label5.TabIndex = 23;
-            this.label5.Text = "Cantidad";
+            this.TCantidadLabel.AutoSize = true;
+            this.TCantidadLabel.Location = new System.Drawing.Point(66, 126);
+            this.TCantidadLabel.Name = "TCantidadLabel";
+            this.TCantidadLabel.Size = new System.Drawing.Size(49, 13);
+            this.TCantidadLabel.TabIndex = 23;
+            this.TCantidadLabel.Text = "Cantidad";
             // 
-            // label4
+            // TModeloLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(69, 92);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 13);
-            this.label4.TabIndex = 22;
-            this.label4.Text = "Modelo";
+            this.TModeloLabel.AutoSize = true;
+            this.TModeloLabel.Location = new System.Drawing.Point(69, 92);
+            this.TModeloLabel.Name = "TModeloLabel";
+            this.TModeloLabel.Size = new System.Drawing.Size(42, 13);
+            this.TModeloLabel.TabIndex = 22;
+            this.TModeloLabel.Text = "Modelo";
             // 
-            // label3
+            // TNombreLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(69, 58);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 13);
-            this.label3.TabIndex = 21;
-            this.label3.Text = "Nombre";
+            this.TNombreLabel.AutoSize = true;
+            this.TNombreLabel.Location = new System.Drawing.Point(69, 58);
+            this.TNombreLabel.Name = "TNombreLabel";
+            this.TNombreLabel.Size = new System.Drawing.Size(44, 13);
+            this.TNombreLabel.TabIndex = 21;
+            this.TNombreLabel.Text = "Nombre";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox8);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.TEstadoTextBox);
+            this.groupBox2.Controls.Add(this.TEstadoLabel);
+            this.groupBox2.Controls.Add(this.TVendedorText);
+            this.groupBox2.Controls.Add(this.TVendLabel);
+            this.groupBox2.Controls.Add(this.TIDlabel);
+            this.groupBox2.Controls.Add(this.TIDtextBox);
             this.groupBox2.Location = new System.Drawing.Point(98, 3);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(436, 89);
@@ -235,64 +235,64 @@
             this.groupBox2.Text = "Datos transacción";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // textBox8
+            // TEstadoTextBox
             // 
-            this.textBox8.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox8.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox8.Location = new System.Drawing.Point(96, 58);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(84, 13);
-            this.textBox8.TabIndex = 28;
+            this.TEstadoTextBox.BackColor = System.Drawing.SystemColors.Control;
+            this.TEstadoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TEstadoTextBox.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.TEstadoTextBox.Location = new System.Drawing.Point(96, 58);
+            this.TEstadoTextBox.Name = "TEstadoTextBox";
+            this.TEstadoTextBox.ReadOnly = true;
+            this.TEstadoTextBox.Size = new System.Drawing.Size(84, 13);
+            this.TEstadoTextBox.TabIndex = 28;
             // 
-            // label9
+            // TEstadoLabel
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 58);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(78, 13);
-            this.label9.TabIndex = 27;
-            this.label9.Text = "Estado pedido:";
+            this.TEstadoLabel.AutoSize = true;
+            this.TEstadoLabel.Location = new System.Drawing.Point(12, 58);
+            this.TEstadoLabel.Name = "TEstadoLabel";
+            this.TEstadoLabel.Size = new System.Drawing.Size(78, 13);
+            this.TEstadoLabel.TabIndex = 27;
+            this.TEstadoLabel.Text = "Estado pedido:";
             // 
-            // textBox2
+            // TVendedorText
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox2.Location = new System.Drawing.Point(264, 33);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(166, 13);
-            this.textBox2.TabIndex = 26;
+            this.TVendedorText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TVendedorText.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.TVendedorText.Location = new System.Drawing.Point(264, 33);
+            this.TVendedorText.Name = "TVendedorText";
+            this.TVendedorText.ReadOnly = true;
+            this.TVendedorText.Size = new System.Drawing.Size(166, 13);
+            this.TVendedorText.TabIndex = 26;
             // 
-            // label2
+            // TVendLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(202, 33);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 13);
-            this.label2.TabIndex = 25;
-            this.label2.Text = "Vendedor:";
+            this.TVendLabel.AutoSize = true;
+            this.TVendLabel.Location = new System.Drawing.Point(202, 33);
+            this.TVendLabel.Name = "TVendLabel";
+            this.TVendLabel.Size = new System.Drawing.Size(56, 13);
+            this.TVendLabel.TabIndex = 25;
+            this.TVendLabel.Text = "Vendedor:";
             // 
-            // label1
+            // TIDlabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 13);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "ID transacción:";
+            this.TIDlabel.AutoSize = true;
+            this.TIDlabel.Location = new System.Drawing.Point(13, 33);
+            this.TIDlabel.Name = "TIDlabel";
+            this.TIDlabel.Size = new System.Drawing.Size(79, 13);
+            this.TIDlabel.TabIndex = 24;
+            this.TIDlabel.Text = "ID transacción:";
             // 
-            // textBox1
+            // TIDtextBox
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox1.Location = new System.Drawing.Point(96, 33);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(84, 13);
-            this.textBox1.TabIndex = 23;
+            this.TIDtextBox.BackColor = System.Drawing.SystemColors.Control;
+            this.TIDtextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TIDtextBox.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.TIDtextBox.Location = new System.Drawing.Point(96, 33);
+            this.TIDtextBox.Name = "TIDtextBox";
+            this.TIDtextBox.ReadOnly = true;
+            this.TIDtextBox.Size = new System.Drawing.Size(84, 13);
+            this.TIDtextBox.TabIndex = 23;
             // 
             // GestionPedidos
             // 
@@ -323,25 +323,25 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox TProveTextBox;
+        private System.Windows.Forms.Label TProveLabel;
+        private System.Windows.Forms.RadioButton TEnvioButtonUrgente;
+        private System.Windows.Forms.RadioButton TEnvioButtonOrdinario;
+        private System.Windows.Forms.TextBox TObservTextBox;
+        private System.Windows.Forms.Label TObserLabel;
+        private System.Windows.Forms.TextBox TCantidadTextBox;
+        private System.Windows.Forms.TextBox TModeloTextBox;
+        private System.Windows.Forms.TextBox TNameTextBox;
+        private System.Windows.Forms.Label TEnvioLabel;
+        private System.Windows.Forms.Label TCantidadLabel;
+        private System.Windows.Forms.Label TModeloLabel;
+        private System.Windows.Forms.Label TNombreLabel;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TEstadoTextBox;
+        private System.Windows.Forms.Label TEstadoLabel;
+        private System.Windows.Forms.TextBox TVendedorText;
+        private System.Windows.Forms.Label TVendLabel;
+        private System.Windows.Forms.Label TIDlabel;
+        private System.Windows.Forms.TextBox TIDtextBox;
     }
 }

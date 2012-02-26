@@ -15,5 +15,10 @@ namespace AlquilerCoches
         {
             InitializeComponent();
         }
+
+        private void TLabelCategoria_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
