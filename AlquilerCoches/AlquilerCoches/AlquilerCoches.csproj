@@ -108,6 +108,12 @@
     <Compile Include="GestionPersonal.Designer.cs">
       <DependentUpon>GestionPersonal.cs</DependentUpon>
     </Compile>
+    <Compile Include="MDIPral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDIPral.Designer.cs">
+      <DependentUpon>MDIPral.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GestionClientes.resx">
@@ -140,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BuscarPedidos.resx">
       <DependentUpon>BuscarPedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDIPral.resx">
+      <DependentUpon>MDIPral.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
