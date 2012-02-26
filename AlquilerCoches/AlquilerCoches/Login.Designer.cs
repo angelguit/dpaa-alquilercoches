@@ -32,7 +32,7 @@
             this.TLabelUsuario = new System.Windows.Forms.Label();
             this.TTextBoxUsuario = new System.Windows.Forms.TextBox();
             this.TLabelContrasenya = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TTextBoxPassword = new System.Windows.Forms.TextBox();
             this.TButtonSalir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -44,6 +44,7 @@
             this.TbotonOK.TabIndex = 0;
             this.TbotonOK.Text = "OK";
             this.TbotonOK.UseVisualStyleBackColor = true;
+            this.TbotonOK.Click += new System.EventHandler(this.TbotonOK_Click);
             // 
             // TLabelUsuario
             // 
@@ -61,6 +62,7 @@
             this.TTextBoxUsuario.Size = new System.Drawing.Size(100, 20);
             this.TTextBoxUsuario.TabIndex = 2;
             this.TTextBoxUsuario.Text = "Usuario";
+            this.TTextBoxUsuario.DoubleClick += new System.EventHandler(this.TTextBoxUsuario_DoubleClick);
             // 
             // TLabelContrasenya
             // 
@@ -71,14 +73,15 @@
             this.TLabelContrasenya.TabIndex = 3;
             this.TLabelContrasenya.Text = "CONTRASEÑA:";
             // 
-            // textBox1
+            // TTextBoxPassword
             // 
-            this.textBox1.Location = new System.Drawing.Point(141, 115);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '*';
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.Text = "contraseña";
+            this.TTextBoxPassword.Location = new System.Drawing.Point(141, 115);
+            this.TTextBoxPassword.Name = "TTextBoxPassword";
+            this.TTextBoxPassword.PasswordChar = '*';
+            this.TTextBoxPassword.Size = new System.Drawing.Size(100, 20);
+            this.TTextBoxPassword.TabIndex = 4;
+            this.TTextBoxPassword.Text = "contraseña";
+            this.TTextBoxPassword.DoubleClick += new System.EventHandler(this.TTextBoxPassword_DoubleClick);
             // 
             // TButtonSalir
             // 
@@ -88,6 +91,7 @@
             this.TButtonSalir.TabIndex = 5;
             this.TButtonSalir.Text = "SALIR";
             this.TButtonSalir.UseVisualStyleBackColor = true;
+            this.TButtonSalir.Click += new System.EventHandler(this.TButtonSalir_Click);
             // 
             // Login
             // 
@@ -95,7 +99,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
             this.Controls.Add(this.TButtonSalir);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TTextBoxPassword);
             this.Controls.Add(this.TLabelContrasenya);
             this.Controls.Add(this.TTextBoxUsuario);
             this.Controls.Add(this.TLabelUsuario);
@@ -113,7 +117,7 @@
         private System.Windows.Forms.Label TLabelUsuario;
         private System.Windows.Forms.TextBox TTextBoxUsuario;
         private System.Windows.Forms.Label TLabelContrasenya;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TTextBoxPassword;
         private System.Windows.Forms.Button TButtonSalir;
     }
 }
