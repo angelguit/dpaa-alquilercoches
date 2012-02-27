@@ -70,7 +70,7 @@
             // 
             // TGroupBoxCliente
             // 
-            this.TGroupBoxCliente.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.TGroupBoxCliente.BackColor = System.Drawing.Color.Transparent;
             this.TGroupBoxCliente.Controls.Add(this.TLabelVehiculosAlquiler);
             this.TGroupBoxCliente.Controls.Add(this.listBoxCoches);
             this.TGroupBoxCliente.Controls.Add(this.TLabelSexo);
