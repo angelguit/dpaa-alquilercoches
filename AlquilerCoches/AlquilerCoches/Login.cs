@@ -21,6 +21,8 @@ namespace AlquilerCoches
         private int Intentos = 3;
         private void TbotonOK_Click(object sender, EventArgs e)
         {
+            errorProvider1.SetError(TLabelError, "");
+            TLabelError.Visible= false;
             if (TTextBoxUsuario.Text.Equals("root") && TTextBoxPassword.Text.Equals("root"))
             {
                 this.Hide();
@@ -33,6 +35,8 @@ namespace AlquilerCoches
             else
             {
                 NIntento++;
+                errorProvider1.SetError(TLabelError, "ERROR USUARIO O CONTRASENYA NO VALIDOS");
+                TLabelError.Visible = true;
                 if (NIntento >= Intentos)
                 {
                     MessageBox.Show("Numero de intentos Superado", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
