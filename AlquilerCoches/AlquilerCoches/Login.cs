@@ -26,7 +26,9 @@ namespace AlquilerCoches
             if (true)//(TTextBoxUsuario.Text.Equals("root") && TTextBoxPassword.Text.Equals("root"))
             {
                 this.Hide();
-                (new GestionPersonalBuscar()).ShowDialog();
+                MDIPral F2 = new MDIPral(new MDIPral.User("root", "0", "admin"));
+                F2.WindowState = FormWindowState.Maximized;
+                F2.ShowDialog();
                 TTextBoxUsuario.Text = "";
                 TTextBoxPassword.Text = "";
                 NIntento = 0;
