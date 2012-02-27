@@ -13,41 +13,49 @@ namespace AlquilerCoches
     {
         private int childFormNumber = 0;
 
-        public MDIPral()
+        public class User
+        {
+            string nombre;
+            string id;
+            string status;
+            public User(string Nombre, string ID, string Status)
+            {
+                nombre = Nombre;
+                id = ID;
+                status = Status;
+            }
+            public string Nombre
+            {
+                set { nombre = Nombre; }
+                get { return nombre; }
+            }
+            public string ID
+            {
+                set { id = ID; }
+                get { return id; }
+            }
+            public string Status
+            {
+                set { status = Status; }
+                get { return status; }
+            }
+        }
+        User UsuarioSistema;
+        public MDIPral(User usuario)
         {
             InitializeComponent();
+            UsuarioSistema = usuario;
+
+            toolStripStatusLabel.Text = "Nombre:" + usuario.Nombre;
+            toolStripStatusLabel1.Text = "ID:" + usuario.ID;
+            toolStripStatusLabel2.Text = "Status:" + usuario.Status;
+
+            toolStripLabel1.Text = "Nombre: " + usuario.Nombre;
+            toolStripLabel2.Text = "ID: " + usuario.ID;
+            toolStripLabel3.Text = "Status: " + usuario.Status;
         }
 
-        private void ShowNewForm(object sender, EventArgs e)
-        {
-            Form childForm = new Form();
-            childForm.MdiParent = this;
-            childForm.Text = "Ventana " + childFormNumber++;
-            childForm.Show();
-        }
-
-        private void OpenFile(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            openFileDialog.Filter = "Archivos de texto (*.txt)|*.txt|Todos los archivos (*.*)|*.*";
-            if (openFileDialog.ShowDialog(this) == DialogResult.OK)
-            {
-                string FileName = openFileDialog.FileName;
-            }
-        }
-
-        private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            saveFileDialog.Filter = "Archivos de texto (*.txt)|*.txt|Todos los archivos (*.*)|*.*";
-            if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
-            {
-                string FileName = saveFileDialog.FileName;
-            }
-        }
-
+        
         private void ExitToolsStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -63,16 +71,6 @@ namespace AlquilerCoches
 
         private void PasteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-        }
-
-        private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            toolStrip.Visible = toolBarToolStripMenuItem.Checked;
-        }
-
-        private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            statusStrip.Visible = statusBarToolStripMenuItem.Checked;
         }
 
         private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -101,6 +99,14 @@ namespace AlquilerCoches
             {
                 childForm.Close();
             }
+        }
+
+        private void gestionVehiculosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GestionVehiculos F2=new GestionVehiculos();
+            F2.MdiParent=this;
+            F2.Show();
+            F2.WindowState = FormWindowState.Maximized;
         }
     }
 }
