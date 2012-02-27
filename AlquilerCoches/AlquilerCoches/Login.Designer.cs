@@ -108,7 +108,7 @@
             this.TLabelError.AutoSize = true;
             this.TLabelError.BackColor = System.Drawing.SystemColors.Window;
             this.TLabelError.Enabled = false;
-            this.TLabelError.Location = new System.Drawing.Point(32, 101);
+            this.TLabelError.Location = new System.Drawing.Point(12, 99);
             this.TLabelError.Name = "TLabelError";
             this.TLabelError.Size = new System.Drawing.Size(261, 13);
             this.TLabelError.TabIndex = 6;

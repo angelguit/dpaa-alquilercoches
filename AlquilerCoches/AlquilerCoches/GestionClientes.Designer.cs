@@ -53,7 +53,7 @@
             this.TLabelDNI = new System.Windows.Forms.Label();
             this.TButtonFoto = new System.Windows.Forms.Button();
             this.TButtonAceptar = new System.Windows.Forms.Button();
-            this.TButtonBuscar = new System.Windows.Forms.Button();
+            this.TButtonCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.TGroupBoxCliente.SuspendLayout();
             this.SuspendLayout();
@@ -295,15 +295,14 @@
             this.TButtonAceptar.Text = "Aceptar";
             this.TButtonAceptar.UseVisualStyleBackColor = true;
             // 
-            // TButtonBuscar
+            // TButtonCancelar
             // 
-            this.TButtonBuscar.Location = new System.Drawing.Point(99, 353);
-            this.TButtonBuscar.Name = "TButtonBuscar";
-            this.TButtonBuscar.Size = new System.Drawing.Size(75, 23);
-            this.TButtonBuscar.TabIndex = 49;
-            this.TButtonBuscar.Text = "Buscar";
-            this.TButtonBuscar.UseVisualStyleBackColor = true;
-            this.TButtonBuscar.Click += new System.EventHandler(this.button1_Click_1);
+            this.TButtonCancelar.Location = new System.Drawing.Point(99, 353);
+            this.TButtonCancelar.Name = "TButtonCancelar";
+            this.TButtonCancelar.Size = new System.Drawing.Size(75, 23);
+            this.TButtonCancelar.TabIndex = 49;
+            this.TButtonCancelar.Text = "Cancelar";
+            this.TButtonCancelar.UseVisualStyleBackColor = true;
             // 
             // GestionClientes
             // 
@@ -312,7 +311,7 @@
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(718, 414);
-            this.Controls.Add(this.TButtonBuscar);
+            this.Controls.Add(this.TButtonCancelar);
             this.Controls.Add(this.TButtonAceptar);
             this.Controls.Add(this.TButtonFoto);
             this.Controls.Add(this.TGroupBoxCliente);
@@ -353,7 +352,7 @@
         private System.Windows.Forms.RadioButton TRadioButtonM;
         private System.Windows.Forms.RadioButton TRadioButtonH;
         private System.Windows.Forms.Button TButtonAceptar;
-        private System.Windows.Forms.Button TButtonBuscar;
+        private System.Windows.Forms.Button TButtonCancelar;
 
 
     }

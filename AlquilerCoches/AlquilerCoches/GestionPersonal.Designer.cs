@@ -28,181 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.TLabelDNI = new System.Windows.Forms.Label();
-            this.TLabelNombre = new System.Windows.Forms.Label();
-            this.TLabelApellidos = new System.Windows.Forms.Label();
-            this.TLabelTelefono1 = new System.Windows.Forms.Label();
-            this.TLabelCiudad = new System.Windows.Forms.Label();
-            this.TLabelProvincia = new System.Windows.Forms.Label();
-            this.TLabelPuestoAc = new System.Windows.Forms.Label();
-            this.TTextBoxDNI = new System.Windows.Forms.TextBox();
-            this.TTextBoxNombre = new System.Windows.Forms.TextBox();
-            this.TTextBoxApellidos = new System.Windows.Forms.TextBox();
-            this.TTextBoxTelefono = new System.Windows.Forms.TextBox();
-            this.TTextBoxCiudad = new System.Windows.Forms.TextBox();
-            this.TTextBoxProvincia = new System.Windows.Forms.TextBox();
-            this.TTextBoxPuestoAc = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.TLabelOtrosPuestos = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TButtonCancelar = new System.Windows.Forms.Button();
             this.TButtonFoto = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TButtonGuardarPersonal = new System.Windows.Forms.Button();
-            this.TLabelEmail = new System.Windows.Forms.Label();
+            this.TGroupBoxAlta = new System.Windows.Forms.GroupBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.TLabelDireccion = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TLabelEmail = new System.Windows.Forms.Label();
+            this.TLabelOtrosPuestos = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.TTextBoxPuestoAc = new System.Windows.Forms.TextBox();
+            this.TTextBoxProvincia = new System.Windows.Forms.TextBox();
+            this.TTextBoxCiudad = new System.Windows.Forms.TextBox();
+            this.TTextBoxTelefono = new System.Windows.Forms.TextBox();
+            this.TTextBoxApellidos = new System.Windows.Forms.TextBox();
+            this.TTextBoxNombre = new System.Windows.Forms.TextBox();
+            this.TTextBoxDNI = new System.Windows.Forms.TextBox();
+            this.TLabelPuestoAc = new System.Windows.Forms.Label();
+            this.TLabelProvincia = new System.Windows.Forms.Label();
+            this.TLabelCiudad = new System.Windows.Forms.Label();
+            this.TLabelTelefono1 = new System.Windows.Forms.Label();
+            this.TLabelApellidos = new System.Windows.Forms.Label();
+            this.TLabelNombre = new System.Windows.Forms.Label();
+            this.TLabelDNI = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.TGroupBoxAlta.SuspendLayout();
             this.SuspendLayout();
             // 
-            // TLabelDNI
+            // TButtonCancelar
             // 
-            this.TLabelDNI.AutoSize = true;
-            this.TLabelDNI.Location = new System.Drawing.Point(56, 37);
-            this.TLabelDNI.Name = "TLabelDNI";
-            this.TLabelDNI.Size = new System.Drawing.Size(26, 13);
-            this.TLabelDNI.TabIndex = 0;
-            this.TLabelDNI.Text = "DNI";
-            this.TLabelDNI.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // TLabelNombre
-            // 
-            this.TLabelNombre.AutoSize = true;
-            this.TLabelNombre.Location = new System.Drawing.Point(38, 60);
-            this.TLabelNombre.Name = "TLabelNombre";
-            this.TLabelNombre.Size = new System.Drawing.Size(44, 13);
-            this.TLabelNombre.TabIndex = 1;
-            this.TLabelNombre.Text = "Nombre";
-            this.TLabelNombre.Click += new System.EventHandler(this.label1_Click_1);
-            // 
-            // TLabelApellidos
-            // 
-            this.TLabelApellidos.AutoSize = true;
-            this.TLabelApellidos.Location = new System.Drawing.Point(33, 82);
-            this.TLabelApellidos.Name = "TLabelApellidos";
-            this.TLabelApellidos.Size = new System.Drawing.Size(49, 13);
-            this.TLabelApellidos.TabIndex = 2;
-            this.TLabelApellidos.Text = "Apellidos";
-            // 
-            // TLabelTelefono1
-            // 
-            this.TLabelTelefono1.AutoSize = true;
-            this.TLabelTelefono1.Location = new System.Drawing.Point(24, 104);
-            this.TLabelTelefono1.Name = "TLabelTelefono1";
-            this.TLabelTelefono1.Size = new System.Drawing.Size(58, 13);
-            this.TLabelTelefono1.TabIndex = 3;
-            this.TLabelTelefono1.Text = "Telefono 1";
-            this.TLabelTelefono1.Click += new System.EventHandler(this.TLabelTelefono1_Click);
-            // 
-            // TLabelCiudad
-            // 
-            this.TLabelCiudad.AutoSize = true;
-            this.TLabelCiudad.Location = new System.Drawing.Point(42, 170);
-            this.TLabelCiudad.Name = "TLabelCiudad";
-            this.TLabelCiudad.Size = new System.Drawing.Size(40, 13);
-            this.TLabelCiudad.TabIndex = 4;
-            this.TLabelCiudad.Text = "Ciudad";
-            // 
-            // TLabelProvincia
-            // 
-            this.TLabelProvincia.AutoSize = true;
-            this.TLabelProvincia.Location = new System.Drawing.Point(33, 192);
-            this.TLabelProvincia.Name = "TLabelProvincia";
-            this.TLabelProvincia.Size = new System.Drawing.Size(51, 13);
-            this.TLabelProvincia.TabIndex = 5;
-            this.TLabelProvincia.Text = "Provincia";
-            // 
-            // TLabelPuestoAc
-            // 
-            this.TLabelPuestoAc.AutoSize = true;
-            this.TLabelPuestoAc.Location = new System.Drawing.Point(9, 214);
-            this.TLabelPuestoAc.Name = "TLabelPuestoAc";
-            this.TLabelPuestoAc.Size = new System.Drawing.Size(73, 13);
-            this.TLabelPuestoAc.TabIndex = 6;
-            this.TLabelPuestoAc.Text = "Puesto Actual";
-            // 
-            // TTextBoxDNI
-            // 
-            this.TTextBoxDNI.Location = new System.Drawing.Point(100, 30);
-            this.TTextBoxDNI.Name = "TTextBoxDNI";
-            this.TTextBoxDNI.Size = new System.Drawing.Size(70, 20);
-            this.TTextBoxDNI.TabIndex = 8;
-            // 
-            // TTextBoxNombre
-            // 
-            this.TTextBoxNombre.Location = new System.Drawing.Point(100, 53);
-            this.TTextBoxNombre.Name = "TTextBoxNombre";
-            this.TTextBoxNombre.Size = new System.Drawing.Size(70, 20);
-            this.TTextBoxNombre.TabIndex = 9;
-            // 
-            // TTextBoxApellidos
-            // 
-            this.TTextBoxApellidos.Location = new System.Drawing.Point(100, 75);
-            this.TTextBoxApellidos.Name = "TTextBoxApellidos";
-            this.TTextBoxApellidos.Size = new System.Drawing.Size(108, 20);
-            this.TTextBoxApellidos.TabIndex = 10;
-            // 
-            // TTextBoxTelefono
-            // 
-            this.TTextBoxTelefono.Location = new System.Drawing.Point(100, 97);
-            this.TTextBoxTelefono.Name = "TTextBoxTelefono";
-            this.TTextBoxTelefono.Size = new System.Drawing.Size(108, 20);
-            this.TTextBoxTelefono.TabIndex = 11;
-            // 
-            // TTextBoxCiudad
-            // 
-            this.TTextBoxCiudad.Location = new System.Drawing.Point(100, 163);
-            this.TTextBoxCiudad.Name = "TTextBoxCiudad";
-            this.TTextBoxCiudad.Size = new System.Drawing.Size(108, 20);
-            this.TTextBoxCiudad.TabIndex = 12;
-            // 
-            // TTextBoxProvincia
-            // 
-            this.TTextBoxProvincia.Location = new System.Drawing.Point(100, 185);
-            this.TTextBoxProvincia.Name = "TTextBoxProvincia";
-            this.TTextBoxProvincia.Size = new System.Drawing.Size(108, 20);
-            this.TTextBoxProvincia.TabIndex = 13;
-            // 
-            // TTextBoxPuestoAc
-            // 
-            this.TTextBoxPuestoAc.Location = new System.Drawing.Point(100, 207);
-            this.TTextBoxPuestoAc.Name = "TTextBoxPuestoAc";
-            this.TTextBoxPuestoAc.Size = new System.Drawing.Size(108, 20);
-            this.TTextBoxPuestoAc.TabIndex = 14;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(120, 331);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(88, 25);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Salarios";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(100, 245);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(141, 63);
-            this.richTextBox1.TabIndex = 18;
-            this.richTextBox1.Text = "";
-            // 
-            // TLabelOtrosPuestos
-            // 
-            this.TLabelOtrosPuestos.AutoSize = true;
-            this.TLabelOtrosPuestos.Location = new System.Drawing.Point(9, 248);
-            this.TLabelOtrosPuestos.Name = "TLabelOtrosPuestos";
-            this.TLabelOtrosPuestos.Size = new System.Drawing.Size(73, 13);
-            this.TLabelOtrosPuestos.TabIndex = 19;
-            this.TLabelOtrosPuestos.Text = "Otros Puestos";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(100, 120);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(108, 20);
-            this.textBox1.TabIndex = 21;
+            this.TButtonCancelar.Location = new System.Drawing.Point(120, 331);
+            this.TButtonCancelar.Name = "TButtonCancelar";
+            this.TButtonCancelar.Size = new System.Drawing.Size(88, 25);
+            this.TButtonCancelar.TabIndex = 16;
+            this.TButtonCancelar.Text = "Cancelar";
+            this.TButtonCancelar.UseVisualStyleBackColor = true;
             // 
             // TButtonFoto
             // 
@@ -226,46 +88,203 @@
             // 
             // TButtonGuardarPersonal
             // 
-            this.TButtonGuardarPersonal.Location = new System.Drawing.Point(241, 332);
+            this.TButtonGuardarPersonal.Location = new System.Drawing.Point(27, 331);
             this.TButtonGuardarPersonal.Name = "TButtonGuardarPersonal";
             this.TButtonGuardarPersonal.Size = new System.Drawing.Size(77, 24);
             this.TButtonGuardarPersonal.TabIndex = 24;
             this.TButtonGuardarPersonal.Text = "Guardar";
             this.TButtonGuardarPersonal.UseVisualStyleBackColor = true;
             // 
-            // TLabelEmail
+            // TGroupBoxAlta
             // 
-            this.TLabelEmail.AutoSize = true;
-            this.TLabelEmail.Location = new System.Drawing.Point(50, 127);
-            this.TLabelEmail.Name = "TLabelEmail";
-            this.TLabelEmail.Size = new System.Drawing.Size(32, 13);
-            this.TLabelEmail.TabIndex = 20;
-            this.TLabelEmail.Text = "Email";
+            this.TGroupBoxAlta.BackColor = System.Drawing.Color.Transparent;
+            this.TGroupBoxAlta.Controls.Add(this.textBox2);
+            this.TGroupBoxAlta.Controls.Add(this.TLabelDireccion);
+            this.TGroupBoxAlta.Controls.Add(this.textBox1);
+            this.TGroupBoxAlta.Controls.Add(this.TLabelEmail);
+            this.TGroupBoxAlta.Controls.Add(this.TLabelOtrosPuestos);
+            this.TGroupBoxAlta.Controls.Add(this.richTextBox1);
+            this.TGroupBoxAlta.Controls.Add(this.TTextBoxPuestoAc);
+            this.TGroupBoxAlta.Controls.Add(this.TTextBoxProvincia);
+            this.TGroupBoxAlta.Controls.Add(this.TTextBoxCiudad);
+            this.TGroupBoxAlta.Controls.Add(this.TTextBoxTelefono);
+            this.TGroupBoxAlta.Controls.Add(this.TTextBoxApellidos);
+            this.TGroupBoxAlta.Controls.Add(this.TTextBoxNombre);
+            this.TGroupBoxAlta.Controls.Add(this.TTextBoxDNI);
+            this.TGroupBoxAlta.Controls.Add(this.TLabelPuestoAc);
+            this.TGroupBoxAlta.Controls.Add(this.TLabelProvincia);
+            this.TGroupBoxAlta.Controls.Add(this.TLabelCiudad);
+            this.TGroupBoxAlta.Controls.Add(this.TLabelTelefono1);
+            this.TGroupBoxAlta.Controls.Add(this.TLabelApellidos);
+            this.TGroupBoxAlta.Controls.Add(this.TLabelNombre);
+            this.TGroupBoxAlta.Controls.Add(this.TLabelDNI);
+            this.TGroupBoxAlta.Location = new System.Drawing.Point(12, 12);
+            this.TGroupBoxAlta.Name = "TGroupBoxAlta";
+            this.TGroupBoxAlta.Size = new System.Drawing.Size(318, 313);
+            this.TGroupBoxAlta.TabIndex = 27;
+            this.TGroupBoxAlta.TabStop = false;
+            this.TGroupBoxAlta.Text = "Alta personal";
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(100, 141);
+            this.textBox2.Location = new System.Drawing.Point(108, 124);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(108, 20);
-            this.textBox2.TabIndex = 26;
+            this.textBox2.TabIndex = 46;
             // 
             // TLabelDireccion
             // 
             this.TLabelDireccion.AutoSize = true;
-            this.TLabelDireccion.Location = new System.Drawing.Point(33, 148);
+            this.TLabelDireccion.Location = new System.Drawing.Point(41, 131);
             this.TLabelDireccion.Name = "TLabelDireccion";
             this.TLabelDireccion.Size = new System.Drawing.Size(52, 13);
-            this.TLabelDireccion.TabIndex = 25;
+            this.TLabelDireccion.TabIndex = 45;
             this.TLabelDireccion.Text = "Direccion";
             // 
-            // button1
+            // textBox1
             // 
-            this.button1.Location = new System.Drawing.Point(14, 331);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(84, 25);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Horarios";
-            this.button1.UseVisualStyleBackColor = true;
+            this.textBox1.Location = new System.Drawing.Point(108, 103);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(108, 20);
+            this.textBox1.TabIndex = 44;
+            // 
+            // TLabelEmail
+            // 
+            this.TLabelEmail.AutoSize = true;
+            this.TLabelEmail.Location = new System.Drawing.Point(58, 110);
+            this.TLabelEmail.Name = "TLabelEmail";
+            this.TLabelEmail.Size = new System.Drawing.Size(32, 13);
+            this.TLabelEmail.TabIndex = 43;
+            this.TLabelEmail.Text = "Email";
+            // 
+            // TLabelOtrosPuestos
+            // 
+            this.TLabelOtrosPuestos.AutoSize = true;
+            this.TLabelOtrosPuestos.Location = new System.Drawing.Point(17, 231);
+            this.TLabelOtrosPuestos.Name = "TLabelOtrosPuestos";
+            this.TLabelOtrosPuestos.Size = new System.Drawing.Size(73, 13);
+            this.TLabelOtrosPuestos.TabIndex = 42;
+            this.TLabelOtrosPuestos.Text = "Otros Puestos";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(108, 228);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(141, 63);
+            this.richTextBox1.TabIndex = 41;
+            this.richTextBox1.Text = "";
+            // 
+            // TTextBoxPuestoAc
+            // 
+            this.TTextBoxPuestoAc.Location = new System.Drawing.Point(108, 190);
+            this.TTextBoxPuestoAc.Name = "TTextBoxPuestoAc";
+            this.TTextBoxPuestoAc.Size = new System.Drawing.Size(108, 20);
+            this.TTextBoxPuestoAc.TabIndex = 40;
+            // 
+            // TTextBoxProvincia
+            // 
+            this.TTextBoxProvincia.Location = new System.Drawing.Point(108, 168);
+            this.TTextBoxProvincia.Name = "TTextBoxProvincia";
+            this.TTextBoxProvincia.Size = new System.Drawing.Size(108, 20);
+            this.TTextBoxProvincia.TabIndex = 39;
+            // 
+            // TTextBoxCiudad
+            // 
+            this.TTextBoxCiudad.Location = new System.Drawing.Point(108, 146);
+            this.TTextBoxCiudad.Name = "TTextBoxCiudad";
+            this.TTextBoxCiudad.Size = new System.Drawing.Size(108, 20);
+            this.TTextBoxCiudad.TabIndex = 38;
+            // 
+            // TTextBoxTelefono
+            // 
+            this.TTextBoxTelefono.Location = new System.Drawing.Point(108, 80);
+            this.TTextBoxTelefono.Name = "TTextBoxTelefono";
+            this.TTextBoxTelefono.Size = new System.Drawing.Size(108, 20);
+            this.TTextBoxTelefono.TabIndex = 37;
+            // 
+            // TTextBoxApellidos
+            // 
+            this.TTextBoxApellidos.Location = new System.Drawing.Point(108, 58);
+            this.TTextBoxApellidos.Name = "TTextBoxApellidos";
+            this.TTextBoxApellidos.Size = new System.Drawing.Size(108, 20);
+            this.TTextBoxApellidos.TabIndex = 36;
+            // 
+            // TTextBoxNombre
+            // 
+            this.TTextBoxNombre.Location = new System.Drawing.Point(108, 36);
+            this.TTextBoxNombre.Name = "TTextBoxNombre";
+            this.TTextBoxNombre.Size = new System.Drawing.Size(70, 20);
+            this.TTextBoxNombre.TabIndex = 35;
+            // 
+            // TTextBoxDNI
+            // 
+            this.TTextBoxDNI.Location = new System.Drawing.Point(108, 13);
+            this.TTextBoxDNI.Name = "TTextBoxDNI";
+            this.TTextBoxDNI.Size = new System.Drawing.Size(70, 20);
+            this.TTextBoxDNI.TabIndex = 34;
+            // 
+            // TLabelPuestoAc
+            // 
+            this.TLabelPuestoAc.AutoSize = true;
+            this.TLabelPuestoAc.Location = new System.Drawing.Point(17, 197);
+            this.TLabelPuestoAc.Name = "TLabelPuestoAc";
+            this.TLabelPuestoAc.Size = new System.Drawing.Size(73, 13);
+            this.TLabelPuestoAc.TabIndex = 33;
+            this.TLabelPuestoAc.Text = "Puesto Actual";
+            // 
+            // TLabelProvincia
+            // 
+            this.TLabelProvincia.AutoSize = true;
+            this.TLabelProvincia.Location = new System.Drawing.Point(41, 175);
+            this.TLabelProvincia.Name = "TLabelProvincia";
+            this.TLabelProvincia.Size = new System.Drawing.Size(51, 13);
+            this.TLabelProvincia.TabIndex = 32;
+            this.TLabelProvincia.Text = "Provincia";
+            // 
+            // TLabelCiudad
+            // 
+            this.TLabelCiudad.AutoSize = true;
+            this.TLabelCiudad.Location = new System.Drawing.Point(50, 153);
+            this.TLabelCiudad.Name = "TLabelCiudad";
+            this.TLabelCiudad.Size = new System.Drawing.Size(40, 13);
+            this.TLabelCiudad.TabIndex = 31;
+            this.TLabelCiudad.Text = "Ciudad";
+            // 
+            // TLabelTelefono1
+            // 
+            this.TLabelTelefono1.AutoSize = true;
+            this.TLabelTelefono1.Location = new System.Drawing.Point(32, 87);
+            this.TLabelTelefono1.Name = "TLabelTelefono1";
+            this.TLabelTelefono1.Size = new System.Drawing.Size(58, 13);
+            this.TLabelTelefono1.TabIndex = 30;
+            this.TLabelTelefono1.Text = "Telefono 1";
+            // 
+            // TLabelApellidos
+            // 
+            this.TLabelApellidos.AutoSize = true;
+            this.TLabelApellidos.Location = new System.Drawing.Point(41, 65);
+            this.TLabelApellidos.Name = "TLabelApellidos";
+            this.TLabelApellidos.Size = new System.Drawing.Size(49, 13);
+            this.TLabelApellidos.TabIndex = 29;
+            this.TLabelApellidos.Text = "Apellidos";
+            // 
+            // TLabelNombre
+            // 
+            this.TLabelNombre.AutoSize = true;
+            this.TLabelNombre.Location = new System.Drawing.Point(46, 43);
+            this.TLabelNombre.Name = "TLabelNombre";
+            this.TLabelNombre.Size = new System.Drawing.Size(44, 13);
+            this.TLabelNombre.TabIndex = 28;
+            this.TLabelNombre.Text = "Nombre";
+            // 
+            // TLabelDNI
+            // 
+            this.TLabelDNI.AutoSize = true;
+            this.TLabelDNI.Location = new System.Drawing.Point(64, 20);
+            this.TLabelDNI.Name = "TLabelDNI";
+            this.TLabelDNI.Size = new System.Drawing.Size(26, 13);
+            this.TLabelDNI.TabIndex = 27;
+            this.TLabelDNI.Text = "DNI";
             // 
             // GestionPersonal
             // 
@@ -274,66 +293,47 @@
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(610, 368);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.TLabelDireccion);
+            this.Controls.Add(this.TGroupBoxAlta);
             this.Controls.Add(this.TButtonGuardarPersonal);
             this.Controls.Add(this.TButtonFoto);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.TLabelEmail);
-            this.Controls.Add(this.TLabelOtrosPuestos);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.TTextBoxPuestoAc);
-            this.Controls.Add(this.TTextBoxProvincia);
-            this.Controls.Add(this.TTextBoxCiudad);
-            this.Controls.Add(this.TTextBoxTelefono);
-            this.Controls.Add(this.TTextBoxApellidos);
-            this.Controls.Add(this.TTextBoxNombre);
-            this.Controls.Add(this.TTextBoxDNI);
+            this.Controls.Add(this.TButtonCancelar);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.TLabelPuestoAc);
-            this.Controls.Add(this.TLabelProvincia);
-            this.Controls.Add(this.TLabelCiudad);
-            this.Controls.Add(this.TLabelTelefono1);
-            this.Controls.Add(this.TLabelApellidos);
-            this.Controls.Add(this.TLabelNombre);
-            this.Controls.Add(this.TLabelDNI);
             this.Name = "GestionPersonal";
             this.Text = "GestionPersonal";
             this.Load += new System.EventHandler(this.GestionPersonal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.TGroupBoxAlta.ResumeLayout(false);
+            this.TGroupBoxAlta.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label TLabelDNI;
-        private System.Windows.Forms.Label TLabelNombre;
-        private System.Windows.Forms.Label TLabelApellidos;
-        private System.Windows.Forms.Label TLabelTelefono1;
-        private System.Windows.Forms.Label TLabelCiudad;
-        private System.Windows.Forms.Label TLabelProvincia;
-        private System.Windows.Forms.Label TLabelPuestoAc;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox TTextBoxDNI;
-        private System.Windows.Forms.TextBox TTextBoxNombre;
-        private System.Windows.Forms.TextBox TTextBoxApellidos;
-        private System.Windows.Forms.TextBox TTextBoxTelefono;
-        private System.Windows.Forms.TextBox TTextBoxCiudad;
-        private System.Windows.Forms.TextBox TTextBoxProvincia;
-        private System.Windows.Forms.TextBox TTextBoxPuestoAc;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Label TLabelOtrosPuestos;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button TButtonCancelar;
         private System.Windows.Forms.Button TButtonFoto;
         private System.Windows.Forms.Button TButtonGuardarPersonal;
-        private System.Windows.Forms.Label TLabelEmail;
+        private System.Windows.Forms.GroupBox TGroupBoxAlta;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label TLabelDireccion;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label TLabelEmail;
+        private System.Windows.Forms.Label TLabelOtrosPuestos;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.TextBox TTextBoxPuestoAc;
+        private System.Windows.Forms.TextBox TTextBoxProvincia;
+        private System.Windows.Forms.TextBox TTextBoxCiudad;
+        private System.Windows.Forms.TextBox TTextBoxTelefono;
+        private System.Windows.Forms.TextBox TTextBoxApellidos;
+        private System.Windows.Forms.TextBox TTextBoxNombre;
+        private System.Windows.Forms.TextBox TTextBoxDNI;
+        private System.Windows.Forms.Label TLabelPuestoAc;
+        private System.Windows.Forms.Label TLabelProvincia;
+        private System.Windows.Forms.Label TLabelCiudad;
+        private System.Windows.Forms.Label TLabelTelefono1;
+        private System.Windows.Forms.Label TLabelApellidos;
+        private System.Windows.Forms.Label TLabelNombre;
+        private System.Windows.Forms.Label TLabelDNI;
     }
 }

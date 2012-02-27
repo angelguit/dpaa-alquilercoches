@@ -97,6 +97,7 @@
             // TLabelPuestoAc
             // 
             this.TLabelPuestoAc.AutoSize = true;
+            this.TLabelPuestoAc.BackColor = System.Drawing.Color.Transparent;
             this.TLabelPuestoAc.Location = new System.Drawing.Point(212, 328);
             this.TLabelPuestoAc.Name = "TLabelPuestoAc";
             this.TLabelPuestoAc.Size = new System.Drawing.Size(59, 13);
@@ -106,6 +107,7 @@
             // TLabelApellidos
             // 
             this.TLabelApellidos.AutoSize = true;
+            this.TLabelApellidos.BackColor = System.Drawing.Color.Transparent;
             this.TLabelApellidos.Location = new System.Drawing.Point(222, 289);
             this.TLabelApellidos.Name = "TLabelApellidos";
             this.TLabelApellidos.Size = new System.Drawing.Size(49, 13);
@@ -115,6 +117,7 @@
             // TLabelNombre
             // 
             this.TLabelNombre.AutoSize = true;
+            this.TLabelNombre.BackColor = System.Drawing.Color.Transparent;
             this.TLabelNombre.Location = new System.Drawing.Point(33, 329);
             this.TLabelNombre.Name = "TLabelNombre";
             this.TLabelNombre.Size = new System.Drawing.Size(44, 13);
@@ -124,7 +127,7 @@
             // TLabelDNI
             // 
             this.TLabelDNI.AutoSize = true;
-            this.TLabelDNI.BackColor = System.Drawing.Color.Gainsboro;
+            this.TLabelDNI.BackColor = System.Drawing.Color.Transparent;
             this.TLabelDNI.Location = new System.Drawing.Point(51, 290);
             this.TLabelDNI.Name = "TLabelDNI";
             this.TLabelDNI.Size = new System.Drawing.Size(26, 13);
@@ -133,7 +136,7 @@
             // 
             // TButtonAlta
             // 
-            this.TButtonAlta.Location = new System.Drawing.Point(526, 390);
+            this.TButtonAlta.Location = new System.Drawing.Point(255, 390);
             this.TButtonAlta.Name = "TButtonAlta";
             this.TButtonAlta.Size = new System.Drawing.Size(75, 23);
             this.TButtonAlta.TabIndex = 13;
