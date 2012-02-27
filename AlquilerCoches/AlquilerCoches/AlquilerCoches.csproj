@@ -54,6 +54,12 @@
     <Compile Include="BuscarPedidos.Designer.cs">
       <DependentUpon>BuscarPedidos.cs</DependentUpon>
     </Compile>
+    <Compile Include="GestionPersonal0.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionPersonal0.Designer.cs">
+      <DependentUpon>GestionPersonal0.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestionClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GestionPersonal0.resx">
+      <DependentUpon>GestionPersonal0.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GestionClientes.resx">
       <DependentUpon>GestionClientes.cs</DependentUpon>
     </EmbeddedResource>
