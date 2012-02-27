@@ -23,10 +23,10 @@ namespace AlquilerCoches
         {
             errorProvider1.SetError(TLabelError, "");
             TLabelError.Visible= false;
-            if (TTextBoxUsuario.Text.Equals("root") && TTextBoxPassword.Text.Equals("root"))
+            if (true)//(TTextBoxUsuario.Text.Equals("root") && TTextBoxPassword.Text.Equals("root"))
             {
                 this.Hide();
-                (new GestionVehiculos()).ShowDialog();
+                (new GestionPersonalBuscar()).ShowDialog();
                 TTextBoxUsuario.Text = "";
                 TTextBoxPassword.Text = "";
                 NIntento = 0;
