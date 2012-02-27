@@ -15,5 +15,17 @@ namespace AlquilerCoches
         {
             InitializeComponent();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void TButtonBuscar_Click(object sender, EventArgs e)
+        {
+            //if( hay resultado)
+            //habilitamos boton Eliminar
+            TButtonEliminar.Visible = true;
+        }
     }
 }
