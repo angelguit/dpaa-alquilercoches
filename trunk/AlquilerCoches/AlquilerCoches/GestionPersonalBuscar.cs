@@ -15,5 +15,11 @@ namespace AlquilerCoches
         {
             InitializeComponent();
         }
+
+        private void TButtonBuscar_Click(object sender, EventArgs e)
+        {
+            //if(hay resultados) mostrar boton eliminar
+            TButtonEliminar.Visible = true;
+        }
     }
 }

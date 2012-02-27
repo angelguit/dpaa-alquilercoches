@@ -64,6 +64,7 @@
             this.TButtonBuscar.TabIndex = 22;
             this.TButtonBuscar.Text = "Buscar";
             this.TButtonBuscar.UseVisualStyleBackColor = true;
+            this.TButtonBuscar.Click += new System.EventHandler(this.TButtonBuscar_Click);
             // 
             // TTextBoxPuestoAc
             // 
