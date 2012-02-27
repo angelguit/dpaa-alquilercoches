@@ -29,6 +29,7 @@ namespace AlquilerCoches
                 MDIPral F2 = new MDIPral(new MDIPral.User("root", "0", "admin"));
                 F2.WindowState = FormWindowState.Maximized;
                 F2.ShowDialog();
+                Application.Exit();
                 TTextBoxUsuario.Text = "";
                 TTextBoxPassword.Text = "";
                 NIntento = 0;
