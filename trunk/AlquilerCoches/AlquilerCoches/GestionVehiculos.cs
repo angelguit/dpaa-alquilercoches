@@ -11,9 +11,18 @@ namespace AlquilerCoches
 {
     public partial class GestionVehiculos : Form
     {
-        public GestionVehiculos()
+        public GestionVehiculos(string Action)
         {
             InitializeComponent();
+            switch (Action)
+            {
+                case "Buscar":
+                    TButtonAnyadir.Visible = false;
+                    TButtonEditar.Visible  =false;
+                    break;       
+                default:
+                    break;
+            }
         }
 
         private void TListViewMarca_SelectedIndexChanged(object sender, EventArgs e)

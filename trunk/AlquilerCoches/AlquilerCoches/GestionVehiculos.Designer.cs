@@ -180,7 +180,7 @@
             // TButtonCancelar
             // 
             this.TButtonCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.TButtonCancelar.Location = new System.Drawing.Point(611, 358);
+            this.TButtonCancelar.Location = new System.Drawing.Point(395, 358);
             this.TButtonCancelar.Name = "TButtonCancelar";
             this.TButtonCancelar.Size = new System.Drawing.Size(75, 23);
             this.TButtonCancelar.TabIndex = 26;
@@ -202,7 +202,7 @@
             // TButtonOK
             // 
             this.TButtonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.TButtonOK.Location = new System.Drawing.Point(530, 358);
+            this.TButtonOK.Location = new System.Drawing.Point(314, 358);
             this.TButtonOK.Name = "TButtonOK";
             this.TButtonOK.Size = new System.Drawing.Size(75, 23);
             this.TButtonOK.TabIndex = 25;
@@ -444,6 +444,8 @@
             this.Controls.Add(this.TLabelModelos);
             this.Controls.Add(this.TLabelMarcas);
             this.Controls.Add(this.TGroupBoxDatosVehiculo);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "GestionVehiculos";
             this.Text = "GestionVehiculos";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GestionVehiculos_FormClosing);

@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.gestionVehiculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.darAltaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -41,9 +44,10 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.gestionVehiculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestionVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.darAltaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.darAltaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.buscarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.borrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -59,6 +63,31 @@
             this.menuStrip.Size = new System.Drawing.Size(632, 24);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
+            // 
+            // gestionVehiculosToolStripMenuItem
+            // 
+            this.gestionVehiculosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.darAltaToolStripMenuItem1,
+            this.buscarToolStripMenuItem,
+            this.editarToolStripMenuItem,
+            this.borrarToolStripMenuItem});
+            this.gestionVehiculosToolStripMenuItem.Name = "gestionVehiculosToolStripMenuItem";
+            this.gestionVehiculosToolStripMenuItem.Size = new System.Drawing.Size(113, 20);
+            this.gestionVehiculosToolStripMenuItem.Text = "Gestion Vehiculos";
+            // 
+            // gestionVentasToolStripMenuItem
+            // 
+            this.gestionVentasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.darAltaToolStripMenuItem});
+            this.gestionVentasToolStripMenuItem.Name = "gestionVentasToolStripMenuItem";
+            this.gestionVentasToolStripMenuItem.Size = new System.Drawing.Size(107, 20);
+            this.gestionVentasToolStripMenuItem.Text = "Gestion Personal";
+            // 
+            // darAltaToolStripMenuItem
+            // 
+            this.darAltaToolStripMenuItem.Name = "darAltaToolStripMenuItem";
+            this.darAltaToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.darAltaToolStripMenuItem.Text = "DarAlta";
             // 
             // toolStrip
             // 
@@ -132,26 +161,30 @@
             this.toolStripStatusLabel2.Size = new System.Drawing.Size(118, 17);
             this.toolStripStatusLabel2.Text = "toolStripStatusLabel2";
             // 
-            // gestionVehiculosToolStripMenuItem
+            // darAltaToolStripMenuItem1
             // 
-            this.gestionVehiculosToolStripMenuItem.Name = "gestionVehiculosToolStripMenuItem";
-            this.gestionVehiculosToolStripMenuItem.Size = new System.Drawing.Size(113, 20);
-            this.gestionVehiculosToolStripMenuItem.Text = "Gestion Vehiculos";
-            this.gestionVehiculosToolStripMenuItem.Click += new System.EventHandler(this.gestionVehiculosToolStripMenuItem_Click);
+            this.darAltaToolStripMenuItem1.Name = "darAltaToolStripMenuItem1";
+            this.darAltaToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.darAltaToolStripMenuItem1.Text = "Dar Alta";
             // 
-            // gestionVentasToolStripMenuItem
+            // buscarToolStripMenuItem
             // 
-            this.gestionVentasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.darAltaToolStripMenuItem});
-            this.gestionVentasToolStripMenuItem.Name = "gestionVentasToolStripMenuItem";
-            this.gestionVentasToolStripMenuItem.Size = new System.Drawing.Size(107, 20);
-            this.gestionVentasToolStripMenuItem.Text = "Gestion Personal";
+            this.buscarToolStripMenuItem.Name = "buscarToolStripMenuItem";
+            this.buscarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.buscarToolStripMenuItem.Text = "Buscar";
+            this.buscarToolStripMenuItem.Click += new System.EventHandler(this.buscarToolStripMenuItem_Click);
             // 
-            // darAltaToolStripMenuItem
+            // editarToolStripMenuItem
             // 
-            this.darAltaToolStripMenuItem.Name = "darAltaToolStripMenuItem";
-            this.darAltaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.darAltaToolStripMenuItem.Text = "DarAlta";
+            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.editarToolStripMenuItem.Text = "Editar";
+            // 
+            // borrarToolStripMenuItem
+            // 
+            this.borrarToolStripMenuItem.Name = "borrarToolStripMenuItem";
+            this.borrarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.borrarToolStripMenuItem.Text = "Borrar";
             // 
             // MDIPral
             // 
@@ -164,7 +197,8 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
             this.Name = "MDIPral";
-            this.Text = "7";
+            this.Text = "RAC - Rent a Car";
+            this.Load += new System.EventHandler(this.MDIPral_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.toolStrip.ResumeLayout(false);
@@ -193,6 +227,10 @@
         private System.Windows.Forms.ToolStripMenuItem gestionVehiculosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionVentasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem darAltaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem darAltaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem buscarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem borrarToolStripMenuItem;
     }
 }
 
