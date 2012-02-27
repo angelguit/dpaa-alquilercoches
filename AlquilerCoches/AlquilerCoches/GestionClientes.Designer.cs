@@ -62,7 +62,7 @@
             // 
             this.pictureBox1.BackgroundImage = global::AlquilerCoches.Properties.Resources.Desconocido;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(444, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(591, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(89, 110);
             this.pictureBox1.TabIndex = 45;
@@ -70,7 +70,7 @@
             // 
             // TGroupBoxCliente
             // 
-            this.TGroupBoxCliente.BackColor = System.Drawing.SystemColors.Control;
+            this.TGroupBoxCliente.BackColor = System.Drawing.SystemColors.ControlLight;
             this.TGroupBoxCliente.Controls.Add(this.TLabelVehiculosAlquiler);
             this.TGroupBoxCliente.Controls.Add(this.listBoxCoches);
             this.TGroupBoxCliente.Controls.Add(this.TLabelSexo);
@@ -94,7 +94,7 @@
             this.TGroupBoxCliente.Controls.Add(this.TLabelDNI);
             this.TGroupBoxCliente.Location = new System.Drawing.Point(12, 12);
             this.TGroupBoxCliente.Name = "TGroupBoxCliente";
-            this.TGroupBoxCliente.Size = new System.Drawing.Size(341, 390);
+            this.TGroupBoxCliente.Size = new System.Drawing.Size(524, 297);
             this.TGroupBoxCliente.TabIndex = 46;
             this.TGroupBoxCliente.TabStop = false;
             this.TGroupBoxCliente.Text = "Datos Cliente";
@@ -102,7 +102,7 @@
             // TLabelVehiculosAlquiler
             // 
             this.TLabelVehiculosAlquiler.AutoSize = true;
-            this.TLabelVehiculosAlquiler.Location = new System.Drawing.Point(11, 263);
+            this.TLabelVehiculosAlquiler.Location = new System.Drawing.Point(230, 50);
             this.TLabelVehiculosAlquiler.Name = "TLabelVehiculosAlquiler";
             this.TLabelVehiculosAlquiler.Size = new System.Drawing.Size(104, 13);
             this.TLabelVehiculosAlquiler.TabIndex = 64;
@@ -112,7 +112,7 @@
             // listBoxCoches
             // 
             this.listBoxCoches.FormattingEnabled = true;
-            this.listBoxCoches.Location = new System.Drawing.Point(136, 263);
+            this.listBoxCoches.Location = new System.Drawing.Point(340, 47);
             this.listBoxCoches.Name = "listBoxCoches";
             this.listBoxCoches.Size = new System.Drawing.Size(158, 121);
             this.listBoxCoches.TabIndex = 49;
@@ -120,7 +120,7 @@
             // TLabelSexo
             // 
             this.TLabelSexo.AutoSize = true;
-            this.TLabelSexo.Location = new System.Drawing.Point(37, 228);
+            this.TLabelSexo.Location = new System.Drawing.Point(37, 242);
             this.TLabelSexo.Name = "TLabelSexo";
             this.TLabelSexo.Size = new System.Drawing.Size(31, 13);
             this.TLabelSexo.TabIndex = 63;
@@ -129,7 +129,7 @@
             // TRadioButtonM
             // 
             this.TRadioButtonM.AutoSize = true;
-            this.TRadioButtonM.Location = new System.Drawing.Point(136, 224);
+            this.TRadioButtonM.Location = new System.Drawing.Point(136, 238);
             this.TRadioButtonM.Name = "TRadioButtonM";
             this.TRadioButtonM.Size = new System.Drawing.Size(34, 17);
             this.TRadioButtonM.TabIndex = 62;
@@ -140,7 +140,7 @@
             // TRadioButtonH
             // 
             this.TRadioButtonH.AutoSize = true;
-            this.TRadioButtonH.Location = new System.Drawing.Point(87, 224);
+            this.TRadioButtonH.Location = new System.Drawing.Point(87, 238);
             this.TRadioButtonH.Name = "TRadioButtonH";
             this.TRadioButtonH.Size = new System.Drawing.Size(33, 17);
             this.TRadioButtonH.TabIndex = 61;
@@ -150,7 +150,7 @@
             // 
             // TTextBoxDireccion
             // 
-            this.TTextBoxDireccion.Location = new System.Drawing.Point(87, 144);
+            this.TTextBoxDireccion.Location = new System.Drawing.Point(87, 158);
             this.TTextBoxDireccion.Name = "TTextBoxDireccion";
             this.TTextBoxDireccion.Size = new System.Drawing.Size(108, 20);
             this.TTextBoxDireccion.TabIndex = 60;
@@ -158,7 +158,7 @@
             // TLabelDireccion
             // 
             this.TLabelDireccion.AutoSize = true;
-            this.TLabelDireccion.Location = new System.Drawing.Point(20, 151);
+            this.TLabelDireccion.Location = new System.Drawing.Point(20, 165);
             this.TLabelDireccion.Name = "TLabelDireccion";
             this.TLabelDireccion.Size = new System.Drawing.Size(52, 13);
             this.TLabelDireccion.TabIndex = 59;
@@ -166,7 +166,7 @@
             // 
             // TTextBoxEmail
             // 
-            this.TTextBoxEmail.Location = new System.Drawing.Point(87, 123);
+            this.TTextBoxEmail.Location = new System.Drawing.Point(87, 137);
             this.TTextBoxEmail.Name = "TTextBoxEmail";
             this.TTextBoxEmail.Size = new System.Drawing.Size(108, 20);
             this.TTextBoxEmail.TabIndex = 58;
@@ -174,7 +174,7 @@
             // TLabelEmail
             // 
             this.TLabelEmail.AutoSize = true;
-            this.TLabelEmail.Location = new System.Drawing.Point(37, 130);
+            this.TLabelEmail.Location = new System.Drawing.Point(37, 144);
             this.TLabelEmail.Name = "TLabelEmail";
             this.TLabelEmail.Size = new System.Drawing.Size(32, 13);
             this.TLabelEmail.TabIndex = 57;
@@ -182,42 +182,42 @@
             // 
             // TTextBoxProvincia
             // 
-            this.TTextBoxProvincia.Location = new System.Drawing.Point(87, 188);
+            this.TTextBoxProvincia.Location = new System.Drawing.Point(87, 202);
             this.TTextBoxProvincia.Name = "TTextBoxProvincia";
             this.TTextBoxProvincia.Size = new System.Drawing.Size(108, 20);
             this.TTextBoxProvincia.TabIndex = 56;
             // 
             // TTextBoxCiudad
             // 
-            this.TTextBoxCiudad.Location = new System.Drawing.Point(87, 166);
+            this.TTextBoxCiudad.Location = new System.Drawing.Point(87, 180);
             this.TTextBoxCiudad.Name = "TTextBoxCiudad";
             this.TTextBoxCiudad.Size = new System.Drawing.Size(108, 20);
             this.TTextBoxCiudad.TabIndex = 55;
             // 
             // TTextBoxTelefono
             // 
-            this.TTextBoxTelefono.Location = new System.Drawing.Point(87, 100);
+            this.TTextBoxTelefono.Location = new System.Drawing.Point(87, 114);
             this.TTextBoxTelefono.Name = "TTextBoxTelefono";
             this.TTextBoxTelefono.Size = new System.Drawing.Size(108, 20);
             this.TTextBoxTelefono.TabIndex = 54;
             // 
             // TTextBoxApellidos
             // 
-            this.TTextBoxApellidos.Location = new System.Drawing.Point(87, 78);
+            this.TTextBoxApellidos.Location = new System.Drawing.Point(87, 92);
             this.TTextBoxApellidos.Name = "TTextBoxApellidos";
             this.TTextBoxApellidos.Size = new System.Drawing.Size(108, 20);
             this.TTextBoxApellidos.TabIndex = 53;
             // 
             // TTextBoxNombre
             // 
-            this.TTextBoxNombre.Location = new System.Drawing.Point(87, 56);
+            this.TTextBoxNombre.Location = new System.Drawing.Point(87, 70);
             this.TTextBoxNombre.Name = "TTextBoxNombre";
             this.TTextBoxNombre.Size = new System.Drawing.Size(70, 20);
             this.TTextBoxNombre.TabIndex = 52;
             // 
             // TTextBoxDNI
             // 
-            this.TTextBoxDNI.Location = new System.Drawing.Point(87, 33);
+            this.TTextBoxDNI.Location = new System.Drawing.Point(87, 47);
             this.TTextBoxDNI.Name = "TTextBoxDNI";
             this.TTextBoxDNI.Size = new System.Drawing.Size(70, 20);
             this.TTextBoxDNI.TabIndex = 51;
@@ -225,7 +225,7 @@
             // TLabelProvincia
             // 
             this.TLabelProvincia.AutoSize = true;
-            this.TLabelProvincia.Location = new System.Drawing.Point(20, 195);
+            this.TLabelProvincia.Location = new System.Drawing.Point(20, 209);
             this.TLabelProvincia.Name = "TLabelProvincia";
             this.TLabelProvincia.Size = new System.Drawing.Size(51, 13);
             this.TLabelProvincia.TabIndex = 50;
@@ -234,7 +234,7 @@
             // TLabelCiudad
             // 
             this.TLabelCiudad.AutoSize = true;
-            this.TLabelCiudad.Location = new System.Drawing.Point(29, 173);
+            this.TLabelCiudad.Location = new System.Drawing.Point(29, 187);
             this.TLabelCiudad.Name = "TLabelCiudad";
             this.TLabelCiudad.Size = new System.Drawing.Size(40, 13);
             this.TLabelCiudad.TabIndex = 49;
@@ -243,7 +243,7 @@
             // TLabelTelefono1
             // 
             this.TLabelTelefono1.AutoSize = true;
-            this.TLabelTelefono1.Location = new System.Drawing.Point(11, 107);
+            this.TLabelTelefono1.Location = new System.Drawing.Point(11, 121);
             this.TLabelTelefono1.Name = "TLabelTelefono1";
             this.TLabelTelefono1.Size = new System.Drawing.Size(58, 13);
             this.TLabelTelefono1.TabIndex = 48;
@@ -252,7 +252,7 @@
             // TLabelApellidos
             // 
             this.TLabelApellidos.AutoSize = true;
-            this.TLabelApellidos.Location = new System.Drawing.Point(20, 85);
+            this.TLabelApellidos.Location = new System.Drawing.Point(20, 99);
             this.TLabelApellidos.Name = "TLabelApellidos";
             this.TLabelApellidos.Size = new System.Drawing.Size(49, 13);
             this.TLabelApellidos.TabIndex = 47;
@@ -261,7 +261,7 @@
             // TLabelNombre
             // 
             this.TLabelNombre.AutoSize = true;
-            this.TLabelNombre.Location = new System.Drawing.Point(25, 63);
+            this.TLabelNombre.Location = new System.Drawing.Point(25, 77);
             this.TLabelNombre.Name = "TLabelNombre";
             this.TLabelNombre.Size = new System.Drawing.Size(44, 13);
             this.TLabelNombre.TabIndex = 46;
@@ -270,7 +270,7 @@
             // TLabelDNI
             // 
             this.TLabelDNI.AutoSize = true;
-            this.TLabelDNI.Location = new System.Drawing.Point(43, 40);
+            this.TLabelDNI.Location = new System.Drawing.Point(43, 54);
             this.TLabelDNI.Name = "TLabelDNI";
             this.TLabelDNI.Size = new System.Drawing.Size(26, 13);
             this.TLabelDNI.TabIndex = 45;
@@ -278,7 +278,7 @@
             // 
             // TButtonFoto
             // 
-            this.TButtonFoto.Location = new System.Drawing.Point(459, 128);
+            this.TButtonFoto.Location = new System.Drawing.Point(606, 128);
             this.TButtonFoto.Name = "TButtonFoto";
             this.TButtonFoto.Size = new System.Drawing.Size(56, 23);
             this.TButtonFoto.TabIndex = 47;
@@ -288,7 +288,7 @@
             // 
             // TButtonAceptar
             // 
-            this.TButtonAceptar.Location = new System.Drawing.Point(440, 349);
+            this.TButtonAceptar.Location = new System.Drawing.Point(18, 353);
             this.TButtonAceptar.Name = "TButtonAceptar";
             this.TButtonAceptar.Size = new System.Drawing.Size(75, 23);
             this.TButtonAceptar.TabIndex = 48;
@@ -297,7 +297,7 @@
             // 
             // TButtonBuscar
             // 
-            this.TButtonBuscar.Location = new System.Drawing.Point(521, 349);
+            this.TButtonBuscar.Location = new System.Drawing.Point(99, 353);
             this.TButtonBuscar.Name = "TButtonBuscar";
             this.TButtonBuscar.Size = new System.Drawing.Size(75, 23);
             this.TButtonBuscar.TabIndex = 49;

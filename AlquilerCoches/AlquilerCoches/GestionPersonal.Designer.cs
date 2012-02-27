@@ -42,7 +42,6 @@
             this.TTextBoxCiudad = new System.Windows.Forms.TextBox();
             this.TTextBoxProvincia = new System.Windows.Forms.TextBox();
             this.TTextBoxPuestoAc = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.TLabelOtrosPuestos = new System.Windows.Forms.Label();
@@ -53,6 +52,7 @@
             this.TLabelEmail = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.TLabelDireccion = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -171,18 +171,9 @@
             this.TTextBoxPuestoAc.Size = new System.Drawing.Size(108, 20);
             this.TTextBoxPuestoAc.TabIndex = 14;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(404, 331);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(84, 25);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Horarios";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(510, 331);
+            this.button2.Location = new System.Drawing.Point(120, 331);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(88, 25);
             this.button2.TabIndex = 16;
@@ -235,7 +226,7 @@
             // 
             // TButtonGuardarPersonal
             // 
-            this.TButtonGuardarPersonal.Location = new System.Drawing.Point(12, 332);
+            this.TButtonGuardarPersonal.Location = new System.Drawing.Point(241, 332);
             this.TButtonGuardarPersonal.Name = "TButtonGuardarPersonal";
             this.TButtonGuardarPersonal.Size = new System.Drawing.Size(77, 24);
             this.TButtonGuardarPersonal.TabIndex = 24;
@@ -266,6 +257,15 @@
             this.TLabelDireccion.Size = new System.Drawing.Size(52, 13);
             this.TLabelDireccion.TabIndex = 25;
             this.TLabelDireccion.Text = "Direccion";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(14, 331);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(84, 25);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Horarios";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // GestionPersonal
             // 
@@ -325,7 +325,6 @@
         private System.Windows.Forms.TextBox TTextBoxCiudad;
         private System.Windows.Forms.TextBox TTextBoxProvincia;
         private System.Windows.Forms.TextBox TTextBoxPuestoAc;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label TLabelOtrosPuestos;
@@ -335,5 +334,6 @@
         private System.Windows.Forms.Label TLabelEmail;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label TLabelDireccion;
+        private System.Windows.Forms.Button button1;
     }
 }

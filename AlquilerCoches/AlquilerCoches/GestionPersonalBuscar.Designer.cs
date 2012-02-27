@@ -124,6 +124,7 @@
             // TLabelDNI
             // 
             this.TLabelDNI.AutoSize = true;
+            this.TLabelDNI.BackColor = System.Drawing.Color.Gainsboro;
             this.TLabelDNI.Location = new System.Drawing.Point(51, 290);
             this.TLabelDNI.Name = "TLabelDNI";
             this.TLabelDNI.Size = new System.Drawing.Size(26, 13);
@@ -170,6 +171,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(662, 447);
             this.Controls.Add(this.TButtonEliminar);
             this.Controls.Add(this.TButtonBuscar);
