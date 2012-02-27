@@ -60,8 +60,8 @@
             this.TLabelFactura = new System.Windows.Forms.Label();
             this.TTextBoxFactura = new System.Windows.Forms.TextBox();
             this.TGroupBoxDatosVenta = new System.Windows.Forms.GroupBox();
-            this.TButtonAtras = new System.Windows.Forms.Button();
             this.TButtonDetallesCliente = new System.Windows.Forms.Button();
+            this.TButtonAtras = new System.Windows.Forms.Button();
             this.TGroupBoxDatosVehiculo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.TGroupBoxDatosVenta.SuspendLayout();
@@ -72,9 +72,9 @@
             this.TListBoxMatriculas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.TListBoxMatriculas.FormattingEnabled = true;
-            this.TListBoxMatriculas.Location = new System.Drawing.Point(385, 26);
+            this.TListBoxMatriculas.Location = new System.Drawing.Point(388, 25);
             this.TListBoxMatriculas.Name = "TListBoxMatriculas";
-            this.TListBoxMatriculas.Size = new System.Drawing.Size(164, 95);
+            this.TListBoxMatriculas.Size = new System.Drawing.Size(162, 95);
             this.TListBoxMatriculas.TabIndex = 38;
             // 
             // TListBoxModelos
@@ -82,9 +82,9 @@
             this.TListBoxModelos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.TListBoxModelos.FormattingEnabled = true;
-            this.TListBoxModelos.Location = new System.Drawing.Point(198, 26);
+            this.TListBoxModelos.Location = new System.Drawing.Point(201, 25);
             this.TListBoxModelos.Name = "TListBoxModelos";
-            this.TListBoxModelos.Size = new System.Drawing.Size(164, 95);
+            this.TListBoxModelos.Size = new System.Drawing.Size(162, 95);
             this.TListBoxModelos.TabIndex = 37;
             // 
             // TListBoxMarcas
@@ -92,14 +92,14 @@
             this.TListBoxMarcas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.TListBoxMarcas.FormattingEnabled = true;
-            this.TListBoxMarcas.Location = new System.Drawing.Point(12, 26);
+            this.TListBoxMarcas.Location = new System.Drawing.Point(15, 25);
             this.TListBoxMarcas.Name = "TListBoxMarcas";
-            this.TListBoxMarcas.Size = new System.Drawing.Size(164, 95);
+            this.TListBoxMarcas.Size = new System.Drawing.Size(162, 95);
             this.TListBoxMarcas.TabIndex = 36;
             // 
             // TButtonBuscar
             // 
-            this.TButtonBuscar.Location = new System.Drawing.Point(567, 26);
+            this.TButtonBuscar.Location = new System.Drawing.Point(570, 25);
             this.TButtonBuscar.Name = "TButtonBuscar";
             this.TButtonBuscar.Size = new System.Drawing.Size(75, 23);
             this.TButtonBuscar.TabIndex = 35;
@@ -110,7 +110,7 @@
             // 
             this.TLabelMatriculas.AutoSize = true;
             this.TLabelMatriculas.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelMatriculas.Location = new System.Drawing.Point(382, 10);
+            this.TLabelMatriculas.Location = new System.Drawing.Point(385, 9);
             this.TLabelMatriculas.Name = "TLabelMatriculas";
             this.TLabelMatriculas.Size = new System.Drawing.Size(57, 13);
             this.TLabelMatriculas.TabIndex = 32;
@@ -120,7 +120,7 @@
             // 
             this.TLabelModelos.AutoSize = true;
             this.TLabelModelos.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelModelos.Location = new System.Drawing.Point(195, 10);
+            this.TLabelModelos.Location = new System.Drawing.Point(198, 9);
             this.TLabelModelos.Name = "TLabelModelos";
             this.TLabelModelos.Size = new System.Drawing.Size(47, 13);
             this.TLabelModelos.TabIndex = 31;
@@ -130,7 +130,7 @@
             // 
             this.TLabelMarcas.AutoSize = true;
             this.TLabelMarcas.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelMarcas.Location = new System.Drawing.Point(9, 10);
+            this.TLabelMarcas.Location = new System.Drawing.Point(12, 9);
             this.TLabelMarcas.Name = "TLabelMarcas";
             this.TLabelMarcas.Size = new System.Drawing.Size(42, 13);
             this.TLabelMarcas.TabIndex = 30;
@@ -154,9 +154,9 @@
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelAnyo);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TextBoxMatricula);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelMatricula);
-            this.TGroupBoxDatosVehiculo.Location = new System.Drawing.Point(12, 141);
+            this.TGroupBoxDatosVehiculo.Location = new System.Drawing.Point(15, 140);
             this.TGroupBoxDatosVehiculo.Name = "TGroupBoxDatosVehiculo";
-            this.TGroupBoxDatosVehiculo.Size = new System.Drawing.Size(319, 185);
+            this.TGroupBoxDatosVehiculo.Size = new System.Drawing.Size(317, 185);
             this.TGroupBoxDatosVehiculo.TabIndex = 29;
             this.TGroupBoxDatosVehiculo.TabStop = false;
             this.TGroupBoxDatosVehiculo.Text = "DatosVehiculo";
@@ -361,30 +361,30 @@
             this.TGroupBoxDatosVenta.Controls.Add(this.TLabelVendedor);
             this.TGroupBoxDatosVenta.Controls.Add(this.TTextBoxVendedor);
             this.TGroupBoxDatosVenta.Controls.Add(this.TTextBoxCliente);
-            this.TGroupBoxDatosVenta.Location = new System.Drawing.Point(337, 141);
+            this.TGroupBoxDatosVenta.Location = new System.Drawing.Point(340, 140);
             this.TGroupBoxDatosVenta.Name = "TGroupBoxDatosVenta";
             this.TGroupBoxDatosVenta.Size = new System.Drawing.Size(305, 185);
             this.TGroupBoxDatosVenta.TabIndex = 39;
             this.TGroupBoxDatosVenta.TabStop = false;
             this.TGroupBoxDatosVenta.Text = "Datos Venta";
             // 
-            // TButtonAtras
-            // 
-            this.TButtonAtras.Location = new System.Drawing.Point(567, 98);
-            this.TButtonAtras.Name = "TButtonAtras";
-            this.TButtonAtras.Size = new System.Drawing.Size(75, 23);
-            this.TButtonAtras.TabIndex = 40;
-            this.TButtonAtras.Text = "Atrás";
-            this.TButtonAtras.UseVisualStyleBackColor = true;
-            // 
             // TButtonDetallesCliente
             // 
-            this.TButtonDetallesCliente.Location = new System.Drawing.Point(199, 38);
+            this.TButtonDetallesCliente.Location = new System.Drawing.Point(199, 45);
             this.TButtonDetallesCliente.Name = "TButtonDetallesCliente";
             this.TButtonDetallesCliente.Size = new System.Drawing.Size(100, 23);
             this.TButtonDetallesCliente.TabIndex = 51;
             this.TButtonDetallesCliente.Text = "Detalles Cliente";
             this.TButtonDetallesCliente.UseVisualStyleBackColor = true;
+            // 
+            // TButtonAtras
+            // 
+            this.TButtonAtras.Location = new System.Drawing.Point(570, 97);
+            this.TButtonAtras.Name = "TButtonAtras";
+            this.TButtonAtras.Size = new System.Drawing.Size(75, 23);
+            this.TButtonAtras.TabIndex = 40;
+            this.TButtonAtras.Text = "Atrás";
+            this.TButtonAtras.UseVisualStyleBackColor = true;
             // 
             // GestionVentas
             // 
@@ -392,7 +392,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(666, 355);
+            this.ClientSize = new System.Drawing.Size(664, 355);
             this.Controls.Add(this.TButtonAtras);
             this.Controls.Add(this.TGroupBoxDatosVenta);
             this.Controls.Add(this.TListBoxMatriculas);
