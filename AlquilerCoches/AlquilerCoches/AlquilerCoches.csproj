@@ -60,6 +60,12 @@
     <Compile Include="GestionClientes.Designer.cs">
       <DependentUpon>GestionClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="GestionClientesBuscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionClientesBuscar.Designer.cs">
+      <DependentUpon>GestionClientesBuscar.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestionPedidos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,12 @@
     </Compile>
     <Compile Include="GestionProveedores.Designer.cs">
       <DependentUpon>GestionProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionProveedoresBuscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionProveedoresBuscar.Designer.cs">
+      <DependentUpon>GestionProveedoresBuscar.cs</DependentUpon>
     </Compile>
     <Compile Include="GestionVehiculos.cs">
       <SubType>Form</SubType>
@@ -131,6 +143,9 @@
     <EmbeddedResource Include="GestionClientes.resx">
       <DependentUpon>GestionClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GestionClientesBuscar.resx">
+      <DependentUpon>GestionClientesBuscar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GestionPedidos.resx">
       <DependentUpon>GestionPedidos.cs</DependentUpon>
     </EmbeddedResource>
@@ -139,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GestionProveedores.resx">
       <DependentUpon>GestionProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionProveedoresBuscar.resx">
+      <DependentUpon>GestionProveedoresBuscar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestionVehiculos.resx">
       <DependentUpon>GestionVehiculos.cs</DependentUpon>
