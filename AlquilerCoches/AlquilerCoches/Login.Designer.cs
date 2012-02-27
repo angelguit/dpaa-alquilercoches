@@ -129,6 +129,9 @@
             this.Controls.Add(this.TTextBoxUsuario);
             this.Controls.Add(this.TLabelUsuario);
             this.Controls.Add(this.TbotonOK);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(321, 300);
+            this.MinimumSize = new System.Drawing.Size(321, 300);
             this.Name = "Login";
             this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
