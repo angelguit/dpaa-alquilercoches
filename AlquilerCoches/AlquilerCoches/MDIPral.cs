@@ -101,9 +101,14 @@ namespace AlquilerCoches
             }
         }
 
-        private void gestionVehiculosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MDIPral_Load(object sender, EventArgs e)
         {
-            GestionVehiculos F2=new GestionVehiculos();
+
+        }
+
+        private void buscarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GestionVehiculos F2=new GestionVehiculos("Buscar");
             F2.MdiParent=this;
             F2.Show();
             F2.WindowState = FormWindowState.Maximized;
