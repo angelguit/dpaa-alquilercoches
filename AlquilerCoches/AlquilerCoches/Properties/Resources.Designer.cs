@@ -67,16 +67,16 @@ namespace AlquilerCoches.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap rentacar {
+        internal static System.Drawing.Bitmap portada1 {
             get {
-                object obj = ResourceManager.GetObject("rentacar", resourceCulture);
+                object obj = ResourceManager.GetObject("portada1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap rentacar1 {
+        internal static System.Drawing.Bitmap rentacar {
             get {
-                object obj = ResourceManager.GetObject("rentacar1", resourceCulture);
+                object obj = ResourceManager.GetObject("rentacar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

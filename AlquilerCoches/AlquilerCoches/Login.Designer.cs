@@ -42,7 +42,7 @@
             // 
             // TbotonOK
             // 
-            this.TbotonOK.Location = new System.Drawing.Point(62, 178);
+            this.TbotonOK.Location = new System.Drawing.Point(102, 126);
             this.TbotonOK.Name = "TbotonOK";
             this.TbotonOK.Size = new System.Drawing.Size(75, 23);
             this.TbotonOK.TabIndex = 0;
@@ -53,7 +53,8 @@
             // TLabelUsuario
             // 
             this.TLabelUsuario.AutoSize = true;
-            this.TLabelUsuario.Location = new System.Drawing.Point(59, 77);
+            this.TLabelUsuario.BackColor = System.Drawing.SystemColors.Window;
+            this.TLabelUsuario.Location = new System.Drawing.Point(99, 32);
             this.TLabelUsuario.Name = "TLabelUsuario";
             this.TLabelUsuario.Size = new System.Drawing.Size(59, 13);
             this.TLabelUsuario.TabIndex = 1;
@@ -61,7 +62,7 @@
             // 
             // TTextBoxUsuario
             // 
-            this.TTextBoxUsuario.Location = new System.Drawing.Point(141, 74);
+            this.TTextBoxUsuario.Location = new System.Drawing.Point(181, 29);
             this.TTextBoxUsuario.Name = "TTextBoxUsuario";
             this.TTextBoxUsuario.Size = new System.Drawing.Size(100, 20);
             this.TTextBoxUsuario.TabIndex = 2;
@@ -71,7 +72,8 @@
             // TLabelContrasenya
             // 
             this.TLabelContrasenya.AutoSize = true;
-            this.TLabelContrasenya.Location = new System.Drawing.Point(34, 118);
+            this.TLabelContrasenya.BackColor = System.Drawing.SystemColors.Window;
+            this.TLabelContrasenya.Location = new System.Drawing.Point(74, 68);
             this.TLabelContrasenya.Name = "TLabelContrasenya";
             this.TLabelContrasenya.Size = new System.Drawing.Size(84, 13);
             this.TLabelContrasenya.TabIndex = 3;
@@ -79,7 +81,7 @@
             // 
             // TTextBoxPassword
             // 
-            this.TTextBoxPassword.Location = new System.Drawing.Point(141, 115);
+            this.TTextBoxPassword.Location = new System.Drawing.Point(181, 65);
             this.TTextBoxPassword.Name = "TTextBoxPassword";
             this.TTextBoxPassword.PasswordChar = '*';
             this.TTextBoxPassword.Size = new System.Drawing.Size(100, 20);
@@ -89,7 +91,7 @@
             // 
             // TButtonSalir
             // 
-            this.TButtonSalir.Location = new System.Drawing.Point(166, 178);
+            this.TButtonSalir.Location = new System.Drawing.Point(206, 126);
             this.TButtonSalir.Name = "TButtonSalir";
             this.TButtonSalir.Size = new System.Drawing.Size(75, 23);
             this.TButtonSalir.TabIndex = 5;
@@ -104,8 +106,9 @@
             // TLabelError
             // 
             this.TLabelError.AutoSize = true;
+            this.TLabelError.BackColor = System.Drawing.SystemColors.Window;
             this.TLabelError.Enabled = false;
-            this.TLabelError.Location = new System.Drawing.Point(12, 152);
+            this.TLabelError.Location = new System.Drawing.Point(32, 101);
             this.TLabelError.Name = "TLabelError";
             this.TLabelError.Size = new System.Drawing.Size(261, 13);
             this.TLabelError.TabIndex = 6;
@@ -116,6 +119,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::AlquilerCoches.Properties.Resources.portada1;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(305, 262);
             this.Controls.Add(this.TLabelError);
             this.Controls.Add(this.TButtonSalir);
