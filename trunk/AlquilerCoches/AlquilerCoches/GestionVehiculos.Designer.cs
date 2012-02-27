@@ -109,7 +109,7 @@
             this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox2.Location = new System.Drawing.Point(128, 267);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(345, 20);
+            this.textBox2.Size = new System.Drawing.Size(261, 20);
             this.textBox2.TabIndex = 42;
             // 
             // TLabelGarantia
@@ -127,7 +127,7 @@
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Location = new System.Drawing.Point(128, 241);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(345, 20);
+            this.textBox1.Size = new System.Drawing.Size(261, 20);
             this.textBox1.TabIndex = 40;
             // 
             // TLabelKM
@@ -145,7 +145,7 @@
             this.TTextBoxModelo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.TTextBoxModelo.Location = new System.Drawing.Point(128, 112);
             this.TTextBoxModelo.Name = "TTextBoxModelo";
-            this.TTextBoxModelo.Size = new System.Drawing.Size(345, 20);
+            this.TTextBoxModelo.Size = new System.Drawing.Size(261, 20);
             this.TTextBoxModelo.TabIndex = 38;
             // 
             // TLabelModelo
@@ -163,7 +163,7 @@
             this.TTextBoxMarca.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.TTextBoxMarca.Location = new System.Drawing.Point(128, 82);
             this.TTextBoxMarca.Name = "TTextBoxMarca";
-            this.TTextBoxMarca.Size = new System.Drawing.Size(345, 20);
+            this.TTextBoxMarca.Size = new System.Drawing.Size(261, 20);
             this.TTextBoxMarca.TabIndex = 36;
             // 
             // TLabelMarca
@@ -248,7 +248,7 @@
             this.TTextBoxPrecioAlquiler.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.TTextBoxPrecioAlquiler.Location = new System.Drawing.Point(128, 215);
             this.TTextBoxPrecioAlquiler.Name = "TTextBoxPrecioAlquiler";
-            this.TTextBoxPrecioAlquiler.Size = new System.Drawing.Size(345, 20);
+            this.TTextBoxPrecioAlquiler.Size = new System.Drawing.Size(261, 20);
             this.TTextBoxPrecioAlquiler.TabIndex = 28;
             // 
             // TLabelPrecioAlquiler
@@ -266,7 +266,7 @@
             this.TTextBoxPrecioVenta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.TTextBoxPrecioVenta.Location = new System.Drawing.Point(128, 189);
             this.TTextBoxPrecioVenta.Name = "TTextBoxPrecioVenta";
-            this.TTextBoxPrecioVenta.Size = new System.Drawing.Size(345, 20);
+            this.TTextBoxPrecioVenta.Size = new System.Drawing.Size(261, 20);
             this.TTextBoxPrecioVenta.TabIndex = 26;
             // 
             // TLabelPrecioVenta
@@ -284,7 +284,7 @@
             this.TextBoxPrecioCompra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.TextBoxPrecioCompra.Location = new System.Drawing.Point(128, 164);
             this.TextBoxPrecioCompra.Name = "TextBoxPrecioCompra";
-            this.TextBoxPrecioCompra.Size = new System.Drawing.Size(345, 20);
+            this.TextBoxPrecioCompra.Size = new System.Drawing.Size(261, 20);
             this.TextBoxPrecioCompra.TabIndex = 24;
             // 
             // TLabelPrecioCompra
@@ -302,7 +302,7 @@
             this.TTextBoxAnyo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.TTextBoxAnyo.Location = new System.Drawing.Point(128, 138);
             this.TTextBoxAnyo.Name = "TTextBoxAnyo";
-            this.TTextBoxAnyo.Size = new System.Drawing.Size(345, 20);
+            this.TTextBoxAnyo.Size = new System.Drawing.Size(261, 20);
             this.TTextBoxAnyo.TabIndex = 22;
             // 
             // TLabelAnyo
@@ -320,7 +320,7 @@
             this.TextBoxMatricula.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.TextBoxMatricula.Location = new System.Drawing.Point(128, 56);
             this.TextBoxMatricula.Name = "TextBoxMatricula";
-            this.TextBoxMatricula.Size = new System.Drawing.Size(345, 20);
+            this.TextBoxMatricula.Size = new System.Drawing.Size(261, 20);
             this.TextBoxMatricula.TabIndex = 20;
             // 
             // TLabelMatricula
