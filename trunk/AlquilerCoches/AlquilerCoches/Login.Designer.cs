@@ -28,12 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.TbotonOK = new System.Windows.Forms.Button();
             this.TLabelUsuario = new System.Windows.Forms.Label();
             this.TTextBoxUsuario = new System.Windows.Forms.TextBox();
             this.TLabelContrasenya = new System.Windows.Forms.Label();
             this.TTextBoxPassword = new System.Windows.Forms.TextBox();
             this.TButtonSalir = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.TLabelError = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // TbotonOK
@@ -93,11 +97,27 @@
             this.TButtonSalir.UseVisualStyleBackColor = true;
             this.TButtonSalir.Click += new System.EventHandler(this.TButtonSalir_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // TLabelError
+            // 
+            this.TLabelError.AutoSize = true;
+            this.TLabelError.Enabled = false;
+            this.TLabelError.Location = new System.Drawing.Point(12, 152);
+            this.TLabelError.Name = "TLabelError";
+            this.TLabelError.Size = new System.Drawing.Size(261, 13);
+            this.TLabelError.TabIndex = 6;
+            this.TLabelError.Text = "ERROR USUARIO O CONTRASENYA NO VALIDOS";
+            this.TLabelError.Visible = false;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.ClientSize = new System.Drawing.Size(305, 262);
+            this.Controls.Add(this.TLabelError);
             this.Controls.Add(this.TButtonSalir);
             this.Controls.Add(this.TTextBoxPassword);
             this.Controls.Add(this.TLabelContrasenya);
@@ -106,6 +126,7 @@
             this.Controls.Add(this.TbotonOK);
             this.Name = "Login";
             this.Text = "Login";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,6 +140,8 @@
         private System.Windows.Forms.Label TLabelContrasenya;
         private System.Windows.Forms.TextBox TTextBoxPassword;
         private System.Windows.Forms.Button TButtonSalir;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label TLabelError;
     }
 }
 
