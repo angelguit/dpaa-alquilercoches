@@ -37,6 +37,9 @@
             this.TLabelModelos = new System.Windows.Forms.Label();
             this.TLabelMarcas = new System.Windows.Forms.Label();
             this.TGroupBoxDatosVehiculo = new System.Windows.Forms.GroupBox();
+            this.TButtonVender = new System.Windows.Forms.Button();
+            this.TTextBoxPrecioVenta = new System.Windows.Forms.TextBox();
+            this.TLabelPrecioVenta = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.TLabelKM = new System.Windows.Forms.Label();
             this.TTextBoxModelo = new System.Windows.Forms.TextBox();
@@ -50,9 +53,6 @@
             this.TLabelAnyo = new System.Windows.Forms.Label();
             this.TextBoxMatricula = new System.Windows.Forms.TextBox();
             this.TLabelMatricula = new System.Windows.Forms.Label();
-            this.TTextBoxPrecioVenta = new System.Windows.Forms.TextBox();
-            this.TLabelPrecioVenta = new System.Windows.Forms.Label();
-            this.TButtonVender = new System.Windows.Forms.Button();
             this.TGroupBoxDatosVehiculo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -163,6 +163,31 @@
             this.TGroupBoxDatosVehiculo.TabStop = false;
             this.TGroupBoxDatosVehiculo.Text = "DatosVehiculo";
             // 
+            // TButtonVender
+            // 
+            this.TButtonVender.Location = new System.Drawing.Point(250, 155);
+            this.TButtonVender.Name = "TButtonVender";
+            this.TButtonVender.Size = new System.Drawing.Size(75, 23);
+            this.TButtonVender.TabIndex = 45;
+            this.TButtonVender.Text = "Vender";
+            this.TButtonVender.UseVisualStyleBackColor = true;
+            // 
+            // TTextBoxPrecioVenta
+            // 
+            this.TTextBoxPrecioVenta.Location = new System.Drawing.Point(80, 181);
+            this.TTextBoxPrecioVenta.Name = "TTextBoxPrecioVenta";
+            this.TTextBoxPrecioVenta.Size = new System.Drawing.Size(100, 20);
+            this.TTextBoxPrecioVenta.TabIndex = 44;
+            // 
+            // TLabelPrecioVenta
+            // 
+            this.TLabelPrecioVenta.AutoSize = true;
+            this.TLabelPrecioVenta.Location = new System.Drawing.Point(9, 188);
+            this.TLabelPrecioVenta.Name = "TLabelPrecioVenta";
+            this.TLabelPrecioVenta.Size = new System.Drawing.Size(65, 13);
+            this.TLabelPrecioVenta.TabIndex = 43;
+            this.TLabelPrecioVenta.Text = "PrecioVenta";
+            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(80, 129);
@@ -232,7 +257,7 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Location = new System.Drawing.Point(202, 23);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(124, 102);
+            this.pictureBox1.Size = new System.Drawing.Size(123, 102);
             this.pictureBox1.TabIndex = 31;
             this.pictureBox1.TabStop = false;
             // 
@@ -267,31 +292,6 @@
             this.TLabelMatricula.Size = new System.Drawing.Size(52, 13);
             this.TLabelMatricula.TabIndex = 19;
             this.TLabelMatricula.Text = "Matrícula";
-            // 
-            // TTextBoxPrecioVenta
-            // 
-            this.TTextBoxPrecioVenta.Location = new System.Drawing.Point(80, 181);
-            this.TTextBoxPrecioVenta.Name = "TTextBoxPrecioVenta";
-            this.TTextBoxPrecioVenta.Size = new System.Drawing.Size(100, 20);
-            this.TTextBoxPrecioVenta.TabIndex = 44;
-            // 
-            // TLabelPrecioVenta
-            // 
-            this.TLabelPrecioVenta.AutoSize = true;
-            this.TLabelPrecioVenta.Location = new System.Drawing.Point(9, 188);
-            this.TLabelPrecioVenta.Name = "TLabelPrecioVenta";
-            this.TLabelPrecioVenta.Size = new System.Drawing.Size(65, 13);
-            this.TLabelPrecioVenta.TabIndex = 43;
-            this.TLabelPrecioVenta.Text = "PrecioVenta";
-            // 
-            // TButtonVender
-            // 
-            this.TButtonVender.Location = new System.Drawing.Point(250, 155);
-            this.TButtonVender.Name = "TButtonVender";
-            this.TButtonVender.Size = new System.Drawing.Size(75, 23);
-            this.TButtonVender.TabIndex = 45;
-            this.TButtonVender.Text = "Vender";
-            this.TButtonVender.UseVisualStyleBackColor = true;
             // 
             // PonerVenta
             // 
