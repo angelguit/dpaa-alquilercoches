@@ -123,7 +123,7 @@
             // TLabelDNI
             // 
             this.TLabelDNI.AutoSize = true;
-            this.TLabelDNI.BackColor = System.Drawing.Color.Gainsboro;
+            this.TLabelDNI.BackColor = System.Drawing.Color.Transparent;
             this.TLabelDNI.Location = new System.Drawing.Point(38, 286);
             this.TLabelDNI.Name = "TLabelDNI";
             this.TLabelDNI.Size = new System.Drawing.Size(26, 13);

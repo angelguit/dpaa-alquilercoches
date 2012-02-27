@@ -105,7 +105,7 @@
             // TLabelCIF
             // 
             this.TLabelCIF.AutoSize = true;
-            this.TLabelCIF.BackColor = System.Drawing.Color.Gainsboro;
+            this.TLabelCIF.BackColor = System.Drawing.Color.Transparent;
             this.TLabelCIF.Location = new System.Drawing.Point(33, 279);
             this.TLabelCIF.Name = "TLabelCIF";
             this.TLabelCIF.Size = new System.Drawing.Size(23, 13);
@@ -152,6 +152,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(666, 441);
             this.Controls.Add(this.TButtonEliminar);
             this.Controls.Add(this.TButtonBuscar);
