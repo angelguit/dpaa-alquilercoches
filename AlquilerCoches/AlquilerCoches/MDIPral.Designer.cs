@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.gestionVehiculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.darAltaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.buscarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.borrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.darAltaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
@@ -44,10 +48,6 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.darAltaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.buscarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.borrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -75,6 +75,31 @@
             this.gestionVehiculosToolStripMenuItem.Size = new System.Drawing.Size(113, 20);
             this.gestionVehiculosToolStripMenuItem.Text = "Gestion Vehiculos";
             // 
+            // darAltaToolStripMenuItem1
+            // 
+            this.darAltaToolStripMenuItem1.Name = "darAltaToolStripMenuItem1";
+            this.darAltaToolStripMenuItem1.Size = new System.Drawing.Size(116, 22);
+            this.darAltaToolStripMenuItem1.Text = "Dar Alta";
+            // 
+            // buscarToolStripMenuItem
+            // 
+            this.buscarToolStripMenuItem.Name = "buscarToolStripMenuItem";
+            this.buscarToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.buscarToolStripMenuItem.Text = "Buscar";
+            this.buscarToolStripMenuItem.Click += new System.EventHandler(this.buscarToolStripMenuItem_Click);
+            // 
+            // editarToolStripMenuItem
+            // 
+            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.editarToolStripMenuItem.Text = "Editar";
+            // 
+            // borrarToolStripMenuItem
+            // 
+            this.borrarToolStripMenuItem.Name = "borrarToolStripMenuItem";
+            this.borrarToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.borrarToolStripMenuItem.Text = "Borrar";
+            // 
             // gestionVentasToolStripMenuItem
             // 
             this.gestionVentasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -86,8 +111,9 @@
             // darAltaToolStripMenuItem
             // 
             this.darAltaToolStripMenuItem.Name = "darAltaToolStripMenuItem";
-            this.darAltaToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.darAltaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.darAltaToolStripMenuItem.Text = "DarAlta";
+            this.darAltaToolStripMenuItem.Click += new System.EventHandler(this.darAltaToolStripMenuItem_Click);
             // 
             // toolStrip
             // 
@@ -160,31 +186,6 @@
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
             this.toolStripStatusLabel2.Size = new System.Drawing.Size(118, 17);
             this.toolStripStatusLabel2.Text = "toolStripStatusLabel2";
-            // 
-            // darAltaToolStripMenuItem1
-            // 
-            this.darAltaToolStripMenuItem1.Name = "darAltaToolStripMenuItem1";
-            this.darAltaToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.darAltaToolStripMenuItem1.Text = "Dar Alta";
-            // 
-            // buscarToolStripMenuItem
-            // 
-            this.buscarToolStripMenuItem.Name = "buscarToolStripMenuItem";
-            this.buscarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.buscarToolStripMenuItem.Text = "Buscar";
-            this.buscarToolStripMenuItem.Click += new System.EventHandler(this.buscarToolStripMenuItem_Click);
-            // 
-            // editarToolStripMenuItem
-            // 
-            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.editarToolStripMenuItem.Text = "Editar";
-            // 
-            // borrarToolStripMenuItem
-            // 
-            this.borrarToolStripMenuItem.Name = "borrarToolStripMenuItem";
-            this.borrarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.borrarToolStripMenuItem.Text = "Borrar";
             // 
             // MDIPral
             // 

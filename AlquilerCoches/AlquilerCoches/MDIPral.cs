@@ -41,6 +41,7 @@ namespace AlquilerCoches
             }
         }
         User UsuarioSistema;
+        GestionPersonal F3;
         public MDIPral(User usuario)
         {
             InitializeComponent();
@@ -112,6 +113,15 @@ namespace AlquilerCoches
             F2.MdiParent=this;
             F2.Show();
             F2.WindowState = FormWindowState.Maximized;
+        }
+
+        private void darAltaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(F3==null) F3 = new GestionPersonal();
+
+            F3.MdiParent = this;
+            F3.Show();
+            F3.WindowState = FormWindowState.Maximized;
         }
     }
 }
