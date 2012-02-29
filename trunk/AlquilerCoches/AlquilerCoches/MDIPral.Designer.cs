@@ -111,7 +111,7 @@
             // darAltaToolStripMenuItem
             // 
             this.darAltaToolStripMenuItem.Name = "darAltaToolStripMenuItem";
-            this.darAltaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.darAltaToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.darAltaToolStripMenuItem.Text = "DarAlta";
             this.darAltaToolStripMenuItem.Click += new System.EventHandler(this.darAltaToolStripMenuItem_Click);
             // 
