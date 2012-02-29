@@ -46,6 +46,8 @@
             this.TModeloLabel = new System.Windows.Forms.Label();
             this.TNombreLabel = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.TDateTimePickerFecha = new System.Windows.Forms.DateTimePicker();
+            this.TLabelFecha = new System.Windows.Forms.Label();
             this.TEstadoTextBox = new System.Windows.Forms.TextBox();
             this.TEstadoLabel = new System.Windows.Forms.Label();
             this.TVendedorText = new System.Windows.Forms.TextBox();
@@ -86,6 +88,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.TProveTextBox);
             this.groupBox1.Controls.Add(this.TProveLabel);
             this.groupBox1.Controls.Add(this.TEnvioButtonUrgente);
@@ -221,6 +224,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.TDateTimePickerFecha);
+            this.groupBox2.Controls.Add(this.TLabelFecha);
             this.groupBox2.Controls.Add(this.TEstadoTextBox);
             this.groupBox2.Controls.Add(this.TEstadoLabel);
             this.groupBox2.Controls.Add(this.TVendedorText);
@@ -235,15 +241,34 @@
             this.groupBox2.Text = "Datos transacción";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
+            // TDateTimePickerFecha
+            // 
+            this.TDateTimePickerFecha.CalendarMonthBackground = System.Drawing.Color.White;
+            this.TDateTimePickerFecha.CustomFormat = "";
+            this.TDateTimePickerFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.TDateTimePickerFecha.Location = new System.Drawing.Point(264, 58);
+            this.TDateTimePickerFecha.Name = "TDateTimePickerFecha";
+            this.TDateTimePickerFecha.Size = new System.Drawing.Size(90, 20);
+            this.TDateTimePickerFecha.TabIndex = 31;
+            // 
+            // TLabelFecha
+            // 
+            this.TLabelFecha.AutoSize = true;
+            this.TLabelFecha.Location = new System.Drawing.Point(218, 60);
+            this.TLabelFecha.Name = "TLabelFecha";
+            this.TLabelFecha.Size = new System.Drawing.Size(40, 13);
+            this.TLabelFecha.TabIndex = 29;
+            this.TLabelFecha.Text = "Fecha:";
+            // 
             // TEstadoTextBox
             // 
             this.TEstadoTextBox.BackColor = System.Drawing.SystemColors.Control;
-            this.TEstadoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TEstadoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TEstadoTextBox.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.TEstadoTextBox.Location = new System.Drawing.Point(96, 58);
             this.TEstadoTextBox.Name = "TEstadoTextBox";
             this.TEstadoTextBox.ReadOnly = true;
-            this.TEstadoTextBox.Size = new System.Drawing.Size(84, 13);
+            this.TEstadoTextBox.Size = new System.Drawing.Size(84, 20);
             this.TEstadoTextBox.TabIndex = 28;
             // 
             // TEstadoLabel
@@ -257,12 +282,12 @@
             // 
             // TVendedorText
             // 
-            this.TVendedorText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TVendedorText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TVendedorText.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.TVendedorText.Location = new System.Drawing.Point(264, 33);
             this.TVendedorText.Name = "TVendedorText";
             this.TVendedorText.ReadOnly = true;
-            this.TVendedorText.Size = new System.Drawing.Size(166, 13);
+            this.TVendedorText.Size = new System.Drawing.Size(146, 20);
             this.TVendedorText.TabIndex = 26;
             // 
             // TVendLabel
@@ -286,12 +311,12 @@
             // TIDtextBox
             // 
             this.TIDtextBox.BackColor = System.Drawing.SystemColors.Control;
-            this.TIDtextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TIDtextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TIDtextBox.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.TIDtextBox.Location = new System.Drawing.Point(96, 33);
             this.TIDtextBox.Name = "TIDtextBox";
             this.TIDtextBox.ReadOnly = true;
-            this.TIDtextBox.Size = new System.Drawing.Size(84, 13);
+            this.TIDtextBox.Size = new System.Drawing.Size(84, 20);
             this.TIDtextBox.TabIndex = 23;
             // 
             // GestionPedidos
@@ -343,5 +368,7 @@
         private System.Windows.Forms.Label TVendLabel;
         private System.Windows.Forms.Label TIDlabel;
         private System.Windows.Forms.TextBox TIDtextBox;
+        private System.Windows.Forms.Label TLabelFecha;
+        public System.Windows.Forms.DateTimePicker TDateTimePickerFecha;
     }
 }
