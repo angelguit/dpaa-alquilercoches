@@ -42,6 +42,8 @@ namespace AlquilerCoches
         }
         User UsuarioSistema;
         GestionPersonal F3;
+        GestionVehiculos F2;
+
         public MDIPral(User usuario)
         {
             InitializeComponent();
@@ -109,7 +111,7 @@ namespace AlquilerCoches
 
         private void buscarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GestionVehiculos F2=new GestionVehiculos("Buscar");
+            if(F2==null) F2 =new GestionVehiculos();
             F2.MdiParent=this;
             F2.Show();
             F2.WindowState = FormWindowState.Maximized;
