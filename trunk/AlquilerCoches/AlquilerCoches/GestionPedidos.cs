@@ -18,7 +18,7 @@ namespace AlquilerCoches
 
         private void GestionPedidos_Load(object sender, EventArgs e)
         {
-
+            TEstadoTextBox.Text = "   ABIERTO";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -70,6 +70,14 @@ namespace AlquilerCoches
             TObservTextBox.Text = "";
 
             
+        }
+
+        private void TCancelarbutton2_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Desea Salir", "",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+                    MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                Close();
         }
     }
 }
