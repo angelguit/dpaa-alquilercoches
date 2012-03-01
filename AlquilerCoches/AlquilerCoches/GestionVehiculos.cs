@@ -16,6 +16,21 @@ namespace AlquilerCoches
             InitializeComponent();
         }
 
+        public void setTipo(string Option)
+        {
+            switch (Option)
+            {
+                case "Editar":
+                    break;
+                case "Buscar":
+                    break;
+                case "Insertar":
+                    break;
+                case "Borrar":
+                    break;
+            }
+        }
+
         private void TListViewMarca_SelectedIndexChanged(object sender, EventArgs e)
         {
 
