@@ -44,7 +44,7 @@
             this.TEnvioLabel = new System.Windows.Forms.Label();
             this.TCantidadLabel = new System.Windows.Forms.Label();
             this.TModeloLabel = new System.Windows.Forms.Label();
-            this.TNombreLabel = new System.Windows.Forms.Label();
+            this.TMarca = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.TDateTimePickerFecha = new System.Windows.Forms.DateTimePicker();
             this.TLabelFecha = new System.Windows.Forms.Label();
@@ -102,7 +102,7 @@
             this.groupBox1.Controls.Add(this.TEnvioLabel);
             this.groupBox1.Controls.Add(this.TCantidadLabel);
             this.groupBox1.Controls.Add(this.TModeloLabel);
-            this.groupBox1.Controls.Add(this.TNombreLabel);
+            this.groupBox1.Controls.Add(this.TMarca);
             this.groupBox1.Location = new System.Drawing.Point(75, 122);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(501, 312);
@@ -215,14 +215,14 @@
             this.TModeloLabel.TabIndex = 22;
             this.TModeloLabel.Text = "Modelo";
             // 
-            // TNombreLabel
+            // TMarca
             // 
-            this.TNombreLabel.AutoSize = true;
-            this.TNombreLabel.Location = new System.Drawing.Point(69, 58);
-            this.TNombreLabel.Name = "TNombreLabel";
-            this.TNombreLabel.Size = new System.Drawing.Size(44, 13);
-            this.TNombreLabel.TabIndex = 21;
-            this.TNombreLabel.Text = "Nombre";
+            this.TMarca.AutoSize = true;
+            this.TMarca.Location = new System.Drawing.Point(69, 58);
+            this.TMarca.Name = "TMarca";
+            this.TMarca.Size = new System.Drawing.Size(37, 13);
+            this.TMarca.TabIndex = 21;
+            this.TMarca.Text = "Marca";
             // 
             // groupBox2
             // 
@@ -363,7 +363,7 @@
         private System.Windows.Forms.Label TEnvioLabel;
         private System.Windows.Forms.Label TCantidadLabel;
         private System.Windows.Forms.Label TModeloLabel;
-        private System.Windows.Forms.Label TNombreLabel;
+        private System.Windows.Forms.Label TMarca;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox TEstadoTextBox;
         private System.Windows.Forms.Label TEstadoLabel;
