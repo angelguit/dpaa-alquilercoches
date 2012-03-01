@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.TButtonEliminar = new System.Windows.Forms.Button();
             this.TButtonBuscar = new System.Windows.Forms.Button();
             this.TTextBoxProvincia = new System.Windows.Forms.TextBox();
             this.TTextBoxMarca = new System.Windows.Forms.TextBox();
@@ -38,25 +37,22 @@
             this.TLabelCIF = new System.Windows.Forms.Label();
             this.TButtonAlta = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.TTextBoxCiudad = new System.Windows.Forms.TextBox();
+            this.TLabelCiudad = new System.Windows.Forms.Label();
             this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // TButtonEliminar
-            // 
-            this.TButtonEliminar.Location = new System.Drawing.Point(123, 379);
-            this.TButtonEliminar.Name = "TButtonEliminar";
-            this.TButtonEliminar.Size = new System.Drawing.Size(75, 23);
-            this.TButtonEliminar.TabIndex = 47;
-            this.TButtonEliminar.Text = "Eliminar";
-            this.TButtonEliminar.UseVisualStyleBackColor = true;
-            this.TButtonEliminar.Visible = false;
-            // 
             // TButtonBuscar
             // 
-            this.TButtonBuscar.Location = new System.Drawing.Point(18, 379);
+            this.TButtonBuscar.Location = new System.Drawing.Point(17, 383);
             this.TButtonBuscar.Name = "TButtonBuscar";
             this.TButtonBuscar.Size = new System.Drawing.Size(75, 23);
             this.TButtonBuscar.TabIndex = 46;
@@ -87,7 +83,7 @@
             // TLabelProvincia
             // 
             this.TLabelProvincia.AutoSize = true;
-            this.TLabelProvincia.Location = new System.Drawing.Point(204, 278);
+            this.TLabelProvincia.Location = new System.Drawing.Point(193, 278);
             this.TLabelProvincia.Name = "TLabelProvincia";
             this.TLabelProvincia.Size = new System.Drawing.Size(51, 13);
             this.TLabelProvincia.TabIndex = 40;
@@ -114,7 +110,7 @@
             // 
             // TButtonAlta
             // 
-            this.TButtonAlta.Location = new System.Drawing.Point(226, 379);
+            this.TButtonAlta.Location = new System.Drawing.Point(115, 383);
             this.TButtonAlta.Name = "TButtonAlta";
             this.TButtonAlta.Size = new System.Drawing.Size(75, 23);
             this.TButtonAlta.TabIndex = 37;
@@ -123,15 +119,38 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DNI,
             this.Marca,
-            this.Provincia});
-            this.dataGridView1.Location = new System.Drawing.Point(24, 24);
+            this.Provincia,
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5});
+            this.dataGridView1.Location = new System.Drawing.Point(56, 24);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(582, 209);
             this.dataGridView1.TabIndex = 36;
+            // 
+            // TTextBoxCiudad
+            // 
+            this.TTextBoxCiudad.Location = new System.Drawing.Point(259, 310);
+            this.TTextBoxCiudad.Name = "TTextBoxCiudad";
+            this.TTextBoxCiudad.Size = new System.Drawing.Size(100, 20);
+            this.TTextBoxCiudad.TabIndex = 49;
+            this.TTextBoxCiudad.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // TLabelCiudad
+            // 
+            this.TLabelCiudad.AutoSize = true;
+            this.TLabelCiudad.Location = new System.Drawing.Point(204, 318);
+            this.TLabelCiudad.Name = "TLabelCiudad";
+            this.TLabelCiudad.Size = new System.Drawing.Size(40, 13);
+            this.TLabelCiudad.TabIndex = 48;
+            this.TLabelCiudad.Text = "Ciudad";
             // 
             // DNI
             // 
@@ -145,8 +164,33 @@
             // 
             // Provincia
             // 
-            this.Provincia.HeaderText = "Provincia";
+            this.Provincia.HeaderText = "Direccion";
             this.Provincia.Name = "Provincia";
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Telefono";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Email";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Ciudad";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Provincia";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Horario";
+            this.Column5.Name = "Column5";
             // 
             // GestionProveedoresBuscar
             // 
@@ -155,7 +199,8 @@
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(666, 441);
-            this.Controls.Add(this.TButtonEliminar);
+            this.Controls.Add(this.TTextBoxCiudad);
+            this.Controls.Add(this.TLabelCiudad);
             this.Controls.Add(this.TButtonBuscar);
             this.Controls.Add(this.TTextBoxProvincia);
             this.Controls.Add(this.TTextBoxMarca);
@@ -175,7 +220,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button TButtonEliminar;
         private System.Windows.Forms.Button TButtonBuscar;
         private System.Windows.Forms.TextBox TTextBoxProvincia;
         private System.Windows.Forms.TextBox TTextBoxMarca;
@@ -185,8 +229,15 @@
         private System.Windows.Forms.Label TLabelCIF;
         private System.Windows.Forms.Button TButtonAlta;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox TTextBoxCiudad;
+        private System.Windows.Forms.Label TLabelCiudad;
         private System.Windows.Forms.DataGridViewTextBoxColumn DNI;
         private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
         private System.Windows.Forms.DataGridViewTextBoxColumn Provincia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }

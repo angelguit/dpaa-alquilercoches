@@ -31,7 +31,7 @@
             this.TButtonFoto = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TButtonGuardarProveedor = new System.Windows.Forms.Button();
-            this.TButtonBuscar = new System.Windows.Forms.Button();
+            this.TButtonCancelar = new System.Windows.Forms.Button();
             this.TGroupBoxProveedores = new System.Windows.Forms.GroupBox();
             this.TTextBoxEmail = new System.Windows.Forms.TextBox();
             this.TLabelEmail = new System.Windows.Forms.Label();
@@ -51,6 +51,7 @@
             this.TLabelDireccion = new System.Windows.Forms.Label();
             this.TLabelNombre = new System.Windows.Forms.Label();
             this.TLabelCIF = new System.Windows.Forms.Label();
+            this.TButtonEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.TGroupBoxProveedores.SuspendLayout();
             this.SuspendLayout();
@@ -83,17 +84,18 @@
             this.TButtonGuardarProveedor.Text = "Guardar";
             this.TButtonGuardarProveedor.UseVisualStyleBackColor = true;
             // 
-            // TButtonBuscar
+            // TButtonCancelar
             // 
-            this.TButtonBuscar.Location = new System.Drawing.Point(110, 349);
-            this.TButtonBuscar.Name = "TButtonBuscar";
-            this.TButtonBuscar.Size = new System.Drawing.Size(75, 23);
-            this.TButtonBuscar.TabIndex = 51;
-            this.TButtonBuscar.Text = "Buscar";
-            this.TButtonBuscar.UseVisualStyleBackColor = true;
+            this.TButtonCancelar.Location = new System.Drawing.Point(110, 349);
+            this.TButtonCancelar.Name = "TButtonCancelar";
+            this.TButtonCancelar.Size = new System.Drawing.Size(75, 23);
+            this.TButtonCancelar.TabIndex = 51;
+            this.TButtonCancelar.Text = "Cancelar";
+            this.TButtonCancelar.UseVisualStyleBackColor = true;
             // 
             // TGroupBoxProveedores
             // 
+            this.TGroupBoxProveedores.BackColor = System.Drawing.Color.Transparent;
             this.TGroupBoxProveedores.Controls.Add(this.TTextBoxEmail);
             this.TGroupBoxProveedores.Controls.Add(this.TLabelEmail);
             this.TGroupBoxProveedores.Controls.Add(this.TLabelUltimasCompras);
@@ -249,7 +251,7 @@
             // TLabelNombre
             // 
             this.TLabelNombre.AutoSize = true;
-            this.TLabelNombre.Location = new System.Drawing.Point(41, 56);
+            this.TLabelNombre.Location = new System.Drawing.Point(48, 56);
             this.TLabelNombre.Name = "TLabelNombre";
             this.TLabelNombre.Size = new System.Drawing.Size(37, 13);
             this.TLabelNombre.TabIndex = 46;
@@ -264,6 +266,16 @@
             this.TLabelCIF.TabIndex = 45;
             this.TLabelCIF.Text = "CIF";
             // 
+            // TButtonEliminar
+            // 
+            this.TButtonEliminar.Location = new System.Drawing.Point(191, 349);
+            this.TButtonEliminar.Name = "TButtonEliminar";
+            this.TButtonEliminar.Size = new System.Drawing.Size(103, 23);
+            this.TButtonEliminar.TabIndex = 53;
+            this.TButtonEliminar.Text = "Eliminar Proveedor";
+            this.TButtonEliminar.UseVisualStyleBackColor = true;
+            this.TButtonEliminar.Visible = false;
+            // 
             // GestionProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -271,8 +283,9 @@
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(586, 394);
+            this.Controls.Add(this.TButtonEliminar);
             this.Controls.Add(this.TGroupBoxProveedores);
-            this.Controls.Add(this.TButtonBuscar);
+            this.Controls.Add(this.TButtonCancelar);
             this.Controls.Add(this.TButtonGuardarProveedor);
             this.Controls.Add(this.TButtonFoto);
             this.Controls.Add(this.pictureBox1);
@@ -291,7 +304,7 @@
         private System.Windows.Forms.Button TButtonFoto;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button TButtonGuardarProveedor;
-        private System.Windows.Forms.Button TButtonBuscar;
+        private System.Windows.Forms.Button TButtonCancelar;
         private System.Windows.Forms.GroupBox TGroupBoxProveedores;
         private System.Windows.Forms.TextBox TTextBoxEmail;
         private System.Windows.Forms.Label TLabelEmail;
@@ -311,5 +324,6 @@
         private System.Windows.Forms.Label TLabelDireccion;
         private System.Windows.Forms.Label TLabelNombre;
         private System.Windows.Forms.Label TLabelCIF;
+        private System.Windows.Forms.Button TButtonEliminar;
     }
 }
