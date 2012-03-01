@@ -168,11 +168,11 @@
             // TLabelAviso
             // 
             this.TLabelAviso.AutoSize = true;
+            this.TLabelAviso.ForeColor = System.Drawing.Color.Red;
             this.TLabelAviso.Location = new System.Drawing.Point(7, 221);
             this.TLabelAviso.Name = "TLabelAviso";
-            this.TLabelAviso.Size = new System.Drawing.Size(302, 13);
+            this.TLabelAviso.Size = new System.Drawing.Size(0, 13);
             this.TLabelAviso.TabIndex = 46;
-            this.TLabelAviso.Text = "*El precio de alquiler se pondrá a 0 automáticamente al vender";
             // 
             // TButtonVender
             // 
@@ -183,6 +183,8 @@
             this.TButtonVender.Tag = "";
             this.TButtonVender.Text = "Vender";
             this.TButtonVender.UseVisualStyleBackColor = true;
+            this.TButtonVender.MouseLeave += new System.EventHandler(this.TButtonVender_MouseLeave);
+            this.TButtonVender.MouseHover += new System.EventHandler(this.TButtonVender_MouseHover);
             // 
             // TTextBoxPrecioVenta
             // 
@@ -220,6 +222,7 @@
             // 
             this.TTextBoxModelo.Location = new System.Drawing.Point(80, 79);
             this.TTextBoxModelo.Name = "TTextBoxModelo";
+            this.TTextBoxModelo.ReadOnly = true;
             this.TTextBoxModelo.Size = new System.Drawing.Size(100, 20);
             this.TTextBoxModelo.TabIndex = 38;
             // 
@@ -236,6 +239,7 @@
             // 
             this.TTextBoxMarca.Location = new System.Drawing.Point(80, 49);
             this.TTextBoxMarca.Name = "TTextBoxMarca";
+            this.TTextBoxMarca.ReadOnly = true;
             this.TTextBoxMarca.Size = new System.Drawing.Size(100, 20);
             this.TTextBoxMarca.TabIndex = 36;
             // 
@@ -277,6 +281,7 @@
             // 
             this.TTextBoxAnyo.Location = new System.Drawing.Point(80, 105);
             this.TTextBoxAnyo.Name = "TTextBoxAnyo";
+            this.TTextBoxAnyo.ReadOnly = true;
             this.TTextBoxAnyo.Size = new System.Drawing.Size(100, 20);
             this.TTextBoxAnyo.TabIndex = 22;
             // 
@@ -293,12 +298,14 @@
             // 
             this.TextBoxMatricula.Location = new System.Drawing.Point(80, 23);
             this.TextBoxMatricula.Name = "TextBoxMatricula";
+            this.TextBoxMatricula.ReadOnly = true;
             this.TextBoxMatricula.Size = new System.Drawing.Size(100, 20);
             this.TextBoxMatricula.TabIndex = 20;
             // 
             // TLabelMatricula
             // 
             this.TLabelMatricula.AutoSize = true;
+            this.TLabelMatricula.ForeColor = System.Drawing.SystemColors.ControlText;
             this.TLabelMatricula.Location = new System.Drawing.Point(22, 30);
             this.TLabelMatricula.Name = "TLabelMatricula";
             this.TLabelMatricula.Size = new System.Drawing.Size(52, 13);
