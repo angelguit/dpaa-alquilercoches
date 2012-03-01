@@ -62,6 +62,7 @@
             this.TGroupBoxDatosVenta = new System.Windows.Forms.GroupBox();
             this.TButtonDetallesCliente = new System.Windows.Forms.Button();
             this.TButtonAtras = new System.Windows.Forms.Button();
+            this.TButtonDetallesFactura = new System.Windows.Forms.Button();
             this.TGroupBoxDatosVehiculo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.TGroupBoxDatosVenta.SuspendLayout();
@@ -350,6 +351,7 @@
             // TGroupBoxDatosVenta
             // 
             this.TGroupBoxDatosVenta.BackColor = System.Drawing.Color.Transparent;
+            this.TGroupBoxDatosVenta.Controls.Add(this.TButtonDetallesFactura);
             this.TGroupBoxDatosVenta.Controls.Add(this.TButtonDetallesCliente);
             this.TGroupBoxDatosVenta.Controls.Add(this.TTextBoxFactura);
             this.TGroupBoxDatosVenta.Controls.Add(this.TTextBoxPrecioVenta);
@@ -385,6 +387,15 @@
             this.TButtonAtras.TabIndex = 40;
             this.TButtonAtras.Text = "Atrás";
             this.TButtonAtras.UseVisualStyleBackColor = true;
+            // 
+            // TButtonDetallesFactura
+            // 
+            this.TButtonDetallesFactura.Location = new System.Drawing.Point(199, 85);
+            this.TButtonDetallesFactura.Name = "TButtonDetallesFactura";
+            this.TButtonDetallesFactura.Size = new System.Drawing.Size(100, 23);
+            this.TButtonDetallesFactura.TabIndex = 52;
+            this.TButtonDetallesFactura.Text = "Detalles Factura";
+            this.TButtonDetallesFactura.UseVisualStyleBackColor = true;
             // 
             // GestionVentas
             // 
@@ -451,6 +462,7 @@
         private System.Windows.Forms.GroupBox TGroupBoxDatosVenta;
         private System.Windows.Forms.Button TButtonDetallesCliente;
         private System.Windows.Forms.Button TButtonAtras;
+        private System.Windows.Forms.Button TButtonDetallesFactura;
 
     }
 }
