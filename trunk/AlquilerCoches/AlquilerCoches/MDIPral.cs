@@ -52,9 +52,6 @@ namespace AlquilerCoches
             toolStripStatusLabel1.Text = "ID:" + usuario.ID;
             toolStripStatusLabel2.Text = "Status:" + usuario.Status;
 
-            toolStripLabel1.Text = "Nombre: " + usuario.Nombre;
-            toolStripLabel2.Text = "ID: " + usuario.ID;
-            toolStripLabel3.Text = "Status: " + usuario.Status;
         }
 
         
