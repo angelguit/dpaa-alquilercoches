@@ -17,8 +17,10 @@ namespace AlquilerCoches
         }
 
         private void GestionPedidos_Load(object sender, EventArgs e)
-        {
+        {            
             TEstadoTextBox.Text = "   ABIERTO";
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
