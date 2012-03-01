@@ -50,5 +50,20 @@ namespace AlquilerCoches
         {
 
         }
+
+        private void TEstadoTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TProveTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TBorrarbutton3_Click(object sender, EventArgs e)
+        {
+            TProveTextBox = empty;
+        }
     }
 }

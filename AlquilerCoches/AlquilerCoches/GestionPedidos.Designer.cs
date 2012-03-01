@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.TAceptarbutton1 = new System.Windows.Forms.Button();
+            this.TCancelarbutton2 = new System.Windows.Forms.Button();
+            this.TBorrarbutton3 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.TProveTextBox = new System.Windows.Forms.TextBox();
             this.TProveLabel = new System.Windows.Forms.Label();
@@ -51,40 +51,41 @@
             this.TEstadoTextBox = new System.Windows.Forms.TextBox();
             this.TEstadoLabel = new System.Windows.Forms.Label();
             this.TVendedorText = new System.Windows.Forms.TextBox();
-            this.TVendLabel = new System.Windows.Forms.Label();
+            this.TEmpLabel = new System.Windows.Forms.Label();
             this.TIDlabel = new System.Windows.Forms.Label();
             this.TIDtextBox = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // TAceptarbutton1
             // 
-            this.button1.Location = new System.Drawing.Point(85, 453);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(138, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "ACEPTAR";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.TAceptarbutton1.Location = new System.Drawing.Point(85, 453);
+            this.TAceptarbutton1.Name = "TAceptarbutton1";
+            this.TAceptarbutton1.Size = new System.Drawing.Size(138, 23);
+            this.TAceptarbutton1.TabIndex = 0;
+            this.TAceptarbutton1.Text = "ACEPTAR";
+            this.TAceptarbutton1.UseVisualStyleBackColor = true;
+            this.TAceptarbutton1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // TCancelarbutton2
             // 
-            this.button2.Location = new System.Drawing.Point(261, 453);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(132, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "CANCELAR";
-            this.button2.UseVisualStyleBackColor = true;
+            this.TCancelarbutton2.Location = new System.Drawing.Point(261, 453);
+            this.TCancelarbutton2.Name = "TCancelarbutton2";
+            this.TCancelarbutton2.Size = new System.Drawing.Size(132, 23);
+            this.TCancelarbutton2.TabIndex = 1;
+            this.TCancelarbutton2.Text = "CANCELAR";
+            this.TCancelarbutton2.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // TBorrarbutton3
             // 
-            this.button3.Location = new System.Drawing.Point(429, 453);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(126, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "BORRAR";
-            this.button3.UseVisualStyleBackColor = true;
+            this.TBorrarbutton3.Location = new System.Drawing.Point(429, 453);
+            this.TBorrarbutton3.Name = "TBorrarbutton3";
+            this.TBorrarbutton3.Size = new System.Drawing.Size(126, 23);
+            this.TBorrarbutton3.TabIndex = 2;
+            this.TBorrarbutton3.Text = "BORRAR";
+            this.TBorrarbutton3.UseVisualStyleBackColor = true;
+            this.TBorrarbutton3.Click += new System.EventHandler(this.TBorrarbutton3_Click);
             // 
             // groupBox1
             // 
@@ -116,6 +117,7 @@
             this.TProveTextBox.Name = "TProveTextBox";
             this.TProveTextBox.Size = new System.Drawing.Size(152, 20);
             this.TProveTextBox.TabIndex = 33;
+            this.TProveTextBox.TextChanged += new System.EventHandler(this.TProveTextBox_TextChanged);
             // 
             // TProveLabel
             // 
@@ -230,7 +232,7 @@
             this.groupBox2.Controls.Add(this.TEstadoTextBox);
             this.groupBox2.Controls.Add(this.TEstadoLabel);
             this.groupBox2.Controls.Add(this.TVendedorText);
-            this.groupBox2.Controls.Add(this.TVendLabel);
+            this.groupBox2.Controls.Add(this.TEmpLabel);
             this.groupBox2.Controls.Add(this.TIDlabel);
             this.groupBox2.Controls.Add(this.TIDtextBox);
             this.groupBox2.Location = new System.Drawing.Point(98, 3);
@@ -270,6 +272,7 @@
             this.TEstadoTextBox.ReadOnly = true;
             this.TEstadoTextBox.Size = new System.Drawing.Size(84, 20);
             this.TEstadoTextBox.TabIndex = 28;
+            this.TEstadoTextBox.TextChanged += new System.EventHandler(this.TEstadoTextBox_TextChanged);
             // 
             // TEstadoLabel
             // 
@@ -290,14 +293,14 @@
             this.TVendedorText.Size = new System.Drawing.Size(146, 20);
             this.TVendedorText.TabIndex = 26;
             // 
-            // TVendLabel
+            // TEmpLabel
             // 
-            this.TVendLabel.AutoSize = true;
-            this.TVendLabel.Location = new System.Drawing.Point(202, 33);
-            this.TVendLabel.Name = "TVendLabel";
-            this.TVendLabel.Size = new System.Drawing.Size(56, 13);
-            this.TVendLabel.TabIndex = 25;
-            this.TVendLabel.Text = "Vendedor:";
+            this.TEmpLabel.AutoSize = true;
+            this.TEmpLabel.Location = new System.Drawing.Point(202, 33);
+            this.TEmpLabel.Name = "TEmpLabel";
+            this.TEmpLabel.Size = new System.Drawing.Size(54, 13);
+            this.TEmpLabel.TabIndex = 25;
+            this.TEmpLabel.Text = "Empleado\r\n";
             // 
             // TIDlabel
             // 
@@ -328,9 +331,9 @@
             this.ClientSize = new System.Drawing.Size(666, 502);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.TBorrarbutton3);
+            this.Controls.Add(this.TCancelarbutton2);
+            this.Controls.Add(this.TAceptarbutton1);
             this.Name = "GestionPedidos";
             this.Text = "Gestión de Pedidos";
             this.Load += new System.EventHandler(this.GestionPedidos_Load);
@@ -344,9 +347,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button TAceptarbutton1;
+        private System.Windows.Forms.Button TCancelarbutton2;
+        private System.Windows.Forms.Button TBorrarbutton3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox TProveTextBox;
         private System.Windows.Forms.Label TProveLabel;
@@ -365,7 +368,7 @@
         private System.Windows.Forms.TextBox TEstadoTextBox;
         private System.Windows.Forms.Label TEstadoLabel;
         private System.Windows.Forms.TextBox TVendedorText;
-        private System.Windows.Forms.Label TVendLabel;
+        private System.Windows.Forms.Label TEmpLabel;
         private System.Windows.Forms.Label TIDlabel;
         private System.Windows.Forms.TextBox TIDtextBox;
         private System.Windows.Forms.Label TLabelFecha;
