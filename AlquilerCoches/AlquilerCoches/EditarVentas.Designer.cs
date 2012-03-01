@@ -37,6 +37,8 @@
             this.TLabelModelos = new System.Windows.Forms.Label();
             this.TLabelMarcas = new System.Windows.Forms.Label();
             this.TGroupBoxDatosVehiculo = new System.Windows.Forms.GroupBox();
+            this.TButtonCancelar = new System.Windows.Forms.Button();
+            this.TButtonAceptar = new System.Windows.Forms.Button();
             this.TTextBoxPrecioVenta = new System.Windows.Forms.TextBox();
             this.TLabelPrecioVenta = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -52,8 +54,6 @@
             this.TLabelAnyo = new System.Windows.Forms.Label();
             this.TextBoxMatricula = new System.Windows.Forms.TextBox();
             this.TLabelMatricula = new System.Windows.Forms.Label();
-            this.TButtonAceptar = new System.Windows.Forms.Button();
-            this.TButtonCancelar = new System.Windows.Forms.Button();
             this.TGroupBoxDatosVehiculo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -74,7 +74,7 @@
             this.TListBoxMatriculas.FormattingEnabled = true;
             this.TListBoxMatriculas.Location = new System.Drawing.Point(388, 25);
             this.TListBoxMatriculas.Name = "TListBoxMatriculas";
-            this.TListBoxMatriculas.Size = new System.Drawing.Size(162, 95);
+            this.TListBoxMatriculas.Size = new System.Drawing.Size(158, 95);
             this.TListBoxMatriculas.TabIndex = 58;
             // 
             // TListBoxModelos
@@ -84,7 +84,7 @@
             this.TListBoxModelos.FormattingEnabled = true;
             this.TListBoxModelos.Location = new System.Drawing.Point(201, 25);
             this.TListBoxModelos.Name = "TListBoxModelos";
-            this.TListBoxModelos.Size = new System.Drawing.Size(162, 95);
+            this.TListBoxModelos.Size = new System.Drawing.Size(158, 95);
             this.TListBoxModelos.TabIndex = 57;
             // 
             // TListBoxMarcas
@@ -94,7 +94,7 @@
             this.TListBoxMarcas.FormattingEnabled = true;
             this.TListBoxMarcas.Location = new System.Drawing.Point(15, 25);
             this.TListBoxMarcas.Name = "TListBoxMarcas";
-            this.TListBoxMarcas.Size = new System.Drawing.Size(162, 95);
+            this.TListBoxMarcas.Size = new System.Drawing.Size(158, 95);
             this.TListBoxMarcas.TabIndex = 56;
             // 
             // TButtonBuscar
@@ -158,12 +158,30 @@
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelAnyo);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TextBoxMatricula);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelMatricula);
-            this.TGroupBoxDatosVehiculo.Location = new System.Drawing.Point(15, 140);
+            this.TGroupBoxDatosVehiculo.Location = new System.Drawing.Point(15, 126);
             this.TGroupBoxDatosVehiculo.Name = "TGroupBoxDatosVehiculo";
-            this.TGroupBoxDatosVehiculo.Size = new System.Drawing.Size(373, 218);
+            this.TGroupBoxDatosVehiculo.Size = new System.Drawing.Size(369, 218);
             this.TGroupBoxDatosVehiculo.TabIndex = 51;
             this.TGroupBoxDatosVehiculo.TabStop = false;
             this.TGroupBoxDatosVehiculo.Text = "DatosVehiculo";
+            // 
+            // TButtonCancelar
+            // 
+            this.TButtonCancelar.Location = new System.Drawing.Point(284, 181);
+            this.TButtonCancelar.Name = "TButtonCancelar";
+            this.TButtonCancelar.Size = new System.Drawing.Size(75, 23);
+            this.TButtonCancelar.TabIndex = 46;
+            this.TButtonCancelar.Text = "Cancelar";
+            this.TButtonCancelar.UseVisualStyleBackColor = true;
+            // 
+            // TButtonAceptar
+            // 
+            this.TButtonAceptar.Location = new System.Drawing.Point(202, 181);
+            this.TButtonAceptar.Name = "TButtonAceptar";
+            this.TButtonAceptar.Size = new System.Drawing.Size(75, 23);
+            this.TButtonAceptar.TabIndex = 45;
+            this.TButtonAceptar.Text = "Aceptar";
+            this.TButtonAceptar.UseVisualStyleBackColor = true;
             // 
             // TTextBoxPrecioVenta
             // 
@@ -286,31 +304,13 @@
             this.TLabelMatricula.TabIndex = 19;
             this.TLabelMatricula.Text = "Matrícula";
             // 
-            // TButtonAceptar
-            // 
-            this.TButtonAceptar.Location = new System.Drawing.Point(202, 181);
-            this.TButtonAceptar.Name = "TButtonAceptar";
-            this.TButtonAceptar.Size = new System.Drawing.Size(75, 23);
-            this.TButtonAceptar.TabIndex = 45;
-            this.TButtonAceptar.Text = "Aceptar";
-            this.TButtonAceptar.UseVisualStyleBackColor = true;
-            // 
-            // TButtonCancelar
-            // 
-            this.TButtonCancelar.Location = new System.Drawing.Point(284, 181);
-            this.TButtonCancelar.Name = "TButtonCancelar";
-            this.TButtonCancelar.Size = new System.Drawing.Size(75, 23);
-            this.TButtonCancelar.TabIndex = 46;
-            this.TButtonCancelar.Text = "Cancelar";
-            this.TButtonCancelar.UseVisualStyleBackColor = true;
-            // 
             // EditarVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(664, 384);
+            this.ClientSize = new System.Drawing.Size(660, 366);
             this.Controls.Add(this.TButtonAtras);
             this.Controls.Add(this.TListBoxMatriculas);
             this.Controls.Add(this.TListBoxModelos);
