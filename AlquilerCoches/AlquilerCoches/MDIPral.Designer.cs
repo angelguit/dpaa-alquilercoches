@@ -191,15 +191,16 @@
             // 
             // TButtonCliente
             // 
-            this.TButtonCliente.BackgroundImage = global::AlquilerCoches.Properties.Resources.Cliente;
+            this.TButtonCliente.BackgroundImage = global::AlquilerCoches.Properties.Resources.Cliente1;
             this.TButtonCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.TButtonCliente.Location = new System.Drawing.Point(114, 129);
             this.TButtonCliente.Name = "TButtonCliente";
             this.TButtonCliente.Size = new System.Drawing.Size(138, 86);
             this.TButtonCliente.TabIndex = 6;
-            this.TButtonCliente.Text = "Cliente";
+            this.TButtonCliente.Text = " Gestion Cliente";
             this.TButtonCliente.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.TButtonCliente.UseVisualStyleBackColor = true;
+            this.TButtonCliente.Click += new System.EventHandler(this.TButtonCliente_Click);
             // 
             // MDIPral
             // 

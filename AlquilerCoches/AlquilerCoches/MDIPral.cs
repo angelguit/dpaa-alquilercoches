@@ -41,8 +41,7 @@ namespace AlquilerCoches
             }
         }
         User UsuarioSistema;
-        GestionPersonal F3;
-        GestionVehiculos F2;
+             
 
         public MDIPral(User usuario)
         {
@@ -111,7 +110,7 @@ namespace AlquilerCoches
 
         private void buscarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(F2==null) F2 =new GestionVehiculos();
+            GestionVehiculos F2 = new GestionVehiculos();
             F2.MdiParent=this;
             F2.Show();
             F2.WindowState = FormWindowState.Maximized;
@@ -119,11 +118,19 @@ namespace AlquilerCoches
 
         private void darAltaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(F3==null) F3 = new GestionPersonal();
-
+            GestionPersonal F3 = new GestionPersonal();
             F3.MdiParent = this;
             F3.Show();
             F3.WindowState = FormWindowState.Maximized;
+        }
+
+        private void TButtonCliente_Click(object sender, EventArgs e)
+        {
+            GestionClientesBuscar F4 = new GestionClientesBuscar();
+
+            F4.MdiParent = this;
+            F4.Show();
+            F4.WindowState = FormWindowState.Maximized;
         }
     }
 }
