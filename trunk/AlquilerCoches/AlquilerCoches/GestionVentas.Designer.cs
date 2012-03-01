@@ -60,9 +60,10 @@
             this.TLabelFactura = new System.Windows.Forms.Label();
             this.TTextBoxFactura = new System.Windows.Forms.TextBox();
             this.TGroupBoxDatosVenta = new System.Windows.Forms.GroupBox();
+            this.TButtonDetallesFactura = new System.Windows.Forms.Button();
             this.TButtonDetallesCliente = new System.Windows.Forms.Button();
             this.TButtonAtras = new System.Windows.Forms.Button();
-            this.TButtonDetallesFactura = new System.Windows.Forms.Button();
+            this.TButtonDetallesVendedor = new System.Windows.Forms.Button();
             this.TGroupBoxDatosVehiculo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.TGroupBoxDatosVenta.SuspendLayout();
@@ -100,7 +101,7 @@
             // 
             // TButtonBuscar
             // 
-            this.TButtonBuscar.Location = new System.Drawing.Point(570, 25);
+            this.TButtonBuscar.Location = new System.Drawing.Point(564, 25);
             this.TButtonBuscar.Name = "TButtonBuscar";
             this.TButtonBuscar.Size = new System.Drawing.Size(75, 23);
             this.TButtonBuscar.TabIndex = 35;
@@ -155,7 +156,7 @@
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelAnyo);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TextBoxMatricula);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelMatricula);
-            this.TGroupBoxDatosVehiculo.Location = new System.Drawing.Point(15, 140);
+            this.TGroupBoxDatosVehiculo.Location = new System.Drawing.Point(17, 129);
             this.TGroupBoxDatosVehiculo.Name = "TGroupBoxDatosVehiculo";
             this.TGroupBoxDatosVehiculo.Size = new System.Drawing.Size(317, 185);
             this.TGroupBoxDatosVehiculo.TabIndex = 29;
@@ -351,6 +352,7 @@
             // TGroupBoxDatosVenta
             // 
             this.TGroupBoxDatosVenta.BackColor = System.Drawing.Color.Transparent;
+            this.TGroupBoxDatosVenta.Controls.Add(this.TButtonDetallesVendedor);
             this.TGroupBoxDatosVenta.Controls.Add(this.TButtonDetallesFactura);
             this.TGroupBoxDatosVenta.Controls.Add(this.TButtonDetallesCliente);
             this.TGroupBoxDatosVenta.Controls.Add(this.TTextBoxFactura);
@@ -363,39 +365,48 @@
             this.TGroupBoxDatosVenta.Controls.Add(this.TLabelVendedor);
             this.TGroupBoxDatosVenta.Controls.Add(this.TTextBoxVendedor);
             this.TGroupBoxDatosVenta.Controls.Add(this.TTextBoxCliente);
-            this.TGroupBoxDatosVenta.Location = new System.Drawing.Point(340, 140);
+            this.TGroupBoxDatosVenta.Location = new System.Drawing.Point(340, 129);
             this.TGroupBoxDatosVenta.Name = "TGroupBoxDatosVenta";
             this.TGroupBoxDatosVenta.Size = new System.Drawing.Size(305, 185);
             this.TGroupBoxDatosVenta.TabIndex = 39;
             this.TGroupBoxDatosVenta.TabStop = false;
             this.TGroupBoxDatosVenta.Text = "Datos Venta";
             // 
+            // TButtonDetallesFactura
+            // 
+            this.TButtonDetallesFactura.Location = new System.Drawing.Point(188, 48);
+            this.TButtonDetallesFactura.Name = "TButtonDetallesFactura";
+            this.TButtonDetallesFactura.Size = new System.Drawing.Size(111, 23);
+            this.TButtonDetallesFactura.TabIndex = 52;
+            this.TButtonDetallesFactura.Text = "Detalles Factura";
+            this.TButtonDetallesFactura.UseVisualStyleBackColor = true;
+            // 
             // TButtonDetallesCliente
             // 
-            this.TButtonDetallesCliente.Location = new System.Drawing.Point(199, 45);
+            this.TButtonDetallesCliente.Location = new System.Drawing.Point(188, 22);
             this.TButtonDetallesCliente.Name = "TButtonDetallesCliente";
-            this.TButtonDetallesCliente.Size = new System.Drawing.Size(100, 23);
+            this.TButtonDetallesCliente.Size = new System.Drawing.Size(111, 23);
             this.TButtonDetallesCliente.TabIndex = 51;
             this.TButtonDetallesCliente.Text = "Detalles Cliente";
             this.TButtonDetallesCliente.UseVisualStyleBackColor = true;
             // 
             // TButtonAtras
             // 
-            this.TButtonAtras.Location = new System.Drawing.Point(570, 97);
+            this.TButtonAtras.Location = new System.Drawing.Point(564, 97);
             this.TButtonAtras.Name = "TButtonAtras";
             this.TButtonAtras.Size = new System.Drawing.Size(75, 23);
             this.TButtonAtras.TabIndex = 40;
             this.TButtonAtras.Text = "Atrás";
             this.TButtonAtras.UseVisualStyleBackColor = true;
             // 
-            // TButtonDetallesFactura
+            // TButtonDetallesVendedor
             // 
-            this.TButtonDetallesFactura.Location = new System.Drawing.Point(199, 85);
-            this.TButtonDetallesFactura.Name = "TButtonDetallesFactura";
-            this.TButtonDetallesFactura.Size = new System.Drawing.Size(100, 23);
-            this.TButtonDetallesFactura.TabIndex = 52;
-            this.TButtonDetallesFactura.Text = "Detalles Factura";
-            this.TButtonDetallesFactura.UseVisualStyleBackColor = true;
+            this.TButtonDetallesVendedor.Location = new System.Drawing.Point(188, 74);
+            this.TButtonDetallesVendedor.Name = "TButtonDetallesVendedor";
+            this.TButtonDetallesVendedor.Size = new System.Drawing.Size(111, 23);
+            this.TButtonDetallesVendedor.TabIndex = 53;
+            this.TButtonDetallesVendedor.Text = "Detalles Vendedor";
+            this.TButtonDetallesVendedor.UseVisualStyleBackColor = true;
             // 
             // GestionVentas
             // 
@@ -463,6 +474,7 @@
         private System.Windows.Forms.Button TButtonDetallesCliente;
         private System.Windows.Forms.Button TButtonAtras;
         private System.Windows.Forms.Button TButtonDetallesFactura;
+        private System.Windows.Forms.Button TButtonDetallesVendedor;
 
     }
 }
