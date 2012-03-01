@@ -25,6 +25,35 @@ namespace AlquilerCoches
 
         private void button1_Click(object sender, EventArgs e)
         {
+            int cont = 0;
+            if (TProveecomboBox1.Text == "")
+            {
+                TErrorProvee.Text = "*Seleccione un proveedor";
+                cont++;
+                TErrorProvee.Show();
+            }
+            
+            if (TMarcacomboBox2.Text == "")
+            {
+                    TErrorMarca.Text = "*Seleccione la marca del coche";
+                    cont++;
+                    TErrorMarca.Show();
+            }
+            if (TModelocomboBox3.Text == "")
+            {
+                   TErrorModelo.Text = "*Seleccione el modelo del coche";
+                   cont++;
+                   TErrorModelo.Show();
+            }
+            if (TObservTextBox.Text == "")
+            {
+                TErrorObser.Text = "*Introduzca alguna observación (máx. 400 caracteres)";
+                cont++;
+                TErrorObser.Show();
+            }
+
+            
+                  
 
         }
 
@@ -65,9 +94,9 @@ namespace AlquilerCoches
 
         private void TBorrarbutton3_Click(object sender, EventArgs e)
         {
-            TProveTextBox.Text = "";
-            TNameTextBox.Text = "";
-            TModeloTextBox.Text = "";
+            TProveecomboBox1.Text = "";
+            TMarcacomboBox2.Text = "";
+            TModelocomboBox3.Text = "";
             TCantidadTextBox.Text = "";
             TObservTextBox.Text = "";
 
@@ -80,6 +109,11 @@ namespace AlquilerCoches
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question,
                     MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                 Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
