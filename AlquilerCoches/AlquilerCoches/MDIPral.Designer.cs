@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MDIPral));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.gestionVehiculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.darAltaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,6 +49,7 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.TButtonCliente = new System.Windows.Forms.Button();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -187,14 +189,31 @@
             this.toolStripStatusLabel2.Size = new System.Drawing.Size(118, 17);
             this.toolStripStatusLabel2.Text = "toolStripStatusLabel2";
             // 
+            // TButtonCliente
+            // 
+            this.TButtonCliente.BackgroundImage = global::AlquilerCoches.Properties.Resources.Cliente;
+            this.TButtonCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.TButtonCliente.Location = new System.Drawing.Point(148, 156);
+            this.TButtonCliente.Name = "TButtonCliente";
+            this.TButtonCliente.Size = new System.Drawing.Size(138, 86);
+            this.TButtonCliente.TabIndex = 6;
+            this.TButtonCliente.Text = "Cliente";
+            this.TButtonCliente.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.TButtonCliente.UseVisualStyleBackColor = true;
+            this.TButtonCliente.Click += new System.EventHandler(this.TButtonCliente_Click);
+            // 
             // MDIPral
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(632, 453);
+            this.Controls.Add(this.TButtonCliente);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.menuStrip);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
             this.Name = "MDIPral";
@@ -232,6 +251,7 @@
         private System.Windows.Forms.ToolStripMenuItem buscarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem borrarToolStripMenuItem;
+        private System.Windows.Forms.Button TButtonCliente;
     }
 }
 
