@@ -37,6 +37,7 @@
             this.TLabelModelos = new System.Windows.Forms.Label();
             this.TLabelMarcas = new System.Windows.Forms.Label();
             this.TGroupBoxDatosVehiculo = new System.Windows.Forms.GroupBox();
+            this.TLabelAviso = new System.Windows.Forms.Label();
             this.TButtonVender = new System.Windows.Forms.Button();
             this.TTextBoxPrecioVenta = new System.Windows.Forms.TextBox();
             this.TLabelPrecioVenta = new System.Windows.Forms.Label();
@@ -140,6 +141,7 @@
             this.TGroupBoxDatosVehiculo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.TGroupBoxDatosVehiculo.BackColor = System.Drawing.Color.Transparent;
+            this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelAviso);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TButtonVender);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TTextBoxPrecioVenta);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelPrecioVenta);
@@ -158,10 +160,19 @@
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelMatricula);
             this.TGroupBoxDatosVehiculo.Location = new System.Drawing.Point(15, 126);
             this.TGroupBoxDatosVehiculo.Name = "TGroupBoxDatosVehiculo";
-            this.TGroupBoxDatosVehiculo.Size = new System.Drawing.Size(345, 218);
+            this.TGroupBoxDatosVehiculo.Size = new System.Drawing.Size(345, 240);
             this.TGroupBoxDatosVehiculo.TabIndex = 41;
             this.TGroupBoxDatosVehiculo.TabStop = false;
             this.TGroupBoxDatosVehiculo.Text = "DatosVehiculo";
+            // 
+            // TLabelAviso
+            // 
+            this.TLabelAviso.AutoSize = true;
+            this.TLabelAviso.Location = new System.Drawing.Point(7, 221);
+            this.TLabelAviso.Name = "TLabelAviso";
+            this.TLabelAviso.Size = new System.Drawing.Size(302, 13);
+            this.TLabelAviso.TabIndex = 46;
+            this.TLabelAviso.Text = "*El precio de alquiler se pondrá a 0 automáticamente al vender";
             // 
             // TButtonVender
             // 
@@ -169,6 +180,7 @@
             this.TButtonVender.Name = "TButtonVender";
             this.TButtonVender.Size = new System.Drawing.Size(75, 23);
             this.TButtonVender.TabIndex = 45;
+            this.TButtonVender.Tag = "";
             this.TButtonVender.Text = "Vender";
             this.TButtonVender.UseVisualStyleBackColor = true;
             // 
@@ -299,7 +311,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(661, 359);
+            this.ClientSize = new System.Drawing.Size(661, 378);
             this.Controls.Add(this.TButtonAtras);
             this.Controls.Add(this.TListBoxMatriculas);
             this.Controls.Add(this.TListBoxModelos);
@@ -346,6 +358,7 @@
         private System.Windows.Forms.TextBox TTextBoxPrecioVenta;
         private System.Windows.Forms.Label TLabelPrecioVenta;
         private System.Windows.Forms.Button TButtonVender;
+        private System.Windows.Forms.Label TLabelAviso;
 
     }
 }
