@@ -63,7 +63,13 @@ namespace AlquilerCoches
 
         private void TBorrarbutton3_Click(object sender, EventArgs e)
         {
-            TProveTextBox = empty;
+            TProveTextBox.Text = "";
+            TNameTextBox.Text = "";
+            TModeloTextBox.Text = "";
+            TCantidadTextBox.Text = "";
+            TObservTextBox.Text = "";
+
+            
         }
     }
 }
