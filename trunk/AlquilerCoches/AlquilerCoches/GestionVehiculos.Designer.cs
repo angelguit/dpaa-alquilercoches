@@ -63,6 +63,7 @@
             this.TListBoxMarcas = new System.Windows.Forms.ListBox();
             this.TListBoxModelos = new System.Windows.Forms.ListBox();
             this.TListBoxMatriculas = new System.Windows.Forms.ListBox();
+            this.ButtonBorrar = new System.Windows.Forms.Button();
             this.TGroupBoxDatosVehiculo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TPictureBoxMatricula)).BeginInit();
             this.SuspendLayout();
@@ -429,11 +430,21 @@
             this.TListBoxMatriculas.Size = new System.Drawing.Size(187, 95);
             this.TListBoxMatriculas.TabIndex = 28;
             // 
+            // ButtonBorrar
+            // 
+            this.ButtonBorrar.Location = new System.Drawing.Point(70, 339);
+            this.ButtonBorrar.Name = "ButtonBorrar";
+            this.ButtonBorrar.Size = new System.Drawing.Size(75, 23);
+            this.ButtonBorrar.TabIndex = 29;
+            this.ButtonBorrar.Text = "Borrar";
+            this.ButtonBorrar.UseVisualStyleBackColor = true;
+            // 
             // GestionVehiculos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(985, 576);
+            this.Controls.Add(this.ButtonBorrar);
             this.Controls.Add(this.TListBoxMatriculas);
             this.Controls.Add(this.TListBoxModelos);
             this.Controls.Add(this.TListBoxMarcas);
@@ -493,5 +504,6 @@
         private System.Windows.Forms.Label TLabelGarantia;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label TLabelKM;
+        private System.Windows.Forms.Button ButtonBorrar;
     }
 }
