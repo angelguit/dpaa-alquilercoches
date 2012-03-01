@@ -32,15 +32,12 @@
             this.TSalirbutton2 = new System.Windows.Forms.Button();
             this.TBorrarbutton3 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.TProveTextBox = new System.Windows.Forms.TextBox();
             this.TProveLabel = new System.Windows.Forms.Label();
             this.TEnvioButtonUrgente = new System.Windows.Forms.RadioButton();
             this.TEnvioButtonOrdinario = new System.Windows.Forms.RadioButton();
             this.TObservTextBox = new System.Windows.Forms.TextBox();
             this.TObserLabel = new System.Windows.Forms.Label();
             this.TCantidadTextBox = new System.Windows.Forms.TextBox();
-            this.TModeloTextBox = new System.Windows.Forms.TextBox();
-            this.TNameTextBox = new System.Windows.Forms.TextBox();
             this.TEnvioLabel = new System.Windows.Forms.Label();
             this.TCantidadLabel = new System.Windows.Forms.Label();
             this.TModeloLabel = new System.Windows.Forms.Label();
@@ -54,6 +51,13 @@
             this.TEmpLabel = new System.Windows.Forms.Label();
             this.TIDlabel = new System.Windows.Forms.Label();
             this.TIDtextBox = new System.Windows.Forms.TextBox();
+            this.TProveecomboBox1 = new System.Windows.Forms.ComboBox();
+            this.TMarcacomboBox2 = new System.Windows.Forms.ComboBox();
+            this.TModelocomboBox3 = new System.Windows.Forms.ComboBox();
+            this.TErrorProvee = new System.Windows.Forms.Label();
+            this.TErrorMarca = new System.Windows.Forms.Label();
+            this.TErrorModelo = new System.Windows.Forms.Label();
+            this.TErrorObser = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -91,34 +95,30 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.TProveTextBox);
+            this.groupBox1.Controls.Add(this.TErrorObser);
+            this.groupBox1.Controls.Add(this.TErrorModelo);
+            this.groupBox1.Controls.Add(this.TErrorMarca);
+            this.groupBox1.Controls.Add(this.TErrorProvee);
+            this.groupBox1.Controls.Add(this.TModelocomboBox3);
+            this.groupBox1.Controls.Add(this.TMarcacomboBox2);
+            this.groupBox1.Controls.Add(this.TProveecomboBox1);
             this.groupBox1.Controls.Add(this.TProveLabel);
             this.groupBox1.Controls.Add(this.TEnvioButtonUrgente);
             this.groupBox1.Controls.Add(this.TEnvioButtonOrdinario);
             this.groupBox1.Controls.Add(this.TObservTextBox);
             this.groupBox1.Controls.Add(this.TObserLabel);
             this.groupBox1.Controls.Add(this.TCantidadTextBox);
-            this.groupBox1.Controls.Add(this.TModeloTextBox);
-            this.groupBox1.Controls.Add(this.TNameTextBox);
             this.groupBox1.Controls.Add(this.TEnvioLabel);
             this.groupBox1.Controls.Add(this.TCantidadLabel);
             this.groupBox1.Controls.Add(this.TModeloLabel);
             this.groupBox1.Controls.Add(this.TMarca);
             this.groupBox1.Location = new System.Drawing.Point(75, 122);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(501, 312);
+            this.groupBox1.Size = new System.Drawing.Size(539, 312);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Pedido";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
-            // TProveTextBox
-            // 
-            this.TProveTextBox.Location = new System.Drawing.Point(165, 17);
-            this.TProveTextBox.Name = "TProveTextBox";
-            this.TProveTextBox.Size = new System.Drawing.Size(152, 20);
-            this.TProveTextBox.TabIndex = 33;
-            this.TProveTextBox.TextChanged += new System.EventHandler(this.TProveTextBox_TextChanged);
             // 
             // TProveLabel
             // 
@@ -174,20 +174,6 @@
             this.TCantidadTextBox.Name = "TCantidadTextBox";
             this.TCantidadTextBox.Size = new System.Drawing.Size(152, 20);
             this.TCantidadTextBox.TabIndex = 27;
-            // 
-            // TModeloTextBox
-            // 
-            this.TModeloTextBox.Location = new System.Drawing.Point(165, 86);
-            this.TModeloTextBox.Name = "TModeloTextBox";
-            this.TModeloTextBox.Size = new System.Drawing.Size(152, 20);
-            this.TModeloTextBox.TabIndex = 26;
-            // 
-            // TNameTextBox
-            // 
-            this.TNameTextBox.Location = new System.Drawing.Point(165, 51);
-            this.TNameTextBox.Name = "TNameTextBox";
-            this.TNameTextBox.Size = new System.Drawing.Size(152, 20);
-            this.TNameTextBox.TabIndex = 25;
             // 
             // TEnvioLabel
             // 
@@ -323,6 +309,71 @@
             this.TIDtextBox.Size = new System.Drawing.Size(84, 20);
             this.TIDtextBox.TabIndex = 23;
             // 
+            // TProveecomboBox1
+            // 
+            this.TProveecomboBox1.FormattingEnabled = true;
+            this.TProveecomboBox1.Location = new System.Drawing.Point(165, 22);
+            this.TProveecomboBox1.Name = "TProveecomboBox1";
+            this.TProveecomboBox1.Size = new System.Drawing.Size(179, 21);
+            this.TProveecomboBox1.TabIndex = 34;
+            // 
+            // TMarcacomboBox2
+            // 
+            this.TMarcacomboBox2.FormattingEnabled = true;
+            this.TMarcacomboBox2.Location = new System.Drawing.Point(165, 55);
+            this.TMarcacomboBox2.Name = "TMarcacomboBox2";
+            this.TMarcacomboBox2.Size = new System.Drawing.Size(179, 21);
+            this.TMarcacomboBox2.TabIndex = 35;
+            // 
+            // TModelocomboBox3
+            // 
+            this.TModelocomboBox3.FormattingEnabled = true;
+            this.TModelocomboBox3.Location = new System.Drawing.Point(165, 89);
+            this.TModelocomboBox3.Name = "TModelocomboBox3";
+            this.TModelocomboBox3.Size = new System.Drawing.Size(177, 21);
+            this.TModelocomboBox3.TabIndex = 36;
+            // 
+            // TErrorProvee
+            // 
+            this.TErrorProvee.AutoSize = true;
+            this.TErrorProvee.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TErrorProvee.ForeColor = System.Drawing.Color.Red;
+            this.TErrorProvee.Location = new System.Drawing.Point(350, 30);
+            this.TErrorProvee.Name = "TErrorProvee";
+            this.TErrorProvee.Size = new System.Drawing.Size(0, 13);
+            this.TErrorProvee.TabIndex = 37;
+            this.TErrorProvee.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // TErrorMarca
+            // 
+            this.TErrorMarca.AutoSize = true;
+            this.TErrorMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TErrorMarca.ForeColor = System.Drawing.Color.Red;
+            this.TErrorMarca.Location = new System.Drawing.Point(350, 63);
+            this.TErrorMarca.Name = "TErrorMarca";
+            this.TErrorMarca.Size = new System.Drawing.Size(0, 13);
+            this.TErrorMarca.TabIndex = 38;
+            // 
+            // TErrorModelo
+            // 
+            this.TErrorModelo.AutoSize = true;
+            this.TErrorModelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TErrorModelo.ForeColor = System.Drawing.Color.Red;
+            this.TErrorModelo.Location = new System.Drawing.Point(349, 92);
+            this.TErrorModelo.Name = "TErrorModelo";
+            this.TErrorModelo.Size = new System.Drawing.Size(0, 13);
+            this.TErrorModelo.TabIndex = 39;
+            // 
+            // TErrorObser
+            // 
+            this.TErrorObser.AutoSize = true;
+            this.TErrorObser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TErrorObser.ForeColor = System.Drawing.Color.Red;
+            this.TErrorObser.Location = new System.Drawing.Point(420, 199);
+            this.TErrorObser.Name = "TErrorObser";
+            this.TErrorObser.Size = new System.Drawing.Size(0, 13);
+            this.TErrorObser.TabIndex = 40;
+            // 
             // GestionPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -352,15 +403,12 @@
         private System.Windows.Forms.Button TSalirbutton2;
         private System.Windows.Forms.Button TBorrarbutton3;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox TProveTextBox;
         private System.Windows.Forms.Label TProveLabel;
         private System.Windows.Forms.RadioButton TEnvioButtonUrgente;
         private System.Windows.Forms.RadioButton TEnvioButtonOrdinario;
         private System.Windows.Forms.TextBox TObservTextBox;
         private System.Windows.Forms.Label TObserLabel;
         private System.Windows.Forms.TextBox TCantidadTextBox;
-        private System.Windows.Forms.TextBox TModeloTextBox;
-        private System.Windows.Forms.TextBox TNameTextBox;
         private System.Windows.Forms.Label TEnvioLabel;
         private System.Windows.Forms.Label TCantidadLabel;
         private System.Windows.Forms.Label TModeloLabel;
@@ -374,5 +422,12 @@
         private System.Windows.Forms.TextBox TIDtextBox;
         private System.Windows.Forms.Label TLabelFecha;
         public System.Windows.Forms.DateTimePicker TDateTimePickerFecha;
+        private System.Windows.Forms.ComboBox TModelocomboBox3;
+        private System.Windows.Forms.ComboBox TMarcacomboBox2;
+        private System.Windows.Forms.ComboBox TProveecomboBox1;
+        private System.Windows.Forms.Label TErrorProvee;
+        private System.Windows.Forms.Label TErrorMarca;
+        private System.Windows.Forms.Label TErrorObser;
+        private System.Windows.Forms.Label TErrorModelo;
     }
 }
