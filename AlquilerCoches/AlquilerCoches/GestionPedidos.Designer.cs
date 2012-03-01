@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.TAceptarbutton1 = new System.Windows.Forms.Button();
-            this.TCancelarbutton2 = new System.Windows.Forms.Button();
+            this.TSalirbutton2 = new System.Windows.Forms.Button();
             this.TBorrarbutton3 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.TProveTextBox = new System.Windows.Forms.TextBox();
@@ -68,18 +68,19 @@
             this.TAceptarbutton1.UseVisualStyleBackColor = true;
             this.TAceptarbutton1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // TCancelarbutton2
+            // TSalirbutton2
             // 
-            this.TCancelarbutton2.Location = new System.Drawing.Point(261, 453);
-            this.TCancelarbutton2.Name = "TCancelarbutton2";
-            this.TCancelarbutton2.Size = new System.Drawing.Size(132, 23);
-            this.TCancelarbutton2.TabIndex = 1;
-            this.TCancelarbutton2.Text = "CANCELAR";
-            this.TCancelarbutton2.UseVisualStyleBackColor = true;
+            this.TSalirbutton2.Location = new System.Drawing.Point(444, 453);
+            this.TSalirbutton2.Name = "TSalirbutton2";
+            this.TSalirbutton2.Size = new System.Drawing.Size(132, 23);
+            this.TSalirbutton2.TabIndex = 1;
+            this.TSalirbutton2.Text = "SALIR";
+            this.TSalirbutton2.UseVisualStyleBackColor = true;
+            this.TSalirbutton2.Click += new System.EventHandler(this.TCancelarbutton2_Click);
             // 
             // TBorrarbutton3
             // 
-            this.TBorrarbutton3.Location = new System.Drawing.Point(429, 453);
+            this.TBorrarbutton3.Location = new System.Drawing.Point(263, 453);
             this.TBorrarbutton3.Name = "TBorrarbutton3";
             this.TBorrarbutton3.Size = new System.Drawing.Size(126, 23);
             this.TBorrarbutton3.TabIndex = 2;
@@ -332,7 +333,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.TBorrarbutton3);
-            this.Controls.Add(this.TCancelarbutton2);
+            this.Controls.Add(this.TSalirbutton2);
             this.Controls.Add(this.TAceptarbutton1);
             this.Name = "GestionPedidos";
             this.Text = "Gestión de Pedidos";
@@ -348,7 +349,7 @@
         #endregion
 
         private System.Windows.Forms.Button TAceptarbutton1;
-        private System.Windows.Forms.Button TCancelarbutton2;
+        private System.Windows.Forms.Button TSalirbutton2;
         private System.Windows.Forms.Button TBorrarbutton3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox TProveTextBox;
