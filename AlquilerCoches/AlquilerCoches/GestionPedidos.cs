@@ -53,7 +53,7 @@ namespace AlquilerCoches
 
         private void TEstadoTextBox_TextChanged(object sender, EventArgs e)
         {
-
+            TEstadoTextBox.Text = "Abierto";
         }
 
         private void TProveTextBox_TextChanged(object sender, EventArgs e)
