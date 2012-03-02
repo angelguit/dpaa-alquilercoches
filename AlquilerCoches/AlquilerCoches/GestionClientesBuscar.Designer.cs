@@ -30,14 +30,6 @@
         {
             this.TButtonEliminar = new System.Windows.Forms.Button();
             this.TButtonBuscar = new System.Windows.Forms.Button();
-            this.TTextBoxProvincia = new System.Windows.Forms.TextBox();
-            this.TTextBoxApellidos = new System.Windows.Forms.TextBox();
-            this.TTextBoxNombre = new System.Windows.Forms.TextBox();
-            this.TTextBoxDNI = new System.Windows.Forms.TextBox();
-            this.TLabelProvincia = new System.Windows.Forms.Label();
-            this.TLabelApellidos = new System.Windows.Forms.Label();
-            this.TLabelNombre = new System.Windows.Forms.Label();
-            this.TLabelDNI = new System.Windows.Forms.Label();
             this.TButtonAlta = new System.Windows.Forms.Button();
             this.TDataGridViewCliente = new System.Windows.Forms.DataGridView();
             this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,12 +38,22 @@
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.TTextBoxProvincia = new System.Windows.Forms.TextBox();
+            this.TTextBoxApellidos = new System.Windows.Forms.TextBox();
+            this.TTextBoxNombre = new System.Windows.Forms.TextBox();
+            this.TTextBoxDNI = new System.Windows.Forms.TextBox();
+            this.TLabelProvincia = new System.Windows.Forms.Label();
+            this.TLabelApellidos = new System.Windows.Forms.Label();
+            this.TLabelNombre = new System.Windows.Forms.Label();
+            this.TLabelDNI = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.TDataGridViewCliente)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // TButtonEliminar
             // 
-            this.TButtonEliminar.Location = new System.Drawing.Point(128, 386);
+            this.TButtonEliminar.Location = new System.Drawing.Point(136, 137);
             this.TButtonEliminar.Name = "TButtonEliminar";
             this.TButtonEliminar.Size = new System.Drawing.Size(75, 23);
             this.TButtonEliminar.TabIndex = 35;
@@ -61,7 +63,7 @@
             // 
             // TButtonBuscar
             // 
-            this.TButtonBuscar.Location = new System.Drawing.Point(23, 386);
+            this.TButtonBuscar.Location = new System.Drawing.Point(31, 137);
             this.TButtonBuscar.Name = "TButtonBuscar";
             this.TButtonBuscar.Size = new System.Drawing.Size(75, 23);
             this.TButtonBuscar.TabIndex = 34;
@@ -69,74 +71,9 @@
             this.TButtonBuscar.UseVisualStyleBackColor = true;
             this.TButtonBuscar.Click += new System.EventHandler(this.TButtonBuscar_Click);
             // 
-            // TTextBoxProvincia
-            // 
-            this.TTextBoxProvincia.Location = new System.Drawing.Point(264, 316);
-            this.TTextBoxProvincia.Name = "TTextBoxProvincia";
-            this.TTextBoxProvincia.Size = new System.Drawing.Size(100, 20);
-            this.TTextBoxProvincia.TabIndex = 33;
-            // 
-            // TTextBoxApellidos
-            // 
-            this.TTextBoxApellidos.Location = new System.Drawing.Point(264, 277);
-            this.TTextBoxApellidos.Name = "TTextBoxApellidos";
-            this.TTextBoxApellidos.Size = new System.Drawing.Size(100, 20);
-            this.TTextBoxApellidos.TabIndex = 32;
-            // 
-            // TTextBoxNombre
-            // 
-            this.TTextBoxNombre.Location = new System.Drawing.Point(71, 317);
-            this.TTextBoxNombre.Name = "TTextBoxNombre";
-            this.TTextBoxNombre.Size = new System.Drawing.Size(100, 20);
-            this.TTextBoxNombre.TabIndex = 31;
-            // 
-            // TTextBoxDNI
-            // 
-            this.TTextBoxDNI.Location = new System.Drawing.Point(71, 278);
-            this.TTextBoxDNI.Name = "TTextBoxDNI";
-            this.TTextBoxDNI.Size = new System.Drawing.Size(100, 20);
-            this.TTextBoxDNI.TabIndex = 30;
-            // 
-            // TLabelProvincia
-            // 
-            this.TLabelProvincia.AutoSize = true;
-            this.TLabelProvincia.Location = new System.Drawing.Point(199, 324);
-            this.TLabelProvincia.Name = "TLabelProvincia";
-            this.TLabelProvincia.Size = new System.Drawing.Size(51, 13);
-            this.TLabelProvincia.TabIndex = 29;
-            this.TLabelProvincia.Text = "Provincia";
-            // 
-            // TLabelApellidos
-            // 
-            this.TLabelApellidos.AutoSize = true;
-            this.TLabelApellidos.Location = new System.Drawing.Point(209, 285);
-            this.TLabelApellidos.Name = "TLabelApellidos";
-            this.TLabelApellidos.Size = new System.Drawing.Size(49, 13);
-            this.TLabelApellidos.TabIndex = 28;
-            this.TLabelApellidos.Text = "Apellidos";
-            // 
-            // TLabelNombre
-            // 
-            this.TLabelNombre.AutoSize = true;
-            this.TLabelNombre.Location = new System.Drawing.Point(20, 325);
-            this.TLabelNombre.Name = "TLabelNombre";
-            this.TLabelNombre.Size = new System.Drawing.Size(44, 13);
-            this.TLabelNombre.TabIndex = 27;
-            this.TLabelNombre.Text = "Nombre";
-            // 
-            // TLabelDNI
-            // 
-            this.TLabelDNI.AutoSize = true;
-            this.TLabelDNI.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelDNI.Location = new System.Drawing.Point(38, 286);
-            this.TLabelDNI.Name = "TLabelDNI";
-            this.TLabelDNI.Size = new System.Drawing.Size(26, 13);
-            this.TLabelDNI.TabIndex = 26;
-            this.TLabelDNI.Text = "DNI";
-            // 
             // TButtonAlta
             // 
-            this.TButtonAlta.Location = new System.Drawing.Point(231, 386);
+            this.TButtonAlta.Location = new System.Drawing.Point(50, 521);
             this.TButtonAlta.Name = "TButtonAlta";
             this.TButtonAlta.Size = new System.Drawing.Size(75, 23);
             this.TButtonAlta.TabIndex = 25;
@@ -153,9 +90,9 @@
             this.Email,
             this.Nombre,
             this.Apellidos});
-            this.TDataGridViewCliente.Location = new System.Drawing.Point(29, 31);
+            this.TDataGridViewCliente.Location = new System.Drawing.Point(107, 29);
             this.TDataGridViewCliente.Name = "TDataGridViewCliente";
-            this.TDataGridViewCliente.Size = new System.Drawing.Size(582, 209);
+            this.TDataGridViewCliente.Size = new System.Drawing.Size(833, 209);
             this.TDataGridViewCliente.TabIndex = 24;
             // 
             // DNI
@@ -188,23 +125,98 @@
             this.Apellidos.HeaderText = "Apellidos";
             this.Apellidos.Name = "Apellidos";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.TTextBoxProvincia);
+            this.panel1.Controls.Add(this.TButtonEliminar);
+            this.panel1.Controls.Add(this.TTextBoxApellidos);
+            this.panel1.Controls.Add(this.TButtonBuscar);
+            this.panel1.Controls.Add(this.TTextBoxNombre);
+            this.panel1.Controls.Add(this.TTextBoxDNI);
+            this.panel1.Controls.Add(this.TLabelProvincia);
+            this.panel1.Controls.Add(this.TLabelApellidos);
+            this.panel1.Controls.Add(this.TLabelNombre);
+            this.panel1.Controls.Add(this.TLabelDNI);
+            this.panel1.Location = new System.Drawing.Point(107, 258);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(502, 175);
+            this.panel1.TabIndex = 36;
+            // 
+            // TTextBoxProvincia
+            // 
+            this.TTextBoxProvincia.Location = new System.Drawing.Point(283, 84);
+            this.TTextBoxProvincia.Name = "TTextBoxProvincia";
+            this.TTextBoxProvincia.Size = new System.Drawing.Size(100, 20);
+            this.TTextBoxProvincia.TabIndex = 41;
+            // 
+            // TTextBoxApellidos
+            // 
+            this.TTextBoxApellidos.Location = new System.Drawing.Point(283, 45);
+            this.TTextBoxApellidos.Name = "TTextBoxApellidos";
+            this.TTextBoxApellidos.Size = new System.Drawing.Size(100, 20);
+            this.TTextBoxApellidos.TabIndex = 40;
+            // 
+            // TTextBoxNombre
+            // 
+            this.TTextBoxNombre.Location = new System.Drawing.Point(90, 85);
+            this.TTextBoxNombre.Name = "TTextBoxNombre";
+            this.TTextBoxNombre.Size = new System.Drawing.Size(100, 20);
+            this.TTextBoxNombre.TabIndex = 39;
+            // 
+            // TTextBoxDNI
+            // 
+            this.TTextBoxDNI.Location = new System.Drawing.Point(90, 46);
+            this.TTextBoxDNI.Name = "TTextBoxDNI";
+            this.TTextBoxDNI.Size = new System.Drawing.Size(100, 20);
+            this.TTextBoxDNI.TabIndex = 38;
+            // 
+            // TLabelProvincia
+            // 
+            this.TLabelProvincia.AutoSize = true;
+            this.TLabelProvincia.Location = new System.Drawing.Point(218, 92);
+            this.TLabelProvincia.Name = "TLabelProvincia";
+            this.TLabelProvincia.Size = new System.Drawing.Size(51, 13);
+            this.TLabelProvincia.TabIndex = 37;
+            this.TLabelProvincia.Text = "Provincia";
+            // 
+            // TLabelApellidos
+            // 
+            this.TLabelApellidos.AutoSize = true;
+            this.TLabelApellidos.Location = new System.Drawing.Point(228, 53);
+            this.TLabelApellidos.Name = "TLabelApellidos";
+            this.TLabelApellidos.Size = new System.Drawing.Size(49, 13);
+            this.TLabelApellidos.TabIndex = 36;
+            this.TLabelApellidos.Text = "Apellidos";
+            // 
+            // TLabelNombre
+            // 
+            this.TLabelNombre.AutoSize = true;
+            this.TLabelNombre.Location = new System.Drawing.Point(39, 93);
+            this.TLabelNombre.Name = "TLabelNombre";
+            this.TLabelNombre.Size = new System.Drawing.Size(44, 13);
+            this.TLabelNombre.TabIndex = 35;
+            this.TLabelNombre.Text = "Nombre";
+            // 
+            // TLabelDNI
+            // 
+            this.TLabelDNI.AutoSize = true;
+            this.TLabelDNI.BackColor = System.Drawing.Color.Transparent;
+            this.TLabelDNI.Location = new System.Drawing.Point(57, 54);
+            this.TLabelDNI.Name = "TLabelDNI";
+            this.TLabelDNI.Size = new System.Drawing.Size(26, 13);
+            this.TLabelDNI.TabIndex = 34;
+            this.TLabelDNI.Text = "DNI";
+            // 
             // GestionClientesBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(652, 441);
-            this.Controls.Add(this.TButtonEliminar);
-            this.Controls.Add(this.TButtonBuscar);
-            this.Controls.Add(this.TTextBoxProvincia);
-            this.Controls.Add(this.TTextBoxApellidos);
-            this.Controls.Add(this.TTextBoxNombre);
-            this.Controls.Add(this.TTextBoxDNI);
-            this.Controls.Add(this.TLabelProvincia);
-            this.Controls.Add(this.TLabelApellidos);
-            this.Controls.Add(this.TLabelNombre);
-            this.Controls.Add(this.TLabelDNI);
+            this.ClientSize = new System.Drawing.Size(985, 576);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.TButtonAlta);
             this.Controls.Add(this.TDataGridViewCliente);
             this.MaximizeBox = false;
@@ -213,8 +225,9 @@
             this.Text = "GestionClientesBuscar";
             this.Load += new System.EventHandler(this.GestionClientesBuscar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TDataGridViewCliente)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -222,14 +235,6 @@
 
         private System.Windows.Forms.Button TButtonEliminar;
         private System.Windows.Forms.Button TButtonBuscar;
-        private System.Windows.Forms.TextBox TTextBoxProvincia;
-        private System.Windows.Forms.TextBox TTextBoxApellidos;
-        private System.Windows.Forms.TextBox TTextBoxNombre;
-        private System.Windows.Forms.TextBox TTextBoxDNI;
-        private System.Windows.Forms.Label TLabelProvincia;
-        private System.Windows.Forms.Label TLabelApellidos;
-        private System.Windows.Forms.Label TLabelNombre;
-        private System.Windows.Forms.Label TLabelDNI;
         private System.Windows.Forms.Button TButtonAlta;
         private System.Windows.Forms.DataGridView TDataGridViewCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn DNI;
@@ -238,5 +243,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellidos;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox TTextBoxProvincia;
+        private System.Windows.Forms.TextBox TTextBoxApellidos;
+        private System.Windows.Forms.TextBox TTextBoxNombre;
+        private System.Windows.Forms.TextBox TTextBoxDNI;
+        private System.Windows.Forms.Label TLabelProvincia;
+        private System.Windows.Forms.Label TLabelApellidos;
+        private System.Windows.Forms.Label TLabelNombre;
+        private System.Windows.Forms.Label TLabelDNI;
     }
 }
