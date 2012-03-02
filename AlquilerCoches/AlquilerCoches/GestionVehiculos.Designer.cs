@@ -70,9 +70,10 @@
             // 
             // TGroupBoxDatosVehiculo
             // 
-            this.TGroupBoxDatosVehiculo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TGroupBoxDatosVehiculo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.TGroupBoxDatosVehiculo.BackColor = System.Drawing.Color.Transparent;
             this.TGroupBoxDatosVehiculo.Controls.Add(this.textBox2);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelGarantia);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.textBox1);
@@ -443,6 +444,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(985, 576);
             this.Controls.Add(this.ButtonBorrar);
             this.Controls.Add(this.TListBoxMatriculas);

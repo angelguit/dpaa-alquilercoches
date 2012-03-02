@@ -47,15 +47,17 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.TButtonCliente = new System.Windows.Forms.Button();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.Gestion = new System.Windows.Forms.TabPage();
             this.TButtonVehiculos = new System.Windows.Forms.Button();
+            this.TButtonCliente = new System.Windows.Forms.Button();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.Gestion.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -179,68 +181,87 @@
             this.toolStripStatusLabel2.Size = new System.Drawing.Size(118, 17);
             this.toolStripStatusLabel2.Text = "toolStripStatusLabel2";
             // 
-            // TButtonCliente
+            // tabControl1
             // 
-            this.TButtonCliente.BackgroundImage = global::AlquilerCoches.Properties.Resources.Cliente1;
-            this.TButtonCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.TButtonCliente.Location = new System.Drawing.Point(230, 110);
-            this.TButtonCliente.Name = "TButtonCliente";
-            this.TButtonCliente.Size = new System.Drawing.Size(175, 113);
-            this.TButtonCliente.TabIndex = 6;
-            this.TButtonCliente.Text = " Gestion Cliente";
-            this.TButtonCliente.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.TButtonCliente.UseVisualStyleBackColor = true;
-            this.TButtonCliente.Click += new System.EventHandler(this.TButtonCliente_Click);
+            this.tabControl1.Controls.Add(this.Gestion);
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.tabControl1.Location = new System.Drawing.Point(0, 24);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(145, 407);
+            this.tabControl1.TabIndex = 12;
             // 
-            // toolStrip1
+            // Gestion
             // 
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(124, 124);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripLabel1,
-            this.toolStripSeparator1});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip1.Size = new System.Drawing.Size(129, 407);
-            this.toolStrip1.TabIndex = 8;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::AlquilerCoches.Properties.Resources.Cliente1;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(126, 128);
-            this.toolStripButton1.Text = "toolStripButton1xsdxxxxxxxxx";
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(126, 15);
-            this.toolStripLabel1.Text = "toolStripLabel1";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(126, 6);
+            this.Gestion.BackColor = System.Drawing.SystemColors.Control;
+            this.Gestion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Gestion.Controls.Add(this.label2);
+            this.Gestion.Controls.Add(this.label1);
+            this.Gestion.Controls.Add(this.TButtonVehiculos);
+            this.Gestion.Controls.Add(this.TButtonCliente);
+            this.Gestion.Location = new System.Drawing.Point(4, 22);
+            this.Gestion.Name = "Gestion";
+            this.Gestion.Padding = new System.Windows.Forms.Padding(3);
+            this.Gestion.Size = new System.Drawing.Size(137, 381);
+            this.Gestion.TabIndex = 0;
+            this.Gestion.Text = "Géstion";
             // 
             // TButtonVehiculos
             // 
             this.TButtonVehiculos.BackColor = System.Drawing.Color.Transparent;
             this.TButtonVehiculos.BackgroundImage = global::AlquilerCoches.Properties.Resources.GestionVehiculos;
             this.TButtonVehiculos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.TButtonVehiculos.ForeColor = System.Drawing.Color.Black;
-            this.TButtonVehiculos.Location = new System.Drawing.Point(522, 110);
+            this.TButtonVehiculos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TButtonVehiculos.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.TButtonVehiculos.Location = new System.Drawing.Point(6, 138);
             this.TButtonVehiculos.Name = "TButtonVehiculos";
-            this.TButtonVehiculos.Size = new System.Drawing.Size(175, 113);
+            this.TButtonVehiculos.Size = new System.Drawing.Size(125, 86);
             this.TButtonVehiculos.TabIndex = 10;
-            this.TButtonVehiculos.Text = "Gestion Vehiculos";
             this.TButtonVehiculos.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.TButtonVehiculos.UseVisualStyleBackColor = false;
+            this.TButtonVehiculos.UseVisualStyleBackColor = true;
             this.TButtonVehiculos.Click += new System.EventHandler(this.TButtonVehiculos_Click);
+            // 
+            // TButtonCliente
+            // 
+            this.TButtonCliente.BackgroundImage = global::AlquilerCoches.Properties.Resources.Cliente1;
+            this.TButtonCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.TButtonCliente.Location = new System.Drawing.Point(6, 18);
+            this.TButtonCliente.Name = "TButtonCliente";
+            this.TButtonCliente.Size = new System.Drawing.Size(125, 88);
+            this.TButtonCliente.TabIndex = 6;
+            this.TButtonCliente.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.TButtonCliente.UseVisualStyleBackColor = true;
+            this.TButtonCliente.Click += new System.EventHandler(this.TButtonCliente_Click);
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(137, 381);
+            this.tabPage1.TabIndex = 1;
+            this.tabPage1.Text = "Administración";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(24, 113);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(83, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Gestión Clientes";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(24, 236);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(92, 13);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Gestión Vehiculos";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // MDIPral
             // 
@@ -249,24 +270,22 @@
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(765, 453);
-            this.Controls.Add(this.TButtonVehiculos);
-            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
-            this.Controls.Add(this.TButtonCliente);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
             this.Name = "MDIPral";
             this.Text = "RAC - Rent a Car";
             this.Load += new System.EventHandler(this.MDIPral_Load);
-            this.MdiChildActivate += new System.EventHandler(this.MDIPral_MdiChildActivate);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.Gestion.ResumeLayout(false);
+            this.Gestion.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -287,16 +306,17 @@
         private System.Windows.Forms.ToolStripMenuItem buscarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem borrarToolStripMenuItem;
-        private System.Windows.Forms.Button TButtonCliente;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem gestionProveedoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionClientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem facturacionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionVentasToolStripMenuItem1;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage Gestion;
+        private System.Windows.Forms.Button TButtonCliente;
         private System.Windows.Forms.Button TButtonVehiculos;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
 
