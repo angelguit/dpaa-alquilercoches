@@ -292,7 +292,7 @@
             this.TButtonAceptar.Name = "TButtonAceptar";
             this.TButtonAceptar.Size = new System.Drawing.Size(75, 23);
             this.TButtonAceptar.TabIndex = 48;
-            this.TButtonAceptar.Text = "Aceptar";
+            this.TButtonAceptar.Text = "Guardar";
             this.TButtonAceptar.UseVisualStyleBackColor = true;
             // 
             // TButtonCancelar
