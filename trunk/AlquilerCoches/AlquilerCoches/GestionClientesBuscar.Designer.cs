@@ -67,6 +67,7 @@
             this.TButtonBuscar.TabIndex = 34;
             this.TButtonBuscar.Text = "Buscar";
             this.TButtonBuscar.UseVisualStyleBackColor = true;
+            this.TButtonBuscar.Click += new System.EventHandler(this.TButtonBuscar_Click);
             // 
             // TTextBoxProvincia
             // 

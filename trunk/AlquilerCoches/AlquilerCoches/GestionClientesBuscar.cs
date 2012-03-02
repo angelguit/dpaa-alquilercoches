@@ -49,5 +49,10 @@ namespace AlquilerCoches
         {
 
         }
+
+        private void TButtonBuscar_Click(object sender, EventArgs e)
+        {
+            TButtonEliminar.Visible = true;
+        }
     }
 }
