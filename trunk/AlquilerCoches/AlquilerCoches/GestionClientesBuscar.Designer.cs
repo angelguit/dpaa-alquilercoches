@@ -39,11 +39,14 @@
             this.TLabelNombre = new System.Windows.Forms.Label();
             this.TLabelDNI = new System.Windows.Forms.Label();
             this.TButtonAlta = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.TDataGridViewCliente = new System.Windows.Forms.DataGridView();
             this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ciudad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TDataGridViewCliente)).BeginInit();
             this.SuspendLayout();
             // 
             // TButtonEliminar
@@ -139,22 +142,40 @@
             this.TButtonAlta.Text = "Dar de alta";
             this.TButtonAlta.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // TDataGridViewCliente
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TDataGridViewCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TDataGridViewCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DNI,
+            this.Ciudad,
+            this.Telefono,
+            this.Email,
             this.Nombre,
             this.Apellidos});
-            this.dataGridView1.Location = new System.Drawing.Point(29, 31);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(582, 209);
-            this.dataGridView1.TabIndex = 24;
+            this.TDataGridViewCliente.Location = new System.Drawing.Point(29, 31);
+            this.TDataGridViewCliente.Name = "TDataGridViewCliente";
+            this.TDataGridViewCliente.Size = new System.Drawing.Size(582, 209);
+            this.TDataGridViewCliente.TabIndex = 24;
             // 
             // DNI
             // 
             this.DNI.HeaderText = "DNI";
             this.DNI.Name = "DNI";
+            // 
+            // Ciudad
+            // 
+            this.Ciudad.HeaderText = "Ciudad";
+            this.Ciudad.Name = "Ciudad";
+            // 
+            // Telefono
+            // 
+            this.Telefono.HeaderText = "Telefono";
+            this.Telefono.Name = "Telefono";
+            // 
+            // Email
+            // 
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
             // 
             // Nombre
             // 
@@ -184,11 +205,11 @@
             this.Controls.Add(this.TLabelNombre);
             this.Controls.Add(this.TLabelDNI);
             this.Controls.Add(this.TButtonAlta);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.TDataGridViewCliente);
             this.Name = "GestionClientesBuscar";
             this.Text = "GestionClientesBuscar";
             this.Load += new System.EventHandler(this.GestionClientesBuscar_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TDataGridViewCliente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,8 +228,11 @@
         private System.Windows.Forms.Label TLabelNombre;
         private System.Windows.Forms.Label TLabelDNI;
         private System.Windows.Forms.Button TButtonAlta;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView TDataGridViewCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn DNI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ciudad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellidos;
     }
