@@ -111,6 +111,8 @@ namespace AlquilerCoches
             {
 
                 Application.OpenForms["GestionVehiculos"].Activate();
+                TButtonCliente.Visible = false;
+                TButtonVehiculos.Visible = false;
             }
             else
             {
@@ -118,6 +120,8 @@ namespace AlquilerCoches
                 F2.MdiParent = this;
                 F2.Show();
                 F2.WindowState = FormWindowState.Maximized;
+                TButtonCliente.Visible = false;
+                TButtonVehiculos.Visible = false;
             }
         }
 
@@ -128,6 +132,8 @@ namespace AlquilerCoches
             {
 
                 Application.OpenForms["GestionPersonal"].Activate();
+                TButtonCliente.Visible = false;
+                TButtonVehiculos.Visible = false;
             }
             else
             {
@@ -135,6 +141,8 @@ namespace AlquilerCoches
                 F3.MdiParent = this;
                 F3.Show();
                 F3.WindowState = FormWindowState.Maximized;
+                TButtonCliente.Visible = false;
+                TButtonVehiculos.Visible = false;
             }
          
         }
@@ -146,6 +154,8 @@ namespace AlquilerCoches
             {
 
                 Application.OpenForms["GestionClientesBuscar"].Activate();
+                TButtonCliente.Visible = false;
+                TButtonVehiculos.Visible = false;
             }
             else
             {
@@ -154,7 +164,36 @@ namespace AlquilerCoches
                 F4.Show();
                 F4.WindowState = FormWindowState.Maximized;
                 TButtonCliente.Visible = false;
+                TButtonVehiculos.Visible = false;
             }
+        }
+
+        
+
+        private void TButtonVehiculos_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["GestionVehiculos"] != null)
+            {
+
+                Application.OpenForms["GestionVehiculos"].Activate();
+                TButtonCliente.Visible = false;
+                TButtonVehiculos.Visible = false;
+            }
+            else
+            {
+                GestionVehiculos F5 = new GestionVehiculos();
+                F5.MdiParent = this;
+                F5.Show();
+                F5.WindowState = FormWindowState.Maximized;
+                TButtonCliente.Visible = false;
+                TButtonVehiculos.Visible = false;
+            }
+        }
+
+        private void MDIPral_MdiChildActivate(object sender, EventArgs e) //para que al cerrar las ventanas se vuelvan a mostrar los botones
+        {
+            TButtonCliente.Visible = true;
+            TButtonVehiculos.Visible = true;
         }
     }
 }
