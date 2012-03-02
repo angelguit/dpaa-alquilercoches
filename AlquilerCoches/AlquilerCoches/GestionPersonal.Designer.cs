@@ -123,7 +123,7 @@
             this.TGroupBoxAlta.Size = new System.Drawing.Size(318, 313);
             this.TGroupBoxAlta.TabIndex = 27;
             this.TGroupBoxAlta.TabStop = false;
-            this.TGroupBoxAlta.Text = "Alta personal";
+            this.TGroupBoxAlta.Text = "Personal";
             // 
             // textBox2
             // 
