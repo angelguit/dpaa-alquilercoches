@@ -41,7 +41,7 @@ namespace AlquilerCoches
             }
         }
         User UsuarioSistema;
-             
+         
 
         public MDIPral(User usuario)
         {
@@ -51,7 +51,7 @@ namespace AlquilerCoches
             toolStripStatusLabel.Text = "Nombre:" + usuario.Nombre;
             toolStripStatusLabel1.Text = "ID:" + usuario.ID;
             toolStripStatusLabel2.Text = "Status:" + usuario.Status;
-
+            
         }
 
         
@@ -102,32 +102,59 @@ namespace AlquilerCoches
 
         private void MDIPral_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void buscarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GestionVehiculos F2 = new GestionVehiculos();
-            F2.MdiParent=this;
-            F2.Show();
-            F2.WindowState = FormWindowState.Maximized;
+            if (Application.OpenForms["GestionVehiculos"] != null)
+            {
+
+                Application.OpenForms["GestionVehiculos"].Activate();
+            }
+            else
+            {
+                GestionVehiculos F2 = new GestionVehiculos();
+                F2.MdiParent = this;
+                F2.Show();
+                F2.WindowState = FormWindowState.Maximized;
+            }
         }
 
         private void darAltaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GestionPersonal F3 = new GestionPersonal();
-            F3.MdiParent = this;
-            F3.Show();
-            F3.WindowState = FormWindowState.Maximized;
+
+            if (Application.OpenForms["GestionPersonal"] != null)
+            {
+
+                Application.OpenForms["GestionPersonal"].Activate();
+            }
+            else
+            {
+                GestionPersonal F3 = new GestionPersonal();    
+                F3.MdiParent = this;
+                F3.Show();
+                F3.WindowState = FormWindowState.Maximized;
+            }
+         
         }
 
         private void TButtonCliente_Click(object sender, EventArgs e)
         {
-            GestionClientesBuscar F4 = new GestionClientesBuscar();
 
-            F4.MdiParent = this;
-            F4.Show();
-            F4.WindowState = FormWindowState.Maximized;
+            if (Application.OpenForms["GestionClientesBuscar"] != null)
+            {
+
+                Application.OpenForms["GestionClientesBuscar"].Activate();
+            }
+            else
+            {
+                GestionClientesBuscar F4 = new GestionClientesBuscar();
+                F4.MdiParent = this;
+                F4.Show();
+                F4.WindowState = FormWindowState.Maximized;
+                TButtonCliente.Visible = false;
+            }
         }
     }
 }
