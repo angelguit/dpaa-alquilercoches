@@ -206,6 +206,8 @@
             this.Controls.Add(this.TLabelDNI);
             this.Controls.Add(this.TButtonAlta);
             this.Controls.Add(this.TDataGridViewCliente);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "GestionClientesBuscar";
             this.Text = "GestionClientesBuscar";
             this.Load += new System.EventHandler(this.GestionClientesBuscar_Load);

@@ -111,8 +111,6 @@ namespace AlquilerCoches
             {
 
                 Application.OpenForms["GestionVehiculos"].Activate();
-                TButtonCliente.Visible = false;
-                TButtonVehiculos.Visible = false;
             }
             else
             {
@@ -120,8 +118,6 @@ namespace AlquilerCoches
                 F2.MdiParent = this;
                 F2.Show();
                 F2.WindowState = FormWindowState.Maximized;
-                TButtonCliente.Visible = false;
-                TButtonVehiculos.Visible = false;
             }
         }
 
@@ -132,8 +128,6 @@ namespace AlquilerCoches
             {
 
                 Application.OpenForms["GestionPersonal"].Activate();
-                TButtonCliente.Visible = false;
-                TButtonVehiculos.Visible = false;
             }
             else
             {
@@ -141,8 +135,7 @@ namespace AlquilerCoches
                 F3.MdiParent = this;
                 F3.Show();
                 F3.WindowState = FormWindowState.Maximized;
-                TButtonCliente.Visible = false;
-                TButtonVehiculos.Visible = false;
+
             }
          
         }
@@ -154,8 +147,6 @@ namespace AlquilerCoches
             {
 
                 Application.OpenForms["GestionClientesBuscar"].Activate();
-                TButtonCliente.Visible = false;
-                TButtonVehiculos.Visible = false;
             }
             else
             {
@@ -163,8 +154,6 @@ namespace AlquilerCoches
                 F4.MdiParent = this;
                 F4.Show();
                 F4.WindowState = FormWindowState.Maximized;
-                TButtonCliente.Visible = false;
-                TButtonVehiculos.Visible = false;
             }
         }
 
@@ -176,8 +165,6 @@ namespace AlquilerCoches
             {
 
                 Application.OpenForms["GestionVehiculos"].Activate();
-                TButtonCliente.Visible = false;
-                TButtonVehiculos.Visible = false;
             }
             else
             {
@@ -185,15 +172,13 @@ namespace AlquilerCoches
                 F5.MdiParent = this;
                 F5.Show();
                 F5.WindowState = FormWindowState.Maximized;
-                TButtonCliente.Visible = false;
-                TButtonVehiculos.Visible = false;
             }
         }
 
-        private void MDIPral_MdiChildActivate(object sender, EventArgs e) //para que al cerrar las ventanas se vuelvan a mostrar los botones
+        private void label2_Click(object sender, EventArgs e)
         {
-            TButtonCliente.Visible = true;
-            TButtonVehiculos.Visible = true;
+
         }
-    }
+
+     }
 }
