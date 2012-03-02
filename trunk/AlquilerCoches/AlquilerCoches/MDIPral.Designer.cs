@@ -38,6 +38,10 @@
             this.borrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.darAltaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.facturacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionVentasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -48,10 +52,6 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.gestionProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestionClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.facturacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestionVentasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -123,6 +123,30 @@
             this.darAltaToolStripMenuItem.Text = "DarAlta";
             this.darAltaToolStripMenuItem.Click += new System.EventHandler(this.darAltaToolStripMenuItem_Click);
             // 
+            // gestionProveedoresToolStripMenuItem
+            // 
+            this.gestionProveedoresToolStripMenuItem.Name = "gestionProveedoresToolStripMenuItem";
+            this.gestionProveedoresToolStripMenuItem.Size = new System.Drawing.Size(127, 20);
+            this.gestionProveedoresToolStripMenuItem.Text = "Gestion Proveedores";
+            // 
+            // gestionClientesToolStripMenuItem
+            // 
+            this.gestionClientesToolStripMenuItem.Name = "gestionClientesToolStripMenuItem";
+            this.gestionClientesToolStripMenuItem.Size = new System.Drawing.Size(104, 20);
+            this.gestionClientesToolStripMenuItem.Text = "Gestion Clientes";
+            // 
+            // facturacionToolStripMenuItem
+            // 
+            this.facturacionToolStripMenuItem.Name = "facturacionToolStripMenuItem";
+            this.facturacionToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
+            this.facturacionToolStripMenuItem.Text = "Facturacion";
+            // 
+            // gestionVentasToolStripMenuItem1
+            // 
+            this.gestionVentasToolStripMenuItem1.Name = "gestionVentasToolStripMenuItem1";
+            this.gestionVentasToolStripMenuItem1.Size = new System.Drawing.Size(97, 20);
+            this.gestionVentasToolStripMenuItem1.Text = "Gestion Ventas";
+            // 
             // statusStrip
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -158,9 +182,9 @@
             // 
             this.TButtonCliente.BackgroundImage = global::AlquilerCoches.Properties.Resources.Cliente1;
             this.TButtonCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.TButtonCliente.Location = new System.Drawing.Point(114, 129);
+            this.TButtonCliente.Location = new System.Drawing.Point(191, 58);
             this.TButtonCliente.Name = "TButtonCliente";
-            this.TButtonCliente.Size = new System.Drawing.Size(138, 86);
+            this.TButtonCliente.Size = new System.Drawing.Size(175, 113);
             this.TButtonCliente.TabIndex = 6;
             this.TButtonCliente.Text = " Gestion Cliente";
             this.TButtonCliente.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -178,7 +202,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip1.Size = new System.Drawing.Size(87, 407);
+            this.toolStrip1.Size = new System.Drawing.Size(129, 407);
             this.toolStrip1.TabIndex = 8;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -188,43 +212,19 @@
             this.toolStripButton1.Image = global::AlquilerCoches.Properties.Resources.Cliente1;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(84, 72);
+            this.toolStripButton1.Size = new System.Drawing.Size(126, 128);
             this.toolStripButton1.Text = "toolStripButton1xsdxxxxxxxxx";
             // 
             // toolStripLabel1
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(84, 15);
+            this.toolStripLabel1.Size = new System.Drawing.Size(126, 15);
             this.toolStripLabel1.Text = "toolStripLabel1";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(84, 6);
-            // 
-            // gestionProveedoresToolStripMenuItem
-            // 
-            this.gestionProveedoresToolStripMenuItem.Name = "gestionProveedoresToolStripMenuItem";
-            this.gestionProveedoresToolStripMenuItem.Size = new System.Drawing.Size(127, 20);
-            this.gestionProveedoresToolStripMenuItem.Text = "Gestion Proveedores";
-            // 
-            // gestionClientesToolStripMenuItem
-            // 
-            this.gestionClientesToolStripMenuItem.Name = "gestionClientesToolStripMenuItem";
-            this.gestionClientesToolStripMenuItem.Size = new System.Drawing.Size(104, 20);
-            this.gestionClientesToolStripMenuItem.Text = "Gestion Clientes";
-            // 
-            // facturacionToolStripMenuItem
-            // 
-            this.facturacionToolStripMenuItem.Name = "facturacionToolStripMenuItem";
-            this.facturacionToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
-            this.facturacionToolStripMenuItem.Text = "Facturacion";
-            // 
-            // gestionVentasToolStripMenuItem1
-            // 
-            this.gestionVentasToolStripMenuItem1.Name = "gestionVentasToolStripMenuItem1";
-            this.gestionVentasToolStripMenuItem1.Size = new System.Drawing.Size(97, 20);
-            this.gestionVentasToolStripMenuItem1.Text = "Gestion Ventas";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(126, 6);
             // 
             // MDIPral
             // 

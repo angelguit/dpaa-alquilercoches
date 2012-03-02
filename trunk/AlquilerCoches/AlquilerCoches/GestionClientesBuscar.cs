@@ -44,5 +44,10 @@ namespace AlquilerCoches
         {
 
         }
+
+        private void GestionClientesBuscar_Closed(object sender, EventArgs e)
+        {
+
+        }
     }
 }
