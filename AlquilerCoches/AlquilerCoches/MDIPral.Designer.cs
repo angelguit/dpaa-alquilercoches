@@ -52,6 +52,7 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.TButtonVehiculos = new System.Windows.Forms.Button();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -182,7 +183,7 @@
             // 
             this.TButtonCliente.BackgroundImage = global::AlquilerCoches.Properties.Resources.Cliente1;
             this.TButtonCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.TButtonCliente.Location = new System.Drawing.Point(191, 58);
+            this.TButtonCliente.Location = new System.Drawing.Point(230, 110);
             this.TButtonCliente.Name = "TButtonCliente";
             this.TButtonCliente.Size = new System.Drawing.Size(175, 113);
             this.TButtonCliente.TabIndex = 6;
@@ -226,6 +227,21 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(126, 6);
             // 
+            // TButtonVehiculos
+            // 
+            this.TButtonVehiculos.BackColor = System.Drawing.Color.Transparent;
+            this.TButtonVehiculos.BackgroundImage = global::AlquilerCoches.Properties.Resources.GestionVehiculos;
+            this.TButtonVehiculos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.TButtonVehiculos.ForeColor = System.Drawing.Color.Black;
+            this.TButtonVehiculos.Location = new System.Drawing.Point(522, 110);
+            this.TButtonVehiculos.Name = "TButtonVehiculos";
+            this.TButtonVehiculos.Size = new System.Drawing.Size(175, 113);
+            this.TButtonVehiculos.TabIndex = 10;
+            this.TButtonVehiculos.Text = "Gestion Vehiculos";
+            this.TButtonVehiculos.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.TButtonVehiculos.UseVisualStyleBackColor = false;
+            this.TButtonVehiculos.Click += new System.EventHandler(this.TButtonVehiculos_Click);
+            // 
             // MDIPral
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -233,6 +249,7 @@
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(765, 453);
+            this.Controls.Add(this.TButtonVehiculos);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
@@ -243,6 +260,7 @@
             this.Name = "MDIPral";
             this.Text = "RAC - Rent a Car";
             this.Load += new System.EventHandler(this.MDIPral_Load);
+            this.MdiChildActivate += new System.EventHandler(this.MDIPral_MdiChildActivate);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);
@@ -278,6 +296,7 @@
         private System.Windows.Forms.ToolStripMenuItem gestionClientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem facturacionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionVentasToolStripMenuItem1;
+        private System.Windows.Forms.Button TButtonVehiculos;
     }
 }
 
