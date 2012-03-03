@@ -180,5 +180,37 @@ namespace AlquilerCoches
 
         }
 
+        private void TToolStripMenuItemNuevaFactura_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["Facturacion"] != null)
+            {
+
+                Application.OpenForms["Facturacion"].Activate();
+            }
+            else
+            {
+                Facturacion F6 = new Facturacion();
+                F6.MdiParent = this;
+                F6.Show();
+                F6.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        private void TToolStripMenuItemBuscarFactura_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["GestionFacturacion"] != null)
+            {
+
+                Application.OpenForms["GestionFacturacion"].Activate();
+            }
+            else
+            {
+                GestionFacturacion F7 = new GestionFacturacion();
+                F7.MdiParent = this;
+                F7.Show();
+                F7.WindowState = FormWindowState.Maximized;
+            }
+        }
+
      }
 }

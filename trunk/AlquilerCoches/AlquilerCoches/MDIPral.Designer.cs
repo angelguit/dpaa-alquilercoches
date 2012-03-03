@@ -49,11 +49,13 @@
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Gestion = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.TButtonVehiculos = new System.Windows.Forms.Button();
             this.TButtonCliente = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.TToolStripMenuItemNuevaFactura = new System.Windows.Forms.ToolStripMenuItem();
+            this.TToolStripMenuItemBuscarFactura = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -140,6 +142,9 @@
             // 
             // facturacionToolStripMenuItem
             // 
+            this.facturacionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TToolStripMenuItemNuevaFactura,
+            this.TToolStripMenuItemBuscarFactura});
             this.facturacionToolStripMenuItem.Name = "facturacionToolStripMenuItem";
             this.facturacionToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
             this.facturacionToolStripMenuItem.Text = "Facturacion";
@@ -207,6 +212,25 @@
             this.Gestion.TabIndex = 0;
             this.Gestion.Text = "Géstion";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(24, 236);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(92, 13);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Gestión Vehiculos";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(24, 113);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(83, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Gestión Clientes";
+            // 
             // TButtonVehiculos
             // 
             this.TButtonVehiculos.BackColor = System.Drawing.Color.Transparent;
@@ -244,24 +268,19 @@
             this.tabPage1.Text = "Administración";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // TToolStripMenuItemNuevaFactura
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 113);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 13);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Gestión Clientes";
+            this.TToolStripMenuItemNuevaFactura.Name = "TToolStripMenuItemNuevaFactura";
+            this.TToolStripMenuItemNuevaFactura.Size = new System.Drawing.Size(152, 22);
+            this.TToolStripMenuItemNuevaFactura.Text = "Nueva Factura";
+            this.TToolStripMenuItemNuevaFactura.Click += new System.EventHandler(this.TToolStripMenuItemNuevaFactura_Click);
             // 
-            // label2
+            // TToolStripMenuItemBuscarFactura
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 236);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 13);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Gestión Vehiculos";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.TToolStripMenuItemBuscarFactura.Name = "TToolStripMenuItemBuscarFactura";
+            this.TToolStripMenuItemBuscarFactura.Size = new System.Drawing.Size(152, 22);
+            this.TToolStripMenuItemBuscarFactura.Text = "Buscar Factura";
+            this.TToolStripMenuItemBuscarFactura.Click += new System.EventHandler(this.TToolStripMenuItemBuscarFactura_Click);
             // 
             // MDIPral
             // 
@@ -317,6 +336,8 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem TToolStripMenuItemNuevaFactura;
+        private System.Windows.Forms.ToolStripMenuItem TToolStripMenuItemBuscarFactura;
     }
 }
 
