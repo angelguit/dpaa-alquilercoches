@@ -20,5 +20,19 @@ namespace AlquilerCoches
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["GestionClientesBuscar"] != null)
+            {
+
+                Application.OpenForms["GestionClientesBuscar"].Activate();
+            }
+            else
+            {
+                GestionClientesBuscar F1 = new GestionClientesBuscar();
+                F1.Show();
+            }
+        }
     }
 }
