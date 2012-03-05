@@ -29,27 +29,27 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.TBuscarbutton = new System.Windows.Forms.Button();
+            this.TNamelabel = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.TEstadogroupbox = new System.Windows.Forms.GroupBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.TNamelabel = new System.Windows.Forms.Label();
+            this.TBuscarbutton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.TEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TDescripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.TEstadogroupbox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.Gainsboro;
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.TNamelabel);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.TEstadogroupbox);
@@ -64,43 +64,22 @@
             this.groupBox1.Text = "Criterios de búsqueda ";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // label1
+            // TNamelabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(168, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(21, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "ID:";
+            this.TNamelabel.AutoSize = true;
+            this.TNamelabel.Location = new System.Drawing.Point(168, 67);
+            this.TNamelabel.Name = "TNamelabel";
+            this.TNamelabel.Size = new System.Drawing.Size(47, 13);
+            this.TNamelabel.TabIndex = 7;
+            this.TNamelabel.Text = "Nombre:";
+            this.TNamelabel.Click += new System.EventHandler(this.label2_Click);
             // 
-            // textBox1
+            // textBox2
             // 
-            this.textBox1.Location = new System.Drawing.Point(231, 26);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(101, 20);
-            this.textBox1.TabIndex = 2;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.TEstado,
-            this.TNombre,
-            this.TDescripción,
-            this.TProveedor});
-            this.dataGridView1.Location = new System.Drawing.Point(71, 136);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(445, 263);
-            this.dataGridView1.TabIndex = 3;
-            // 
-            // TBuscarbutton
-            // 
-            this.TBuscarbutton.Location = new System.Drawing.Point(385, 44);
-            this.TBuscarbutton.Name = "TBuscarbutton";
-            this.TBuscarbutton.Size = new System.Drawing.Size(133, 23);
-            this.TBuscarbutton.TabIndex = 4;
-            this.TBuscarbutton.Text = "BUSCAR";
-            this.TBuscarbutton.UseVisualStyleBackColor = true;
+            this.textBox2.Location = new System.Drawing.Point(231, 67);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(101, 20);
+            this.textBox2.TabIndex = 6;
             // 
             // TEstadogroupbox
             // 
@@ -136,22 +115,43 @@
             this.radioButton1.Text = "Abierto";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // TBuscarbutton
             // 
-            this.textBox2.Location = new System.Drawing.Point(231, 67);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(101, 20);
-            this.textBox2.TabIndex = 6;
+            this.TBuscarbutton.Location = new System.Drawing.Point(385, 44);
+            this.TBuscarbutton.Name = "TBuscarbutton";
+            this.TBuscarbutton.Size = new System.Drawing.Size(133, 23);
+            this.TBuscarbutton.TabIndex = 4;
+            this.TBuscarbutton.Text = "BUSCAR";
+            this.TBuscarbutton.UseVisualStyleBackColor = true;
             // 
-            // TNamelabel
+            // label1
             // 
-            this.TNamelabel.AutoSize = true;
-            this.TNamelabel.Location = new System.Drawing.Point(168, 67);
-            this.TNamelabel.Name = "TNamelabel";
-            this.TNamelabel.Size = new System.Drawing.Size(47, 13);
-            this.TNamelabel.TabIndex = 7;
-            this.TNamelabel.Text = "Nombre:";
-            this.TNamelabel.Click += new System.EventHandler(this.label2_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(168, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(21, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "ID:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(231, 26);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(101, 20);
+            this.textBox1.TabIndex = 2;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TEstado,
+            this.TNombre,
+            this.TDescripción,
+            this.TProveedor});
+            this.dataGridView1.Location = new System.Drawing.Point(71, 136);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(445, 263);
+            this.dataGridView1.TabIndex = 3;
             // 
             // TEstado
             // 
@@ -188,9 +188,9 @@
             this.Load += new System.EventHandler(this.BuscarPedidos_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.TEstadogroupbox.ResumeLayout(false);
             this.TEstadogroupbox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
