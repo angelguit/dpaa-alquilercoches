@@ -45,12 +45,7 @@ namespace AlquilerCoches
                    cont++;
                    TErrorModelo.Show();
             }
-            if (TObservTextBox.Text == "")
-            {
-                TErrorObser.Text = "*Introduzca alguna observación (máx. 400 caracteres)";
-                cont++;
-                TErrorObser.Show();
-            }
+           
 
             
                   
@@ -97,8 +92,8 @@ namespace AlquilerCoches
             TProveecomboBox1.Text = "";
             TMarcacomboBox2.Text = "";
             TModelocomboBox3.Text = "";
-            TCantidadTextBox.Text = "";
-            TObservTextBox.Text = "";
+           
+         
 
             
         }
