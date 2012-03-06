@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+            this.components = new System.ComponentModel.Container();
             this.TButtonEliminar = new System.Windows.Forms.Button();
             this.TButtonBuscar = new System.Windows.Forms.Button();
             this.TTextBoxPuestoAc = new System.Windows.Forms.TextBox();
@@ -45,7 +46,9 @@
             this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.TDataGridViewPersonal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // TButtonEliminar
@@ -70,17 +73,19 @@
             // 
             // TTextBoxPuestoAc
             // 
-            this.TTextBoxPuestoAc.Location = new System.Drawing.Point(277, 320);
+            this.TTextBoxPuestoAc.Location = new System.Drawing.Point(305, 321);
             this.TTextBoxPuestoAc.Name = "TTextBoxPuestoAc";
             this.TTextBoxPuestoAc.Size = new System.Drawing.Size(100, 20);
             this.TTextBoxPuestoAc.TabIndex = 21;
+            this.TTextBoxPuestoAc.Leave += new System.EventHandler(this.TTextBoxPuestoAc_Leave);
             // 
             // TTextBoxApellidos
             // 
-            this.TTextBoxApellidos.Location = new System.Drawing.Point(277, 281);
+            this.TTextBoxApellidos.Location = new System.Drawing.Point(305, 282);
             this.TTextBoxApellidos.Name = "TTextBoxApellidos";
             this.TTextBoxApellidos.Size = new System.Drawing.Size(100, 20);
             this.TTextBoxApellidos.TabIndex = 20;
+            this.TTextBoxApellidos.Leave += new System.EventHandler(this.TTextBoxApellidos_Leave);
             // 
             // TTextBoxNombre
             // 
@@ -88,6 +93,7 @@
             this.TTextBoxNombre.Name = "TTextBoxNombre";
             this.TTextBoxNombre.Size = new System.Drawing.Size(100, 20);
             this.TTextBoxNombre.TabIndex = 19;
+            this.TTextBoxNombre.Leave += new System.EventHandler(this.TTextBoxNombre_Leave);
             // 
             // TTextBoxDNI
             // 
@@ -95,12 +101,13 @@
             this.TTextBoxDNI.Name = "TTextBoxDNI";
             this.TTextBoxDNI.Size = new System.Drawing.Size(100, 20);
             this.TTextBoxDNI.TabIndex = 18;
+            this.TTextBoxDNI.Leave += new System.EventHandler(this.TTextBoxDNI_Leave);
             // 
             // TLabelPuestoAc
             // 
             this.TLabelPuestoAc.AutoSize = true;
             this.TLabelPuestoAc.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelPuestoAc.Location = new System.Drawing.Point(212, 328);
+            this.TLabelPuestoAc.Location = new System.Drawing.Point(240, 329);
             this.TLabelPuestoAc.Name = "TLabelPuestoAc";
             this.TLabelPuestoAc.Size = new System.Drawing.Size(59, 13);
             this.TLabelPuestoAc.TabIndex = 17;
@@ -110,7 +117,7 @@
             // 
             this.TLabelApellidos.AutoSize = true;
             this.TLabelApellidos.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelApellidos.Location = new System.Drawing.Point(222, 289);
+            this.TLabelApellidos.Location = new System.Drawing.Point(250, 290);
             this.TLabelApellidos.Name = "TLabelApellidos";
             this.TLabelApellidos.Size = new System.Drawing.Size(49, 13);
             this.TLabelApellidos.TabIndex = 16;
@@ -184,6 +191,10 @@
             this.Email.HeaderText = "Email";
             this.Email.Name = "Email";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // GestionPersonalBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -206,6 +217,7 @@
             this.Name = "GestionPersonalBuscar";
             this.Text = "GestionPersonalBuscar";
             ((System.ComponentModel.ISupportInitialize)(this.TDataGridViewPersonal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,5 +242,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellidos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
 	}
 }

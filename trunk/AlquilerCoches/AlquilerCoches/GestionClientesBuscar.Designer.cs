@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.TButtonEliminar = new System.Windows.Forms.Button();
             this.TButtonBuscar = new System.Windows.Forms.Button();
             this.TButtonAlta = new System.Windows.Forms.Button();
@@ -47,8 +48,10 @@
             this.TLabelApellidos = new System.Windows.Forms.Label();
             this.TLabelNombre = new System.Windows.Forms.Label();
             this.TLabelDNI = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.TDataGridViewCliente)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // TButtonEliminar
@@ -150,6 +153,7 @@
             this.TTextBoxProvincia.Name = "TTextBoxProvincia";
             this.TTextBoxProvincia.Size = new System.Drawing.Size(100, 20);
             this.TTextBoxProvincia.TabIndex = 41;
+            this.TTextBoxProvincia.Leave += new System.EventHandler(this.TTextBoxProvincia_Leave);
             // 
             // TTextBoxApellidos
             // 
@@ -157,6 +161,7 @@
             this.TTextBoxApellidos.Name = "TTextBoxApellidos";
             this.TTextBoxApellidos.Size = new System.Drawing.Size(100, 20);
             this.TTextBoxApellidos.TabIndex = 40;
+            this.TTextBoxApellidos.Leave += new System.EventHandler(this.TTextBoxApellidos_Leave);
             // 
             // TTextBoxNombre
             // 
@@ -164,6 +169,7 @@
             this.TTextBoxNombre.Name = "TTextBoxNombre";
             this.TTextBoxNombre.Size = new System.Drawing.Size(100, 20);
             this.TTextBoxNombre.TabIndex = 39;
+            this.TTextBoxNombre.Leave += new System.EventHandler(this.TTextBoxNombre_Leave);
             // 
             // TTextBoxDNI
             // 
@@ -171,6 +177,7 @@
             this.TTextBoxDNI.Name = "TTextBoxDNI";
             this.TTextBoxDNI.Size = new System.Drawing.Size(100, 20);
             this.TTextBoxDNI.TabIndex = 38;
+            this.TTextBoxDNI.Leave += new System.EventHandler(this.TTextBoxDNI_Leave);
             // 
             // TLabelProvincia
             // 
@@ -209,6 +216,10 @@
             this.TLabelDNI.TabIndex = 34;
             this.TLabelDNI.Text = "DNI";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // GestionClientesBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -227,6 +238,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.TDataGridViewCliente)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -252,5 +264,6 @@
         private System.Windows.Forms.Label TLabelApellidos;
         private System.Windows.Forms.Label TLabelNombre;
         private System.Windows.Forms.Label TLabelDNI;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
