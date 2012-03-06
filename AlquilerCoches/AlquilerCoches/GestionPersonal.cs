@@ -77,7 +77,7 @@ namespace AlquilerCoches
 
         private void TTextBoxEmail_Leave(object sender, EventArgs e)
         {
-            if (!Regex.Match(TTextBoxEmail.Text, @"/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/").Success)
+            if (!Regex.Match(TTextBoxEmail.Text, @"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$").Success)
             {
                 errorProvider1.SetError(TTextBoxEmail, "Email incorrectos, caracteres invalidos");
                 incorrecto = true;
