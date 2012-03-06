@@ -65,7 +65,7 @@
             this.TButtonCancelar.Location = new System.Drawing.Point(120, 331);
             this.TButtonCancelar.Name = "TButtonCancelar";
             this.TButtonCancelar.Size = new System.Drawing.Size(88, 25);
-            this.TButtonCancelar.TabIndex = 16;
+            this.TButtonCancelar.TabIndex = 2;
             this.TButtonCancelar.Text = "Cancelar";
             this.TButtonCancelar.UseVisualStyleBackColor = true;
             // 
@@ -74,7 +74,7 @@
             this.TButtonFoto.Location = new System.Drawing.Point(489, 152);
             this.TButtonFoto.Name = "TButtonFoto";
             this.TButtonFoto.Size = new System.Drawing.Size(68, 19);
-            this.TButtonFoto.TabIndex = 22;
+            this.TButtonFoto.TabIndex = 0;
             this.TButtonFoto.Text = "Foto";
             this.TButtonFoto.UseVisualStyleBackColor = true;
             // 
@@ -94,7 +94,7 @@
             this.TButtonGuardarPersonal.Location = new System.Drawing.Point(27, 331);
             this.TButtonGuardarPersonal.Name = "TButtonGuardarPersonal";
             this.TButtonGuardarPersonal.Size = new System.Drawing.Size(77, 24);
-            this.TButtonGuardarPersonal.TabIndex = 24;
+            this.TButtonGuardarPersonal.TabIndex = 1;
             this.TButtonGuardarPersonal.Text = "Guardar";
             this.TButtonGuardarPersonal.UseVisualStyleBackColor = true;
             this.TButtonGuardarPersonal.Click += new System.EventHandler(this.TButtonGuardarPersonal_Click);
@@ -134,7 +134,7 @@
             this.TTextBoxDireccion.Location = new System.Drawing.Point(108, 124);
             this.TTextBoxDireccion.Name = "TTextBoxDireccion";
             this.TTextBoxDireccion.Size = new System.Drawing.Size(108, 20);
-            this.TTextBoxDireccion.TabIndex = 46;
+            this.TTextBoxDireccion.TabIndex = 5;
             this.TTextBoxDireccion.Leave += new System.EventHandler(this.TTextBoxDireccion_Leave);
             // 
             // TLabelDireccion
@@ -151,7 +151,7 @@
             this.TTextBoxEmail.Location = new System.Drawing.Point(108, 103);
             this.TTextBoxEmail.Name = "TTextBoxEmail";
             this.TTextBoxEmail.Size = new System.Drawing.Size(108, 20);
-            this.TTextBoxEmail.TabIndex = 44;
+            this.TTextBoxEmail.TabIndex = 4;
             this.TTextBoxEmail.Leave += new System.EventHandler(this.TTextBoxEmail_Leave);
             // 
             // TLabelEmail
@@ -177,7 +177,7 @@
             this.richTextBox1.Location = new System.Drawing.Point(108, 228);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(141, 63);
-            this.richTextBox1.TabIndex = 41;
+            this.richTextBox1.TabIndex = 9;
             this.richTextBox1.Text = "";
             // 
             // TTextBoxPuestoAc
@@ -185,7 +185,7 @@
             this.TTextBoxPuestoAc.Location = new System.Drawing.Point(108, 190);
             this.TTextBoxPuestoAc.Name = "TTextBoxPuestoAc";
             this.TTextBoxPuestoAc.Size = new System.Drawing.Size(108, 20);
-            this.TTextBoxPuestoAc.TabIndex = 40;
+            this.TTextBoxPuestoAc.TabIndex = 8;
             this.TTextBoxPuestoAc.Leave += new System.EventHandler(this.TTextBoxPuestoAc_Leave);
             // 
             // TTextBoxProvincia
@@ -193,7 +193,7 @@
             this.TTextBoxProvincia.Location = new System.Drawing.Point(108, 168);
             this.TTextBoxProvincia.Name = "TTextBoxProvincia";
             this.TTextBoxProvincia.Size = new System.Drawing.Size(108, 20);
-            this.TTextBoxProvincia.TabIndex = 39;
+            this.TTextBoxProvincia.TabIndex = 7;
             this.TTextBoxProvincia.Leave += new System.EventHandler(this.TTextBoxProvincia_Leave);
             // 
             // TTextBoxCiudad
@@ -201,7 +201,7 @@
             this.TTextBoxCiudad.Location = new System.Drawing.Point(108, 146);
             this.TTextBoxCiudad.Name = "TTextBoxCiudad";
             this.TTextBoxCiudad.Size = new System.Drawing.Size(108, 20);
-            this.TTextBoxCiudad.TabIndex = 38;
+            this.TTextBoxCiudad.TabIndex = 6;
             this.TTextBoxCiudad.Leave += new System.EventHandler(this.TTextBoxCiudad_Leave);
             // 
             // TTextBoxTelefono
@@ -209,7 +209,7 @@
             this.TTextBoxTelefono.Location = new System.Drawing.Point(108, 80);
             this.TTextBoxTelefono.Name = "TTextBoxTelefono";
             this.TTextBoxTelefono.Size = new System.Drawing.Size(108, 20);
-            this.TTextBoxTelefono.TabIndex = 37;
+            this.TTextBoxTelefono.TabIndex = 3;
             this.TTextBoxTelefono.Leave += new System.EventHandler(this.TTextBoxTelefono_Leave);
             // 
             // TTextBoxApellidos
@@ -217,21 +217,24 @@
             this.TTextBoxApellidos.Location = new System.Drawing.Point(108, 58);
             this.TTextBoxApellidos.Name = "TTextBoxApellidos";
             this.TTextBoxApellidos.Size = new System.Drawing.Size(108, 20);
-            this.TTextBoxApellidos.TabIndex = 36;
+            this.TTextBoxApellidos.TabIndex = 2;
+            this.TTextBoxApellidos.Leave += new System.EventHandler(this.TTextBoxApellidos_Leave);
             // 
             // TTextBoxNombre
             // 
             this.TTextBoxNombre.Location = new System.Drawing.Point(108, 36);
             this.TTextBoxNombre.Name = "TTextBoxNombre";
             this.TTextBoxNombre.Size = new System.Drawing.Size(70, 20);
-            this.TTextBoxNombre.TabIndex = 35;
+            this.TTextBoxNombre.TabIndex = 1;
+            this.TTextBoxNombre.Leave += new System.EventHandler(this.TTextBoxNombre_Leave);
             // 
             // TTextBoxDNI
             // 
             this.TTextBoxDNI.Location = new System.Drawing.Point(108, 13);
             this.TTextBoxDNI.Name = "TTextBoxDNI";
             this.TTextBoxDNI.Size = new System.Drawing.Size(70, 20);
-            this.TTextBoxDNI.TabIndex = 34;
+            this.TTextBoxDNI.TabIndex = 0;
+            this.TTextBoxDNI.Leave += new System.EventHandler(this.TTextBoxDNI_Leave);
             // 
             // TLabelPuestoAc
             // 

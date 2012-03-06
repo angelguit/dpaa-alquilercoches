@@ -32,7 +32,8 @@ namespace AlquilerCoches
 
         }
 
-        bool incorrecto = true;
+        bool incorrecto = false;
+        
         private void TTextBoxDNI_Leave(object sender, EventArgs e)
         {
             if (!Regex.Match(TTextBoxDNI.Text, @"^(([A-Z]\d{8})|(\d{8}[A-Z]))$").Success)
@@ -40,8 +41,9 @@ namespace AlquilerCoches
                 errorProvider1.SetError(TTextBoxDNI, "DNI incorrecto");
                 incorrecto = true;
             }
-            else { incorrecto = false; errorProvider1.SetError(TTextBoxDNI, ""); }
+            else { errorProvider1.SetError(TTextBoxDNI, ""); }
         }
+
         private void TTextBoxNombre_Leave(object sender, EventArgs e)
         {
             if (!Regex.Match(TTextBoxNombre.Text, @"^[A-Za-z]{3,15}$").Success)
@@ -49,8 +51,9 @@ namespace AlquilerCoches
                 errorProvider1.SetError(TTextBoxNombre, "Nombre incorrecto");
                 incorrecto = true;
             }
-            else { incorrecto = false; errorProvider1.SetError(TTextBoxNombre, ""); }
+            else {  errorProvider1.SetError(TTextBoxNombre, ""); }
         }
+
         private void TTextBoxApellidos_Leave(object sender, EventArgs e)
         {
             if (!Regex.Match(TTextBoxApellidos.Text, @"^[A-Za-z]{3,40}$").Success)
@@ -58,7 +61,7 @@ namespace AlquilerCoches
                 errorProvider1.SetError(TTextBoxApellidos, "Apellidos incorrectos, caracteres invalidos");
                 incorrecto = true;
             }
-            else { incorrecto = false; errorProvider1.SetError(TTextBoxApellidos, ""); }
+            else {  errorProvider1.SetError(TTextBoxApellidos, ""); }
         }
 
         private void TTextBoxTelefono_Leave(object sender, EventArgs e)
@@ -68,8 +71,9 @@ namespace AlquilerCoches
                 errorProvider1.SetError(TTextBoxTelefono, "Telefono incorrecto, caracteres invalidos");
                 incorrecto = true;
             }
-            else { incorrecto = false; errorProvider1.SetError(TTextBoxTelefono, ""); }
+            else {  errorProvider1.SetError(TTextBoxTelefono, ""); }
         }
+
 
         private void TTextBoxEmail_Leave(object sender, EventArgs e)
         {
@@ -78,9 +82,8 @@ namespace AlquilerCoches
                 errorProvider1.SetError(TTextBoxEmail, "Email incorrectos, caracteres invalidos");
                 incorrecto = true;
             }
-            else { incorrecto = false; errorProvider1.SetError(TTextBoxEmail, ""); }
+            else {  errorProvider1.SetError(TTextBoxEmail, ""); }
         }
-
         private void TTextBoxDireccion_Leave(object sender, EventArgs e)
         {
             if (!Regex.Match(TTextBoxDireccion.Text, @"^[A-Za-z]{3,40}$").Success)
@@ -88,7 +91,7 @@ namespace AlquilerCoches
                 errorProvider1.SetError(TTextBoxDireccion, "Dirección incorrecta, caracteres invalidos");
                 incorrecto = true;
             }
-            else { incorrecto = false; errorProvider1.SetError(TTextBoxDireccion, ""); }
+            else {  errorProvider1.SetError(TTextBoxDireccion, ""); }
         }
 
         private void TTextBoxCiudad_Leave(object sender, EventArgs e)
@@ -98,7 +101,7 @@ namespace AlquilerCoches
                 errorProvider1.SetError(TTextBoxCiudad, "Ciudad incorrecta, caracteres invalidos");
                 incorrecto = true;
             }
-            else { incorrecto = false; errorProvider1.SetError(TTextBoxCiudad, ""); }
+            else { errorProvider1.SetError(TTextBoxCiudad, ""); }
         }
 
         private void TTextBoxProvincia_Leave(object sender, EventArgs e)
@@ -108,7 +111,7 @@ namespace AlquilerCoches
                 errorProvider1.SetError(TTextBoxProvincia, "Provincia incorrecta, caracteres invalidos");
                 incorrecto = true;
             }
-            else { incorrecto = false; errorProvider1.SetError(TTextBoxProvincia, ""); }
+            else {errorProvider1.SetError(TTextBoxProvincia, ""); }
         }
 
         private void TTextBoxPuestoAc_Leave(object sender, EventArgs e)
@@ -118,24 +121,24 @@ namespace AlquilerCoches
                 errorProvider1.SetError(TTextBoxPuestoAc, "Puesto incorrecto, caracteres invalidos");
                 incorrecto = true;
             }
-            else { incorrecto = false; errorProvider1.SetError(TTextBoxPuestoAc, ""); }
+            else { errorProvider1.SetError(TTextBoxPuestoAc, ""); }
         }
 
         private void TButtonGuardarPersonal_Click(object sender, EventArgs e)
         {
+            if (TTextBoxDNI.Text == "" || TTextBoxNombre.Text == "" || TTextBoxApellidos.Text == "" || TTextBoxTelefono.Text == "" ||
+                 TTextBoxEmail.Text == "" || TTextBoxDireccion.Text == "" || TTextBoxCiudad.Text == "" || TTextBoxProvincia.Text == "" ||
+                TTextBoxPuestoAc.Text == "")
+            {
+                MessageBox.Show("Campos invalidos, no puede haber ninguno vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             if (incorrecto == true)
             {
                 MessageBox.Show("Campos invalidos, reviselos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
-           
+
         }
-
-
-
-
-        
-
 
     }
 }
