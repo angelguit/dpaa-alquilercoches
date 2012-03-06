@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.TButtonCancelar = new System.Windows.Forms.Button();
             this.TButtonFoto = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TButtonGuardarPersonal = new System.Windows.Forms.Button();
             this.TGroupBoxAlta = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TTextBoxDireccion = new System.Windows.Forms.TextBox();
             this.TLabelDireccion = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TTextBoxEmail = new System.Windows.Forms.TextBox();
             this.TLabelEmail = new System.Windows.Forms.Label();
             this.TLabelOtrosPuestos = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
@@ -53,8 +54,10 @@
             this.TLabelApellidos = new System.Windows.Forms.Label();
             this.TLabelNombre = new System.Windows.Forms.Label();
             this.TLabelDNI = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.TGroupBoxAlta.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // TButtonCancelar
@@ -94,13 +97,14 @@
             this.TButtonGuardarPersonal.TabIndex = 24;
             this.TButtonGuardarPersonal.Text = "Guardar";
             this.TButtonGuardarPersonal.UseVisualStyleBackColor = true;
+            this.TButtonGuardarPersonal.Click += new System.EventHandler(this.TButtonGuardarPersonal_Click);
             // 
             // TGroupBoxAlta
             // 
             this.TGroupBoxAlta.BackColor = System.Drawing.Color.Transparent;
-            this.TGroupBoxAlta.Controls.Add(this.textBox2);
+            this.TGroupBoxAlta.Controls.Add(this.TTextBoxDireccion);
             this.TGroupBoxAlta.Controls.Add(this.TLabelDireccion);
-            this.TGroupBoxAlta.Controls.Add(this.textBox1);
+            this.TGroupBoxAlta.Controls.Add(this.TTextBoxEmail);
             this.TGroupBoxAlta.Controls.Add(this.TLabelEmail);
             this.TGroupBoxAlta.Controls.Add(this.TLabelOtrosPuestos);
             this.TGroupBoxAlta.Controls.Add(this.richTextBox1);
@@ -125,12 +129,13 @@
             this.TGroupBoxAlta.TabStop = false;
             this.TGroupBoxAlta.Text = "Personal";
             // 
-            // textBox2
+            // TTextBoxDireccion
             // 
-            this.textBox2.Location = new System.Drawing.Point(108, 124);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(108, 20);
-            this.textBox2.TabIndex = 46;
+            this.TTextBoxDireccion.Location = new System.Drawing.Point(108, 124);
+            this.TTextBoxDireccion.Name = "TTextBoxDireccion";
+            this.TTextBoxDireccion.Size = new System.Drawing.Size(108, 20);
+            this.TTextBoxDireccion.TabIndex = 46;
+            this.TTextBoxDireccion.Leave += new System.EventHandler(this.TTextBoxDireccion_Leave);
             // 
             // TLabelDireccion
             // 
@@ -141,12 +146,13 @@
             this.TLabelDireccion.TabIndex = 45;
             this.TLabelDireccion.Text = "Direccion";
             // 
-            // textBox1
+            // TTextBoxEmail
             // 
-            this.textBox1.Location = new System.Drawing.Point(108, 103);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(108, 20);
-            this.textBox1.TabIndex = 44;
+            this.TTextBoxEmail.Location = new System.Drawing.Point(108, 103);
+            this.TTextBoxEmail.Name = "TTextBoxEmail";
+            this.TTextBoxEmail.Size = new System.Drawing.Size(108, 20);
+            this.TTextBoxEmail.TabIndex = 44;
+            this.TTextBoxEmail.Leave += new System.EventHandler(this.TTextBoxEmail_Leave);
             // 
             // TLabelEmail
             // 
@@ -180,6 +186,7 @@
             this.TTextBoxPuestoAc.Name = "TTextBoxPuestoAc";
             this.TTextBoxPuestoAc.Size = new System.Drawing.Size(108, 20);
             this.TTextBoxPuestoAc.TabIndex = 40;
+            this.TTextBoxPuestoAc.Leave += new System.EventHandler(this.TTextBoxPuestoAc_Leave);
             // 
             // TTextBoxProvincia
             // 
@@ -187,6 +194,7 @@
             this.TTextBoxProvincia.Name = "TTextBoxProvincia";
             this.TTextBoxProvincia.Size = new System.Drawing.Size(108, 20);
             this.TTextBoxProvincia.TabIndex = 39;
+            this.TTextBoxProvincia.Leave += new System.EventHandler(this.TTextBoxProvincia_Leave);
             // 
             // TTextBoxCiudad
             // 
@@ -194,6 +202,7 @@
             this.TTextBoxCiudad.Name = "TTextBoxCiudad";
             this.TTextBoxCiudad.Size = new System.Drawing.Size(108, 20);
             this.TTextBoxCiudad.TabIndex = 38;
+            this.TTextBoxCiudad.Leave += new System.EventHandler(this.TTextBoxCiudad_Leave);
             // 
             // TTextBoxTelefono
             // 
@@ -201,6 +210,7 @@
             this.TTextBoxTelefono.Name = "TTextBoxTelefono";
             this.TTextBoxTelefono.Size = new System.Drawing.Size(108, 20);
             this.TTextBoxTelefono.TabIndex = 37;
+            this.TTextBoxTelefono.Leave += new System.EventHandler(this.TTextBoxTelefono_Leave);
             // 
             // TTextBoxApellidos
             // 
@@ -286,6 +296,10 @@
             this.TLabelDNI.TabIndex = 27;
             this.TLabelDNI.Text = "DNI";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // GestionPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -300,10 +314,10 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "GestionPersonal";
             this.Text = "GestionPersonal";
-            this.Load += new System.EventHandler(this.GestionPersonal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.TGroupBoxAlta.ResumeLayout(false);
             this.TGroupBoxAlta.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -315,9 +329,9 @@
         private System.Windows.Forms.Button TButtonFoto;
         private System.Windows.Forms.Button TButtonGuardarPersonal;
         private System.Windows.Forms.GroupBox TGroupBoxAlta;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TTextBoxDireccion;
         private System.Windows.Forms.Label TLabelDireccion;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TTextBoxEmail;
         private System.Windows.Forms.Label TLabelEmail;
         private System.Windows.Forms.Label TLabelOtrosPuestos;
         private System.Windows.Forms.RichTextBox richTextBox1;
@@ -335,5 +349,6 @@
         private System.Windows.Forms.Label TLabelApellidos;
         private System.Windows.Forms.Label TLabelNombre;
         private System.Windows.Forms.Label TLabelDNI;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
