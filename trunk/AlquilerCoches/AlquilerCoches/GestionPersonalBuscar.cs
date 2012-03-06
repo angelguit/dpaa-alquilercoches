@@ -48,45 +48,53 @@ namespace AlquilerCoches
             TDataGridViewPersonal.Columns.Add(buttons);
         }
 
-        bool incorrecto = true;
+        bool incorrecto = false;
         private void TTextBoxDNI_Leave(object sender, EventArgs e)
         {
-            if (!Regex.Match(TTextBoxDNI.Text, @"^(([A-Z]\d{8})|(\d{8}[A-Z]))$").Success)
+
+            if (TTextBoxDNI.Text == "") errorProvider1.SetError(TTextBoxDNI, ""); //si esta vacio no hace falta que demos error simplemente en la busqueda
+                //no contemplaremos el dni para buscar.
+
+            else if (!Regex.Match(TTextBoxDNI.Text, @"^(([A-Z]\d{8})|(\d{8}[A-Z]))$").Success)
             {
                 errorProvider1.SetError(TTextBoxDNI, "DNI incorrecto");
                 incorrecto = true;
             }
-            else { incorrecto = false; errorProvider1.SetError(TTextBoxDNI, ""); }
+            else {  errorProvider1.SetError(TTextBoxDNI, ""); }
         }
 
         private void TTextBoxNombre_Leave(object sender, EventArgs e)
         {
-            if (!Regex.Match(TTextBoxNombre.Text, @"^[A-Za-z]{3,15}$").Success)
+            if (TTextBoxNombre.Text == "") errorProvider1.SetError(TTextBoxNombre, "");
+            else if (!Regex.Match(TTextBoxNombre.Text, @"^[A-Za-z]{3,15}$").Success)
             {
                 errorProvider1.SetError(TTextBoxNombre, "Nombre incorrecto");
                 incorrecto = true;
             }
-            else { incorrecto = false; errorProvider1.SetError(TTextBoxNombre, ""); }
+            else {  errorProvider1.SetError(TTextBoxNombre, ""); }
         }
 
         private void TTextBoxApellidos_Leave(object sender, EventArgs e)
         {
-            if (!Regex.Match(TTextBoxApellidos.Text, @"^[A-Za-z]{3,40}$").Success)
+            if (TTextBoxApellidos.Text == "") errorProvider1.SetError(TTextBoxApellidos, "");
+            
+            else if (!Regex.Match(TTextBoxApellidos.Text, @"^[A-Za-z]{3,40}$").Success)
             {
                 errorProvider1.SetError(TTextBoxApellidos, "Apellidos incorrectos, caracteres invalidos");
                 incorrecto = true;
             }
-            else { incorrecto = false; errorProvider1.SetError(TTextBoxApellidos, ""); }
+            else { errorProvider1.SetError(TTextBoxApellidos, ""); }
         }
 
         private void TTextBoxPuestoAc_Leave(object sender, EventArgs e)
         {
-            if (!Regex.Match(TTextBoxPuestoAc.Text, @"^[A-Za-z]{3,15}$").Success)
+            if (TTextBoxPuestoAc.Text == "") errorProvider1.SetError(TTextBoxPuestoAc, "");         
+            else if (!Regex.Match(TTextBoxPuestoAc.Text, @"^[A-Za-z]{3,15}$").Success)
             {
                 errorProvider1.SetError(TTextBoxPuestoAc, "Puesto incorrecto, caracteres invalidos");
                 incorrecto = true;
             }
-            else { incorrecto = false; errorProvider1.SetError(TTextBoxPuestoAc, ""); }
+            else { errorProvider1.SetError(TTextBoxPuestoAc, ""); }
         }
 
         private void TButtonBuscar_Click(object sender, EventArgs e)
