@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace AlquilerCoches
 {
@@ -50,9 +51,62 @@ namespace AlquilerCoches
 
         }
 
+        bool incorrecto = true;
+        private void TTextBoxDNI_Leave(object sender, EventArgs e)
+        {
+            if (!Regex.Match(TTextBoxDNI.Text, @"^(([A-Z]\d{8})|(\d{8}[A-Z]))$").Success)
+            {
+                errorProvider1.SetError(TTextBoxDNI, "DNI incorrecto");
+                incorrecto = true;
+            }
+            else { incorrecto = false; errorProvider1.SetError(TTextBoxDNI, ""); }
+        }
+
+        private void TTextBoxApellidos_Leave(object sender, EventArgs e)
+        {
+            if (!Regex.Match(TTextBoxApellidos.Text, @"^[A-Za-z]{3,40}$").Success)
+            {
+                errorProvider1.SetError(TTextBoxApellidos, "Apellidos incorrectos, caracteres invalidos");
+                incorrecto = true;
+            }
+            else { incorrecto = false; errorProvider1.SetError(TTextBoxApellidos, ""); }
+        }
+
+        private void TTextBoxNombre_Leave(object sender, EventArgs e)
+        {
+            if (!Regex.Match(TTextBoxNombre.Text, @"^[A-Za-z]{3,15}$").Success)
+            {
+                errorProvider1.SetError(TTextBoxNombre, "Nombre incorrecto, carateres invalidos");
+                incorrecto = true;
+            }
+            else { incorrecto = false; errorProvider1.SetError(TTextBoxNombre, ""); }
+        }
+
+        private void TTextBoxProvincia_Leave(object sender, EventArgs e)
+        {
+            if (!Regex.Match(TTextBoxProvincia.Text, @"^[A-Za-z]{3,15}$").Success)
+            {
+                errorProvider1.SetError(TTextBoxProvincia, "Provincia incorrecta, caracteres invalidos");
+                incorrecto = true;
+            }
+            else { incorrecto = false; errorProvider1.SetError(TTextBoxProvincia, ""); }
+        }
+
+
         private void TButtonBuscar_Click(object sender, EventArgs e)
         {
-            TButtonEliminar.Visible = true;
+
+            if (incorrecto == true)
+            {
+                MessageBox.Show("Campos invalidos, reviselos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+                TButtonEliminar.Visible = true;
+            
         }
+
+
+        
     }
 }
