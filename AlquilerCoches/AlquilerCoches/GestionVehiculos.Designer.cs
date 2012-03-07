@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionVehiculos));
             this.TGroupBoxDatosVehiculo = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TTextBoxGarantia = new System.Windows.Forms.TextBox();
             this.TLabelGarantia = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TTextBoxKM = new System.Windows.Forms.TextBox();
             this.TLabelKM = new System.Windows.Forms.Label();
             this.TTextBoxModelo = new System.Windows.Forms.TextBox();
             this.TLabelModelo = new System.Windows.Forms.Label();
@@ -48,11 +49,11 @@
             this.TLabelPrecioAlquiler = new System.Windows.Forms.Label();
             this.TTextBoxPrecioVenta = new System.Windows.Forms.TextBox();
             this.TLabelPrecioVenta = new System.Windows.Forms.Label();
-            this.TextBoxPrecioCompra = new System.Windows.Forms.TextBox();
+            this.TTextBoxPrecioCompra = new System.Windows.Forms.TextBox();
             this.TLabelPrecioCompra = new System.Windows.Forms.Label();
             this.TTextBoxAnyo = new System.Windows.Forms.TextBox();
             this.TLabelAnyo = new System.Windows.Forms.Label();
-            this.TextBoxMatricula = new System.Windows.Forms.TextBox();
+            this.TTextBoxMatricula = new System.Windows.Forms.TextBox();
             this.TLabelMatricula = new System.Windows.Forms.Label();
             this.TLabelMarcas = new System.Windows.Forms.Label();
             this.TLabelModelos = new System.Windows.Forms.Label();
@@ -64,19 +65,21 @@
             this.TListBoxModelos = new System.Windows.Forms.ListBox();
             this.TListBoxMatriculas = new System.Windows.Forms.ListBox();
             this.ButtonBorrar = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.TGroupBoxDatosVehiculo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TPictureBoxMatricula)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // TGroupBoxDatosVehiculo
             // 
-            this.TGroupBoxDatosVehiculo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.TGroupBoxDatosVehiculo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TGroupBoxDatosVehiculo.BackColor = System.Drawing.Color.Transparent;
-            this.TGroupBoxDatosVehiculo.Controls.Add(this.textBox2);
+            this.TGroupBoxDatosVehiculo.Controls.Add(this.TTextBoxGarantia);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelGarantia);
-            this.TGroupBoxDatosVehiculo.Controls.Add(this.textBox1);
+            this.TGroupBoxDatosVehiculo.Controls.Add(this.TTextBoxKM);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelKM);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TTextBoxModelo);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelModelo);
@@ -92,11 +95,11 @@
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelPrecioAlquiler);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TTextBoxPrecioVenta);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelPrecioVenta);
-            this.TGroupBoxDatosVehiculo.Controls.Add(this.TextBoxPrecioCompra);
+            this.TGroupBoxDatosVehiculo.Controls.Add(this.TTextBoxPrecioCompra);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelPrecioCompra);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TTextBoxAnyo);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelAnyo);
-            this.TGroupBoxDatosVehiculo.Controls.Add(this.TextBoxMatricula);
+            this.TGroupBoxDatosVehiculo.Controls.Add(this.TTextBoxMatricula);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelMatricula);
             this.TGroupBoxDatosVehiculo.Location = new System.Drawing.Point(238, 177);
             this.TGroupBoxDatosVehiculo.Name = "TGroupBoxDatosVehiculo";
@@ -106,13 +109,14 @@
             this.TGroupBoxDatosVehiculo.Text = "DatosVehiculo";
             this.TGroupBoxDatosVehiculo.Enter += new System.EventHandler(this.TGroupBoxDatosVehiculo_Enter);
             // 
-            // textBox2
+            // TTextBoxGarantia
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(128, 267);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(261, 20);
-            this.textBox2.TabIndex = 42;
+            this.TTextBoxGarantia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.TTextBoxGarantia.Location = new System.Drawing.Point(128, 267);
+            this.TTextBoxGarantia.Name = "TTextBoxGarantia";
+            this.TTextBoxGarantia.Size = new System.Drawing.Size(261, 20);
+            this.TTextBoxGarantia.TabIndex = 42;
+            this.TTextBoxGarantia.TextChanged += new System.EventHandler(this.TTextBoxGarantia_TextChanged);
             // 
             // TLabelGarantia
             // 
@@ -124,13 +128,14 @@
             this.TLabelGarantia.TabIndex = 41;
             this.TLabelGarantia.Text = "Garantia";
             // 
-            // textBox1
+            // TTextBoxKM
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(128, 241);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(261, 20);
-            this.textBox1.TabIndex = 40;
+            this.TTextBoxKM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.TTextBoxKM.Location = new System.Drawing.Point(128, 241);
+            this.TTextBoxKM.Name = "TTextBoxKM";
+            this.TTextBoxKM.Size = new System.Drawing.Size(261, 20);
+            this.TTextBoxKM.TabIndex = 40;
+            this.TTextBoxKM.TextChanged += new System.EventHandler(this.TTextBoxKM_TextChanged);
             // 
             // TLabelKM
             // 
@@ -149,6 +154,7 @@
             this.TTextBoxModelo.Name = "TTextBoxModelo";
             this.TTextBoxModelo.Size = new System.Drawing.Size(261, 20);
             this.TTextBoxModelo.TabIndex = 38;
+            this.TTextBoxModelo.TextChanged += new System.EventHandler(this.TTextBoxModelo_TextChanged);
             // 
             // TLabelModelo
             // 
@@ -167,6 +173,7 @@
             this.TTextBoxMarca.Name = "TTextBoxMarca";
             this.TTextBoxMarca.Size = new System.Drawing.Size(261, 20);
             this.TTextBoxMarca.TabIndex = 36;
+            this.TTextBoxMarca.TextChanged += new System.EventHandler(this.TTextBoxMarca_TextChanged);
             // 
             // TLabelMarca
             // 
@@ -252,6 +259,7 @@
             this.TTextBoxPrecioAlquiler.Name = "TTextBoxPrecioAlquiler";
             this.TTextBoxPrecioAlquiler.Size = new System.Drawing.Size(261, 20);
             this.TTextBoxPrecioAlquiler.TabIndex = 28;
+            this.TTextBoxPrecioAlquiler.TextChanged += new System.EventHandler(this.TTextBoxPrecioAlquiler_TextChanged);
             // 
             // TLabelPrecioAlquiler
             // 
@@ -270,6 +278,7 @@
             this.TTextBoxPrecioVenta.Name = "TTextBoxPrecioVenta";
             this.TTextBoxPrecioVenta.Size = new System.Drawing.Size(261, 20);
             this.TTextBoxPrecioVenta.TabIndex = 26;
+            this.TTextBoxPrecioVenta.TextChanged += new System.EventHandler(this.TTextBoxPrecioVenta_TextChanged);
             // 
             // TLabelPrecioVenta
             // 
@@ -281,13 +290,14 @@
             this.TLabelPrecioVenta.TabIndex = 25;
             this.TLabelPrecioVenta.Text = "PrecioVenta";
             // 
-            // TextBoxPrecioCompra
+            // TTextBoxPrecioCompra
             // 
-            this.TextBoxPrecioCompra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.TextBoxPrecioCompra.Location = new System.Drawing.Point(128, 164);
-            this.TextBoxPrecioCompra.Name = "TextBoxPrecioCompra";
-            this.TextBoxPrecioCompra.Size = new System.Drawing.Size(261, 20);
-            this.TextBoxPrecioCompra.TabIndex = 24;
+            this.TTextBoxPrecioCompra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.TTextBoxPrecioCompra.Location = new System.Drawing.Point(128, 164);
+            this.TTextBoxPrecioCompra.Name = "TTextBoxPrecioCompra";
+            this.TTextBoxPrecioCompra.Size = new System.Drawing.Size(261, 20);
+            this.TTextBoxPrecioCompra.TabIndex = 24;
+            this.TTextBoxPrecioCompra.TextChanged += new System.EventHandler(this.TTextBoxPrecioCompra_TextChanged);
             // 
             // TLabelPrecioCompra
             // 
@@ -306,6 +316,7 @@
             this.TTextBoxAnyo.Name = "TTextBoxAnyo";
             this.TTextBoxAnyo.Size = new System.Drawing.Size(261, 20);
             this.TTextBoxAnyo.TabIndex = 22;
+            this.TTextBoxAnyo.TextChanged += new System.EventHandler(this.TTextBoxAnyo_TextChanged);
             // 
             // TLabelAnyo
             // 
@@ -317,13 +328,14 @@
             this.TLabelAnyo.TabIndex = 21;
             this.TLabelAnyo.Text = "Anyo";
             // 
-            // TextBoxMatricula
+            // TTextBoxMatricula
             // 
-            this.TextBoxMatricula.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.TextBoxMatricula.Location = new System.Drawing.Point(128, 56);
-            this.TextBoxMatricula.Name = "TextBoxMatricula";
-            this.TextBoxMatricula.Size = new System.Drawing.Size(261, 20);
-            this.TextBoxMatricula.TabIndex = 20;
+            this.TTextBoxMatricula.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.TTextBoxMatricula.Location = new System.Drawing.Point(128, 56);
+            this.TTextBoxMatricula.Name = "TTextBoxMatricula";
+            this.TTextBoxMatricula.Size = new System.Drawing.Size(261, 20);
+            this.TTextBoxMatricula.TabIndex = 20;
+            this.TTextBoxMatricula.TextChanged += new System.EventHandler(this.TTextBoxMatricula_TextChanged);
             // 
             // TLabelMatricula
             // 
@@ -440,6 +452,10 @@
             this.ButtonBorrar.Text = "Borrar";
             this.ButtonBorrar.UseVisualStyleBackColor = true;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // GestionVehiculos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -466,6 +482,7 @@
             this.TGroupBoxDatosVehiculo.ResumeLayout(false);
             this.TGroupBoxDatosVehiculo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TPictureBoxMatricula)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -481,11 +498,11 @@
         private System.Windows.Forms.Label TLabelPrecioAlquiler;
         private System.Windows.Forms.TextBox TTextBoxPrecioVenta;
         private System.Windows.Forms.Label TLabelPrecioVenta;
-        private System.Windows.Forms.TextBox TextBoxPrecioCompra;
+        private System.Windows.Forms.TextBox TTextBoxPrecioCompra;
         private System.Windows.Forms.Label TLabelPrecioCompra;
         private System.Windows.Forms.TextBox TTextBoxAnyo;
         private System.Windows.Forms.Label TLabelAnyo;
-        private System.Windows.Forms.TextBox TextBoxMatricula;
+        private System.Windows.Forms.TextBox TTextBoxMatricula;
         private System.Windows.Forms.Label TLabelMatricula;
         private System.Windows.Forms.Label TLabelMarcas;
         private System.Windows.Forms.Label TLabelModelos;
@@ -503,10 +520,11 @@
         private System.Windows.Forms.ListBox TListBoxMarcas;
         private System.Windows.Forms.ListBox TListBoxModelos;
         private System.Windows.Forms.ListBox TListBoxMatriculas;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TTextBoxGarantia;
         private System.Windows.Forms.Label TLabelGarantia;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TTextBoxKM;
         private System.Windows.Forms.Label TLabelKM;
         private System.Windows.Forms.Button ButtonBorrar;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
