@@ -193,6 +193,7 @@
             // 
             // TTextBoxModelo
             // 
+            this.TTextBoxModelo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TTextBoxModelo.Location = new System.Drawing.Point(64, 78);
             this.TTextBoxModelo.Name = "TTextBoxModelo";
             this.TTextBoxModelo.ReadOnly = true;
@@ -210,6 +211,7 @@
             // 
             // TTextBoxMarca
             // 
+            this.TTextBoxMarca.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TTextBoxMarca.Location = new System.Drawing.Point(64, 48);
             this.TTextBoxMarca.Name = "TTextBoxMarca";
             this.TTextBoxMarca.ReadOnly = true;
@@ -272,6 +274,7 @@
             // 
             // TextBoxMatricula
             // 
+            this.TextBoxMatricula.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TextBoxMatricula.Location = new System.Drawing.Point(64, 22);
             this.TextBoxMatricula.Name = "TextBoxMatricula";
             this.TextBoxMatricula.ReadOnly = true;
@@ -324,6 +327,7 @@
             // 
             // TTextBoxCliente
             // 
+            this.TTextBoxCliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TTextBoxCliente.Location = new System.Drawing.Point(82, 74);
             this.TTextBoxCliente.Name = "TTextBoxCliente";
             this.TTextBoxCliente.ReadOnly = true;
@@ -332,6 +336,7 @@
             // 
             // TTextBoxVendedor
             // 
+            this.TTextBoxVendedor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TTextBoxVendedor.Location = new System.Drawing.Point(82, 48);
             this.TTextBoxVendedor.Name = "TTextBoxVendedor";
             this.TTextBoxVendedor.ReadOnly = true;
@@ -366,6 +371,7 @@
             // 
             // TTextBoxFactura
             // 
+            this.TTextBoxFactura.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TTextBoxFactura.Location = new System.Drawing.Point(82, 128);
             this.TTextBoxFactura.Name = "TTextBoxFactura";
             this.TTextBoxFactura.ReadOnly = true;
