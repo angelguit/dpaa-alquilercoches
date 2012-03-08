@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.TButtonFoto = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TButtonGuardarProveedor = new System.Windows.Forms.Button();
@@ -37,14 +38,14 @@
             this.TLabelEmail = new System.Windows.Forms.Label();
             this.TLabelUltimasCompras = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.TTextBoxHorario = new System.Windows.Forms.TextBox();
+            this.TTextBoxCPostal = new System.Windows.Forms.TextBox();
             this.TTextBoxProvincia = new System.Windows.Forms.TextBox();
             this.TTextBoxCiudad = new System.Windows.Forms.TextBox();
             this.TTextBoxTelefono = new System.Windows.Forms.TextBox();
             this.TTextBoxDireccion = new System.Windows.Forms.TextBox();
             this.TTextBoxNombre = new System.Windows.Forms.TextBox();
             this.TTextBoxCIF = new System.Windows.Forms.TextBox();
-            this.TLabelHorario = new System.Windows.Forms.Label();
+            this.TLabelCPostal = new System.Windows.Forms.Label();
             this.TLabelProvincia = new System.Windows.Forms.Label();
             this.TLabelCiudad = new System.Windows.Forms.Label();
             this.TLabelTelefono = new System.Windows.Forms.Label();
@@ -52,8 +53,12 @@
             this.TLabelNombre = new System.Windows.Forms.Label();
             this.TLabelCIF = new System.Windows.Forms.Label();
             this.TButtonEliminar = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.TTextBoxHorario = new System.Windows.Forms.TextBox();
+            this.TLabelHorario = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.TGroupBoxProveedores.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // TButtonFoto
@@ -96,18 +101,20 @@
             // TGroupBoxProveedores
             // 
             this.TGroupBoxProveedores.BackColor = System.Drawing.Color.Transparent;
+            this.TGroupBoxProveedores.Controls.Add(this.TTextBoxHorario);
+            this.TGroupBoxProveedores.Controls.Add(this.TLabelHorario);
             this.TGroupBoxProveedores.Controls.Add(this.TTextBoxEmail);
             this.TGroupBoxProveedores.Controls.Add(this.TLabelEmail);
             this.TGroupBoxProveedores.Controls.Add(this.TLabelUltimasCompras);
             this.TGroupBoxProveedores.Controls.Add(this.richTextBox1);
-            this.TGroupBoxProveedores.Controls.Add(this.TTextBoxHorario);
+            this.TGroupBoxProveedores.Controls.Add(this.TTextBoxCPostal);
             this.TGroupBoxProveedores.Controls.Add(this.TTextBoxProvincia);
             this.TGroupBoxProveedores.Controls.Add(this.TTextBoxCiudad);
             this.TGroupBoxProveedores.Controls.Add(this.TTextBoxTelefono);
             this.TGroupBoxProveedores.Controls.Add(this.TTextBoxDireccion);
             this.TGroupBoxProveedores.Controls.Add(this.TTextBoxNombre);
             this.TGroupBoxProveedores.Controls.Add(this.TTextBoxCIF);
-            this.TGroupBoxProveedores.Controls.Add(this.TLabelHorario);
+            this.TGroupBoxProveedores.Controls.Add(this.TLabelCPostal);
             this.TGroupBoxProveedores.Controls.Add(this.TLabelProvincia);
             this.TGroupBoxProveedores.Controls.Add(this.TLabelCiudad);
             this.TGroupBoxProveedores.Controls.Add(this.TLabelTelefono);
@@ -140,7 +147,7 @@
             // TLabelUltimasCompras
             // 
             this.TLabelUltimasCompras.AutoSize = true;
-            this.TLabelUltimasCompras.Location = new System.Drawing.Point(1, 225);
+            this.TLabelUltimasCompras.Location = new System.Drawing.Point(-1, 246);
             this.TLabelUltimasCompras.Name = "TLabelUltimasCompras";
             this.TLabelUltimasCompras.Size = new System.Drawing.Size(84, 13);
             this.TLabelUltimasCompras.TabIndex = 60;
@@ -148,18 +155,18 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(100, 222);
+            this.richTextBox1.Location = new System.Drawing.Point(98, 243);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(141, 63);
             this.richTextBox1.TabIndex = 59;
             this.richTextBox1.Text = "";
             // 
-            // TTextBoxHorario
+            // TTextBoxCPostal
             // 
-            this.TTextBoxHorario.Location = new System.Drawing.Point(100, 184);
-            this.TTextBoxHorario.Name = "TTextBoxHorario";
-            this.TTextBoxHorario.Size = new System.Drawing.Size(108, 20);
-            this.TTextBoxHorario.TabIndex = 58;
+            this.TTextBoxCPostal.Location = new System.Drawing.Point(100, 184);
+            this.TTextBoxCPostal.Name = "TTextBoxCPostal";
+            this.TTextBoxCPostal.Size = new System.Drawing.Size(108, 20);
+            this.TTextBoxCPostal.TabIndex = 58;
             // 
             // TTextBoxProvincia
             // 
@@ -202,15 +209,16 @@
             this.TTextBoxCIF.Name = "TTextBoxCIF";
             this.TTextBoxCIF.Size = new System.Drawing.Size(70, 20);
             this.TTextBoxCIF.TabIndex = 52;
+            this.TTextBoxCIF.Leave += new System.EventHandler(this.TTextBoxCIF_Leave);
             // 
-            // TLabelHorario
+            // TLabelCPostal
             // 
-            this.TLabelHorario.AutoSize = true;
-            this.TLabelHorario.Location = new System.Drawing.Point(44, 191);
-            this.TLabelHorario.Name = "TLabelHorario";
-            this.TLabelHorario.Size = new System.Drawing.Size(41, 13);
-            this.TLabelHorario.TabIndex = 51;
-            this.TLabelHorario.Text = "Horario";
+            this.TLabelCPostal.AutoSize = true;
+            this.TLabelCPostal.Location = new System.Drawing.Point(13, 191);
+            this.TLabelCPostal.Name = "TLabelCPostal";
+            this.TLabelCPostal.Size = new System.Drawing.Size(72, 13);
+            this.TLabelCPostal.TabIndex = 51;
+            this.TLabelCPostal.Text = "Codigo Postal";
             // 
             // TLabelProvincia
             // 
@@ -276,6 +284,26 @@
             this.TButtonEliminar.UseVisualStyleBackColor = true;
             this.TButtonEliminar.Visible = false;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // TTextBoxHorario
+            // 
+            this.TTextBoxHorario.Location = new System.Drawing.Point(100, 210);
+            this.TTextBoxHorario.Name = "TTextBoxHorario";
+            this.TTextBoxHorario.Size = new System.Drawing.Size(108, 20);
+            this.TTextBoxHorario.TabIndex = 64;
+            // 
+            // TLabelHorario
+            // 
+            this.TLabelHorario.AutoSize = true;
+            this.TLabelHorario.Location = new System.Drawing.Point(44, 217);
+            this.TLabelHorario.Name = "TLabelHorario";
+            this.TLabelHorario.Size = new System.Drawing.Size(41, 13);
+            this.TLabelHorario.TabIndex = 63;
+            this.TLabelHorario.Text = "Horario";
+            // 
             // GestionProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -295,6 +323,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.TGroupBoxProveedores.ResumeLayout(false);
             this.TGroupBoxProveedores.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -310,14 +339,14 @@
         private System.Windows.Forms.Label TLabelEmail;
         private System.Windows.Forms.Label TLabelUltimasCompras;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.TextBox TTextBoxHorario;
+        private System.Windows.Forms.TextBox TTextBoxCPostal;
         private System.Windows.Forms.TextBox TTextBoxProvincia;
         private System.Windows.Forms.TextBox TTextBoxCiudad;
         private System.Windows.Forms.TextBox TTextBoxTelefono;
         private System.Windows.Forms.TextBox TTextBoxDireccion;
         private System.Windows.Forms.TextBox TTextBoxNombre;
         private System.Windows.Forms.TextBox TTextBoxCIF;
-        private System.Windows.Forms.Label TLabelHorario;
+        private System.Windows.Forms.Label TLabelCPostal;
         private System.Windows.Forms.Label TLabelProvincia;
         private System.Windows.Forms.Label TLabelCiudad;
         private System.Windows.Forms.Label TLabelTelefono;
@@ -325,5 +354,8 @@
         private System.Windows.Forms.Label TLabelNombre;
         private System.Windows.Forms.Label TLabelCIF;
         private System.Windows.Forms.Button TButtonEliminar;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.TextBox TTextBoxHorario;
+        private System.Windows.Forms.Label TLabelHorario;
     }
 }
