@@ -116,7 +116,7 @@
             this.TTextBoxGarantia.Name = "TTextBoxGarantia";
             this.TTextBoxGarantia.Size = new System.Drawing.Size(261, 20);
             this.TTextBoxGarantia.TabIndex = 42;
-            this.TTextBoxGarantia.TextChanged += new System.EventHandler(this.TTextBoxGarantia_TextChanged);
+            this.TTextBoxGarantia.Leave += new System.EventHandler(this.TTextBoxGarantia_TextChanged);
             // 
             // TLabelGarantia
             // 
@@ -135,7 +135,7 @@
             this.TTextBoxKM.Name = "TTextBoxKM";
             this.TTextBoxKM.Size = new System.Drawing.Size(261, 20);
             this.TTextBoxKM.TabIndex = 40;
-            this.TTextBoxKM.TextChanged += new System.EventHandler(this.TTextBoxKM_TextChanged);
+            this.TTextBoxKM.Leave += new System.EventHandler(this.TTextBoxKM_TextChanged);
             // 
             // TLabelKM
             // 
@@ -154,7 +154,7 @@
             this.TTextBoxModelo.Name = "TTextBoxModelo";
             this.TTextBoxModelo.Size = new System.Drawing.Size(261, 20);
             this.TTextBoxModelo.TabIndex = 38;
-            this.TTextBoxModelo.TextChanged += new System.EventHandler(this.TTextBoxModelo_TextChanged);
+            this.TTextBoxModelo.Leave += new System.EventHandler(this.TTextBoxModelo_TextChanged);
             // 
             // TLabelModelo
             // 
@@ -173,7 +173,7 @@
             this.TTextBoxMarca.Name = "TTextBoxMarca";
             this.TTextBoxMarca.Size = new System.Drawing.Size(261, 20);
             this.TTextBoxMarca.TabIndex = 36;
-            this.TTextBoxMarca.TextChanged += new System.EventHandler(this.TTextBoxMarca_TextChanged);
+            this.TTextBoxMarca.Leave += new System.EventHandler(this.TTextBoxMarca_TextChanged);
             // 
             // TLabelMarca
             // 
@@ -259,7 +259,7 @@
             this.TTextBoxPrecioAlquiler.Name = "TTextBoxPrecioAlquiler";
             this.TTextBoxPrecioAlquiler.Size = new System.Drawing.Size(261, 20);
             this.TTextBoxPrecioAlquiler.TabIndex = 28;
-            this.TTextBoxPrecioAlquiler.TextChanged += new System.EventHandler(this.TTextBoxPrecioAlquiler_TextChanged);
+            this.TTextBoxPrecioAlquiler.Leave += new System.EventHandler(this.TTextBoxPrecioAlquiler_TextChanged);
             // 
             // TLabelPrecioAlquiler
             // 
@@ -278,7 +278,7 @@
             this.TTextBoxPrecioVenta.Name = "TTextBoxPrecioVenta";
             this.TTextBoxPrecioVenta.Size = new System.Drawing.Size(261, 20);
             this.TTextBoxPrecioVenta.TabIndex = 26;
-            this.TTextBoxPrecioVenta.TextChanged += new System.EventHandler(this.TTextBoxPrecioVenta_TextChanged);
+            this.TTextBoxPrecioVenta.Leave += new System.EventHandler(this.TTextBoxPrecioVenta_TextChanged);
             // 
             // TLabelPrecioVenta
             // 
@@ -297,7 +297,7 @@
             this.TTextBoxPrecioCompra.Name = "TTextBoxPrecioCompra";
             this.TTextBoxPrecioCompra.Size = new System.Drawing.Size(261, 20);
             this.TTextBoxPrecioCompra.TabIndex = 24;
-            this.TTextBoxPrecioCompra.TextChanged += new System.EventHandler(this.TTextBoxPrecioCompra_TextChanged);
+            this.TTextBoxPrecioCompra.Leave += new System.EventHandler(this.TTextBoxPrecioCompra_TextChanged);
             // 
             // TLabelPrecioCompra
             // 
@@ -316,7 +316,7 @@
             this.TTextBoxAnyo.Name = "TTextBoxAnyo";
             this.TTextBoxAnyo.Size = new System.Drawing.Size(261, 20);
             this.TTextBoxAnyo.TabIndex = 22;
-            this.TTextBoxAnyo.TextChanged += new System.EventHandler(this.TTextBoxAnyo_TextChanged);
+            this.TTextBoxAnyo.Leave += new System.EventHandler(this.TTextBoxAnyo_TextChanged);
             // 
             // TLabelAnyo
             // 
@@ -335,7 +335,7 @@
             this.TTextBoxMatricula.Name = "TTextBoxMatricula";
             this.TTextBoxMatricula.Size = new System.Drawing.Size(261, 20);
             this.TTextBoxMatricula.TabIndex = 20;
-            this.TTextBoxMatricula.TextChanged += new System.EventHandler(this.TTextBoxMatricula_TextChanged);
+            this.TTextBoxMatricula.Leave += new System.EventHandler(this.TTextBoxMatricula_TextChanged);
             // 
             // TLabelMatricula
             // 
