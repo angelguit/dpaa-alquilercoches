@@ -6,11 +6,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace AlquilerCoches
 {
     public partial class EditarVentas : Form
     {
+        bool incorrecto = false;
+
         public EditarVentas()
         {
             InitializeComponent();
@@ -31,7 +34,108 @@ namespace AlquilerCoches
             {
                 TTextBoxMeses.Enabled = false;
                 TTextBoxMeses.Text = "Meses";
+                errorProvider1.SetError(TTextBoxMeses, "");
+                incorrecto = false;
             }
         }
+
+        private void TextBoxMatricula_Leave(object sender, EventArgs e)
+        {
+            if (!Regex.Match(TTextBoxMatricula.Text, @"^\d{4}-[A-Za-z]{3}$").Success)
+            {
+                errorProvider1.SetError(TTextBoxMatricula, "Matrícula incorrecta. Formato 0000-XXX");
+                incorrecto = true;
+            }
+            else
+            {
+                errorProvider1.SetError(TTextBoxMatricula, "");
+                incorrecto = false;
+            }
+        }
+
+        private void TTextBoxMarca_Leave(object sender, EventArgs e)
+        {
+            if (!Regex.Match(TTextBoxMarca.Text, @"^\w+$").Success)
+            {
+                errorProvider1.SetError(TTextBoxMarca, "Marca incorrecta.");
+                incorrecto = true;
+            }
+            else
+            {
+                errorProvider1.SetError(TTextBoxMarca, "");
+                incorrecto = false;
+            }
+        }
+
+        private void TTextBoxModelo_Leave(object sender, EventArgs e)
+        {
+            if (!Regex.Match(TTextBoxModelo.Text, @"^\w+$").Success)
+            {
+                errorProvider1.SetError(TTextBoxModelo, "Modelo incorrecto.");
+                incorrecto = true;
+            }
+            else
+            {
+                errorProvider1.SetError(TTextBoxModelo, "");
+                incorrecto = false;
+            }
+        }
+
+        private void TTextBoxAnyo_Leave(object sender, EventArgs e)
+        {
+            if ((!Regex.Match(TTextBoxAnyo.Text, @"^\d{4}$").Success) || (int.Parse(TTextBoxAnyo.Text) < 1960))
+            {
+                errorProvider1.SetError(TTextBoxAnyo, "Año incorrecto. Debe ser mayor 1960 y ser del formato 1234.");
+                incorrecto = true;
+            }
+            else
+            {
+                errorProvider1.SetError(TTextBoxAnyo, "");
+                incorrecto = false;
+            }
+        }
+
+        private void TTextBoxKm_Leave(object sender, EventArgs e)
+        {
+            if (!Regex.Match(TTextBoxKm.Text, @"^\d{1,6}$").Success)
+            {
+                errorProvider1.SetError(TTextBoxKm, "KM incorrectos");
+                incorrecto = true;
+            }
+            else
+            {
+                errorProvider1.SetError(TTextBoxKm, "");
+                incorrecto = false;
+            }
+        }
+
+        private void TTextBoxMeses_Leave(object sender, EventArgs e)
+        {
+            if (!Regex.Match(TTextBoxMeses.Text, @"^\d{1,2}$").Success)
+            {
+                errorProvider1.SetError(TTextBoxMeses, "Meses de garantía incorrectos");
+                incorrecto = true;
+            }
+            else
+            {
+                errorProvider1.SetError(TTextBoxMeses, "");
+                incorrecto = false;
+            }
+        }
+
+        private void TTextBoxPrecioVenta_Leave(object sender, EventArgs e)
+        {
+            if (!Regex.Match(TTextBoxPrecioVenta.Text, @"^\d{1,6}$").Success)
+            {
+                errorProvider1.SetError(TTextBoxPrecioVenta, "Precio incorrecto");
+                incorrecto = true;
+            }
+            else
+            {
+                errorProvider1.SetError(TTextBoxPrecioVenta, "");
+                incorrecto = false;
+            }
+        }
+
     }
 }
