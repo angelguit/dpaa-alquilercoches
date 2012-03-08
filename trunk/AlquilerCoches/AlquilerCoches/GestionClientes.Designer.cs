@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TGroupBoxCliente = new System.Windows.Forms.GroupBox();
             this.TLabelVehiculosAlquiler = new System.Windows.Forms.Label();
@@ -54,8 +55,11 @@
             this.TButtonFoto = new System.Windows.Forms.Button();
             this.TButtonAceptar = new System.Windows.Forms.Button();
             this.TButtonCancelar = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.TLabelObligado = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.TGroupBoxCliente.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -71,6 +75,7 @@
             // TGroupBoxCliente
             // 
             this.TGroupBoxCliente.BackColor = System.Drawing.Color.Transparent;
+            this.TGroupBoxCliente.Controls.Add(this.TLabelObligado);
             this.TGroupBoxCliente.Controls.Add(this.TLabelVehiculosAlquiler);
             this.TGroupBoxCliente.Controls.Add(this.listBoxCoches);
             this.TGroupBoxCliente.Controls.Add(this.TLabelSexo);
@@ -107,7 +112,6 @@
             this.TLabelVehiculosAlquiler.Size = new System.Drawing.Size(104, 13);
             this.TLabelVehiculosAlquiler.TabIndex = 64;
             this.TLabelVehiculosAlquiler.Text = "Vehiculos en alquiler";
-            this.TLabelVehiculosAlquiler.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // listBoxCoches
             // 
@@ -122,9 +126,9 @@
             this.TLabelSexo.AutoSize = true;
             this.TLabelSexo.Location = new System.Drawing.Point(37, 242);
             this.TLabelSexo.Name = "TLabelSexo";
-            this.TLabelSexo.Size = new System.Drawing.Size(31, 13);
+            this.TLabelSexo.Size = new System.Drawing.Size(35, 13);
             this.TLabelSexo.TabIndex = 63;
-            this.TLabelSexo.Text = "Sexo";
+            this.TLabelSexo.Text = "*Sexo";
             // 
             // TRadioButtonM
             // 
@@ -154,15 +158,16 @@
             this.TTextBoxDireccion.Name = "TTextBoxDireccion";
             this.TTextBoxDireccion.Size = new System.Drawing.Size(108, 20);
             this.TTextBoxDireccion.TabIndex = 60;
+            this.TTextBoxDireccion.Leave += new System.EventHandler(this.TTextBoxDireccion_Leave);
             // 
             // TLabelDireccion
             // 
             this.TLabelDireccion.AutoSize = true;
             this.TLabelDireccion.Location = new System.Drawing.Point(20, 165);
             this.TLabelDireccion.Name = "TLabelDireccion";
-            this.TLabelDireccion.Size = new System.Drawing.Size(52, 13);
+            this.TLabelDireccion.Size = new System.Drawing.Size(56, 13);
             this.TLabelDireccion.TabIndex = 59;
-            this.TLabelDireccion.Text = "Direccion";
+            this.TLabelDireccion.Text = "*Direccion";
             // 
             // TTextBoxEmail
             // 
@@ -170,6 +175,7 @@
             this.TTextBoxEmail.Name = "TTextBoxEmail";
             this.TTextBoxEmail.Size = new System.Drawing.Size(108, 20);
             this.TTextBoxEmail.TabIndex = 58;
+            this.TTextBoxEmail.Leave += new System.EventHandler(this.TTextBoxEmail_Leave);
             // 
             // TLabelEmail
             // 
@@ -186,6 +192,7 @@
             this.TTextBoxProvincia.Name = "TTextBoxProvincia";
             this.TTextBoxProvincia.Size = new System.Drawing.Size(108, 20);
             this.TTextBoxProvincia.TabIndex = 56;
+            this.TTextBoxProvincia.Leave += new System.EventHandler(this.TTextBoxProvincia_Leave);
             // 
             // TTextBoxCiudad
             // 
@@ -193,6 +200,7 @@
             this.TTextBoxCiudad.Name = "TTextBoxCiudad";
             this.TTextBoxCiudad.Size = new System.Drawing.Size(108, 20);
             this.TTextBoxCiudad.TabIndex = 55;
+            this.TTextBoxCiudad.Leave += new System.EventHandler(this.TTextBoxCiudad_Leave);
             // 
             // TTextBoxTelefono
             // 
@@ -200,6 +208,7 @@
             this.TTextBoxTelefono.Name = "TTextBoxTelefono";
             this.TTextBoxTelefono.Size = new System.Drawing.Size(108, 20);
             this.TTextBoxTelefono.TabIndex = 54;
+            this.TTextBoxTelefono.Leave += new System.EventHandler(this.TTextBoxTelefono_Leave);
             // 
             // TTextBoxApellidos
             // 
@@ -207,6 +216,7 @@
             this.TTextBoxApellidos.Name = "TTextBoxApellidos";
             this.TTextBoxApellidos.Size = new System.Drawing.Size(108, 20);
             this.TTextBoxApellidos.TabIndex = 53;
+            this.TTextBoxApellidos.Leave += new System.EventHandler(this.TTextBoxApellidos_Leave);
             // 
             // TTextBoxNombre
             // 
@@ -214,6 +224,7 @@
             this.TTextBoxNombre.Name = "TTextBoxNombre";
             this.TTextBoxNombre.Size = new System.Drawing.Size(70, 20);
             this.TTextBoxNombre.TabIndex = 52;
+            this.TTextBoxNombre.Leave += new System.EventHandler(this.TTextBoxNombre_Leave);
             // 
             // TTextBoxDNI
             // 
@@ -221,60 +232,61 @@
             this.TTextBoxDNI.Name = "TTextBoxDNI";
             this.TTextBoxDNI.Size = new System.Drawing.Size(70, 20);
             this.TTextBoxDNI.TabIndex = 51;
+            this.TTextBoxDNI.Leave += new System.EventHandler(this.TTextBoxDNI_Leave);
             // 
             // TLabelProvincia
             // 
             this.TLabelProvincia.AutoSize = true;
             this.TLabelProvincia.Location = new System.Drawing.Point(20, 209);
             this.TLabelProvincia.Name = "TLabelProvincia";
-            this.TLabelProvincia.Size = new System.Drawing.Size(51, 13);
+            this.TLabelProvincia.Size = new System.Drawing.Size(55, 13);
             this.TLabelProvincia.TabIndex = 50;
-            this.TLabelProvincia.Text = "Provincia";
+            this.TLabelProvincia.Text = "*Provincia";
             // 
             // TLabelCiudad
             // 
             this.TLabelCiudad.AutoSize = true;
             this.TLabelCiudad.Location = new System.Drawing.Point(29, 187);
             this.TLabelCiudad.Name = "TLabelCiudad";
-            this.TLabelCiudad.Size = new System.Drawing.Size(40, 13);
+            this.TLabelCiudad.Size = new System.Drawing.Size(44, 13);
             this.TLabelCiudad.TabIndex = 49;
-            this.TLabelCiudad.Text = "Ciudad";
+            this.TLabelCiudad.Text = "*Ciudad";
             // 
             // TLabelTelefono1
             // 
             this.TLabelTelefono1.AutoSize = true;
             this.TLabelTelefono1.Location = new System.Drawing.Point(11, 121);
             this.TLabelTelefono1.Name = "TLabelTelefono1";
-            this.TLabelTelefono1.Size = new System.Drawing.Size(58, 13);
+            this.TLabelTelefono1.Size = new System.Drawing.Size(53, 13);
             this.TLabelTelefono1.TabIndex = 48;
-            this.TLabelTelefono1.Text = "Telefono 1";
+            this.TLabelTelefono1.Text = "*Telefono";
             // 
             // TLabelApellidos
             // 
             this.TLabelApellidos.AutoSize = true;
             this.TLabelApellidos.Location = new System.Drawing.Point(20, 99);
             this.TLabelApellidos.Name = "TLabelApellidos";
-            this.TLabelApellidos.Size = new System.Drawing.Size(49, 13);
+            this.TLabelApellidos.Size = new System.Drawing.Size(53, 13);
             this.TLabelApellidos.TabIndex = 47;
-            this.TLabelApellidos.Text = "Apellidos";
+            this.TLabelApellidos.Text = "*Apellidos";
             // 
             // TLabelNombre
             // 
             this.TLabelNombre.AutoSize = true;
             this.TLabelNombre.Location = new System.Drawing.Point(25, 77);
             this.TLabelNombre.Name = "TLabelNombre";
-            this.TLabelNombre.Size = new System.Drawing.Size(44, 13);
+            this.TLabelNombre.Size = new System.Drawing.Size(48, 13);
             this.TLabelNombre.TabIndex = 46;
-            this.TLabelNombre.Text = "Nombre";
+            this.TLabelNombre.Text = "*Nombre";
             // 
             // TLabelDNI
             // 
             this.TLabelDNI.AutoSize = true;
             this.TLabelDNI.Location = new System.Drawing.Point(43, 54);
             this.TLabelDNI.Name = "TLabelDNI";
-            this.TLabelDNI.Size = new System.Drawing.Size(26, 13);
+            this.TLabelDNI.Size = new System.Drawing.Size(30, 13);
             this.TLabelDNI.TabIndex = 45;
-            this.TLabelDNI.Text = "DNI";
+            this.TLabelDNI.Text = "*DNI";
             // 
             // TButtonFoto
             // 
@@ -284,7 +296,6 @@
             this.TButtonFoto.TabIndex = 47;
             this.TButtonFoto.Text = "Foto";
             this.TButtonFoto.UseVisualStyleBackColor = true;
-            this.TButtonFoto.Click += new System.EventHandler(this.button1_Click);
             // 
             // TButtonAceptar
             // 
@@ -304,6 +315,19 @@
             this.TButtonCancelar.Text = "Cancelar";
             this.TButtonCancelar.UseVisualStyleBackColor = true;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // TLabelObligado
+            // 
+            this.TLabelObligado.AutoSize = true;
+            this.TLabelObligado.Location = new System.Drawing.Point(401, 271);
+            this.TLabelObligado.Name = "TLabelObligado";
+            this.TLabelObligado.Size = new System.Drawing.Size(108, 13);
+            this.TLabelObligado.TabIndex = 65;
+            this.TLabelObligado.Text = "* Campos obligatorios";
+            // 
             // GestionClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -321,6 +345,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.TGroupBoxCliente.ResumeLayout(false);
             this.TGroupBoxCliente.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -353,6 +378,8 @@
         private System.Windows.Forms.RadioButton TRadioButtonH;
         private System.Windows.Forms.Button TButtonAceptar;
         private System.Windows.Forms.Button TButtonCancelar;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label TLabelObligado;
 
 
     }

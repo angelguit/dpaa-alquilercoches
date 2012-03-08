@@ -31,14 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.TButtonEliminar = new System.Windows.Forms.Button();
             this.TButtonBuscar = new System.Windows.Forms.Button();
-            this.TTextBoxPuestoAc = new System.Windows.Forms.TextBox();
-            this.TTextBoxApellidos = new System.Windows.Forms.TextBox();
-            this.TTextBoxNombre = new System.Windows.Forms.TextBox();
-            this.TTextBoxDNI = new System.Windows.Forms.TextBox();
-            this.TLabelPuestoAc = new System.Windows.Forms.Label();
-            this.TLabelApellidos = new System.Windows.Forms.Label();
-            this.TLabelNombre = new System.Windows.Forms.Label();
-            this.TLabelDNI = new System.Windows.Forms.Label();
             this.TButtonAlta = new System.Windows.Forms.Button();
             this.TDataGridViewPersonal = new System.Windows.Forms.DataGridView();
             this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,8 +39,18 @@
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.TLabelDNI = new System.Windows.Forms.Label();
+            this.TLabelNombre = new System.Windows.Forms.Label();
+            this.TLabelApellidos = new System.Windows.Forms.Label();
+            this.TLabelPuestoAc = new System.Windows.Forms.Label();
+            this.TTextBoxDNI = new System.Windows.Forms.TextBox();
+            this.TTextBoxNombre = new System.Windows.Forms.TextBox();
+            this.TTextBoxApellidos = new System.Windows.Forms.TextBox();
+            this.TTextBoxPuestoAc = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.TDataGridViewPersonal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // TButtonEliminar
@@ -70,78 +72,6 @@
             this.TButtonBuscar.Text = "Buscar";
             this.TButtonBuscar.UseVisualStyleBackColor = true;
             this.TButtonBuscar.Click += new System.EventHandler(this.TButtonBuscar_Click);
-            // 
-            // TTextBoxPuestoAc
-            // 
-            this.TTextBoxPuestoAc.Location = new System.Drawing.Point(305, 321);
-            this.TTextBoxPuestoAc.Name = "TTextBoxPuestoAc";
-            this.TTextBoxPuestoAc.Size = new System.Drawing.Size(100, 20);
-            this.TTextBoxPuestoAc.TabIndex = 21;
-            this.TTextBoxPuestoAc.Leave += new System.EventHandler(this.TTextBoxPuestoAc_Leave);
-            // 
-            // TTextBoxApellidos
-            // 
-            this.TTextBoxApellidos.Location = new System.Drawing.Point(305, 282);
-            this.TTextBoxApellidos.Name = "TTextBoxApellidos";
-            this.TTextBoxApellidos.Size = new System.Drawing.Size(100, 20);
-            this.TTextBoxApellidos.TabIndex = 20;
-            this.TTextBoxApellidos.Leave += new System.EventHandler(this.TTextBoxApellidos_Leave);
-            // 
-            // TTextBoxNombre
-            // 
-            this.TTextBoxNombre.Location = new System.Drawing.Point(84, 321);
-            this.TTextBoxNombre.Name = "TTextBoxNombre";
-            this.TTextBoxNombre.Size = new System.Drawing.Size(100, 20);
-            this.TTextBoxNombre.TabIndex = 19;
-            this.TTextBoxNombre.Leave += new System.EventHandler(this.TTextBoxNombre_Leave);
-            // 
-            // TTextBoxDNI
-            // 
-            this.TTextBoxDNI.Location = new System.Drawing.Point(84, 282);
-            this.TTextBoxDNI.Name = "TTextBoxDNI";
-            this.TTextBoxDNI.Size = new System.Drawing.Size(100, 20);
-            this.TTextBoxDNI.TabIndex = 18;
-            this.TTextBoxDNI.Leave += new System.EventHandler(this.TTextBoxDNI_Leave);
-            // 
-            // TLabelPuestoAc
-            // 
-            this.TLabelPuestoAc.AutoSize = true;
-            this.TLabelPuestoAc.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelPuestoAc.Location = new System.Drawing.Point(240, 329);
-            this.TLabelPuestoAc.Name = "TLabelPuestoAc";
-            this.TLabelPuestoAc.Size = new System.Drawing.Size(59, 13);
-            this.TLabelPuestoAc.TabIndex = 17;
-            this.TLabelPuestoAc.Text = "Puesto Ac.";
-            // 
-            // TLabelApellidos
-            // 
-            this.TLabelApellidos.AutoSize = true;
-            this.TLabelApellidos.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelApellidos.Location = new System.Drawing.Point(250, 290);
-            this.TLabelApellidos.Name = "TLabelApellidos";
-            this.TLabelApellidos.Size = new System.Drawing.Size(49, 13);
-            this.TLabelApellidos.TabIndex = 16;
-            this.TLabelApellidos.Text = "Apellidos";
-            // 
-            // TLabelNombre
-            // 
-            this.TLabelNombre.AutoSize = true;
-            this.TLabelNombre.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelNombre.Location = new System.Drawing.Point(33, 329);
-            this.TLabelNombre.Name = "TLabelNombre";
-            this.TLabelNombre.Size = new System.Drawing.Size(44, 13);
-            this.TLabelNombre.TabIndex = 15;
-            this.TLabelNombre.Text = "Nombre";
-            // 
-            // TLabelDNI
-            // 
-            this.TLabelDNI.AutoSize = true;
-            this.TLabelDNI.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelDNI.Location = new System.Drawing.Point(51, 290);
-            this.TLabelDNI.Name = "TLabelDNI";
-            this.TLabelDNI.Size = new System.Drawing.Size(26, 13);
-            this.TLabelDNI.TabIndex = 14;
-            this.TLabelDNI.Text = "DNI";
             // 
             // TButtonAlta
             // 
@@ -195,31 +125,110 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // TLabelDNI
+            // 
+            this.TLabelDNI.AutoSize = true;
+            this.TLabelDNI.BackColor = System.Drawing.Color.Transparent;
+            this.TLabelDNI.Location = new System.Drawing.Point(33, 30);
+            this.TLabelDNI.Name = "TLabelDNI";
+            this.TLabelDNI.Size = new System.Drawing.Size(26, 13);
+            this.TLabelDNI.TabIndex = 22;
+            this.TLabelDNI.Text = "DNI";
+            // 
+            // TLabelNombre
+            // 
+            this.TLabelNombre.AutoSize = true;
+            this.TLabelNombre.BackColor = System.Drawing.Color.Transparent;
+            this.TLabelNombre.Location = new System.Drawing.Point(15, 69);
+            this.TLabelNombre.Name = "TLabelNombre";
+            this.TLabelNombre.Size = new System.Drawing.Size(44, 13);
+            this.TLabelNombre.TabIndex = 23;
+            this.TLabelNombre.Text = "Nombre";
+            // 
+            // TLabelApellidos
+            // 
+            this.TLabelApellidos.AutoSize = true;
+            this.TLabelApellidos.BackColor = System.Drawing.Color.Transparent;
+            this.TLabelApellidos.Location = new System.Drawing.Point(232, 30);
+            this.TLabelApellidos.Name = "TLabelApellidos";
+            this.TLabelApellidos.Size = new System.Drawing.Size(49, 13);
+            this.TLabelApellidos.TabIndex = 24;
+            this.TLabelApellidos.Text = "Apellidos";
+            // 
+            // TLabelPuestoAc
+            // 
+            this.TLabelPuestoAc.AutoSize = true;
+            this.TLabelPuestoAc.BackColor = System.Drawing.Color.Transparent;
+            this.TLabelPuestoAc.Location = new System.Drawing.Point(222, 69);
+            this.TLabelPuestoAc.Name = "TLabelPuestoAc";
+            this.TLabelPuestoAc.Size = new System.Drawing.Size(59, 13);
+            this.TLabelPuestoAc.TabIndex = 25;
+            this.TLabelPuestoAc.Text = "Puesto Ac.";
+            // 
+            // TTextBoxDNI
+            // 
+            this.TTextBoxDNI.Location = new System.Drawing.Point(66, 22);
+            this.TTextBoxDNI.Name = "TTextBoxDNI";
+            this.TTextBoxDNI.Size = new System.Drawing.Size(100, 20);
+            this.TTextBoxDNI.TabIndex = 26;
+            // 
+            // TTextBoxNombre
+            // 
+            this.TTextBoxNombre.Location = new System.Drawing.Point(66, 61);
+            this.TTextBoxNombre.Name = "TTextBoxNombre";
+            this.TTextBoxNombre.Size = new System.Drawing.Size(100, 20);
+            this.TTextBoxNombre.TabIndex = 27;
+            // 
+            // TTextBoxApellidos
+            // 
+            this.TTextBoxApellidos.Location = new System.Drawing.Point(287, 22);
+            this.TTextBoxApellidos.Name = "TTextBoxApellidos";
+            this.TTextBoxApellidos.Size = new System.Drawing.Size(100, 20);
+            this.TTextBoxApellidos.TabIndex = 28;
+            // 
+            // TTextBoxPuestoAc
+            // 
+            this.TTextBoxPuestoAc.Location = new System.Drawing.Point(287, 61);
+            this.TTextBoxPuestoAc.Name = "TTextBoxPuestoAc";
+            this.TTextBoxPuestoAc.Size = new System.Drawing.Size(100, 20);
+            this.TTextBoxPuestoAc.TabIndex = 29;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.TTextBoxPuestoAc);
+            this.panel1.Controls.Add(this.TTextBoxApellidos);
+            this.panel1.Controls.Add(this.TTextBoxNombre);
+            this.panel1.Controls.Add(this.TTextBoxDNI);
+            this.panel1.Controls.Add(this.TLabelPuestoAc);
+            this.panel1.Controls.Add(this.TLabelApellidos);
+            this.panel1.Controls.Add(this.TLabelNombre);
+            this.panel1.Controls.Add(this.TLabelDNI);
+            this.panel1.Location = new System.Drawing.Point(36, 268);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(442, 102);
+            this.panel1.TabIndex = 24;
+            // 
             // GestionPersonalBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(662, 447);
+            this.ClientSize = new System.Drawing.Size(803, 478);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.TButtonEliminar);
             this.Controls.Add(this.TButtonBuscar);
-            this.Controls.Add(this.TTextBoxPuestoAc);
-            this.Controls.Add(this.TTextBoxApellidos);
-            this.Controls.Add(this.TTextBoxNombre);
-            this.Controls.Add(this.TTextBoxDNI);
-            this.Controls.Add(this.TLabelPuestoAc);
-            this.Controls.Add(this.TLabelApellidos);
-            this.Controls.Add(this.TLabelNombre);
-            this.Controls.Add(this.TLabelDNI);
             this.Controls.Add(this.TButtonAlta);
             this.Controls.Add(this.TDataGridViewPersonal);
             this.Name = "GestionPersonalBuscar";
             this.Text = "GestionPersonalBuscar";
             ((System.ComponentModel.ISupportInitialize)(this.TDataGridViewPersonal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
 		}
 
@@ -227,14 +236,6 @@
 
         private System.Windows.Forms.Button TButtonEliminar;
         private System.Windows.Forms.Button TButtonBuscar;
-        private System.Windows.Forms.TextBox TTextBoxPuestoAc;
-        private System.Windows.Forms.TextBox TTextBoxApellidos;
-        private System.Windows.Forms.TextBox TTextBoxNombre;
-        private System.Windows.Forms.TextBox TTextBoxDNI;
-        private System.Windows.Forms.Label TLabelPuestoAc;
-        private System.Windows.Forms.Label TLabelApellidos;
-        private System.Windows.Forms.Label TLabelNombre;
-        private System.Windows.Forms.Label TLabelDNI;
         private System.Windows.Forms.Button TButtonAlta;
         private System.Windows.Forms.DataGridView TDataGridViewPersonal;
         private System.Windows.Forms.DataGridViewTextBoxColumn DNI;
@@ -243,5 +244,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox TTextBoxPuestoAc;
+        private System.Windows.Forms.TextBox TTextBoxApellidos;
+        private System.Windows.Forms.TextBox TTextBoxNombre;
+        private System.Windows.Forms.TextBox TTextBoxDNI;
+        private System.Windows.Forms.Label TLabelPuestoAc;
+        private System.Windows.Forms.Label TLabelApellidos;
+        private System.Windows.Forms.Label TLabelNombre;
+        private System.Windows.Forms.Label TLabelDNI;
 	}
 }
