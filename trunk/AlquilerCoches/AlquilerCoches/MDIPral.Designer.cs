@@ -41,6 +41,8 @@
             this.gestionProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.facturacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.TToolStripMenuItemNuevaFactura = new System.Windows.Forms.ToolStripMenuItem();
+            this.TToolStripMenuItemBuscarFactura = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionVentasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
@@ -54,8 +56,9 @@
             this.TButtonVehiculos = new System.Windows.Forms.Button();
             this.TButtonCliente = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.TToolStripMenuItemNuevaFactura = new System.Windows.Forms.ToolStripMenuItem();
-            this.TToolStripMenuItemBuscarFactura = new System.Windows.Forms.ToolStripMenuItem();
+            this.ponerEnVentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mostrarVehículosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mostrarVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -149,8 +152,26 @@
             this.facturacionToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
             this.facturacionToolStripMenuItem.Text = "Facturacion";
             // 
+            // TToolStripMenuItemNuevaFactura
+            // 
+            this.TToolStripMenuItemNuevaFactura.Name = "TToolStripMenuItemNuevaFactura";
+            this.TToolStripMenuItemNuevaFactura.Size = new System.Drawing.Size(152, 22);
+            this.TToolStripMenuItemNuevaFactura.Text = "Nueva Factura";
+            this.TToolStripMenuItemNuevaFactura.Click += new System.EventHandler(this.TToolStripMenuItemNuevaFactura_Click);
+            // 
+            // TToolStripMenuItemBuscarFactura
+            // 
+            this.TToolStripMenuItemBuscarFactura.Name = "TToolStripMenuItemBuscarFactura";
+            this.TToolStripMenuItemBuscarFactura.Size = new System.Drawing.Size(152, 22);
+            this.TToolStripMenuItemBuscarFactura.Text = "Buscar Factura";
+            this.TToolStripMenuItemBuscarFactura.Click += new System.EventHandler(this.TToolStripMenuItemBuscarFactura_Click);
+            // 
             // gestionVentasToolStripMenuItem1
             // 
+            this.gestionVentasToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ponerEnVentaToolStripMenuItem,
+            this.mostrarVehículosToolStripMenuItem,
+            this.mostrarVentasToolStripMenuItem});
             this.gestionVentasToolStripMenuItem1.Name = "gestionVentasToolStripMenuItem1";
             this.gestionVentasToolStripMenuItem1.Size = new System.Drawing.Size(97, 20);
             this.gestionVentasToolStripMenuItem1.Text = "Gestion Ventas";
@@ -268,19 +289,26 @@
             this.tabPage1.Text = "Administración";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // TToolStripMenuItemNuevaFactura
+            // ponerEnVentaToolStripMenuItem
             // 
-            this.TToolStripMenuItemNuevaFactura.Name = "TToolStripMenuItemNuevaFactura";
-            this.TToolStripMenuItemNuevaFactura.Size = new System.Drawing.Size(152, 22);
-            this.TToolStripMenuItemNuevaFactura.Text = "Nueva Factura";
-            this.TToolStripMenuItemNuevaFactura.Click += new System.EventHandler(this.TToolStripMenuItemNuevaFactura_Click);
+            this.ponerEnVentaToolStripMenuItem.Name = "ponerEnVentaToolStripMenuItem";
+            this.ponerEnVentaToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.ponerEnVentaToolStripMenuItem.Text = "Poner en Venta";
+            this.ponerEnVentaToolStripMenuItem.Click += new System.EventHandler(this.ponerEnVentaToolStripMenuItem_Click);
             // 
-            // TToolStripMenuItemBuscarFactura
+            // mostrarVehículosToolStripMenuItem
             // 
-            this.TToolStripMenuItemBuscarFactura.Name = "TToolStripMenuItemBuscarFactura";
-            this.TToolStripMenuItemBuscarFactura.Size = new System.Drawing.Size(152, 22);
-            this.TToolStripMenuItemBuscarFactura.Text = "Buscar Factura";
-            this.TToolStripMenuItemBuscarFactura.Click += new System.EventHandler(this.TToolStripMenuItemBuscarFactura_Click);
+            this.mostrarVehículosToolStripMenuItem.Name = "mostrarVehículosToolStripMenuItem";
+            this.mostrarVehículosToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.mostrarVehículosToolStripMenuItem.Text = "Mostrar Vehículos";
+            this.mostrarVehículosToolStripMenuItem.Click += new System.EventHandler(this.mostrarVehículosToolStripMenuItem_Click);
+            // 
+            // mostrarVentasToolStripMenuItem
+            // 
+            this.mostrarVentasToolStripMenuItem.Name = "mostrarVentasToolStripMenuItem";
+            this.mostrarVentasToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.mostrarVentasToolStripMenuItem.Text = "Mostrar Ventas Realizadas";
+            this.mostrarVentasToolStripMenuItem.Click += new System.EventHandler(this.mostrarVentasToolStripMenuItem_Click);
             // 
             // MDIPral
             // 
@@ -338,6 +366,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem TToolStripMenuItemNuevaFactura;
         private System.Windows.Forms.ToolStripMenuItem TToolStripMenuItemBuscarFactura;
+        private System.Windows.Forms.ToolStripMenuItem ponerEnVentaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mostrarVehículosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mostrarVentasToolStripMenuItem;
     }
 }
 
