@@ -140,5 +140,15 @@ namespace AlquilerCoches
 
         }
 
+        private void GestionPersonal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TTextBoxNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

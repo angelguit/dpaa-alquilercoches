@@ -203,5 +203,15 @@ namespace AlquilerCoches
                 }
             }
         }
+
+        private void TListBoxMarcas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TListBoxModelos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
