@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using System.Text.RegularExpressions;
 namespace AlquilerCoches
 {
     public partial class GestionPedidos : Form
@@ -15,17 +15,26 @@ namespace AlquilerCoches
         {
             InitializeComponent();
         }
-
+        bool incorrecto = true;
         private void GestionPedidos_Load(object sender, EventArgs e)
         {            
             TEstadoTextBox.Text = "   ABIERTO";
 
 
         }
-
+        
         private void button1_Click(object sender, EventArgs e)
         {
-            int cont = 0;
+            if (TProveecomboBox1.Text == "" || TMarcacomboBox2.Text == "" || TModelocomboBox3.Text == "")
+            {
+                MessageBox.Show("Campos invalidos, no puede haber ninguno vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            if (incorrecto == true)
+            {
+                MessageBox.Show("Campos invalidos, reviselos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            /*int cont = 0;
             if (TProveecomboBox1.Text == "")
             {
                 TErrorProvee.Text = "*Seleccione un proveedor";
@@ -47,7 +56,7 @@ namespace AlquilerCoches
             }
            
 
-            
+            */
                   
 
         }
@@ -112,6 +121,21 @@ namespace AlquilerCoches
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+       
+        }
+
+        private void TProveecomboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TMarcacomboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TModelocomboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

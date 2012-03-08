@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.TAceptarbutton1 = new System.Windows.Forms.Button();
             this.TSalirbutton2 = new System.Windows.Forms.Button();
             this.TBorrarbutton3 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.TErrorModelo = new System.Windows.Forms.Label();
             this.TErrorMarca = new System.Windows.Forms.Label();
             this.TErrorProvee = new System.Windows.Forms.Label();
@@ -56,10 +58,21 @@
             this.TEmpLabel = new System.Windows.Forms.Label();
             this.TIDlabel = new System.Windows.Forms.Label();
             this.TIDtextBox = new System.Windows.Forms.TextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider4 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider5 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider6 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider6)).BeginInit();
             this.SuspendLayout();
             // 
             // TAceptarbutton1
@@ -119,6 +132,29 @@
             this.groupBox1.Text = "Datos Pedido";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(167, 126);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(86, 20);
+            this.numericUpDown1.TabIndex = 41;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            // 
             // TErrorModelo
             // 
             this.TErrorModelo.AutoSize = true;
@@ -157,6 +193,7 @@
             this.TModelocomboBox3.Name = "TModelocomboBox3";
             this.TModelocomboBox3.Size = new System.Drawing.Size(177, 21);
             this.TModelocomboBox3.TabIndex = 36;
+            this.TModelocomboBox3.SelectedIndexChanged += new System.EventHandler(this.TModelocomboBox3_SelectedIndexChanged);
             // 
             // TMarcacomboBox2
             // 
@@ -165,6 +202,7 @@
             this.TMarcacomboBox2.Name = "TMarcacomboBox2";
             this.TMarcacomboBox2.Size = new System.Drawing.Size(179, 21);
             this.TMarcacomboBox2.TabIndex = 35;
+            this.TMarcacomboBox2.SelectedIndexChanged += new System.EventHandler(this.TMarcacomboBox2_SelectedIndexChanged);
             // 
             // TProveecomboBox1
             // 
@@ -173,6 +211,7 @@
             this.TProveecomboBox1.Name = "TProveecomboBox1";
             this.TProveecomboBox1.Size = new System.Drawing.Size(179, 21);
             this.TProveecomboBox1.TabIndex = 34;
+            this.TProveecomboBox1.SelectedIndexChanged += new System.EventHandler(this.TProveecomboBox1_SelectedIndexChanged);
             // 
             // TProveLabel
             // 
@@ -356,13 +395,29 @@
             this.TIDtextBox.Size = new System.Drawing.Size(84, 20);
             this.TIDtextBox.TabIndex = 23;
             // 
-            // numericUpDown1
+            // errorProvider1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(167, 126);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(86, 20);
-            this.numericUpDown1.TabIndex = 41;
-            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.ContainerControl = this;
+            // 
+            // errorProvider3
+            // 
+            this.errorProvider3.ContainerControl = this;
+            // 
+            // errorProvider4
+            // 
+            this.errorProvider4.ContainerControl = this;
+            // 
+            // errorProvider5
+            // 
+            this.errorProvider5.ContainerControl = this;
+            // 
+            // errorProvider6
+            // 
+            this.errorProvider6.ContainerControl = this;
             // 
             // GestionPedidos
             // 
@@ -381,9 +436,15 @@
             this.Load += new System.EventHandler(this.GestionPedidos_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -419,5 +480,11 @@
         private System.Windows.Forms.Label TErrorMarca;
         private System.Windows.Forms.Label TErrorModelo;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
+        private System.Windows.Forms.ErrorProvider errorProvider3;
+        private System.Windows.Forms.ErrorProvider errorProvider4;
+        private System.Windows.Forms.ErrorProvider errorProvider5;
+        private System.Windows.Forms.ErrorProvider errorProvider6;
     }
 }
