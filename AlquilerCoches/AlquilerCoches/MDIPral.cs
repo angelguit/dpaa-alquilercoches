@@ -212,5 +212,49 @@ namespace AlquilerCoches
             }
         }
 
+        private void ponerEnVentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["PonerVenta"] != null)
+            {
+                Application.OpenForms["PonerVenta"].Activate();
+            }
+            else
+            {
+                PonerVenta F8 = new PonerVenta();
+                F8.MdiParent = this;
+                F8.Show();
+                F8.WindowState = FormWindowState.Maximized;
+             }
+        }
+
+        private void mostrarVehículosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["EditarVentas"] != null)
+            {
+                Application.OpenForms["EditarVentas"].Activate();
+            }
+            else
+            {
+                EditarVentas F9 = new EditarVentas();
+                F9.MdiParent = this;
+                F9.Show();
+                F9.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        private void mostrarVentasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["GestionVentas"] != null)
+            {
+                Application.OpenForms["GestionVentas"].Activate();
+            }
+            else
+            {
+                GestionVentas F10 = new GestionVentas();
+                F10.MdiParent = this;
+                F10.Show();
+                F10.WindowState = FormWindowState.Maximized;
+            }
+        }
      }
 }
