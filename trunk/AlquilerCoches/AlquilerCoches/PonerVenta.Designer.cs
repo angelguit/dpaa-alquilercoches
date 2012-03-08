@@ -57,6 +57,7 @@
             this.TextBoxMatricula = new System.Windows.Forms.TextBox();
             this.TLabelMatricula = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.TLabelObligatorio = new System.Windows.Forms.Label();
             this.TGroupBoxDatosVehiculo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TPictureBoxCoche)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -73,8 +74,6 @@
             // 
             // TListBoxMatriculas
             // 
-            this.TListBoxMatriculas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
             this.TListBoxMatriculas.FormattingEnabled = true;
             this.TListBoxMatriculas.Location = new System.Drawing.Point(388, 25);
             this.TListBoxMatriculas.Name = "TListBoxMatriculas";
@@ -83,8 +82,7 @@
             // 
             // TListBoxModelos
             // 
-            this.TListBoxModelos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.TListBoxModelos.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TListBoxModelos.FormattingEnabled = true;
             this.TListBoxModelos.Location = new System.Drawing.Point(201, 25);
             this.TListBoxModelos.Name = "TListBoxModelos";
@@ -145,6 +143,7 @@
             this.TGroupBoxDatosVehiculo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.TGroupBoxDatosVehiculo.BackColor = System.Drawing.Color.Transparent;
+            this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelObligatorio);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TTextBoxMeses);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TCheckBoxGarantia);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelAviso);
@@ -165,7 +164,7 @@
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelMatricula);
             this.TGroupBoxDatosVehiculo.Location = new System.Drawing.Point(15, 126);
             this.TGroupBoxDatosVehiculo.Name = "TGroupBoxDatosVehiculo";
-            this.TGroupBoxDatosVehiculo.Size = new System.Drawing.Size(366, 240);
+            this.TGroupBoxDatosVehiculo.Size = new System.Drawing.Size(366, 246);
             this.TGroupBoxDatosVehiculo.TabIndex = 41;
             this.TGroupBoxDatosVehiculo.TabStop = false;
             this.TGroupBoxDatosVehiculo.Text = "DatosVehiculo";
@@ -226,9 +225,9 @@
             this.TLabelPrecioVenta.AutoSize = true;
             this.TLabelPrecioVenta.Location = new System.Drawing.Point(9, 188);
             this.TLabelPrecioVenta.Name = "TLabelPrecioVenta";
-            this.TLabelPrecioVenta.Size = new System.Drawing.Size(65, 13);
+            this.TLabelPrecioVenta.Size = new System.Drawing.Size(69, 13);
             this.TLabelPrecioVenta.TabIndex = 43;
-            this.TLabelPrecioVenta.Text = "PrecioVenta";
+            this.TLabelPrecioVenta.Text = "PrecioVenta*";
             // 
             // TTextBoxKm
             // 
@@ -243,12 +242,13 @@
             this.TLabelKM.AutoSize = true;
             this.TLabelKM.Location = new System.Drawing.Point(49, 136);
             this.TLabelKM.Name = "TLabelKM";
-            this.TLabelKM.Size = new System.Drawing.Size(23, 13);
+            this.TLabelKM.Size = new System.Drawing.Size(27, 13);
             this.TLabelKM.TabIndex = 39;
-            this.TLabelKM.Text = "KM";
+            this.TLabelKM.Text = "KM*";
             // 
             // TTextBoxModelo
             // 
+            this.TTextBoxModelo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TTextBoxModelo.Location = new System.Drawing.Point(80, 79);
             this.TTextBoxModelo.Name = "TTextBoxModelo";
             this.TTextBoxModelo.ReadOnly = true;
@@ -266,6 +266,7 @@
             // 
             // TTextBoxMarca
             // 
+            this.TTextBoxMarca.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TTextBoxMarca.Location = new System.Drawing.Point(80, 49);
             this.TTextBoxMarca.Name = "TTextBoxMarca";
             this.TTextBoxMarca.ReadOnly = true;
@@ -318,6 +319,7 @@
             // 
             // TextBoxMatricula
             // 
+            this.TextBoxMatricula.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TextBoxMatricula.Location = new System.Drawing.Point(80, 23);
             this.TextBoxMatricula.Name = "TextBoxMatricula";
             this.TextBoxMatricula.ReadOnly = true;
@@ -338,13 +340,22 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // TLabelObligatorio
+            // 
+            this.TLabelObligatorio.AutoSize = true;
+            this.TLabelObligatorio.Location = new System.Drawing.Point(22, 221);
+            this.TLabelObligatorio.Name = "TLabelObligatorio";
+            this.TLabelObligatorio.Size = new System.Drawing.Size(217, 13);
+            this.TLabelObligatorio.TabIndex = 49;
+            this.TLabelObligatorio.Text = "Los campos marcados con * son obligatorios";
+            // 
             // PonerVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(661, 378);
+            this.ClientSize = new System.Drawing.Size(661, 399);
             this.Controls.Add(this.TButtonAtras);
             this.Controls.Add(this.TListBoxMatriculas);
             this.Controls.Add(this.TListBoxModelos);
@@ -395,6 +406,7 @@
         private System.Windows.Forms.CheckBox TCheckBoxGarantia;
         private System.Windows.Forms.TextBox TTextBoxMeses;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label TLabelObligatorio;
 
     }
 }
