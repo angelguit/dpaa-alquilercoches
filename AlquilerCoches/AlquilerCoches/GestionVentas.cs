@@ -20,5 +20,15 @@ namespace AlquilerCoches
         {
 
         }
+
+        private void textBox2_MouseHover(object sender, EventArgs e)
+        {
+            TLabelMeses.Text = "Garantía mostrada en meses";
+        }
+
+        private void textBox2_MouseLeave(object sender, EventArgs e)
+        {
+            TLabelMeses.Text = "";
+        }
     }
 }

@@ -60,10 +60,11 @@
             this.TLabelFactura = new System.Windows.Forms.Label();
             this.TTextBoxFactura = new System.Windows.Forms.TextBox();
             this.TGroupBoxDatosVenta = new System.Windows.Forms.GroupBox();
+            this.TButtonDetallesVendedor = new System.Windows.Forms.Button();
             this.TButtonDetallesFactura = new System.Windows.Forms.Button();
             this.TButtonDetallesCliente = new System.Windows.Forms.Button();
             this.TButtonAtras = new System.Windows.Forms.Button();
-            this.TButtonDetallesVendedor = new System.Windows.Forms.Button();
+            this.TLabelMeses = new System.Windows.Forms.Label();
             this.TGroupBoxDatosVehiculo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.TGroupBoxDatosVenta.SuspendLayout();
@@ -143,6 +144,7 @@
             this.TGroupBoxDatosVehiculo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.TGroupBoxDatosVehiculo.BackColor = System.Drawing.Color.Transparent;
+            this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelMeses);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.textBox1);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelKM);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TTextBoxModelo);
@@ -227,6 +229,8 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 42;
+            this.textBox2.MouseLeave += new System.EventHandler(this.textBox2_MouseLeave);
+            this.textBox2.MouseHover += new System.EventHandler(this.textBox2_MouseHover);
             // 
             // pictureBox1
             // 
@@ -372,6 +376,15 @@
             this.TGroupBoxDatosVenta.TabStop = false;
             this.TGroupBoxDatosVenta.Text = "Datos Venta";
             // 
+            // TButtonDetallesVendedor
+            // 
+            this.TButtonDetallesVendedor.Location = new System.Drawing.Point(188, 74);
+            this.TButtonDetallesVendedor.Name = "TButtonDetallesVendedor";
+            this.TButtonDetallesVendedor.Size = new System.Drawing.Size(111, 23);
+            this.TButtonDetallesVendedor.TabIndex = 53;
+            this.TButtonDetallesVendedor.Text = "Detalles Vendedor";
+            this.TButtonDetallesVendedor.UseVisualStyleBackColor = true;
+            // 
             // TButtonDetallesFactura
             // 
             this.TButtonDetallesFactura.Location = new System.Drawing.Point(188, 48);
@@ -399,14 +412,13 @@
             this.TButtonAtras.Text = "Atrás";
             this.TButtonAtras.UseVisualStyleBackColor = true;
             // 
-            // TButtonDetallesVendedor
+            // TLabelMeses
             // 
-            this.TButtonDetallesVendedor.Location = new System.Drawing.Point(188, 74);
-            this.TButtonDetallesVendedor.Name = "TButtonDetallesVendedor";
-            this.TButtonDetallesVendedor.Size = new System.Drawing.Size(111, 23);
-            this.TButtonDetallesVendedor.TabIndex = 53;
-            this.TButtonDetallesVendedor.Text = "Detalles Vendedor";
-            this.TButtonDetallesVendedor.UseVisualStyleBackColor = true;
+            this.TLabelMeses.AutoSize = true;
+            this.TLabelMeses.Location = new System.Drawing.Point(171, 160);
+            this.TLabelMeses.Name = "TLabelMeses";
+            this.TLabelMeses.Size = new System.Drawing.Size(0, 13);
+            this.TLabelMeses.TabIndex = 43;
             // 
             // GestionVentas
             // 
@@ -475,6 +487,7 @@
         private System.Windows.Forms.Button TButtonAtras;
         private System.Windows.Forms.Button TButtonDetallesFactura;
         private System.Windows.Forms.Button TButtonDetallesVendedor;
+        private System.Windows.Forms.Label TLabelMeses;
 
     }
 }
