@@ -132,7 +132,7 @@ namespace AlquilerCoches
             {
                 MessageBox.Show("Campos invalidos, no puede haber ninguno vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            if (incorrecto == true)
+            else if (incorrecto == true)
             {
                 MessageBox.Show("Campos invalidos, reviselos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
 

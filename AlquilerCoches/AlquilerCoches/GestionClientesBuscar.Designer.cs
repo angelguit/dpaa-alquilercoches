@@ -131,7 +131,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.TTextBoxProvincia);
             this.panel1.Controls.Add(this.TButtonEliminar);
             this.panel1.Controls.Add(this.TTextBoxApellidos);
