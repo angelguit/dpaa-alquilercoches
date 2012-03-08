@@ -6,11 +6,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace AlquilerCoches
 {
     public partial class PonerVenta : Form
     {
+        bool incorrecto = false;
+
         public PonerVenta()
         {
             InitializeComponent();
@@ -41,6 +44,50 @@ namespace AlquilerCoches
             {
                 TTextBoxMeses.Enabled = false;
                 TTextBoxMeses.Text = "Meses";
+                errorProvider1.SetError(TTextBoxMeses, "");
+                incorrecto = false;
+            }
+        }
+
+        private void TTextBoxKm_Leave(object sender, EventArgs e)
+        {
+            if (!Regex.Match(TTextBoxKm.Text, @"^\d{1,6}$").Success)
+            {
+                errorProvider1.SetError(TTextBoxKm, "KM incorrectos");
+                incorrecto = true;
+            }
+            else
+            {
+                errorProvider1.SetError(TTextBoxKm, "");
+                incorrecto = false;
+            }
+        }
+
+        private void TTextBoxMeses_Leave(object sender, EventArgs e)
+        {
+            if (!Regex.Match(TTextBoxMeses.Text, @"^\d{1,2}$").Success)
+            {
+                errorProvider1.SetError(TTextBoxMeses, "Meses de garantía incorrectos");
+                incorrecto = true;
+            }
+            else
+            {
+                errorProvider1.SetError(TTextBoxMeses, "");
+                incorrecto = false;
+            }
+        }
+
+        private void TTextBoxPrecioVenta_Leave(object sender, EventArgs e)
+        {
+            if (!Regex.Match(TTextBoxPrecioVenta.Text, @"^\d{1,6}$").Success)
+            {
+                errorProvider1.SetError(TTextBoxPrecioVenta, "Precio incorrecto");
+                incorrecto = true;
+            }
+            else
+            {
+                errorProvider1.SetError(TTextBoxPrecioVenta, "");
+                incorrecto = false;
             }
         }
     }
