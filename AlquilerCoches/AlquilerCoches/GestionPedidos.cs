@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+
 namespace AlquilerCoches
 {
     public partial class GestionPedidos : Form
@@ -15,7 +16,9 @@ namespace AlquilerCoches
         {
             InitializeComponent();
         }
-        bool incorrecto = true;
+
+        bool incorrecto = false;
+
         private void GestionPedidos_Load(object sender, EventArgs e)
         {            
             TEstadoTextBox.Text = "   ABIERTO";
@@ -34,31 +37,7 @@ namespace AlquilerCoches
                 MessageBox.Show("Campos invalidos, reviselos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
-            /*int cont = 0;
-            if (TProveecomboBox1.Text == "")
-            {
-                TErrorProvee.Text = "*Seleccione un proveedor";
-                cont++;
-                TErrorProvee.Show();
-            }
             
-            if (TMarcacomboBox2.Text == "")
-            {
-                    TErrorMarca.Text = "*Seleccione la marca del coche";
-                    cont++;
-                    TErrorMarca.Show();
-            }
-            if (TModelocomboBox3.Text == "")
-            {
-                   TErrorModelo.Text = "*Seleccione el modelo del coche";
-                   cont++;
-                   TErrorModelo.Show();
-            }
-           
-
-            */
-                  
-
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -98,13 +77,15 @@ namespace AlquilerCoches
 
         private void TBorrarbutton3_Click(object sender, EventArgs e)
         {
-            TProveecomboBox1.Text = "";
-            TMarcacomboBox2.Text = "";
-            TModelocomboBox3.Text = "";
-           
-         
+            //Combobox
+            TProveecomboBox1.SelectedIndex = 0;
+            TMarcacomboBox2.SelectedIndex = 0;
+            TModelocomboBox3.SelectedIndex = 0;
+            //Radiobutton
+            TEnvioButtonOrdinario.Checked = true;
+            TObservTextBox.Text = "";
+            numericUpDown1.Value = 1;
 
-            
         }
 
         private void TCancelarbutton2_Click(object sender, EventArgs e)
@@ -122,20 +103,64 @@ namespace AlquilerCoches
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-       
+            if (!Regex.Match(numericUpDown1.Text, @"^[1-9]{1}$").Success)
+            {
+                errorProvider1.SetError(numericUpDown1, "El número de pedidos es entre 1 y 9");
+                incorrecto = true;
+            }
+            else { errorProvider1.SetError(numericUpDown1, ""); }
         }
 
         private void TProveecomboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if(TProveecomboBox1.SelectedIndex==0)
+            {
+                errorProvider1.SetError(TProveecomboBox1, "Seleccione un proveedor");
+                incorrecto = true;
+            }
         }
 
         private void TMarcacomboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (TMarcacomboBox2.SelectedIndex == 0)
+            {
+                errorProvider1.SetError(TMarcacomboBox2, "Seleccione una marca");
+                incorrecto = true;
+            }
 
         }
 
         private void TModelocomboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (TModelocomboBox3.SelectedIndex == 0)
+            {
+                errorProvider1.SetError(TModelocomboBox3, "Seleccione un modelo");
+                incorrecto = true;
+            }
+
+        }
+
+        private void TObservTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (!Regex.Match(TObservTextBox.Text, @"^[A-Za-z]{2,300}$").Success)
+            {
+                errorProvider1.SetError(TObservTextBox, "Máximo 300 caracteres.");
+                incorrecto = true;
+            }
+            else { errorProvider1.SetError(TObservTextBox, ""); }
+        }
+
+        private void TEnvioButtonOrdinario_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TEnvioButtonUrgente_CheckedChanged(object sender, EventArgs e)
+        {
+       
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
         {
 
         }

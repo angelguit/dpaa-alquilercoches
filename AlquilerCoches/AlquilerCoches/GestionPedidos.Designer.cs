@@ -41,11 +41,8 @@
             this.TMarcacomboBox2 = new System.Windows.Forms.ComboBox();
             this.TProveecomboBox1 = new System.Windows.Forms.ComboBox();
             this.TProveLabel = new System.Windows.Forms.Label();
-            this.TEnvioButtonUrgente = new System.Windows.Forms.RadioButton();
-            this.TEnvioButtonOrdinario = new System.Windows.Forms.RadioButton();
             this.TObservTextBox = new System.Windows.Forms.TextBox();
             this.TObserLabel = new System.Windows.Forms.Label();
-            this.TEnvioLabel = new System.Windows.Forms.Label();
             this.TCantidadLabel = new System.Windows.Forms.Label();
             this.TModeloLabel = new System.Windows.Forms.Label();
             this.TMarca = new System.Windows.Forms.Label();
@@ -59,25 +56,19 @@
             this.TIDlabel = new System.Windows.Forms.Label();
             this.TIDtextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProvider4 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProvider5 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProvider6 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.TEnviogroupBox3 = new System.Windows.Forms.GroupBox();
+            this.TEnvioButtonUrgente = new System.Windows.Forms.RadioButton();
+            this.TEnvioButtonOrdinario = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider6)).BeginInit();
+            this.TEnviogroupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // TAceptarbutton1
             // 
-            this.TAceptarbutton1.Location = new System.Drawing.Point(85, 453);
+            this.TAceptarbutton1.Location = new System.Drawing.Point(81, 483);
             this.TAceptarbutton1.Name = "TAceptarbutton1";
             this.TAceptarbutton1.Size = new System.Drawing.Size(138, 23);
             this.TAceptarbutton1.TabIndex = 0;
@@ -87,7 +78,7 @@
             // 
             // TSalirbutton2
             // 
-            this.TSalirbutton2.Location = new System.Drawing.Point(444, 453);
+            this.TSalirbutton2.Location = new System.Drawing.Point(440, 483);
             this.TSalirbutton2.Name = "TSalirbutton2";
             this.TSalirbutton2.Size = new System.Drawing.Size(132, 23);
             this.TSalirbutton2.TabIndex = 1;
@@ -97,7 +88,7 @@
             // 
             // TBorrarbutton3
             // 
-            this.TBorrarbutton3.Location = new System.Drawing.Point(263, 453);
+            this.TBorrarbutton3.Location = new System.Drawing.Point(259, 483);
             this.TBorrarbutton3.Name = "TBorrarbutton3";
             this.TBorrarbutton3.Size = new System.Drawing.Size(126, 23);
             this.TBorrarbutton3.TabIndex = 2;
@@ -108,6 +99,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.TEnviogroupBox3);
             this.groupBox1.Controls.Add(this.numericUpDown1);
             this.groupBox1.Controls.Add(this.TErrorModelo);
             this.groupBox1.Controls.Add(this.TErrorMarca);
@@ -116,17 +108,14 @@
             this.groupBox1.Controls.Add(this.TMarcacomboBox2);
             this.groupBox1.Controls.Add(this.TProveecomboBox1);
             this.groupBox1.Controls.Add(this.TProveLabel);
-            this.groupBox1.Controls.Add(this.TEnvioButtonUrgente);
-            this.groupBox1.Controls.Add(this.TEnvioButtonOrdinario);
             this.groupBox1.Controls.Add(this.TObservTextBox);
             this.groupBox1.Controls.Add(this.TObserLabel);
-            this.groupBox1.Controls.Add(this.TEnvioLabel);
             this.groupBox1.Controls.Add(this.TCantidadLabel);
             this.groupBox1.Controls.Add(this.TModeloLabel);
             this.groupBox1.Controls.Add(this.TMarca);
             this.groupBox1.Location = new System.Drawing.Point(75, 122);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(539, 312);
+            this.groupBox1.Size = new System.Drawing.Size(539, 345);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Pedido";
@@ -188,7 +177,10 @@
             // 
             // TModelocomboBox3
             // 
+            this.TModelocomboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TModelocomboBox3.FormattingEnabled = true;
+            this.TModelocomboBox3.Items.AddRange(new object[] {
+            ""});
             this.TModelocomboBox3.Location = new System.Drawing.Point(165, 89);
             this.TModelocomboBox3.Name = "TModelocomboBox3";
             this.TModelocomboBox3.Size = new System.Drawing.Size(177, 21);
@@ -197,7 +189,11 @@
             // 
             // TMarcacomboBox2
             // 
+            this.TMarcacomboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TMarcacomboBox2.FormattingEnabled = true;
+            this.TMarcacomboBox2.Items.AddRange(new object[] {
+            "",
+            "FORD"});
             this.TMarcacomboBox2.Location = new System.Drawing.Point(165, 55);
             this.TMarcacomboBox2.Name = "TMarcacomboBox2";
             this.TMarcacomboBox2.Size = new System.Drawing.Size(179, 21);
@@ -206,7 +202,11 @@
             // 
             // TProveecomboBox1
             // 
+            this.TProveecomboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TProveecomboBox1.FormattingEnabled = true;
+            this.TProveecomboBox1.Items.AddRange(new object[] {
+            "",
+            "FORD"});
             this.TProveecomboBox1.Location = new System.Drawing.Point(165, 22);
             this.TProveecomboBox1.Name = "TProveecomboBox1";
             this.TProveecomboBox1.Size = new System.Drawing.Size(179, 21);
@@ -222,53 +222,23 @@
             this.TProveLabel.TabIndex = 32;
             this.TProveLabel.Text = "Proveedor";
             // 
-            // TEnvioButtonUrgente
-            // 
-            this.TEnvioButtonUrgente.AutoSize = true;
-            this.TEnvioButtonUrgente.Location = new System.Drawing.Point(251, 156);
-            this.TEnvioButtonUrgente.Name = "TEnvioButtonUrgente";
-            this.TEnvioButtonUrgente.Size = new System.Drawing.Size(63, 17);
-            this.TEnvioButtonUrgente.TabIndex = 31;
-            this.TEnvioButtonUrgente.TabStop = true;
-            this.TEnvioButtonUrgente.Text = "Urgente";
-            this.TEnvioButtonUrgente.UseVisualStyleBackColor = true;
-            // 
-            // TEnvioButtonOrdinario
-            // 
-            this.TEnvioButtonOrdinario.AutoSize = true;
-            this.TEnvioButtonOrdinario.Location = new System.Drawing.Point(167, 156);
-            this.TEnvioButtonOrdinario.Name = "TEnvioButtonOrdinario";
-            this.TEnvioButtonOrdinario.Size = new System.Drawing.Size(67, 17);
-            this.TEnvioButtonOrdinario.TabIndex = 30;
-            this.TEnvioButtonOrdinario.TabStop = true;
-            this.TEnvioButtonOrdinario.Text = "Ordinario";
-            this.TEnvioButtonOrdinario.UseVisualStyleBackColor = true;
-            // 
             // TObservTextBox
             // 
-            this.TObservTextBox.Location = new System.Drawing.Point(165, 196);
+            this.TObservTextBox.Location = new System.Drawing.Point(165, 222);
             this.TObservTextBox.Multiline = true;
             this.TObservTextBox.Name = "TObservTextBox";
             this.TObservTextBox.Size = new System.Drawing.Size(248, 86);
             this.TObservTextBox.TabIndex = 29;
+            this.TObservTextBox.TextChanged += new System.EventHandler(this.TObservTextBox_TextChanged);
             // 
             // TObserLabel
             // 
             this.TObserLabel.AutoSize = true;
-            this.TObserLabel.Location = new System.Drawing.Point(66, 199);
+            this.TObserLabel.Location = new System.Drawing.Point(66, 225);
             this.TObserLabel.Name = "TObserLabel";
             this.TObserLabel.Size = new System.Drawing.Size(78, 13);
             this.TObserLabel.TabIndex = 28;
             this.TObserLabel.Text = "Observaciones";
-            // 
-            // TEnvioLabel
-            // 
-            this.TEnvioLabel.AutoSize = true;
-            this.TEnvioLabel.Location = new System.Drawing.Point(66, 160);
-            this.TEnvioLabel.Name = "TEnvioLabel";
-            this.TEnvioLabel.Size = new System.Drawing.Size(74, 13);
-            this.TEnvioLabel.TabIndex = 24;
-            this.TEnvioLabel.Text = "Tipo de envío";
             // 
             // TCantidadLabel
             // 
@@ -399,25 +369,39 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // errorProvider2
+            // TEnviogroupBox3
             // 
-            this.errorProvider2.ContainerControl = this;
+            this.TEnviogroupBox3.Controls.Add(this.TEnvioButtonUrgente);
+            this.TEnviogroupBox3.Controls.Add(this.TEnvioButtonOrdinario);
+            this.TEnviogroupBox3.Location = new System.Drawing.Point(69, 152);
+            this.TEnviogroupBox3.Name = "TEnviogroupBox3";
+            this.TEnviogroupBox3.Size = new System.Drawing.Size(344, 51);
+            this.TEnviogroupBox3.TabIndex = 42;
+            this.TEnviogroupBox3.TabStop = false;
+            this.TEnviogroupBox3.Text = "Envio";
+            this.TEnviogroupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
-            // errorProvider3
+            // TEnvioButtonUrgente
             // 
-            this.errorProvider3.ContainerControl = this;
+            this.TEnvioButtonUrgente.AutoSize = true;
+            this.TEnvioButtonUrgente.Location = new System.Drawing.Point(207, 19);
+            this.TEnvioButtonUrgente.Name = "TEnvioButtonUrgente";
+            this.TEnvioButtonUrgente.Size = new System.Drawing.Size(63, 17);
+            this.TEnvioButtonUrgente.TabIndex = 33;
+            this.TEnvioButtonUrgente.Text = "Urgente";
+            this.TEnvioButtonUrgente.UseVisualStyleBackColor = true;
             // 
-            // errorProvider4
+            // TEnvioButtonOrdinario
             // 
-            this.errorProvider4.ContainerControl = this;
-            // 
-            // errorProvider5
-            // 
-            this.errorProvider5.ContainerControl = this;
-            // 
-            // errorProvider6
-            // 
-            this.errorProvider6.ContainerControl = this;
+            this.TEnvioButtonOrdinario.AutoSize = true;
+            this.TEnvioButtonOrdinario.Checked = true;
+            this.TEnvioButtonOrdinario.Location = new System.Drawing.Point(64, 19);
+            this.TEnvioButtonOrdinario.Name = "TEnvioButtonOrdinario";
+            this.TEnvioButtonOrdinario.Size = new System.Drawing.Size(67, 17);
+            this.TEnvioButtonOrdinario.TabIndex = 32;
+            this.TEnvioButtonOrdinario.TabStop = true;
+            this.TEnvioButtonOrdinario.Text = "Ordinario";
+            this.TEnvioButtonOrdinario.UseVisualStyleBackColor = true;
             // 
             // GestionPedidos
             // 
@@ -425,7 +409,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(666, 502);
+            this.ClientSize = new System.Drawing.Size(669, 540);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.TBorrarbutton3);
@@ -440,11 +424,8 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider6)).EndInit();
+            this.TEnviogroupBox3.ResumeLayout(false);
+            this.TEnviogroupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -456,11 +437,8 @@
         private System.Windows.Forms.Button TBorrarbutton3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label TProveLabel;
-        private System.Windows.Forms.RadioButton TEnvioButtonUrgente;
-        private System.Windows.Forms.RadioButton TEnvioButtonOrdinario;
         private System.Windows.Forms.TextBox TObservTextBox;
         private System.Windows.Forms.Label TObserLabel;
-        private System.Windows.Forms.Label TEnvioLabel;
         private System.Windows.Forms.Label TCantidadLabel;
         private System.Windows.Forms.Label TModeloLabel;
         private System.Windows.Forms.Label TMarca;
@@ -481,10 +459,8 @@
         private System.Windows.Forms.Label TErrorModelo;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.ErrorProvider errorProvider2;
-        private System.Windows.Forms.ErrorProvider errorProvider3;
-        private System.Windows.Forms.ErrorProvider errorProvider4;
-        private System.Windows.Forms.ErrorProvider errorProvider5;
-        private System.Windows.Forms.ErrorProvider errorProvider6;
+        private System.Windows.Forms.GroupBox TEnviogroupBox3;
+        private System.Windows.Forms.RadioButton TEnvioButtonUrgente;
+        private System.Windows.Forms.RadioButton TEnvioButtonOrdinario;
     }
 }

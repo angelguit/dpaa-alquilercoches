@@ -73,9 +73,9 @@
             // 
             // TGroupBoxDatosVehiculo
             // 
-            this.TGroupBoxDatosVehiculo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TGroupBoxDatosVehiculo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.TGroupBoxDatosVehiculo.BackColor = System.Drawing.Color.Transparent;
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TTextBoxGarantia);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelGarantia);
@@ -418,6 +418,7 @@
             this.TListBoxMarcas.Name = "TListBoxMarcas";
             this.TListBoxMarcas.Size = new System.Drawing.Size(187, 95);
             this.TListBoxMarcas.TabIndex = 26;
+            this.TListBoxMarcas.SelectedIndexChanged += new System.EventHandler(this.TListBoxMarcas_SelectedIndexChanged);
             // 
             // TListBoxModelos
             // 
@@ -430,6 +431,7 @@
             this.TListBoxModelos.Name = "TListBoxModelos";
             this.TListBoxModelos.Size = new System.Drawing.Size(187, 95);
             this.TListBoxModelos.TabIndex = 27;
+            this.TListBoxModelos.SelectedIndexChanged += new System.EventHandler(this.TListBoxModelos_SelectedIndexChanged);
             // 
             // TListBoxMatriculas
             // 

@@ -28,34 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.TNamelabel = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TNametextbox = new System.Windows.Forms.TextBox();
             this.TEstadogroupbox = new System.Windows.Forms.GroupBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.TBuscarbutton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TIDtextBox = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.TEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TDescripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             this.TEstadogroupbox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.TNamelabel);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.TNametextbox);
             this.groupBox1.Controls.Add(this.TEstadogroupbox);
             this.groupBox1.Controls.Add(this.TBuscarbutton);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.TIDtextBox);
             this.groupBox1.Location = new System.Drawing.Point(31, 21);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(569, 98);
@@ -74,12 +77,13 @@
             this.TNamelabel.Text = "Nombre:";
             this.TNamelabel.Click += new System.EventHandler(this.label2_Click);
             // 
-            // textBox2
+            // TNametextbox
             // 
-            this.textBox2.Location = new System.Drawing.Point(231, 67);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(101, 20);
-            this.textBox2.TabIndex = 6;
+            this.TNametextbox.Location = new System.Drawing.Point(231, 67);
+            this.TNametextbox.Name = "TNametextbox";
+            this.TNametextbox.Size = new System.Drawing.Size(101, 20);
+            this.TNametextbox.TabIndex = 6;
+            this.TNametextbox.TextChanged += new System.EventHandler(this.TNametextbox_TextChanged);
             // 
             // TEstadogroupbox
             // 
@@ -100,13 +104,13 @@
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(62, 17);
             this.radioButton2.TabIndex = 3;
-            this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Cerrado";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
             this.radioButton1.Location = new System.Drawing.Point(43, 18);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(58, 17);
@@ -123,6 +127,7 @@
             this.TBuscarbutton.TabIndex = 4;
             this.TBuscarbutton.Text = "BUSCAR";
             this.TBuscarbutton.UseVisualStyleBackColor = true;
+            this.TBuscarbutton.Click += new System.EventHandler(this.TBuscarbutton_Click);
             // 
             // label1
             // 
@@ -133,12 +138,12 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "ID:";
             // 
-            // textBox1
+            // TIDtextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(231, 26);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(101, 20);
-            this.textBox1.TabIndex = 2;
+            this.TIDtextBox.Location = new System.Drawing.Point(231, 26);
+            this.TIDtextBox.Name = "TIDtextBox";
+            this.TIDtextBox.Size = new System.Drawing.Size(101, 20);
+            this.TIDtextBox.TabIndex = 2;
             // 
             // dataGridView1
             // 
@@ -173,6 +178,10 @@
             this.TProveedor.HeaderText = "Proveedor";
             this.TProveedor.Name = "TProveedor";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // BuscarPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -191,6 +200,7 @@
             this.TEstadogroupbox.ResumeLayout(false);
             this.TEstadogroupbox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -199,17 +209,18 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TIDtextBox;
         private System.Windows.Forms.GroupBox TEstadogroupbox;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Button TBuscarbutton;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label TNamelabel;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TNametextbox;
         private System.Windows.Forms.DataGridViewTextBoxColumn TEstado;
         private System.Windows.Forms.DataGridViewTextBoxColumn TNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn TDescripción;
         private System.Windows.Forms.DataGridViewTextBoxColumn TProveedor;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
