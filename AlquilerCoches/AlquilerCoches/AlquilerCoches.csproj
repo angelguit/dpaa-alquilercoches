@@ -76,6 +76,7 @@
     <Compile Include="BuscarPedidos.Designer.cs">
       <DependentUpon>BuscarPedidos.cs</DependentUpon>
     </Compile>
+    <Compile Include="CAD\CADVehiculo.cs" />
     <Compile Include="EditarVentas.cs">
       <SubType>Form</SubType>
     </Compile>
