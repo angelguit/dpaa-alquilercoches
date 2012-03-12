@@ -1,0 +1,99 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Configuration;
+using System.Data;
+using System.Data.Common;
+using System.Data.SqlClient;
+using System.Data.SqlTypes;
+using System.Collections;
+
+namespace AlquilerCoches.EN
+{
+    public class ENPersonal
+    {
+
+        private string dni;
+        private string nombre;
+        private string apellidos;
+        private int telefono;
+        private string email;
+        private string direccion;
+        private string ciudad;
+        private string provincia;
+        private string puestoac;
+        private string otrospuestos;
+
+
+        private CAD.CADPersonal cadVehiculo = new CAD.CADPersonal();
+
+        public DataSet ObtenerListaPersonal()
+        {
+            DataSet resultado = new DataSet();
+            try
+            {
+                resultado = cadVehiculo.ObtenerTablaPersonal();
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+
+            return resultado;
+        }
+
+
+        public string DNI
+        {
+            get { return dni; }
+            set { dni = DNI; }
+        }
+        public string Nombre
+        {
+            get { return nombre; }
+            set { nombre = Nombre; }
+        }
+        public string Apellidos
+        {
+            get { return apellidos; }
+            set { apellidos = Apellidos; }
+        }
+        public int Telefono
+        {
+            get { return telefono; }
+            set { telefono = Telefono; }
+        }
+        public string Email
+        {
+            get { return email; }
+            set { email = Email; }
+        }
+        public string Direccion
+        {
+            get { return direccion; }
+            set { direccion = Direccion; }
+        }
+        public string Ciudad
+        {
+            get { return ciudad; }
+            set { ciudad = Ciudad; }
+        }
+        public string Provincia
+        {
+            get { return provincia; }
+            set { provincia = Provincia; }
+        }
+        public string PuestoAc
+        {
+            get { return puestoac; }
+            set { puestoac = PuestoAc; }
+        }
+        public string OtrosPuestos
+        {
+            get { return otrospuestos; }
+            set { otrospuestos = OtrosPuestos; }
+        }
+
+    }
+}
