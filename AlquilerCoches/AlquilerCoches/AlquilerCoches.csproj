@@ -65,6 +65,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\..\AlquilerCoches\AlquilerCoches\AlquilerCoches\EN\ENFacturacion.cs">
+      <Link>ENFacturacion.cs</Link>
+    </Compile>
     <Compile Include="BBDDDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -76,6 +79,7 @@
     <Compile Include="BuscarPedidos.Designer.cs">
       <DependentUpon>BuscarPedidos.cs</DependentUpon>
     </Compile>
+    <Compile Include="CAD\CADFacturacion.cs" />
     <Compile Include="CAD\CADVehiculo.cs" />
     <Compile Include="CAD\CADPedidos.cs" />
     <Compile Include="EditarVentas.cs">
@@ -84,6 +88,7 @@
     <Compile Include="EditarVentas.Designer.cs">
       <DependentUpon>EditarVentas.cs</DependentUpon>
     </Compile>
+    <Compile Include="EN\ENFacturacion.cs" />
     <Compile Include="EN\ENPedidos.cs" />
     <Compile Include="EN\ENVehiculo.cs" />
     <Compile Include="EN\ENVentas.cs" />
