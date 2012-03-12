@@ -240,6 +240,7 @@
             this.TTextBoxMarca.Name = "TTextBoxMarca";
             this.TTextBoxMarca.Size = new System.Drawing.Size(70, 20);
             this.TTextBoxMarca.TabIndex = 1;
+            this.TTextBoxMarca.Leave += new System.EventHandler(this.TTextBoxMarca_Leave);
             // 
             // TTextBoxCIF
             // 

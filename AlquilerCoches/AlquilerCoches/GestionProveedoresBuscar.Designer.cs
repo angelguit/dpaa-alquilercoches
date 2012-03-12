@@ -37,8 +37,6 @@
             this.TLabelCIF = new System.Windows.Forms.Label();
             this.TButtonAlta = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.TTextBoxCiudad = new System.Windows.Forms.TextBox();
-            this.TLabelCiudad = new System.Windows.Forms.Label();
             this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Provincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +45,8 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TTextBoxCiudad = new System.Windows.Forms.TextBox();
+            this.TLabelCiudad = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,6 +58,7 @@
             this.TButtonBuscar.TabIndex = 46;
             this.TButtonBuscar.Text = "Buscar";
             this.TButtonBuscar.UseVisualStyleBackColor = true;
+            this.TButtonBuscar.Click += new System.EventHandler(this.TButtonBuscar_Click);
             // 
             // TTextBoxProvincia
             // 
@@ -135,23 +136,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(582, 209);
             this.dataGridView1.TabIndex = 36;
             // 
-            // TTextBoxCiudad
-            // 
-            this.TTextBoxCiudad.Location = new System.Drawing.Point(259, 310);
-            this.TTextBoxCiudad.Name = "TTextBoxCiudad";
-            this.TTextBoxCiudad.Size = new System.Drawing.Size(100, 20);
-            this.TTextBoxCiudad.TabIndex = 49;
-            this.TTextBoxCiudad.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // TLabelCiudad
-            // 
-            this.TLabelCiudad.AutoSize = true;
-            this.TLabelCiudad.Location = new System.Drawing.Point(204, 318);
-            this.TLabelCiudad.Name = "TLabelCiudad";
-            this.TLabelCiudad.Size = new System.Drawing.Size(40, 13);
-            this.TLabelCiudad.TabIndex = 48;
-            this.TLabelCiudad.Text = "Ciudad";
-            // 
             // DNI
             // 
             this.DNI.HeaderText = "DNI";
@@ -191,6 +175,23 @@
             // 
             this.Column5.HeaderText = "Horario";
             this.Column5.Name = "Column5";
+            // 
+            // TTextBoxCiudad
+            // 
+            this.TTextBoxCiudad.Location = new System.Drawing.Point(259, 310);
+            this.TTextBoxCiudad.Name = "TTextBoxCiudad";
+            this.TTextBoxCiudad.Size = new System.Drawing.Size(100, 20);
+            this.TTextBoxCiudad.TabIndex = 49;
+            this.TTextBoxCiudad.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // TLabelCiudad
+            // 
+            this.TLabelCiudad.AutoSize = true;
+            this.TLabelCiudad.Location = new System.Drawing.Point(204, 318);
+            this.TLabelCiudad.Name = "TLabelCiudad";
+            this.TLabelCiudad.Size = new System.Drawing.Size(40, 13);
+            this.TLabelCiudad.TabIndex = 48;
+            this.TLabelCiudad.Text = "Ciudad";
             // 
             // GestionProveedoresBuscar
             // 
