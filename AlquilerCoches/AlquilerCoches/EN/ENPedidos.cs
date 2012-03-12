@@ -24,6 +24,24 @@ namespace AlquilerCoches.EN
         private string empleado;
         private DateTime fecha;
 
+        private CAD.CADPedidos cadPedidos = new CAD.CADPedidos();
+
+        public DataSet ObtenerListaPedidos()
+        {
+            DataSet resultado = new DataSet();
+            try
+            {
+                resultado = cadPedidos.ObtenerTablaPedidos();
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+
+            return resultado;
+        }
+
+
 
         public string IDTransaccion
         {
@@ -57,7 +75,7 @@ namespace AlquilerCoches.EN
         }
         public string EstadoPedido
         {
-            get { return estadopedido }
+            get { return estadopedido; }
             set { estadopedido = EstadoPedido; }
         }
         public string Empleado
