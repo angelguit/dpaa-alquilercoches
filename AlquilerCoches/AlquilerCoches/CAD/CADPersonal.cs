@@ -13,13 +13,13 @@ namespace AlquilerCoches.CAD
 {
     public class CADPersonal
     {
-         static private String cadenaConexion = @"Data Source=|DataDirectory|\BBDD.sdf";
-         static private String nombreTabla = "Personal";
+        static private String cadenaConexion = @"Data Source=|DataDirectory|\BBDD.sdf";
+        static private String nombreTabla = "Personal";
 
         public DataSet ObtenerTablaPersonal()
         {
             DataSet dsPersonal = new DataSet();
-            
+
             try
             {
                 SqlConnection conexion = new SqlConnection(cadenaConexion);
@@ -37,5 +37,6 @@ namespace AlquilerCoches.CAD
         }
     }
 
-   
+
 }
+

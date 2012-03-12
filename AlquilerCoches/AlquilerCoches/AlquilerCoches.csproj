@@ -80,6 +80,7 @@
       <DependentUpon>BuscarPedidos.cs</DependentUpon>
     </Compile>
     <Compile Include="CAD\CADFacturacion.cs" />
+    <Compile Include="CAD\CADPersonal.cs" />
     <Compile Include="CAD\CADVehiculo.cs" />
     <Compile Include="CAD\CADPedidos.cs" />
     <Compile Include="EditarVentas.cs">
