@@ -83,6 +83,7 @@
     <Compile Include="EditarVentas.Designer.cs">
       <DependentUpon>EditarVentas.cs</DependentUpon>
     </Compile>
+    <Compile Include="EN\ENPedidos.cs" />
     <Compile Include="EN\ENVehiculo.cs" />
     <Compile Include="GestionClientes.cs">
       <SubType>Form</SubType>
