@@ -25,5 +25,13 @@ namespace AlquilerCoches
         {
 
         }
+
+        private void TButtonBuscar_Click(object sender, EventArgs e)
+        {
+            if (TTextBoxCIF.Text != "" || TTextBoxProvincia.Text != "" || TTextBoxMarca.Text != "" || TTextBoxCiudad.Text != "")
+            {
+                MessageBox.Show("BUSCANDO");
+            }
+        }
     }
 }

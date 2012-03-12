@@ -50,19 +50,6 @@ namespace AlquilerCoches
             }
         }
 
-        private void TTextBoxMarca_Leave_1(object sender, EventArgs e)
-        {
-            if (!Regex.Match(TTextBoxMarca.Text, @"^[A-Za-z]{3,15}$").Success)
-            {
-                errorProvider1.SetError(TTextBoxMarca, "Entre 3 y 15 caracteres");
-                incorrecto = true;
-            }
-            else 
-            {
-                errorProvider1.SetError(TTextBoxMarca, ""); 
-            }
-        }
-
         private void TTextBoxCPostal_Leave(object sender, EventArgs e)
         {
             if (!Regex.Match(TTextBoxCPostal.Text, @"^\d{5}$").Success)
@@ -163,6 +150,19 @@ namespace AlquilerCoches
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void TTextBoxMarca_Leave(object sender, EventArgs e)
+        {
+            if (!Regex.Match(TTextBoxMarca.Text, @"^[A-Za-z]{3,15}$").Success)
+            {
+                errorProvider1.SetError(TTextBoxMarca, "Entre 3 y 15 caracteres");
+                incorrecto = true;
+            }
+            else
+            {
+                errorProvider1.SetError(TTextBoxMarca, "");
+            }
         }
 
     }
