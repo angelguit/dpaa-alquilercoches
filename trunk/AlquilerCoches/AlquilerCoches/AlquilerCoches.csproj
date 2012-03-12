@@ -85,6 +85,7 @@
     </Compile>
     <Compile Include="EN\ENPedidos.cs" />
     <Compile Include="EN\ENVehiculo.cs" />
+    <Compile Include="EN\ENVentas.cs" />
     <Compile Include="GestionClientes.cs">
       <SubType>Form</SubType>
     </Compile>
