@@ -91,6 +91,7 @@
     </Compile>
     <Compile Include="EN\ENFacturacion.cs" />
     <Compile Include="EN\ENPedidos.cs" />
+    <Compile Include="EN\ENPersonal.cs" />
     <Compile Include="EN\ENVehiculo.cs" />
     <Compile Include="EN\ENVentas.cs" />
     <Compile Include="GestionClientes.cs">
