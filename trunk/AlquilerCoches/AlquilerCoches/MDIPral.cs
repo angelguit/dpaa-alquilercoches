@@ -256,5 +256,7 @@ namespace AlquilerCoches
                 F10.WindowState = FormWindowState.Maximized;
             }
         }
+
+     
      }
 }
