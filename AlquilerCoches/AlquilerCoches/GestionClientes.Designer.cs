@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TGroupBoxCliente = new System.Windows.Forms.GroupBox();
+            this.TLabelObligado = new System.Windows.Forms.Label();
             this.TLabelVehiculosAlquiler = new System.Windows.Forms.Label();
             this.listBoxCoches = new System.Windows.Forms.ListBox();
             this.TLabelSexo = new System.Windows.Forms.Label();
@@ -56,7 +57,6 @@
             this.TButtonAceptar = new System.Windows.Forms.Button();
             this.TButtonCancelar = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.TLabelObligado = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.TGroupBoxCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -64,6 +64,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackgroundImage = global::AlquilerCoches.Properties.Resources.Desconocido;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(591, 12);
@@ -74,6 +75,7 @@
             // 
             // TGroupBoxCliente
             // 
+            this.TGroupBoxCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.TGroupBoxCliente.BackColor = System.Drawing.Color.Transparent;
             this.TGroupBoxCliente.Controls.Add(this.TLabelObligado);
             this.TGroupBoxCliente.Controls.Add(this.TLabelVehiculosAlquiler);
@@ -103,6 +105,15 @@
             this.TGroupBoxCliente.TabIndex = 46;
             this.TGroupBoxCliente.TabStop = false;
             this.TGroupBoxCliente.Text = "Datos Cliente";
+            // 
+            // TLabelObligado
+            // 
+            this.TLabelObligado.AutoSize = true;
+            this.TLabelObligado.Location = new System.Drawing.Point(401, 271);
+            this.TLabelObligado.Name = "TLabelObligado";
+            this.TLabelObligado.Size = new System.Drawing.Size(108, 13);
+            this.TLabelObligado.TabIndex = 65;
+            this.TLabelObligado.Text = "* Campos obligatorios";
             // 
             // TLabelVehiculosAlquiler
             // 
@@ -222,7 +233,7 @@
             // 
             this.TTextBoxNombre.Location = new System.Drawing.Point(87, 70);
             this.TTextBoxNombre.Name = "TTextBoxNombre";
-            this.TTextBoxNombre.Size = new System.Drawing.Size(70, 20);
+            this.TTextBoxNombre.Size = new System.Drawing.Size(108, 20);
             this.TTextBoxNombre.TabIndex = 52;
             this.TTextBoxNombre.Leave += new System.EventHandler(this.TTextBoxNombre_Leave);
             // 
@@ -230,7 +241,7 @@
             // 
             this.TTextBoxDNI.Location = new System.Drawing.Point(87, 47);
             this.TTextBoxDNI.Name = "TTextBoxDNI";
-            this.TTextBoxDNI.Size = new System.Drawing.Size(70, 20);
+            this.TTextBoxDNI.Size = new System.Drawing.Size(108, 20);
             this.TTextBoxDNI.TabIndex = 51;
             this.TTextBoxDNI.Leave += new System.EventHandler(this.TTextBoxDNI_Leave);
             // 
@@ -290,6 +301,7 @@
             // 
             // TButtonFoto
             // 
+            this.TButtonFoto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.TButtonFoto.Location = new System.Drawing.Point(606, 128);
             this.TButtonFoto.Name = "TButtonFoto";
             this.TButtonFoto.Size = new System.Drawing.Size(56, 23);
@@ -299,6 +311,7 @@
             // 
             // TButtonAceptar
             // 
+            this.TButtonAceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.TButtonAceptar.Location = new System.Drawing.Point(18, 353);
             this.TButtonAceptar.Name = "TButtonAceptar";
             this.TButtonAceptar.Size = new System.Drawing.Size(75, 23);
@@ -308,6 +321,7 @@
             // 
             // TButtonCancelar
             // 
+            this.TButtonCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.TButtonCancelar.Location = new System.Drawing.Point(99, 353);
             this.TButtonCancelar.Name = "TButtonCancelar";
             this.TButtonCancelar.Size = new System.Drawing.Size(75, 23);
@@ -318,15 +332,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // TLabelObligado
-            // 
-            this.TLabelObligado.AutoSize = true;
-            this.TLabelObligado.Location = new System.Drawing.Point(401, 271);
-            this.TLabelObligado.Name = "TLabelObligado";
-            this.TLabelObligado.Size = new System.Drawing.Size(108, 13);
-            this.TLabelObligado.TabIndex = 65;
-            this.TLabelObligado.Text = "* Campos obligatorios";
             // 
             // GestionClientes
             // 
