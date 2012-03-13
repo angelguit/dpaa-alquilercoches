@@ -224,7 +224,7 @@
             // 
             this.TTextBoxNombre.Location = new System.Drawing.Point(108, 36);
             this.TTextBoxNombre.Name = "TTextBoxNombre";
-            this.TTextBoxNombre.Size = new System.Drawing.Size(70, 20);
+            this.TTextBoxNombre.Size = new System.Drawing.Size(108, 20);
             this.TTextBoxNombre.TabIndex = 1;
             this.TTextBoxNombre.TextChanged += new System.EventHandler(this.TTextBoxNombre_TextChanged);
             this.TTextBoxNombre.Leave += new System.EventHandler(this.TTextBoxNombre_Leave);
@@ -233,7 +233,7 @@
             // 
             this.TTextBoxDNI.Location = new System.Drawing.Point(108, 13);
             this.TTextBoxDNI.Name = "TTextBoxDNI";
-            this.TTextBoxDNI.Size = new System.Drawing.Size(70, 20);
+            this.TTextBoxDNI.Size = new System.Drawing.Size(108, 20);
             this.TTextBoxDNI.TabIndex = 0;
             this.TTextBoxDNI.Leave += new System.EventHandler(this.TTextBoxDNI_Leave);
             // 
