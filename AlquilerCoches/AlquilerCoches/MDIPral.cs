@@ -257,6 +257,15 @@ namespace AlquilerCoches
             }
         }
 
+        private void TButtonSalir_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Desea realmente salir de la aplicación?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+            {
+                Application.Exit();     
+                Dispose();
+            }
+        }
+
      
      }
 }
