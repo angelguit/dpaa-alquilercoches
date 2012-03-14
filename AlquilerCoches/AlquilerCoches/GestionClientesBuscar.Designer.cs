@@ -49,6 +49,7 @@
             this.TLabelNombre = new System.Windows.Forms.Label();
             this.TLabelDNI = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.TButtonCerrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.TDataGridViewCliente)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -93,9 +94,9 @@
             this.Email,
             this.Nombre,
             this.Apellidos});
-            this.TDataGridViewCliente.Location = new System.Drawing.Point(107, 29);
+            this.TDataGridViewCliente.Location = new System.Drawing.Point(150, 12);
             this.TDataGridViewCliente.Name = "TDataGridViewCliente";
-            this.TDataGridViewCliente.Size = new System.Drawing.Size(833, 209);
+            this.TDataGridViewCliente.Size = new System.Drawing.Size(661, 209);
             this.TDataGridViewCliente.TabIndex = 24;
             // 
             // DNI
@@ -220,21 +221,35 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // TButtonCerrar
+            // 
+            this.TButtonCerrar.Location = new System.Drawing.Point(150, 521);
+            this.TButtonCerrar.Name = "TButtonCerrar";
+            this.TButtonCerrar.Size = new System.Drawing.Size(75, 23);
+            this.TButtonCerrar.TabIndex = 37;
+            this.TButtonCerrar.Text = "Cerrar";
+            this.TButtonCerrar.UseVisualStyleBackColor = true;
+            this.TButtonCerrar.Click += new System.EventHandler(this.TButtonCerrar_Click);
+            // 
             // GestionClientesBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(985, 576);
+            this.ClientSize = new System.Drawing.Size(894, 608);
+            this.Controls.Add(this.TButtonCerrar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.TButtonAlta);
             this.Controls.Add(this.TDataGridViewCliente);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(894, 608);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(894, 608);
             this.Name = "GestionClientesBuscar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GestionClientesBuscar";
-            this.Load += new System.EventHandler(this.GestionClientesBuscar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TDataGridViewCliente)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -265,5 +280,6 @@
         private System.Windows.Forms.Label TLabelNombre;
         private System.Windows.Forms.Label TLabelDNI;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button TButtonCerrar;
     }
 }

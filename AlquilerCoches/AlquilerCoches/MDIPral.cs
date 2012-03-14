@@ -153,7 +153,7 @@ namespace AlquilerCoches
                 GestionClientesBuscar F4 = new GestionClientesBuscar();
                 F4.MdiParent = this;
                 F4.Show();
-                F4.WindowState = FormWindowState.Maximized;
+              //  F4.WindowState = FormWindowState.Maximized;
             }
         }
 

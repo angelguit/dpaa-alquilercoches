@@ -41,12 +41,7 @@ namespace AlquilerCoches
 
         }
 
-        private void GestionClientesBuscar_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void GestionClientesBuscar_Closed(object sender, EventArgs e)
+            private void GestionClientesBuscar_Closed(object sender, EventArgs e)
         {
 
         }
@@ -104,6 +99,11 @@ namespace AlquilerCoches
             else
                 TButtonEliminar.Visible = true;
             
+        }
+
+        private void TButtonCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
 
