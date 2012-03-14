@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.TButtonEliminar = new System.Windows.Forms.Button();
             this.TButtonBuscar = new System.Windows.Forms.Button();
-            this.TButtonAlta = new System.Windows.Forms.Button();
             this.TDataGridViewPersonal = new System.Windows.Forms.DataGridView();
             this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +47,7 @@
             this.TTextBoxApellidos = new System.Windows.Forms.TextBox();
             this.TTextBoxPuestoAc = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.TButtonCerrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.TDataGridViewPersonal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -55,7 +55,7 @@
             // 
             // TButtonEliminar
             // 
-            this.TButtonEliminar.Location = new System.Drawing.Point(141, 390);
+            this.TButtonEliminar.Location = new System.Drawing.Point(139, 126);
             this.TButtonEliminar.Name = "TButtonEliminar";
             this.TButtonEliminar.Size = new System.Drawing.Size(75, 23);
             this.TButtonEliminar.TabIndex = 23;
@@ -65,22 +65,13 @@
             // 
             // TButtonBuscar
             // 
-            this.TButtonBuscar.Location = new System.Drawing.Point(36, 390);
+            this.TButtonBuscar.Location = new System.Drawing.Point(34, 126);
             this.TButtonBuscar.Name = "TButtonBuscar";
             this.TButtonBuscar.Size = new System.Drawing.Size(75, 23);
             this.TButtonBuscar.TabIndex = 22;
             this.TButtonBuscar.Text = "Buscar";
             this.TButtonBuscar.UseVisualStyleBackColor = true;
             this.TButtonBuscar.Click += new System.EventHandler(this.TButtonBuscar_Click);
-            // 
-            // TButtonAlta
-            // 
-            this.TButtonAlta.Location = new System.Drawing.Point(255, 390);
-            this.TButtonAlta.Name = "TButtonAlta";
-            this.TButtonAlta.Size = new System.Drawing.Size(75, 23);
-            this.TButtonAlta.TabIndex = 13;
-            this.TButtonAlta.Text = "Dar de alta";
-            this.TButtonAlta.UseVisualStyleBackColor = true;
             // 
             // TDataGridViewPersonal
             // 
@@ -91,7 +82,7 @@
             this.Apellidos,
             this.Telefono,
             this.Email});
-            this.TDataGridViewPersonal.Location = new System.Drawing.Point(64, 35);
+            this.TDataGridViewPersonal.Location = new System.Drawing.Point(94, 35);
             this.TDataGridViewPersonal.Name = "TDataGridViewPersonal";
             this.TDataGridViewPersonal.Size = new System.Drawing.Size(544, 209);
             this.TDataGridViewPersonal.TabIndex = 12;
@@ -198,6 +189,8 @@
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.TTextBoxPuestoAc);
+            this.panel1.Controls.Add(this.TButtonEliminar);
+            this.panel1.Controls.Add(this.TButtonBuscar);
             this.panel1.Controls.Add(this.TTextBoxApellidos);
             this.panel1.Controls.Add(this.TTextBoxNombre);
             this.panel1.Controls.Add(this.TTextBoxDNI);
@@ -205,10 +198,21 @@
             this.panel1.Controls.Add(this.TLabelApellidos);
             this.panel1.Controls.Add(this.TLabelNombre);
             this.panel1.Controls.Add(this.TLabelDNI);
-            this.panel1.Location = new System.Drawing.Point(36, 268);
+            this.panel1.Location = new System.Drawing.Point(94, 267);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(442, 102);
+            this.panel1.Size = new System.Drawing.Size(473, 168);
             this.panel1.TabIndex = 24;
+            // 
+            // TButtonCerrar
+            // 
+            this.TButtonCerrar.Location = new System.Drawing.Point(45, 511);
+            this.TButtonCerrar.Name = "TButtonCerrar";
+            this.TButtonCerrar.Size = new System.Drawing.Size(75, 23);
+            this.TButtonCerrar.TabIndex = 30;
+            this.TButtonCerrar.Text = "Cerrar";
+            this.TButtonCerrar.UseVisualStyleBackColor = true;
+            this.TButtonCerrar.Visible = false;
+            this.TButtonCerrar.Click += new System.EventHandler(this.TButtonCerrar_Click);
             // 
             // GestionPersonalBuscar
             // 
@@ -216,13 +220,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(803, 478);
+            this.ClientSize = new System.Drawing.Size(878, 570);
+            this.Controls.Add(this.TButtonCerrar);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.TButtonEliminar);
-            this.Controls.Add(this.TButtonBuscar);
-            this.Controls.Add(this.TButtonAlta);
             this.Controls.Add(this.TDataGridViewPersonal);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(894, 608);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(894, 608);
             this.Name = "GestionPersonalBuscar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GestionPersonalBuscar";
             ((System.ComponentModel.ISupportInitialize)(this.TDataGridViewPersonal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
@@ -236,7 +244,6 @@
 
         private System.Windows.Forms.Button TButtonEliminar;
         private System.Windows.Forms.Button TButtonBuscar;
-        private System.Windows.Forms.Button TButtonAlta;
         private System.Windows.Forms.DataGridView TDataGridViewPersonal;
         private System.Windows.Forms.DataGridViewTextBoxColumn DNI;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
@@ -253,5 +260,6 @@
         private System.Windows.Forms.Label TLabelApellidos;
         private System.Windows.Forms.Label TLabelNombre;
         private System.Windows.Forms.Label TLabelDNI;
+        private System.Windows.Forms.Button TButtonCerrar;
 	}
 }

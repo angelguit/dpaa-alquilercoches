@@ -146,6 +146,7 @@
             this.buscarOModificarToolStripMenuItem.Name = "buscarOModificarToolStripMenuItem";
             this.buscarOModificarToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
             this.buscarOModificarToolStripMenuItem.Text = "Buscar, modificar o eliminar";
+            this.buscarOModificarToolStripMenuItem.Click += new System.EventHandler(this.buscarOModificarToolStripMenuItem_Click);
             // 
             // gestionProveedoresToolStripMenuItem
             // 

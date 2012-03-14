@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.TButtonEliminar = new System.Windows.Forms.Button();
             this.TButtonBuscar = new System.Windows.Forms.Button();
-            this.TButtonAlta = new System.Windows.Forms.Button();
             this.TDataGridViewCliente = new System.Windows.Forms.DataGridView();
             this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ciudad = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,15 +73,6 @@
             this.TButtonBuscar.Text = "Buscar";
             this.TButtonBuscar.UseVisualStyleBackColor = true;
             this.TButtonBuscar.Click += new System.EventHandler(this.TButtonBuscar_Click);
-            // 
-            // TButtonAlta
-            // 
-            this.TButtonAlta.Location = new System.Drawing.Point(50, 558);
-            this.TButtonAlta.Name = "TButtonAlta";
-            this.TButtonAlta.Size = new System.Drawing.Size(75, 23);
-            this.TButtonAlta.TabIndex = 25;
-            this.TButtonAlta.Text = "Dar de alta";
-            this.TButtonAlta.UseVisualStyleBackColor = true;
             // 
             // TDataGridViewCliente
             // 
@@ -223,7 +213,7 @@
             // 
             // TButtonCerrar
             // 
-            this.TButtonCerrar.Location = new System.Drawing.Point(150, 558);
+            this.TButtonCerrar.Location = new System.Drawing.Point(41, 556);
             this.TButtonCerrar.Name = "TButtonCerrar";
             this.TButtonCerrar.Size = new System.Drawing.Size(75, 23);
             this.TButtonCerrar.TabIndex = 37;
@@ -240,7 +230,6 @@
             this.ClientSize = new System.Drawing.Size(894, 608);
             this.Controls.Add(this.TButtonCerrar);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.TButtonAlta);
             this.Controls.Add(this.TDataGridViewCliente);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -262,7 +251,6 @@
 
         private System.Windows.Forms.Button TButtonEliminar;
         private System.Windows.Forms.Button TButtonBuscar;
-        private System.Windows.Forms.Button TButtonAlta;
         private System.Windows.Forms.DataGridView TDataGridViewCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn DNI;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ciudad;

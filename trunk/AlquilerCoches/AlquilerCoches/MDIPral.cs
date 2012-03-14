@@ -257,11 +257,27 @@ namespace AlquilerCoches
             }
         }
 
+   
+        private void buscarOModificarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["GestionPersonalBuscar"] != null)
+            {
+                Application.OpenForms["GestionPersonalBuscar"].Activate();
+            }
+            else
+            {
+                GestionPersonalBuscar F11 = new GestionPersonalBuscar();
+                F11.MdiParent = this;
+                F11.Show();
+                //F11.WindowState = FormWindowState.Maximized;
+            }
+        }
+
         private void TButtonSalir_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿Desea realmente salir de la aplicación?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
-                Application.Exit();     
+                Application.Exit();
                 Dispose();
             }
         }
