@@ -211,7 +211,6 @@
             this.TButtonCerrar.TabIndex = 30;
             this.TButtonCerrar.Text = "Cerrar";
             this.TButtonCerrar.UseVisualStyleBackColor = true;
-            this.TButtonCerrar.Visible = false;
             this.TButtonCerrar.Click += new System.EventHandler(this.TButtonCerrar_Click);
             // 
             // GestionPersonalBuscar
@@ -220,7 +219,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(878, 570);
+            this.ClientSize = new System.Drawing.Size(894, 608);
             this.Controls.Add(this.TButtonCerrar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.TDataGridViewPersonal);
