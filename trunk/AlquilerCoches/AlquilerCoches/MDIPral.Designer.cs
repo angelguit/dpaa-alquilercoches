@@ -59,6 +59,7 @@
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Gestion = new System.Windows.Forms.TabPage();
+            this.TButtonSalir = new System.Windows.Forms.Button();
             this.TLabelFactura = new System.Windows.Forms.Label();
             this.TButtonFactura = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -66,7 +67,6 @@
             this.TButtonVehiculos = new System.Windows.Forms.Button();
             this.TButtonCliente = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.TButtonSalir = new System.Windows.Forms.Button();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -75,6 +75,7 @@
             // 
             // menuStrip
             // 
+            this.menuStrip.BackColor = System.Drawing.Color.LightGray;
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gestionVehiculosToolStripMenuItem,
             this.gestionVentasToolStripMenuItem,
@@ -286,7 +287,7 @@
             // 
             // Gestion
             // 
-            this.Gestion.BackColor = System.Drawing.SystemColors.Control;
+            this.Gestion.BackColor = System.Drawing.Color.LightGray;
             this.Gestion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Gestion.Controls.Add(this.TButtonSalir);
             this.Gestion.Controls.Add(this.TLabelFactura);
@@ -301,6 +302,19 @@
             this.Gestion.Size = new System.Drawing.Size(137, 455);
             this.Gestion.TabIndex = 0;
             this.Gestion.Text = "Géstion";
+            // 
+            // TButtonSalir
+            // 
+            this.TButtonSalir.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.TButtonSalir.Image = global::AlquilerCoches.Properties.Resources.cancel;
+            this.TButtonSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TButtonSalir.Location = new System.Drawing.Point(22, 415);
+            this.TButtonSalir.Name = "TButtonSalir";
+            this.TButtonSalir.Size = new System.Drawing.Size(85, 23);
+            this.TButtonSalir.TabIndex = 15;
+            this.TButtonSalir.Text = "Salir";
+            this.TButtonSalir.UseVisualStyleBackColor = true;
+            this.TButtonSalir.Click += new System.EventHandler(this.TButtonSalir_Click);
             // 
             // TLabelFactura
             // 
@@ -377,29 +391,16 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(137, 381);
+            this.tabPage1.Size = new System.Drawing.Size(137, 455);
             this.tabPage1.TabIndex = 1;
             this.tabPage1.Text = "Administración";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // TButtonSalir
-            // 
-            this.TButtonSalir.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.TButtonSalir.Image = global::AlquilerCoches.Properties.Resources.cancel;
-            this.TButtonSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.TButtonSalir.Location = new System.Drawing.Point(22, 415);
-            this.TButtonSalir.Name = "TButtonSalir";
-            this.TButtonSalir.Size = new System.Drawing.Size(85, 23);
-            this.TButtonSalir.TabIndex = 15;
-            this.TButtonSalir.Text = "Salir";
-            this.TButtonSalir.UseVisualStyleBackColor = true;
-            this.TButtonSalir.Click += new System.EventHandler(this.TButtonSalir_Click);
             // 
             // MDIPral
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
+            this.BackgroundImage = global::AlquilerCoches.Properties.Resources.carretera;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(765, 527);
             this.Controls.Add(this.tabControl1);
