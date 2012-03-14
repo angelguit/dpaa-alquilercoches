@@ -109,6 +109,11 @@ namespace AlquilerCoches
             TButtonEliminar.Visible = true;
         }
 
+        private void TButtonCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
 
 
 
