@@ -77,7 +77,7 @@
             // 
             // TButtonAlta
             // 
-            this.TButtonAlta.Location = new System.Drawing.Point(50, 521);
+            this.TButtonAlta.Location = new System.Drawing.Point(50, 558);
             this.TButtonAlta.Name = "TButtonAlta";
             this.TButtonAlta.Size = new System.Drawing.Size(75, 23);
             this.TButtonAlta.TabIndex = 25;
@@ -94,7 +94,7 @@
             this.Email,
             this.Nombre,
             this.Apellidos});
-            this.TDataGridViewCliente.Location = new System.Drawing.Point(150, 12);
+            this.TDataGridViewCliente.Location = new System.Drawing.Point(103, 54);
             this.TDataGridViewCliente.Name = "TDataGridViewCliente";
             this.TDataGridViewCliente.Size = new System.Drawing.Size(661, 209);
             this.TDataGridViewCliente.TabIndex = 24;
@@ -143,7 +143,7 @@
             this.panel1.Controls.Add(this.TLabelApellidos);
             this.panel1.Controls.Add(this.TLabelNombre);
             this.panel1.Controls.Add(this.TLabelDNI);
-            this.panel1.Location = new System.Drawing.Point(107, 258);
+            this.panel1.Location = new System.Drawing.Point(103, 292);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(502, 175);
             this.panel1.TabIndex = 36;
@@ -223,7 +223,7 @@
             // 
             // TButtonCerrar
             // 
-            this.TButtonCerrar.Location = new System.Drawing.Point(150, 521);
+            this.TButtonCerrar.Location = new System.Drawing.Point(150, 558);
             this.TButtonCerrar.Name = "TButtonCerrar";
             this.TButtonCerrar.Size = new System.Drawing.Size(75, 23);
             this.TButtonCerrar.TabIndex = 37;

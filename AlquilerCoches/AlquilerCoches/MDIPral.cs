@@ -134,7 +134,7 @@ namespace AlquilerCoches
                 GestionPersonal F3 = new GestionPersonal();    
                 F3.MdiParent = this;
                 F3.Show();
-                F3.WindowState = FormWindowState.Maximized;
+               // F3.WindowState = FormWindowState.Maximized;
 
             }
          
