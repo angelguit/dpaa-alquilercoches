@@ -205,7 +205,7 @@
             // 
             // TButtonCerrar
             // 
-            this.TButtonCerrar.Location = new System.Drawing.Point(45, 511);
+            this.TButtonCerrar.Location = new System.Drawing.Point(57, 547);
             this.TButtonCerrar.Name = "TButtonCerrar";
             this.TButtonCerrar.Size = new System.Drawing.Size(75, 23);
             this.TButtonCerrar.TabIndex = 30;
