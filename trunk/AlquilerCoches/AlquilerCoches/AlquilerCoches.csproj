@@ -65,9 +65,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\..\AlquilerCoches\AlquilerCoches\AlquilerCoches\EN\ENFacturacion.cs">
-      <Link>ENFacturacion.cs</Link>
-    </Compile>
     <Compile Include="BBDDDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
