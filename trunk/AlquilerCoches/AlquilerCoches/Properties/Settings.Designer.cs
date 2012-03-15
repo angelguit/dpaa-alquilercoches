@@ -32,5 +32,16 @@ namespace AlquilerCoches.Properties {
                 return ((string)(this["BBDDConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;AttachDbFilename=|DataDirectory|\\BBDD.mdf;Integrated Sec" +
+            "urity=True;User Instance=True")]
+        public string BBDDConnectionString1 {
+            get {
+                return ((string)(this["BBDDConnectionString1"]));
+            }
+        }
     }
 }
