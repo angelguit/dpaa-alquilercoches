@@ -16,7 +16,7 @@ namespace AlquilerCoches.CAD
         static private String cadenaConexion = @"Data Source=|DataDirectory|\BBDD.sdf";
         static private String nombreTabla = "Proveedores";
 
-        public DataSet ObtenerTablaVehiculo()
+        public DataSet ObtenerTablaProveedores()
         {
             DataSet dsProveedores = new DataSet();
 
