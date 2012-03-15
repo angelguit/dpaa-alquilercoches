@@ -62,7 +62,7 @@
             // 
             // TButtonCancelar
             // 
-            this.TButtonCancelar.Location = new System.Drawing.Point(120, 545);
+            this.TButtonCancelar.Location = new System.Drawing.Point(118, 554);
             this.TButtonCancelar.Name = "TButtonCancelar";
             this.TButtonCancelar.Size = new System.Drawing.Size(88, 25);
             this.TButtonCancelar.TabIndex = 2;
@@ -92,7 +92,7 @@
             // 
             // TButtonGuardarPersonal
             // 
-            this.TButtonGuardarPersonal.Location = new System.Drawing.Point(27, 545);
+            this.TButtonGuardarPersonal.Location = new System.Drawing.Point(25, 554);
             this.TButtonGuardarPersonal.Name = "TButtonGuardarPersonal";
             this.TButtonGuardarPersonal.Size = new System.Drawing.Size(77, 24);
             this.TButtonGuardarPersonal.TabIndex = 1;
