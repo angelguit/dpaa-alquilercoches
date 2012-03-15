@@ -68,11 +68,6 @@
     <Compile Include="..\..\..\AlquilerCoches\AlquilerCoches\AlquilerCoches\EN\ENFacturacion.cs">
       <Link>ENFacturacion.cs</Link>
     </Compile>
-    <Compile Include="BBDDDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BBDDDataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="BuscarPedidos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,18 +236,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="app.config" />
-    <None Include="BBDDDataSet1.xsc">
-      <DependentUpon>BBDDDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="BBDDDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BBDDDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="BBDDDataSet1.xss">
-      <DependentUpon>BBDDDataSet1.xsd</DependentUpon>
-    </None>
     <None Include="Resources\BuscarPedidos.resx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -284,11 +267,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\GestionVehiculos.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="BBDD.sdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
