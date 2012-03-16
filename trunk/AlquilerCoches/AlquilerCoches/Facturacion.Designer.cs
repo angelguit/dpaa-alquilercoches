@@ -50,13 +50,13 @@
             this.TComboBoxTarifa = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.TLabelDatosCliente = new System.Windows.Forms.Label();
             this.TlabelRentACar = new System.Windows.Forms.Label();
             this.TLabelCIF = new System.Windows.Forms.Label();
             this.TLabelDireccion = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.TLabelCP = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -64,7 +64,7 @@
             // 
             this.TLabelEmpresa.AutoSize = true;
             this.TLabelEmpresa.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelEmpresa.Location = new System.Drawing.Point(875, 19);
+            this.TLabelEmpresa.Location = new System.Drawing.Point(868, 28);
             this.TLabelEmpresa.Name = "TLabelEmpresa";
             this.TLabelEmpresa.Size = new System.Drawing.Size(78, 13);
             this.TLabelEmpresa.TabIndex = 1;
@@ -280,9 +280,17 @@
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape2,
             this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(1153, 782);
+            this.shapeContainer1.Size = new System.Drawing.Size(1153, 774);
             this.shapeContainer1.TabIndex = 26;
             this.shapeContainer1.TabStop = false;
+            // 
+            // lineShape2
+            // 
+            this.lineShape2.Name = "lineShape2";
+            this.lineShape2.X1 = 0;
+            this.lineShape2.X2 = 1153;
+            this.lineShape2.Y1 = 45;
+            this.lineShape2.Y2 = 45;
             // 
             // lineShape1
             // 
@@ -296,7 +304,7 @@
             // 
             this.TLabelDatosCliente.AutoSize = true;
             this.TLabelDatosCliente.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelDatosCliente.Location = new System.Drawing.Point(78, 19);
+            this.TLabelDatosCliente.Location = new System.Drawing.Point(82, 28);
             this.TLabelDatosCliente.Name = "TLabelDatosCliente";
             this.TLabelDatosCliente.Size = new System.Drawing.Size(70, 13);
             this.TLabelDatosCliente.TabIndex = 27;
@@ -342,14 +350,6 @@
             this.label1.TabIndex = 31;
             this.label1.Text = "Tfno: 965123123 Fax: 965231231";
             // 
-            // lineShape2
-            // 
-            this.lineShape2.Name = "lineShape2";
-            this.lineShape2.X1 = 0;
-            this.lineShape2.X2 = 1153;
-            this.lineShape2.Y1 = 45;
-            this.lineShape2.Y2 = 45;
-            // 
             // TLabelCP
             // 
             this.TLabelCP.AutoSize = true;
@@ -366,7 +366,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1153, 782);
+            this.ClientSize = new System.Drawing.Size(1153, 774);
             this.Controls.Add(this.TLabelCP);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TLabelDireccion);
