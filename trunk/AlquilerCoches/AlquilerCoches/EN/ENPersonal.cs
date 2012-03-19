@@ -26,14 +26,14 @@ namespace AlquilerCoches.EN
         private string otrospuestos;
 
 
-        private CAD.CADPersonal cadVehiculo = new CAD.CADPersonal();
+        private CAD.CADPersonal cadPersonal = new CAD.CADPersonal();
 
         public DataSet ObtenerListaPersonal()
         {
             DataSet resultado = new DataSet();
             try
             {
-                resultado = cadVehiculo.ObtenerTablaPersonal();
+                resultado = cadPersonal.ObtenerTablaPersonal();
             }
             catch (Exception ex)
             {
