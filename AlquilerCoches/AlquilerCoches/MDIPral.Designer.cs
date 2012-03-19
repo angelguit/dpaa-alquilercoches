@@ -59,6 +59,7 @@
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Gestion = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.TButtonSalir = new System.Windows.Forms.Button();
             this.TLabelFactura = new System.Windows.Forms.Label();
             this.TButtonFactura = new System.Windows.Forms.Button();
@@ -67,7 +68,6 @@
             this.TButtonVehiculos = new System.Windows.Forms.Button();
             this.TButtonCliente = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -86,7 +86,7 @@
             this.gestionVentasToolStripMenuItem1});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(765, 24);
+            this.menuStrip.Size = new System.Drawing.Size(784, 24);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
             // 
@@ -252,9 +252,9 @@
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel2});
             this.statusStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.statusStrip.Location = new System.Drawing.Point(0, 533);
+            this.statusStrip.Location = new System.Drawing.Point(0, 540);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(765, 22);
+            this.statusStrip.Size = new System.Drawing.Size(784, 22);
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "StatusStrip";
             // 
@@ -284,7 +284,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 24);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(145, 509);
+            this.tabControl1.Size = new System.Drawing.Size(145, 516);
             this.tabControl1.TabIndex = 12;
             // 
             // Gestion
@@ -302,16 +302,27 @@
             this.Gestion.Location = new System.Drawing.Point(4, 22);
             this.Gestion.Name = "Gestion";
             this.Gestion.Padding = new System.Windows.Forms.Padding(3);
-            this.Gestion.Size = new System.Drawing.Size(137, 483);
+            this.Gestion.Size = new System.Drawing.Size(137, 490);
             this.Gestion.TabIndex = 0;
             this.Gestion.Text = "Géstion";
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(13, 460);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(103, 24);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Cerrar Formularios";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // TButtonSalir
             // 
             this.TButtonSalir.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.TButtonSalir.Image = global::AlquilerCoches.Properties.Resources.cancel;
             this.TButtonSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.TButtonSalir.Location = new System.Drawing.Point(37, 418);
+            this.TButtonSalir.Location = new System.Drawing.Point(37, 425);
             this.TButtonSalir.Name = "TButtonSalir";
             this.TButtonSalir.Size = new System.Drawing.Size(51, 23);
             this.TButtonSalir.TabIndex = 15;
@@ -395,21 +406,10 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(137, 455);
+            this.tabPage1.Size = new System.Drawing.Size(137, 483);
             this.tabPage1.TabIndex = 1;
             this.tabPage1.Text = "Administración";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(13, 453);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 24);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Cerrar Formularios";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MDIPral
             // 
@@ -417,13 +417,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.carretera;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(765, 555);
+            this.ClientSize = new System.Drawing.Size(784, 562);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
+            this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "MDIPral";
             this.Text = "RAC - Rent a Car";
             this.Load += new System.EventHandler(this.MDIPral_Load);
