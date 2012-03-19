@@ -16,7 +16,11 @@ namespace AlquilerCoches
         {
             InitializeComponent();
         }
-
+        public GestionPersonal(string nombre)//constructor sobrecargado
+        {
+            InitializeComponent();
+            TTextBoxNombre.Text = nombre;
+        }
         private void label1_Click(object sender, EventArgs e)
         {
 

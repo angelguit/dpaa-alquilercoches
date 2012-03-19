@@ -53,7 +53,7 @@ namespace AlquilerCoches
             toolStripStatusLabel2.Text = "Status:" + usuario.Status;
             
         }
-
+        
         
         private void ExitToolsStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -132,7 +132,7 @@ namespace AlquilerCoches
             else
             {
                 GestionPersonal F3 = new GestionPersonal();    
-                F3.MdiParent = this;
+               // F3.MdiParent = this;
                 F3.Show();
                // F3.WindowState = FormWindowState.Maximized;
 
@@ -267,7 +267,7 @@ namespace AlquilerCoches
             else
             {
                 GestionPersonalBuscar F11 = new GestionPersonalBuscar();
-                F11.MdiParent = this;
+                //F11.MdiParent = this;
                 F11.Show();
                 //F11.WindowState = FormWindowState.Maximized;
             }
@@ -288,6 +288,12 @@ namespace AlquilerCoches
             //Application.OpenForms.GetEnumerator();
 
             //this.f
+            
+            for (int i = 0; i < this.MdiChildren.Length; i++)
+            {
+                //this.MdiChildren[i].WindowState = FormWindowState.Minimized;
+                this.MdiChildren[i].Close();
+            }
         }
 
      

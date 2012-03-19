@@ -48,9 +48,13 @@
             this.TTextBoxPuestoAc = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.TButtonCerrar = new System.Windows.Forms.Button();
+            this.bBDDDataSet = new AlquilerCoches.BBDDDataSet();
+            this.bBDDDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.TDataGridViewPersonal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bBDDDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bBDDDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // TButtonEliminar
@@ -86,6 +90,7 @@
             this.TDataGridViewPersonal.Name = "TDataGridViewPersonal";
             this.TDataGridViewPersonal.Size = new System.Drawing.Size(544, 209);
             this.TDataGridViewPersonal.TabIndex = 12;
+            this.TDataGridViewPersonal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TDataGridViewPersonal_CellContentClick);
             // 
             // DNI
             // 
@@ -213,6 +218,16 @@
             this.TButtonCerrar.UseVisualStyleBackColor = true;
             this.TButtonCerrar.Click += new System.EventHandler(this.TButtonCerrar_Click);
             // 
+            // bBDDDataSet
+            // 
+            this.bBDDDataSet.DataSetName = "BBDDDataSet";
+            this.bBDDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bBDDDataSetBindingSource
+            // 
+            this.bBDDDataSetBindingSource.DataSource = this.bBDDDataSet;
+            this.bBDDDataSetBindingSource.Position = 0;
+            // 
             // GestionPersonalBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -235,6 +250,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bBDDDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bBDDDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
 
 		}
@@ -260,5 +277,7 @@
         private System.Windows.Forms.Label TLabelNombre;
         private System.Windows.Forms.Label TLabelDNI;
         private System.Windows.Forms.Button TButtonCerrar;
+        private BBDDDataSet bBDDDataSet;
+        private System.Windows.Forms.BindingSource bBDDDataSetBindingSource;
 	}
 }
