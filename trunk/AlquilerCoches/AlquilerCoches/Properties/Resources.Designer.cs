@@ -60,9 +60,30 @@ namespace AlquilerCoches.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap Accept_icon {
+            get {
+                object obj = ResourceManager.GetObject("Accept-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Add_icon {
+            get {
+                object obj = ResourceManager.GetObject("Add-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap cancel {
             get {
                 object obj = ResourceManager.GetObject("cancel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Cancel_icon {
+            get {
+                object obj = ResourceManager.GetObject("Cancel-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -81,9 +102,30 @@ namespace AlquilerCoches.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap Close_icon {
+            get {
+                object obj = ResourceManager.GetObject("Close-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Delete_icon {
+            get {
+                object obj = ResourceManager.GetObject("Delete-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Desconocido {
             get {
                 object obj = ResourceManager.GetObject("Desconocido", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Edit_icon {
+            get {
+                object obj = ResourceManager.GetObject("Edit-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -119,6 +161,13 @@ namespace AlquilerCoches.Properties {
         internal static System.Drawing.Bitmap ruta66 {
             get {
                 object obj = ResourceManager.GetObject("ruta66", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Search_icon {
+            get {
+                object obj = ResourceManager.GetObject("Search-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
