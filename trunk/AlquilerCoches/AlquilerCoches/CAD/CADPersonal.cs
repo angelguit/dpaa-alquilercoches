@@ -13,7 +13,7 @@ namespace AlquilerCoches.CAD
 {
     public class CADPersonal
     {
-        static private String cadenaConexion = @"Data Source=|DataDirectory|\BBDD.sdf";
+        static private String cadenaConexion = @"Data Source=.\SQLEXPRESS;AttachDbFilename='C:\Users\Dani\Documents\Visual Studio 2010\Projects\AlquilerCoches\AlquilerCoches\AlquilerCoches\BBDD.mdf';Integrated Security=True;User Instance=True";
         static private String nombreTabla = "Personal";
 
         public DataSet ObtenerTablaPersonal()
@@ -24,9 +24,9 @@ namespace AlquilerCoches.CAD
             {
                 SqlConnection conexion = new SqlConnection(cadenaConexion);
                 String consulta = "Select * from Personal";
-                SqlDataAdapter daCaminos = new SqlDataAdapter(consulta, conexion);
-                daCaminos.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-                daCaminos.Fill(dsPersonal, nombreTabla);
+                SqlDataAdapter daPersonal = new SqlDataAdapter(consulta, conexion);
+                daPersonal.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daPersonal.Fill(dsPersonal, nombreTabla);
             }
             catch (Exception ex)
             {

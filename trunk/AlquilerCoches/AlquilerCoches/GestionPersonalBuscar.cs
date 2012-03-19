@@ -12,6 +12,8 @@ namespace AlquilerCoches
 {
     public partial class GestionPersonalBuscar : Form
     {
+        private DataSet ds;
+
         public GestionPersonalBuscar()
         {
             InitializeComponent();
@@ -107,6 +109,14 @@ namespace AlquilerCoches
             } 
             else
             TButtonEliminar.Visible = true;
+
+            ds = new DataSet();
+            EN.ENPersonal enPerson = new EN.ENPersonal();
+
+            ds = enPerson.ObtenerListaPersonal();
+
+
+            TTextBoxApellidos.Text = ds.Tables[0].Rows[0][1].ToString();
         }
 
         private void TButtonCerrar_Click(object sender, EventArgs e)
@@ -114,9 +124,43 @@ namespace AlquilerCoches
             this.Close();
         }
 
+        private void TDataGridViewPersonal_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
+             try
+             {
 
+                 if (TDataGridViewPersonal.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "Editar")
+                 {
+                     if (Application.OpenForms["GestionPersonal"] != null)
+                     {
+                         Application.OpenForms["GestionPersonal"].Activate();
+                     }
+                     else
+                     {
+                        
+                         string nom=TDataGridViewPersonal.Rows[e.RowIndex].Cells[1].Value.ToString();//indice 1 para cojer el nombre
+                        // MessageBox.Show("mensaje" + e.ColumnIndex+" , "+e.RowIndex); 
 
+                         GestionPersonal Formu = new GestionPersonal(nom);
+                        
+                        // Formu.StartPosition = FormStartPosition.CenterScreen;
+                         Formu.Show();
+                     }
+                 }
+                 else
+                 {
+
+                    TTextBoxNombre.Text = TDataGridViewPersonal.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+                    
+                 }
+             }
+             catch (Exception ex)
+             {
+                 MessageBox.Show("Error no hay valores en la fila");
+
+             }
+        }
               
     }
 }
