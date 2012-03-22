@@ -31,7 +31,7 @@ namespace EN
             DataSet resultado = new DataSet();
             try
             {
-                resultado = cadVehiculo.ObtenerTablaVentas();
+                resultado = cadVehiculo.ObtenerTablaVehiculo();
             }
             catch (Exception ex)
             {
