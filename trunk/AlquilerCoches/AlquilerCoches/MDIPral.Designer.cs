@@ -59,6 +59,8 @@
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Gestion = new System.Windows.Forms.TabPage();
+            this.TLabelProveedores = new System.Windows.Forms.Label();
+            this.TButtonProveedores = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.TButtonSalir = new System.Windows.Forms.Button();
             this.TLabelFactura = new System.Windows.Forms.Label();
@@ -68,8 +70,9 @@
             this.TButtonVehiculos = new System.Windows.Forms.Button();
             this.TButtonCliente = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.TButtonProveedores = new System.Windows.Forms.Button();
-            this.TLabelProveedores = new System.Windows.Forms.Label();
+            this.gestionReservasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevaReservaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buscarReservasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -85,7 +88,8 @@
             this.gestionProveedoresToolStripMenuItem,
             this.gestionClientesToolStripMenuItem,
             this.facturacionToolStripMenuItem,
-            this.gestionVentasToolStripMenuItem1});
+            this.gestionVentasToolStripMenuItem1,
+            this.gestionReservasToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(784, 24);
@@ -312,6 +316,31 @@
             this.Gestion.TabIndex = 0;
             this.Gestion.Text = "Géstion";
             // 
+            // TLabelProveedores
+            // 
+            this.TLabelProveedores.AutoSize = true;
+            this.TLabelProveedores.Location = new System.Drawing.Point(34, 495);
+            this.TLabelProveedores.Name = "TLabelProveedores";
+            this.TLabelProveedores.Size = new System.Drawing.Size(67, 13);
+            this.TLabelProveedores.TabIndex = 17;
+            this.TLabelProveedores.Text = "Proveedores";
+            this.TLabelProveedores.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TButtonProveedores
+            // 
+            this.TButtonProveedores.BackColor = System.Drawing.Color.Transparent;
+            this.TButtonProveedores.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("TButtonProveedores.BackgroundImage")));
+            this.TButtonProveedores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.TButtonProveedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TButtonProveedores.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.TButtonProveedores.Location = new System.Drawing.Point(6, 395);
+            this.TButtonProveedores.Name = "TButtonProveedores";
+            this.TButtonProveedores.Size = new System.Drawing.Size(125, 86);
+            this.TButtonProveedores.TabIndex = 16;
+            this.TButtonProveedores.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.TButtonProveedores.UseVisualStyleBackColor = true;
+            this.TButtonProveedores.Click += new System.EventHandler(this.TButtonProveedores_Click);
+            // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -412,35 +441,32 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(137, 490);
+            this.tabPage1.Size = new System.Drawing.Size(137, 702);
             this.tabPage1.TabIndex = 1;
             this.tabPage1.Text = "Administración";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // TButtonProveedores
+            // gestionReservasToolStripMenuItem
             // 
-            this.TButtonProveedores.BackColor = System.Drawing.Color.Transparent;
-            this.TButtonProveedores.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("TButtonProveedores.BackgroundImage")));
-            this.TButtonProveedores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.TButtonProveedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TButtonProveedores.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.TButtonProveedores.Location = new System.Drawing.Point(6, 395);
-            this.TButtonProveedores.Name = "TButtonProveedores";
-            this.TButtonProveedores.Size = new System.Drawing.Size(125, 86);
-            this.TButtonProveedores.TabIndex = 16;
-            this.TButtonProveedores.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.TButtonProveedores.UseVisualStyleBackColor = true;
-            this.TButtonProveedores.Click += new System.EventHandler(this.TButtonProveedores_Click);
+            this.gestionReservasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuevaReservaToolStripMenuItem,
+            this.buscarReservasToolStripMenuItem});
+            this.gestionReservasToolStripMenuItem.Name = "gestionReservasToolStripMenuItem";
+            this.gestionReservasToolStripMenuItem.Size = new System.Drawing.Size(107, 20);
+            this.gestionReservasToolStripMenuItem.Text = "Gestion Reservas";
             // 
-            // TLabelProveedores
+            // nuevaReservaToolStripMenuItem
             // 
-            this.TLabelProveedores.AutoSize = true;
-            this.TLabelProveedores.Location = new System.Drawing.Point(34, 495);
-            this.TLabelProveedores.Name = "TLabelProveedores";
-            this.TLabelProveedores.Size = new System.Drawing.Size(67, 13);
-            this.TLabelProveedores.TabIndex = 17;
-            this.TLabelProveedores.Text = "Proveedores";
-            this.TLabelProveedores.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.nuevaReservaToolStripMenuItem.Name = "nuevaReservaToolStripMenuItem";
+            this.nuevaReservaToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.nuevaReservaToolStripMenuItem.Text = "Nueva Reserva";
+            this.nuevaReservaToolStripMenuItem.Click += new System.EventHandler(this.nuevaReservaToolStripMenuItem_Click);
+            // 
+            // buscarReservasToolStripMenuItem
+            // 
+            this.buscarReservasToolStripMenuItem.Name = "buscarReservasToolStripMenuItem";
+            this.buscarReservasToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.buscarReservasToolStripMenuItem.Text = "Buscar Reservas";
             // 
             // MDIPral
             // 
@@ -513,6 +539,9 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button TButtonProveedores;
         private System.Windows.Forms.Label TLabelProveedores;
+        private System.Windows.Forms.ToolStripMenuItem gestionReservasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nuevaReservaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem buscarReservasToolStripMenuItem;
     }
 }
 
