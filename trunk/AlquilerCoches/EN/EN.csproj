@@ -48,6 +48,7 @@
     <Compile Include="ENVehiculo.cs" />
     <Compile Include="ENVentas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ENReservas.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CAD\CAD.csproj">
