@@ -9,9 +9,9 @@ using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using System.Collections;
 
-namespace AlquilerCoches.CAD
+namespace CAD
 {
-    class CADPedidos
+    public class CADPedidos
     {
         static private String cadenaConexion = @"Data Source=|DataDirectory|\BBDD.sdf";
         static private String nombreTabla = "Pedidos";

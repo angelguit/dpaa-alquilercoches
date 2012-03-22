@@ -325,6 +325,12 @@
     <None Include="Resources\Add-icon1.png" />
     <None Include="Resources\Close-icon1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EN\EN.csproj">
+      <Project>{AE4CE6A8-C932-4C70-805D-0022B6BC3500}</Project>
+      <Name>EN</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
