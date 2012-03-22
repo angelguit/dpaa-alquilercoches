@@ -12,6 +12,8 @@ namespace AlquilerCoches
 {
     public partial class BuscarPedidos : Form
     {
+        private DataSet ds;
+
         public BuscarPedidos()
         {
             InitializeComponent();
@@ -59,7 +61,18 @@ namespace AlquilerCoches
 
         private void TBuscarbutton_Click(object sender, EventArgs e)
         {
+            if (incorrecto == true)
+            {
+                MessageBox.Show("Campos invalidos, reviselos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+            } 
+            else
+            {
+                  ds=new DataSet;
+                  EN.ENPedidos enPedidos= new EN.ENPedidos();
+
+                  ds= enPedidos.ObtenerListaPedidos();
+            }
         }
     }
 }
