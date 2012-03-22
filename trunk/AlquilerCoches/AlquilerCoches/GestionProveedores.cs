@@ -165,5 +165,10 @@ namespace AlquilerCoches
             }
         }
 
+        private void TButtonCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }

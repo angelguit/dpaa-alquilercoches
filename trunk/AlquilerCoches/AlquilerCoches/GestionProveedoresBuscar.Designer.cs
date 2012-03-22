@@ -47,6 +47,7 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TTextBoxCiudad = new System.Windows.Forms.TextBox();
             this.TLabelCiudad = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -193,6 +194,16 @@
             this.TLabelCiudad.TabIndex = 48;
             this.TLabelCiudad.Text = "Ciudad";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(207, 383);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 50;
+            this.button1.Text = "Cerrar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // GestionProveedoresBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -200,6 +211,7 @@
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(666, 441);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.TTextBoxCiudad);
             this.Controls.Add(this.TLabelCiudad);
             this.Controls.Add(this.TButtonBuscar);
@@ -211,6 +223,9 @@
             this.Controls.Add(this.TLabelCIF);
             this.Controls.Add(this.TButtonAlta);
             this.Controls.Add(this.dataGridView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "GestionProveedoresBuscar";
             this.Text = "GestionProveedoresBuscar";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -240,5 +255,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.Button button1;
     }
 }
