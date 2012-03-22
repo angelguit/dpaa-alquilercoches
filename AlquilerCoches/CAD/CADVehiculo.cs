@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using System.Collections;
 
-namespace AlquilerCoches.CAD
+namespace CAD
 {
     public class CADVehiculo
     {
