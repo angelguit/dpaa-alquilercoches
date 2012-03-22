@@ -81,6 +81,7 @@
     <Compile Include="CAD\CADProveedores.cs" />
     <Compile Include="CAD\CADVehiculo.cs" />
     <Compile Include="CAD\CADPedidos.cs" />
+    <Compile Include="CAD\CADVentas.cs" />
     <Compile Include="EditarVentas.cs">
       <SubType>Form</SubType>
     </Compile>
