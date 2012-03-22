@@ -13,7 +13,8 @@ namespace CAD
 {
     public class CADPersonal
     {
-        static private String cadenaConexion = @"Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\BBDD.mdf;Integrated Security=True;User Instance=True";
+ //       static private String cadenaConexion = @"Data Source=.\SQLEXPRESS;AttachDbFilename='C:\Users\Dani\Documents\Visual Studio 2010\Projects\AlquilerCoches\AlquilerCoches\AlquilerCoches\BBDD.mdf';Integrated Security=True;User Instance=True";
+        static private String cadenaConexion = ConfigurationManager.ConnectionStrings["AlquilerCoches"].ConnectionString; // @"Data Source=|DataDirectory|\BBDD.sdf";
         static private String nombreTabla = "Personal";
 
         public DataSet ObtenerTablaPersonal()

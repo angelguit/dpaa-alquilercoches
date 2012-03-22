@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using System.Data.SqlClient;
+using System.Configuration;
 
 
 namespace CAD
 {
     public class CADVehiculo
     {
-        static private String cadenaConexion = @"Data Source=|DataDirectory|\BBDD.sdf";
+        static private String cadenaConexion = ConfigurationManager.ConnectionStrings["AlquilerCoches"].ConnectionString; // @"Data Source=|DataDirectory|\BBDD.sdf";
         static private String nombreTabla = "Vehiculo";
 
         public DataSet ObtenerTablaVentas()
