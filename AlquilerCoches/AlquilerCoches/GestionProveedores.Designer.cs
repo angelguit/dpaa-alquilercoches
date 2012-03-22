@@ -64,7 +64,7 @@
             // TButtonFoto
             // 
             this.TButtonFoto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TButtonFoto.Location = new System.Drawing.Point(479, 145);
+            this.TButtonFoto.Location = new System.Drawing.Point(574, 145);
             this.TButtonFoto.Name = "TButtonFoto";
             this.TButtonFoto.Size = new System.Drawing.Size(56, 23);
             this.TButtonFoto.TabIndex = 49;
@@ -77,7 +77,7 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackgroundImage = global::AlquilerCoches.Properties.Resources.Desconocido;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(461, 29);
+            this.pictureBox1.Location = new System.Drawing.Point(556, 29);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(89, 110);
             this.pictureBox1.TabIndex = 48;
@@ -86,7 +86,7 @@
             // 
             // TButtonGuardarProveedor
             // 
-            this.TButtonGuardarProveedor.Location = new System.Drawing.Point(27, 348);
+            this.TButtonGuardarProveedor.Location = new System.Drawing.Point(26, 367);
             this.TButtonGuardarProveedor.Name = "TButtonGuardarProveedor";
             this.TButtonGuardarProveedor.Size = new System.Drawing.Size(77, 24);
             this.TButtonGuardarProveedor.TabIndex = 50;
@@ -96,12 +96,13 @@
             // 
             // TButtonCancelar
             // 
-            this.TButtonCancelar.Location = new System.Drawing.Point(110, 349);
+            this.TButtonCancelar.Location = new System.Drawing.Point(109, 368);
             this.TButtonCancelar.Name = "TButtonCancelar";
             this.TButtonCancelar.Size = new System.Drawing.Size(75, 23);
             this.TButtonCancelar.TabIndex = 51;
             this.TButtonCancelar.Text = "Cancelar";
             this.TButtonCancelar.UseVisualStyleBackColor = true;
+            this.TButtonCancelar.Click += new System.EventHandler(this.TButtonCancelar_Click);
             // 
             // TGroupBoxProveedores
             // 
@@ -127,9 +128,9 @@
             this.TGroupBoxProveedores.Controls.Add(this.TLabelCalle);
             this.TGroupBoxProveedores.Controls.Add(this.TLabelNombre);
             this.TGroupBoxProveedores.Controls.Add(this.TLabelCIF);
-            this.TGroupBoxProveedores.Location = new System.Drawing.Point(12, 12);
+            this.TGroupBoxProveedores.Location = new System.Drawing.Point(12, 29);
             this.TGroupBoxProveedores.Name = "TGroupBoxProveedores";
-            this.TGroupBoxProveedores.Size = new System.Drawing.Size(393, 312);
+            this.TGroupBoxProveedores.Size = new System.Drawing.Size(488, 312);
             this.TGroupBoxProveedores.TabIndex = 52;
             this.TGroupBoxProveedores.TabStop = false;
             this.TGroupBoxProveedores.Text = "Datos Proveedor";
@@ -156,7 +157,7 @@
             this.TTextBoxHorario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.TTextBoxHorario.Location = new System.Drawing.Point(98, 236);
             this.TTextBoxHorario.Name = "TTextBoxHorario";
-            this.TTextBoxHorario.Size = new System.Drawing.Size(108, 20);
+            this.TTextBoxHorario.Size = new System.Drawing.Size(203, 20);
             this.TTextBoxHorario.TabIndex = 9;
             // 
             // TLabelHorario
@@ -174,7 +175,7 @@
             this.TTextBoxEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.TTextBoxEmail.Location = new System.Drawing.Point(98, 146);
             this.TTextBoxEmail.Name = "TTextBoxEmail";
-            this.TTextBoxEmail.Size = new System.Drawing.Size(108, 20);
+            this.TTextBoxEmail.Size = new System.Drawing.Size(203, 20);
             this.TTextBoxEmail.TabIndex = 5;
             this.TTextBoxEmail.Leave += new System.EventHandler(this.TTextBoxEmail_Leave_1);
             // 
@@ -193,7 +194,7 @@
             this.TTextBoxCPostal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.TTextBoxCPostal.Location = new System.Drawing.Point(98, 210);
             this.TTextBoxCPostal.Name = "TTextBoxCPostal";
-            this.TTextBoxCPostal.Size = new System.Drawing.Size(108, 20);
+            this.TTextBoxCPostal.Size = new System.Drawing.Size(203, 20);
             this.TTextBoxCPostal.TabIndex = 8;
             this.TTextBoxCPostal.Leave += new System.EventHandler(this.TTextBoxCPostal_Leave);
             // 
@@ -202,7 +203,7 @@
             this.TTextBoxProvincia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.TTextBoxProvincia.Location = new System.Drawing.Point(98, 188);
             this.TTextBoxProvincia.Name = "TTextBoxProvincia";
-            this.TTextBoxProvincia.Size = new System.Drawing.Size(108, 20);
+            this.TTextBoxProvincia.Size = new System.Drawing.Size(203, 20);
             this.TTextBoxProvincia.TabIndex = 7;
             this.TTextBoxProvincia.Leave += new System.EventHandler(this.TTextBoxProvincia_Leave);
             // 
@@ -211,7 +212,7 @@
             this.TTextBoxCiudad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.TTextBoxCiudad.Location = new System.Drawing.Point(98, 166);
             this.TTextBoxCiudad.Name = "TTextBoxCiudad";
-            this.TTextBoxCiudad.Size = new System.Drawing.Size(108, 20);
+            this.TTextBoxCiudad.Size = new System.Drawing.Size(203, 20);
             this.TTextBoxCiudad.TabIndex = 6;
             this.TTextBoxCiudad.Leave += new System.EventHandler(this.TTextBoxCiudad_Leave);
             // 
@@ -220,7 +221,7 @@
             this.TTextBoxTelefono.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.TTextBoxTelefono.Location = new System.Drawing.Point(98, 123);
             this.TTextBoxTelefono.Name = "TTextBoxTelefono";
-            this.TTextBoxTelefono.Size = new System.Drawing.Size(108, 20);
+            this.TTextBoxTelefono.Size = new System.Drawing.Size(203, 20);
             this.TTextBoxTelefono.TabIndex = 4;
             this.TTextBoxTelefono.Leave += new System.EventHandler(this.TTextBoxTelefono_Leave_1);
             // 
@@ -229,7 +230,7 @@
             this.TTextBoxCalle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.TTextBoxCalle.Location = new System.Drawing.Point(98, 101);
             this.TTextBoxCalle.Name = "TTextBoxCalle";
-            this.TTextBoxCalle.Size = new System.Drawing.Size(108, 20);
+            this.TTextBoxCalle.Size = new System.Drawing.Size(203, 20);
             this.TTextBoxCalle.TabIndex = 2;
             this.TTextBoxCalle.Leave += new System.EventHandler(this.TTextBoxCalle_Leave);
             // 
@@ -238,7 +239,7 @@
             this.TTextBoxMarca.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.TTextBoxMarca.Location = new System.Drawing.Point(98, 79);
             this.TTextBoxMarca.Name = "TTextBoxMarca";
-            this.TTextBoxMarca.Size = new System.Drawing.Size(70, 20);
+            this.TTextBoxMarca.Size = new System.Drawing.Size(165, 20);
             this.TTextBoxMarca.TabIndex = 1;
             this.TTextBoxMarca.Leave += new System.EventHandler(this.TTextBoxMarca_Leave);
             // 
@@ -247,7 +248,7 @@
             this.TTextBoxCIF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.TTextBoxCIF.Location = new System.Drawing.Point(98, 56);
             this.TTextBoxCIF.Name = "TTextBoxCIF";
-            this.TTextBoxCIF.Size = new System.Drawing.Size(70, 20);
+            this.TTextBoxCIF.Size = new System.Drawing.Size(165, 20);
             this.TTextBoxCIF.TabIndex = 0;
             this.TTextBoxCIF.Leave += new System.EventHandler(this.TTextBoxCIF_Leave);
             // 
@@ -323,7 +324,7 @@
             // 
             // TButtonEliminar
             // 
-            this.TButtonEliminar.Location = new System.Drawing.Point(191, 349);
+            this.TButtonEliminar.Location = new System.Drawing.Point(190, 368);
             this.TButtonEliminar.Name = "TButtonEliminar";
             this.TButtonEliminar.Size = new System.Drawing.Size(103, 23);
             this.TButtonEliminar.TabIndex = 53;
@@ -341,13 +342,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(586, 394);
+            this.ClientSize = new System.Drawing.Size(681, 412);
             this.Controls.Add(this.TButtonEliminar);
             this.Controls.Add(this.TGroupBoxProveedores);
             this.Controls.Add(this.TButtonCancelar);
             this.Controls.Add(this.TButtonGuardarProveedor);
             this.Controls.Add(this.TButtonFoto);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "GestionProveedores";
             this.Text = "GestionProveedores";
             this.Load += new System.EventHandler(this.GestionProveedores_Load);

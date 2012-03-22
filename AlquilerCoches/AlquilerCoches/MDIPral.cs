@@ -296,6 +296,37 @@ namespace AlquilerCoches
             }
         }
 
+        private void darDeAltaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            if (Application.OpenForms["GestionProveedores"] != null)
+            {
+
+                Application.OpenForms["GestionProveedores"].Activate();
+            }
+            else
+            {
+                GestionProveedores proveedores = new GestionProveedores();
+                proveedores.MdiParent = this;
+                proveedores.Show();
+            }
+        }
+
+        private void buscarModificarOEliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["GestionProveedoresBuscar"] != null)
+            {
+
+                Application.OpenForms["GestionProveedoresBuscar"].Activate();
+            }
+            else
+            {
+                GestionProveedoresBuscar proveedoresBuscar = new GestionProveedoresBuscar();
+                proveedoresBuscar.MdiParent = this;
+                proveedoresBuscar.Show();
+            }
+        }
+
      
      }
 }
