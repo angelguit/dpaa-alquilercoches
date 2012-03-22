@@ -9,23 +9,22 @@ using System.Windows.Forms;
 
 namespace AlquilerCoches
 {
-    public partial class Facturacion : Form
+    public partial class AltaReservas : Form
     {
-        public Facturacion()
+        public AltaReservas()
         {
             InitializeComponent();
         }
 
-        private void TLabelCategoria_Click(object sender, EventArgs e)
+        private void AltaReservas_Load(object sender, EventArgs e)
         {
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-  
-                GestionClientesBuscar F1 = new GestionClientesBuscar();
-                F1.Show();
+            GestionClientesBuscar F1 = new GestionClientesBuscar();
+            F1.Show();
         }
     }
 }
