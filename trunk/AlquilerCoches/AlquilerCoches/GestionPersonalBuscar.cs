@@ -128,8 +128,8 @@ namespace AlquilerCoches
         private void TDataGridViewPersonal_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-          /*  try
-            {*/
+            try
+            {
 
                 if (TDataGridViewPersonal.Rows[e.RowIndex].Cells[e.ColumnIndex].ColumnIndex.ToString()=="5")
                 {
@@ -161,12 +161,12 @@ namespace AlquilerCoches
                    TTextBoxNombre.Text = TDataGridViewPersonal.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
                     
                 }
-           /* }
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("Error no hay valores en la fila");
 
-            }*/
+            }
 
            // MessageBox.Show("hola"+TDataGridViewPersonal.Rows[e.RowIndex].Cells[e.ColumnIndex].ColumnIndex.ToString());
         }
