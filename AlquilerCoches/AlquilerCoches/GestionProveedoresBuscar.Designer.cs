@@ -48,12 +48,14 @@
             this.TTextBoxCiudad = new System.Windows.Forms.TextBox();
             this.TLabelCiudad = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // TButtonBuscar
             // 
-            this.TButtonBuscar.Location = new System.Drawing.Point(17, 383);
+            this.TButtonBuscar.Location = new System.Drawing.Point(36, 469);
             this.TButtonBuscar.Name = "TButtonBuscar";
             this.TButtonBuscar.Size = new System.Drawing.Size(75, 23);
             this.TButtonBuscar.TabIndex = 46;
@@ -63,21 +65,21 @@
             // 
             // TTextBoxProvincia
             // 
-            this.TTextBoxProvincia.Location = new System.Drawing.Point(259, 270);
+            this.TTextBoxProvincia.Location = new System.Drawing.Point(255, 25);
             this.TTextBoxProvincia.Name = "TTextBoxProvincia";
             this.TTextBoxProvincia.Size = new System.Drawing.Size(100, 20);
             this.TTextBoxProvincia.TabIndex = 44;
             // 
             // TTextBoxMarca
             // 
-            this.TTextBoxMarca.Location = new System.Drawing.Point(66, 310);
+            this.TTextBoxMarca.Location = new System.Drawing.Point(62, 65);
             this.TTextBoxMarca.Name = "TTextBoxMarca";
             this.TTextBoxMarca.Size = new System.Drawing.Size(100, 20);
             this.TTextBoxMarca.TabIndex = 43;
             // 
             // TTextBoxCIF
             // 
-            this.TTextBoxCIF.Location = new System.Drawing.Point(66, 271);
+            this.TTextBoxCIF.Location = new System.Drawing.Point(62, 26);
             this.TTextBoxCIF.Name = "TTextBoxCIF";
             this.TTextBoxCIF.Size = new System.Drawing.Size(100, 20);
             this.TTextBoxCIF.TabIndex = 42;
@@ -85,7 +87,7 @@
             // TLabelProvincia
             // 
             this.TLabelProvincia.AutoSize = true;
-            this.TLabelProvincia.Location = new System.Drawing.Point(193, 278);
+            this.TLabelProvincia.Location = new System.Drawing.Point(189, 33);
             this.TLabelProvincia.Name = "TLabelProvincia";
             this.TLabelProvincia.Size = new System.Drawing.Size(51, 13);
             this.TLabelProvincia.TabIndex = 40;
@@ -94,7 +96,7 @@
             // TLabelMarca
             // 
             this.TLabelMarca.AutoSize = true;
-            this.TLabelMarca.Location = new System.Drawing.Point(15, 318);
+            this.TLabelMarca.Location = new System.Drawing.Point(11, 73);
             this.TLabelMarca.Name = "TLabelMarca";
             this.TLabelMarca.Size = new System.Drawing.Size(37, 13);
             this.TLabelMarca.TabIndex = 39;
@@ -104,7 +106,7 @@
             // 
             this.TLabelCIF.AutoSize = true;
             this.TLabelCIF.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelCIF.Location = new System.Drawing.Point(33, 279);
+            this.TLabelCIF.Location = new System.Drawing.Point(29, 34);
             this.TLabelCIF.Name = "TLabelCIF";
             this.TLabelCIF.Size = new System.Drawing.Size(23, 13);
             this.TLabelCIF.TabIndex = 38;
@@ -112,7 +114,7 @@
             // 
             // TButtonAlta
             // 
-            this.TButtonAlta.Location = new System.Drawing.Point(115, 383);
+            this.TButtonAlta.Location = new System.Drawing.Point(134, 469);
             this.TButtonAlta.Name = "TButtonAlta";
             this.TButtonAlta.Size = new System.Drawing.Size(75, 23);
             this.TButtonAlta.TabIndex = 37;
@@ -132,9 +134,9 @@
             this.Column3,
             this.Column4,
             this.Column5});
-            this.dataGridView1.Location = new System.Drawing.Point(56, 24);
+            this.dataGridView1.Location = new System.Drawing.Point(36, 42);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(582, 209);
+            this.dataGridView1.Size = new System.Drawing.Size(722, 209);
             this.dataGridView1.TabIndex = 36;
             // 
             // DNI
@@ -179,7 +181,7 @@
             // 
             // TTextBoxCiudad
             // 
-            this.TTextBoxCiudad.Location = new System.Drawing.Point(259, 310);
+            this.TTextBoxCiudad.Location = new System.Drawing.Point(255, 65);
             this.TTextBoxCiudad.Name = "TTextBoxCiudad";
             this.TTextBoxCiudad.Size = new System.Drawing.Size(100, 20);
             this.TTextBoxCiudad.TabIndex = 49;
@@ -188,7 +190,7 @@
             // TLabelCiudad
             // 
             this.TLabelCiudad.AutoSize = true;
-            this.TLabelCiudad.Location = new System.Drawing.Point(204, 318);
+            this.TLabelCiudad.Location = new System.Drawing.Point(200, 73);
             this.TLabelCiudad.Name = "TLabelCiudad";
             this.TLabelCiudad.Size = new System.Drawing.Size(40, 13);
             this.TLabelCiudad.TabIndex = 48;
@@ -196,7 +198,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(207, 383);
+            this.button1.Location = new System.Drawing.Point(226, 469);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 50;
@@ -204,23 +206,33 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.TTextBoxCiudad);
+            this.groupBox1.Controls.Add(this.TLabelCiudad);
+            this.groupBox1.Controls.Add(this.TTextBoxProvincia);
+            this.groupBox1.Controls.Add(this.TTextBoxMarca);
+            this.groupBox1.Controls.Add(this.TTextBoxCIF);
+            this.groupBox1.Controls.Add(this.TLabelProvincia);
+            this.groupBox1.Controls.Add(this.TLabelMarca);
+            this.groupBox1.Controls.Add(this.TLabelCIF);
+            this.groupBox1.Location = new System.Drawing.Point(45, 292);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(399, 117);
+            this.groupBox1.TabIndex = 51;
+            this.groupBox1.TabStop = false;
+            // 
             // GestionProveedoresBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(666, 441);
+            this.ClientSize = new System.Drawing.Size(800, 600);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.TTextBoxCiudad);
-            this.Controls.Add(this.TLabelCiudad);
             this.Controls.Add(this.TButtonBuscar);
-            this.Controls.Add(this.TTextBoxProvincia);
-            this.Controls.Add(this.TTextBoxMarca);
-            this.Controls.Add(this.TTextBoxCIF);
-            this.Controls.Add(this.TLabelProvincia);
-            this.Controls.Add(this.TLabelMarca);
-            this.Controls.Add(this.TLabelCIF);
             this.Controls.Add(this.TButtonAlta);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -229,8 +241,9 @@
             this.Name = "GestionProveedoresBuscar";
             this.Text = "GestionProveedoresBuscar";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -256,5 +269,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
