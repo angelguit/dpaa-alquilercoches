@@ -327,6 +327,21 @@ namespace AlquilerCoches
             }
         }
 
+        private void TButtonProveedores_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["GestionProveedoresBuscar"] != null)
+            {
+
+                Application.OpenForms["GestionProveedoresBuscar"].Activate();
+            }
+            else
+            {
+                GestionProveedoresBuscar proveedoresBuscar = new GestionProveedoresBuscar();
+                proveedoresBuscar.MdiParent = this;
+                proveedoresBuscar.Show();
+            }
+        }
+
      
      }
 }

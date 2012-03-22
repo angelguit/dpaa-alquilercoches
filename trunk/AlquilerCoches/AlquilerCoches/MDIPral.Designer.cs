@@ -68,6 +68,8 @@
             this.TButtonVehiculos = new System.Windows.Forms.Button();
             this.TButtonCliente = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.TButtonProveedores = new System.Windows.Forms.Button();
+            this.TLabelProveedores = new System.Windows.Forms.Label();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -254,7 +256,7 @@
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel2});
             this.statusStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.statusStrip.Location = new System.Drawing.Point(0, 540);
+            this.statusStrip.Location = new System.Drawing.Point(0, 752);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Size = new System.Drawing.Size(784, 22);
             this.statusStrip.TabIndex = 2;
@@ -286,13 +288,15 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 24);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(145, 516);
+            this.tabControl1.Size = new System.Drawing.Size(145, 728);
             this.tabControl1.TabIndex = 12;
             // 
             // Gestion
             // 
             this.Gestion.BackColor = System.Drawing.Color.LightGray;
             this.Gestion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Gestion.Controls.Add(this.TLabelProveedores);
+            this.Gestion.Controls.Add(this.TButtonProveedores);
             this.Gestion.Controls.Add(this.button1);
             this.Gestion.Controls.Add(this.TButtonSalir);
             this.Gestion.Controls.Add(this.TLabelFactura);
@@ -304,14 +308,14 @@
             this.Gestion.Location = new System.Drawing.Point(4, 22);
             this.Gestion.Name = "Gestion";
             this.Gestion.Padding = new System.Windows.Forms.Padding(3);
-            this.Gestion.Size = new System.Drawing.Size(137, 490);
+            this.Gestion.Size = new System.Drawing.Size(137, 702);
             this.Gestion.TabIndex = 0;
             this.Gestion.Text = "Géstion";
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(13, 460);
+            this.button1.Location = new System.Drawing.Point(13, 672);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(103, 24);
             this.button1.TabIndex = 14;
@@ -324,7 +328,7 @@
             this.TButtonSalir.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.TButtonSalir.Image = global::AlquilerCoches.Properties.Resources.cancel;
             this.TButtonSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.TButtonSalir.Location = new System.Drawing.Point(37, 425);
+            this.TButtonSalir.Location = new System.Drawing.Point(37, 637);
             this.TButtonSalir.Name = "TButtonSalir";
             this.TButtonSalir.Size = new System.Drawing.Size(51, 23);
             this.TButtonSalir.TabIndex = 15;
@@ -413,13 +417,38 @@
             this.tabPage1.Text = "Administración";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // TButtonProveedores
+            // 
+            this.TButtonProveedores.BackColor = System.Drawing.Color.Transparent;
+            this.TButtonProveedores.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("TButtonProveedores.BackgroundImage")));
+            this.TButtonProveedores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.TButtonProveedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TButtonProveedores.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.TButtonProveedores.Location = new System.Drawing.Point(6, 395);
+            this.TButtonProveedores.Name = "TButtonProveedores";
+            this.TButtonProveedores.Size = new System.Drawing.Size(125, 86);
+            this.TButtonProveedores.TabIndex = 16;
+            this.TButtonProveedores.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.TButtonProveedores.UseVisualStyleBackColor = true;
+            this.TButtonProveedores.Click += new System.EventHandler(this.TButtonProveedores_Click);
+            // 
+            // TLabelProveedores
+            // 
+            this.TLabelProveedores.AutoSize = true;
+            this.TLabelProveedores.Location = new System.Drawing.Point(34, 495);
+            this.TLabelProveedores.Name = "TLabelProveedores";
+            this.TLabelProveedores.Size = new System.Drawing.Size(67, 13);
+            this.TLabelProveedores.TabIndex = 17;
+            this.TLabelProveedores.Text = "Proveedores";
+            this.TLabelProveedores.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // MDIPral
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.carretera;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(784, 562);
+            this.ClientSize = new System.Drawing.Size(784, 774);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
@@ -482,6 +511,8 @@
         private System.Windows.Forms.Button TButtonFactura;
         private System.Windows.Forms.Button TButtonSalir;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button TButtonProveedores;
+        private System.Windows.Forms.Label TLabelProveedores;
     }
 }
 

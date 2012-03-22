@@ -67,7 +67,7 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackgroundImage = global::AlquilerCoches.Properties.Resources.Desconocido;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(591, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(645, 59);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(89, 110);
             this.pictureBox1.TabIndex = 45;
@@ -99,7 +99,7 @@
             this.TGroupBoxCliente.Controls.Add(this.TLabelApellidos);
             this.TGroupBoxCliente.Controls.Add(this.TLabelNombre);
             this.TGroupBoxCliente.Controls.Add(this.TLabelDNI);
-            this.TGroupBoxCliente.Location = new System.Drawing.Point(12, 12);
+            this.TGroupBoxCliente.Location = new System.Drawing.Point(37, 59);
             this.TGroupBoxCliente.Name = "TGroupBoxCliente";
             this.TGroupBoxCliente.Size = new System.Drawing.Size(524, 297);
             this.TGroupBoxCliente.TabIndex = 46;
@@ -302,7 +302,7 @@
             // TButtonFoto
             // 
             this.TButtonFoto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.TButtonFoto.Location = new System.Drawing.Point(606, 128);
+            this.TButtonFoto.Location = new System.Drawing.Point(660, 175);
             this.TButtonFoto.Name = "TButtonFoto";
             this.TButtonFoto.Size = new System.Drawing.Size(56, 23);
             this.TButtonFoto.TabIndex = 47;
@@ -312,7 +312,7 @@
             // TButtonAceptar
             // 
             this.TButtonAceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.TButtonAceptar.Location = new System.Drawing.Point(18, 353);
+            this.TButtonAceptar.Location = new System.Drawing.Point(84, 501);
             this.TButtonAceptar.Name = "TButtonAceptar";
             this.TButtonAceptar.Size = new System.Drawing.Size(75, 23);
             this.TButtonAceptar.TabIndex = 48;
@@ -322,7 +322,7 @@
             // TButtonCancelar
             // 
             this.TButtonCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.TButtonCancelar.Location = new System.Drawing.Point(99, 353);
+            this.TButtonCancelar.Location = new System.Drawing.Point(165, 501);
             this.TButtonCancelar.Name = "TButtonCancelar";
             this.TButtonCancelar.Size = new System.Drawing.Size(75, 23);
             this.TButtonCancelar.TabIndex = 49;
@@ -339,7 +339,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(718, 414);
+            this.ClientSize = new System.Drawing.Size(784, 562);
             this.Controls.Add(this.TButtonCancelar);
             this.Controls.Add(this.TButtonAceptar);
             this.Controls.Add(this.TButtonFoto);

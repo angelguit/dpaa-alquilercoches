@@ -84,7 +84,7 @@
             this.Email,
             this.Nombre,
             this.Apellidos});
-            this.TDataGridViewCliente.Location = new System.Drawing.Point(103, 54);
+            this.TDataGridViewCliente.Location = new System.Drawing.Point(66, 54);
             this.TDataGridViewCliente.Name = "TDataGridViewCliente";
             this.TDataGridViewCliente.Size = new System.Drawing.Size(661, 209);
             this.TDataGridViewCliente.TabIndex = 24;
@@ -227,15 +227,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(894, 608);
+            this.ClientSize = new System.Drawing.Size(800, 600);
             this.Controls.Add(this.TButtonCerrar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.TDataGridViewCliente);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(894, 608);
+            this.MaximumSize = new System.Drawing.Size(800, 600);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(894, 608);
+            this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "GestionClientesBuscar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GestionClientesBuscar";
