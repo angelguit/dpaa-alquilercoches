@@ -13,7 +13,7 @@ namespace CAD
 {
     public class CADPedidos
     {
-        static private String cadenaConexion = @"Data Source=|DataDirectory|\BBDD.sdf";
+        static private String cadenaConexion = ConfigurationManager.ConnectionStrings["AlquilerCoches"].ConnectionString; // @"Data Source=|DataDirectory|\BBDD.sdf";
         static private String nombreTabla = "Pedidos";
 
         public DataSet ObtenerTablaPedidos()

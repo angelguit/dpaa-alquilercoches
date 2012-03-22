@@ -13,13 +13,13 @@ namespace CAD
 {
     public class CADFacturacion
     {
-        static private String cadenaConexion = @"Data Source=|DataDirectory|\BBDD.sdf";
+
+        static private String cadenaConexion = ConfigurationManager.ConnectionStrings["AlquilerCoches"].ConnectionString; // @"Data Source=|DataDirectory|\BBDD.sdf";
         static private String nombreTabla = "Facturas";
 
         public DataSet ObtenerTablaFacturas()
         {
             DataSet dsFacturas = new DataSet();
-
             try
             {
                 SqlConnection conexion = new SqlConnection(cadenaConexion);
