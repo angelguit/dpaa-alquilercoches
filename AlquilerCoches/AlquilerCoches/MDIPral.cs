@@ -342,6 +342,13 @@ namespace AlquilerCoches
             }
         }
 
+        private void nuevaReservaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AltaReservas altaReserva = new AltaReservas();
+            altaReserva.MdiParent = this;
+            altaReserva.Show();
+        }
+
      
-     }
+     }   
 }
