@@ -68,7 +68,7 @@ namespace AlquilerCoches
             } 
             else
             {
-                  ds=new DataSet;
+                  ds=new DataSet();
                   EN.ENPedidos enPedidos= new EN.ENPedidos();
 
                   ds= enPedidos.ObtenerListaPedidos();
