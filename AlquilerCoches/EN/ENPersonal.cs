@@ -8,12 +8,13 @@ using System.Data.Common;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using System.Collections;
+using CAD;
 
-namespace AlquilerCoches.EN
+namespace EN
 {
     public class ENPersonal
     {
-
+        
         private string dni;
         private string nombre;
         private string apellidos;

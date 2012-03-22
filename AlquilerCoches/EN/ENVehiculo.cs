@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using System.Collections;
 
-namespace AlquilerCoches.EN
+namespace EN
 {
     public class ENVehiculo
     {
@@ -31,7 +31,7 @@ namespace AlquilerCoches.EN
             DataSet resultado = new DataSet();
             try
             {
-                resultado = cadVehiculo.ObtenerTablaVehiculo();
+                resultado = cadVehiculo.ObtenerTablaVentas();
             }
             catch (Exception ex)
             {

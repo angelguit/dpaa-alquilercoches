@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using System.Collections;
 
-namespace AlquilerCoches.EN
+namespace EN
 {
     public class ENPedidos
     {
