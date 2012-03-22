@@ -12,26 +12,26 @@ namespace CAD
     public class CADVentas
     {
         static private String cadenaConexion = ConfigurationManager.ConnectionStrings["AlquilerCoches"].ConnectionString; // @"Data Source=|DataDirectory|\BBDD.sdf";
-        static private String nombreTabla = "Vehiculo";
+        static private String nombreTabla = "Ventas";
 
         public DataSet ObtenerTablaVentas()
         {
-            DataSet deVentas = new DataSet();
+            DataSet dsVentas = new DataSet();
 
             try
             {
                 SqlConnection conexion = new SqlConnection(cadenaConexion);
                 String consulta = "Select * from Ventas";
-                SqlDataAdapter daCaminos = new SqlDataAdapter(consulta, conexion);
-                daCaminos.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-                daCaminos.Fill(deVentas, nombreTabla);
+                SqlDataAdapter daVentas = new SqlDataAdapter(consulta, conexion);
+                daVentas.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daVentas.Fill(dsVentas, nombreTabla);
             }
             catch (Exception ex)
             {
                 throw (ex);
             }
 
-            return deVentas;
+            return dsVentas;
         }
     }
 }
