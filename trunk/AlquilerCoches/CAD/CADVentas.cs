@@ -9,7 +9,7 @@ using System.Configuration;
 
 namespace CAD
 {
-    public class CADVehiculo
+    public class CADVentas
     {
         static private String cadenaConexion = ConfigurationManager.ConnectionStrings["AlquilerCoches"].ConnectionString; // @"Data Source=|DataDirectory|\BBDD.sdf";
         static private String nombreTabla = "Vehiculo";
