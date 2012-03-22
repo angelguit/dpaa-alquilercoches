@@ -24,7 +24,7 @@ namespace AlquilerCoches
         private void button1_Click(object sender, EventArgs e)
         {
   
-                GestionClientesBuscar F1 = new GestionClientesBuscar();
+                GestionClientesBuscar F1 = new GestionClientesBuscar(false);
                 F1.Show();
         }
     }

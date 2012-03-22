@@ -280,7 +280,7 @@
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape2,
             this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(1153, 774);
+            this.shapeContainer1.Size = new System.Drawing.Size(1153, 750);
             this.shapeContainer1.TabIndex = 26;
             this.shapeContainer1.TabStop = false;
             // 
@@ -366,7 +366,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1153, 774);
+            this.ClientSize = new System.Drawing.Size(1153, 750);
             this.Controls.Add(this.TLabelCP);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TLabelDireccion);
