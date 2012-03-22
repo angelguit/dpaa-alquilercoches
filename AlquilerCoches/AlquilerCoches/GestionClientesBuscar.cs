@@ -12,36 +12,52 @@ namespace AlquilerCoches
 {
     public partial class GestionClientesBuscar : Form
     {
-        public GestionClientesBuscar()
+        private bool dondevengo;
+        public GestionClientesBuscar(bool directo)
         {
+            dondevengo = directo;//si es true ha sido llamado directamente, si es false lo han llamado desde otro formulario
             InitializeComponent();
 
-            DataGridViewButtonColumn buttons = new DataGridViewButtonColumn();
+            if (directo == true)//si se llama directamente a este formulario sin pasar por otro formulario antes
             {
-                buttons.HeaderText = "Editar"; //texto de la columna
-                buttons.Text = "Editar"; //texto de cada boton, sale al introducir texto
-                buttons.UseColumnTextForButtonValue = true;
-                buttons.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                buttons.FlatStyle = FlatStyle.Standard;
-                buttons.CellTemplate.Style.BackColor = Color.Honeydew;
-                buttons.DisplayIndex = 0;
-            }
+                DataGridViewButtonColumn buttons = new DataGridViewButtonColumn();
+                {
+                    buttons.HeaderText = "Editar"; //texto de la columna
+                    buttons.Text = "Editar"; //texto de cada boton, sale al introducir texto
+                    buttons.UseColumnTextForButtonValue = true;
+                    buttons.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    buttons.FlatStyle = FlatStyle.Standard;
+                    buttons.CellTemplate.Style.BackColor = Color.Honeydew;
+                    buttons.DisplayIndex = 0;
+                }
 
-            DataGridViewCheckBoxColumn boton = new DataGridViewCheckBoxColumn();
+                DataGridViewCheckBoxColumn boton = new DataGridViewCheckBoxColumn();
+                {
+                    boton.HeaderText = "Eliminar";//texto de la columna
+                    boton.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells; //tamaño
+                    boton.DisplayIndex = 0; //indice que ocupara en la tabla
+
+                }
+
+
+                TDataGridViewCliente.Columns.Add(boton);
+                TDataGridViewCliente.Columns.Add(buttons);
+            }
+            else
             {
-                boton.HeaderText = "Eliminar";//texto de la columna
-                boton.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells; //tamaño
-                boton.DisplayIndex = 0; //indice que ocupara en la tabla
+                DataGridViewCheckBoxColumn boton = new DataGridViewCheckBoxColumn();
+                {
+                    boton.HeaderText = "Seleccionar";//texto de la columna
+                    boton.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells; //tamaño
+                    boton.DisplayIndex = 0; //indice que ocupara en la tabla
 
+                }
+                TDataGridViewCliente.Columns.Add(boton);
             }
-
-
-            TDataGridViewCliente.Columns.Add(boton);
-            TDataGridViewCliente.Columns.Add(buttons);
 
         }
 
-            private void GestionClientesBuscar_Closed(object sender, EventArgs e)
+        private void GestionClientesBuscar_Closed(object sender, EventArgs e)
         {
 
         }
@@ -97,7 +113,12 @@ namespace AlquilerCoches
 
             }
             else
-                TButtonEliminar.Visible = true;
+            {
+                if(dondevengo==true)
+                        TButtonEliminar.Visible = true;
+
+            }
+                
             
         }
 
