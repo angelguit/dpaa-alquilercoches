@@ -127,39 +127,47 @@ namespace AlquilerCoches
         private void TDataGridViewPersonal_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-             try
-             {
+          /*  try
+            {*/
 
-                 if (TDataGridViewPersonal.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "Editar")
-                 {
-                     if (Application.OpenForms["GestionPersonal"] != null)
-                     {
-                         Application.OpenForms["GestionPersonal"].Activate();
-                     }
-                     else
-                     {
-                        
-                         string nom=TDataGridViewPersonal.Rows[e.RowIndex].Cells[1].Value.ToString();//indice 1 para cojer el nombre
+                if (TDataGridViewPersonal.Rows[e.RowIndex].Cells[e.ColumnIndex].ColumnIndex.ToString()=="5")
+                {
+                    MessageBox.Show("eyyy");
+                }
+                else if (TDataGridViewPersonal.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "Editar")
+                {
+                    if (Application.OpenForms["GestionPersonal"] != null)
+                    {
+                        Application.OpenForms["GestionPersonal"].Activate();
+                    }
+                    else
+                    {
+
+                        string nom = TDataGridViewPersonal.Rows[e.RowIndex].Cells[1].Value.ToString();//indice 1 para cojer el nombre
                         // MessageBox.Show("mensaje" + e.ColumnIndex+" , "+e.RowIndex); 
 
-                         GestionPersonal Formu = new GestionPersonal(nom);
-                        
-                        // Formu.StartPosition = FormStartPosition.CenterScreen;
-                         Formu.Show();
-                     }
-                 }
-                 else
-                 {
+                        GestionPersonal Formu = new GestionPersonal(nom);
 
-                    TTextBoxNombre.Text = TDataGridViewPersonal.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+                        Formu.StartPosition = FormStartPosition.CenterScreen;
+                        //Formu.MdiParent = this;
+                        Formu.Show();
+                        Formu.WindowState = FormWindowState.Maximized;
+                    }
+                }
+                else
+                {
+
+                   TTextBoxNombre.Text = TDataGridViewPersonal.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
                     
-                 }
-             }
-             catch (Exception ex)
-             {
-                 MessageBox.Show("Error no hay valores en la fila");
+                }
+           /* }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error no hay valores en la fila");
 
-             }
+            }*/
+
+           // MessageBox.Show("hola"+TDataGridViewPersonal.Rows[e.RowIndex].Cells[e.ColumnIndex].ColumnIndex.ToString());
         }
               
     }
