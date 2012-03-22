@@ -76,24 +76,12 @@
     <Compile Include="BuscarPedidos.Designer.cs">
       <DependentUpon>BuscarPedidos.cs</DependentUpon>
     </Compile>
-    <Compile Include="CAD\CADFacturacion.cs" />
-    <Compile Include="CAD\CADPersonal.cs" />
-    <Compile Include="CAD\CADProveedores.cs" />
-    <Compile Include="CAD\CADVehiculo.cs" />
-    <Compile Include="CAD\CADPedidos.cs" />
-    <Compile Include="CAD\CADVentas.cs" />
     <Compile Include="EditarVentas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EditarVentas.Designer.cs">
       <DependentUpon>EditarVentas.cs</DependentUpon>
     </Compile>
-    <Compile Include="EN\ENFacturacion.cs" />
-    <Compile Include="EN\ENPedidos.cs" />
-    <Compile Include="EN\ENPersonal.cs" />
-    <Compile Include="EN\ENProveedores.cs" />
-    <Compile Include="EN\ENVehiculo.cs" />
-    <Compile Include="EN\ENVentas.cs" />
     <Compile Include="GestionClientes.cs">
       <SubType>Form</SubType>
     </Compile>
