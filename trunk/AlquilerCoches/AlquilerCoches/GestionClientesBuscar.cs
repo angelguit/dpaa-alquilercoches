@@ -45,12 +45,15 @@ namespace AlquilerCoches
             }
             else
             {
-                DataGridViewCheckBoxColumn boton = new DataGridViewCheckBoxColumn();
+                DataGridViewButtonColumn boton = new DataGridViewButtonColumn();
                 {
-                    boton.HeaderText = "Seleccionar";//texto de la columna
-                    boton.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells; //tamaño
-                    boton.DisplayIndex = 0; //indice que ocupara en la tabla
-
+                    boton.HeaderText = "Seleccionar"; //texto de la columna
+                    boton.Text = "Seleccionar"; //texto de cada boton, sale al introducir texto
+                    boton.UseColumnTextForButtonValue = true;
+                    boton.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    boton.FlatStyle = FlatStyle.Standard;
+                    boton.CellTemplate.Style.BackColor = Color.Honeydew;
+                    boton.DisplayIndex = 0;
                 }
                 TDataGridViewCliente.Columns.Add(boton);
             }
