@@ -11,6 +11,12 @@ namespace AlquilerCoches
 {
     public partial class AltaReservas : Form
     {
+        private void RellenarCategoria(DataSet dsCat)
+        {
+            TComboBoxCategoria.DataSource = dsCat.Tables["Categorias"];
+            TComboBoxCategoria.DisplayMember = dsCat.Tables["Categorias"].Columns[0].Caption.ToString();
+            TComboBoxCategoria.Text = "Seleccione Categoria";
+        }
         public AltaReservas()
         {
             InitializeComponent();
@@ -18,7 +24,10 @@ namespace AlquilerCoches
 
         private void AltaReservas_Load(object sender, EventArgs e)
         {
-
+            EN.ENReservas enRes = new EN.ENReservas();
+            DataSet dsRes = new DataSet();
+            dsRes = enRes.RellenarCategoria();
+            RellenarCategoria(dsRes); 
         }
 
         private void button1_Click(object sender, EventArgs e)
