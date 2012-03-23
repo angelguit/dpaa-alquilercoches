@@ -35,5 +35,43 @@ namespace CAD
 
             return dsVehiculo;
         }
+
+        public DataSet ObtenerModelosVehiculo(string cat)
+        {
+            DataSet dsVehiculo = new DataSet();
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                String consulta = "Select Modelo from Vehiculo WHERE FK_Categoria = '" + cat + "'";
+                SqlDataAdapter daCaminos = new SqlDataAdapter(consulta, conexion);
+                daCaminos.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daCaminos.Fill(dsVehiculo, "Modelos");
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+
+            return dsVehiculo;
+        }
+
+        public DataSet ObtenerMatriculasVehiculo(string mod)
+        {
+            DataSet dsVehiculo = new DataSet();
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                String consulta = "Select Matricula from Vehiculo WHERE Modelo = '" + mod + "'";
+                SqlDataAdapter daCaminos = new SqlDataAdapter(consulta, conexion);
+                daCaminos.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daCaminos.Fill(dsVehiculo, "Matriculas");
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+
+            return dsVehiculo;
+        }
     }
 }
