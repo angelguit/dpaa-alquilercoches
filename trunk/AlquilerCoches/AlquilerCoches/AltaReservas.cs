@@ -17,6 +17,21 @@ namespace AlquilerCoches
             TComboBoxCategoria.DisplayMember = dsCat.Tables["Categorias"].Columns[0].Caption.ToString();
             TComboBoxCategoria.Text = "Seleccione Categoria";
         }
+
+        private void RellenarModelos(DataSet dsMod)
+        {
+            TComboBoxModelo.DataSource = dsMod.Tables["Modelos"];
+            TComboBoxModelo.DisplayMember = dsMod.Tables["Modelos"].Columns[0].Caption.ToString();
+            TComboBoxModelo.Text = "Seleccione Modelo";
+        }
+
+        private void RellenarMatriculas(DataSet dsMod)
+        {
+            TComboBoxMatricula.DataSource = dsMod.Tables["Matriculas"];
+            TComboBoxMatricula.DisplayMember = dsMod.Tables["Matriculas"].Columns[0].Caption.ToString();
+            TComboBoxMatricula.Text = "Seleccione Matricula";
+        }
+
         public AltaReservas()
         {
             InitializeComponent();
@@ -34,6 +49,25 @@ namespace AlquilerCoches
         {
             GestionClientesBuscar F1 = new GestionClientesBuscar(false);
             F1.ShowDialog();
+        }
+
+
+ 
+        private void TComboBoxCategoria_TextChanged(object sender, EventArgs e)
+        {
+
+            EN.ENVehiculo enVe = new EN.ENVehiculo();
+            DataSet dsVe = new DataSet();
+            dsVe = enVe.ObtenerListaModelosVehiculos(TComboBoxCategoria.Text.ToString());
+            RellenarModelos(dsVe);
+        }
+
+        private void TComboBoxModelo_TextChanged(object sender, EventArgs e)
+        {
+            EN.ENVehiculo enVe = new EN.ENVehiculo();
+            DataSet dsVe = new DataSet();
+            dsVe = enVe.ObtenerListaMatriculasVehiculos(TComboBoxModelo.Text.ToString());
+            RellenarMatriculas(dsVe);
         }
     }
 }

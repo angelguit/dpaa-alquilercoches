@@ -64,6 +64,7 @@
             this.TComboBoxCategoria.Size = new System.Drawing.Size(121, 21);
             this.TComboBoxCategoria.TabIndex = 27;
             this.TComboBoxCategoria.Text = "Seleccione Categoria";
+            this.TComboBoxCategoria.TextChanged += new System.EventHandler(this.TComboBoxCategoria_TextChanged);
             // 
             // TComboBoxModelo
             // 
@@ -73,6 +74,7 @@
             this.TComboBoxModelo.Size = new System.Drawing.Size(121, 21);
             this.TComboBoxModelo.TabIndex = 28;
             this.TComboBoxModelo.Text = "Seleccione Modelo";
+            this.TComboBoxModelo.TextChanged += new System.EventHandler(this.TComboBoxModelo_TextChanged);
             // 
             // TLabelCategoria
             // 
