@@ -63,14 +63,16 @@
             this.TComboBoxCategoria.Name = "TComboBoxCategoria";
             this.TComboBoxCategoria.Size = new System.Drawing.Size(121, 21);
             this.TComboBoxCategoria.TabIndex = 27;
+            this.TComboBoxCategoria.Text = "Seleccione Categoria";
             // 
             // TComboBoxModelo
             // 
             this.TComboBoxModelo.FormattingEnabled = true;
-            this.TComboBoxModelo.Location = new System.Drawing.Point(339, 158);
+            this.TComboBoxModelo.Location = new System.Drawing.Point(339, 154);
             this.TComboBoxModelo.Name = "TComboBoxModelo";
             this.TComboBoxModelo.Size = new System.Drawing.Size(121, 21);
             this.TComboBoxModelo.TabIndex = 28;
+            this.TComboBoxModelo.Text = "Seleccione Modelo";
             // 
             // TLabelCategoria
             // 
@@ -86,7 +88,7 @@
             // 
             this.TLabelModelo.AutoSize = true;
             this.TLabelModelo.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelModelo.Location = new System.Drawing.Point(288, 161);
+            this.TLabelModelo.Location = new System.Drawing.Point(288, 157);
             this.TLabelModelo.Name = "TLabelModelo";
             this.TLabelModelo.Size = new System.Drawing.Size(45, 13);
             this.TLabelModelo.TabIndex = 30;
@@ -96,7 +98,7 @@
             // 
             this.TLabelMatricula.AutoSize = true;
             this.TLabelMatricula.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelMatricula.Location = new System.Drawing.Point(544, 161);
+            this.TLabelMatricula.Location = new System.Drawing.Point(544, 157);
             this.TLabelMatricula.Name = "TLabelMatricula";
             this.TLabelMatricula.Size = new System.Drawing.Size(53, 13);
             this.TLabelMatricula.TabIndex = 31;
@@ -105,10 +107,11 @@
             // TComboBoxMatricula
             // 
             this.TComboBoxMatricula.FormattingEnabled = true;
-            this.TComboBoxMatricula.Location = new System.Drawing.Point(603, 158);
+            this.TComboBoxMatricula.Location = new System.Drawing.Point(603, 154);
             this.TComboBoxMatricula.Name = "TComboBoxMatricula";
             this.TComboBoxMatricula.Size = new System.Drawing.Size(121, 21);
             this.TComboBoxMatricula.TabIndex = 32;
+            this.TComboBoxMatricula.Text = "Seleccione Matricula";
             // 
             // TLabelConductores
             // 

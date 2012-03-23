@@ -1,11 +1,38 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Configuration;
+using System.Data;
+using System.Data.Common;
+using System.Data.SqlClient;
+using System.Data.SqlTypes;
+using System.Collections;
 
 namespace CAD
 {
-    class CADReservas
+    public class CADReservas
     {
+        static private String cadenaConexion = ConfigurationManager.ConnectionStrings["AlquilerCoches"].ConnectionString; // @"Data Source=|DataDirectory|\BBDD.sdf";
+        static private String nombreTabla = "Categorias";
+        public DataSet RellenarCategoria()
+        {
+            DataSet dsCat = new DataSet();
+
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                String consulta = "Select * from Categoria";
+                SqlDataAdapter daCat = new SqlDataAdapter(consulta, conexion);
+                daCat.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daCat.Fill(dsCat, nombreTabla);
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+
+            return dsCat;
+        }
     }
 }
