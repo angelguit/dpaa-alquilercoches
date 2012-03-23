@@ -50,6 +50,10 @@
             this.TButtonCerrar = new System.Windows.Forms.Button();
             this.bBDDDataSet = new AlquilerCoches.BBDDDataSet();
             this.bBDDDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.TTextBoxCiudad = new System.Windows.Forms.TextBox();
+            this.TTextBoxProvincia = new System.Windows.Forms.TextBox();
+            this.TLabelCiudad = new System.Windows.Forms.Label();
+            this.TLabelProvincia = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.TDataGridViewPersonal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -59,7 +63,7 @@
             // 
             // TButtonEliminar
             // 
-            this.TButtonEliminar.Location = new System.Drawing.Point(139, 126);
+            this.TButtonEliminar.Location = new System.Drawing.Point(136, 166);
             this.TButtonEliminar.Name = "TButtonEliminar";
             this.TButtonEliminar.Size = new System.Drawing.Size(75, 23);
             this.TButtonEliminar.TabIndex = 23;
@@ -69,7 +73,7 @@
             // 
             // TButtonBuscar
             // 
-            this.TButtonBuscar.Location = new System.Drawing.Point(34, 126);
+            this.TButtonBuscar.Location = new System.Drawing.Point(31, 166);
             this.TButtonBuscar.Name = "TButtonBuscar";
             this.TButtonBuscar.Size = new System.Drawing.Size(75, 23);
             this.TButtonBuscar.TabIndex = 22;
@@ -125,7 +129,7 @@
             // 
             this.TLabelDNI.AutoSize = true;
             this.TLabelDNI.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelDNI.Location = new System.Drawing.Point(33, 30);
+            this.TLabelDNI.Location = new System.Drawing.Point(47, 30);
             this.TLabelDNI.Name = "TLabelDNI";
             this.TLabelDNI.Size = new System.Drawing.Size(26, 13);
             this.TLabelDNI.TabIndex = 22;
@@ -135,7 +139,7 @@
             // 
             this.TLabelNombre.AutoSize = true;
             this.TLabelNombre.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelNombre.Location = new System.Drawing.Point(15, 69);
+            this.TLabelNombre.Location = new System.Drawing.Point(29, 69);
             this.TLabelNombre.Name = "TLabelNombre";
             this.TLabelNombre.Size = new System.Drawing.Size(44, 13);
             this.TLabelNombre.TabIndex = 23;
@@ -145,7 +149,7 @@
             // 
             this.TLabelApellidos.AutoSize = true;
             this.TLabelApellidos.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelApellidos.Location = new System.Drawing.Point(232, 30);
+            this.TLabelApellidos.Location = new System.Drawing.Point(246, 30);
             this.TLabelApellidos.Name = "TLabelApellidos";
             this.TLabelApellidos.Size = new System.Drawing.Size(49, 13);
             this.TLabelApellidos.TabIndex = 24;
@@ -155,7 +159,7 @@
             // 
             this.TLabelPuestoAc.AutoSize = true;
             this.TLabelPuestoAc.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelPuestoAc.Location = new System.Drawing.Point(222, 69);
+            this.TLabelPuestoAc.Location = new System.Drawing.Point(236, 69);
             this.TLabelPuestoAc.Name = "TLabelPuestoAc";
             this.TLabelPuestoAc.Size = new System.Drawing.Size(59, 13);
             this.TLabelPuestoAc.TabIndex = 25;
@@ -163,28 +167,28 @@
             // 
             // TTextBoxDNI
             // 
-            this.TTextBoxDNI.Location = new System.Drawing.Point(66, 22);
+            this.TTextBoxDNI.Location = new System.Drawing.Point(80, 22);
             this.TTextBoxDNI.Name = "TTextBoxDNI";
             this.TTextBoxDNI.Size = new System.Drawing.Size(100, 20);
             this.TTextBoxDNI.TabIndex = 26;
             // 
             // TTextBoxNombre
             // 
-            this.TTextBoxNombre.Location = new System.Drawing.Point(66, 61);
+            this.TTextBoxNombre.Location = new System.Drawing.Point(80, 61);
             this.TTextBoxNombre.Name = "TTextBoxNombre";
             this.TTextBoxNombre.Size = new System.Drawing.Size(100, 20);
             this.TTextBoxNombre.TabIndex = 27;
             // 
             // TTextBoxApellidos
             // 
-            this.TTextBoxApellidos.Location = new System.Drawing.Point(287, 22);
+            this.TTextBoxApellidos.Location = new System.Drawing.Point(301, 22);
             this.TTextBoxApellidos.Name = "TTextBoxApellidos";
             this.TTextBoxApellidos.Size = new System.Drawing.Size(100, 20);
             this.TTextBoxApellidos.TabIndex = 28;
             // 
             // TTextBoxPuestoAc
             // 
-            this.TTextBoxPuestoAc.Location = new System.Drawing.Point(287, 61);
+            this.TTextBoxPuestoAc.Location = new System.Drawing.Point(301, 61);
             this.TTextBoxPuestoAc.Name = "TTextBoxPuestoAc";
             this.TTextBoxPuestoAc.Size = new System.Drawing.Size(100, 20);
             this.TTextBoxPuestoAc.TabIndex = 29;
@@ -193,6 +197,10 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.TTextBoxCiudad);
+            this.panel1.Controls.Add(this.TTextBoxProvincia);
+            this.panel1.Controls.Add(this.TLabelCiudad);
+            this.panel1.Controls.Add(this.TLabelProvincia);
             this.panel1.Controls.Add(this.TTextBoxPuestoAc);
             this.panel1.Controls.Add(this.TButtonEliminar);
             this.panel1.Controls.Add(this.TButtonBuscar);
@@ -205,7 +213,7 @@
             this.panel1.Controls.Add(this.TLabelDNI);
             this.panel1.Location = new System.Drawing.Point(94, 267);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(473, 168);
+            this.panel1.Size = new System.Drawing.Size(473, 216);
             this.panel1.TabIndex = 24;
             // 
             // TButtonCerrar
@@ -227,6 +235,40 @@
             // 
             this.bBDDDataSetBindingSource.DataSource = this.bBDDDataSet;
             this.bBDDDataSetBindingSource.Position = 0;
+            // 
+            // TTextBoxCiudad
+            // 
+            this.TTextBoxCiudad.Location = new System.Drawing.Point(301, 99);
+            this.TTextBoxCiudad.Name = "TTextBoxCiudad";
+            this.TTextBoxCiudad.Size = new System.Drawing.Size(100, 20);
+            this.TTextBoxCiudad.TabIndex = 33;
+            // 
+            // TTextBoxProvincia
+            // 
+            this.TTextBoxProvincia.Location = new System.Drawing.Point(80, 99);
+            this.TTextBoxProvincia.Name = "TTextBoxProvincia";
+            this.TTextBoxProvincia.Size = new System.Drawing.Size(100, 20);
+            this.TTextBoxProvincia.TabIndex = 32;
+            // 
+            // TLabelCiudad
+            // 
+            this.TLabelCiudad.AutoSize = true;
+            this.TLabelCiudad.BackColor = System.Drawing.Color.Transparent;
+            this.TLabelCiudad.Location = new System.Drawing.Point(255, 107);
+            this.TLabelCiudad.Name = "TLabelCiudad";
+            this.TLabelCiudad.Size = new System.Drawing.Size(40, 13);
+            this.TLabelCiudad.TabIndex = 31;
+            this.TLabelCiudad.Text = "Ciudad";
+            // 
+            // TLabelProvincia
+            // 
+            this.TLabelProvincia.AutoSize = true;
+            this.TLabelProvincia.BackColor = System.Drawing.Color.Transparent;
+            this.TLabelProvincia.Location = new System.Drawing.Point(16, 107);
+            this.TLabelProvincia.Name = "TLabelProvincia";
+            this.TLabelProvincia.Size = new System.Drawing.Size(57, 13);
+            this.TLabelProvincia.TabIndex = 30;
+            this.TLabelProvincia.Text = "Pronvincia";
             // 
             // GestionPersonalBuscar
             // 
@@ -279,5 +321,9 @@
         private System.Windows.Forms.Button TButtonCerrar;
         private BBDDDataSet bBDDDataSet;
         private System.Windows.Forms.BindingSource bBDDDataSetBindingSource;
+        private System.Windows.Forms.TextBox TTextBoxCiudad;
+        private System.Windows.Forms.TextBox TTextBoxProvincia;
+        private System.Windows.Forms.Label TLabelCiudad;
+        private System.Windows.Forms.Label TLabelProvincia;
 	}
 }

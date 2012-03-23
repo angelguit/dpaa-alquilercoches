@@ -27,25 +27,9 @@ namespace EN
         private string otrospuestos;
 
 
-        private CAD.CADPersonal cadPersonal = new CAD.CADPersonal();
+     //   private CAD.CADPersonal cadPersonal = new CAD.CADPersonal();
 
-        public DataSet ObtenerListaPersonal()
-        {
-            DataSet resultado = new DataSet();
-            try
-            {
-                resultado = cadPersonal.ObtenerTablaPersonal();
-            }
-            catch (Exception ex)
-            {
-                throw (ex);
-            }
-
-            return resultado;
-        }
-
-
-        public string DNI
+      /*  public string DNI
         {
             get { return dni; }
             set { dni = DNI; }
@@ -94,7 +78,28 @@ namespace EN
         {
             get { return otrospuestos; }
             set { otrospuestos = OtrosPuestos; }
+        }*/
+
+        public DataSet ObtenerListaPersonal()
+        {
+            DataSet resul = new DataSet();
+            DataSet resuu = new DataSet();
+          /*  try
+            {
+               // string provi = 
+               // resultado = cadPersonal.ObtenerTablaPersonal(ciudad);
+            }
+            catch (Exception ex)
+            {
+                
+                throw (ex);
+            }*/
+
+            return resuu;
         }
+
+
+
 
     }
 }

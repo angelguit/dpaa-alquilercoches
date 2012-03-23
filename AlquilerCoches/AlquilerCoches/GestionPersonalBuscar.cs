@@ -19,14 +19,6 @@ namespace AlquilerCoches
         {
             InitializeComponent();
 
-            /*  DataGridViewButtonColumn colBotones = new DataGridViewButtonColumn();
-              colBotones.Name = "colBotones";
-              colBotones.HeaderText = "Editar";
-              colBotones.ReadOnly = true;
-              colBotones.Text="Editar";
-              colBotones.
-
-              this.TDataGridViewPersonal.Columns.Add(colBotones);*/
             DataGridViewButtonColumn buttons = new DataGridViewButtonColumn();
             {
                 buttons.HeaderText = "Editar"; //texto de la columna
@@ -107,17 +99,23 @@ namespace AlquilerCoches
             {
                 MessageBox.Show("Campos invalidos, reviselos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            } 
+            }
             else
-            TButtonEliminar.Visible = true;
+            {
+                TButtonEliminar.Visible = true;
+                ds = new DataSet();
+                EN.ENPersonal enPerson = new EN.ENPersonal();
 
-            ds = new DataSet();
-            EN.ENPersonal enPerson = new EN.ENPersonal();
+               // enPerson.Ciudad = TTextBoxCiudad.Text;
+                //MessageBox.Show("mensa" + TTextBoxProvincia.Text);
+                
+                ds = enPerson.ObtenerListaPersonal();
+                
+                TTextBoxApellidos.Text = ds.Tables[0].Rows[0][1].ToString();
 
-            ds = enPerson.ObtenerListaPersonal();
+                
 
-
-            TTextBoxApellidos.Text = ds.Tables[0].Rows[0][1].ToString();
+            }
         }
 
         private void TButtonCerrar_Click(object sender, EventArgs e)
