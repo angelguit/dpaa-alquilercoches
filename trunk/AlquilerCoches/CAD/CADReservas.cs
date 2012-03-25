@@ -14,7 +14,7 @@ namespace CAD
     public class CADReservas
     {
         static private String cadenaConexion = ConfigurationManager.ConnectionStrings["AlquilerCoches"].ConnectionString; // @"Data Source=|DataDirectory|\BBDD.sdf";
-
+        static private SqlDataAdapter daRes;
         public DataSet RellenarCategoria()
         {
             DataSet dsCat = new DataSet();
@@ -23,9 +23,9 @@ namespace CAD
             {
                 SqlConnection conexion = new SqlConnection(cadenaConexion);
                 String consulta = "Select * from Categoria";
-                SqlDataAdapter daCat = new SqlDataAdapter(consulta, conexion);
-                daCat.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-                daCat.Fill(dsCat, "Categorias");
+                daRes = new SqlDataAdapter(consulta, conexion);
+                daRes.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daRes.Fill(dsCat, "Categorias");
             }
             catch (Exception ex)
             {
@@ -43,7 +43,7 @@ namespace CAD
             {
                 SqlConnection conexion = new SqlConnection(cadenaConexion);
                 String consulta = "Select * from Reservas";
-                SqlDataAdapter daRes = new SqlDataAdapter(consulta, conexion);
+                daRes = new SqlDataAdapter(consulta, conexion);
                 daRes.MissingSchemaAction = MissingSchemaAction.AddWithKey;
                 daRes.Fill(dsRes, "Reservas");
             }
@@ -53,6 +53,23 @@ namespace CAD
             }
 
             return dsRes;
+        }
+
+        public bool NuevaReserva(DataSet dsRes)
+        {
+            bool retorno = true;
+            try
+            {
+                SqlCommandBuilder cbuilder = new SqlCommandBuilder(daRes);
+                daRes.Update(dsRes, "Reservas");
+            }
+            catch (Exception ex)
+            {
+                retorno = false;
+                throw (ex);
+            }
+
+            return retorno;
         }
     }
 }
