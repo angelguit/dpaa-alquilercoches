@@ -34,5 +34,25 @@ namespace CAD
 
             return dsCat;
         }
+
+        public DataSet ObtenerReservas()
+        {
+            DataSet dsRes = new DataSet();
+
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                String consulta = "Select * from Reservas";
+                SqlDataAdapter daRes = new SqlDataAdapter(consulta, conexion);
+                daRes.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daRes.Fill(dsRes, "Reservas");
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+
+            return dsRes;
+        }
     }
 }
