@@ -44,6 +44,7 @@
             this.TButtonReserva = new System.Windows.Forms.Button();
             this.TLabelNombre = new System.Windows.Forms.Label();
             this.TLabelDNI = new System.Windows.Forms.Label();
+            this.TLabelErrorFecha = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -162,6 +163,7 @@
             this.TDateTimePickerFechaInicio.Size = new System.Drawing.Size(98, 20);
             this.TDateTimePickerFechaInicio.TabIndex = 36;
             this.TDateTimePickerFechaInicio.Value = new System.DateTime(2012, 3, 22, 21, 10, 41, 0);
+            this.TDateTimePickerFechaInicio.ValueChanged += new System.EventHandler(this.TDateTimePickerFechaInicio_ValueChanged);
             // 
             // TLabelFechaFin
             // 
@@ -180,6 +182,7 @@
             this.TDateTimePickerFechaFin.Name = "TDateTimePickerFechaFin";
             this.TDateTimePickerFechaFin.Size = new System.Drawing.Size(117, 20);
             this.TDateTimePickerFechaFin.TabIndex = 38;
+            this.TDateTimePickerFechaFin.ValueChanged += new System.EventHandler(this.TDateTimePickerFechaFin_ValueChanged);
             // 
             // TButtonReserva
             // 
@@ -189,6 +192,7 @@
             this.TButtonReserva.TabIndex = 39;
             this.TButtonReserva.Text = "Realizar Reserva";
             this.TButtonReserva.UseVisualStyleBackColor = true;
+            this.TButtonReserva.Click += new System.EventHandler(this.TButtonReserva_Click);
             // 
             // TLabelNombre
             // 
@@ -212,6 +216,19 @@
             this.TLabelDNI.Text = "label1";
             this.TLabelDNI.Visible = false;
             // 
+            // TLabelErrorFecha
+            // 
+            this.TLabelErrorFecha.AutoSize = true;
+            this.TLabelErrorFecha.BackColor = System.Drawing.Color.Transparent;
+            this.TLabelErrorFecha.Font = new System.Drawing.Font("Broadway", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TLabelErrorFecha.ForeColor = System.Drawing.Color.Red;
+            this.TLabelErrorFecha.Location = new System.Drawing.Point(544, 256);
+            this.TLabelErrorFecha.Name = "TLabelErrorFecha";
+            this.TLabelErrorFecha.Size = new System.Drawing.Size(225, 12);
+            this.TLabelErrorFecha.TabIndex = 42;
+            this.TLabelErrorFecha.Text = "Fecha fin inferior a fecha inicio";
+            this.TLabelErrorFecha.Visible = false;
+            // 
             // AltaReservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -219,6 +236,7 @@
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(837, 590);
+            this.Controls.Add(this.TLabelErrorFecha);
             this.Controls.Add(this.TLabelDNI);
             this.Controls.Add(this.TLabelNombre);
             this.Controls.Add(this.TButtonReserva);
@@ -261,5 +279,6 @@
         private System.Windows.Forms.Button TButtonReserva;
         private System.Windows.Forms.Label TLabelNombre;
         private System.Windows.Forms.Label TLabelDNI;
+        private System.Windows.Forms.Label TLabelErrorFecha;
     }
 }

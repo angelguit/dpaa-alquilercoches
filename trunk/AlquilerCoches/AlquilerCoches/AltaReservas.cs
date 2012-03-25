@@ -69,5 +69,37 @@ namespace AlquilerCoches
             dsVe = enVe.ObtenerListaMatriculasVehiculos(TComboBoxModelo.Text.ToString());
             RellenarMatriculas(dsVe);
         }
+
+        private void TButtonReserva_Click(object sender, EventArgs e)
+        {
+            if (TLabelErrorFecha.Visible)
+            {
+                MessageBox.Show("Fecha fin no puede ser superior a fecha inicio", "Fechas incorrectas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void TDateTimePickerFechaFin_ValueChanged(object sender, EventArgs e)
+        {
+            if (TDateTimePickerFechaInicio.Value > TDateTimePickerFechaFin.Value)
+            {
+                TLabelErrorFecha.Visible = true;
+            }
+            else
+            {
+                TLabelErrorFecha.Visible = false;
+            }
+        }
+
+        private void TDateTimePickerFechaInicio_ValueChanged(object sender, EventArgs e)
+        {
+            if (TDateTimePickerFechaInicio.Value > TDateTimePickerFechaFin.Value)
+            {
+                TLabelErrorFecha.Visible = true;
+            }
+            else
+            {
+                TLabelErrorFecha.Visible = false;
+            }
+        }
     }
 }
