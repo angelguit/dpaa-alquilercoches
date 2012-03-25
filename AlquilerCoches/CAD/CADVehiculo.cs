@@ -42,7 +42,7 @@ namespace CAD
             try
             {
                 SqlConnection conexion = new SqlConnection(cadenaConexion);
-                String consulta = "Select Modelo from Vehiculo WHERE FK_Categoria = '" + cat + "'";
+                String consulta = "Select Modelo from Vehiculo WHERE (FK_Categoria = '" + cat + "') AND (Estado = 'Disponible')";
                 SqlDataAdapter daCaminos = new SqlDataAdapter(consulta, conexion);
                 daCaminos.MissingSchemaAction = MissingSchemaAction.AddWithKey;
                 daCaminos.Fill(dsVehiculo, "Modelos");
@@ -61,7 +61,7 @@ namespace CAD
             try
             {
                 SqlConnection conexion = new SqlConnection(cadenaConexion);
-                String consulta = "Select Matricula from Vehiculo WHERE Modelo = '" + mod + "'";
+                String consulta = "Select Matricula from Vehiculo WHERE (Modelo = '" + mod + "') AND (Estado = 'Disponible')";
                 SqlDataAdapter daCaminos = new SqlDataAdapter(consulta, conexion);
                 daCaminos.MissingSchemaAction = MissingSchemaAction.AddWithKey;
                 daCaminos.Fill(dsVehiculo, "Matriculas");

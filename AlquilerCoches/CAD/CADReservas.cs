@@ -14,7 +14,7 @@ namespace CAD
     public class CADReservas
     {
         static private String cadenaConexion = ConfigurationManager.ConnectionStrings["AlquilerCoches"].ConnectionString; // @"Data Source=|DataDirectory|\BBDD.sdf";
-        static private String nombreTabla = "Categorias";
+
         public DataSet RellenarCategoria()
         {
             DataSet dsCat = new DataSet();
@@ -25,7 +25,7 @@ namespace CAD
                 String consulta = "Select * from Categoria";
                 SqlDataAdapter daCat = new SqlDataAdapter(consulta, conexion);
                 daCat.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-                daCat.Fill(dsCat, nombreTabla);
+                daCat.Fill(dsCat, "Categorias");
             }
             catch (Exception ex)
             {
