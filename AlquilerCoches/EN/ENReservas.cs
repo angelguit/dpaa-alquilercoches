@@ -25,6 +25,19 @@ namespace EN
 
         private CAD.CADReservas cadReservas = new CAD.CADReservas();
 
+        public DataSet ObtenerReservas()
+        {
+            DataSet resultado = new DataSet();
+            try
+            {
+                resultado = cadReservas.ObtenerReservas();
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            return resultado;
+        }
         public DataSet RellenarCategoria()
         {
             DataSet resultado = new DataSet();

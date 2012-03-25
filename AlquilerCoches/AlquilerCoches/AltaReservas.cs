@@ -76,6 +76,10 @@ namespace AlquilerCoches
             {
                 MessageBox.Show("Fecha fin no puede ser superior a fecha inicio", "Fechas incorrectas", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            EN.ENReservas enRe = new EN.ENReservas();
+            DataSet dsRe = new DataSet();
+            dsRe = enRe.ObtenerReservas();
+            
         }
 
         private void TDateTimePickerFechaFin_ValueChanged(object sender, EventArgs e)
