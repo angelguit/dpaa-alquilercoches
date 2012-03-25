@@ -55,7 +55,7 @@ namespace CAD
             return dsRes;
         }
 
-        public bool NuevaReserva(DataSet dsRes)
+        public bool ActualizarReservas(DataSet dsRes)
         {
             bool retorno = true;
             try

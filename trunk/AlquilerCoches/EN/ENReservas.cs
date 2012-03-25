@@ -25,6 +25,10 @@ namespace EN
 
         private CAD.CADReservas cadReservas = new CAD.CADReservas();
 
+        public bool ActualizarReservas(DataSet dsRes)
+        {
+            return cadReservas.ActualizarReservas(dsRes);
+        }
         public DataSet ObtenerReservas()
         {
             DataSet resultado = new DataSet();
