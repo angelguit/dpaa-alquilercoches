@@ -175,5 +175,10 @@ namespace AlquilerCoches
             Close();
         }
 
+        private void TGroupBoxProveedores_Enter(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

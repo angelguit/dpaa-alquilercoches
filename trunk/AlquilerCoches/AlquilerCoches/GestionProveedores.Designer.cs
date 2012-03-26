@@ -135,6 +135,7 @@
             this.TGroupBoxProveedores.TabIndex = 52;
             this.TGroupBoxProveedores.TabStop = false;
             this.TGroupBoxProveedores.Text = "Datos Proveedor";
+            this.TGroupBoxProveedores.Enter += new System.EventHandler(this.TGroupBoxProveedores_Enter);
             // 
             // TTextBoxNumero
             // 
@@ -329,7 +330,7 @@
             this.TButtonEliminar.Name = "TButtonEliminar";
             this.TButtonEliminar.Size = new System.Drawing.Size(103, 23);
             this.TButtonEliminar.TabIndex = 53;
-            this.TButtonEliminar.Text = "Eliminar Proveedor";
+            this.TButtonEliminar.Text = "Guardar";
             this.TButtonEliminar.UseVisualStyleBackColor = true;
             this.TButtonEliminar.Visible = false;
             // 
