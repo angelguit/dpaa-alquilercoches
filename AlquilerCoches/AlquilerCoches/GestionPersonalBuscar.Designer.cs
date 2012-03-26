@@ -32,11 +32,6 @@
             this.TButtonEliminar = new System.Windows.Forms.Button();
             this.TButtonBuscar = new System.Windows.Forms.Button();
             this.TDataGridViewPersonal = new System.Windows.Forms.DataGridView();
-            this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.TLabelDNI = new System.Windows.Forms.Label();
             this.TLabelNombre = new System.Windows.Forms.Label();
@@ -82,42 +77,11 @@
             // TDataGridViewPersonal
             // 
             this.TDataGridViewPersonal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TDataGridViewPersonal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.DNI,
-            this.Nombre,
-            this.Apellidos,
-            this.Telefono,
-            this.Email});
             this.TDataGridViewPersonal.Location = new System.Drawing.Point(94, 35);
             this.TDataGridViewPersonal.Name = "TDataGridViewPersonal";
             this.TDataGridViewPersonal.Size = new System.Drawing.Size(544, 209);
             this.TDataGridViewPersonal.TabIndex = 12;
             this.TDataGridViewPersonal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TDataGridViewPersonal_CellContentClick);
-            // 
-            // DNI
-            // 
-            this.DNI.HeaderText = "DNI";
-            this.DNI.Name = "DNI";
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            // 
-            // Apellidos
-            // 
-            this.Apellidos.HeaderText = "Apellidos";
-            this.Apellidos.Name = "Apellidos";
-            // 
-            // Telefono
-            // 
-            this.Telefono.HeaderText = "Telefono";
-            this.Telefono.Name = "Telefono";
-            // 
-            // Email
-            // 
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
             // 
             // errorProvider1
             // 
@@ -290,11 +254,6 @@
         private System.Windows.Forms.Button TButtonEliminar;
         private System.Windows.Forms.Button TButtonBuscar;
         private System.Windows.Forms.DataGridView TDataGridViewPersonal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DNI;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Apellidos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox TTextBoxPuestoAc;
