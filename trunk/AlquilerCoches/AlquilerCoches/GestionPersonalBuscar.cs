@@ -108,11 +108,12 @@ namespace AlquilerCoches
 
                // enPerson.Ciudad = TTextBoxCiudad.Text;
                 //MessageBox.Show("mensa" + TTextBoxProvincia.Text);
-                
-                ds = enPerson.ObtenerListaPersonal();
-                
-                TTextBoxApellidos.Text = ds.Tables[0].Rows[0][1].ToString();
 
+                ds = enPerson.ObtenerListaPersonal(TTextBoxCiudad.Text.ToString());
+                
+
+                  TDataGridViewPersonal.DataSource = ds;
+                  TDataGridViewPersonal.DataMember = "Personal";
                 
 
             }
@@ -142,7 +143,7 @@ namespace AlquilerCoches
                     else
                     {
 
-                        string nom = TDataGridViewPersonal.Rows[e.RowIndex].Cells[1].Value.ToString();//indice 1 para cojer el nombre
+                        string nom = TDataGridViewPersonal.Rows[e.RowIndex].Cells[3].Value.ToString();//indice 1 para cojer el nombre
                         // MessageBox.Show("mensaje" + e.ColumnIndex+" , "+e.RowIndex); 
 
                         GestionPersonal Formu = new GestionPersonal(nom);
