@@ -350,6 +350,13 @@ namespace AlquilerCoches
             altaReserva.Show();
         }
 
+        private void buscarReservasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GestionReservas gestionReservas = new GestionReservas();
+            gestionReservas.MdiParent = this;
+            gestionReservas.Show();
+        }
+
      
      }   
 }
