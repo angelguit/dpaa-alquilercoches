@@ -68,11 +68,41 @@ namespace AlquilerCoches
             } 
             else
             {
-                  ds=new DataSet();
+                 /* ds=new DataSet();
                   EN.ENPedidos enPedidos= new EN.ENPedidos();
 
-                  ds= enPedidos.ObtenerListaPedidos();
+                  ds= enPedidos.ObtenerListaPedidos(); */
             }
+        }
+
+        private void TDataGridViewPedidos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (TDataGridViewPedidos.Rows[e.RowIndex].Cells[e.ColumnIndex].ColumnIndex.ToString() == "4")
+                {
+                    MessageBox.Show("que pasa tronco");
+                }
+                else
+                {
+                    if (TDataGridViewPedidos.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "Editar")
+                    {
+                        if (Application.OpenForms["GestionPedidos"] != null)
+                        {
+                            Application.OpenForms["GestionPedidos"].Activate();
+                        }
+
+
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error no hay valores en la fila");
+            }
+
+
+                        
         }
     }
 }
