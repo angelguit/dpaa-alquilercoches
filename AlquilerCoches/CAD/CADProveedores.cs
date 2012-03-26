@@ -35,5 +35,33 @@ namespace CAD
 
             return dsProveedores;
         }
+
+        public void BorrarProveedor(string proveedorID)
+        {
+            SqlConnection conn = null; 
+            // Encapsula todo el acceso a datos dentro del try 
+            String comando = "Delete from Cliente where id = "+ proveedorID;
+            try 
+            { 
+                conn.Open();
+                conn = new SqlConnection(cadenaConexion);
+                SqlCommand cmd = new SqlCommand(comando, conn );
+                 cmd.ExecuteNonQuery();
+            } 
+           // catch (SqlException sqlex) 
+            //{ 
+                // Envuelve la excepción actual en una excepción mas relevante 
+                //throw new CADException ("Error borrando el cliente: " + proveedorID, sqlex ); 
+            //} 
+            catch (Exception ex) 
+            { 
+                // Captura la condición general y la reenvía. 
+                throw ex; 
+            } 
+            finally 
+            { 
+              if(conn != null) conn.Close(); // Se asegura de cerrar la conexión. 
+            }
+        }
     }
 }
