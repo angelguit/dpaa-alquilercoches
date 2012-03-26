@@ -16,15 +16,15 @@ namespace CAD
       //static private String cadenaConexion = @"Data Source=.\SQLEXPRESS;AttachDbFilename='C:\Users\Dani\Documents\Visual Studio 2010\Projects\AlquilerCoches\AlquilerCoches\AlquilerCoches\BBDD.mdf';Integrated Security=True;User Instance=True";
         static private String cadenaConexion = ConfigurationManager.ConnectionStrings["AlquilerCoches"].ConnectionString; // @"Data Source=|DataDirectory|\BBDD.sdf";
         static private String nombreTabla = "Personal";
-        
-        public DataSet ObtenerTablaPersonal(string ciudad)
+
+        public DataSet ObtenerTablaPersonal(string ciu)
         {
             DataSet dsPersonal = new DataSet();
-            string ciu = "orihuela";
+            
             try
             {
                 SqlConnection conexion = new SqlConnection(cadenaConexion);
-                String consulta = "Select * FROM Personal WHERE ciudad like '%"+ ciu +"%'";
+                String consulta = "Select * FROM Personal WHERE ciudad like '%"+ciu+"%'";
                 SqlDataAdapter daPersonal = new SqlDataAdapter(consulta, conexion);
                 daPersonal.MissingSchemaAction = MissingSchemaAction.AddWithKey;
                 daPersonal.Fill(dsPersonal, nombreTabla); //dsPersonal es ahora nuestra base de datos local
