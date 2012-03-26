@@ -47,17 +47,15 @@
             this.TTextBoxApellidos = new System.Windows.Forms.TextBox();
             this.TTextBoxPuestoAc = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.TButtonCerrar = new System.Windows.Forms.Button();
-            this.bBDDDataSet = new AlquilerCoches.BBDDDataSet();
-            this.bBDDDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.TTextBoxCiudad = new System.Windows.Forms.TextBox();
             this.TTextBoxProvincia = new System.Windows.Forms.TextBox();
             this.TLabelCiudad = new System.Windows.Forms.Label();
             this.TLabelProvincia = new System.Windows.Forms.Label();
+            this.TButtonCerrar = new System.Windows.Forms.Button();
+            this.bBDDDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.TDataGridViewPersonal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bBDDDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bBDDDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -216,26 +214,6 @@
             this.panel1.Size = new System.Drawing.Size(473, 216);
             this.panel1.TabIndex = 24;
             // 
-            // TButtonCerrar
-            // 
-            this.TButtonCerrar.Location = new System.Drawing.Point(57, 547);
-            this.TButtonCerrar.Name = "TButtonCerrar";
-            this.TButtonCerrar.Size = new System.Drawing.Size(75, 23);
-            this.TButtonCerrar.TabIndex = 30;
-            this.TButtonCerrar.Text = "Cerrar";
-            this.TButtonCerrar.UseVisualStyleBackColor = true;
-            this.TButtonCerrar.Click += new System.EventHandler(this.TButtonCerrar_Click);
-            // 
-            // bBDDDataSet
-            // 
-            this.bBDDDataSet.DataSetName = "BBDDDataSet";
-            this.bBDDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bBDDDataSetBindingSource
-            // 
-            this.bBDDDataSetBindingSource.DataSource = this.bBDDDataSet;
-            this.bBDDDataSetBindingSource.Position = 0;
-            // 
             // TTextBoxCiudad
             // 
             this.TTextBoxCiudad.Location = new System.Drawing.Point(301, 99);
@@ -270,6 +248,16 @@
             this.TLabelProvincia.TabIndex = 30;
             this.TLabelProvincia.Text = "Pronvincia";
             // 
+            // TButtonCerrar
+            // 
+            this.TButtonCerrar.Location = new System.Drawing.Point(57, 547);
+            this.TButtonCerrar.Name = "TButtonCerrar";
+            this.TButtonCerrar.Size = new System.Drawing.Size(75, 23);
+            this.TButtonCerrar.TabIndex = 30;
+            this.TButtonCerrar.Text = "Cerrar";
+            this.TButtonCerrar.UseVisualStyleBackColor = true;
+            this.TButtonCerrar.Click += new System.EventHandler(this.TButtonCerrar_Click);
+            // 
             // GestionPersonalBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -292,7 +280,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bBDDDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bBDDDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
 

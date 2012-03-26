@@ -38,7 +38,7 @@
             this.TBuscarbutton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.TIDtextBox = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.TDataGridViewPedidos = new System.Windows.Forms.DataGridView();
             this.TEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TDescripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,7 +46,7 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             this.TEstadogroupbox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TDataGridViewPedidos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -145,18 +145,19 @@
             this.TIDtextBox.Size = new System.Drawing.Size(101, 20);
             this.TIDtextBox.TabIndex = 2;
             // 
-            // dataGridView1
+            // TDataGridViewPedidos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TDataGridViewPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TDataGridViewPedidos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TEstado,
             this.TNombre,
             this.TDescripción,
             this.TProveedor});
-            this.dataGridView1.Location = new System.Drawing.Point(71, 136);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(445, 263);
-            this.dataGridView1.TabIndex = 3;
+            this.TDataGridViewPedidos.Location = new System.Drawing.Point(71, 136);
+            this.TDataGridViewPedidos.Name = "TDataGridViewPedidos";
+            this.TDataGridViewPedidos.Size = new System.Drawing.Size(445, 263);
+            this.TDataGridViewPedidos.TabIndex = 3;
+            this.TDataGridViewPedidos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TDataGridViewPedidos_CellContentClick);
             // 
             // TEstado
             // 
@@ -190,7 +191,7 @@
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(668, 474);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.TDataGridViewPedidos);
             this.Controls.Add(this.groupBox1);
             this.Name = "BuscarPedidos";
             this.Text = "Buscar Pedidos";
@@ -199,7 +200,7 @@
             this.groupBox1.PerformLayout();
             this.TEstadogroupbox.ResumeLayout(false);
             this.TEstadogroupbox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TDataGridViewPedidos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
@@ -214,7 +215,7 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Button TBuscarbutton;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView TDataGridViewPedidos;
         private System.Windows.Forms.Label TNamelabel;
         private System.Windows.Forms.TextBox TNametextbox;
         private System.Windows.Forms.DataGridViewTextBoxColumn TEstado;
