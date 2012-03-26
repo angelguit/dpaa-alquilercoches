@@ -11,6 +11,13 @@ namespace AlquilerCoches
 {
     public partial class AltaReservas : Form
     {
+        private void RellenarMarcas(DataSet dsMar)
+        {
+            TComboBoxMarca.DataSource = dsMar.Tables["Marcas"];
+            TComboBoxMarca.DisplayMember = dsMar.Tables["Marcas"].Columns[0].Caption.ToString();
+            TComboBoxMarca.Text = "Seleccione Marca";
+        }
+
         private void RellenarCategoria(DataSet dsCat)
         {
             TComboBoxCategoria.DataSource = dsCat.Tables["Categorias"];
@@ -27,8 +34,8 @@ namespace AlquilerCoches
 
         private void RellenarMatriculas(DataSet dsMod)
         {
-            TComboBoxMatricula.DataSource = dsMod.Tables["Matriculas"];
-            TComboBoxMatricula.DisplayMember = dsMod.Tables["Matriculas"].Columns[0].Caption.ToString();
+            TComboBoxMatricula.DataSource = dsMod.Tables["Vehiculo"];
+            TComboBoxMatricula.DisplayMember = dsMod.Tables["Vehiculo"].Columns[0].Caption.ToString();
             TComboBoxMatricula.Text = "Seleccione Matricula";
         }
 
@@ -58,15 +65,15 @@ namespace AlquilerCoches
 
             EN.ENVehiculo enVe = new EN.ENVehiculo();
             DataSet dsVe = new DataSet();
-            dsVe = enVe.ObtenerListaModelosVehiculos(TComboBoxCategoria.Text.ToString());
-            RellenarModelos(dsVe);
+            dsVe = enVe.ObtenerMarcas(TComboBoxCategoria.Text.ToString());
+            RellenarMarcas(dsVe);
         }
 
         private void TComboBoxModelo_TextChanged(object sender, EventArgs e)
         {
             EN.ENVehiculo enVe = new EN.ENVehiculo();
             DataSet dsVe = new DataSet();
-            dsVe = enVe.ObtenerListaMatriculasVehiculos(TComboBoxModelo.Text.ToString());
+            dsVe = enVe.ObtenerMatriculas(TComboBoxMarca.Text.ToString(), TComboBoxModelo.Text.ToString());
             RellenarMatriculas(dsVe);
         }
 
@@ -117,6 +124,14 @@ namespace AlquilerCoches
             {
                 TLabelErrorFecha.Visible = false;
             }
+        }
+
+        private void TComboBoxMarca_TextChanged(object sender, EventArgs e)
+        {
+            EN.ENVehiculo enVe = new EN.ENVehiculo();
+            DataSet dsVe = new DataSet();
+            dsVe = enVe.ObtenerModelosVehiculos(TComboBoxCategoria.Text.ToString(), TComboBoxMarca.Text.ToString());
+            RellenarModelos(dsVe);
         }
     }
 }

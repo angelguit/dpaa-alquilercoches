@@ -45,6 +45,8 @@
             this.TLabelNombre = new System.Windows.Forms.Label();
             this.TLabelDNI = new System.Windows.Forms.Label();
             this.TLabelErrorFecha = new System.Windows.Forms.Label();
+            this.TLabelMarca = new System.Windows.Forms.Label();
+            this.TComboBoxMarca = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // button1
@@ -60,7 +62,7 @@
             // TComboBoxCategoria
             // 
             this.TComboBoxCategoria.FormattingEnabled = true;
-            this.TComboBoxCategoria.Location = new System.Drawing.Point(102, 154);
+            this.TComboBoxCategoria.Location = new System.Drawing.Point(75, 154);
             this.TComboBoxCategoria.Name = "TComboBoxCategoria";
             this.TComboBoxCategoria.Size = new System.Drawing.Size(121, 21);
             this.TComboBoxCategoria.TabIndex = 27;
@@ -70,7 +72,7 @@
             // TComboBoxModelo
             // 
             this.TComboBoxModelo.FormattingEnabled = true;
-            this.TComboBoxModelo.Location = new System.Drawing.Point(339, 154);
+            this.TComboBoxModelo.Location = new System.Drawing.Point(493, 154);
             this.TComboBoxModelo.Name = "TComboBoxModelo";
             this.TComboBoxModelo.Size = new System.Drawing.Size(121, 21);
             this.TComboBoxModelo.TabIndex = 28;
@@ -81,7 +83,7 @@
             // 
             this.TLabelCategoria.AutoSize = true;
             this.TLabelCategoria.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelCategoria.Location = new System.Drawing.Point(41, 157);
+            this.TLabelCategoria.Location = new System.Drawing.Point(14, 157);
             this.TLabelCategoria.Name = "TLabelCategoria";
             this.TLabelCategoria.Size = new System.Drawing.Size(55, 13);
             this.TLabelCategoria.TabIndex = 29;
@@ -91,7 +93,7 @@
             // 
             this.TLabelModelo.AutoSize = true;
             this.TLabelModelo.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelModelo.Location = new System.Drawing.Point(288, 157);
+            this.TLabelModelo.Location = new System.Drawing.Point(441, 157);
             this.TLabelModelo.Name = "TLabelModelo";
             this.TLabelModelo.Size = new System.Drawing.Size(45, 13);
             this.TLabelModelo.TabIndex = 30;
@@ -101,7 +103,7 @@
             // 
             this.TLabelMatricula.AutoSize = true;
             this.TLabelMatricula.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelMatricula.Location = new System.Drawing.Point(544, 157);
+            this.TLabelMatricula.Location = new System.Drawing.Point(645, 157);
             this.TLabelMatricula.Name = "TLabelMatricula";
             this.TLabelMatricula.Size = new System.Drawing.Size(53, 13);
             this.TLabelMatricula.TabIndex = 31;
@@ -110,7 +112,7 @@
             // TComboBoxMatricula
             // 
             this.TComboBoxMatricula.FormattingEnabled = true;
-            this.TComboBoxMatricula.Location = new System.Drawing.Point(603, 154);
+            this.TComboBoxMatricula.Location = new System.Drawing.Point(704, 154);
             this.TComboBoxMatricula.Name = "TComboBoxMatricula";
             this.TComboBoxMatricula.Size = new System.Drawing.Size(121, 21);
             this.TComboBoxMatricula.TabIndex = 32;
@@ -120,7 +122,7 @@
             // 
             this.TLabelConductores.AutoSize = true;
             this.TLabelConductores.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelConductores.Location = new System.Drawing.Point(41, 223);
+            this.TLabelConductores.Location = new System.Drawing.Point(76, 223);
             this.TLabelConductores.Name = "TLabelConductores";
             this.TLabelConductores.Size = new System.Drawing.Size(70, 13);
             this.TLabelConductores.TabIndex = 33;
@@ -138,7 +140,7 @@
             "6",
             "7",
             "8"});
-            this.TComboBoxConductores.Location = new System.Drawing.Point(117, 220);
+            this.TComboBoxConductores.Location = new System.Drawing.Point(152, 220);
             this.TComboBoxConductores.Name = "TComboBoxConductores";
             this.TComboBoxConductores.Size = new System.Drawing.Size(61, 21);
             this.TComboBoxConductores.TabIndex = 34;
@@ -148,7 +150,7 @@
             // 
             this.TLabelFechaInicio.AutoSize = true;
             this.TLabelFechaInicio.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelFechaInicio.Location = new System.Drawing.Point(288, 223);
+            this.TLabelFechaInicio.Location = new System.Drawing.Point(292, 223);
             this.TLabelFechaInicio.Name = "TLabelFechaInicio";
             this.TLabelFechaInicio.Size = new System.Drawing.Size(68, 13);
             this.TLabelFechaInicio.TabIndex = 35;
@@ -158,7 +160,7 @@
             // 
             this.TDateTimePickerFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.TDateTimePickerFechaInicio.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.TDateTimePickerFechaInicio.Location = new System.Drawing.Point(362, 220);
+            this.TDateTimePickerFechaInicio.Location = new System.Drawing.Point(366, 220);
             this.TDateTimePickerFechaInicio.Name = "TDateTimePickerFechaInicio";
             this.TDateTimePickerFechaInicio.Size = new System.Drawing.Size(98, 20);
             this.TDateTimePickerFechaInicio.TabIndex = 36;
@@ -229,6 +231,26 @@
             this.TLabelErrorFecha.Text = "Fecha fin inferior a fecha inicio";
             this.TLabelErrorFecha.Visible = false;
             // 
+            // TLabelMarca
+            // 
+            this.TLabelMarca.AutoSize = true;
+            this.TLabelMarca.BackColor = System.Drawing.Color.Transparent;
+            this.TLabelMarca.Location = new System.Drawing.Point(235, 157);
+            this.TLabelMarca.Name = "TLabelMarca";
+            this.TLabelMarca.Size = new System.Drawing.Size(40, 13);
+            this.TLabelMarca.TabIndex = 43;
+            this.TLabelMarca.Text = "Marca:";
+            // 
+            // TComboBoxMarca
+            // 
+            this.TComboBoxMarca.FormattingEnabled = true;
+            this.TComboBoxMarca.Location = new System.Drawing.Point(282, 154);
+            this.TComboBoxMarca.Name = "TComboBoxMarca";
+            this.TComboBoxMarca.Size = new System.Drawing.Size(121, 21);
+            this.TComboBoxMarca.TabIndex = 44;
+            this.TComboBoxMarca.Text = "Seleccione Marca";
+            this.TComboBoxMarca.TextChanged += new System.EventHandler(this.TComboBoxMarca_TextChanged);
+            // 
             // AltaReservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -236,6 +258,8 @@
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(837, 590);
+            this.Controls.Add(this.TComboBoxMarca);
+            this.Controls.Add(this.TLabelMarca);
             this.Controls.Add(this.TLabelErrorFecha);
             this.Controls.Add(this.TLabelDNI);
             this.Controls.Add(this.TLabelNombre);
@@ -280,5 +304,7 @@
         private System.Windows.Forms.Label TLabelNombre;
         private System.Windows.Forms.Label TLabelDNI;
         private System.Windows.Forms.Label TLabelErrorFecha;
+        private System.Windows.Forms.Label TLabelMarca;
+        private System.Windows.Forms.ComboBox TComboBoxMarca;
     }
 }

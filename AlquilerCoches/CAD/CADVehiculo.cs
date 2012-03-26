@@ -113,13 +113,13 @@ namespace CAD
 
             return dsVehiculo;
         }
-        public DataSet ObtenerModelosVehiculo(string cat)
+        public DataSet ObtenerModelosVehiculo(string cat, string mar)
         {
             DataSet dsVehiculo = new DataSet();
             try
             {
                 SqlConnection conexion = new SqlConnection(cadenaConexion);
-                String consulta = "Select Modelo from Vehiculo WHERE (FK_Categoria = '" + cat + "') AND (Estado = 'Disponible')";
+                String consulta = "Select Modelo from Vehiculo WHERE (FK_Categoria = '" + cat + "') AND (Marca = '" + mar + "') AND (Estado = 'Disponible')";
                 SqlDataAdapter daCaminos = new SqlDataAdapter(consulta, conexion);
                 daCaminos.MissingSchemaAction = MissingSchemaAction.AddWithKey;
                 daCaminos.Fill(dsVehiculo, "Modelos");
@@ -149,6 +149,25 @@ namespace CAD
             }
 
             return dsVehiculo; 
+        }
+
+        public DataSet ObtenerMarcas(string cat)
+        {
+            DataSet dsVehiculo = new DataSet();
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                String consulta = "Select Marca from Vehiculo WHERE (FK_Categoria = '" + cat + "') AND (Estado = 'Disponible')";
+                SqlDataAdapter daCaminos = new SqlDataAdapter(consulta, conexion);
+                daCaminos.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daCaminos.Fill(dsVehiculo, "Marcas");
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+
+            return dsVehiculo;
         }
     }
 }
