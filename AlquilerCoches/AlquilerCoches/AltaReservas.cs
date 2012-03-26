@@ -77,6 +77,16 @@ namespace AlquilerCoches
             RellenarMatriculas(dsVe);
         }
 
+        private bool Comprobar_OK(string mens)
+        {
+            bool retorno = true;
+            if (TLabelErrorFecha.Visible)
+            {
+                mens = "Fecha fin no puede ser superior a fecha inicio";
+            }
+            return retorno;
+        }
+  
         private void TButtonReserva_Click(object sender, EventArgs e)
         {
             if (TLabelErrorFecha.Visible)
