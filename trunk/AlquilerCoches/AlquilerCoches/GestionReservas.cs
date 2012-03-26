@@ -15,5 +15,14 @@ namespace AlquilerCoches
         {
             InitializeComponent();
         }
+
+        private void GestionReservas_Load(object sender, EventArgs e)
+        {
+            EN.ENReservas enRe = new EN.ENReservas();
+            DataSet dsRe = new DataSet();
+            dsRe = enRe.ObtenerReservas();
+            TDataGridViewReservas.DataSource = dsRe;
+            TDataGridViewReservas.DataMember = "Reservas";
+        }
     }
 }

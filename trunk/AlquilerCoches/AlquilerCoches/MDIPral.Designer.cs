@@ -52,6 +52,9 @@
             this.ponerEnVentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mostrarVehículosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mostrarVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionReservasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevaReservaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buscarReservasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -70,9 +73,6 @@
             this.TButtonVehiculos = new System.Windows.Forms.Button();
             this.TButtonCliente = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.gestionReservasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nuevaReservaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.buscarReservasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -252,6 +252,29 @@
             this.mostrarVentasToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
             this.mostrarVentasToolStripMenuItem.Text = "Mostrar Ventas Realizadas";
             this.mostrarVentasToolStripMenuItem.Click += new System.EventHandler(this.mostrarVentasToolStripMenuItem_Click);
+            // 
+            // gestionReservasToolStripMenuItem
+            // 
+            this.gestionReservasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuevaReservaToolStripMenuItem,
+            this.buscarReservasToolStripMenuItem});
+            this.gestionReservasToolStripMenuItem.Name = "gestionReservasToolStripMenuItem";
+            this.gestionReservasToolStripMenuItem.Size = new System.Drawing.Size(107, 20);
+            this.gestionReservasToolStripMenuItem.Text = "Gestion Reservas";
+            // 
+            // nuevaReservaToolStripMenuItem
+            // 
+            this.nuevaReservaToolStripMenuItem.Name = "nuevaReservaToolStripMenuItem";
+            this.nuevaReservaToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.nuevaReservaToolStripMenuItem.Text = "Nueva Reserva";
+            this.nuevaReservaToolStripMenuItem.Click += new System.EventHandler(this.nuevaReservaToolStripMenuItem_Click);
+            // 
+            // buscarReservasToolStripMenuItem
+            // 
+            this.buscarReservasToolStripMenuItem.Name = "buscarReservasToolStripMenuItem";
+            this.buscarReservasToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.buscarReservasToolStripMenuItem.Text = "Buscar Reservas";
+            this.buscarReservasToolStripMenuItem.Click += new System.EventHandler(this.buscarReservasToolStripMenuItem_Click);
             // 
             // statusStrip
             // 
@@ -445,28 +468,6 @@
             this.tabPage1.TabIndex = 1;
             this.tabPage1.Text = "Administración";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // gestionReservasToolStripMenuItem
-            // 
-            this.gestionReservasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nuevaReservaToolStripMenuItem,
-            this.buscarReservasToolStripMenuItem});
-            this.gestionReservasToolStripMenuItem.Name = "gestionReservasToolStripMenuItem";
-            this.gestionReservasToolStripMenuItem.Size = new System.Drawing.Size(107, 20);
-            this.gestionReservasToolStripMenuItem.Text = "Gestion Reservas";
-            // 
-            // nuevaReservaToolStripMenuItem
-            // 
-            this.nuevaReservaToolStripMenuItem.Name = "nuevaReservaToolStripMenuItem";
-            this.nuevaReservaToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.nuevaReservaToolStripMenuItem.Text = "Nueva Reserva";
-            this.nuevaReservaToolStripMenuItem.Click += new System.EventHandler(this.nuevaReservaToolStripMenuItem_Click);
-            // 
-            // buscarReservasToolStripMenuItem
-            // 
-            this.buscarReservasToolStripMenuItem.Name = "buscarReservasToolStripMenuItem";
-            this.buscarReservasToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.buscarReservasToolStripMenuItem.Text = "Buscar Reservas";
             // 
             // MDIPral
             // 
