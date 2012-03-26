@@ -56,6 +56,20 @@ namespace EN
             return resultado;
         }
 
+        public DataSet ObtenerMarcas(string cat)
+        {
+            DataSet resultado = new DataSet();
+            try
+            {
+                resultado = cadVehiculo.ObtenerMarcas(cat);
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            return resultado;
+        }
+
         public DataSet ObtenerModelo(string marca)
         {
             DataSet resultado = new DataSet();
@@ -101,12 +115,12 @@ namespace EN
             return resultado;
         }
 
-        public DataSet ObtenerListaModelosVehiculos(string cat)
+        public DataSet ObtenerModelosVehiculos(string cat, string mar)
         {
             DataSet resultado = new DataSet();
             try
             {
-                resultado = cadVehiculo.ObtenerModelosVehiculo(cat);
+                resultado = cadVehiculo.ObtenerModelosVehiculo(cat,mar);
             }
             catch (Exception ex)
             {
