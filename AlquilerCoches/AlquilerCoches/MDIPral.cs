@@ -116,6 +116,7 @@ namespace AlquilerCoches
             {
                 GestionVehiculos F2 = new GestionVehiculos();
                 F2.MdiParent = this;
+                F2.setTipo("Buscar");
                 F2.Show();
                 //F2.WindowState = FormWindowState.Maximized;
             }
