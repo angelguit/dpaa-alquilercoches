@@ -12,9 +12,13 @@ namespace AlquilerCoches
 {
     public partial class GestionVehiculos : Form
     {
+        private string accion;
+        private EN.ENVehiculo vehiculos = new EN.ENVehiculo();
         public GestionVehiculos()
         {
             InitializeComponent();
+            TGroupBoxSeleccion.Enabled = false;
+            TGroupBoxDatosVehiculo.Enabled = false;
         }
 
         public void setTipo(string Option)
@@ -24,27 +28,13 @@ namespace AlquilerCoches
                 case "Editar":
                     break;
                 case "Buscar":
+                    TButtonBuscar_Click(null, null);
                     break;
                 case "Insertar":
                     break;
                 case "Borrar":
                     break;
             }
-        }
-
-        private void TListViewMarca_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TGroupBoxDatosVehiculo_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TLabel_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void GestionVehiculos_FormClosing(object sender, FormClosingEventArgs e)
@@ -63,7 +53,7 @@ namespace AlquilerCoches
             {
                 errorProvider1.SetError(TTextBoxMatricula, "");
             }
-                
+
         }
 
         private void TTextBoxMarca_TextChanged(object sender, EventArgs e)
@@ -204,19 +194,84 @@ namespace AlquilerCoches
             }
         }
 
+        private void TButtonCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void TButtonBuscar_Click(object sender, EventArgs e)
+        {
+            accion = "Buscar";
+            TGroupBoxSeleccion.Enabled = true;
+            TGroupBoxDatosVehiculo.Enabled = false;
+            TGroupBoxAccion.Enabled = false;
+            TButtonCancelar.Enabled = true;
+            rellenaMarcas();
+        }
+
+        private void TButtonCancelar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Desea cancelar?\n Se perderan los cambios no guardados", "¿CANCELAR?", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.OK)
+            {
+                TGroupBoxAccion.Enabled = true;
+                TGroupBoxDatosVehiculo.Enabled = false;
+                TGroupBoxSeleccion.Enabled = false;
+                TButtonCancelar.Enabled = false;
+                TButtonOK.Enabled = false;
+            }
+        }
+
+        private void rellenaMarcas()
+        {
+            TListBoxMarcas.Items.Clear();
+            TListBoxModelos.Items.Clear();
+            TListBoxMatriculas.Items.Clear();
+            DataSet listamarcas = vehiculos.ObtenerMarcas();
+            for (int i = 0; !listamarcas.Tables["Vehiculo"].Rows.Count.Equals(i); i++)
+                if (!TListBoxMarcas.Items.Contains(listamarcas.Tables["Vehiculo"].Rows[i].ItemArray[0])) TListBoxMarcas.Items.Add(listamarcas.Tables["Vehiculo"].Rows[i].ItemArray[0]);
+
+        }
+
         private void TListBoxMarcas_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (TListBoxMarcas.SelectedIndex != -1)
+            {
+                TListBoxModelos.Items.Clear();
+                DataSet listaModelos = vehiculos.ObtenerModelo(TListBoxMarcas.Items[TListBoxMarcas.SelectedIndex].ToString());
+                for (int i = 0; !listaModelos.Tables["Vehiculo"].Rows.Count.Equals(i); i++)
+                    if (!TListBoxModelos.Items.Contains(listaModelos.Tables["Vehiculo"].Rows[i].ItemArray[0])) TListBoxModelos.Items.Add(listaModelos.Tables["Vehiculo"].Rows[i].ItemArray[0]);
+            }
         }
 
         private void TListBoxModelos_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (TListBoxModelos.SelectedIndex != -1)
+            {
+                TListBoxMatriculas.Items.Clear();
+                DataSet listaMatriculas = vehiculos.ObtenerMatriculas(TListBoxMarcas.Items[TListBoxModelos.SelectedIndex].ToString(), TListBoxModelos.Items[TListBoxModelos.SelectedIndex].ToString());
+                for (int i = 0; !listaMatriculas.Tables["Vehiculo"].Rows.Count.Equals(i); i++)
+                    if (!TListBoxMatriculas.Items.Contains(listaMatriculas.Tables["Vehiculo"].Rows[i].ItemArray[0])) TListBoxMatriculas.Items.Add(listaMatriculas.Tables["Vehiculo"].Rows[i].ItemArray[0]);
+            }
         }
 
-        private void TButtonCerrar_Click(object sender, EventArgs e)
+        private void TListBoxMatriculas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.Close();
+            if (TListBoxMatriculas.SelectedIndex != -1)
+            {
+                if (accion == "Buscar")
+                {
+                    TGroupBoxDatosVehiculo.Enabled = false;
+                    TGroupBoxAccion.Enabled = true;
+                    TButtonCancelar.Enabled = false;
+                }
+                TGroupBoxSeleccion.Enabled = false;
+
+                DataSet DatosVehiculo = vehiculos.ObtenerDatosVehiculos(TListBoxMatriculas.Items[TListBoxMatriculas.SelectedIndex].ToString());
+
+                TTextBoxMatricula.Text = DatosVehiculo.Tables["Vehiculo"].Rows[0][0].ToString();
+                TTextBoxMarca.Text = DatosVehiculo.Tables["Vehiculo"].Rows[0][1].ToString();
+                TTextBoxModelo.Text = DatosVehiculo.Tables["Vehiculo"].Rows[0][2].ToString();
+            }
         }
     }
 }

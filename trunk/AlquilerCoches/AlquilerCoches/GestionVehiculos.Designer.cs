@@ -110,7 +110,6 @@
             this.TGroupBoxDatosVehiculo.TabIndex = 19;
             this.TGroupBoxDatosVehiculo.TabStop = false;
             this.TGroupBoxDatosVehiculo.Text = "3 DatosVehiculo";
-            this.TGroupBoxDatosVehiculo.Enter += new System.EventHandler(this.TGroupBoxDatosVehiculo_Enter);
             // 
             // TTextBoxGarantia
             // 
@@ -187,7 +186,6 @@
             this.TLabelMarca.Size = new System.Drawing.Size(37, 13);
             this.TLabelMarca.TabIndex = 35;
             this.TLabelMarca.Text = "Marca";
-            this.TLabelMarca.Click += new System.EventHandler(this.TLabel_Click);
             // 
             // TRadioButtonRevision
             // 
@@ -337,14 +335,17 @@
             // TButtonBuscar
             // 
             this.TButtonBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.TButtonBuscar.BackgroundImage = global::AlquilerCoches.Properties.Resources.Search_icon;
             this.TButtonBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.errorProvider1.SetIconAlignment(this.TButtonBuscar, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
+            this.TButtonBuscar.Image = global::AlquilerCoches.Properties.Resources.Search_icon;
             this.TButtonBuscar.Location = new System.Drawing.Point(28, 32);
             this.TButtonBuscar.Name = "TButtonBuscar";
             this.TButtonBuscar.Size = new System.Drawing.Size(75, 73);
             this.TButtonBuscar.TabIndex = 32;
+            this.TButtonBuscar.Text = "Buscar";
+            this.TButtonBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.TButtonBuscar.UseVisualStyleBackColor = true;
+            this.TButtonBuscar.Click += new System.EventHandler(this.TButtonBuscar_Click);
             // 
             // TButtonCerrar
             // 
@@ -387,6 +388,7 @@
             this.TListBoxMatriculas.Name = "TListBoxMatriculas";
             this.TListBoxMatriculas.Size = new System.Drawing.Size(187, 95);
             this.TListBoxMatriculas.TabIndex = 34;
+            this.TListBoxMatriculas.SelectedIndexChanged += new System.EventHandler(this.TListBoxMatriculas_SelectedIndexChanged);
             // 
             // TListBoxModelos
             // 
@@ -399,6 +401,7 @@
             this.TListBoxModelos.Name = "TListBoxModelos";
             this.TListBoxModelos.Size = new System.Drawing.Size(187, 95);
             this.TListBoxModelos.TabIndex = 33;
+            this.TListBoxModelos.SelectedIndexChanged += new System.EventHandler(this.TListBoxModelos_SelectedIndexChanged);
             // 
             // TListBoxMarcas
             // 
@@ -412,6 +415,7 @@
             this.TListBoxMarcas.Name = "TListBoxMarcas";
             this.TListBoxMarcas.Size = new System.Drawing.Size(187, 95);
             this.TListBoxMarcas.TabIndex = 32;
+            this.TListBoxMarcas.SelectedIndexChanged += new System.EventHandler(this.TListBoxMarcas_SelectedIndexChanged);
             // 
             // TLabelMatriculas
             // 
@@ -460,34 +464,40 @@
             // ButtonBorrar
             // 
             this.ButtonBorrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ButtonBorrar.BackgroundImage = global::AlquilerCoches.Properties.Resources.Delete_icon;
             this.ButtonBorrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ButtonBorrar.Image = global::AlquilerCoches.Properties.Resources.Delete_icon;
             this.ButtonBorrar.Location = new System.Drawing.Point(109, 122);
             this.ButtonBorrar.Name = "ButtonBorrar";
             this.ButtonBorrar.Size = new System.Drawing.Size(75, 75);
             this.ButtonBorrar.TabIndex = 33;
+            this.ButtonBorrar.Text = "Delete";
+            this.ButtonBorrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ButtonBorrar.UseVisualStyleBackColor = true;
             // 
             // TButtonAnyadir
             // 
             this.TButtonAnyadir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.TButtonAnyadir.BackgroundImage = global::AlquilerCoches.Properties.Resources.Add_icon;
             this.TButtonAnyadir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.TButtonAnyadir.Image = global::AlquilerCoches.Properties.Resources.Add_icon;
             this.TButtonAnyadir.Location = new System.Drawing.Point(109, 32);
             this.TButtonAnyadir.Name = "TButtonAnyadir";
             this.TButtonAnyadir.Size = new System.Drawing.Size(75, 73);
             this.TButtonAnyadir.TabIndex = 31;
+            this.TButtonAnyadir.Text = "Add";
+            this.TButtonAnyadir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.TButtonAnyadir.UseVisualStyleBackColor = true;
             // 
             // TButtonEditar
             // 
             this.TButtonEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.TButtonEditar.BackgroundImage = global::AlquilerCoches.Properties.Resources.Edit_icon;
             this.TButtonEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.TButtonEditar.Image = global::AlquilerCoches.Properties.Resources.Edit_icon;
             this.TButtonEditar.Location = new System.Drawing.Point(28, 122);
             this.TButtonEditar.Name = "TButtonEditar";
             this.TButtonEditar.Size = new System.Drawing.Size(75, 75);
             this.TButtonEditar.TabIndex = 30;
+            this.TButtonEditar.Text = "Edit";
+            this.TButtonEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.TButtonEditar.UseVisualStyleBackColor = true;
             // 
             // TButtonCancelar
@@ -500,6 +510,7 @@
             this.TButtonCancelar.Size = new System.Drawing.Size(75, 69);
             this.TButtonCancelar.TabIndex = 37;
             this.TButtonCancelar.UseVisualStyleBackColor = true;
+            this.TButtonCancelar.Click += new System.EventHandler(this.TButtonCancelar_Click);
             // 
             // TButtonOK
             // 
