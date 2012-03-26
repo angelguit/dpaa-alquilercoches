@@ -38,7 +38,7 @@ namespace EN
                 throw (ex);
             }
 
-            return resultado; 
+            return resultado;  
         }
 
         public DataSet ObtenerMarcas()
