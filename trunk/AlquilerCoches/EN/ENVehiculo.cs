@@ -41,12 +41,12 @@ namespace EN
             return resultado;
         }
 
-        public DataSet ObtenerListaModelosVehiculos(string cat)
+        public DataSet ObtenerMarcas()
         {
             DataSet resultado = new DataSet();
             try
             {
-                resultado = cadVehiculo.ObtenerModelosVehiculo(cat);
+                resultado = cadVehiculo.ObtenerMarcas();
             }
             catch (Exception ex)
             {
@@ -56,12 +56,12 @@ namespace EN
             return resultado;
         }
 
-        public DataSet ObtenerListaMatriculasVehiculos(string mod)
+        public DataSet ObtenerModelo(string marca)
         {
             DataSet resultado = new DataSet();
             try
             {
-                resultado = cadVehiculo.ObtenerMatriculasVehiculo(mod);
+                resultado = cadVehiculo.ObtenerModelos(marca);
             }
             catch (Exception ex)
             {
@@ -71,6 +71,35 @@ namespace EN
             return resultado;
         }
 
+        public DataSet ObtenerMatriculas(string marca, string modelo)
+        {
+            DataSet resultado = new DataSet();
+            try
+            {
+                resultado = cadVehiculo.ObtenerMatricula(marca, modelo);
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+
+            return resultado;
+        }
+
+        public DataSet ObtenerDatosVehiculos(string matricula)
+        {
+            DataSet resultado = new DataSet();
+            try
+            {
+                resultado = cadVehiculo.ObtenerDatosVehiculo(matricula);
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+
+            return resultado;
+        }
 
         public string Matricula
         {
