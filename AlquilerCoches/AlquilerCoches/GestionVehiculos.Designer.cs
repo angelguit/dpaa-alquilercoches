@@ -486,6 +486,7 @@
             this.TButtonAnyadir.Text = "Add";
             this.TButtonAnyadir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.TButtonAnyadir.UseVisualStyleBackColor = true;
+            this.TButtonAnyadir.Click += new System.EventHandler(this.TButtonAnyadir_Click);
             // 
             // TButtonEditar
             // 

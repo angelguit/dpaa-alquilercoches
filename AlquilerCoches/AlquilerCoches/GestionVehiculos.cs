@@ -274,5 +274,10 @@ namespace AlquilerCoches
                 TTextBoxModelo.Text = DatosVehiculo.Tables["Vehiculo"].Rows[0][2].ToString();
             }
         }
+
+        private void TButtonAnyadir_Click(object sender, EventArgs e)
+        {
+            accion = "Anyadir";
+        }
     }
 }
