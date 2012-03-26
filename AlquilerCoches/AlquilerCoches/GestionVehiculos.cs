@@ -247,8 +247,9 @@ namespace AlquilerCoches
         {
             if (TListBoxModelos.SelectedIndex != -1)
             {
+                //MessageBox.Show(TListBoxMarcas.Items[TListBoxMarcas.SelectedIndex].ToString(), TListBoxModelos.Items[TListBoxModelos.SelectedIndex].ToString());
                 TListBoxMatriculas.Items.Clear();
-                DataSet listaMatriculas = vehiculos.ObtenerMatriculas(TListBoxMarcas.Items[TListBoxModelos.SelectedIndex].ToString(), TListBoxModelos.Items[TListBoxModelos.SelectedIndex].ToString());
+                DataSet listaMatriculas = vehiculos.ObtenerMatriculas(TListBoxMarcas.Items[TListBoxMarcas.SelectedIndex].ToString(), TListBoxModelos.Items[TListBoxModelos.SelectedIndex].ToString());
                 for (int i = 0; !listaMatriculas.Tables["Vehiculo"].Rows.Count.Equals(i); i++)
                     if (!TListBoxMatriculas.Items.Contains(listaMatriculas.Tables["Vehiculo"].Rows[i].ItemArray[0])) TListBoxMatriculas.Items.Add(listaMatriculas.Tables["Vehiculo"].Rows[i].ItemArray[0]);
             }
