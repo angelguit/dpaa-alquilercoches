@@ -101,6 +101,35 @@ namespace EN
             return resultado;
         }
 
+        public DataSet ObtenerListaModelosVehiculos(string cat)
+        {
+            DataSet resultado = new DataSet();
+            try
+            {
+                resultado = cadVehiculo.ObtenerModelosVehiculo(cat);
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+
+            return resultado;
+        }
+
+        public DataSet ObtenerListaMatriculasVehiculos(string mod)
+        {
+            DataSet resultado = new DataSet();
+            try
+            {
+                resultado = cadVehiculo.ObtenerMatriculasVehiculo(mod);
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+
+            return resultado;
+        }
         public string Matricula
         {
             get { return matricula; }
