@@ -79,7 +79,20 @@ namespace AlquilerCoches
             EN.ENReservas enRe = new EN.ENReservas();
             DataSet dsRe = new DataSet();
             dsRe = enRe.ObtenerReservas();
-            
+            DataTable dtRe = new DataTable();
+            dtRe = dsRe.Tables["Reservas"];
+            DataRow drRe = dtRe.NewRow();
+            drRe[1] = "11111111A";
+            drRe[2] = TComboBoxMatricula.Text;
+            drRe[3] = TDateTimePickerFechaInicio.Text;
+            drRe[4] = TDateTimePickerFechaFin.Text;
+            drRe[5] = TComboBoxConductores.Text;
+            dtRe.Rows.Add(drRe);
+            if (enRe.ActualizarReservas(dsRe))
+            {
+                MessageBox.Show("Reserva realizada con éxito", "Nueva Reserva", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            Close();
         }
 
         private void TDateTimePickerFechaFin_ValueChanged(object sender, EventArgs e)

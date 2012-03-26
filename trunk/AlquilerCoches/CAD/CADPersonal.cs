@@ -24,7 +24,7 @@ namespace CAD
             try
             {
                 SqlConnection conexion = new SqlConnection(cadenaConexion);
-                String consulta = "Select * from Personal where ciudad like '%"+ ciu +"%'";
+                String consulta = "Select * FROM Personal WHERE ciudad like '%"+ ciu +"%'";
                 SqlDataAdapter daPersonal = new SqlDataAdapter(consulta, conexion);
                 daPersonal.MissingSchemaAction = MissingSchemaAction.AddWithKey;
                 daPersonal.Fill(dsPersonal, nombreTabla); //dsPersonal es ahora nuestra base de datos local
