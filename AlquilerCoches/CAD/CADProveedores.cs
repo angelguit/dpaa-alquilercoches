@@ -63,5 +63,51 @@ namespace CAD
               if(conn != null) conn.Close(); // Se asegura de cerrar la conexión. 
             }
         }
+
+        public DataSet ObtenerClientesPorCiudad( String ciudad ) 
+        { 
+            SqlConnection conn = null; 
+            DataSet dsProveedores = null; 
+            // Encapsula todo el acceso a datos dentro del try 
+            string comando = "Select * from Proveedores"; 
+            try 
+            {
+                conn = new SqlConnection(cadenaConexion); 
+                SqlDataAdapter sqlAdaptador = new SqlDataAdapter (comando, conn);
+                dsProveedores = new DataSet();
+                sqlAdaptador.Fill(dsProveedores);
+                return dsProveedores; 
+            } 
+            //catch (SqlException sqlex) 
+            //{ 
+              //  throw new CADException ("Error en la consulta de clientes por ciudad: " + clienteID, sqlex ); 
+            //} 
+            catch (Exception ex) 
+            { 
+                // Captura la condición general y la reenvía. 
+                throw ex; 
+            } 
+            finally 
+            { 
+                if(conn != null) conn.Close(); // Se asegura de cerrar la conexión. 
+            }
+        } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }

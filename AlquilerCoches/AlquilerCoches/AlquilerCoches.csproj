@@ -115,7 +115,7 @@
     <Compile Include="GestionProveedoresBuscar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GestionProveedoresBuscar.Designer.cs">
+    <Compile Include="GestionProveedoresBuscar.designer.cs">
       <DependentUpon>GestionProveedoresBuscar.cs</DependentUpon>
     </Compile>
     <Compile Include="GestionReservas.cs">
