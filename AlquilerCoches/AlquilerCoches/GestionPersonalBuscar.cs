@@ -169,6 +169,11 @@ namespace AlquilerCoches
 
            // MessageBox.Show("hola"+TDataGridViewPersonal.Rows[e.RowIndex].Cells[e.ColumnIndex].ColumnIndex.ToString());
         }
+
+        private void TComboBoxProvincia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
               
     }
 }

@@ -43,11 +43,11 @@
             this.TTextBoxPuestoAc = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.TTextBoxCiudad = new System.Windows.Forms.TextBox();
-            this.TTextBoxProvincia = new System.Windows.Forms.TextBox();
             this.TLabelCiudad = new System.Windows.Forms.Label();
             this.TLabelProvincia = new System.Windows.Forms.Label();
             this.TButtonCerrar = new System.Windows.Forms.Button();
             this.bBDDDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.TComboBoxProvincia = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.TDataGridViewPersonal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -159,8 +159,8 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.TComboBoxProvincia);
             this.panel1.Controls.Add(this.TTextBoxCiudad);
-            this.panel1.Controls.Add(this.TTextBoxProvincia);
             this.panel1.Controls.Add(this.TLabelCiudad);
             this.panel1.Controls.Add(this.TLabelProvincia);
             this.panel1.Controls.Add(this.TTextBoxPuestoAc);
@@ -184,13 +184,6 @@
             this.TTextBoxCiudad.Name = "TTextBoxCiudad";
             this.TTextBoxCiudad.Size = new System.Drawing.Size(100, 20);
             this.TTextBoxCiudad.TabIndex = 33;
-            // 
-            // TTextBoxProvincia
-            // 
-            this.TTextBoxProvincia.Location = new System.Drawing.Point(80, 99);
-            this.TTextBoxProvincia.Name = "TTextBoxProvincia";
-            this.TTextBoxProvincia.Size = new System.Drawing.Size(100, 20);
-            this.TTextBoxProvincia.TabIndex = 32;
             // 
             // TLabelCiudad
             // 
@@ -221,6 +214,15 @@
             this.TButtonCerrar.Text = "Cerrar";
             this.TButtonCerrar.UseVisualStyleBackColor = true;
             this.TButtonCerrar.Click += new System.EventHandler(this.TButtonCerrar_Click);
+            // 
+            // TComboBoxProvincia
+            // 
+            this.TComboBoxProvincia.FormattingEnabled = true;
+            this.TComboBoxProvincia.Location = new System.Drawing.Point(80, 97);
+            this.TComboBoxProvincia.Name = "TComboBoxProvincia";
+            this.TComboBoxProvincia.Size = new System.Drawing.Size(100, 21);
+            this.TComboBoxProvincia.TabIndex = 34;
+            this.TComboBoxProvincia.SelectedIndexChanged += new System.EventHandler(this.TComboBoxProvincia_SelectedIndexChanged);
             // 
             // GestionPersonalBuscar
             // 
@@ -268,8 +270,8 @@
         private BBDDDataSet bBDDDataSet;
         private System.Windows.Forms.BindingSource bBDDDataSetBindingSource;
         private System.Windows.Forms.TextBox TTextBoxCiudad;
-        private System.Windows.Forms.TextBox TTextBoxProvincia;
         private System.Windows.Forms.Label TLabelCiudad;
         private System.Windows.Forms.Label TLabelProvincia;
+        private System.Windows.Forms.ComboBox TComboBoxProvincia;
 	}
 }
