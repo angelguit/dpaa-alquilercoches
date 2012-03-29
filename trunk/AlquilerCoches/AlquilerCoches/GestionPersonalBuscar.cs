@@ -13,14 +13,9 @@ namespace AlquilerCoches
 {
     public partial class GestionPersonalBuscar : Form
     {
-        private DataSet ds;
-
-     
         public GestionPersonalBuscar()
         {
             InitializeComponent();
-
-            
 
             DataGridViewButtonColumn buttons = new DataGridViewButtonColumn();
             {
@@ -108,7 +103,7 @@ namespace AlquilerCoches
             else
             {
                 TButtonEliminar.Visible = true;
-                ds = new DataSet();
+                DataSet ds = new DataSet();
                 EN.ENPersonal enPerson = new EN.ENPersonal();
 
                // enPerson.Ciudad = TTextBoxCiudad.Text;
@@ -174,14 +169,22 @@ namespace AlquilerCoches
            // MessageBox.Show("hola"+TDataGridViewPersonal.Rows[e.RowIndex].Cells[e.ColumnIndex].ColumnIndex.ToString());
         }
 
-        private void TComboBoxProvincias_SelectedIndexChanged(object sender, EventArgs e)
+        private void ObtenerProvincias(DataSet dsProv)
         {
-            DataSet  dsProvin = new DataSet();
-            MessageBox.Show("eyyyy");
-           // TComboBoxProvincias.Text = "Seleccione Provincia";
-            TComboBoxProvincias.DataSource = dsProvin.Tables["Provincia"];
-            TComboBoxProvincias.DisplayMember = dsProvin.Tables["Provincia"].Columns[0].Caption.ToString();
+            TComboBoxProvincias.Text = "Seleccione Provincia";
+            TComboBoxProvincias.DataSource = dsProv.Tables["Provincia"];
+            TComboBoxProvincias.DisplayMember = dsProv.Tables["Provincia"].Columns[0].Caption.ToString();
         }
-              
+ 
+        private void TComboBoxProvincias_Click(object sender, EventArgs e)
+        { 
+            EN.ENPersonal enProv = new EN.ENPersonal();
+            DataSet dsProv = new DataSet();
+            dsProv = enProv.ObtenerListaProvincias();
+            ObtenerProvincias(dsProv);
+        }
+
+
+      
     }
 }

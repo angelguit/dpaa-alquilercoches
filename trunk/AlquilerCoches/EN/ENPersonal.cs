@@ -94,7 +94,7 @@ namespace EN
             return resultado;
         }
 
-        public DataSet ObtenerProvincias()
+        public DataSet ObtenerListaProvincias()
         {
             DataSet resultado = new DataSet();
             try
