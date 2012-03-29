@@ -69,7 +69,7 @@
             this.TButtonBuscar.Location = new System.Drawing.Point(31, 166);
             this.TButtonBuscar.Name = "TButtonBuscar";
             this.TButtonBuscar.Size = new System.Drawing.Size(75, 23);
-            this.TButtonBuscar.TabIndex = 22;
+            this.TButtonBuscar.TabIndex = 6;
             this.TButtonBuscar.Text = "Buscar";
             this.TButtonBuscar.UseVisualStyleBackColor = true;
             this.TButtonBuscar.Click += new System.EventHandler(this.TButtonBuscar_Click);
@@ -132,28 +132,28 @@
             this.TTextBoxDNI.Location = new System.Drawing.Point(80, 22);
             this.TTextBoxDNI.Name = "TTextBoxDNI";
             this.TTextBoxDNI.Size = new System.Drawing.Size(100, 20);
-            this.TTextBoxDNI.TabIndex = 26;
+            this.TTextBoxDNI.TabIndex = 0;
             // 
             // TTextBoxNombre
             // 
             this.TTextBoxNombre.Location = new System.Drawing.Point(80, 61);
             this.TTextBoxNombre.Name = "TTextBoxNombre";
             this.TTextBoxNombre.Size = new System.Drawing.Size(100, 20);
-            this.TTextBoxNombre.TabIndex = 27;
+            this.TTextBoxNombre.TabIndex = 2;
             // 
             // TTextBoxApellidos
             // 
             this.TTextBoxApellidos.Location = new System.Drawing.Point(301, 22);
             this.TTextBoxApellidos.Name = "TTextBoxApellidos";
             this.TTextBoxApellidos.Size = new System.Drawing.Size(100, 20);
-            this.TTextBoxApellidos.TabIndex = 28;
+            this.TTextBoxApellidos.TabIndex = 1;
             // 
             // TTextBoxPuestoAc
             // 
             this.TTextBoxPuestoAc.Location = new System.Drawing.Point(301, 61);
             this.TTextBoxPuestoAc.Name = "TTextBoxPuestoAc";
             this.TTextBoxPuestoAc.Size = new System.Drawing.Size(100, 20);
-            this.TTextBoxPuestoAc.TabIndex = 29;
+            this.TTextBoxPuestoAc.TabIndex = 3;
             // 
             // panel1
             // 
@@ -188,15 +188,15 @@
             this.TComboBoxProvincias.Location = new System.Drawing.Point(79, 99);
             this.TComboBoxProvincias.Name = "TComboBoxProvincias";
             this.TComboBoxProvincias.Size = new System.Drawing.Size(101, 21);
-            this.TComboBoxProvincias.TabIndex = 34;
-            this.TComboBoxProvincias.SelectedIndexChanged += new System.EventHandler(this.TComboBoxProvincias_SelectedIndexChanged);
+            this.TComboBoxProvincias.TabIndex = 4;
+            this.TComboBoxProvincias.Click += new System.EventHandler(this.TComboBoxProvincias_Click);
             // 
             // TTextBoxCiudad
             // 
             this.TTextBoxCiudad.Location = new System.Drawing.Point(301, 99);
             this.TTextBoxCiudad.Name = "TTextBoxCiudad";
             this.TTextBoxCiudad.Size = new System.Drawing.Size(100, 20);
-            this.TTextBoxCiudad.TabIndex = 33;
+            this.TTextBoxCiudad.TabIndex = 5;
             // 
             // TLabelCiudad
             // 
