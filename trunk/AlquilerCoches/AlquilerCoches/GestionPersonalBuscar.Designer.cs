@@ -79,7 +79,7 @@
             this.TDataGridViewPersonal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TDataGridViewPersonal.Location = new System.Drawing.Point(94, 35);
             this.TDataGridViewPersonal.Name = "TDataGridViewPersonal";
-            this.TDataGridViewPersonal.Size = new System.Drawing.Size(544, 209);
+            this.TDataGridViewPersonal.Size = new System.Drawing.Size(719, 209);
             this.TDataGridViewPersonal.TabIndex = 12;
             this.TDataGridViewPersonal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TDataGridViewPersonal_CellContentClick);
             // 

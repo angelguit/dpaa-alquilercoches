@@ -17,17 +17,31 @@ namespace CAD
         static private String cadenaConexion = ConfigurationManager.ConnectionStrings["AlquilerCoches"].ConnectionString; // @"Data Source=|DataDirectory|\BBDD.sdf";
         static private String nombreTabla = "Personal";
 
-        public DataSet ObtenerTablaPersonal(string ciu)
+        public DataSet ObtenerTablaPersonal(string todo)
         {
             DataSet dsPersonal = new DataSet();
             
             try
             {
                 SqlConnection conexion = new SqlConnection(cadenaConexion);
-                String consulta = "Select * FROM Personal WHERE ciudad like '%"+ciu+"%'";
-                SqlDataAdapter daPersonal = new SqlDataAdapter(consulta, conexion);
-                daPersonal.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-                daPersonal.Fill(dsPersonal, nombreTabla); //dsPersonal es ahora nuestra base de datos local
+                //String consulta = "Select * FROM Personal WHERE ciudad like '%"+ciu+"%' and apellidos='"+apell+"'";
+               
+                if(todo!="") //si cadena todo esta llena
+                {
+                    String consulta = "Select * FROM Personal WHERE "+todo+"";
+                    SqlDataAdapter daPersonal = new SqlDataAdapter(consulta, conexion);
+                    daPersonal.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                    daPersonal.Fill(dsPersonal, nombreTabla); //dsPersonal es ahora nuestra base de datos local
+                }
+                else //si cadena todo esta vacia
+                {
+                   String consulta = "Select * FROM Personal";
+                   SqlDataAdapter daPersonal = new SqlDataAdapter(consulta, conexion);
+                   daPersonal.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                   daPersonal.Fill(dsPersonal, nombreTabla); //dsPersonal es ahora nuestra base de datos local
+                }
+
+               
             }
             catch (Exception ex)
             {
