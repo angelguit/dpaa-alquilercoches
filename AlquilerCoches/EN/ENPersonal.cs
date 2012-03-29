@@ -80,12 +80,12 @@ namespace EN
             set { otrospuestos = OtrosPuestos; }
         }
 
-        public DataSet ObtenerListaPersonal(string ciu)
+        public DataSet ObtenerListaPersonal(string todo)
         {
             DataSet resultado = new DataSet();
             try
             {
-                resultado = cadPersonal.ObtenerTablaPersonal(ciu);
+                resultado = cadPersonal.ObtenerTablaPersonal(todo);
             }
             catch (Exception ex)
             {

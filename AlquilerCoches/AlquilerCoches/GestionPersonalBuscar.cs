@@ -106,10 +106,43 @@ namespace AlquilerCoches
                 DataSet ds = new DataSet();
                 EN.ENPersonal enPerson = new EN.ENPersonal();
 
-               // enPerson.Ciudad = TTextBoxCiudad.Text;
-                //MessageBox.Show("mensa" + TTextBoxProvincia.Text);
+                string apell = TTextBoxApellidos.Text.ToString();
+                string ciu = TTextBoxCiudad.Text.ToString();
+                string nom = TTextBoxNombre.Text.ToString();
+                string prov = TComboBoxProvincias.Text.ToString();
+                string todo = "";
 
-                ds = enPerson.ObtenerListaPersonal(TTextBoxCiudad.Text.ToString());
+                if (apell != "") //apellidos
+                {
+                    todo +=" apellidos='"+apell+"' ";
+                }
+                if (nom != "" && todo != "") //nombre
+                {
+                    todo += " and nombre='"+nom+"' ";
+                }
+                else if (nom != "" && todo == "") 
+                {
+                    todo += " nombre='" + nom + "' ";
+                }
+                if (ciu != "" && todo!="") //ciudad
+                {
+                    todo += "and ciudad like '%" + ciu + "%' ";
+                }
+                else if (ciu != "" && todo == "")
+                {
+                    todo += " ciudad like '%" + ciu + "%' ";
+                }
+                if (prov != "" && todo != "") //provincia
+                {
+                    todo += "and provincia like '%" + prov + "%' ";
+                }
+                else if (prov != "" && todo == "")
+                {
+                    todo += " provincia like '%" + prov + "%' ";
+                }
+
+                MessageBox.Show("select * from tabla where" + todo);
+                ds = enPerson.ObtenerListaPersonal(todo);
                 
 
                   TDataGridViewPersonal.DataSource = ds;
