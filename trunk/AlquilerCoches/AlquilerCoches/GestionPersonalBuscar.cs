@@ -15,9 +15,12 @@ namespace AlquilerCoches
     {
         private DataSet ds;
 
+     
         public GestionPersonalBuscar()
         {
             InitializeComponent();
+
+            
 
             DataGridViewButtonColumn buttons = new DataGridViewButtonColumn();
             {
@@ -42,6 +45,8 @@ namespace AlquilerCoches
             TDataGridViewPersonal.Columns.Add(boton);
             TDataGridViewPersonal.Columns.Add(buttons);
         }
+
+        
 
         bool incorrecto = false;
         private void TTextBoxDNI_Leave(object sender, EventArgs e)
@@ -142,7 +147,6 @@ namespace AlquilerCoches
                     }
                     else
                     {
-
                         string nom = TDataGridViewPersonal.Rows[e.RowIndex].Cells[3].Value.ToString();//indice 1 para cojer el nombre
                         // MessageBox.Show("mensaje" + e.ColumnIndex+" , "+e.RowIndex); 
 
@@ -170,9 +174,13 @@ namespace AlquilerCoches
            // MessageBox.Show("hola"+TDataGridViewPersonal.Rows[e.RowIndex].Cells[e.ColumnIndex].ColumnIndex.ToString());
         }
 
-        private void TComboBoxProvincia_SelectedIndexChanged(object sender, EventArgs e)
+        private void TComboBoxProvincias_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            DataSet  dsProvin = new DataSet();
+            MessageBox.Show("eyyyy");
+           // TComboBoxProvincias.Text = "Seleccione Provincia";
+            TComboBoxProvincias.DataSource = dsProvin.Tables["Provincia"];
+            TComboBoxProvincias.DisplayMember = dsProvin.Tables["Provincia"].Columns[0].Caption.ToString();
         }
               
     }
