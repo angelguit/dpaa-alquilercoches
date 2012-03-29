@@ -83,22 +83,30 @@ namespace EN
         public DataSet ObtenerListaPersonal(string ciu)
         {
             DataSet resultado = new DataSet();
-            
             try
             {
-               
                 resultado = cadPersonal.ObtenerTablaPersonal(ciu);
             }
             catch (Exception ex)
             {
-                
                 throw (ex);
             }
-
             return resultado;
         }
 
-
+        public DataSet ObtenerProvincias()
+        {
+            DataSet resultado = new DataSet();
+            try
+            {
+                resultado = cadPersonal.ConseguirProvincias();
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            return resultado;
+        }
 
 
     }
