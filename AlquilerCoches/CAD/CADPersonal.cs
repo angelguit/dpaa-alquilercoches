@@ -36,6 +36,26 @@ namespace CAD
 
             return dsPersonal;
         }
+
+        public DataSet ConseguirProvincias()
+        {
+            DataSet dsProvin = new DataSet();
+
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                String consulta = "Select nombre FROM Provincia";
+                SqlDataAdapter daProv = new SqlDataAdapter(consulta, conexion);
+                daProv.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daProv.Fill(dsProvin, "Provincia"); //dsPersonal es ahora nuestra base de datos local
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+
+            return dsProvin;
+        }
     }
 
 
