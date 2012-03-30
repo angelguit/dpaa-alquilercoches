@@ -172,7 +172,7 @@ namespace AlquilerCoches
                 GestionVehiculos F5 = new GestionVehiculos();
                 F5.MdiParent = this;
                 F5.Show();
-                F5.WindowState = FormWindowState.Maximized;
+                //F5.WindowState = FormWindowState.Maximized;
             }
         }
 
@@ -193,7 +193,7 @@ namespace AlquilerCoches
                 Facturacion F6 = new Facturacion();
                 F6.MdiParent = this;
                 F6.Show();
-                F6.WindowState = FormWindowState.Maximized;
+                //F6.WindowState = FormWindowState.Maximized;
             }
         }
 
@@ -209,7 +209,7 @@ namespace AlquilerCoches
                 GestionFacturacion F7 = new GestionFacturacion();
                 F7.MdiParent = this;
                 F7.Show();
-                F7.WindowState = FormWindowState.Maximized;
+                //F7.WindowState = FormWindowState.Maximized;
             }
         }
 
@@ -224,7 +224,7 @@ namespace AlquilerCoches
                 PonerVenta F8 = new PonerVenta();
                 F8.MdiParent = this;
                 F8.Show();
-                F8.WindowState = FormWindowState.Maximized;
+                //F8.WindowState = FormWindowState.Maximized;
              }
         }
 
@@ -239,7 +239,7 @@ namespace AlquilerCoches
                 EditarVentas F9 = new EditarVentas();
                 F9.MdiParent = this;
                 F9.Show();
-                F9.WindowState = FormWindowState.Maximized;
+                //F9.WindowState = FormWindowState.Maximized;
             }
         }
 
@@ -254,7 +254,7 @@ namespace AlquilerCoches
                 GestionVentas F10 = new GestionVentas();
                 F10.MdiParent = this;
                 F10.Show();
-                F10.WindowState = FormWindowState.Maximized;
+                //F10.WindowState = FormWindowState.Maximized;
             }
         }
 

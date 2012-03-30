@@ -202,10 +202,6 @@ namespace AlquilerCoches
         private void TButtonBuscar_Click(object sender, EventArgs e)
         {
             accion = "Buscar";
-            TGroupBoxSeleccion.Enabled = true;
-            TGroupBoxDatosVehiculo.Enabled = false;
-            TGroupBoxAccion.Enabled = false;
-            TButtonCancelar.Enabled = true;
             rellenaMarcas();
         }
 
@@ -223,13 +219,21 @@ namespace AlquilerCoches
 
         private void rellenaMarcas()
         {
+            TGroupBoxSeleccion.Enabled = true;
+            TGroupBoxDatosVehiculo.Enabled = false;
+            TGroupBoxAccion.Enabled = false;
+            TButtonCancelar.Enabled = true;
+
             TListBoxMarcas.Items.Clear();
             TListBoxModelos.Items.Clear();
             TListBoxMatriculas.Items.Clear();
             DataSet listamarcas = vehiculos.ObtenerMarcas();
             for (int i = 0; !listamarcas.Tables["Vehiculo"].Rows.Count.Equals(i); i++)
                 if (!TListBoxMarcas.Items.Contains(listamarcas.Tables["Vehiculo"].Rows[i].ItemArray[0])) TListBoxMarcas.Items.Add(listamarcas.Tables["Vehiculo"].Rows[i].ItemArray[0]);
-
+            if (accion == "Anyadir")
+            {
+                TListBoxMarcas.Items.Add("Otra Marca");
+            }
         }
 
         private void TListBoxMarcas_SelectedIndexChanged(object sender, EventArgs e)
@@ -278,6 +282,7 @@ namespace AlquilerCoches
         private void TButtonAnyadir_Click(object sender, EventArgs e)
         {
             accion = "Anyadir";
+            rellenaMarcas();
         }
     }
 }
