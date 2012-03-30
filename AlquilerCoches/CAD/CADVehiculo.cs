@@ -101,7 +101,7 @@ namespace CAD
             try
             {
                 SqlConnection conexion = new SqlConnection(cadenaConexion);
-                String consulta = "Select  Matricula, Marca, Modelo, PrecioVenta, PrecioAlquiler, PrecioCompra, Garantia, KM, Estado from Vehiculo where Matricula='" + matricula + "'";
+                String consulta = "Select * from Vehiculo where Matricula='" + matricula + "'";
                 SqlDataAdapter daVehiculo = new SqlDataAdapter(consulta, conexion);
                 daVehiculo.MissingSchemaAction = MissingSchemaAction.AddWithKey;
                 daVehiculo.Fill(dsVehiculo, nombreTabla);

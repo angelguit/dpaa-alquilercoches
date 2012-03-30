@@ -269,9 +269,9 @@ namespace AlquilerCoches
 
                 DataSet DatosVehiculo = vehiculos.ObtenerDatosVehiculos(TListBoxMatriculas.Items[TListBoxMatriculas.SelectedIndex].ToString());
 
-                TTextBoxMatricula.Text = DatosVehiculo.Tables["Vehiculo"].Rows[0][0].ToString();
-                TTextBoxMarca.Text = DatosVehiculo.Tables["Vehiculo"].Rows[0][1].ToString();
-                TTextBoxModelo.Text = DatosVehiculo.Tables["Vehiculo"].Rows[0][2].ToString();
+                TTextBoxMatricula.Text = DatosVehiculo.Tables["Vehiculo"].Rows[0][2].ToString();
+                TTextBoxMarca.Text = DatosVehiculo.Tables["Vehiculo"].Rows[0][0].ToString();
+                TTextBoxModelo.Text = DatosVehiculo.Tables["Vehiculo"].Rows[0][1].ToString();
             }
         }
 
