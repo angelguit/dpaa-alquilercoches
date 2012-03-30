@@ -185,14 +185,21 @@ namespace AlquilerCoches
                     else
                     {
                         string nom = TDataGridViewPersonal.Rows[e.RowIndex].Cells[3].Value.ToString();//indice 1 para cojer el nombre
-                        // MessageBox.Show("mensaje" + e.ColumnIndex+" , "+e.RowIndex); 
+                        string dni = TDataGridViewPersonal.Rows[e.RowIndex].Cells[2].Value.ToString();
+                        string apell = TDataGridViewPersonal.Rows[e.RowIndex].Cells[4].Value.ToString();
+                        string telef = TDataGridViewPersonal.Rows[e.RowIndex].Cells[5].Value.ToString();
+                        string mail = TDataGridViewPersonal.Rows[e.RowIndex].Cells[6].Value.ToString();
+                        string direc = TDataGridViewPersonal.Rows[e.RowIndex].Cells[7].Value.ToString();
+                        string ciu = TDataGridViewPersonal.Rows[e.RowIndex].Cells[8].Value.ToString();
+                        string prov = TDataGridViewPersonal.Rows[e.RowIndex].Cells[9].Value.ToString();
+                        string puesac = TDataGridViewPersonal.Rows[e.RowIndex].Cells[10].Value.ToString();
 
-                        GestionPersonal Formu = new GestionPersonal(nom);
+                        GestionPersonal Formu = new GestionPersonal(nom,dni,apell,telef,mail,direc,ciu,prov,puesac);
 
                         Formu.StartPosition = FormStartPosition.CenterScreen;
                         Formu.MdiParent = this.MdiParent;
                         Formu.Show();
-                       // Formu.WindowState = FormWindowState.Maximized;
+                     
                     }
                 }
                 else

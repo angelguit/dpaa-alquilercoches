@@ -70,6 +70,32 @@ namespace CAD
 
             return dsProvin;
         }
+
+        public bool GuardarCambiosPersonal(string dni, string nomb, string apell, string telef, string mail, string direcc, string ciud, string prov, string puestoac)
+        {
+           // DataSet dsProvin = new DataSet();
+            bool cambios;
+            try
+            {
+                
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                String consultaBorrar = "DELETE FROM Personal WHERE DNI='"+dni+"'";
+               // String consultaInsertar = "INSERT INTO Personal (DNI, Nombre, Apellidos,Telefono,Email,Direccion,Ciudad,Provincia,PuestoActual)VALUES ('" + dni + "','" + nomb + "', '"+apell+"', '"+telef+"', '"+mail+"', '"+direcc+"', '"+ ciud +"', '"+prov+"', '"+puestoac+"')";
+                
+                SqlDataAdapter daBorrar = new SqlDataAdapter(consultaBorrar, conexion);
+                daBorrar.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+               // SqlDataAdapter daInsert = new SqlDataAdapter(consultaInsertar, conexion);
+                //daInsert.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                //daProv.Fill(dsProvin, "Provincia"); //dsPersonal es ahora nuestra base de datos local
+                cambios = true;
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+
+            return cambios;
+        }
     }
 
 

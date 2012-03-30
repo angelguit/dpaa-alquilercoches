@@ -16,10 +16,18 @@ namespace AlquilerCoches
         {
             InitializeComponent();
         }
-        public GestionPersonal(string nombre)//constructor sobrecargado
+        public GestionPersonal(string nombre,string dni, string apell, string telef, string mail, string direc, string ciu, string prov, string puesac)//constructor sobrecargado
         {
             InitializeComponent();
             TTextBoxNombre.Text = nombre;
+            TTextBoxApellidos.Text = apell;
+            TTextBoxDNI.Text = dni;
+            TTextBoxTelefono.Text = telef;
+            TTextBoxEmail.Text = mail;
+            TTextBoxDireccion.Text = direc;
+            TTextBoxCiudad.Text = ciu;
+            TTextBoxProvincia.Text = prov;
+            TTextBoxPuestoAc.Text = puesac;
         }
         private void label1_Click(object sender, EventArgs e)
         {
@@ -141,20 +149,30 @@ namespace AlquilerCoches
                 MessageBox.Show("Campos invalidos, reviselos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
+            else
+            {
+
+                string dni=TTextBoxDNI.Text; string nomb=TTextBoxNombre.Text; string apell=TTextBoxApellidos.Text; string telef = TTextBoxTelefono.Text;
+                string mail = TTextBoxEmail.Text; string direcc = TTextBoxDireccion.Text; string ciud = TTextBoxCiudad.Text; string prov = TTextBoxProvincia.Text;
+                string puestoac = TTextBoxPuestoAc.Text;
+
+                //DataSet dsPersonGuarda = new DataSet();
+                EN.ENPersonal enPerson = new EN.ENPersonal();
+                bool correcto = enPerson.GuardarCambios(dni,nomb,apell,telef,mail,direcc,ciud,prov,puestoac);
+
+                if (correcto == true)
+                {
+                    MessageBox.Show("modificacion correcta");
+                }
+                //TDataGridViewPersonal.DataSource = ds;
+                //TDataGridViewPersonal.DataMember = "Personal";
+                this.Close();
+
+            }
 
         }
 
-        private void GestionPersonal_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TTextBoxNombre_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TButtonCancelar_Click(object sender, EventArgs e)
+            private void TButtonCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
