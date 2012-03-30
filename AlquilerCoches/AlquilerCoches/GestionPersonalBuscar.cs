@@ -110,11 +110,20 @@ namespace AlquilerCoches
                 string ciu = TTextBoxCiudad.Text.ToString();
                 string nom = TTextBoxNombre.Text.ToString();
                 string prov = TComboBoxProvincias.Text.ToString();
+                string dni = TTextBoxDNI.Text.ToString();
                 string todo = "";
 
                 if (apell != "") //apellidos
                 {
                     todo +=" apellidos='"+apell+"' ";
+                }
+                if (dni != "" && todo != "") //nombre
+                {
+                    todo += " and DNI='" + dni + "' ";
+                }
+                else if (dni != "" && todo == "")
+                {
+                    todo += " DNI='" + dni + "' ";
                 }
                 if (nom != "" && todo != "") //nombre
                 {
@@ -181,9 +190,9 @@ namespace AlquilerCoches
                         GestionPersonal Formu = new GestionPersonal(nom);
 
                         Formu.StartPosition = FormStartPosition.CenterScreen;
-                        //Formu.MdiParent = this;
+                        Formu.MdiParent = this.MdiParent;
                         Formu.Show();
-                        Formu.WindowState = FormWindowState.Maximized;
+                       // Formu.WindowState = FormWindowState.Maximized;
                     }
                 }
                 else
