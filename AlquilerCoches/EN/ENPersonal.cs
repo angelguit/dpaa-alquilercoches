@@ -108,6 +108,20 @@ namespace EN
             return resultado;
         }
 
+        public bool GuardarCambios(string dni,string nomb, string apell, string telef, string mail, string direcc, string ciud, string prov, string puestoac)
+        {
+            bool cambios;
+            try
+            {
+               
+               cambios = cadPersonal.GuardarCambiosPersonal(dni, nomb, apell, telef, mail, direcc, ciud, prov, puestoac);
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            return cambios;
+        }
 
     }
 }

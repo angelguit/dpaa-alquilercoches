@@ -227,7 +227,6 @@
             this.TTextBoxNombre.Name = "TTextBoxNombre";
             this.TTextBoxNombre.Size = new System.Drawing.Size(108, 20);
             this.TTextBoxNombre.TabIndex = 1;
-            this.TTextBoxNombre.TextChanged += new System.EventHandler(this.TTextBoxNombre_TextChanged);
             this.TTextBoxNombre.Leave += new System.EventHandler(this.TTextBoxNombre_Leave);
             // 
             // TTextBoxDNI
@@ -323,7 +322,6 @@
             this.Name = "GestionPersonal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GestionPersonal";
-            this.Load += new System.EventHandler(this.GestionPersonal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.TGroupBoxAlta.ResumeLayout(false);
             this.TGroupBoxAlta.PerformLayout();
