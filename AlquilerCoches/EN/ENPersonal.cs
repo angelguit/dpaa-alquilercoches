@@ -108,13 +108,13 @@ namespace EN
             return resultado;
         }
 
-        public bool GuardarCambios(string dni,string nomb, string apell, string telef, string mail, string direcc, string ciud, string prov, string puestoac)
+        public DataSet GuardarCambios(string dni)
         {
-            bool cambios;
+            DataSet cambios = new DataSet();
             try
             {
                
-               cambios = cadPersonal.GuardarCambiosPersonal(dni, nomb, apell, telef, mail, direcc, ciud, prov, puestoac);
+               cambios = cadPersonal.GuardarCambiosPersonal(dni);
             }
             catch (Exception ex)
             {

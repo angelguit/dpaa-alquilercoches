@@ -141,11 +141,11 @@ namespace AlquilerCoches
                 {
                     todo += " ciudad like '%" + ciu + "%' ";
                 }
-                if (prov != "" && todo != "") //provincia
+                if (prov != " " && todo != "") //provincia
                 {
                     todo += "and provincia like '%" + prov + "%' ";
                 }
-                else if (prov != "" && todo == "")
+                else if (prov != " " && todo =="")
                 {
                     todo += " provincia like '%" + prov + "%' ";
                 }
