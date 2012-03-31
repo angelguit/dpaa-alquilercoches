@@ -43,8 +43,8 @@
             this.TLabelEstado = new System.Windows.Forms.Label();
             this.TRadioButtonEstado = new System.Windows.Forms.RadioButton();
             this.TPictureBoxMatricula = new System.Windows.Forms.PictureBox();
-            this.TTextBoxPrecioAlquiler = new System.Windows.Forms.TextBox();
-            this.TLabelPrecioAlquiler = new System.Windows.Forms.Label();
+            this.TTextBoxCategoria = new System.Windows.Forms.TextBox();
+            this.TLabelCategoria = new System.Windows.Forms.Label();
             this.TTextBoxPrecioVenta = new System.Windows.Forms.TextBox();
             this.TLabelPrecioVenta = new System.Windows.Forms.Label();
             this.TTextBoxPrecioCompra = new System.Windows.Forms.TextBox();
@@ -64,7 +64,7 @@
             this.TLabelModelos = new System.Windows.Forms.Label();
             this.TLabelMarcas = new System.Windows.Forms.Label();
             this.TGroupBoxAccion = new System.Windows.Forms.GroupBox();
-            this.ButtonBorrar = new System.Windows.Forms.Button();
+            this.TButtonBorrar = new System.Windows.Forms.Button();
             this.TButtonAnyadir = new System.Windows.Forms.Button();
             this.TButtonEditar = new System.Windows.Forms.Button();
             this.TButtonCancelar = new System.Windows.Forms.Button();
@@ -94,8 +94,8 @@
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelEstado);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TRadioButtonEstado);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TPictureBoxMatricula);
-            this.TGroupBoxDatosVehiculo.Controls.Add(this.TTextBoxPrecioAlquiler);
-            this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelPrecioAlquiler);
+            this.TGroupBoxDatosVehiculo.Controls.Add(this.TTextBoxCategoria);
+            this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelCategoria);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TTextBoxPrecioVenta);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelPrecioVenta);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TTextBoxPrecioCompra);
@@ -106,7 +106,7 @@
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelMatricula);
             this.TGroupBoxDatosVehiculo.Location = new System.Drawing.Point(238, 177);
             this.TGroupBoxDatosVehiculo.Name = "TGroupBoxDatosVehiculo";
-            this.TGroupBoxDatosVehiculo.Size = new System.Drawing.Size(595, 378);
+            this.TGroupBoxDatosVehiculo.Size = new System.Drawing.Size(595, 344);
             this.TGroupBoxDatosVehiculo.TabIndex = 19;
             this.TGroupBoxDatosVehiculo.TabStop = false;
             this.TGroupBoxDatosVehiculo.Text = "3 DatosVehiculo";
@@ -114,7 +114,7 @@
             // TTextBoxGarantia
             // 
             this.TTextBoxGarantia.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.TTextBoxGarantia.Location = new System.Drawing.Point(128, 262);
+            this.TTextBoxGarantia.Location = new System.Drawing.Point(128, 245);
             this.TTextBoxGarantia.Name = "TTextBoxGarantia";
             this.TTextBoxGarantia.Size = new System.Drawing.Size(261, 20);
             this.TTextBoxGarantia.TabIndex = 42;
@@ -124,7 +124,7 @@
             // 
             this.TLabelGarantia.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.TLabelGarantia.AutoSize = true;
-            this.TLabelGarantia.Location = new System.Drawing.Point(73, 265);
+            this.TLabelGarantia.Location = new System.Drawing.Point(73, 248);
             this.TLabelGarantia.Name = "TLabelGarantia";
             this.TLabelGarantia.Size = new System.Drawing.Size(47, 13);
             this.TLabelGarantia.TabIndex = 41;
@@ -133,7 +133,7 @@
             // TTextBoxKM
             // 
             this.TTextBoxKM.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.TTextBoxKM.Location = new System.Drawing.Point(128, 236);
+            this.TTextBoxKM.Location = new System.Drawing.Point(128, 219);
             this.TTextBoxKM.Name = "TTextBoxKM";
             this.TTextBoxKM.Size = new System.Drawing.Size(261, 20);
             this.TTextBoxKM.TabIndex = 40;
@@ -143,7 +143,7 @@
             // 
             this.TLabelKM.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.TLabelKM.AutoSize = true;
-            this.TLabelKM.Location = new System.Drawing.Point(97, 243);
+            this.TLabelKM.Location = new System.Drawing.Point(97, 226);
             this.TLabelKM.Name = "TLabelKM";
             this.TLabelKM.Size = new System.Drawing.Size(23, 13);
             this.TLabelKM.TabIndex = 39;
@@ -152,7 +152,7 @@
             // TTextBoxModelo
             // 
             this.TTextBoxModelo.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.TTextBoxModelo.Location = new System.Drawing.Point(128, 107);
+            this.TTextBoxModelo.Location = new System.Drawing.Point(128, 90);
             this.TTextBoxModelo.Name = "TTextBoxModelo";
             this.TTextBoxModelo.Size = new System.Drawing.Size(261, 20);
             this.TTextBoxModelo.TabIndex = 38;
@@ -162,7 +162,7 @@
             // 
             this.TLabelModelo.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.TLabelModelo.AutoSize = true;
-            this.TLabelModelo.Location = new System.Drawing.Point(78, 112);
+            this.TLabelModelo.Location = new System.Drawing.Point(78, 95);
             this.TLabelModelo.Name = "TLabelModelo";
             this.TLabelModelo.Size = new System.Drawing.Size(42, 13);
             this.TLabelModelo.TabIndex = 37;
@@ -171,7 +171,7 @@
             // TTextBoxMarca
             // 
             this.TTextBoxMarca.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.TTextBoxMarca.Location = new System.Drawing.Point(128, 77);
+            this.TTextBoxMarca.Location = new System.Drawing.Point(128, 60);
             this.TTextBoxMarca.Name = "TTextBoxMarca";
             this.TTextBoxMarca.Size = new System.Drawing.Size(261, 20);
             this.TTextBoxMarca.TabIndex = 36;
@@ -181,7 +181,7 @@
             // 
             this.TLabelMarca.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.TLabelMarca.AutoSize = true;
-            this.TLabelMarca.Location = new System.Drawing.Point(83, 84);
+            this.TLabelMarca.Location = new System.Drawing.Point(83, 67);
             this.TLabelMarca.Name = "TLabelMarca";
             this.TLabelMarca.Size = new System.Drawing.Size(37, 13);
             this.TLabelMarca.TabIndex = 35;
@@ -191,7 +191,7 @@
             // 
             this.TRadioButtonRevision.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.TRadioButtonRevision.AutoSize = true;
-            this.TRadioButtonRevision.Location = new System.Drawing.Point(208, 286);
+            this.TRadioButtonRevision.Location = new System.Drawing.Point(208, 269);
             this.TRadioButtonRevision.Name = "TRadioButtonRevision";
             this.TRadioButtonRevision.Size = new System.Drawing.Size(66, 17);
             this.TRadioButtonRevision.TabIndex = 34;
@@ -203,7 +203,7 @@
             // 
             this.TLabelEstado.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.TLabelEstado.AutoSize = true;
-            this.TLabelEstado.Location = new System.Drawing.Point(80, 288);
+            this.TLabelEstado.Location = new System.Drawing.Point(80, 271);
             this.TLabelEstado.Name = "TLabelEstado";
             this.TLabelEstado.Size = new System.Drawing.Size(40, 13);
             this.TLabelEstado.TabIndex = 33;
@@ -213,7 +213,7 @@
             // 
             this.TRadioButtonEstado.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.TRadioButtonEstado.AutoSize = true;
-            this.TRadioButtonEstado.Location = new System.Drawing.Point(128, 286);
+            this.TRadioButtonEstado.Location = new System.Drawing.Point(128, 269);
             this.TRadioButtonEstado.Name = "TRadioButtonEstado";
             this.TRadioButtonEstado.Size = new System.Drawing.Size(74, 17);
             this.TRadioButtonEstado.TabIndex = 32;
@@ -226,36 +226,36 @@
             this.TPictureBoxMatricula.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.TPictureBoxMatricula.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("TPictureBoxMatricula.BackgroundImage")));
             this.TPictureBoxMatricula.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.TPictureBoxMatricula.Location = new System.Drawing.Point(479, 11);
+            this.TPictureBoxMatricula.Location = new System.Drawing.Point(395, 34);
             this.TPictureBoxMatricula.Name = "TPictureBoxMatricula";
-            this.TPictureBoxMatricula.Size = new System.Drawing.Size(113, 368);
+            this.TPictureBoxMatricula.Size = new System.Drawing.Size(197, 231);
             this.TPictureBoxMatricula.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.TPictureBoxMatricula.TabIndex = 31;
             this.TPictureBoxMatricula.TabStop = false;
             // 
-            // TTextBoxPrecioAlquiler
+            // TTextBoxCategoria
             // 
-            this.TTextBoxPrecioAlquiler.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.TTextBoxPrecioAlquiler.Location = new System.Drawing.Point(128, 210);
-            this.TTextBoxPrecioAlquiler.Name = "TTextBoxPrecioAlquiler";
-            this.TTextBoxPrecioAlquiler.Size = new System.Drawing.Size(261, 20);
-            this.TTextBoxPrecioAlquiler.TabIndex = 28;
-            this.TTextBoxPrecioAlquiler.Leave += new System.EventHandler(this.TTextBoxPrecioAlquiler_TextChanged);
+            this.TTextBoxCategoria.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.TTextBoxCategoria.Location = new System.Drawing.Point(128, 193);
+            this.TTextBoxCategoria.Name = "TTextBoxCategoria";
+            this.TTextBoxCategoria.Size = new System.Drawing.Size(261, 20);
+            this.TTextBoxCategoria.TabIndex = 28;
+            this.TTextBoxCategoria.Leave += new System.EventHandler(this.TTextBoxPrecioAlquiler_TextChanged);
             // 
-            // TLabelPrecioAlquiler
+            // TLabelCategoria
             // 
-            this.TLabelPrecioAlquiler.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.TLabelPrecioAlquiler.AutoSize = true;
-            this.TLabelPrecioAlquiler.Location = new System.Drawing.Point(49, 217);
-            this.TLabelPrecioAlquiler.Name = "TLabelPrecioAlquiler";
-            this.TLabelPrecioAlquiler.Size = new System.Drawing.Size(71, 13);
-            this.TLabelPrecioAlquiler.TabIndex = 27;
-            this.TLabelPrecioAlquiler.Text = "PrecioAlquiler";
+            this.TLabelCategoria.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.TLabelCategoria.AutoSize = true;
+            this.TLabelCategoria.Location = new System.Drawing.Point(68, 196);
+            this.TLabelCategoria.Name = "TLabelCategoria";
+            this.TLabelCategoria.Size = new System.Drawing.Size(52, 13);
+            this.TLabelCategoria.TabIndex = 27;
+            this.TLabelCategoria.Text = "Categoria";
             // 
             // TTextBoxPrecioVenta
             // 
             this.TTextBoxPrecioVenta.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.TTextBoxPrecioVenta.Location = new System.Drawing.Point(128, 184);
+            this.TTextBoxPrecioVenta.Location = new System.Drawing.Point(128, 167);
             this.TTextBoxPrecioVenta.Name = "TTextBoxPrecioVenta";
             this.TTextBoxPrecioVenta.Size = new System.Drawing.Size(261, 20);
             this.TTextBoxPrecioVenta.TabIndex = 26;
@@ -265,7 +265,7 @@
             // 
             this.TLabelPrecioVenta.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.TLabelPrecioVenta.AutoSize = true;
-            this.TLabelPrecioVenta.Location = new System.Drawing.Point(55, 191);
+            this.TLabelPrecioVenta.Location = new System.Drawing.Point(55, 174);
             this.TLabelPrecioVenta.Name = "TLabelPrecioVenta";
             this.TLabelPrecioVenta.Size = new System.Drawing.Size(65, 13);
             this.TLabelPrecioVenta.TabIndex = 25;
@@ -274,7 +274,7 @@
             // TTextBoxPrecioCompra
             // 
             this.TTextBoxPrecioCompra.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.TTextBoxPrecioCompra.Location = new System.Drawing.Point(128, 159);
+            this.TTextBoxPrecioCompra.Location = new System.Drawing.Point(128, 142);
             this.TTextBoxPrecioCompra.Name = "TTextBoxPrecioCompra";
             this.TTextBoxPrecioCompra.Size = new System.Drawing.Size(261, 20);
             this.TTextBoxPrecioCompra.TabIndex = 24;
@@ -284,7 +284,7 @@
             // 
             this.TLabelPrecioCompra.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.TLabelPrecioCompra.AutoSize = true;
-            this.TLabelPrecioCompra.Location = new System.Drawing.Point(47, 166);
+            this.TLabelPrecioCompra.Location = new System.Drawing.Point(47, 149);
             this.TLabelPrecioCompra.Name = "TLabelPrecioCompra";
             this.TLabelPrecioCompra.Size = new System.Drawing.Size(73, 13);
             this.TLabelPrecioCompra.TabIndex = 23;
@@ -293,7 +293,7 @@
             // TTextBoxAnyo
             // 
             this.TTextBoxAnyo.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.TTextBoxAnyo.Location = new System.Drawing.Point(128, 133);
+            this.TTextBoxAnyo.Location = new System.Drawing.Point(128, 116);
             this.TTextBoxAnyo.Name = "TTextBoxAnyo";
             this.TTextBoxAnyo.Size = new System.Drawing.Size(261, 20);
             this.TTextBoxAnyo.TabIndex = 22;
@@ -303,7 +303,7 @@
             // 
             this.TLabelAnyo.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.TLabelAnyo.AutoSize = true;
-            this.TLabelAnyo.Location = new System.Drawing.Point(89, 140);
+            this.TLabelAnyo.Location = new System.Drawing.Point(89, 123);
             this.TLabelAnyo.Name = "TLabelAnyo";
             this.TLabelAnyo.Size = new System.Drawing.Size(31, 13);
             this.TLabelAnyo.TabIndex = 21;
@@ -312,7 +312,7 @@
             // TTextBoxMatricula
             // 
             this.TTextBoxMatricula.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.TTextBoxMatricula.Location = new System.Drawing.Point(128, 51);
+            this.TTextBoxMatricula.Location = new System.Drawing.Point(128, 34);
             this.TTextBoxMatricula.Name = "TTextBoxMatricula";
             this.TTextBoxMatricula.Size = new System.Drawing.Size(261, 20);
             this.TTextBoxMatricula.TabIndex = 20;
@@ -322,7 +322,7 @@
             // 
             this.TLabelMatricula.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.TLabelMatricula.AutoSize = true;
-            this.TLabelMatricula.Location = new System.Drawing.Point(70, 58);
+            this.TLabelMatricula.Location = new System.Drawing.Point(70, 41);
             this.TLabelMatricula.Name = "TLabelMatricula";
             this.TLabelMatricula.Size = new System.Drawing.Size(50, 13);
             this.TLabelMatricula.TabIndex = 19;
@@ -350,12 +350,14 @@
             // TButtonCerrar
             // 
             this.TButtonCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.TButtonCerrar.BackgroundImage = global::AlquilerCoches.Properties.Resources.Close_icon;
             this.TButtonCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.TButtonCerrar.Location = new System.Drawing.Point(12, 528);
+            this.TButtonCerrar.Image = global::AlquilerCoches.Properties.Resources.Close_icon;
+            this.TButtonCerrar.Location = new System.Drawing.Point(12, 524);
             this.TButtonCerrar.Name = "TButtonCerrar";
-            this.TButtonCerrar.Size = new System.Drawing.Size(89, 68);
+            this.TButtonCerrar.Size = new System.Drawing.Size(75, 72);
             this.TButtonCerrar.TabIndex = 30;
+            this.TButtonCerrar.Text = "Cerrar";
+            this.TButtonCerrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.TButtonCerrar.UseVisualStyleBackColor = true;
             this.TButtonCerrar.Click += new System.EventHandler(this.TButtonCerrar_Click);
             // 
@@ -450,7 +452,7 @@
             // 
             this.TGroupBoxAccion.BackColor = System.Drawing.Color.Transparent;
             this.TGroupBoxAccion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.TGroupBoxAccion.Controls.Add(this.ButtonBorrar);
+            this.TGroupBoxAccion.Controls.Add(this.TButtonBorrar);
             this.TGroupBoxAccion.Controls.Add(this.TButtonBuscar);
             this.TGroupBoxAccion.Controls.Add(this.TButtonAnyadir);
             this.TGroupBoxAccion.Controls.Add(this.TButtonEditar);
@@ -461,18 +463,19 @@
             this.TGroupBoxAccion.TabStop = false;
             this.TGroupBoxAccion.Text = "1 Accion";
             // 
-            // ButtonBorrar
+            // TButtonBorrar
             // 
-            this.ButtonBorrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ButtonBorrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ButtonBorrar.Image = global::AlquilerCoches.Properties.Resources.Delete_icon;
-            this.ButtonBorrar.Location = new System.Drawing.Point(109, 122);
-            this.ButtonBorrar.Name = "ButtonBorrar";
-            this.ButtonBorrar.Size = new System.Drawing.Size(75, 75);
-            this.ButtonBorrar.TabIndex = 33;
-            this.ButtonBorrar.Text = "Delete";
-            this.ButtonBorrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.ButtonBorrar.UseVisualStyleBackColor = true;
+            this.TButtonBorrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.TButtonBorrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.TButtonBorrar.Image = global::AlquilerCoches.Properties.Resources.Delete_icon;
+            this.TButtonBorrar.Location = new System.Drawing.Point(109, 122);
+            this.TButtonBorrar.Name = "TButtonBorrar";
+            this.TButtonBorrar.Size = new System.Drawing.Size(75, 75);
+            this.TButtonBorrar.TabIndex = 33;
+            this.TButtonBorrar.Text = "Delete";
+            this.TButtonBorrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.TButtonBorrar.UseVisualStyleBackColor = true;
+            this.TButtonBorrar.Click += new System.EventHandler(this.TButtonBorrar_Click);
             // 
             // TButtonAnyadir
             // 
@@ -500,29 +503,35 @@
             this.TButtonEditar.Text = "Edit";
             this.TButtonEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.TButtonEditar.UseVisualStyleBackColor = true;
+            this.TButtonEditar.Click += new System.EventHandler(this.TButtonEditar_Click);
             // 
             // TButtonCancelar
             // 
             this.TButtonCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.TButtonCancelar.BackgroundImage = global::AlquilerCoches.Properties.Resources.Cancel_icon;
             this.TButtonCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.TButtonCancelar.Location = new System.Drawing.Point(143, 427);
+            this.TButtonCancelar.Image = global::AlquilerCoches.Properties.Resources.Cancel_icon;
+            this.TButtonCancelar.Location = new System.Drawing.Point(62, 425);
             this.TButtonCancelar.Name = "TButtonCancelar";
             this.TButtonCancelar.Size = new System.Drawing.Size(75, 69);
             this.TButtonCancelar.TabIndex = 37;
+            this.TButtonCancelar.Text = "Cancel";
+            this.TButtonCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.TButtonCancelar.UseVisualStyleBackColor = true;
             this.TButtonCancelar.Click += new System.EventHandler(this.TButtonCancelar_Click);
             // 
             // TButtonOK
             // 
             this.TButtonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.TButtonOK.BackgroundImage = global::AlquilerCoches.Properties.Resources.Accept_icon;
             this.TButtonOK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.TButtonOK.Location = new System.Drawing.Point(62, 427);
+            this.TButtonOK.Image = global::AlquilerCoches.Properties.Resources.Accept_icon;
+            this.TButtonOK.Location = new System.Drawing.Point(143, 425);
             this.TButtonOK.Name = "TButtonOK";
             this.TButtonOK.Size = new System.Drawing.Size(75, 69);
             this.TButtonOK.TabIndex = 36;
+            this.TButtonOK.Text = "OK";
+            this.TButtonOK.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.TButtonOK.UseVisualStyleBackColor = true;
+            this.TButtonOK.Click += new System.EventHandler(this.TButtonOK_Click);
             // 
             // GestionVehiculos
             // 
@@ -564,8 +573,8 @@
         private System.Windows.Forms.Label TLabelEstado;
         private System.Windows.Forms.RadioButton TRadioButtonEstado;
         private System.Windows.Forms.PictureBox TPictureBoxMatricula;
-        private System.Windows.Forms.TextBox TTextBoxPrecioAlquiler;
-        private System.Windows.Forms.Label TLabelPrecioAlquiler;
+        private System.Windows.Forms.TextBox TTextBoxCategoria;
+        private System.Windows.Forms.Label TLabelCategoria;
         private System.Windows.Forms.TextBox TTextBoxPrecioVenta;
         private System.Windows.Forms.Label TLabelPrecioVenta;
         private System.Windows.Forms.TextBox TTextBoxPrecioCompra;
@@ -595,7 +604,7 @@
         private System.Windows.Forms.Button TButtonCancelar;
         private System.Windows.Forms.Button TButtonOK;
         private System.Windows.Forms.GroupBox TGroupBoxAccion;
-        private System.Windows.Forms.Button ButtonBorrar;
+        private System.Windows.Forms.Button TButtonBorrar;
         private System.Windows.Forms.Button TButtonBuscar;
         private System.Windows.Forms.Button TButtonAnyadir;
         private System.Windows.Forms.Button TButtonEditar;
