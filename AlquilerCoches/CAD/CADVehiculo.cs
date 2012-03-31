@@ -24,9 +24,9 @@ namespace CAD
             {
                 SqlConnection conexion = new SqlConnection(cadenaConexion);
                 String consulta = "Select * from Vehiculo";
-                SqlDataAdapter daCaminos = new SqlDataAdapter(consulta, conexion);
-                daCaminos.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-                daCaminos.Fill(dsVehiculo, nombreTabla);
+                SqlDataAdapter daVehiculos = new SqlDataAdapter(consulta, conexion);
+                daVehiculos.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daVehiculos.Fill(dsVehiculo, nombreTabla);
             }
             catch (Exception ex)
             {
@@ -113,6 +113,7 @@ namespace CAD
 
             return dsVehiculo;
         }
+
         public DataSet ObtenerModelosVehiculo(string cat, string mar)
         {
             DataSet dsVehiculo = new DataSet();
@@ -120,9 +121,9 @@ namespace CAD
             {
                 SqlConnection conexion = new SqlConnection(cadenaConexion);
                 String consulta = "Select Modelo from Vehiculo WHERE (FK_Categoria = '" + cat + "') AND (Marca = '" + mar + "') AND (Estado = 'Disponible')";
-                SqlDataAdapter daCaminos = new SqlDataAdapter(consulta, conexion);
-                daCaminos.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-                daCaminos.Fill(dsVehiculo, "Modelos");
+                SqlDataAdapter daVehiculos = new SqlDataAdapter(consulta, conexion);
+                daVehiculos.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daVehiculos.Fill(dsVehiculo, "Modelos");
             }
             catch (Exception ex)
             {
@@ -139,9 +140,9 @@ namespace CAD
             {
                 SqlConnection conexion = new SqlConnection(cadenaConexion);
                 String consulta = "Select Matricula from Vehiculo WHERE (Modelo = '" + mod + "') AND (Estado = 'Disponible')";
-                SqlDataAdapter daCaminos = new SqlDataAdapter(consulta, conexion);
-                daCaminos.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-                daCaminos.Fill(dsVehiculo, "Matriculas");
+                SqlDataAdapter daVehiculos = new SqlDataAdapter(consulta, conexion);
+                daVehiculos.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daVehiculos.Fill(dsVehiculo, "Matriculas");
             }
             catch (Exception ex)
             {
@@ -158,9 +159,9 @@ namespace CAD
             {
                 SqlConnection conexion = new SqlConnection(cadenaConexion);
                 String consulta = "Select Marca from Vehiculo WHERE (FK_Categoria = '" + cat + "') AND (Estado = 'Disponible')";
-                SqlDataAdapter daCaminos = new SqlDataAdapter(consulta, conexion);
-                daCaminos.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-                daCaminos.Fill(dsVehiculo, "Marcas");
+                SqlDataAdapter daVehiculos = new SqlDataAdapter(consulta, conexion);
+                daVehiculos.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daVehiculos.Fill(dsVehiculo, "Marcas");
             }
             catch (Exception ex)
             {
@@ -168,6 +169,50 @@ namespace CAD
             }
 
             return dsVehiculo;
+        }
+
+
+        /// nuevo
+        public void BorrarVehiculo(string matricula)
+        {
+            DataSet dsVehiculo = new DataSet();
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                String consulta = "Select * from Vehiculo where Matricula='" + matricula + "'";
+                SqlDataAdapter daVehiculo = new SqlDataAdapter(consulta, conexion);
+                daVehiculo.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daVehiculo.Fill(dsVehiculo, nombreTabla);
+                dsVehiculo.Tables["Vehiculo"].Rows[0].Delete();
+                SqlCommandBuilder cbuilder = new SqlCommandBuilder(daVehiculo);
+                daVehiculo.Update(dsVehiculo, "Vehiculo");
+
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+        }
+
+        public void EditarVehiculo(DataSet vehiculo)
+        {
+            DataSet dsVehiculo = new DataSet();
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                String consulta = "Select * from Vehiculo where Matricula='" + vehiculo.Tables["Vehiculo"].Rows[0][2] + "'";
+                SqlDataAdapter daVehiculo = new SqlDataAdapter(consulta, conexion);
+                daVehiculo.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daVehiculo.Fill(dsVehiculo, nombreTabla);
+                dsVehiculo.Tables["Vehiculo"].Rows[0].Delete();
+                SqlCommandBuilder cbuilder = new SqlCommandBuilder(daVehiculo);
+                daVehiculo.Update(vehiculo, "Vehiculo");
+
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
         }
     }
 }
