@@ -34,7 +34,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TButtonGuardarPersonal = new System.Windows.Forms.Button();
             this.TGroupBoxAlta = new System.Windows.Forms.GroupBox();
-            this.TComboBoxProvincia = new System.Windows.Forms.ComboBox();
+            this.TComboBoxProvincias = new System.Windows.Forms.ComboBox();
+            this.TComboBoxCiudades = new System.Windows.Forms.ComboBox();
             this.TTextBoxDireccion = new System.Windows.Forms.TextBox();
             this.TLabelDireccion = new System.Windows.Forms.Label();
             this.TTextBoxEmail = new System.Windows.Forms.TextBox();
@@ -42,14 +43,13 @@
             this.TLabelOtrosPuestos = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.TTextBoxPuestoAc = new System.Windows.Forms.TextBox();
-            this.TTextBoxCiudad = new System.Windows.Forms.TextBox();
             this.TTextBoxTelefono = new System.Windows.Forms.TextBox();
             this.TTextBoxApellidos = new System.Windows.Forms.TextBox();
             this.TTextBoxNombre = new System.Windows.Forms.TextBox();
             this.TTextBoxDNI = new System.Windows.Forms.TextBox();
             this.TLabelPuestoAc = new System.Windows.Forms.Label();
-            this.TLabelProvincia = new System.Windows.Forms.Label();
-            this.TLabelCiudad = new System.Windows.Forms.Label();
+            this.TLabelCiudades = new System.Windows.Forms.Label();
+            this.TLabelProvincias = new System.Windows.Forms.Label();
             this.TLabelTelefono1 = new System.Windows.Forms.Label();
             this.TLabelApellidos = new System.Windows.Forms.Label();
             this.TLabelNombre = new System.Windows.Forms.Label();
@@ -104,7 +104,8 @@
             // TGroupBoxAlta
             // 
             this.TGroupBoxAlta.BackColor = System.Drawing.Color.Transparent;
-            this.TGroupBoxAlta.Controls.Add(this.TComboBoxProvincia);
+            this.TGroupBoxAlta.Controls.Add(this.TComboBoxProvincias);
+            this.TGroupBoxAlta.Controls.Add(this.TComboBoxCiudades);
             this.TGroupBoxAlta.Controls.Add(this.TTextBoxDireccion);
             this.TGroupBoxAlta.Controls.Add(this.TLabelDireccion);
             this.TGroupBoxAlta.Controls.Add(this.TTextBoxEmail);
@@ -112,14 +113,13 @@
             this.TGroupBoxAlta.Controls.Add(this.TLabelOtrosPuestos);
             this.TGroupBoxAlta.Controls.Add(this.richTextBox1);
             this.TGroupBoxAlta.Controls.Add(this.TTextBoxPuestoAc);
-            this.TGroupBoxAlta.Controls.Add(this.TTextBoxCiudad);
             this.TGroupBoxAlta.Controls.Add(this.TTextBoxTelefono);
             this.TGroupBoxAlta.Controls.Add(this.TTextBoxApellidos);
             this.TGroupBoxAlta.Controls.Add(this.TTextBoxNombre);
             this.TGroupBoxAlta.Controls.Add(this.TTextBoxDNI);
             this.TGroupBoxAlta.Controls.Add(this.TLabelPuestoAc);
-            this.TGroupBoxAlta.Controls.Add(this.TLabelProvincia);
-            this.TGroupBoxAlta.Controls.Add(this.TLabelCiudad);
+            this.TGroupBoxAlta.Controls.Add(this.TLabelCiudades);
+            this.TGroupBoxAlta.Controls.Add(this.TLabelProvincias);
             this.TGroupBoxAlta.Controls.Add(this.TLabelTelefono1);
             this.TGroupBoxAlta.Controls.Add(this.TLabelApellidos);
             this.TGroupBoxAlta.Controls.Add(this.TLabelNombre);
@@ -131,16 +131,29 @@
             this.TGroupBoxAlta.TabStop = false;
             this.TGroupBoxAlta.Text = "Personal";
             // 
-            // TComboBoxProvincia
+            // TComboBoxProvincias
             // 
-            this.TComboBoxProvincia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.TComboBoxProvincia.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.TComboBoxProvincia.FormattingEnabled = true;
-            this.TComboBoxProvincia.Location = new System.Drawing.Point(148, 202);
-            this.TComboBoxProvincia.Name = "TComboBoxProvincia";
-            this.TComboBoxProvincia.Size = new System.Drawing.Size(108, 21);
-            this.TComboBoxProvincia.TabIndex = 46;
-            this.TComboBoxProvincia.Click += new System.EventHandler(this.TComboBoxProvincia_Click);
+            this.TComboBoxProvincias.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.TComboBoxProvincias.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.TComboBoxProvincias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TComboBoxProvincias.FormattingEnabled = true;
+            this.TComboBoxProvincias.Location = new System.Drawing.Point(148, 180);
+            this.TComboBoxProvincias.Name = "TComboBoxProvincias";
+            this.TComboBoxProvincias.Size = new System.Drawing.Size(108, 21);
+            this.TComboBoxProvincias.TabIndex = 47;
+            this.TComboBoxProvincias.Click += new System.EventHandler(this.TComboBoxProvincias_Click_1);
+            // 
+            // TComboBoxCiudades
+            // 
+            this.TComboBoxCiudades.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.TComboBoxCiudades.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.TComboBoxCiudades.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TComboBoxCiudades.FormattingEnabled = true;
+            this.TComboBoxCiudades.Location = new System.Drawing.Point(148, 202);
+            this.TComboBoxCiudades.Name = "TComboBoxCiudades";
+            this.TComboBoxCiudades.Size = new System.Drawing.Size(108, 21);
+            this.TComboBoxCiudades.TabIndex = 46;
+            this.TComboBoxCiudades.Click += new System.EventHandler(this.TComboBoxCiudades_Click_1);
             // 
             // TTextBoxDireccion
             // 
@@ -201,14 +214,6 @@
             this.TTextBoxPuestoAc.TabIndex = 8;
             this.TTextBoxPuestoAc.Leave += new System.EventHandler(this.TTextBoxPuestoAc_Leave);
             // 
-            // TTextBoxCiudad
-            // 
-            this.TTextBoxCiudad.Location = new System.Drawing.Point(148, 181);
-            this.TTextBoxCiudad.Name = "TTextBoxCiudad";
-            this.TTextBoxCiudad.Size = new System.Drawing.Size(108, 20);
-            this.TTextBoxCiudad.TabIndex = 6;
-            this.TTextBoxCiudad.Leave += new System.EventHandler(this.TTextBoxCiudad_Leave);
-            // 
             // TTextBoxTelefono
             // 
             this.TTextBoxTelefono.Location = new System.Drawing.Point(148, 115);
@@ -250,23 +255,23 @@
             this.TLabelPuestoAc.TabIndex = 33;
             this.TLabelPuestoAc.Text = "Puesto Actual";
             // 
-            // TLabelProvincia
+            // TLabelCiudades
             // 
-            this.TLabelProvincia.AutoSize = true;
-            this.TLabelProvincia.Location = new System.Drawing.Point(81, 210);
-            this.TLabelProvincia.Name = "TLabelProvincia";
-            this.TLabelProvincia.Size = new System.Drawing.Size(51, 13);
-            this.TLabelProvincia.TabIndex = 32;
-            this.TLabelProvincia.Text = "Provincia";
+            this.TLabelCiudades.AutoSize = true;
+            this.TLabelCiudades.Location = new System.Drawing.Point(90, 210);
+            this.TLabelCiudades.Name = "TLabelCiudades";
+            this.TLabelCiudades.Size = new System.Drawing.Size(40, 13);
+            this.TLabelCiudades.TabIndex = 32;
+            this.TLabelCiudades.Text = "Ciudad";
             // 
-            // TLabelCiudad
+            // TLabelProvincias
             // 
-            this.TLabelCiudad.AutoSize = true;
-            this.TLabelCiudad.Location = new System.Drawing.Point(90, 188);
-            this.TLabelCiudad.Name = "TLabelCiudad";
-            this.TLabelCiudad.Size = new System.Drawing.Size(40, 13);
-            this.TLabelCiudad.TabIndex = 31;
-            this.TLabelCiudad.Text = "Ciudad";
+            this.TLabelProvincias.AutoSize = true;
+            this.TLabelProvincias.Location = new System.Drawing.Point(82, 188);
+            this.TLabelProvincias.Name = "TLabelProvincias";
+            this.TLabelProvincias.Size = new System.Drawing.Size(51, 13);
+            this.TLabelProvincias.TabIndex = 31;
+            this.TLabelProvincias.Text = "Provincia";
             // 
             // TLabelTelefono1
             // 
@@ -348,19 +353,19 @@
         private System.Windows.Forms.Label TLabelOtrosPuestos;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.TextBox TTextBoxPuestoAc;
-        private System.Windows.Forms.TextBox TTextBoxCiudad;
         private System.Windows.Forms.TextBox TTextBoxTelefono;
         private System.Windows.Forms.TextBox TTextBoxApellidos;
         private System.Windows.Forms.TextBox TTextBoxNombre;
         private System.Windows.Forms.TextBox TTextBoxDNI;
         private System.Windows.Forms.Label TLabelPuestoAc;
-        private System.Windows.Forms.Label TLabelProvincia;
-        private System.Windows.Forms.Label TLabelCiudad;
+        private System.Windows.Forms.Label TLabelProvincias;
         private System.Windows.Forms.Label TLabelTelefono1;
         private System.Windows.Forms.Label TLabelApellidos;
         private System.Windows.Forms.Label TLabelNombre;
         private System.Windows.Forms.Label TLabelDNI;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.ComboBox TComboBoxProvincia;
+        private System.Windows.Forms.ComboBox TComboBoxProvincias;
+        private System.Windows.Forms.ComboBox TComboBoxCiudades;
+        private System.Windows.Forms.Label TLabelCiudades;
     }
 }

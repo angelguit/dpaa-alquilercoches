@@ -42,8 +42,8 @@
             this.TTextBoxApellidos = new System.Windows.Forms.TextBox();
             this.TTextBoxPuestoAc = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.TComboBoxCiudades = new System.Windows.Forms.ComboBox();
             this.TComboBoxProvincias = new System.Windows.Forms.ComboBox();
-            this.TTextBoxCiudad = new System.Windows.Forms.TextBox();
             this.TLabelCiudad = new System.Windows.Forms.Label();
             this.TLabelProvincia = new System.Windows.Forms.Label();
             this.TButtonCerrar = new System.Windows.Forms.Button();
@@ -159,8 +159,8 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.TComboBoxCiudades);
             this.panel1.Controls.Add(this.TComboBoxProvincias);
-            this.panel1.Controls.Add(this.TTextBoxCiudad);
             this.panel1.Controls.Add(this.TLabelCiudad);
             this.panel1.Controls.Add(this.TLabelProvincia);
             this.panel1.Controls.Add(this.TTextBoxPuestoAc);
@@ -178,6 +178,19 @@
             this.panel1.Size = new System.Drawing.Size(473, 216);
             this.panel1.TabIndex = 24;
             // 
+            // TComboBoxCiudades
+            // 
+            this.TComboBoxCiudades.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.TComboBoxCiudades.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.TComboBoxCiudades.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TComboBoxCiudades.FormattingEnabled = true;
+            this.TComboBoxCiudades.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.TComboBoxCiudades.Location = new System.Drawing.Point(300, 99);
+            this.TComboBoxCiudades.Name = "TComboBoxCiudades";
+            this.TComboBoxCiudades.Size = new System.Drawing.Size(101, 21);
+            this.TComboBoxCiudades.TabIndex = 32;
+            this.TComboBoxCiudades.Click += new System.EventHandler(this.TComboBoxCiudades_Click);
+            // 
             // TComboBoxProvincias
             // 
             this.TComboBoxProvincias.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
@@ -190,13 +203,6 @@
             this.TComboBoxProvincias.Size = new System.Drawing.Size(101, 21);
             this.TComboBoxProvincias.TabIndex = 4;
             this.TComboBoxProvincias.Click += new System.EventHandler(this.TComboBoxProvincias_Click);
-            // 
-            // TTextBoxCiudad
-            // 
-            this.TTextBoxCiudad.Location = new System.Drawing.Point(301, 99);
-            this.TTextBoxCiudad.Name = "TTextBoxCiudad";
-            this.TTextBoxCiudad.Size = new System.Drawing.Size(100, 20);
-            this.TTextBoxCiudad.TabIndex = 5;
             // 
             // TLabelCiudad
             // 
@@ -273,9 +279,9 @@
         private System.Windows.Forms.Button TButtonCerrar;
        // private BBDDDataSet bBDDDataSet;
         private System.Windows.Forms.BindingSource bBDDDataSetBindingSource;
-        private System.Windows.Forms.TextBox TTextBoxCiudad;
         private System.Windows.Forms.Label TLabelCiudad;
         private System.Windows.Forms.Label TLabelProvincia;
         private System.Windows.Forms.ComboBox TComboBoxProvincias;
+        private System.Windows.Forms.ComboBox TComboBoxCiudades;
 	}
 }

@@ -108,6 +108,34 @@ namespace EN
             return resultado;
         }
 
+        public DataSet ObtenerListaCiudades(string prov)
+        {
+            DataSet resultado = new DataSet();
+            try
+            {
+                resultado = cadPersonal.ConseguirCiudades(prov);
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            return resultado;
+        }
+        
+       /* public DataSet NumeroProvincia(string prov)
+        {
+            DataSet resultado = new DataSet();
+            try
+            {
+                resultado = cadPersonal.DameNumProvincia(prov);
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            return resultado;
+        }*/
+
         public DataSet GuardarCambios(string dni)
         {
             DataSet cambios = new DataSet();
