@@ -58,7 +58,7 @@ namespace CAD
             try
             {
                 SqlConnection conexion = new SqlConnection(cadenaConexion);
-                String consulta = "Select nombre FROM Provincia";
+                String consulta = "Select id_prov,nombre FROM Provincia";
                 SqlDataAdapter daProv = new SqlDataAdapter(consulta, conexion);
                 daProv.MissingSchemaAction = MissingSchemaAction.AddWithKey;
                 daProv.Fill(dsProvin, "Provincia"); //dsPersonal es ahora nuestra base de datos local
@@ -69,6 +69,47 @@ namespace CAD
             }
 
             return dsProvin;
+        }
+       
+       /* public DataSet DameNumProvincia(string pro)
+        {
+            DataSet dsProvin = new DataSet();
+
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                String consulta = "Select id_prov FROM Provincia where nombre'"+pro+"'";
+                SqlDataAdapter daProv = new SqlDataAdapter(consulta, conexion);
+                daProv.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daProv.Fill(dsProvin, "Provincia"); //dsPersonal es ahora nuestra base de datos local
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+
+                return dsProvin;
+        }*/
+
+
+        public DataSet ConseguirCiudades(string prov)
+        {
+            DataSet dsCiu = new DataSet();
+
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                String consulta = "Select municipio FROM Ciudades where provincia='"+prov+"'";
+                SqlDataAdapter daCiu = new SqlDataAdapter(consulta, conexion);
+                daCiu.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daCiu.Fill(dsCiu, "Ciudades"); //dsPersonal es ahora nuestra base de datos local
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+
+            return dsCiu;
         }
 
         public DataSet GuardarCambiosPersonal(string dni)

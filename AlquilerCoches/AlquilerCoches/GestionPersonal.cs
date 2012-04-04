@@ -26,8 +26,12 @@ namespace AlquilerCoches
             TTextBoxTelefono.Text = telef;
             TTextBoxEmail.Text = mail;
             TTextBoxDireccion.Text = direc;
-            TTextBoxCiudad.Text = ciu;
-            TComboBoxProvincia.Text = prov;
+            
+            TComboBoxProvincias.Items.Add(prov);
+            TComboBoxProvincias.SelectedIndex = 0;
+            TComboBoxCiudades.Items.Add(ciu);
+            TComboBoxCiudades.SelectedIndex = 0;
+           
             TTextBoxPuestoAc.Text = puesac;
         }
         private void label1_Click(object sender, EventArgs e)
@@ -109,12 +113,12 @@ namespace AlquilerCoches
 
         private void TTextBoxCiudad_Leave(object sender, EventArgs e)
         {
-            if (!Regex.Match(TTextBoxCiudad.Text, @"^[A-Za-z]{3,40}$").Success)
+            if (!Regex.Match(TComboBoxCiudades.Text, @"^[A-Za-z]{3,40}$").Success)
             {
-                errorProvider1.SetError(TTextBoxCiudad, "Ciudad incorrecta, caracteres invalidos");
+                errorProvider1.SetError(TComboBoxCiudades, "Ciudad incorrecta, caracteres invalidos");
                 incorrecto = true;
             }
-            else { errorProvider1.SetError(TTextBoxCiudad, ""); }
+            else { errorProvider1.SetError(TComboBoxCiudades, ""); }
         }
 
        /* private void TTextBoxProvincia_Leave(object sender, EventArgs e)
@@ -140,7 +144,7 @@ namespace AlquilerCoches
         private void TButtonGuardarPersonal_Click(object sender, EventArgs e)
         {
             if (TTextBoxDNI.Text == "" || TTextBoxNombre.Text == "" || TTextBoxApellidos.Text == "" || TTextBoxTelefono.Text == "" ||
-                 TTextBoxEmail.Text == "" || TTextBoxDireccion.Text == "" || TTextBoxCiudad.Text == "" || TComboBoxProvincia.Text == "" ||
+                 TTextBoxEmail.Text == "" || TTextBoxDireccion.Text == "" || TComboBoxCiudades.Text == null || TComboBoxProvincias.Text == null ||
                 TTextBoxPuestoAc.Text == "")
             {
                 MessageBox.Show("Campos invalidos, no puede haber ninguno vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -154,7 +158,7 @@ namespace AlquilerCoches
             {
 
                 string dni=TTextBoxDNI.Text; string nomb=TTextBoxNombre.Text; string apell=TTextBoxApellidos.Text; string telef = TTextBoxTelefono.Text;
-                string mail = TTextBoxEmail.Text; string direcc = TTextBoxDireccion.Text; string ciud = TTextBoxCiudad.Text; string prov = TComboBoxProvincia.Text;
+                string mail = TTextBoxEmail.Text; string direcc = TTextBoxDireccion.Text; string ciud = TComboBoxCiudades.Text; string prov = TComboBoxProvincias.Text;
                 string puestoac = TTextBoxPuestoAc.Text;
 
                 DataSet dsPersonGuarda = new DataSet();
@@ -173,25 +177,25 @@ namespace AlquilerCoches
 
         }
 
-            private void TButtonCancelar_Click(object sender, EventArgs e)
+        private void TButtonCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-            private void TButtonFoto_Click(object sender, EventArgs e)
-            {
-                OpenFileDialog OFich = new OpenFileDialog();
-                OFich.Filter = "jpg (*.jpg)|*.jpg";
-                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-                if (OFich.ShowDialog() == DialogResult.OK)
-                    pictureBox1.Image = System.Drawing.Image.FromFile(OFich.FileName); 
-            }
+        private void TButtonFoto_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog OFich = new OpenFileDialog();
+            OFich.Filter = "jpg (*.jpg)|*.jpg";
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            if (OFich.ShowDialog() == DialogResult.OK)
+                pictureBox1.Image = System.Drawing.Image.FromFile(OFich.FileName); 
+        }
 
-            private void ObtenerProvincias(DataSet dsProv)
+           /* private void ObtenerProvincias(DataSet dsProv)
             {
                 TComboBoxProvincia.Text = "Seleccione Provincia";
                 TComboBoxProvincia.DataSource = dsProv.Tables["Provincia"];
-                TComboBoxProvincia.DisplayMember = dsProv.Tables["Provincia"].Columns[0].Caption.ToString();
+                TComboBoxProvincia.DisplayMember = dsProv.Tables["Provincia"].Columns[1].Caption.ToString();
             }       
                 
             private void TComboBoxProvincia_Click(object sender, EventArgs e)
@@ -200,6 +204,72 @@ namespace AlquilerCoches
                 DataSet dsProv = new DataSet();
                 dsProv = enProv.ObtenerListaProvincias();
                 ObtenerProvincias(dsProv);
+            }*/
+
+            private DataSet numProvincia;// usado en funcion TComboBoxCiudades_Click
+            private void ObtenerProvincias(DataSet dsProv)
+            {
+                TComboBoxProvincias.Text = "Seleccione Provincia";
+                TComboBoxProvincias.DataSource = dsProv.Tables["Provincia"];
+                TComboBoxProvincias.DisplayMember = dsProv.Tables["Provincia"].Columns[1].Caption.ToString(); // como dsProv lleva el id_prov y el nombre ponemos 1 que es la columna del nombre
+                // TComboBoxProvincias.DisplayMember = dsProv.Tables["Provincia"].Columns[0].Caption.ToString(); // como dsProv lleva el id_prov y el nombre ponemos 1 que es la columna del nombre
+
+
+                numProvincia = new DataSet();
+                numProvincia = dsProv;
+
+
+            }
+
+            private void ObtenerCiudades(DataSet dsCiu)
+            {
+                TComboBoxCiudades.Text = "Seleccione Ciudad";
+                TComboBoxCiudades.DataSource = dsCiu.Tables["Ciudades"];
+                TComboBoxCiudades.DisplayMember = dsCiu.Tables["Ciudades"].Columns[0].Caption.ToString();
+            }
+            private void TComboBoxProvincias_Click_1(object sender, EventArgs e)
+            {
+                if (TComboBoxCiudades.Items.Count > 0) //lo dejamos en blanco por si hubiera alguna ciudad, para realizar nueva busqueda de provincia
+                {
+                   // MessageBox.Show("hola");
+                    if(TComboBoxCiudades.Items.Count == 1)
+                     TComboBoxCiudades.Items.Clear();
+                    
+                    TComboBoxCiudades.DataSource = null;
+                }
+
+                EN.ENPersonal enProv = new EN.ENPersonal();
+                DataSet dsProv = new DataSet();
+                dsProv = enProv.ObtenerListaProvincias();
+                ObtenerProvincias(dsProv);
+            }
+
+            private void TComboBoxCiudades_Click_1(object sender, EventArgs e)
+            {
+                EN.ENPersonal enCiu = new EN.ENPersonal();
+                DataSet dsCiu = new DataSet();
+                try
+                {
+                    string prov = TComboBoxProvincias.Text.ToString();
+                    bool parar = false;
+                    // MessageBox.Show(numProvincia.Tables["Provincia"].Rows.Count.ToString());
+                    for (int i = 0; i < 53 && parar != true; i++)
+                    {
+                        //MessageBox.Show(numProvincia.Tables["Provincia"].Rows[i][1].ToString());
+                        if (numProvincia.Tables["Provincia"].Rows[i][1].ToString() == prov)
+                        {
+                            string numprov = numProvincia.Tables["Provincia"].Rows[i][0].ToString();// en la posicion 0 esta el id de la provincia
+                            parar = true;
+                            dsCiu = enCiu.ObtenerListaCiudades(numprov);
+
+                        }
+                    }
+                    ObtenerCiudades(dsCiu);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Seleccione primero una provincia", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
 
            
