@@ -274,6 +274,7 @@ namespace AlquilerCoches
                     TListBoxModelos.Items.Clear();
                     TGroupBoxDatosVehiculo.Enabled = true;
                     TGroupBoxSeleccion.Enabled = false;
+                    TButtonOK.Enabled = true;
                 }
                 else
                 {
@@ -307,6 +308,7 @@ namespace AlquilerCoches
                     TTextBoxMarca.Enabled = false;
                     TGroupBoxDatosVehiculo.Enabled = true;
                     TGroupBoxSeleccion.Enabled = false;
+                    TButtonOK.Enabled = true;
                 }
                 else
                 {
@@ -390,6 +392,8 @@ namespace AlquilerCoches
                     vehiculos.EditarVehiculo();
                     break;
                 case "Anyadir":
+                    guardaCampos();
+                    vehiculos.AnyadirVehiculo();
                     break;
             }
 

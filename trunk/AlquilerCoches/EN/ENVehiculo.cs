@@ -163,6 +163,32 @@ namespace EN
 
         }
 
+        public void AnyadirVehiculo()
+        {
+            DataSet resultado = new DataSet();
+            try
+            {
+                resultado = cadVehiculo.ObtenerTablaVehiculo();
+                DataRow linea = resultado.Tables["Vehiculo"].NewRow();
+                linea[0] = marca;
+                linea[1] = modelo;
+                linea[2] = matricula;
+                linea[3] = precioVenta;
+                linea[4] = precioCompra;
+                linea[5] = garantia;
+                linea[6] = km;
+                linea[7] = estado;
+                linea[8] = categoria;
+                resultado.Tables["Vehiculo"].Rows.Add(linea);
+                cadVehiculo.AnyadirVehiculo(resultado);
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+
+        }
+
         public DataSet ObtenerMarcas(string cat)
         {
             DataSet resultado = new DataSet();
