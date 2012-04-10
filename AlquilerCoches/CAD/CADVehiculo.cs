@@ -204,7 +204,25 @@ namespace CAD
                 SqlDataAdapter daVehiculo = new SqlDataAdapter(consulta, conexion);
                 daVehiculo.MissingSchemaAction = MissingSchemaAction.AddWithKey;
                 daVehiculo.Fill(dsVehiculo, nombreTabla);
-                dsVehiculo.Tables["Vehiculo"].Rows[0].Delete();
+                SqlCommandBuilder cbuilder = new SqlCommandBuilder(daVehiculo);
+                daVehiculo.Update(vehiculo, "Vehiculo");
+
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+        }
+        public void AnyadirVehiculo(DataSet vehiculo)
+        {
+            DataSet dsVehiculo = new DataSet();
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                String consulta = "Select * from Vehiculo";
+                SqlDataAdapter daVehiculo = new SqlDataAdapter(consulta, conexion);
+                daVehiculo.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daVehiculo.Fill(dsVehiculo, nombreTabla);
                 SqlCommandBuilder cbuilder = new SqlCommandBuilder(daVehiculo);
                 daVehiculo.Update(vehiculo, "Vehiculo");
 
