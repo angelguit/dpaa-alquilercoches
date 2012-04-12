@@ -167,8 +167,8 @@ namespace EN
         public void AnyadirPersonal()
         {
             DataSet resultado = new DataSet();
-            //try
-            //{
+            try
+            {
                 string frase = ""; //si la frase que le pasamos esta vacia nos devolvera todos los resultados
                 resultado = cadPersonal.ObtenerTablaPersonal(frase);
                 DataRow linea = resultado.Tables["Personal"].NewRow();
@@ -186,11 +186,11 @@ namespace EN
                 linea[9] = otrospuestos;
                 resultado.Tables["Personal"].Rows.Add(linea);
                 cadPersonal.AnyadirPersonal(resultado);
-           // }
-           /* catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 throw (ex);
-            }*/
+            }
 
         }
 
