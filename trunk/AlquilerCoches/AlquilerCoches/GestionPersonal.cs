@@ -89,7 +89,7 @@ namespace AlquilerCoches
         }
         private void TTextBoxDireccion_Leave(object sender, EventArgs e)
         {
-            if (!Regex.Match(TTextBoxDireccion.Text, @"^[A-Za-z]{3,40}$").Success)
+            if (!Regex.Match(TTextBoxDireccion.Text, @"^[A-Za-z\s]{3,40}$").Success)
             {
                 errorProvider1.SetError(TTextBoxDireccion, "Dirección incorrecta, caracteres invalidos");
                 incorrecto = true;
@@ -119,7 +119,7 @@ namespace AlquilerCoches
 
         private void TTextBoxPuestoAc_Leave(object sender, EventArgs e)
         {
-            if (!Regex.Match(TTextBoxPuestoAc.Text, @"^[A-Za-z\s]{3,15}$").Success) // "\s" para que admita espacios en blanco
+            if (!Regex.Match(TTextBoxPuestoAc.Text, @"^[A-Za-z\s]{3,100}$").Success) // "\s" para que admita espacios en blanco
             {
                 errorProvider1.SetError(TTextBoxPuestoAc, "Puesto incorrecto, caracteres invalidos");
                 incorrecto = true;
