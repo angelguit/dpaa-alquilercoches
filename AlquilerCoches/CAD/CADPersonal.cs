@@ -137,6 +137,63 @@ namespace CAD
 
             return dsCambiosPer;
         }
+
+        public void BorrarPersonal(ArrayList arraydni)
+        {
+            DataSet dsPersonal = new DataSet();
+            try
+            {
+                string frase="";
+                for (int i = 0; i < arraydni.Count; i++)
+                {
+                    if (i == 0){ frase += "'" + arraydni[i] + "'"; }
+                    else
+                    {
+                        frase += ",";
+                        frase += "'" + arraydni[i] + "'";
+                    }
+                }
+
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                String consulta = "Select * from Personal where DNI in ("+frase+")";
+                SqlDataAdapter daPersonal = new SqlDataAdapter(consulta, conexion);
+                daPersonal.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daPersonal.Fill(dsPersonal, nombreTabla);
+                for (int i = 0; i < arraydni.Count; i++)//lo hacemos parar borrar las filas que corresponden con los dnis 
+                {
+                    dsPersonal.Tables["Personal"].Rows[i].Delete();
+                }
+                SqlCommandBuilder cbuilder = new SqlCommandBuilder(daPersonal);
+                daPersonal.Update(dsPersonal, "Personal");
+
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+        }
+
+        public void AnyadirPersonal(DataSet persona)
+        {
+            DataSet dsPersonal = new DataSet();
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                String consulta = "Select * from Personal";
+                SqlDataAdapter daPersonal = new SqlDataAdapter(consulta, conexion);
+                daPersonal.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daPersonal.Fill(dsPersonal, nombreTabla); //nombre de tabla esta declarado arriba del todo y sera "Personal"
+                SqlCommandBuilder cbuilder = new SqlCommandBuilder(daPersonal);
+                daPersonal.Update(persona, "Personal");
+
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+        }
+
+
     }
 
 

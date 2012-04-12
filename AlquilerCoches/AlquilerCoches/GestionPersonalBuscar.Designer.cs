@@ -63,6 +63,7 @@
             this.TButtonEliminar.Text = "Eliminar";
             this.TButtonEliminar.UseVisualStyleBackColor = true;
             this.TButtonEliminar.Visible = false;
+            this.TButtonEliminar.Click += new System.EventHandler(this.TButtonEliminar_Click);
             // 
             // TButtonBuscar
             // 
@@ -81,6 +82,7 @@
             this.TDataGridViewPersonal.Name = "TDataGridViewPersonal";
             this.TDataGridViewPersonal.Size = new System.Drawing.Size(719, 209);
             this.TDataGridViewPersonal.TabIndex = 12;
+            this.TDataGridViewPersonal.Visible = false;
             this.TDataGridViewPersonal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TDataGridViewPersonal_CellContentClick);
             // 
             // errorProvider1
@@ -173,7 +175,7 @@
             this.panel1.Controls.Add(this.TLabelApellidos);
             this.panel1.Controls.Add(this.TLabelNombre);
             this.panel1.Controls.Add(this.TLabelDNI);
-            this.panel1.Location = new System.Drawing.Point(94, 267);
+            this.panel1.Location = new System.Drawing.Point(94, 64);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(473, 216);
             this.panel1.TabIndex = 24;

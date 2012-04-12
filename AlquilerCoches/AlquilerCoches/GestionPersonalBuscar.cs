@@ -14,9 +14,12 @@ namespace AlquilerCoches
 {
     public partial class GestionPersonalBuscar : Form
     {
+        EN.ENPersonal enPerson = new EN.ENPersonal();//declaramos enPerson que lo usaremos en cualquier operacion relacionada con personal
+        
         public GestionPersonalBuscar()
         {
             InitializeComponent();
+
 
             DataGridViewButtonColumn buttons = new DataGridViewButtonColumn();
             {
@@ -34,12 +37,14 @@ namespace AlquilerCoches
                 boton.HeaderText = "Eliminar";//texto de la columna
                 boton.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells; //tamaño
                 boton.DisplayIndex = 0; //indice que ocupara en la tabla
-
             }
 
 
             TDataGridViewPersonal.Columns.Add(boton);
             TDataGridViewPersonal.Columns.Add(buttons);
+           /* TDataGridViewPersonal.ReadOnly = true;
+            TDataGridViewPersonal.Columns[1].ReadOnly = false;*/
+           
         }
 
         
@@ -92,10 +97,14 @@ namespace AlquilerCoches
             }
             else { errorProvider1.SetError(TTextBoxPuestoAc, ""); }
         }
-
+        string eliminado = "";
         private void TButtonBuscar_Click(object sender, EventArgs e)
         {
+            TDataGridViewPersonal.Visible = true;
+            panel1.Location = new Point(94, 267); //para desplazar el panel de busqueda hacia abajo.
             //if(hay resultados) mostrar boton eliminar
+            arraydni.Clear();// donde meteremos los dni que seleccionemos en el checkbox eliminar, hay q utilizar clear para que si hacemos una nueva busqueda vacie el array
+
             if (incorrecto == true)
             {
                 MessageBox.Show("Campos invalidos, reviselos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -105,7 +114,7 @@ namespace AlquilerCoches
             {
                 TButtonEliminar.Visible = true;
                 DataSet ds = new DataSet();
-                EN.ENPersonal enPerson = new EN.ENPersonal();
+                
 
                 string apell = TTextBoxApellidos.Text.ToString();
                 string ciu = TComboBoxCiudades.Text.ToString();
@@ -153,7 +162,7 @@ namespace AlquilerCoches
 
                 MessageBox.Show("select * from tabla where" + todo);
                 ds = enPerson.ObtenerListaPersonal(todo);
-                
+                eliminado = todo;
 
                   TDataGridViewPersonal.DataSource = ds;
                   TDataGridViewPersonal.DataMember = "Personal";
@@ -167,15 +176,35 @@ namespace AlquilerCoches
             this.Close();
         }
 
+        ArrayList arraydni = new ArrayList();
         private void TDataGridViewPersonal_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            
             try
             {
 
-                if (TDataGridViewPersonal.Rows[e.RowIndex].Cells[e.ColumnIndex].ColumnIndex.ToString()=="5")
+                if (TDataGridViewPersonal.Rows[e.RowIndex].Cells[e.ColumnIndex].ColumnIndex.ToString()=="0") // la columna 0 es el checkbox de eliminiar
                 {
-                    MessageBox.Show("eyyy");
+                    string dni = TDataGridViewPersonal.Rows[e.RowIndex].Cells[2].Value.ToString(); //el indice 2 hace referencia al dni del datagridview
+                    
+                    if (arraydni.Count == 0)
+                    {
+                        arraydni.Add(dni);
+                    }
+                    else
+                    {
+                        bool esta = false;
+                        for (int i = 0; i < arraydni.Count; i++)
+                        {
+                            if (arraydni[i].ToString() == dni)
+                            {
+                                arraydni.RemoveAt(i);//para borrarlo de la array porque esto quiere decir que lo hemos deseleccionado
+                                esta = true;
+                            }
+                        }
+                        if (esta == false)
+                            arraydni.Add(dni);
+                    }
                 }
                 else if (TDataGridViewPersonal.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "Editar")
                 {
@@ -216,7 +245,7 @@ namespace AlquilerCoches
 
             }
 
-           // MessageBox.Show("hola"+TDataGridViewPersonal.Rows[e.RowIndex].Cells[e.ColumnIndex].ColumnIndex.ToString());
+           
         }
 
         private DataSet numProvincia;// usado en funcion TComboBoxCiudades_Click
@@ -280,8 +309,37 @@ namespace AlquilerCoches
            }
         }
 
-        
+       private void TButtonEliminar_Click(object sender, EventArgs e)
+       {
+           if (arraydni.Count > 0)
+           {
+               if (MessageBox.Show("¿Desea eliminar '" + arraydni.Count.ToString() + "' registros?", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+               {
 
+                   string frase = "";
+                   for (int i = 0; i < arraydni.Count; i++)
+                   {
+                       if (i == 0) { frase += "'" + arraydni[i] + "'"; }
+                       else
+                       {
+                           frase += ",";
+                           frase += "'" + arraydni[i] + "'";
+                       }
+                   }
+                   MessageBox.Show("Select * from Personal where DNI in (" + frase + ")");
+                   enPerson.EliminarPersonal(arraydni);
+               }
+
+               arraydni.Clear();
+               DataSet ou = new DataSet();
+               ou = enPerson.ObtenerListaPersonal(eliminado);
+               TDataGridViewPersonal.DataSource = ou;
+               
+           }
+           else
+               MessageBox.Show("Debe seleccionar algún registro", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+       }
 
       
     }

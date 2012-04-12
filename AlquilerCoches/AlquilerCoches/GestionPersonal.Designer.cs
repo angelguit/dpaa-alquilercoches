@@ -41,7 +41,7 @@
             this.TTextBoxEmail = new System.Windows.Forms.TextBox();
             this.TLabelEmail = new System.Windows.Forms.Label();
             this.TLabelOtrosPuestos = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.TRichTextBoxOtrosPuestos = new System.Windows.Forms.RichTextBox();
             this.TTextBoxPuestoAc = new System.Windows.Forms.TextBox();
             this.TTextBoxTelefono = new System.Windows.Forms.TextBox();
             this.TTextBoxApellidos = new System.Windows.Forms.TextBox();
@@ -111,7 +111,7 @@
             this.TGroupBoxAlta.Controls.Add(this.TTextBoxEmail);
             this.TGroupBoxAlta.Controls.Add(this.TLabelEmail);
             this.TGroupBoxAlta.Controls.Add(this.TLabelOtrosPuestos);
-            this.TGroupBoxAlta.Controls.Add(this.richTextBox1);
+            this.TGroupBoxAlta.Controls.Add(this.TRichTextBoxOtrosPuestos);
             this.TGroupBoxAlta.Controls.Add(this.TTextBoxPuestoAc);
             this.TGroupBoxAlta.Controls.Add(this.TTextBoxTelefono);
             this.TGroupBoxAlta.Controls.Add(this.TTextBoxApellidos);
@@ -140,7 +140,7 @@
             this.TComboBoxProvincias.Location = new System.Drawing.Point(148, 180);
             this.TComboBoxProvincias.Name = "TComboBoxProvincias";
             this.TComboBoxProvincias.Size = new System.Drawing.Size(108, 21);
-            this.TComboBoxProvincias.TabIndex = 47;
+            this.TComboBoxProvincias.TabIndex = 6;
             this.TComboBoxProvincias.Click += new System.EventHandler(this.TComboBoxProvincias_Click_1);
             // 
             // TComboBoxCiudades
@@ -152,7 +152,7 @@
             this.TComboBoxCiudades.Location = new System.Drawing.Point(148, 202);
             this.TComboBoxCiudades.Name = "TComboBoxCiudades";
             this.TComboBoxCiudades.Size = new System.Drawing.Size(108, 21);
-            this.TComboBoxCiudades.TabIndex = 46;
+            this.TComboBoxCiudades.TabIndex = 7;
             this.TComboBoxCiudades.Click += new System.EventHandler(this.TComboBoxCiudades_Click_1);
             // 
             // TTextBoxDireccion
@@ -198,13 +198,13 @@
             this.TLabelOtrosPuestos.TabIndex = 42;
             this.TLabelOtrosPuestos.Text = "Otros Puestos";
             // 
-            // richTextBox1
+            // TRichTextBoxOtrosPuestos
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(148, 263);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(141, 63);
-            this.richTextBox1.TabIndex = 9;
-            this.richTextBox1.Text = "";
+            this.TRichTextBoxOtrosPuestos.Location = new System.Drawing.Point(148, 263);
+            this.TRichTextBoxOtrosPuestos.Name = "TRichTextBoxOtrosPuestos";
+            this.TRichTextBoxOtrosPuestos.Size = new System.Drawing.Size(141, 63);
+            this.TRichTextBoxOtrosPuestos.TabIndex = 9;
+            this.TRichTextBoxOtrosPuestos.Text = "";
             // 
             // TTextBoxPuestoAc
             // 
@@ -351,7 +351,7 @@
         private System.Windows.Forms.TextBox TTextBoxEmail;
         private System.Windows.Forms.Label TLabelEmail;
         private System.Windows.Forms.Label TLabelOtrosPuestos;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox TRichTextBoxOtrosPuestos;
         private System.Windows.Forms.TextBox TTextBoxPuestoAc;
         private System.Windows.Forms.TextBox TTextBoxTelefono;
         private System.Windows.Forms.TextBox TTextBoxApellidos;

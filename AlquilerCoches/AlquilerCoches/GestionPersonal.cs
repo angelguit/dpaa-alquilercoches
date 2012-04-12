@@ -34,20 +34,6 @@ namespace AlquilerCoches
            
             TTextBoxPuestoAc.Text = puesac;
         }
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TLabelTelefono1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         bool incorrecto = false;
         
@@ -58,7 +44,7 @@ namespace AlquilerCoches
                 errorProvider1.SetError(TTextBoxDNI, "DNI incorrecto");
                 incorrecto = true;
             }
-            else { errorProvider1.SetError(TTextBoxDNI, ""); }
+            else { errorProvider1.SetError(TTextBoxDNI, ""); incorrecto = false; }
         }
 
         private void TTextBoxNombre_Leave(object sender, EventArgs e)
@@ -68,17 +54,17 @@ namespace AlquilerCoches
                 errorProvider1.SetError(TTextBoxNombre, "Nombre incorrecto");
                 incorrecto = true;
             }
-            else {  errorProvider1.SetError(TTextBoxNombre, ""); }
+            else { errorProvider1.SetError(TTextBoxNombre, ""); incorrecto = false; }
         }
 
         private void TTextBoxApellidos_Leave(object sender, EventArgs e)
         {
-            if (!Regex.Match(TTextBoxApellidos.Text, @"^[A-Za-z]{3,40}$").Success)
+            if (!Regex.Match(TTextBoxApellidos.Text, @"^[A-Za-z\s]{3,40}$").Success) // "\s" para que admita espacios en blanco
             {
                 errorProvider1.SetError(TTextBoxApellidos, "Apellidos incorrectos, caracteres invalidos");
                 incorrecto = true;
             }
-            else {  errorProvider1.SetError(TTextBoxApellidos, ""); }
+            else { errorProvider1.SetError(TTextBoxApellidos, ""); incorrecto = false; }
         }
 
         private void TTextBoxTelefono_Leave(object sender, EventArgs e)
@@ -88,7 +74,7 @@ namespace AlquilerCoches
                 errorProvider1.SetError(TTextBoxTelefono, "Telefono incorrecto, caracteres invalidos");
                 incorrecto = true;
             }
-            else {  errorProvider1.SetError(TTextBoxTelefono, ""); }
+            else { errorProvider1.SetError(TTextBoxTelefono, ""); incorrecto = false; }
         }
 
 
@@ -99,7 +85,7 @@ namespace AlquilerCoches
                 errorProvider1.SetError(TTextBoxEmail, "Email incorrectos, caracteres invalidos");
                 incorrecto = true;
             }
-            else {  errorProvider1.SetError(TTextBoxEmail, ""); }
+            else { errorProvider1.SetError(TTextBoxEmail, ""); incorrecto = false; }
         }
         private void TTextBoxDireccion_Leave(object sender, EventArgs e)
         {
@@ -108,7 +94,7 @@ namespace AlquilerCoches
                 errorProvider1.SetError(TTextBoxDireccion, "Dirección incorrecta, caracteres invalidos");
                 incorrecto = true;
             }
-            else {  errorProvider1.SetError(TTextBoxDireccion, ""); }
+            else { errorProvider1.SetError(TTextBoxDireccion, ""); incorrecto = false; }
         }
 
         private void TTextBoxCiudad_Leave(object sender, EventArgs e)
@@ -118,7 +104,7 @@ namespace AlquilerCoches
                 errorProvider1.SetError(TComboBoxCiudades, "Ciudad incorrecta, caracteres invalidos");
                 incorrecto = true;
             }
-            else { errorProvider1.SetError(TComboBoxCiudades, ""); }
+            else { errorProvider1.SetError(TComboBoxCiudades, ""); incorrecto = false; }
         }
 
        /* private void TTextBoxProvincia_Leave(object sender, EventArgs e)
@@ -133,12 +119,12 @@ namespace AlquilerCoches
 
         private void TTextBoxPuestoAc_Leave(object sender, EventArgs e)
         {
-            if (!Regex.Match(TTextBoxPuestoAc.Text, @"^[A-Za-z]{3,15}$").Success)
+            if (!Regex.Match(TTextBoxPuestoAc.Text, @"^[A-Za-z\s]{3,15}$").Success) // "\s" para que admita espacios en blanco
             {
                 errorProvider1.SetError(TTextBoxPuestoAc, "Puesto incorrecto, caracteres invalidos");
                 incorrecto = true;
             }
-            else { errorProvider1.SetError(TTextBoxPuestoAc, ""); }
+            else { errorProvider1.SetError(TTextBoxPuestoAc, ""); incorrecto = false; }
         }
 
         private void TButtonGuardarPersonal_Click(object sender, EventArgs e)
@@ -156,21 +142,15 @@ namespace AlquilerCoches
             }
             else
             {
+                EN.ENPersonal enPersonal = new EN.ENPersonal();
 
-                string dni=TTextBoxDNI.Text; string nomb=TTextBoxNombre.Text; string apell=TTextBoxApellidos.Text; string telef = TTextBoxTelefono.Text;
-                string mail = TTextBoxEmail.Text; string direcc = TTextBoxDireccion.Text; string ciud = TComboBoxCiudades.Text; string prov = TComboBoxProvincias.Text;
-                string puestoac = TTextBoxPuestoAc.Text;
+                enPersonal.DNI=TTextBoxDNI.Text; enPersonal.Nombre=TTextBoxNombre.Text; enPersonal.Apellidos=TTextBoxApellidos.Text; enPersonal.Telefono = Int32.Parse(TTextBoxTelefono.Text);
+                enPersonal.Email = TTextBoxEmail.Text; enPersonal.Direccion = TTextBoxDireccion.Text; enPersonal.Ciudad = TComboBoxCiudades.Text; enPersonal.Provincia = TComboBoxProvincias.Text;
+                enPersonal.PuestoAc = TTextBoxPuestoAc.Text; enPersonal.OtrosPuestos = TRichTextBoxOtrosPuestos.Text;
 
-                DataSet dsPersonGuarda = new DataSet();
-                EN.ENPersonal enPerson = new EN.ENPersonal();
-                dsPersonGuarda = enPerson.GuardarCambios(dni);
+                enPersonal.AnyadirPersonal();
 
-               /* if (correcto == true)
-                {
-                    MessageBox.Show("modificacion correcta");
-                }*/
-                //TDataGridViewPersonal.DataSource = ds;
-                //TDataGridViewPersonal.DataMember = "Personal";
+             
                 this.Close();
 
             }
@@ -268,7 +248,7 @@ namespace AlquilerCoches
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Seleccione primero una provincia", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Si desea cambiar la ciudad debe de volver a seleccionar una provincia", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
 

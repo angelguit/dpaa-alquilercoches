@@ -32,52 +32,52 @@ namespace EN
         public string DNI
         {
             get { return dni; }
-            set { dni = DNI; }
+            set { dni = value; }
         }
         public string Nombre
         {
             get { return nombre; }
-            set { nombre = Nombre; }
+            set { nombre = value; }
         }
         public string Apellidos
         {
             get { return apellidos; }
-            set { apellidos = Apellidos; }
+            set { apellidos = value; }
         }
         public int Telefono
         {
             get { return telefono; }
-            set { telefono = Telefono; }
+            set { telefono = value; }
         }
         public string Email
         {
             get { return email; }
-            set { email = Email; }
+            set { email = value; }
         }
         public string Direccion
         {
             get { return direccion; }
-            set { direccion = Direccion; }
+            set { direccion = value; }
         }
         public string Ciudad
         {
             get { return ciudad; }
-            set { ciudad = Ciudad; }
+            set { ciudad = value; }
         }
         public string Provincia
         {
             get { return provincia; }
-            set { provincia = Provincia; }
+            set { provincia = value; }
         }
         public string PuestoAc
         {
             get { return puestoac; }
-            set { puestoac = PuestoAc; }
+            set { puestoac = value; }
         }
         public string OtrosPuestos
         {
             get { return otrospuestos; }
-            set { otrospuestos = OtrosPuestos; }
+            set { otrospuestos = value; }
         }
 
         public DataSet ObtenerListaPersonal(string todo)
@@ -149,6 +149,49 @@ namespace EN
                 throw (ex);
             }
             return cambios;
+        }
+
+        public void EliminarPersonal(ArrayList arraydni)
+        {
+            try
+            {
+                cadPersonal.BorrarPersonal(arraydni);
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+
+        }
+
+        public void AnyadirPersonal()
+        {
+            DataSet resultado = new DataSet();
+            //try
+            //{
+                string frase = ""; //si la frase que le pasamos esta vacia nos devolvera todos los resultados
+                resultado = cadPersonal.ObtenerTablaPersonal(frase);
+                DataRow linea = resultado.Tables["Personal"].NewRow();
+                //linea[0] = ; para el recuadro eliminar
+                //linea[1] = ; para el boton editar
+                linea[0] = dni;
+                linea[1] = nombre;
+                linea[2] = apellidos;
+                linea[3] = telefono;
+                linea[4] = email;
+                linea[5] = direccion;
+                linea[6] = ciudad;
+                linea[7] = provincia;
+                linea[8] = puestoac;
+                linea[9] = otrospuestos;
+                resultado.Tables["Personal"].Rows.Add(linea);
+                cadPersonal.AnyadirPersonal(resultado);
+           // }
+           /* catch (Exception ex)
+            {
+                throw (ex);
+            }*/
+
         }
 
     }
