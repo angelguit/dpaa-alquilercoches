@@ -122,34 +122,7 @@ namespace EN
             return resultado;
         }
         
-       /* public DataSet NumeroProvincia(string prov)
-        {
-            DataSet resultado = new DataSet();
-            try
-            {
-                resultado = cadPersonal.DameNumProvincia(prov);
-            }
-            catch (Exception ex)
-            {
-                throw (ex);
-            }
-            return resultado;
-        }*/
-
-        public DataSet GuardarCambios(string dni)
-        {
-            DataSet cambios = new DataSet();
-            try
-            {
-               
-               cambios = cadPersonal.GuardarCambiosPersonal(dni);
-            }
-            catch (Exception ex)
-            {
-                throw (ex);
-            }
-            return cambios;
-        }
+      
 
         public void EliminarPersonal(ArrayList arraydni)
         {
@@ -186,6 +159,30 @@ namespace EN
                 linea[9] = otrospuestos;
                 resultado.Tables["Personal"].Rows.Add(linea);
                 cadPersonal.AnyadirPersonal(resultado);
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+
+        }
+
+        public void EditarPersonal()
+        {
+            try
+            {
+                DataSet persona = cadPersonal.ObtenerDatosPersonalConDni(dni);
+                persona.Tables["Personal"].Rows[0][1] = nombre.ToString(); //el dni no se puede cambiar asique saltamos la posicion 0 que es del dni
+                persona.Tables["Personal"].Rows[0][2] = apellidos.ToString();
+                persona.Tables["Personal"].Rows[0][3] = telefono.ToString();
+                persona.Tables["Personal"].Rows[0][4] = email.ToString();
+                persona.Tables["Personal"].Rows[0][5] = direccion.ToString();
+                persona.Tables["Personal"].Rows[0][6] = ciudad.ToString();
+                persona.Tables["Personal"].Rows[0][7] = provincia.ToString();
+                persona.Tables["Personal"].Rows[0][8] = puestoac.ToString();
+                persona.Tables["Personal"].Rows[0][9] = otrospuestos.ToString();
+                cadPersonal.EditarPersonal(persona);
+
             }
             catch (Exception ex)
             {
