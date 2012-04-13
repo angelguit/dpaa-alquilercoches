@@ -70,28 +70,7 @@ namespace CAD
 
             return dsProvin;
         }
-       
-       /* public DataSet DameNumProvincia(string pro)
-        {
-            DataSet dsProvin = new DataSet();
-
-            try
-            {
-                SqlConnection conexion = new SqlConnection(cadenaConexion);
-                String consulta = "Select id_prov FROM Provincia where nombre'"+pro+"'";
-                SqlDataAdapter daProv = new SqlDataAdapter(consulta, conexion);
-                daProv.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-                daProv.Fill(dsProvin, "Provincia"); //dsPersonal es ahora nuestra base de datos local
-            }
-            catch (Exception ex)
-            {
-                throw (ex);
-            }
-
-                return dsProvin;
-        }*/
-
-
+      
         public DataSet ConseguirCiudades(string prov)
         {
             DataSet dsCiu = new DataSet();
@@ -112,30 +91,24 @@ namespace CAD
             return dsCiu;
         }
 
-        public DataSet GuardarCambiosPersonal(string dni)
+        public DataSet ObtenerDatosPersonalConDni(string dni)
         {
-            DataSet dsCambiosPer = new DataSet();
+            DataSet dsPersona = new DataSet();
            
             try
             {
                 SqlConnection conexion = new SqlConnection(cadenaConexion);
-                String consultaBorrar = "SELECT * FROM Personal WHERE DNI='" + dni + "'";
-               // String consultaBorrar = "DELETE FROM Personal WHERE DNI='"+dni+"'";
-               // String consultaInsertar = "INSERT INTO Personal (DNI, Nombre, Apellidos,Telefono,Email,Direccion,Ciudad,Provincia,PuestoActual)VALUES ('" + dni + "','" + nomb + "', '"+apell+"', '"+telef+"', '"+mail+"', '"+direcc+"', '"+ ciud +"', '"+prov+"', '"+puestoac+"')";
-                
-                SqlDataAdapter daBorrar = new SqlDataAdapter(consultaBorrar, conexion);
-                daBorrar.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-               // SqlDataAdapter daInsert = new SqlDataAdapter(consultaInsertar, conexion);
-                //daInsert.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-                daBorrar.Fill(dsCambiosPer, "Provincia"); //dsPersonal es ahora nuestra base de datos local
-               
+                String consulta = "SELECT * FROM Personal WHERE DNI='" + dni + "'";
+                SqlDataAdapter daVehiculo = new SqlDataAdapter(consulta, conexion);
+                daVehiculo.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daVehiculo.Fill(dsPersona, nombreTabla);
             }
             catch (Exception ex)
             {
                 throw (ex);
             }
 
-            return dsCambiosPer;
+            return dsPersona;
         }
 
         public void BorrarPersonal(ArrayList arraydni)
@@ -193,7 +166,25 @@ namespace CAD
             }
         }
 
+        public void EditarPersonal(DataSet persona)
+        {
+            DataSet dsPersonal = new DataSet();
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                String consulta = "Select * from Personal where DNI='" + persona.Tables["Personal"].Rows[0][0] + "'";
+                SqlDataAdapter daPersonal = new SqlDataAdapter(consulta, conexion);
+                daPersonal.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daPersonal.Fill(dsPersonal, nombreTabla);
+                SqlCommandBuilder cbuilder = new SqlCommandBuilder(daPersonal);
+                daPersonal.Update(persona, "Personal");
 
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+        }
     }
 
 

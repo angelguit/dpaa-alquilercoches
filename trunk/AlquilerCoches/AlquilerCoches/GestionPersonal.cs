@@ -16,7 +16,7 @@ namespace AlquilerCoches
         {
             InitializeComponent();
         }
-        public GestionPersonal(string nombre,string dni, string apell, string telef, string mail, string direc, string ciu, string prov, string puesac)//constructor sobrecargado
+        public GestionPersonal(string nombre,string dni, string apell, string telef, string mail, string direc, string ciu, string prov, string puesac, string nombrebotonguardar)//constructor sobrecargado
         {
             InitializeComponent();
             TTextBoxDNI.Enabled = false;
@@ -33,6 +33,9 @@ namespace AlquilerCoches
             TComboBoxCiudades.SelectedIndex = 0;
            
             TTextBoxPuestoAc.Text = puesac;
+
+            TButtonGuardarPersonal.Text = nombrebotonguardar; // importante le cambiamos el nombre al boton para saber que venimos del formulario buscar, y estamos editando no guardando uno nuevo
+            TButtonGuardarPersonal.Size = new Size(105, 24);
         }
 
         bool incorrecto = false;
@@ -148,7 +151,12 @@ namespace AlquilerCoches
                 enPersonal.Email = TTextBoxEmail.Text; enPersonal.Direccion = TTextBoxDireccion.Text; enPersonal.Ciudad = TComboBoxCiudades.Text; enPersonal.Provincia = TComboBoxProvincias.Text;
                 enPersonal.PuestoAc = TTextBoxPuestoAc.Text; enPersonal.OtrosPuestos = TRichTextBoxOtrosPuestos.Text;
 
-                enPersonal.AnyadirPersonal();
+                if (TButtonGuardarPersonal.Text.ToString() == "Guardar")
+                {
+                    enPersonal.AnyadirPersonal();
+                }
+                else
+                    enPersonal.EditarPersonal();
 
              
                 this.Close();

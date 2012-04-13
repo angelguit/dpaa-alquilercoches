@@ -224,7 +224,8 @@ namespace AlquilerCoches
                         string prov = TDataGridViewPersonal.Rows[e.RowIndex].Cells[9].Value.ToString();
                         string puesac = TDataGridViewPersonal.Rows[e.RowIndex].Cells[10].Value.ToString();
 
-                        GestionPersonal Formu = new GestionPersonal(nom,dni,apell,telef,mail,direc,ciu,prov,puesac);
+                        string nombrebotonguardar = "Guardar Cambios";
+                        GestionPersonal Formu = new GestionPersonal(nom,dni,apell,telef,mail,direc,ciu,prov,puesac, nombrebotonguardar);
 
                         Formu.StartPosition = FormStartPosition.CenterScreen;
                         Formu.MdiParent = this.MdiParent;
