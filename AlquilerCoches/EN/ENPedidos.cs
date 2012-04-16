@@ -46,52 +46,52 @@ namespace EN
         public string IDTransaccion
         {
             get { return idtransaccion; }
-            set {  idtransaccion = IDTransaccion; }
+            set {  idtransaccion = value; }
         }
         public string Proveedor
         {
             get { return proveedor; }
-            set { proveedor = Proveedor; }
+            set { proveedor =value; }
         }
         public string Marca
         {
             get { return marca; }
-            set {  marca = Marca; }
+            set {  marca =value; }
         }
         public string Modelo
         {
             get { return modelo; }
-            set {  modelo = Modelo; }
+            set {  modelo = value; }
         }
         public int Cantidad
         {
             get { return cantidad; }
-            set { cantidad = Cantidad; }
+            set { cantidad = value; }
         }
         public string Observaciones
         {
             get { return observaciones; }
-            set { observaciones = Observaciones; }
+            set { observaciones = value; }
         }
         public string EstadoPedido
         {
             get { return estadopedido; }
-            set { estadopedido = EstadoPedido; }
+            set { estadopedido = value; }
         }
         public string Empleado
         {
             get { return empleado; }
-            set { empleado = Empleado; }
+            set { empleado = value; }
         }
         public DateTime Fecha
         {
             get { return fecha; }
-            set { fecha = Fecha; }
+            set { fecha = value; }
         }
         public string TipoEnvio
         {
             get { return tipoenvio; }
-            set { tipoenvio = TipoEnvio; }
+            set { tipoenvio = value; }
         }
     }
 }
