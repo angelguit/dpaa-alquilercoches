@@ -13,20 +13,38 @@ namespace CAD
 {
     public class CADPedidos
     {
+        
+
+
+        //static private String cadenaConexion = @"Data Source=.\SQLEXPRESS;AttachDbFilename='C:\Users\Dani\Documents\Visual Studio 2010\Projects\AlquilerCoches\AlquilerCoches\AlquilerCoches\BBDD.mdf';Integrated Security=True;User Instance=True";
         static private String cadenaConexion = ConfigurationManager.ConnectionStrings["AlquilerCoches"].ConnectionString; // @"Data Source=|DataDirectory|\BBDD.sdf";
         static private String nombreTabla = "Pedidos";
 
-        public DataSet ObtenerTablaPedidos()
+        public DataSet ObtenerTablaPersonal(string todo)
         {
-            DataSet dsPedidos = new DataSet();
+            DataSet dsPersonal = new DataSet();
 
             try
             {
                 SqlConnection conexion = new SqlConnection(cadenaConexion);
-                String consulta = "Select * from Pedidos";
-                SqlDataAdapter daCaminos = new SqlDataAdapter(consulta, conexion);
-                daCaminos.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-                daCaminos.Fill(dsPedidos, nombreTabla);
+                //String consulta = "Select * FROM Personal WHERE ciudad like '%"+ciu+"%' and apellidos='"+apell+"'";
+
+                if (todo != "") //si cadena todo esta llena
+                {
+                    String consulta = "Select * FROM Personal WHERE " + todo + "";
+                    SqlDataAdapter daPersonal = new SqlDataAdapter(consulta, conexion);
+                    daPersonal.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                    daPersonal.Fill(dsPersonal, nombreTabla); //dsPersonal es ahora nuestra base de datos local
+                }
+                else //si cadena todo esta vacia
+                {
+                    String consulta = "Select * FROM Pedidos";
+                    SqlDataAdapter daPersonal = new SqlDataAdapter(consulta, conexion);
+                    daPersonal.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                    daPersonal.Fill(dsPersonal, nombreTabla); //dsPersonal es ahora nuestra base de datos local
+                }
+
+
             }
             catch (Exception ex)
             {
