@@ -93,5 +93,57 @@ namespace EN
             get { return tipoenvio; }
             set { tipoenvio = value; }
         }
+
+        public void AnyadirPersonal()
+        {
+            DataSet resultado = new DataSet();
+            try
+            {
+                string frase = ""; //si la frase que le pasamos esta vacia nos devolvera todos los resultados
+                resultado = cadPedidos.ObtenerTablaPersonal(frase);
+                DataRow linea = resultado.Tables["Pedidos"].NewRow();
+                //linea[0] = ; para el recuadro eliminar
+                //linea[1] = ; para el boton editar
+                linea[0] = idtransaccion;
+                linea[1] = proveedor;
+                linea[2] = marca;
+                linea[3] = modelo;
+                linea[4] = cantidad;
+                linea[5] = observaciones;
+                linea[6] = estadopedido;
+                linea[7] = fecha;
+                linea[8] = tipoenvio;
+                linea[9] = empleado;
+                resultado.Tables["Pedidos"].Rows.Add(linea);
+                cadPedidos.AnyadirPersonal(resultado);
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+
+        }
+
+         public void EditarPersonal()
+        {
+            try
+            {
+                DataSet pedido = cadPedidos.ObtenerDatosPedidosConDni(dni);
+                pedido.Tables["Pedidos"].Rows[0][1] = nombre.ToString(); //el dni no se puede cambiar asique saltamos la posicion 0 que es del dni
+                pedido.Tables["Pedidos"].Rows[0][2] = apellidos.ToString();
+                pedido.Tables["Pedidos"].Rows[0][3] = telefono.ToString();
+                pedido.Tables["Pedidos"].Rows[0][4] = email.ToString();
+                pedido.Tables["Pedidos"].Rows[0][5] = direccion.ToString();
+                pedido.Tables["Pedidos"].Rows[0][6] = ciudad.ToString();
+                pedido.Tables["Pedidos"].Rows[0][7] = provincia.ToString();
+                pedido.Tables["Pedidos"].Rows[0][8] = puestoac.ToString();
+                pedido.Tables["Pedidos"].Rows[0][9] = otrospuestos.ToString();
+                cadPedido.EditarPedido(pedido);
+
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
     }
 }
