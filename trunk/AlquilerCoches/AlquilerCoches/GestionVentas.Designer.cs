@@ -77,7 +77,7 @@
             this.TListBoxMatriculas.FormattingEnabled = true;
             this.TListBoxMatriculas.Location = new System.Drawing.Point(388, 25);
             this.TListBoxMatriculas.Name = "TListBoxMatriculas";
-            this.TListBoxMatriculas.Size = new System.Drawing.Size(162, 95);
+            this.TListBoxMatriculas.Size = new System.Drawing.Size(376, 95);
             this.TListBoxMatriculas.TabIndex = 38;
             // 
             // TListBoxModelos
@@ -87,7 +87,7 @@
             this.TListBoxModelos.FormattingEnabled = true;
             this.TListBoxModelos.Location = new System.Drawing.Point(201, 25);
             this.TListBoxModelos.Name = "TListBoxModelos";
-            this.TListBoxModelos.Size = new System.Drawing.Size(162, 95);
+            this.TListBoxModelos.Size = new System.Drawing.Size(376, 95);
             this.TListBoxModelos.TabIndex = 37;
             // 
             // TListBoxMarcas
@@ -97,7 +97,7 @@
             this.TListBoxMarcas.FormattingEnabled = true;
             this.TListBoxMarcas.Location = new System.Drawing.Point(15, 25);
             this.TListBoxMarcas.Name = "TListBoxMarcas";
-            this.TListBoxMarcas.Size = new System.Drawing.Size(162, 95);
+            this.TListBoxMarcas.Size = new System.Drawing.Size(376, 95);
             this.TListBoxMarcas.TabIndex = 36;
             // 
             // TButtonBuscar
@@ -160,7 +160,7 @@
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelMatricula);
             this.TGroupBoxDatosVehiculo.Location = new System.Drawing.Point(17, 129);
             this.TGroupBoxDatosVehiculo.Name = "TGroupBoxDatosVehiculo";
-            this.TGroupBoxDatosVehiculo.Size = new System.Drawing.Size(317, 185);
+            this.TGroupBoxDatosVehiculo.Size = new System.Drawing.Size(531, 185);
             this.TGroupBoxDatosVehiculo.TabIndex = 29;
             this.TGroupBoxDatosVehiculo.TabStop = false;
             this.TGroupBoxDatosVehiculo.Text = "DatosVehiculo";
@@ -443,7 +443,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(664, 355);
+            this.ClientSize = new System.Drawing.Size(878, 572);
             this.Controls.Add(this.TButtonAtras);
             this.Controls.Add(this.TGroupBoxDatosVenta);
             this.Controls.Add(this.TListBoxMatriculas);
@@ -454,6 +454,8 @@
             this.Controls.Add(this.TLabelModelos);
             this.Controls.Add(this.TLabelMarcas);
             this.Controls.Add(this.TGroupBoxDatosVehiculo);
+            this.MaximumSize = new System.Drawing.Size(894, 608);
+            this.MinimumSize = new System.Drawing.Size(894, 608);
             this.Name = "GestionVentas";
             this.Text = "Registro de Ventas";
             this.TGroupBoxDatosVehiculo.ResumeLayout(false);
