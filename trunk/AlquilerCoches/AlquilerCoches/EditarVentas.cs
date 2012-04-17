@@ -13,10 +13,31 @@ namespace AlquilerCoches
     public partial class EditarVentas : Form
     {
         bool incorrecto = false;
+        private EN.ENVentas ventas = new EN.ENVentas();
 
         public EditarVentas()
         {
             InitializeComponent();
+            limpiaFormulario();
+            //rellenaMarcas();
+        }
+
+        public void limpiaFormulario()
+        {
+            ventas.ClearEnVentas();
+            TListBoxMarcas.Items.Clear();
+            TListBoxModelos.Items.Clear();
+            TListBoxMatriculas.Items.Clear();
+            TTextBoxMatricula.Text = "";
+            TTextBoxMarca.Text = "";
+            TTextBoxModelo.Text = "";
+            TTextBoxKm.Text = "";
+            TCheckBoxGarantia.Checked = false;
+            TTextBoxMeses.Text = "";
+            TTextBoxPrecioVenta.Text = "";
+            errorProvider1.Clear();
+            TTextBoxMeses.Enabled = false;
+            TGroupBoxDatosVehiculo.Enabled = false;
         }
 
         private void TTextBoxMeses_Click(object sender, EventArgs e)
