@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.TButtonBuscarCliente = new System.Windows.Forms.Button();
             this.TComboBoxCategoria = new System.Windows.Forms.ComboBox();
             this.TComboBoxModelo = new System.Windows.Forms.ComboBox();
             this.TLabelCategoria = new System.Windows.Forms.Label();
@@ -52,15 +52,15 @@
             this.TButtonCerrar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // TButtonBuscarCliente
             // 
-            this.button1.Location = new System.Drawing.Point(44, 59);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 23);
-            this.button1.TabIndex = 26;
-            this.button1.Text = "Buscar cliente";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.TButtonBuscarCliente.Location = new System.Drawing.Point(44, 59);
+            this.TButtonBuscarCliente.Name = "TButtonBuscarCliente";
+            this.TButtonBuscarCliente.Size = new System.Drawing.Size(121, 23);
+            this.TButtonBuscarCliente.TabIndex = 26;
+            this.TButtonBuscarCliente.Text = "Buscar cliente";
+            this.TButtonBuscarCliente.UseVisualStyleBackColor = true;
+            this.TButtonBuscarCliente.Click += new System.EventHandler(this.button1_Click);
             // 
             // TComboBoxCategoria
             // 
@@ -203,9 +203,10 @@
             // 
             this.TLabelNombre.AutoSize = true;
             this.TLabelNombre.BackColor = System.Drawing.Color.Transparent;
+            this.TLabelNombre.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TLabelNombre.Location = new System.Drawing.Point(41, 59);
             this.TLabelNombre.Name = "TLabelNombre";
-            this.TLabelNombre.Size = new System.Drawing.Size(35, 13);
+            this.TLabelNombre.Size = new System.Drawing.Size(59, 23);
             this.TLabelNombre.TabIndex = 40;
             this.TLabelNombre.Text = "label1";
             this.TLabelNombre.Visible = false;
@@ -214,9 +215,10 @@
             // 
             this.TLabelDNI.AutoSize = true;
             this.TLabelDNI.BackColor = System.Drawing.Color.Transparent;
+            this.TLabelDNI.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TLabelDNI.Location = new System.Drawing.Point(41, 85);
             this.TLabelDNI.Name = "TLabelDNI";
-            this.TLabelDNI.Size = new System.Drawing.Size(35, 13);
+            this.TLabelDNI.Size = new System.Drawing.Size(59, 23);
             this.TLabelDNI.TabIndex = 41;
             this.TLabelDNI.Text = "label1";
             this.TLabelDNI.Visible = false;
@@ -316,7 +318,7 @@
             this.Controls.Add(this.TLabelCategoria);
             this.Controls.Add(this.TComboBoxModelo);
             this.Controls.Add(this.TComboBoxCategoria);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.TButtonBuscarCliente);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(894, 608);
@@ -333,7 +335,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button TButtonBuscarCliente;
         private System.Windows.Forms.ComboBox TComboBoxCategoria;
         private System.Windows.Forms.ComboBox TComboBoxModelo;
         private System.Windows.Forms.Label TLabelCategoria;

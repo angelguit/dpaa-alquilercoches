@@ -63,8 +63,11 @@ namespace AlquilerCoches
             apellidos = F1.apellidos;
             dni = F1.dni;
             telefono = F1.telefono;
-            TLabelNombre.Text = "Nombre: " + nombre + " " + apellidos;
+            TLabelNombre.Text = "Nombre: " + nombre + "Apellidos: " + apellidos;
             TLabelDNI.Text = "DNI: " + dni + " " + "Telf: " + telefono;
+            TLabelDNI.Visible = true;
+            TLabelNombre.Visible = true;
+            TButtonBuscarCliente.Visible = false;
         }
 
 
