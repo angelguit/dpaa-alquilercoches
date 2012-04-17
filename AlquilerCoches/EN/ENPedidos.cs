@@ -164,7 +164,7 @@ namespace EN
                 linea[6] = observaciones;
                 linea[7] = estadopedido;
                 linea[8] = empleado;
-                linea[9] = fecha;
+              //  linea[9] = fecha;
                 resultado.Tables["Pedidos"].Rows.Add(linea);
                 cadPedidos.AnyadirPedidos(resultado);
             }
