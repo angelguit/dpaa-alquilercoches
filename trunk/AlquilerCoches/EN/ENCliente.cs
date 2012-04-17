@@ -27,8 +27,8 @@ namespace EN
         private string tarifa;
 
 
-       private CAD.CADCliente cadCliente = new CAD.CADCliente();
-
+        private CAD.CADCliente cadCliente = new CAD.CADCliente();
+      
         public string DNI
         {
             get { return dni; }
