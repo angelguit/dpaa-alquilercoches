@@ -122,6 +122,11 @@ namespace AlquilerCoches
             {
                 TLabelSinConductores.Visible = false;
             }
+            if (TLabelDNI.Visible == false)
+            {
+                mens = "Falta seleccionar un cliente";
+                retorno = false;
+            }
             return retorno;
         }
 
@@ -134,6 +139,8 @@ namespace AlquilerCoches
             else
             {
                 EN.ENReservas enRe = new EN.ENReservas();
+                EN.ENVehiculo enVe = new EN.ENVehiculo();
+                enVe.Matricula = TComboBoxMatricula.Text.ToString();
                 enRe.Cliente = enCliente.DNI;
                 enRe.Conductores = Int32.Parse(TComboBoxConductores.Text);
                 enRe.FechaFin = TDateTimePickerFechaFin.Value;
@@ -141,6 +148,8 @@ namespace AlquilerCoches
                 enRe.Matricula = TComboBoxMatricula.Text.ToString();
                 enRe.Modelo = TComboBoxModelo.Text.ToString();
                 enRe.AnyadirReserva();
+                enVe.Estado = "Reservado";
+                //enVe.EditarVehiculo();
                 MessageBox.Show("Reserva realizada con éxito", "Nueva Reserva", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
             }
