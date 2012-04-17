@@ -59,6 +59,7 @@
             this.TIDlabel = new System.Windows.Forms.Label();
             this.TIDtextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.TEnviogroupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -99,6 +100,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.TEnviogroupBox3);
             this.groupBox1.Controls.Add(this.numericUpDown1);
             this.groupBox1.Controls.Add(this.TErrorModelo);
@@ -404,6 +406,13 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(417, 30);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 43;
+            // 
             // GestionPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -463,5 +472,6 @@
         private System.Windows.Forms.GroupBox TEnviogroupBox3;
         private System.Windows.Forms.RadioButton TEnvioButtonUrgente;
         private System.Windows.Forms.RadioButton TEnvioButtonOrdinario;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

@@ -42,7 +42,7 @@ namespace AlquilerCoches
                 EN.ENPedidos enPedidos = new EN.ENPedidos();
 
 
-                enPedidos.IDTransaccion = Int32.Parse(TIDtextBox.Text); enPedidos.Proveedor = TProveecomboBox1.Text; enPedidos.Marca = TMarcacomboBox2.Text;
+                enPedidos.IDTransaccion = textBox1.Text; enPedidos.Proveedor = TProveecomboBox1.Text; enPedidos.Marca = TMarcacomboBox2.Text;
                 enPedidos.Modelo = TModelocomboBox3.Text; enPedidos.Cantidad = numericUpDown1.Text;
                 enPedidos.Observaciones = TObservTextBox.Text;/* enPedidos.Fecha = TDateTimePickerFecha; */
                 //falta fecha, tipo envio, y empleado
