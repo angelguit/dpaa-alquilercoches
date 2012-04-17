@@ -12,7 +12,7 @@ namespace AlquilerCoches
 {
     public partial class PonerVenta : Form
     {
-        bool incorrecto = false;
+        public bool incorrecto = false;
         private EN.ENVentas ventas = new EN.ENVentas();
         private EN.ENVehiculo vehiculos = new EN.ENVehiculo();
 
