@@ -25,6 +25,20 @@ namespace EN
 
         private CAD.CADReservas cadReservas = new CAD.CADReservas();
 
+        public void AnyadirReserva()
+        {
+            DataSet res = new DataSet();
+            res = cadReservas.ObtenerReservas();
+            DataRow linea = res.Tables["Reservas"].NewRow();
+            linea[1] = cliente;
+            linea[2] = matricula;
+            linea[3] = fechaInicio;
+            linea[4] = fechaFin;
+            linea[5] = conductores;
+            res.Tables["Reservas"].Rows.Add(linea);
+            cadReservas.AnyadirReserva(res);
+
+        }
         public bool ActualizarReservas(DataSet dsRes)
         {
             return cadReservas.ActualizarReservas(dsRes);
@@ -63,43 +77,43 @@ namespace EN
         public string Cliente
         {
             get { return cliente; }
-            set { cliente = Cliente; }
+            set { cliente = value; }
         }
 
         public string Categoria
         {
             get { return categoria; }
-            set { categoria = Categoria; }
+            set { categoria = value; }
         }
 
         public string Modelo
         {
             get { return modelo; }
-            set { modelo = Modelo; }
+            set { modelo = value; }
         }
 
         public string Matricula
         {
             get { return matricula; }
-            set { matricula = Matricula; }
+            set { matricula = value; }
         }
 
         public int Conductores
         {
             get { return conductores; }
-            set { conductores = Conductores; }
+            set { conductores = value; }
         }
 
         public DateTime FechaInicio
         {
             get { return fechaInicio; }
-            set { fechaInicio = FechaInicio; }
+            set { fechaInicio = value; }
         }
 
         public DateTime FechaFin
         {
             get { return fechaFin; }
-            set { fechaFin = FechaFin; }
+            set { fechaFin = value; }
         }
     }
 }

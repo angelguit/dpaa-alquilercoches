@@ -97,5 +97,25 @@ namespace CAD
             }
             return affectedRows;
         }
+
+        public void AnyadirReserva(DataSet dsRes)
+        {
+            DataSet dsReser = new DataSet();
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                String consulta = "Select * from Reservas";
+                SqlDataAdapter daReser = new SqlDataAdapter(consulta, conexion);
+                daReser.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daReser.Fill(dsReser, "Reservas");
+                SqlCommandBuilder cbuilder = new SqlCommandBuilder(daReser);
+                daReser.Update(dsRes, "Reservas");
+
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+        }
     }
 }

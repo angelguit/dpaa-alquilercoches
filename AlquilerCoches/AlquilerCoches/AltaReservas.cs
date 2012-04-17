@@ -147,17 +147,19 @@ namespace AlquilerCoches
                 dtRe.Rows.Add(drRe);
                 if ( enRe.ActualizarReservas(dsRe))*/
                 enRe.Cliente = enCliente.DNI;
+                MessageBox.Show(enRe.Cliente);
                 enRe.Conductores = Int32.Parse(TComboBoxConductores.Text);
                 enRe.FechaFin = TDateTimePickerFechaFin.Value;
                 enRe.FechaInicio = TDateTimePickerFechaInicio.Value;
                 enRe.Matricula = TComboBoxMatricula.Text.ToString();
                 enRe.Modelo = TComboBoxModelo.Text.ToString();
-
-                string sentencia = "INSERT INTO Reservas (FK_Cliente,FK_Coche,FechaInicio,FechaFin,Conductores) VALUES ('11111111A','" + TComboBoxMatricula.Text + "','" + TDateTimePickerFechaInicio.Text + "','" + TDateTimePickerFechaFin.Text + "'," + Int32.Parse(TComboBoxConductores.Text) + ")";
+                MessageBox.Show(enRe.Modelo);
+                enRe.AnyadirReserva();
+                /*string sentencia = "INSERT INTO Reservas (FK_Cliente,FK_Coche,FechaInicio,FechaFin,Conductores) VALUES ('11111111A','" + TComboBoxMatricula.Text + "','" + TDateTimePickerFechaInicio.Text + "','" + TDateTimePickerFechaFin.Text + "'," + Int32.Parse(TComboBoxConductores.Text) + ")";
                 if (enRe.EjecutarSentencia(sentencia) == 1)
                 {
                     MessageBox.Show("Reserva realizada con éxito", "Nueva Reserva", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                }*/
                 Close();
             }
         }
