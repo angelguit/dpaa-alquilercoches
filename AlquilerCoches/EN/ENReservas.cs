@@ -53,6 +53,20 @@ namespace EN
             }
             return resultado;
         }
+
+        public DataSet ObtenerReservas(string sentencia)
+        {
+            DataSet resultado = new DataSet();
+            try
+            {
+                resultado = cadReservas.ObtenerReservas(sentencia);
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            return resultado;
+        }
         public DataSet RellenarCategoria()
         {
             DataSet resultado = new DataSet();
