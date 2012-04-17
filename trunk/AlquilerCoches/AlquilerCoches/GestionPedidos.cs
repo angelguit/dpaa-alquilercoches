@@ -39,27 +39,30 @@ namespace AlquilerCoches
             }
             else
             {
-                    EN.ENPedidos enPedidos = new EN.ENPedidos();
+                EN.ENPedidos enPedidos = new EN.ENPedidos();
 
-                    enPedidos.TIDtransaccion=TIDtextBox.Text;enPedidos.Proveedor=TProveecomboBox1.Text; enPedidos.Marca=TMarcacomboBox2.Text;
-                enPedidos.Modelo=TModelocomboBox3.Text; enPedidos.Cantidad= Int32.Parse(numericUpDown1.TextAlign);
-                enPedidos.Observaciones=TObservTextBox.Text; enPedidos.Fecha=TDateTimePickerFecha;
+                enPedidos.IDTransaccion = TIDtextBox.Text; enPedidos.Proveedor = TProveecomboBox1.Text; enPedidos.Marca = TMarcacomboBox2.Text;
+                enPedidos.Modelo = TModelocomboBox3.Text; enPedidos.Cantidad = numericUpDown1.Text;
+                enPedidos.Observaciones = TObservTextBox.Text;/* enPedidos.Fecha = TDateTimePickerFecha; */
                 //falta fecha, tipo envio, y empleado
 
-                    EN.ENPersonal enPersonal = new EN.ENPersonal();
+                EN.ENPersonal enPersonal = new EN.ENPersonal();
 
-                enPedidos.AnyadirPedido();
+                enPedidos.AnyadirPedidos();
 
 
-                if (TButtonGuardarPersonal.Text.ToString() == "Guardar")
+                if (TAceptarbutton1.Text.ToString() == "Guardar")
                 {
                     enPersonal.AnyadirPersonal();
                 }
                 else
+                {
                     enPersonal.EditarPersonal();
+                }
+            }
 
              
-                this.Close();
+                
             
         }
 
@@ -165,12 +168,12 @@ namespace AlquilerCoches
 
         private void TObservTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (!Regex.Match(TObservTextBox.Text, @"^[A-Za-z]{2,300}$").Success)
+          /*  if (Regex.Match(TObservTextBox.Text, @"^[A-Za-z\s]{3,100}$").Success)
             {
                 errorProvider1.SetError(TObservTextBox, "Máximo 300 caracteres.");
                 incorrecto = true;
             }
-            else { errorProvider1.SetError(TObservTextBox, ""); }
+            else { errorProvider1.SetError(TObservTextBox, ""); } */
         }
 
         private void TEnvioButtonOrdinario_CheckedChanged(object sender, EventArgs e)
