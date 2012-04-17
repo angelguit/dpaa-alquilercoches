@@ -13,37 +13,30 @@ namespace CAD
 {
     public class CADPedidos
     {
-        
-
-
-        //static private String cadenaConexion = @"Data Source=.\SQLEXPRESS;AttachDbFilename='C:\Users\Dani\Documents\Visual Studio 2010\Projects\AlquilerCoches\AlquilerCoches\AlquilerCoches\BBDD.mdf';Integrated Security=True;User Instance=True";
         static private String cadenaConexion = ConfigurationManager.ConnectionStrings["AlquilerCoches"].ConnectionString; // @"Data Source=|DataDirectory|\BBDD.sdf";
         static private String nombreTabla = "Pedidos";
 
-        public DataSet ObtenerTablaPersonal(string todo)
+        public DataSet ObtenerTablaPedidos(string todo)
         {
-            DataSet dsPersonal = new DataSet();
-
+            DataSet dsPedidos = new DataSet();
             try
             {
                 SqlConnection conexion = new SqlConnection(cadenaConexion);
-                //String consulta = "Select * FROM Personal WHERE ciudad like '%"+ciu+"%' and apellidos='"+apell+"'";
-
-                if (todo != "") //si cadena todo esta llena
+                if (todo != "")
                 {
-                    String consulta = "Select * FROM Personal WHERE " + todo + "";
+                    String consulta = "Select * FROM Pedidos WHERE " + todo + "";
                     SqlDataAdapter daPersonal = new SqlDataAdapter(consulta, conexion);
                     daPersonal.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-                    daPersonal.Fill(dsPersonal, nombreTabla); //dsPersonal es ahora nuestra base de datos local
+                    daPersonal.Fill(dsPedidos, nombreTabla); //dsPersonal es ahora nuestra base de datos local
                 }
-                else //si cadena todo esta vacia
+                else
                 {
+
                     String consulta = "Select * FROM Pedidos";
-                    SqlDataAdapter daPersonal = new SqlDataAdapter(consulta, conexion);
-                    daPersonal.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-                    daPersonal.Fill(dsPersonal, nombreTabla); //dsPersonal es ahora nuestra base de datos local
+                    SqlDataAdapter daPedidos = new SqlDataAdapter(consulta, conexion);
+                    daPedidos.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                    daPedidos.Fill(dsPedidos, nombreTabla); //dsPersonal es ahora nuestra base de datos local
                 }
-
 
             }
             catch (Exception ex)
@@ -53,5 +46,47 @@ namespace CAD
 
             return dsPedidos;
         }
+
+
+
+        public void AnyadirPedidos(DataSet pedido)
+        {
+            DataSet dsPedidos = new DataSet();
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                String consulta = "Select * from Pedidos";
+                SqlDataAdapter daPedidos = new SqlDataAdapter(consulta, conexion);
+                daPedidos.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daPedidos.Fill(dsPedidos, nombreTabla);
+                SqlCommandBuilder cbuilder = new SqlCommandBuilder(daPedidos);
+                daPedidos.Update(pedido, "Pedidos");
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+        }
+
+
+        public void EditarPedidos(DataSet pedido)
+        {
+            DataSet dsPedidos = new DataSet();
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                string consulta = "Select * from Pedidos where idtransaccion='" + pedido.Tables["Pedidos"].Rows[0][0] + "'";
+                SqlDataAdapter daPedidos = new SqlDataAdapter(consulta, conexion);
+                daPedidos.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daPedidos.Fill(dsPedidos, nombreTabla);
+                SqlCommandBuilder cbuilder = new SqlCommandBuilder(daPedidos);
+                daPedidos.Update(pedido, "Pedidos");
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+        }
+
     }
 }
