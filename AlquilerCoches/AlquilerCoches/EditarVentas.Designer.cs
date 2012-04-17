@@ -33,7 +33,6 @@
             this.TListBoxMatriculas = new System.Windows.Forms.ListBox();
             this.TListBoxModelos = new System.Windows.Forms.ListBox();
             this.TListBoxMarcas = new System.Windows.Forms.ListBox();
-            this.TButtonBuscar = new System.Windows.Forms.Button();
             this.TLabelMatriculas = new System.Windows.Forms.Label();
             this.TLabelModelos = new System.Windows.Forms.Label();
             this.TLabelMarcas = new System.Windows.Forms.Label();
@@ -63,11 +62,11 @@
             // 
             // TButtonAtras
             // 
-            this.TButtonAtras.Location = new System.Drawing.Point(791, 99);
+            this.TButtonAtras.Location = new System.Drawing.Point(541, 408);
             this.TButtonAtras.Name = "TButtonAtras";
             this.TButtonAtras.Size = new System.Drawing.Size(75, 23);
             this.TButtonAtras.TabIndex = 59;
-            this.TButtonAtras.Text = "Atrás";
+            this.TButtonAtras.Text = "Salir";
             this.TButtonAtras.UseVisualStyleBackColor = true;
             // 
             // TListBoxMatriculas
@@ -94,15 +93,6 @@
             this.TListBoxMarcas.Name = "TListBoxMarcas";
             this.TListBoxMarcas.Size = new System.Drawing.Size(253, 147);
             this.TListBoxMarcas.TabIndex = 56;
-            // 
-            // TButtonBuscar
-            // 
-            this.TButtonBuscar.Location = new System.Drawing.Point(791, 43);
-            this.TButtonBuscar.Name = "TButtonBuscar";
-            this.TButtonBuscar.Size = new System.Drawing.Size(75, 23);
-            this.TButtonBuscar.TabIndex = 55;
-            this.TButtonBuscar.Text = "Buscar";
-            this.TButtonBuscar.UseVisualStyleBackColor = true;
             // 
             // TLabelMatriculas
             // 
@@ -334,7 +324,6 @@
             this.Controls.Add(this.TListBoxMatriculas);
             this.Controls.Add(this.TListBoxModelos);
             this.Controls.Add(this.TListBoxMarcas);
-            this.Controls.Add(this.TButtonBuscar);
             this.Controls.Add(this.TLabelMatriculas);
             this.Controls.Add(this.TLabelModelos);
             this.Controls.Add(this.TLabelMarcas);
@@ -358,7 +347,6 @@
         private System.Windows.Forms.ListBox TListBoxMatriculas;
         private System.Windows.Forms.ListBox TListBoxModelos;
         private System.Windows.Forms.ListBox TListBoxMarcas;
-        private System.Windows.Forms.Button TButtonBuscar;
         private System.Windows.Forms.Label TLabelMatriculas;
         private System.Windows.Forms.Label TLabelModelos;
         private System.Windows.Forms.Label TLabelMarcas;
