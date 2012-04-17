@@ -198,7 +198,7 @@ namespace AlquilerCoches
             }
             else 
             { 
-                errorProvider1.SetError(TTextBoxCIF, ""); 
+               errorProvider1.SetError(TTextBoxCIF, ""); 
             }
         }
 
