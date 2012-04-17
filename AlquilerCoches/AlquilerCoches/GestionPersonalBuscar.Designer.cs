@@ -254,6 +254,7 @@
             this.Name = "GestionPersonalBuscar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GestionPersonalBuscar";
+           // this.EnabledChanged += new System.EventHandler(this.GestionPersonalBuscar_EnabledChanged);
             ((System.ComponentModel.ISupportInitialize)(this.TDataGridViewPersonal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.panel1.ResumeLayout(false);

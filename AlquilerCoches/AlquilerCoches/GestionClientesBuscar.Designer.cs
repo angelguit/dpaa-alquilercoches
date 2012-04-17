@@ -32,18 +32,14 @@
             this.TButtonEliminar = new System.Windows.Forms.Button();
             this.TButtonBuscar = new System.Windows.Forms.Button();
             this.TDataGridViewCliente = new System.Windows.Forms.DataGridView();
-            this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ciudad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.TTextBoxProvincia = new System.Windows.Forms.TextBox();
+            this.TComboBoxCiudades = new System.Windows.Forms.ComboBox();
+            this.TComboBoxProvincias = new System.Windows.Forms.ComboBox();
+            this.TLabelCiudad = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.TTextBoxApellidos = new System.Windows.Forms.TextBox();
             this.TTextBoxNombre = new System.Windows.Forms.TextBox();
             this.TTextBoxDNI = new System.Windows.Forms.TextBox();
-            this.TLabelProvincia = new System.Windows.Forms.Label();
             this.TLabelApellidos = new System.Windows.Forms.Label();
             this.TLabelNombre = new System.Windows.Forms.Label();
             this.TLabelDNI = new System.Windows.Forms.Label();
@@ -56,7 +52,7 @@
             // 
             // TButtonEliminar
             // 
-            this.TButtonEliminar.Location = new System.Drawing.Point(136, 137);
+            this.TButtonEliminar.Location = new System.Drawing.Point(139, 157);
             this.TButtonEliminar.Name = "TButtonEliminar";
             this.TButtonEliminar.Size = new System.Drawing.Size(75, 23);
             this.TButtonEliminar.TabIndex = 35;
@@ -66,7 +62,7 @@
             // 
             // TButtonBuscar
             // 
-            this.TButtonBuscar.Location = new System.Drawing.Point(31, 137);
+            this.TButtonBuscar.Location = new System.Drawing.Point(34, 157);
             this.TButtonBuscar.Name = "TButtonBuscar";
             this.TButtonBuscar.Size = new System.Drawing.Size(75, 23);
             this.TButtonBuscar.TabIndex = 34;
@@ -77,78 +73,83 @@
             // TDataGridViewCliente
             // 
             this.TDataGridViewCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TDataGridViewCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.DNI,
-            this.Ciudad,
-            this.Telefono,
-            this.Email,
-            this.Nombre,
-            this.Apellidos});
             this.TDataGridViewCliente.Location = new System.Drawing.Point(66, 54);
             this.TDataGridViewCliente.Name = "TDataGridViewCliente";
             this.TDataGridViewCliente.Size = new System.Drawing.Size(661, 209);
             this.TDataGridViewCliente.TabIndex = 24;
-            // 
-            // DNI
-            // 
-            this.DNI.HeaderText = "DNI";
-            this.DNI.Name = "DNI";
-            // 
-            // Ciudad
-            // 
-            this.Ciudad.HeaderText = "Ciudad";
-            this.Ciudad.Name = "Ciudad";
-            // 
-            // Telefono
-            // 
-            this.Telefono.HeaderText = "Telefono";
-            this.Telefono.Name = "Telefono";
-            // 
-            // Email
-            // 
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            // 
-            // Apellidos
-            // 
-            this.Apellidos.HeaderText = "Apellidos";
-            this.Apellidos.Name = "Apellidos";
+            this.TDataGridViewCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TDataGridViewCliente_CellContentClick);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.TTextBoxProvincia);
+            this.panel1.Controls.Add(this.TComboBoxCiudades);
+            this.panel1.Controls.Add(this.TComboBoxProvincias);
+            this.panel1.Controls.Add(this.TLabelCiudad);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.TButtonEliminar);
             this.panel1.Controls.Add(this.TTextBoxApellidos);
             this.panel1.Controls.Add(this.TButtonBuscar);
             this.panel1.Controls.Add(this.TTextBoxNombre);
             this.panel1.Controls.Add(this.TTextBoxDNI);
-            this.panel1.Controls.Add(this.TLabelProvincia);
             this.panel1.Controls.Add(this.TLabelApellidos);
             this.panel1.Controls.Add(this.TLabelNombre);
             this.panel1.Controls.Add(this.TLabelDNI);
             this.panel1.Location = new System.Drawing.Point(103, 292);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(502, 175);
+            this.panel1.Size = new System.Drawing.Size(507, 209);
             this.panel1.TabIndex = 36;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // TTextBoxProvincia
+            // TComboBoxCiudades
             // 
-            this.TTextBoxProvincia.Location = new System.Drawing.Point(283, 84);
-            this.TTextBoxProvincia.Name = "TTextBoxProvincia";
-            this.TTextBoxProvincia.Size = new System.Drawing.Size(100, 20);
-            this.TTextBoxProvincia.TabIndex = 41;
-            this.TTextBoxProvincia.Leave += new System.EventHandler(this.TTextBoxProvincia_Leave);
+            this.TComboBoxCiudades.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.TComboBoxCiudades.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.TComboBoxCiudades.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TComboBoxCiudades.FormattingEnabled = true;
+            this.TComboBoxCiudades.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.TComboBoxCiudades.Location = new System.Drawing.Point(283, 99);
+            this.TComboBoxCiudades.Name = "TComboBoxCiudades";
+            this.TComboBoxCiudades.Size = new System.Drawing.Size(101, 21);
+            this.TComboBoxCiudades.TabIndex = 45;
+            this.TComboBoxCiudades.Click += new System.EventHandler(this.TComboBoxCiudades_Click);
+            // 
+            // TComboBoxProvincias
+            // 
+            this.TComboBoxProvincias.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.TComboBoxProvincias.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.TComboBoxProvincias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TComboBoxProvincias.FormattingEnabled = true;
+            this.TComboBoxProvincias.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.TComboBoxProvincias.Location = new System.Drawing.Point(91, 99);
+            this.TComboBoxProvincias.Name = "TComboBoxProvincias";
+            this.TComboBoxProvincias.Size = new System.Drawing.Size(101, 21);
+            this.TComboBoxProvincias.TabIndex = 42;
+            this.TComboBoxProvincias.Click += new System.EventHandler(this.TComboBoxProvincias_Click);
+            // 
+            // TLabelCiudad
+            // 
+            this.TLabelCiudad.AutoSize = true;
+            this.TLabelCiudad.BackColor = System.Drawing.Color.Transparent;
+            this.TLabelCiudad.Location = new System.Drawing.Point(237, 107);
+            this.TLabelCiudad.Name = "TLabelCiudad";
+            this.TLabelCiudad.Size = new System.Drawing.Size(40, 13);
+            this.TLabelCiudad.TabIndex = 44;
+            this.TLabelCiudad.Text = "Ciudad";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(28, 107);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.TabIndex = 43;
+            this.label1.Text = "Pronvincia";
             // 
             // TTextBoxApellidos
             // 
-            this.TTextBoxApellidos.Location = new System.Drawing.Point(283, 45);
+            this.TTextBoxApellidos.Location = new System.Drawing.Point(284, 61);
             this.TTextBoxApellidos.Name = "TTextBoxApellidos";
             this.TTextBoxApellidos.Size = new System.Drawing.Size(100, 20);
             this.TTextBoxApellidos.TabIndex = 40;
@@ -156,7 +157,7 @@
             // 
             // TTextBoxNombre
             // 
-            this.TTextBoxNombre.Location = new System.Drawing.Point(90, 85);
+            this.TTextBoxNombre.Location = new System.Drawing.Point(91, 61);
             this.TTextBoxNombre.Name = "TTextBoxNombre";
             this.TTextBoxNombre.Size = new System.Drawing.Size(100, 20);
             this.TTextBoxNombre.TabIndex = 39;
@@ -164,25 +165,16 @@
             // 
             // TTextBoxDNI
             // 
-            this.TTextBoxDNI.Location = new System.Drawing.Point(90, 46);
+            this.TTextBoxDNI.Location = new System.Drawing.Point(91, 19);
             this.TTextBoxDNI.Name = "TTextBoxDNI";
             this.TTextBoxDNI.Size = new System.Drawing.Size(100, 20);
             this.TTextBoxDNI.TabIndex = 38;
             this.TTextBoxDNI.Leave += new System.EventHandler(this.TTextBoxDNI_Leave);
             // 
-            // TLabelProvincia
-            // 
-            this.TLabelProvincia.AutoSize = true;
-            this.TLabelProvincia.Location = new System.Drawing.Point(218, 92);
-            this.TLabelProvincia.Name = "TLabelProvincia";
-            this.TLabelProvincia.Size = new System.Drawing.Size(51, 13);
-            this.TLabelProvincia.TabIndex = 37;
-            this.TLabelProvincia.Text = "Provincia";
-            // 
             // TLabelApellidos
             // 
             this.TLabelApellidos.AutoSize = true;
-            this.TLabelApellidos.Location = new System.Drawing.Point(228, 53);
+            this.TLabelApellidos.Location = new System.Drawing.Point(229, 69);
             this.TLabelApellidos.Name = "TLabelApellidos";
             this.TLabelApellidos.Size = new System.Drawing.Size(49, 13);
             this.TLabelApellidos.TabIndex = 36;
@@ -191,7 +183,7 @@
             // TLabelNombre
             // 
             this.TLabelNombre.AutoSize = true;
-            this.TLabelNombre.Location = new System.Drawing.Point(39, 93);
+            this.TLabelNombre.Location = new System.Drawing.Point(40, 69);
             this.TLabelNombre.Name = "TLabelNombre";
             this.TLabelNombre.Size = new System.Drawing.Size(44, 13);
             this.TLabelNombre.TabIndex = 35;
@@ -201,7 +193,7 @@
             // 
             this.TLabelDNI.AutoSize = true;
             this.TLabelDNI.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelDNI.Location = new System.Drawing.Point(57, 54);
+            this.TLabelDNI.Location = new System.Drawing.Point(58, 27);
             this.TLabelDNI.Name = "TLabelDNI";
             this.TLabelDNI.Size = new System.Drawing.Size(26, 13);
             this.TLabelDNI.TabIndex = 34;
@@ -251,22 +243,18 @@
         private System.Windows.Forms.Button TButtonEliminar;
         private System.Windows.Forms.Button TButtonBuscar;
         private System.Windows.Forms.DataGridView TDataGridViewCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DNI;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ciudad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Apellidos;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox TTextBoxProvincia;
         private System.Windows.Forms.TextBox TTextBoxApellidos;
         private System.Windows.Forms.TextBox TTextBoxNombre;
         private System.Windows.Forms.TextBox TTextBoxDNI;
-        private System.Windows.Forms.Label TLabelProvincia;
         private System.Windows.Forms.Label TLabelApellidos;
         private System.Windows.Forms.Label TLabelNombre;
         private System.Windows.Forms.Label TLabelDNI;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Button TButtonCerrar;
+        private System.Windows.Forms.ComboBox TComboBoxCiudades;
+        private System.Windows.Forms.ComboBox TComboBoxProvincias;
+        private System.Windows.Forms.Label TLabelCiudad;
+        private System.Windows.Forms.Label label1;
     }
 }

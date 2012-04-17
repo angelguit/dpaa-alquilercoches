@@ -129,7 +129,8 @@ namespace AlquilerCoches
             }
             else { errorProvider1.SetError(TTextBoxPuestoAc, ""); incorrecto = false; }
         }
-
+      
+       
         private void TButtonGuardarPersonal_Click(object sender, EventArgs e)
         {
             if (TTextBoxDNI.Text == "" || TTextBoxNombre.Text == "" || TTextBoxApellidos.Text == "" || TTextBoxTelefono.Text == "" ||
@@ -158,7 +159,10 @@ namespace AlquilerCoches
                 else
                     enPersonal.EditarPersonal();
 
-             
+                  
+               
+
+                
                 this.Close();
 
             }
@@ -179,88 +183,73 @@ namespace AlquilerCoches
                 pictureBox1.Image = System.Drawing.Image.FromFile(OFich.FileName); 
         }
 
-           /* private void ObtenerProvincias(DataSet dsProv)
+        private DataSet numProvincia;// usado en funcion TComboBoxCiudades_Click
+        private void ObtenerProvincias(DataSet dsProv)
+        {
+            TComboBoxProvincias.Text = "Seleccione Provincia";
+            TComboBoxProvincias.DataSource = dsProv.Tables["Provincia"];
+            TComboBoxProvincias.DisplayMember = dsProv.Tables["Provincia"].Columns[1].Caption.ToString(); // como dsProv lleva el id_prov y el nombre ponemos 1 que es la columna del nombre
+            // TComboBoxProvincias.DisplayMember = dsProv.Tables["Provincia"].Columns[0].Caption.ToString(); // como dsProv lleva el id_prov y el nombre ponemos 1 que es la columna del nombre
+
+
+            numProvincia = new DataSet();
+            numProvincia = dsProv;
+
+
+        }
+
+        private void ObtenerCiudades(DataSet dsCiu)
+        {
+            TComboBoxCiudades.Text = "Seleccione Ciudad";
+            TComboBoxCiudades.DataSource = dsCiu.Tables["Ciudades"];
+            TComboBoxCiudades.DisplayMember = dsCiu.Tables["Ciudades"].Columns[0].Caption.ToString();
+        }
+        private void TComboBoxProvincias_Click_1(object sender, EventArgs e)
+        {
+            if (TComboBoxCiudades.Items.Count > 0) //lo dejamos en blanco por si hubiera alguna ciudad, para realizar nueva busqueda de provincia
             {
-                TComboBoxProvincia.Text = "Seleccione Provincia";
-                TComboBoxProvincia.DataSource = dsProv.Tables["Provincia"];
-                TComboBoxProvincia.DisplayMember = dsProv.Tables["Provincia"].Columns[1].Caption.ToString();
-            }       
-                
-            private void TComboBoxProvincia_Click(object sender, EventArgs e)
-            {
-                EN.ENPersonal enProv = new EN.ENPersonal();
-                DataSet dsProv = new DataSet();
-                dsProv = enProv.ObtenerListaProvincias();
-                ObtenerProvincias(dsProv);
-            }*/
-
-            private DataSet numProvincia;// usado en funcion TComboBoxCiudades_Click
-            private void ObtenerProvincias(DataSet dsProv)
-            {
-                TComboBoxProvincias.Text = "Seleccione Provincia";
-                TComboBoxProvincias.DataSource = dsProv.Tables["Provincia"];
-                TComboBoxProvincias.DisplayMember = dsProv.Tables["Provincia"].Columns[1].Caption.ToString(); // como dsProv lleva el id_prov y el nombre ponemos 1 que es la columna del nombre
-                // TComboBoxProvincias.DisplayMember = dsProv.Tables["Provincia"].Columns[0].Caption.ToString(); // como dsProv lleva el id_prov y el nombre ponemos 1 que es la columna del nombre
-
-
-                numProvincia = new DataSet();
-                numProvincia = dsProv;
-
-
-            }
-
-            private void ObtenerCiudades(DataSet dsCiu)
-            {
-                TComboBoxCiudades.Text = "Seleccione Ciudad";
-                TComboBoxCiudades.DataSource = dsCiu.Tables["Ciudades"];
-                TComboBoxCiudades.DisplayMember = dsCiu.Tables["Ciudades"].Columns[0].Caption.ToString();
-            }
-            private void TComboBoxProvincias_Click_1(object sender, EventArgs e)
-            {
-                if (TComboBoxCiudades.Items.Count > 0) //lo dejamos en blanco por si hubiera alguna ciudad, para realizar nueva busqueda de provincia
-                {
-                   // MessageBox.Show("hola");
-                    if(TComboBoxCiudades.Items.Count == 1)
-                     TComboBoxCiudades.Items.Clear();
+                // MessageBox.Show("hola");
+                if(TComboBoxCiudades.Items.Count == 1)
+                    TComboBoxCiudades.Items.Clear();
                     
-                    TComboBoxCiudades.DataSource = null;
-                }
-
-                EN.ENPersonal enProv = new EN.ENPersonal();
-                DataSet dsProv = new DataSet();
-                dsProv = enProv.ObtenerListaProvincias();
-                ObtenerProvincias(dsProv);
+                TComboBoxCiudades.DataSource = null;
             }
 
-            private void TComboBoxCiudades_Click_1(object sender, EventArgs e)
+            EN.ENPersonal enProv = new EN.ENPersonal();
+            DataSet dsProv = new DataSet();
+            dsProv = enProv.ObtenerListaProvincias();
+            ObtenerProvincias(dsProv);
+        }
+
+        private void TComboBoxCiudades_Click_1(object sender, EventArgs e)
+        {
+            EN.ENPersonal enCiu = new EN.ENPersonal();
+            DataSet dsCiu = new DataSet();
+            try
             {
-                EN.ENPersonal enCiu = new EN.ENPersonal();
-                DataSet dsCiu = new DataSet();
-                try
+                string prov = TComboBoxProvincias.Text.ToString();
+                bool parar = false;
+                // MessageBox.Show(numProvincia.Tables["Provincia"].Rows.Count.ToString());
+                for (int i = 0; i < 53 && parar != true; i++)
                 {
-                    string prov = TComboBoxProvincias.Text.ToString();
-                    bool parar = false;
-                    // MessageBox.Show(numProvincia.Tables["Provincia"].Rows.Count.ToString());
-                    for (int i = 0; i < 53 && parar != true; i++)
+                    //MessageBox.Show(numProvincia.Tables["Provincia"].Rows[i][1].ToString());
+                    if (numProvincia.Tables["Provincia"].Rows[i][1].ToString() == prov)
                     {
-                        //MessageBox.Show(numProvincia.Tables["Provincia"].Rows[i][1].ToString());
-                        if (numProvincia.Tables["Provincia"].Rows[i][1].ToString() == prov)
-                        {
-                            string numprov = numProvincia.Tables["Provincia"].Rows[i][0].ToString();// en la posicion 0 esta el id de la provincia
-                            parar = true;
-                            dsCiu = enCiu.ObtenerListaCiudades(numprov);
+                        string numprov = numProvincia.Tables["Provincia"].Rows[i][0].ToString();// en la posicion 0 esta el id de la provincia
+                        parar = true;
+                        dsCiu = enCiu.ObtenerListaCiudades(numprov);
 
-                        }
                     }
-                    ObtenerCiudades(dsCiu);
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Si desea cambiar la ciudad debe de volver a seleccionar una provincia", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                ObtenerCiudades(dsCiu);
             }
-
-           
+            catch (Exception ex)
+            {
+                MessageBox.Show("Si desea cambiar la ciudad debe de volver a seleccionar una provincia", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+     
+                     
 
            
     }
