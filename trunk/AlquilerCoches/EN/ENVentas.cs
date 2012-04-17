@@ -74,6 +74,12 @@ namespace EN
             set { precioVenta = PrecioVenta; }
         }
 
+        public void ClearEnVentas()
+        {
+            matricula = marca = modelo = garantia = anyo = km = "";
+            numVend = precioVenta = numCliente = numFactura = fechaVenta = "";
+        }
+
         public DataSet ObtenerListaVentas(string todo)
         {
             DataSet resultado = new DataSet();
