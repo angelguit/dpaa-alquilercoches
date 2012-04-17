@@ -17,13 +17,14 @@ namespace EN
         private string dni;
         private string nombre;
         private string apellidos;
-        private int telefono;
+        private string telefono;
         private string email;
         private string direccion;
         private string ciudad;
         private string provincia;
         private string puestoac;
         private string otrospuestos;
+        private string tarifa;
 
 
        private CAD.CADCliente cadCliente = new CAD.CADCliente();
@@ -43,7 +44,7 @@ namespace EN
             get { return apellidos; }
             set { apellidos = value; }
         }
-        public int Telefono
+        public string Telefono
         {
             get { return telefono; }
             set { telefono = value; }
@@ -77,6 +78,11 @@ namespace EN
         {
             get { return otrospuestos; }
             set { otrospuestos = value; }
+        }
+        public string Tarifa
+        {
+            get { return tarifa; }
+            set { tarifa = value; }
         }
 
         public DataSet ObtenerListaCliente(string todo)
