@@ -142,11 +142,12 @@ namespace AlquilerCoches
         private void TButtonVender_Click(object sender, EventArgs e)
         {
             //MODIFICAR COSAS PARA AÑADIR LA VENTA A LA BD
+            guardaCampos();
+            ventas.AnyadirVenta();
 
-
-            vehiculos.ClearEnVehiculo();
-            vehiculos.Matricula = TTextBoxMatricula.Text;
-            vehiculos.BorrarVehiculo();
+            //vehiculos.ClearEnVehiculo();
+           // vehiculos.Matricula = TTextBoxMatricula.Text;
+            //vehiculos.BorrarVehiculo();
         }
 
         private void TButtonCancelar_Click(object sender, EventArgs e)
@@ -176,6 +177,16 @@ namespace AlquilerCoches
             TTextBoxMarca.Text = vehiculos.Marca;
             TTextBoxModelo.Text = vehiculos.Modelo;
             TTextBoxKm.Text = vehiculos.KM.ToString();
+        }
+
+        void guardaCampos()
+        {
+            ventas.Matricula = TTextBoxMatricula.Text;
+            ventas.Marca = TTextBoxMarca.Text;
+            ventas.Modelo = TTextBoxModelo.Text;
+            ventas.Garantia = TTextBoxMeses.Text;
+            ventas.KM = TTextBoxKm.Text;
+            ventas.PrecioVenta = TTextBoxPrecioVenta.Text;
         }
 
         private void TListBoxMarcas_SelectedIndexChanged(object sender, EventArgs e)
