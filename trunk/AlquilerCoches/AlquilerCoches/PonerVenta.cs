@@ -142,8 +142,18 @@ namespace AlquilerCoches
         private void TButtonVender_Click(object sender, EventArgs e)
         {
             //MODIFICAR COSAS PARA AÑADIR LA VENTA A LA BD
-            guardaCampos();
-            ventas.AnyadirVenta();
+            if (incorrecto == false)
+            {
+                guardaCampos();
+                ventas.AnyadirVenta();
+                limpiaFormulario();
+                rellenaMarcas();
+            }
+            else
+            {
+                MessageBox.Show("Hay algún error en los datos introducidos.", "¡ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
+            
 
             //vehiculos.ClearEnVehiculo();
            // vehiculos.Matricula = TTextBoxMatricula.Text;
