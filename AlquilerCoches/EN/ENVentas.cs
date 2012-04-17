@@ -232,12 +232,12 @@ namespace EN
             }
         }
 
-        public void AnyadirVenta(string todo)
+        public void AnyadirVenta()
         {
             DataSet resultado = new DataSet();
             try
             {
-                resultado = cadVentas.ObtenerTablaVentas(todo);
+                resultado = cadVentas.ObtenerTablaVentas();
                 DataRow linea = resultado.Tables["Ventas"].NewRow();
                 linea[0] = matricula;
                 linea[1] = marca;
