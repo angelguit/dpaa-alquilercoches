@@ -14,11 +14,13 @@ namespace AlquilerCoches
     {
         bool incorrecto = false;
         private EN.ENVentas ventas = new EN.ENVentas();
+        private EN.ENVehiculo vehiculos = new EN.ENVehiculo();
 
         public PonerVenta()
         {
             InitializeComponent();
             limpiaFormulario();
+            rellenaMarcas();
         }
 
         public void limpiaFormulario()
@@ -30,7 +32,6 @@ namespace AlquilerCoches
             TTextBoxMatricula.Text = "";
             TTextBoxMarca.Text = "";
             TTextBoxModelo.Text = "";
-            TTextBoxAnyo.Text = "";
             TTextBoxKm.Text = "";
             TCheckBoxGarantia.Checked = false;
             TTextBoxMeses.Text = "";
@@ -132,11 +133,8 @@ namespace AlquilerCoches
 
         private void TButtonVender_Click(object sender, EventArgs e)
         {
-            EN.ENVehiculo vehiculo = new EN.ENVehiculo();
-            
-            
-            vehiculo.Matricula = TTextBoxMatricula.Text;
-            vehiculo.BorrarVehiculo();
+            vehiculos.Matricula = TTextBoxMatricula.Text;
+            vehiculos.BorrarVehiculo();
         }
 
         private void TButtonCancelar_Click(object sender, EventArgs e)
@@ -148,6 +146,60 @@ namespace AlquilerCoches
             }
         }
 
+        private void rellenaMarcas()
+        {
+            TGroupBoxDatosVehiculo.Enabled = true;
+
+            TListBoxMarcas.Items.Clear();
+            TListBoxModelos.Items.Clear();
+            TListBoxMatriculas.Items.Clear();
+            vehiculos.ObtenerMarcas();
+            TListBoxMarcas.Items.AddRange(vehiculos.ListaMarcas.ToArray());
+        }
+
+        void rellenaCampos()
+        {
+            TTextBoxMatricula.Text = vehiculos.Matricula;
+            TTextBoxMarca.Text = vehiculos.Marca;
+            TTextBoxModelo.Text = vehiculos.Modelo;
+            TTextBoxKm.Text = vehiculos.KM.ToString();
+        }
+
+        private void TListBoxMarcas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (TListBoxMarcas.SelectedIndex != -1)
+            {
+                TListBoxModelos.Items.Clear();
+                TListBoxMatriculas.Items.Clear();
+                vehiculos.Marca = TListBoxMarcas.Items[TListBoxMarcas.SelectedIndex].ToString();
+                vehiculos.ObtenerModelo();
+                TListBoxModelos.Items.AddRange(vehiculos.ListaModelos.ToArray());
+            }
+        }
+
+        private void TListBoxModelos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (TListBoxModelos.SelectedIndex != -1)
+            {
+                TListBoxMatriculas.Items.Clear();
+                vehiculos.Modelo = TListBoxModelos.Items[TListBoxModelos.SelectedIndex].ToString();
+                vehiculos.ObtenerMatriculas();
+                TListBoxMatriculas.Items.AddRange(vehiculos.ListaMatriculas.ToArray());
+            }
+        }
+
+        private void TListBoxMatriculas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (TListBoxMatriculas.SelectedIndex != -1)
+            {
+                vehiculos.Matricula = TListBoxMatriculas.Items[TListBoxMatriculas.SelectedIndex].ToString();
+                vehiculos.ObtenerDatosVehiculos();
+                rellenaCampos();
+
+            }
+        }
+     
 
 
     }
