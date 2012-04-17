@@ -53,8 +53,6 @@
             this.TLabelGarantia = new System.Windows.Forms.Label();
             this.TLabelMarca = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.TTextBoxAnyo = new System.Windows.Forms.TextBox();
-            this.TLabelAnyo = new System.Windows.Forms.Label();
             this.TTextBoxMatricula = new System.Windows.Forms.TextBox();
             this.TLabelMatricula = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
@@ -156,8 +154,6 @@
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelGarantia);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelMarca);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.pictureBox1);
-            this.TGroupBoxDatosVehiculo.Controls.Add(this.TTextBoxAnyo);
-            this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelAnyo);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TTextBoxMatricula);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelMatricula);
             this.TGroupBoxDatosVehiculo.Location = new System.Drawing.Point(21, 207);
@@ -166,11 +162,12 @@
             this.TGroupBoxDatosVehiculo.TabIndex = 51;
             this.TGroupBoxDatosVehiculo.TabStop = false;
             this.TGroupBoxDatosVehiculo.Text = "DatosVehiculo";
+            this.TGroupBoxDatosVehiculo.Enter += new System.EventHandler(this.TGroupBoxDatosVehiculo_Enter);
             // 
             // TLabelObligatorio
             // 
             this.TLabelObligatorio.AutoSize = true;
-            this.TLabelObligatorio.Location = new System.Drawing.Point(9, 211);
+            this.TLabelObligatorio.Location = new System.Drawing.Point(9, 187);
             this.TLabelObligatorio.Name = "TLabelObligatorio";
             this.TLabelObligatorio.Size = new System.Drawing.Size(217, 13);
             this.TLabelObligatorio.TabIndex = 49;
@@ -179,7 +176,7 @@
             // TTextBoxMeses
             // 
             this.TTextBoxMeses.Enabled = false;
-            this.TTextBoxMeses.Location = new System.Drawing.Point(142, 154);
+            this.TTextBoxMeses.Location = new System.Drawing.Point(142, 130);
             this.TTextBoxMeses.Name = "TTextBoxMeses";
             this.TTextBoxMeses.Size = new System.Drawing.Size(84, 20);
             this.TTextBoxMeses.TabIndex = 48;
@@ -190,7 +187,7 @@
             // TCheckBoxGarantia
             // 
             this.TCheckBoxGarantia.AutoSize = true;
-            this.TCheckBoxGarantia.Location = new System.Drawing.Point(80, 157);
+            this.TCheckBoxGarantia.Location = new System.Drawing.Point(80, 133);
             this.TCheckBoxGarantia.Name = "TCheckBoxGarantia";
             this.TCheckBoxGarantia.Size = new System.Drawing.Size(56, 17);
             this.TCheckBoxGarantia.TabIndex = 47;
@@ -218,7 +215,7 @@
             // 
             // TTextBoxPrecioVenta
             // 
-            this.TTextBoxPrecioVenta.Location = new System.Drawing.Point(80, 181);
+            this.TTextBoxPrecioVenta.Location = new System.Drawing.Point(80, 157);
             this.TTextBoxPrecioVenta.Name = "TTextBoxPrecioVenta";
             this.TTextBoxPrecioVenta.Size = new System.Drawing.Size(146, 20);
             this.TTextBoxPrecioVenta.TabIndex = 44;
@@ -227,7 +224,7 @@
             // TLabelPrecioVenta
             // 
             this.TLabelPrecioVenta.AutoSize = true;
-            this.TLabelPrecioVenta.Location = new System.Drawing.Point(9, 188);
+            this.TLabelPrecioVenta.Location = new System.Drawing.Point(9, 164);
             this.TLabelPrecioVenta.Name = "TLabelPrecioVenta";
             this.TLabelPrecioVenta.Size = new System.Drawing.Size(69, 13);
             this.TLabelPrecioVenta.TabIndex = 43;
@@ -235,7 +232,7 @@
             // 
             // TTextBoxKm
             // 
-            this.TTextBoxKm.Location = new System.Drawing.Point(80, 129);
+            this.TTextBoxKm.Location = new System.Drawing.Point(80, 105);
             this.TTextBoxKm.Name = "TTextBoxKm";
             this.TTextBoxKm.Size = new System.Drawing.Size(146, 20);
             this.TTextBoxKm.TabIndex = 40;
@@ -244,7 +241,7 @@
             // TLabelKM
             // 
             this.TLabelKM.AutoSize = true;
-            this.TLabelKM.Location = new System.Drawing.Point(49, 136);
+            this.TLabelKM.Location = new System.Drawing.Point(49, 112);
             this.TLabelKM.Name = "TLabelKM";
             this.TLabelKM.Size = new System.Drawing.Size(27, 13);
             this.TLabelKM.TabIndex = 39;
@@ -280,7 +277,7 @@
             // TLabelGarantia
             // 
             this.TLabelGarantia.AutoSize = true;
-            this.TLabelGarantia.Location = new System.Drawing.Point(25, 162);
+            this.TLabelGarantia.Location = new System.Drawing.Point(25, 138);
             this.TLabelGarantia.Name = "TLabelGarantia";
             this.TLabelGarantia.Size = new System.Drawing.Size(49, 13);
             this.TLabelGarantia.TabIndex = 41;
@@ -303,23 +300,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(204, 155);
             this.pictureBox1.TabIndex = 31;
             this.pictureBox1.TabStop = false;
-            // 
-            // TTextBoxAnyo
-            // 
-            this.TTextBoxAnyo.Location = new System.Drawing.Point(80, 105);
-            this.TTextBoxAnyo.Name = "TTextBoxAnyo";
-            this.TTextBoxAnyo.Size = new System.Drawing.Size(146, 20);
-            this.TTextBoxAnyo.TabIndex = 22;
-            this.TTextBoxAnyo.Leave += new System.EventHandler(this.TTextBoxAnyo_Leave);
-            // 
-            // TLabelAnyo
-            // 
-            this.TLabelAnyo.AutoSize = true;
-            this.TLabelAnyo.Location = new System.Drawing.Point(41, 112);
-            this.TLabelAnyo.Name = "TLabelAnyo";
-            this.TLabelAnyo.Size = new System.Drawing.Size(30, 13);
-            this.TLabelAnyo.TabIndex = 21;
-            this.TLabelAnyo.Text = "Año*";
             // 
             // TTextBoxMatricula
             // 
@@ -393,8 +373,6 @@
         private System.Windows.Forms.Label TLabelGarantia;
         private System.Windows.Forms.Label TLabelMarca;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox TTextBoxAnyo;
-        private System.Windows.Forms.Label TLabelAnyo;
         private System.Windows.Forms.TextBox TTextBoxMatricula;
         private System.Windows.Forms.Label TLabelMatricula;
         private System.Windows.Forms.Button TButtonCancelar;
