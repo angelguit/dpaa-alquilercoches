@@ -12,7 +12,7 @@ namespace AlquilerCoches
 {
     public partial class GestionProveedores : Form
     {
-        public GestionProveedores()
+        public GestionProveedores(string cif, string marca,string calle,int numero,int telefono,string email,string ciudad,string provincia,int  codigopostal,string horario)
         {
             InitializeComponent();
         }
@@ -76,11 +76,11 @@ namespace AlquilerCoches
             }
         }
 
-        private void TTextBoxProvincia_Leave(object sender, EventArgs e)
+        private void TComboBoxProvincias_Leave(object sender, EventArgs e)
         {
-            if (!Regex.Match(TTextBoxProvincia.Text, @"^[A-Za-z]{3,20}$").Success)
+            if (!Regex.Match(TComboBoxProvincias.Text, @"^[A-Za-z]{3,20}$").Success)
             {
-                errorProvider1.SetError(TTextBoxProvincia, "Entre 3 y 20 caracteres");
+                errorProvider1.SetError(TComboBoxProvincias, "Entre 3 y 20 caracteres");
                 incorrecto = true;
             }
             else
@@ -89,16 +89,16 @@ namespace AlquilerCoches
             }
         }
 
-        private void TTextBoxCiudad_Leave(object sender, EventArgs e)
+        private void TComboBoxCiudades_Leave(object sender, EventArgs e)
         {
-            if (!Regex.Match(TTextBoxCiudad.Text, @"^[A-Za-z]{3,20}$").Success)
+            if (!Regex.Match(TComboBoxCiudades.Text, @"^[A-Za-z]{3,20}$").Success)
             {
-                errorProvider1.SetError(TTextBoxCiudad, "Entre 3 y 20 caracteres");
+                errorProvider1.SetError(TComboBoxCiudades, "Entre 3 y 20 caracteres");
                 incorrecto = true;
             }
             else
             {
-                errorProvider1.SetError(TTextBoxCiudad, "");
+                errorProvider1.SetError(TComboBoxCiudades, "");
             }
         }
 
@@ -120,7 +120,7 @@ namespace AlquilerCoches
             }
             else
             {
-                errorProvider1.SetError(TTextBoxCiudad, "");
+                errorProvider1.SetError(TComboBoxCiudades, "");
             }
         }
 
@@ -134,16 +134,6 @@ namespace AlquilerCoches
             else
             {
                 errorProvider1.SetError(TTextBoxNumero, "");
-            }
-        }
-
-        private void TButtonGuardarProveedor_Click(object sender, EventArgs e)
-        {
-            if (TTextBoxCalle.Text == "" || TTextBoxCIF.Text == "" || TTextBoxCiudad.Text == ""
-                || TTextBoxCPostal.Text == "" || TTextBoxEmail.Text == "" || TTextBoxMarca.Text == ""
-                || TTextBoxTelefono.Text == "" || TTextBoxHorario.Text == "" || TTextBoxNumero.Text == "" || TTextBoxProvincia.Text == "")
-            {
-                MessageBox.Show("No pueden haber campos vacios");
             }
         }
 
@@ -178,6 +168,94 @@ namespace AlquilerCoches
         private void TGroupBoxProveedores_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void TComboBoxProvincias_Click(object sender, EventArgs e)
+        {
+            EN.ENProveedores provincia = new EN.ENProveedores();
+            DataSet dsProv = new DataSet();
+            dsProv = provincia.ObtenerListaProvincias();
+            ObtenerProvincias(dsProv);
+
+        }
+
+        private DataSet numProvincia;// usado en funcion TComboBoxCiudades_Click
+        private void ObtenerProvincias(DataSet dsProv)
+        {
+            TComboBoxProvincias.Text = "Seleccione Provincia";
+            TComboBoxProvincias.DataSource = dsProv.Tables["Provincia"];
+            TComboBoxProvincias.DisplayMember = dsProv.Tables["Provincia"].Columns[1].Caption.ToString(); // como dsProv lleva el id_prov y el nombre ponemos 1 que es la columna del nombre
+            numProvincia = new DataSet();
+            numProvincia = dsProv;
+        }
+
+        private void ObtenerCiudades(DataSet dsCiu)
+        {
+            TComboBoxCiudades.Text = "Seleccione Ciudad";
+            TComboBoxCiudades.DataSource = dsCiu.Tables["Ciudades"];
+            TComboBoxCiudades.DisplayMember = dsCiu.Tables["Ciudades"].Columns[0].Caption.ToString();
+        }
+
+        private void TComboBoxCiudades_Click(object sender, EventArgs e)
+        {
+            EN.ENProveedores enCiu = new EN.ENProveedores();
+            DataSet dsCiu = new DataSet();
+            try
+            {
+                string prov = TComboBoxProvincias.Text.ToString();
+                bool parar = false;
+                // MessageBox.Show(numProvincia.Tables["Provincia"].Rows.Count.ToString());
+                for (int i = 0; i < 53 && parar != true; i++)
+                {
+                    //MessageBox.Show(numProvincia.Tables["Provincia"].Rows[i][1].ToString());
+                    if (numProvincia.Tables["Provincia"].Rows[i][1].ToString() == prov)
+                    {
+                        string numprov = numProvincia.Tables["Provincia"].Rows[i][0].ToString();// en la posicion 0 esta el id de la provincia
+                        parar = true;
+                        dsCiu = enCiu.ObtenerListaCiudades(numprov);
+
+                    }
+                }
+                ObtenerCiudades(dsCiu);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Seleccione primero una provincia", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void TButtonGuardar_Click(object sender, EventArgs e)
+        {
+            if (TTextBoxCalle.Text == "" || TTextBoxCIF.Text == "" || TComboBoxCiudades.Text == ""
+               || TTextBoxCPostal.Text == "" || TTextBoxEmail.Text == "" || TTextBoxMarca.Text == ""
+                 || TTextBoxTelefono.Text == "" || TTextBoxHorario.Text == "" || TTextBoxNumero.Text == "" || TComboBoxProvincias.Text == "")
+            {
+                MessageBox.Show("No pueden haber campos vacios");
+            }
+            else
+            {
+                EN.ENProveedores insertar = new EN.ENProveedores();
+                DataSet existe = new DataSet();
+                //comprobar si existe en la BD
+                //string cadena = "CIF= " + TTextBoxCIF.Text + "";
+                //existe = insertar.ObtenerListaProveedores(cadena);
+
+
+                //insertar datos
+                insertar.CIF = TTextBoxCIF.Text;
+                MessageBox.Show(insertar.CIF);
+                insertar.Marca = TTextBoxMarca.Text;
+                insertar.Calle = TTextBoxCalle.Text;
+                insertar.Numero = Int32.Parse(TTextBoxNumero.Text);
+                insertar.Telefono = Int32.Parse(TTextBoxTelefono.Text);
+                insertar.Email = TTextBoxEmail.Text;
+                insertar.Ciudad = TComboBoxCiudades.Text;
+                insertar.Provincia = TComboBoxProvincias.Text;
+                insertar.Codigopostal = Int32.Parse(TTextBoxCPostal.Text);
+                insertar.Horario = TTextBoxHorario.Text;
+
+                insertar.InsertarProveedorEN();
+            }
         }
 
     }
