@@ -188,13 +188,13 @@ namespace EN
                 matricula = resultado.Tables["Ventas"].Rows[0][0].ToString();
                 marca = resultado.Tables["Ventas"].Rows[0][1].ToString();
                 modelo = resultado.Tables["Ventas"].Rows[0][2].ToString();
-                km = resultado.Tables["Ventas"].Rows[0][4].ToString();
-                garantia = resultado.Tables["Ventas"].Rows[0][5].ToString();
-                precioVenta = resultado.Tables["Ventas"].Rows[0][6].ToString();
-                numVend = resultado.Tables["Ventas"].Rows[0][7].ToString();
-                numCliente = resultado.Tables["Ventas"].Rows[0][8].ToString();
-                numFactura = resultado.Tables["Ventas"].Rows[0][9].ToString();
-                fechaVenta = resultado.Tables["Ventas"].Rows[0][10].ToString();
+                km = resultado.Tables["Ventas"].Rows[0][3].ToString();
+                garantia = resultado.Tables["Ventas"].Rows[0][4].ToString();
+                precioVenta = resultado.Tables["Ventas"].Rows[0][5].ToString();
+                numVend = resultado.Tables["Ventas"].Rows[0][6].ToString();
+                numCliente = resultado.Tables["Ventas"].Rows[0][7].ToString();
+                numFactura = resultado.Tables["Ventas"].Rows[0][8].ToString();
+                fechaVenta = resultado.Tables["Ventas"].Rows[0][9].ToString();
             }
             catch (Exception ex)
             {
