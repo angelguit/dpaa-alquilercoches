@@ -56,18 +56,21 @@ namespace AlquilerCoches
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string nombre, apellidos,dni,telefono;
+            EN.ENCliente enCliente = new EN.ENCliente();
             GestionClientesBuscar F1 = new GestionClientesBuscar(false);
             F1.ShowDialog();
-            nombre = F1.nombre;
-            apellidos = F1.apellidos;
-            dni = F1.dni;
-            telefono = F1.telefono;
-            TLabelNombre.Text = "Nombre: " + nombre + "Apellidos: " + apellidos;
-            TLabelDNI.Text = "DNI: " + dni + " " + "Telf: " + telefono;
+            enCliente = F1.enClientePub;
+            TLabelNombre.Text = "Nombre: " + enCliente.Nombre + "Apellidos: " + enCliente.Apellidos;
+            TLabelDNI.Text = "DNI: " + enCliente.DNI + " " + "Telf: " + enCliente.Telefono;
+            TLabelDirec.Text = "Direccion: " + enCliente.Direccion;
             TLabelDNI.Visible = true;
             TLabelNombre.Visible = true;
+            TLabelDirec.Visible = true;
             TButtonBuscarCliente.Visible = false;
+            TLabelInfoCliente.Visible = true;
+            TButtonBuscarOtro.Visible = true;
+            TButtonEditar.Visible = true;
+            TRectangleShapeCliente.Visible = true;
         }
 
 

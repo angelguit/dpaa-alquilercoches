@@ -15,10 +15,10 @@ namespace AlquilerCoches
     public partial class GestionClientesBuscar : Form
     {
         EN.ENCliente enCliente = new EN.ENCliente();//declaramos enCliente que lo usaremos en cualquier operacion relacionada con cliente
+        public EN.ENCliente enClientePub = new EN.ENCliente();
         private bool dondevengo;
         ArrayList arraydni = new ArrayList();
         string eliminado = ""; //string que llevara la selec q usaremos para eliminar clientes de la base de datos
-        public string nombre, apellidos, dni, telefono;
 
         public GestionClientesBuscar(bool directo)
         {
@@ -213,10 +213,16 @@ namespace AlquilerCoches
                 {
                     if (!dondevengo)
                     {
-                        nombre = TDataGridViewCliente.Rows[e.RowIndex].Cells[2].Value.ToString();
-                        apellidos = TDataGridViewCliente.Rows[e.RowIndex].Cells[3].Value.ToString();
-                        dni = TDataGridViewCliente.Rows[e.RowIndex].Cells[1].Value.ToString();
-                        telefono = TDataGridViewCliente.Rows[e.RowIndex].Cells[5].Value.ToString();
+                        enClientePub.DNI = TDataGridViewCliente.Rows[e.RowIndex].Cells[1].Value.ToString();
+                        enClientePub.Nombre = TDataGridViewCliente.Rows[e.RowIndex].Cells[2].Value.ToString();
+                        enClientePub.Apellidos = TDataGridViewCliente.Rows[e.RowIndex].Cells[3].Value.ToString();
+                        enClientePub.Tarifa = TDataGridViewCliente.Rows[e.RowIndex].Cells[4].Value.ToString();
+                        enClientePub.Telefono = TDataGridViewCliente.Rows[e.RowIndex].Cells[5].Value.ToString();
+                        enClientePub.Email = TDataGridViewCliente.Rows[e.RowIndex].Cells[6].Value.ToString();
+                        enClientePub.Direccion = TDataGridViewCliente.Rows[e.RowIndex].Cells[7].Value.ToString();
+                        enClientePub.Ciudad = TDataGridViewCliente.Rows[e.RowIndex].Cells[8].Value.ToString();
+                        enClientePub.Provincia = TDataGridViewCliente.Rows[e.RowIndex].Cells[9].Value.ToString();
+
                         Close();
                     }
                     else

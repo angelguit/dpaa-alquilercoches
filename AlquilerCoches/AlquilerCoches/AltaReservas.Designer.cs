@@ -42,14 +42,22 @@
             this.TLabelFechaFin = new System.Windows.Forms.Label();
             this.TDateTimePickerFechaFin = new System.Windows.Forms.DateTimePicker();
             this.TButtonReserva = new System.Windows.Forms.Button();
-            this.TLabelNombre = new System.Windows.Forms.Label();
-            this.TLabelDNI = new System.Windows.Forms.Label();
             this.TLabelErrorFecha = new System.Windows.Forms.Label();
             this.TLabelMarca = new System.Windows.Forms.Label();
             this.TComboBoxMarca = new System.Windows.Forms.ComboBox();
             this.TLabelSinCoche = new System.Windows.Forms.Label();
             this.TLabelSinConductores = new System.Windows.Forms.Label();
             this.TButtonCerrar = new System.Windows.Forms.Button();
+            this.TLabelInfoCliente = new System.Windows.Forms.Label();
+            this.TButtonEditar = new System.Windows.Forms.Button();
+            this.TButtonBuscarOtro = new System.Windows.Forms.Button();
+            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.TRectangleShaperReservas = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.TLabelDNI = new System.Windows.Forms.Label();
+            this.TLabelNombre = new System.Windows.Forms.Label();
+            this.TRectangleShapeCliente = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.TLabelInfoVehiculo = new System.Windows.Forms.Label();
+            this.TLabelDirec = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // TButtonBuscarCliente
@@ -65,7 +73,7 @@
             // TComboBoxCategoria
             // 
             this.TComboBoxCategoria.FormattingEnabled = true;
-            this.TComboBoxCategoria.Location = new System.Drawing.Point(75, 154);
+            this.TComboBoxCategoria.Location = new System.Drawing.Point(258, 232);
             this.TComboBoxCategoria.Name = "TComboBoxCategoria";
             this.TComboBoxCategoria.Size = new System.Drawing.Size(121, 21);
             this.TComboBoxCategoria.TabIndex = 27;
@@ -75,7 +83,7 @@
             // TComboBoxModelo
             // 
             this.TComboBoxModelo.FormattingEnabled = true;
-            this.TComboBoxModelo.Location = new System.Drawing.Point(493, 154);
+            this.TComboBoxModelo.Location = new System.Drawing.Point(258, 308);
             this.TComboBoxModelo.Name = "TComboBoxModelo";
             this.TComboBoxModelo.Size = new System.Drawing.Size(121, 21);
             this.TComboBoxModelo.TabIndex = 28;
@@ -86,7 +94,7 @@
             // 
             this.TLabelCategoria.AutoSize = true;
             this.TLabelCategoria.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelCategoria.Location = new System.Drawing.Point(14, 157);
+            this.TLabelCategoria.Location = new System.Drawing.Point(197, 235);
             this.TLabelCategoria.Name = "TLabelCategoria";
             this.TLabelCategoria.Size = new System.Drawing.Size(55, 13);
             this.TLabelCategoria.TabIndex = 29;
@@ -96,7 +104,7 @@
             // 
             this.TLabelModelo.AutoSize = true;
             this.TLabelModelo.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelModelo.Location = new System.Drawing.Point(441, 157);
+            this.TLabelModelo.Location = new System.Drawing.Point(206, 316);
             this.TLabelModelo.Name = "TLabelModelo";
             this.TLabelModelo.Size = new System.Drawing.Size(45, 13);
             this.TLabelModelo.TabIndex = 30;
@@ -106,7 +114,7 @@
             // 
             this.TLabelMatricula.AutoSize = true;
             this.TLabelMatricula.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelMatricula.Location = new System.Drawing.Point(645, 157);
+            this.TLabelMatricula.Location = new System.Drawing.Point(199, 353);
             this.TLabelMatricula.Name = "TLabelMatricula";
             this.TLabelMatricula.Size = new System.Drawing.Size(53, 13);
             this.TLabelMatricula.TabIndex = 31;
@@ -115,7 +123,7 @@
             // TComboBoxMatricula
             // 
             this.TComboBoxMatricula.FormattingEnabled = true;
-            this.TComboBoxMatricula.Location = new System.Drawing.Point(704, 154);
+            this.TComboBoxMatricula.Location = new System.Drawing.Point(258, 350);
             this.TComboBoxMatricula.Name = "TComboBoxMatricula";
             this.TComboBoxMatricula.Size = new System.Drawing.Size(121, 21);
             this.TComboBoxMatricula.TabIndex = 32;
@@ -125,7 +133,7 @@
             // 
             this.TLabelConductores.AutoSize = true;
             this.TLabelConductores.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelConductores.Location = new System.Drawing.Point(76, 223);
+            this.TLabelConductores.Location = new System.Drawing.Point(500, 235);
             this.TLabelConductores.Name = "TLabelConductores";
             this.TLabelConductores.Size = new System.Drawing.Size(70, 13);
             this.TLabelConductores.TabIndex = 33;
@@ -143,7 +151,7 @@
             "6",
             "7",
             "8"});
-            this.TComboBoxConductores.Location = new System.Drawing.Point(152, 220);
+            this.TComboBoxConductores.Location = new System.Drawing.Point(576, 232);
             this.TComboBoxConductores.Name = "TComboBoxConductores";
             this.TComboBoxConductores.Size = new System.Drawing.Size(61, 21);
             this.TComboBoxConductores.TabIndex = 34;
@@ -153,7 +161,7 @@
             // 
             this.TLabelFechaInicio.AutoSize = true;
             this.TLabelFechaInicio.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelFechaInicio.Location = new System.Drawing.Point(292, 223);
+            this.TLabelFechaInicio.Location = new System.Drawing.Point(500, 329);
             this.TLabelFechaInicio.Name = "TLabelFechaInicio";
             this.TLabelFechaInicio.Size = new System.Drawing.Size(68, 13);
             this.TLabelFechaInicio.TabIndex = 35;
@@ -163,7 +171,7 @@
             // 
             this.TDateTimePickerFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.TDateTimePickerFechaInicio.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.TDateTimePickerFechaInicio.Location = new System.Drawing.Point(366, 220);
+            this.TDateTimePickerFechaInicio.Location = new System.Drawing.Point(574, 326);
             this.TDateTimePickerFechaInicio.Name = "TDateTimePickerFechaInicio";
             this.TDateTimePickerFechaInicio.Size = new System.Drawing.Size(98, 20);
             this.TDateTimePickerFechaInicio.TabIndex = 36;
@@ -174,7 +182,7 @@
             // 
             this.TLabelFechaFin.AutoSize = true;
             this.TLabelFechaFin.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelFechaFin.Location = new System.Drawing.Point(544, 223);
+            this.TLabelFechaFin.Location = new System.Drawing.Point(511, 359);
             this.TLabelFechaFin.Name = "TLabelFechaFin";
             this.TLabelFechaFin.Size = new System.Drawing.Size(57, 13);
             this.TLabelFechaFin.TabIndex = 37;
@@ -183,15 +191,15 @@
             // TDateTimePickerFechaFin
             // 
             this.TDateTimePickerFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.TDateTimePickerFechaFin.Location = new System.Drawing.Point(607, 220);
+            this.TDateTimePickerFechaFin.Location = new System.Drawing.Point(574, 352);
             this.TDateTimePickerFechaFin.Name = "TDateTimePickerFechaFin";
-            this.TDateTimePickerFechaFin.Size = new System.Drawing.Size(117, 20);
+            this.TDateTimePickerFechaFin.Size = new System.Drawing.Size(98, 20);
             this.TDateTimePickerFechaFin.TabIndex = 38;
             this.TDateTimePickerFechaFin.ValueChanged += new System.EventHandler(this.TDateTimePickerFechaFin_ValueChanged);
             // 
             // TButtonReserva
             // 
-            this.TButtonReserva.Location = new System.Drawing.Point(339, 331);
+            this.TButtonReserva.Location = new System.Drawing.Point(268, 503);
             this.TButtonReserva.Name = "TButtonReserva";
             this.TButtonReserva.Size = new System.Drawing.Size(125, 78);
             this.TButtonReserva.TabIndex = 39;
@@ -199,37 +207,13 @@
             this.TButtonReserva.UseVisualStyleBackColor = true;
             this.TButtonReserva.Click += new System.EventHandler(this.TButtonReserva_Click);
             // 
-            // TLabelNombre
-            // 
-            this.TLabelNombre.AutoSize = true;
-            this.TLabelNombre.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelNombre.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TLabelNombre.Location = new System.Drawing.Point(41, 59);
-            this.TLabelNombre.Name = "TLabelNombre";
-            this.TLabelNombre.Size = new System.Drawing.Size(59, 23);
-            this.TLabelNombre.TabIndex = 40;
-            this.TLabelNombre.Text = "label1";
-            this.TLabelNombre.Visible = false;
-            // 
-            // TLabelDNI
-            // 
-            this.TLabelDNI.AutoSize = true;
-            this.TLabelDNI.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelDNI.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TLabelDNI.Location = new System.Drawing.Point(41, 85);
-            this.TLabelDNI.Name = "TLabelDNI";
-            this.TLabelDNI.Size = new System.Drawing.Size(59, 23);
-            this.TLabelDNI.TabIndex = 41;
-            this.TLabelDNI.Text = "label1";
-            this.TLabelDNI.Visible = false;
-            // 
             // TLabelErrorFecha
             // 
             this.TLabelErrorFecha.AutoSize = true;
             this.TLabelErrorFecha.BackColor = System.Drawing.Color.Transparent;
             this.TLabelErrorFecha.Font = new System.Drawing.Font("Broadway", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TLabelErrorFecha.ForeColor = System.Drawing.Color.Red;
-            this.TLabelErrorFecha.Location = new System.Drawing.Point(544, 256);
+            this.TLabelErrorFecha.Location = new System.Drawing.Point(468, 388);
             this.TLabelErrorFecha.Name = "TLabelErrorFecha";
             this.TLabelErrorFecha.Size = new System.Drawing.Size(225, 12);
             this.TLabelErrorFecha.TabIndex = 42;
@@ -240,7 +224,7 @@
             // 
             this.TLabelMarca.AutoSize = true;
             this.TLabelMarca.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelMarca.Location = new System.Drawing.Point(235, 157);
+            this.TLabelMarca.Location = new System.Drawing.Point(211, 275);
             this.TLabelMarca.Name = "TLabelMarca";
             this.TLabelMarca.Size = new System.Drawing.Size(40, 13);
             this.TLabelMarca.TabIndex = 43;
@@ -249,7 +233,7 @@
             // TComboBoxMarca
             // 
             this.TComboBoxMarca.FormattingEnabled = true;
-            this.TComboBoxMarca.Location = new System.Drawing.Point(282, 154);
+            this.TComboBoxMarca.Location = new System.Drawing.Point(258, 272);
             this.TComboBoxMarca.Name = "TComboBoxMarca";
             this.TComboBoxMarca.Size = new System.Drawing.Size(121, 21);
             this.TComboBoxMarca.TabIndex = 44;
@@ -261,7 +245,7 @@
             this.TLabelSinCoche.AutoSize = true;
             this.TLabelSinCoche.Font = new System.Drawing.Font("Broadway", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TLabelSinCoche.ForeColor = System.Drawing.Color.Red;
-            this.TLabelSinCoche.Location = new System.Drawing.Point(337, 112);
+            this.TLabelSinCoche.Location = new System.Drawing.Point(200, 389);
             this.TLabelSinCoche.Name = "TLabelSinCoche";
             this.TLabelSinCoche.Size = new System.Drawing.Size(188, 12);
             this.TLabelSinCoche.TabIndex = 45;
@@ -273,7 +257,7 @@
             this.TLabelSinConductores.AutoSize = true;
             this.TLabelSinConductores.Font = new System.Drawing.Font("Broadway", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TLabelSinConductores.ForeColor = System.Drawing.Color.Red;
-            this.TLabelSinConductores.Location = new System.Drawing.Point(77, 256);
+            this.TLabelSinConductores.Location = new System.Drawing.Point(503, 272);
             this.TLabelSinConductores.Name = "TLabelSinConductores";
             this.TLabelSinConductores.Size = new System.Drawing.Size(143, 12);
             this.TLabelSinConductores.TabIndex = 46;
@@ -290,6 +274,109 @@
             this.TButtonCerrar.UseVisualStyleBackColor = true;
             this.TButtonCerrar.Click += new System.EventHandler(this.TButtonCerrar_Click);
             // 
+            // TLabelInfoCliente
+            // 
+            this.TLabelInfoCliente.AutoSize = true;
+            this.TLabelInfoCliente.BackColor = System.Drawing.Color.Transparent;
+            this.TLabelInfoCliente.Location = new System.Drawing.Point(197, 49);
+            this.TLabelInfoCliente.Name = "TLabelInfoCliente";
+            this.TLabelInfoCliente.Size = new System.Drawing.Size(111, 13);
+            this.TLabelInfoCliente.TabIndex = 48;
+            this.TLabelInfoCliente.Text = "Información de cliente";
+            this.TLabelInfoCliente.Visible = false;
+            // 
+            // TButtonEditar
+            // 
+            this.TButtonEditar.Location = new System.Drawing.Point(719, 120);
+            this.TButtonEditar.Name = "TButtonEditar";
+            this.TButtonEditar.Size = new System.Drawing.Size(89, 23);
+            this.TButtonEditar.TabIndex = 50;
+            this.TButtonEditar.Text = "Editar";
+            this.TButtonEditar.UseVisualStyleBackColor = true;
+            this.TButtonEditar.Visible = false;
+            // 
+            // TButtonBuscarOtro
+            // 
+            this.TButtonBuscarOtro.Location = new System.Drawing.Point(719, 68);
+            this.TButtonBuscarOtro.Name = "TButtonBuscarOtro";
+            this.TButtonBuscarOtro.Size = new System.Drawing.Size(89, 23);
+            this.TButtonBuscarOtro.TabIndex = 51;
+            this.TButtonBuscarOtro.Text = "Buscar Cliente";
+            this.TButtonBuscarOtro.UseVisualStyleBackColor = true;
+            this.TButtonBuscarOtro.Visible = false;
+            this.TButtonBuscarOtro.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // shapeContainer1
+            // 
+            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer1.Name = "shapeContainer1";
+            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.TRectangleShapeCliente,
+            this.TRectangleShaperReservas});
+            this.shapeContainer1.Size = new System.Drawing.Size(894, 608);
+            this.shapeContainer1.TabIndex = 52;
+            this.shapeContainer1.TabStop = false;
+            // 
+            // TRectangleShaperReservas
+            // 
+            this.TRectangleShaperReservas.Location = new System.Drawing.Point(178, 215);
+            this.TRectangleShaperReservas.Name = "TRectangleShaperReservas";
+            this.TRectangleShaperReservas.Size = new System.Drawing.Size(528, 209);
+            // 
+            // TLabelDNI
+            // 
+            this.TLabelDNI.AutoSize = true;
+            this.TLabelDNI.BackColor = System.Drawing.Color.Transparent;
+            this.TLabelDNI.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TLabelDNI.Location = new System.Drawing.Point(210, 120);
+            this.TLabelDNI.Name = "TLabelDNI";
+            this.TLabelDNI.Size = new System.Drawing.Size(49, 19);
+            this.TLabelDNI.TabIndex = 41;
+            this.TLabelDNI.Text = "label1";
+            this.TLabelDNI.Visible = false;
+            // 
+            // TLabelNombre
+            // 
+            this.TLabelNombre.AutoSize = true;
+            this.TLabelNombre.BackColor = System.Drawing.Color.Transparent;
+            this.TLabelNombre.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TLabelNombre.Location = new System.Drawing.Point(210, 83);
+            this.TLabelNombre.Name = "TLabelNombre";
+            this.TLabelNombre.Size = new System.Drawing.Size(49, 19);
+            this.TLabelNombre.TabIndex = 40;
+            this.TLabelNombre.Text = "label1";
+            this.TLabelNombre.Visible = false;
+            // 
+            // TRectangleShapeCliente
+            // 
+            this.TRectangleShapeCliente.Location = new System.Drawing.Point(178, 56);
+            this.TRectangleShapeCliente.Name = "TRectangleShapeCliente";
+            this.TRectangleShapeCliente.Size = new System.Drawing.Size(529, 137);
+            this.TRectangleShapeCliente.Visible = false;
+            // 
+            // TLabelInfoVehiculo
+            // 
+            this.TLabelInfoVehiculo.AutoSize = true;
+            this.TLabelInfoVehiculo.BackColor = System.Drawing.Color.Transparent;
+            this.TLabelInfoVehiculo.Location = new System.Drawing.Point(197, 208);
+            this.TLabelInfoVehiculo.Name = "TLabelInfoVehiculo";
+            this.TLabelInfoVehiculo.Size = new System.Drawing.Size(122, 13);
+            this.TLabelInfoVehiculo.TabIndex = 53;
+            this.TLabelInfoVehiculo.Text = "Información del vehiculo";
+            // 
+            // TLabelDirec
+            // 
+            this.TLabelDirec.AutoSize = true;
+            this.TLabelDirec.BackColor = System.Drawing.Color.Transparent;
+            this.TLabelDirec.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TLabelDirec.Location = new System.Drawing.Point(210, 161);
+            this.TLabelDirec.Name = "TLabelDirec";
+            this.TLabelDirec.Size = new System.Drawing.Size(49, 19);
+            this.TLabelDirec.TabIndex = 54;
+            this.TLabelDirec.Text = "label1";
+            this.TLabelDirec.Visible = false;
+            // 
             // AltaReservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -297,14 +384,17 @@
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(894, 608);
+            this.Controls.Add(this.TLabelDirec);
+            this.Controls.Add(this.TLabelInfoVehiculo);
+            this.Controls.Add(this.TButtonEditar);
+            this.Controls.Add(this.TButtonBuscarOtro);
+            this.Controls.Add(this.TLabelInfoCliente);
             this.Controls.Add(this.TButtonCerrar);
             this.Controls.Add(this.TLabelSinConductores);
             this.Controls.Add(this.TLabelSinCoche);
             this.Controls.Add(this.TComboBoxMarca);
             this.Controls.Add(this.TLabelMarca);
             this.Controls.Add(this.TLabelErrorFecha);
-            this.Controls.Add(this.TLabelDNI);
-            this.Controls.Add(this.TLabelNombre);
             this.Controls.Add(this.TButtonReserva);
             this.Controls.Add(this.TDateTimePickerFechaFin);
             this.Controls.Add(this.TLabelFechaFin);
@@ -319,6 +409,9 @@
             this.Controls.Add(this.TComboBoxModelo);
             this.Controls.Add(this.TComboBoxCategoria);
             this.Controls.Add(this.TButtonBuscarCliente);
+            this.Controls.Add(this.TLabelNombre);
+            this.Controls.Add(this.TLabelDNI);
+            this.Controls.Add(this.shapeContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(894, 608);
@@ -349,13 +442,21 @@
         private System.Windows.Forms.Label TLabelFechaFin;
         private System.Windows.Forms.DateTimePicker TDateTimePickerFechaFin;
         private System.Windows.Forms.Button TButtonReserva;
-        private System.Windows.Forms.Label TLabelNombre;
-        private System.Windows.Forms.Label TLabelDNI;
         private System.Windows.Forms.Label TLabelErrorFecha;
         private System.Windows.Forms.Label TLabelMarca;
         private System.Windows.Forms.ComboBox TComboBoxMarca;
         private System.Windows.Forms.Label TLabelSinCoche;
         private System.Windows.Forms.Label TLabelSinConductores;
         private System.Windows.Forms.Button TButtonCerrar;
+        private System.Windows.Forms.Label TLabelInfoCliente;
+        private System.Windows.Forms.Button TButtonEditar;
+        private System.Windows.Forms.Button TButtonBuscarOtro;
+        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
+        private Microsoft.VisualBasic.PowerPacks.RectangleShape TRectangleShapeCliente;
+        private Microsoft.VisualBasic.PowerPacks.RectangleShape TRectangleShaperReservas;
+        private System.Windows.Forms.Label TLabelDNI;
+        private System.Windows.Forms.Label TLabelNombre;
+        private System.Windows.Forms.Label TLabelInfoVehiculo;
+        private System.Windows.Forms.Label TLabelDirec;
     }
 }
