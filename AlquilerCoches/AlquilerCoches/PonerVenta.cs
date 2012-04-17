@@ -116,13 +116,21 @@ namespace AlquilerCoches
         {
             if (!Regex.Match(TTextBoxPrecioVenta.Text, @"^\d{1,6}$").Success)
             {
-                errorProvider1.SetError(TTextBoxPrecioVenta, "Precio incorrecto, debe contener solo números y no más de 6 cifras.");
+                errorProvider1.SetError(TTextBoxPrecioVenta, "Precio incorrecto, no puede estar vacío, debe contener solo números y no más de 6 cifras.");
                 incorrecto = true;
             }
             else
             {
-                errorProvider1.SetError(TTextBoxPrecioVenta, "");
-                incorrecto = false;
+                if (TTextBoxPrecioVenta.Text == "")
+                {
+                    errorProvider1.SetError(TTextBoxPrecioVenta, "Precio incorrecto, no puede estar vacío, debe contener solo números y no más de 6 cifras.");
+                    incorrecto = true;
+                }
+                else
+                {
+                    errorProvider1.SetError(TTextBoxPrecioVenta, "");
+                    incorrecto = false;
+                }
             }
         }
 
@@ -133,6 +141,10 @@ namespace AlquilerCoches
 
         private void TButtonVender_Click(object sender, EventArgs e)
         {
+            //MODIFICAR COSAS PARA AÑADIR LA VENTA A LA BD
+
+
+            vehiculos.ClearEnVehiculo();
             vehiculos.Matricula = TTextBoxMatricula.Text;
             vehiculos.BorrarVehiculo();
         }
@@ -143,6 +155,7 @@ namespace AlquilerCoches
             {
                 limpiaFormulario();
                 TGroupBoxDatosVehiculo.Enabled = false;
+                rellenaMarcas();
             }
         }
 

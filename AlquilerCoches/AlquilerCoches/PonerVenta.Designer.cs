@@ -33,7 +33,6 @@
             this.TListBoxMatriculas = new System.Windows.Forms.ListBox();
             this.TListBoxModelos = new System.Windows.Forms.ListBox();
             this.TListBoxMarcas = new System.Windows.Forms.ListBox();
-            this.TButtonBuscar = new System.Windows.Forms.Button();
             this.TLabelMatriculas = new System.Windows.Forms.Label();
             this.TLabelModelos = new System.Windows.Forms.Label();
             this.TLabelMarcas = new System.Windows.Forms.Label();
@@ -57,6 +56,7 @@
             this.TTextBoxMatricula = new System.Windows.Forms.TextBox();
             this.TLabelMatricula = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.TButtonBorrar = new System.Windows.Forms.Button();
             this.TGroupBoxDatosVehiculo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TPictureBoxCoche)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -64,11 +64,11 @@
             // 
             // TButtonAtras
             // 
-            this.TButtonAtras.Location = new System.Drawing.Point(791, 90);
+            this.TButtonAtras.Location = new System.Drawing.Point(25, 477);
             this.TButtonAtras.Name = "TButtonAtras";
             this.TButtonAtras.Size = new System.Drawing.Size(75, 23);
             this.TButtonAtras.TabIndex = 50;
-            this.TButtonAtras.Text = "Atrás";
+            this.TButtonAtras.Text = "Salir";
             this.TButtonAtras.UseVisualStyleBackColor = true;
             this.TButtonAtras.Click += new System.EventHandler(this.TButtonAtras_Click);
             // 
@@ -101,15 +101,6 @@
             this.TListBoxMarcas.Size = new System.Drawing.Size(253, 147);
             this.TListBoxMarcas.TabIndex = 46;
             this.TListBoxMarcas.SelectedIndexChanged += new System.EventHandler(this.TListBoxMarcas_SelectedIndexChanged);
-            // 
-            // TButtonBuscar
-            // 
-            this.TButtonBuscar.Location = new System.Drawing.Point(791, 38);
-            this.TButtonBuscar.Name = "TButtonBuscar";
-            this.TButtonBuscar.Size = new System.Drawing.Size(75, 23);
-            this.TButtonBuscar.TabIndex = 45;
-            this.TButtonBuscar.Text = "Buscar";
-            this.TButtonBuscar.UseVisualStyleBackColor = true;
             // 
             // TLabelMatriculas
             // 
@@ -146,6 +137,7 @@
             this.TGroupBoxDatosVehiculo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.TGroupBoxDatosVehiculo.BackColor = System.Drawing.Color.Transparent;
+            this.TGroupBoxDatosVehiculo.Controls.Add(this.TButtonBorrar);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TButtonCancelar);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelObligatorio);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TTextBoxMeses);
@@ -166,16 +158,16 @@
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelMatricula);
             this.TGroupBoxDatosVehiculo.Location = new System.Drawing.Point(25, 215);
             this.TGroupBoxDatosVehiculo.Name = "TGroupBoxDatosVehiculo";
-            this.TGroupBoxDatosVehiculo.Size = new System.Drawing.Size(536, 246);
+            this.TGroupBoxDatosVehiculo.Size = new System.Drawing.Size(543, 246);
             this.TGroupBoxDatosVehiculo.TabIndex = 41;
             this.TGroupBoxDatosVehiculo.TabStop = false;
             this.TGroupBoxDatosVehiculo.Text = "DatosVehiculo";
             // 
             // TButtonCancelar
             // 
-            this.TButtonCancelar.Location = new System.Drawing.Point(388, 211);
+            this.TButtonCancelar.Location = new System.Drawing.Point(351, 197);
             this.TButtonCancelar.Name = "TButtonCancelar";
-            this.TButtonCancelar.Size = new System.Drawing.Size(123, 23);
+            this.TButtonCancelar.Size = new System.Drawing.Size(95, 23);
             this.TButtonCancelar.TabIndex = 50;
             this.TButtonCancelar.Tag = "";
             this.TButtonCancelar.Text = "Cancelar Venta";
@@ -224,9 +216,9 @@
             // 
             // TButtonVender
             // 
-            this.TButtonVender.Location = new System.Drawing.Point(259, 211);
+            this.TButtonVender.Location = new System.Drawing.Point(259, 197);
             this.TButtonVender.Name = "TButtonVender";
-            this.TButtonVender.Size = new System.Drawing.Size(123, 23);
+            this.TButtonVender.Size = new System.Drawing.Size(86, 23);
             this.TButtonVender.TabIndex = 45;
             this.TButtonVender.Tag = "";
             this.TButtonVender.Text = "Añadir Venta";
@@ -319,7 +311,7 @@
             this.TPictureBoxCoche.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.TPictureBoxCoche.Location = new System.Drawing.Point(289, 19);
             this.TPictureBoxCoche.Name = "TPictureBoxCoche";
-            this.TPictureBoxCoche.Size = new System.Drawing.Size(195, 168);
+            this.TPictureBoxCoche.Size = new System.Drawing.Size(186, 158);
             this.TPictureBoxCoche.TabIndex = 31;
             this.TPictureBoxCoche.TabStop = false;
             // 
@@ -346,6 +338,16 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // TButtonBorrar
+            // 
+            this.TButtonBorrar.Location = new System.Drawing.Point(452, 197);
+            this.TButtonBorrar.Name = "TButtonBorrar";
+            this.TButtonBorrar.Size = new System.Drawing.Size(74, 23);
+            this.TButtonBorrar.TabIndex = 51;
+            this.TButtonBorrar.Tag = "";
+            this.TButtonBorrar.Text = "Borrar Venta";
+            this.TButtonBorrar.UseVisualStyleBackColor = true;
+            // 
             // PonerVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -357,7 +359,6 @@
             this.Controls.Add(this.TListBoxMatriculas);
             this.Controls.Add(this.TListBoxModelos);
             this.Controls.Add(this.TListBoxMarcas);
-            this.Controls.Add(this.TButtonBuscar);
             this.Controls.Add(this.TLabelMatriculas);
             this.Controls.Add(this.TLabelModelos);
             this.Controls.Add(this.TLabelMarcas);
@@ -381,7 +382,6 @@
         private System.Windows.Forms.ListBox TListBoxMatriculas;
         private System.Windows.Forms.ListBox TListBoxModelos;
         private System.Windows.Forms.ListBox TListBoxMarcas;
-        private System.Windows.Forms.Button TButtonBuscar;
         private System.Windows.Forms.Label TLabelMatriculas;
         private System.Windows.Forms.Label TLabelModelos;
         private System.Windows.Forms.Label TLabelMarcas;
@@ -405,6 +405,7 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label TLabelObligatorio;
         private System.Windows.Forms.Button TButtonCancelar;
+        private System.Windows.Forms.Button TButtonBorrar;
 
     }
 }
