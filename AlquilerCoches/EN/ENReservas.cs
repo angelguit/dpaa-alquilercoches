@@ -56,7 +56,10 @@ namespace EN
 
             return resultado;
         }
-
+        public int EjecutarSentencia(string comando)
+        {
+            return cadReservas.EjecutarSentencia(comando);
+        }
         public string Cliente
         {
             get { return cliente; }

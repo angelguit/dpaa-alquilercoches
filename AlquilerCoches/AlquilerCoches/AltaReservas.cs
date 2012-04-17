@@ -11,6 +11,7 @@ namespace AlquilerCoches
 {
     public partial class AltaReservas : Form
     {
+        private string mens;
         private void RellenarMarcas(DataSet dsMar)
         {
             TComboBoxMarca.DataSource = dsMar.Tables["Marcas"];
@@ -46,6 +47,7 @@ namespace AlquilerCoches
 
         private void AltaReservas_Load(object sender, EventArgs e)
         {
+            TDateTimePickerFechaInicio.Value = TDateTimePickerFechaFin.Value = DateTime.Today;
             EN.ENReservas enRes = new EN.ENReservas();
             DataSet dsRes = new DataSet();
             dsRes = enRes.RellenarCategoria();
@@ -54,8 +56,15 @@ namespace AlquilerCoches
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string nombre, apellidos,dni,telefono;
             GestionClientesBuscar F1 = new GestionClientesBuscar(false);
             F1.ShowDialog();
+            nombre = F1.nombre;
+            apellidos = F1.apellidos;
+            dni = F1.dni;
+            telefono = F1.telefono;
+            TLabelNombre.Text = "Nombre: " + nombre + " " + apellidos;
+            TLabelDNI.Text = "DNI: " + dni + " " + "Telf: " + telefono;
         }
 
 
@@ -77,52 +86,78 @@ namespace AlquilerCoches
             RellenarMatriculas(dsVe);
         }
 
-        private bool Comprobar_OK(string mens)
+        private bool Comprobar_OK()
         {
             bool retorno = true;
             if (TLabelErrorFecha.Visible)
             {
                 mens = "Fecha fin no puede ser superior a fecha inicio";
+                retorno = false;
             }
-            return retorno;
-        }
-  
-        private void TButtonReserva_Click(object sender, EventArgs e)
-        {
-            if (TLabelErrorFecha.Visible)
+            if (TComboBoxCategoria.Text == "Seleccione Categoria" || TComboBoxMarca.Text == "Seleccione Marca" || TComboBoxMatricula.Text == "Seleccione Matricula" || TComboBoxModelo.Text == "Seleccione Modelo")
             {
-                MessageBox.Show("Fecha fin no puede ser superior a fecha inicio", "Fechas incorrectas", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            EN.ENReservas enRe = new EN.ENReservas();
-            DataSet dsRe = new DataSet();
-            dsRe = enRe.ObtenerReservas();
-            DataTable dtRe = new DataTable();
-            dtRe = dsRe.Tables["Reservas"];
-            DataRow drRe = dtRe.NewRow();
-            drRe[1] = "11111111A";
-            drRe[2] = TComboBoxMatricula.Text;
-            drRe[3] = TDateTimePickerFechaInicio.Text;
-            drRe[4] = TDateTimePickerFechaFin.Text;
-            drRe[5] = TComboBoxConductores.Text;
-            dtRe.Rows.Add(drRe);
-            if (enRe.ActualizarReservas(dsRe))
-            {
-                MessageBox.Show("Reserva realizada con éxito", "Nueva Reserva", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            Close();
-        }
-
-        private void TDateTimePickerFechaFin_ValueChanged(object sender, EventArgs e)
-        {
-            if (TDateTimePickerFechaInicio.Value > TDateTimePickerFechaFin.Value)
-            {
-                TLabelErrorFecha.Visible = true;
+                mens = "Falta añadir vehiculo";
+                retorno = false;
+                TLabelSinCoche.Visible = true;
             }
             else
             {
-                TLabelErrorFecha.Visible = false;
+                TLabelSinCoche.Visible = false;
+            }
+            if (TComboBoxConductores.Text == "Nº")
+            {
+                mens = "Falta añadir conductores";
+                retorno = false;
+                TLabelSinConductores.Visible = true;
+            }
+            else
+            {
+                TLabelSinConductores.Visible = false;
+            }
+            return retorno;
+        }
+
+        private void TButtonReserva_Click(object sender, EventArgs e)
+        {
+            if (!Comprobar_OK())
+            {
+                MessageBox.Show(mens, "Error en los datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                EN.ENReservas enRe = new EN.ENReservas();
+                /*DataSet dsRe = new DataSet();
+                dsRe = enRe.ObtenerReservas();
+                DataTable dtRe = new DataTable();
+                dtRe = dsRe.Tables["Reservas"];
+                DataRow drRe = dtRe.NewRow();
+                drRe[1] = "11111111A";
+                drRe[2] = TComboBoxMatricula.Text;
+                drRe[3] = TDateTimePickerFechaInicio.Text;
+                drRe[4] = TDateTimePickerFechaFin.Text;
+                drRe[5] = TComboBoxConductores.Text;
+                dtRe.Rows.Add(drRe);
+                if ( enRe.ActualizarReservas(dsRe))*/
+                string sentencia = "INSERT INTO Reservas (FK_Cliente,FK_Coche,FechaInicio,FechaFin,Conductores) VALUES ('11111111A','" + TComboBoxMatricula.Text + "','" + TDateTimePickerFechaInicio.Text + "','" + TDateTimePickerFechaFin.Text + "'," + Int32.Parse(TComboBoxConductores.Text) + ")";
+                if (enRe.EjecutarSentencia(sentencia) == 1)
+                {
+                    MessageBox.Show("Reserva realizada con éxito", "Nueva Reserva", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                Close();
             }
         }
+    
+            private void TDateTimePickerFechaFin_ValueChanged(object sender, EventArgs e)
+            {
+                if (TDateTimePickerFechaInicio.Value > TDateTimePickerFechaFin.Value)
+                {
+                    TLabelErrorFecha.Visible = true;
+                }
+                else
+                {
+                    TLabelErrorFecha.Visible = false;
+                }
+            }
 
         private void TDateTimePickerFechaInicio_ValueChanged(object sender, EventArgs e)
         {
@@ -142,6 +177,11 @@ namespace AlquilerCoches
             DataSet dsVe = new DataSet();
             dsVe = enVe.ObtenerModelosVehiculos(TComboBoxCategoria.Text.ToString(), TComboBoxMarca.Text.ToString());
             RellenarModelos(dsVe);
+        }
+
+        private void TButtonCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
