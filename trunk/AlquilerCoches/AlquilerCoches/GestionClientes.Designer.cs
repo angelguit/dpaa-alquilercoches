@@ -66,6 +66,7 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackgroundImage = global::AlquilerCoches.Properties.Resources.Desconocido;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Location = new System.Drawing.Point(755, 105);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(89, 110);
@@ -114,6 +115,7 @@
             this.TComboBoxProvincias.Name = "TComboBoxProvincias";
             this.TComboBoxProvincias.Size = new System.Drawing.Size(108, 21);
             this.TComboBoxProvincias.TabIndex = 66;
+            this.TComboBoxProvincias.Click += new System.EventHandler(this.TComboBoxProvincias_Click);
             // 
             // TComboBoxCiudades
             // 
@@ -125,6 +127,7 @@
             this.TComboBoxCiudades.Name = "TComboBoxCiudades";
             this.TComboBoxCiudades.Size = new System.Drawing.Size(108, 21);
             this.TComboBoxCiudades.TabIndex = 67;
+            this.TComboBoxCiudades.Click += new System.EventHandler(this.TComboBoxCiudades_Click);
             // 
             // TLabelCiudades
             // 

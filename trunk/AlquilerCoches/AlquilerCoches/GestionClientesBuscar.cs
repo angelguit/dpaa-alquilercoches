@@ -220,7 +220,7 @@ namespace AlquilerCoches
                         enClientePub.Nombre = TDataGridViewCliente.Rows[e.RowIndex].Cells[2].Value.ToString();
                         enClientePub.Apellidos = TDataGridViewCliente.Rows[e.RowIndex].Cells[3].Value.ToString();
                         enClientePub.Tarifa = TDataGridViewCliente.Rows[e.RowIndex].Cells[4].Value.ToString();
-                        enClientePub.Telefono = TDataGridViewCliente.Rows[e.RowIndex].Cells[5].Value.ToString();
+                        enClientePub.Telefono = int.Parse(TDataGridViewCliente.Rows[e.RowIndex].Cells[5].Value.ToString());
                         enClientePub.Email = TDataGridViewCliente.Rows[e.RowIndex].Cells[6].Value.ToString();
                         enClientePub.Direccion = TDataGridViewCliente.Rows[e.RowIndex].Cells[7].Value.ToString();
                         enClientePub.Ciudad = TDataGridViewCliente.Rows[e.RowIndex].Cells[8].Value.ToString();

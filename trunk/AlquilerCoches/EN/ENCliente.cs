@@ -17,7 +17,7 @@ namespace EN
         private string dni;
         private string nombre;
         private string apellidos;
-        private string telefono;
+        private int telefono;
         private string email;
         private string direccion;
         private string ciudad;
@@ -44,7 +44,7 @@ namespace EN
             get { return apellidos; }
             set { apellidos = value; }
         }
-        public string Telefono
+        public int Telefono
         {
             get { return telefono; }
             set { telefono = value; }
