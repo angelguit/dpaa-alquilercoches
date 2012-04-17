@@ -18,6 +18,7 @@ namespace AlquilerCoches
         private bool dondevengo;
         ArrayList arraydni = new ArrayList();
         string eliminado = ""; //string que llevara la selec q usaremos para eliminar clientes de la base de datos
+        public string nombre, apellidos, dni, telefono;
 
         public GestionClientesBuscar(bool directo)
         {
@@ -210,55 +211,73 @@ namespace AlquilerCoches
 
                 if (TDataGridViewCliente.Rows[e.RowIndex].Cells[e.ColumnIndex].ColumnIndex.ToString() == "0") // la columna 0 es el checkbox de eliminiar
                 {
-                    string dni = TDataGridViewCliente.Rows[e.RowIndex].Cells[2].Value.ToString(); //el indice 2 hace referencia al dni del datagridview
-
-                    if (arraydni.Count == 0)
+                    if (!dondevengo)
                     {
-                        arraydni.Add(dni);
+                        nombre = TDataGridViewCliente.Rows[e.RowIndex].Cells[2].Value.ToString();
+                        apellidos = TDataGridViewCliente.Rows[e.RowIndex].Cells[3].Value.ToString();
+                        dni = TDataGridViewCliente.Rows[e.RowIndex].Cells[1].Value.ToString();
+                        telefono = TDataGridViewCliente.Rows[e.RowIndex].Cells[5].Value.ToString();
+                        Close();
                     }
                     else
                     {
-                        bool esta = false;
-                        for (int i = 0; i < arraydni.Count; i++)
+                        string dni = TDataGridViewCliente.Rows[e.RowIndex].Cells[2].Value.ToString(); //el indice 2 hace referencia al dni del datagridview
+
+                        if (arraydni.Count == 0)
                         {
-                            if (arraydni[i].ToString() == dni)
-                            {
-                                arraydni.RemoveAt(i);//para borrarlo de la array porque esto quiere decir que lo hemos deseleccionado
-                                esta = true;
-                            }
-                        }
-                        if (esta == false)
                             arraydni.Add(dni);
+                        }
+                        else
+                        {
+                            bool esta = false;
+                            for (int i = 0; i < arraydni.Count; i++)
+                            {
+                                if (arraydni[i].ToString() == dni)
+                                {
+                                    arraydni.RemoveAt(i);//para borrarlo de la array porque esto quiere decir que lo hemos deseleccionado
+                                    esta = true;
+                                }
+                            }
+                            if (esta == false)
+                                arraydni.Add(dni);
+                        }
                     }
-                }
-                else if (TDataGridViewCliente.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "Editar")
+                  }
+                else if (TDataGridViewCliente.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "Editar" )
                 {
-                    if (Application.OpenForms["GestionCliente"] != null)
-                    {
-                        Application.OpenForms["GestionCliente"].Activate();
-                    }
-                    else
-                    {
-                        string nom = TDataGridViewCliente.Rows[e.RowIndex].Cells[3].Value.ToString();//indice 1 para cojer el nombre
-                        string dni = TDataGridViewCliente.Rows[e.RowIndex].Cells[2].Value.ToString();
-                        string apell = TDataGridViewCliente.Rows[e.RowIndex].Cells[4].Value.ToString();
-                        string telef = TDataGridViewCliente.Rows[e.RowIndex].Cells[5].Value.ToString();
-                        string mail = TDataGridViewCliente.Rows[e.RowIndex].Cells[6].Value.ToString();
-                        string direc = TDataGridViewCliente.Rows[e.RowIndex].Cells[7].Value.ToString();
-                        string ciu = TDataGridViewCliente.Rows[e.RowIndex].Cells[8].Value.ToString();
-                        string prov = TDataGridViewCliente.Rows[e.RowIndex].Cells[9].Value.ToString();
-                        string puesac = TDataGridViewCliente.Rows[e.RowIndex].Cells[10].Value.ToString();
-
-                        string nombrebotonguardar = "Guardar Cambios";
-                        GestionClientes Formu = new GestionClientes(nom, dni, apell, telef, mail, direc, ciu, prov, puesac, nombrebotonguardar);
-
-                        Formu.StartPosition = FormStartPosition.CenterScreen;
-                        Formu.MdiParent = this.MdiParent;
-                        Formu.Show();
-                        // ActualizaDatagridView();
-
-                    }
-                }
+                  
+                       if (Application.OpenForms["GestionCliente"] != null)
+                       {
+                           Application.OpenForms["GestionCliente"].Activate();
+                       }
+                       else
+                       {
+                           string nom = TDataGridViewCliente.Rows[e.RowIndex].Cells[3].Value.ToString();//indice 1 para cojer el nombre
+                           string dni = TDataGridViewCliente.Rows[e.RowIndex].Cells[2].Value.ToString();
+                           string apell = TDataGridViewCliente.Rows[e.RowIndex].Cells[4].Value.ToString();
+                           string telef = TDataGridViewCliente.Rows[e.RowIndex].Cells[5].Value.ToString();
+                           string mail = TDataGridViewCliente.Rows[e.RowIndex].Cells[6].Value.ToString();
+                           string direc = TDataGridViewCliente.Rows[e.RowIndex].Cells[7].Value.ToString();
+                           string ciu = TDataGridViewCliente.Rows[e.RowIndex].Cells[8].Value.ToString();
+                           string prov = TDataGridViewCliente.Rows[e.RowIndex].Cells[9].Value.ToString();
+                           string puesac = TDataGridViewCliente.Rows[e.RowIndex].Cells[10].Value.ToString();
+                           string nombrebotonguardar = "Guardar Cambios";
+                           GestionClientes Formu = new GestionClientes(nom, dni, apell, telef, mail, direc, ciu, prov, puesac, nombrebotonguardar);
+                           Formu.StartPosition = FormStartPosition.CenterScreen;
+                           Formu.MdiParent = this.MdiParent;
+                           Formu.Show();
+                           // ActualizaDatagridView();
+                                                   
+                        }
+                   }
+                /*else if (TDataGridViewCliente.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "Seleccionar")
+                {
+                    nombre = TDataGridViewCliente.Rows[e.RowIndex].Cells[3].Value.ToString();
+                    dni = TDataGridViewCliente.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    telefono = TDataGridViewCliente.Rows[e.RowIndex].Cells[5].Value.ToString();
+                    Close();
+                    MessageBox.Show("HOLA");
+                }*/
                 else
                 {
 
