@@ -62,7 +62,7 @@
             // 
             // TButtonAtras
             // 
-            this.TButtonAtras.Location = new System.Drawing.Point(541, 408);
+            this.TButtonAtras.Location = new System.Drawing.Point(21, 454);
             this.TButtonAtras.Name = "TButtonAtras";
             this.TButtonAtras.Size = new System.Drawing.Size(75, 23);
             this.TButtonAtras.TabIndex = 59;
@@ -148,7 +148,7 @@
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelMatricula);
             this.TGroupBoxDatosVehiculo.Location = new System.Drawing.Point(21, 207);
             this.TGroupBoxDatosVehiculo.Name = "TGroupBoxDatosVehiculo";
-            this.TGroupBoxDatosVehiculo.Size = new System.Drawing.Size(503, 250);
+            this.TGroupBoxDatosVehiculo.Size = new System.Drawing.Size(503, 222);
             this.TGroupBoxDatosVehiculo.TabIndex = 51;
             this.TGroupBoxDatosVehiculo.TabStop = false;
             this.TGroupBoxDatosVehiculo.Text = "DatosVehiculo";
@@ -187,7 +187,7 @@
             // 
             // TButtonCancelar
             // 
-            this.TButtonCancelar.Location = new System.Drawing.Point(367, 201);
+            this.TButtonCancelar.Location = new System.Drawing.Point(367, 187);
             this.TButtonCancelar.Name = "TButtonCancelar";
             this.TButtonCancelar.Size = new System.Drawing.Size(75, 23);
             this.TButtonCancelar.TabIndex = 46;
@@ -196,7 +196,7 @@
             // 
             // TButtonAceptar
             // 
-            this.TButtonAceptar.Location = new System.Drawing.Point(285, 201);
+            this.TButtonAceptar.Location = new System.Drawing.Point(286, 187);
             this.TButtonAceptar.Name = "TButtonAceptar";
             this.TButtonAceptar.Size = new System.Drawing.Size(75, 23);
             this.TButtonAceptar.TabIndex = 45;
