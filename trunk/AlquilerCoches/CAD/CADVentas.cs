@@ -14,27 +14,18 @@ namespace CAD
         static private String cadenaConexion = ConfigurationManager.ConnectionStrings["AlquilerCoches"].ConnectionString; // @"Data Source=|DataDirectory|\BBDD.sdf";
         static private String nombreTabla = "Ventas";
 
-        public DataSet ObtenerTablaVentas(string todo)
+        public DataSet ObtenerTablaVentas()
         {
             DataSet dsVentas = new DataSet();
 
             try
             {
                 SqlConnection conexion = new SqlConnection(cadenaConexion);
-                if (todo != "") //si no está vacío
-                {
-                    String consulta = "Select * FROM Ventas WHERE " + todo + "";
-                    SqlDataAdapter daVentas = new SqlDataAdapter(consulta, conexion);
-                    daVentas.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-                    daVentas.Fill(dsVentas, nombreTabla); //dsVentas es ahora nuestra base de datos local
-                }
-                else //si está vacío
-                {
-                    String consulta = "Select * FROM Ventas";
-                    SqlDataAdapter daVentas = new SqlDataAdapter(consulta, conexion);
-                    daVentas.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-                    daVentas.Fill(dsVentas, nombreTabla); //dsVentas es ahora nuestra base de datos local
-                }
+                String consulta = "Select * FROM Ventas";
+                SqlDataAdapter daVentas = new SqlDataAdapter(consulta, conexion);
+                daVentas.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daVentas.Fill(dsVentas, nombreTabla); //dsVentas es ahora nuestra base de datos local
+                
             }
             catch (Exception ex)
             {
