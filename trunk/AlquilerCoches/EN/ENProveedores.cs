@@ -27,12 +27,12 @@ namespace EN
 
         private CAD.CADProveedores cadProveedores= new CAD.CADProveedores();
 
-        public DataSet ObtenerListaProveedores()
+        public DataSet ObtenerListaProveedores(string cadena)
         {
             DataSet resultado = new DataSet();
             try
             {
-                resultado = cadProveedores.ObtenerTablaProveedores();
+                resultado = cadProveedores.ObtenerTablaProveedores(cadena);
             }
             catch (Exception ex)
             {
@@ -46,52 +46,119 @@ namespace EN
         public string CIF
         {
             get { return cif; }
-            set { cif = CIF; }
+            set { cif = value; }
         }
-        private string Marca
+        public string Marca
         {
             get { return marca; }
-            set { marca = Marca; }
+            set { marca = value; }
         }
-        private string Calle
+        public string Calle
         {
             get { return calle; }
-            set { calle = Calle; }
+            set { calle = value; }
         }
-        private int Numero
+        public int Numero
         {
             get { return numero; }
-            set { numero = Numero; }
+            set { numero = value; }
         }
-        private int Telefono
+        public int Telefono
         {
             get { return telefono; }
-            set { telefono = Telefono; }
+            set { telefono = value; }
         }
-        private string Email
+        public string Email
         {
             get { return email; }
-            set { email = Email; }
+            set { email = value; }
         }
-        private string Ciudad
+        public string Ciudad
         {
             get { return ciudad; }
-            set { ciudad = Ciudad; }
+            set { ciudad = value; }
         }
-        private string Provincia
+        public string Provincia
         {
             get { return provincia; }
-            set { provincia = Provincia; }
+            set { provincia = value; }
         }
-        private int Codigopostal
+        public int Codigopostal
         {
             get { return codigopostal; }
-            set { codigopostal = Codigopostal; }
+            set { codigopostal = value; }
         }
-        private string Horario
+        public string Horario
         {
             get { return horario; }
-            set { horario = Horario; }
+            set { horario = value; }
+        }
+
+        public DataSet ObtenerListaProvincias()
+        {
+            DataSet resultado = new DataSet();
+            try
+            {
+                resultado = cadProveedores.ConseguirProvincias();
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            return resultado;
+        }
+
+        public DataSet ObtenerListaCiudades(string prov)
+        {
+            DataSet resultado = new DataSet();
+            try
+            {
+                resultado = cadProveedores.ConseguirCiudades(prov);
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            return resultado;
+        }
+
+        public void BorrarProveedorEN(ArrayList dnis)
+        {
+            try
+            {
+                cadProveedores.BorrarProveedor(dnis);
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+        }
+
+        public void InsertarProveedorEN()
+        {
+            DataSet resultado = new DataSet();
+            try
+            {
+                string cadena = ""; //si la frase que le pasamos esta vacia nos devolvera todos los resultados
+                resultado = cadProveedores.ObtenerTablaProveedores(cadena);
+                DataRow linea = resultado.Tables["Proveedores"].NewRow();
+                linea[0] = cif;
+                linea[1] = marca;
+                linea[2] = calle;
+                linea[3] = numero;
+                linea[4] = telefono;
+                linea[5] = email;
+                linea[6] = ciudad;
+                linea[7] = provincia;
+                linea[8] = codigopostal;
+                linea[9] = horario;
+                resultado.Tables["Proveedores"].Rows.Add(linea);
+                cadProveedores.InsertarProveedorCAD(resultado);
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
         }
     }
 }

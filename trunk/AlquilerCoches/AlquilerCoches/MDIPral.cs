@@ -307,7 +307,9 @@ namespace AlquilerCoches
             }
             else
             {
-                GestionProveedores proveedores = new GestionProveedores();
+                string cif="", marca="", calle="", email="", ciudad="", provincia="",horario="";
+                int numero=0, telefono=0, codigopostal=0;
+                GestionProveedores proveedores = new GestionProveedores(cif, marca, calle, numero, telefono, email, ciudad, provincia, codigopostal, horario);
                 proveedores.MdiParent = this;
                 proveedores.Show();
             }
