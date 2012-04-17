@@ -16,6 +16,26 @@ namespace AlquilerCoches
         {
             InitializeComponent();
         }
+        public GestionClientes(EN.ENCliente enCliente, string nombrebotonguardar,string provincias,string ciudades)
+        {
+            InitializeComponent();
+            TTextBoxDNI.Enabled = false;
+            TTextBoxNombre.Text = enCliente.Nombre;
+            TTextBoxApellidos.Text = enCliente.Apellidos;
+            TTextBoxDNI.Text = enCliente.DNI;
+            TTextBoxTelefono.Text = enCliente.Telefono;
+            TTextBoxEmail.Text = enCliente.Email;
+            TTextBoxDireccion.Text = enCliente.Direccion;
+
+            TComboBoxProvincias.Items.Add(provincias);
+            TComboBoxProvincias.SelectedIndex = 0;
+            TComboBoxCiudades.Items.Add(ciudades);
+            TComboBoxCiudades.SelectedIndex = 0;
+
+            TButtonGuardarCliente.Text = nombrebotonguardar; // importante le cambiamos el nombre al boton para saber que venimos del formulario buscar, y estamos editando no guardando uno nuevo
+            TButtonGuardarCliente.Size = new Size(105, 24);
+        }
+            
         public GestionClientes(string nombre,string dni, string apell, string telef, string mail, string direc, string ciu, string prov, string puesac, string nombrebotonguardar)//constructor sobrecargado
         {
             InitializeComponent();

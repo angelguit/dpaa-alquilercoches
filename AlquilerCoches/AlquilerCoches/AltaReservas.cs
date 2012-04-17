@@ -11,7 +11,8 @@ namespace AlquilerCoches
 {
     public partial class AltaReservas : Form
     {
-        private string mens;
+        private string mens,provincias,ciudades;
+        private EN.ENCliente enCliente = new EN.ENCliente();
         private void RellenarMarcas(DataSet dsMar)
         {
             TComboBoxMarca.DataSource = dsMar.Tables["Marcas"];
@@ -56,10 +57,11 @@ namespace AlquilerCoches
 
         private void button1_Click(object sender, EventArgs e)
         {
-            EN.ENCliente enCliente = new EN.ENCliente();
             GestionClientesBuscar F1 = new GestionClientesBuscar(false);
             F1.ShowDialog();
             enCliente = F1.enClientePub;
+            provincias = F1.provincias;
+            ciudades = F1.ciudades;
             TLabelNombre.Text = "Nombre: " + enCliente.Nombre + "Apellidos: " + enCliente.Apellidos;
             TLabelDNI.Text = "DNI: " + enCliente.DNI + " " + "Telf: " + enCliente.Telefono;
             TLabelDirec.Text = "Direccion: " + enCliente.Direccion;
@@ -144,6 +146,13 @@ namespace AlquilerCoches
                 drRe[5] = TComboBoxConductores.Text;
                 dtRe.Rows.Add(drRe);
                 if ( enRe.ActualizarReservas(dsRe))*/
+                enRe.Cliente = enCliente.DNI;
+                enRe.Conductores = Int32.Parse(TComboBoxConductores.Text);
+                enRe.FechaFin = TDateTimePickerFechaFin.Value;
+                enRe.FechaInicio = TDateTimePickerFechaInicio.Value;
+                enRe.Matricula = TComboBoxMatricula.Text.ToString();
+                enRe.Modelo = TComboBoxModelo.Text.ToString();
+
                 string sentencia = "INSERT INTO Reservas (FK_Cliente,FK_Coche,FechaInicio,FechaFin,Conductores) VALUES ('11111111A','" + TComboBoxMatricula.Text + "','" + TDateTimePickerFechaInicio.Text + "','" + TDateTimePickerFechaFin.Text + "'," + Int32.Parse(TComboBoxConductores.Text) + ")";
                 if (enRe.EjecutarSentencia(sentencia) == 1)
                 {
@@ -188,6 +197,13 @@ namespace AlquilerCoches
         private void TButtonCerrar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void TButtonEditar_Click(object sender, EventArgs e)
+        {
+            GestionClientes Formu = new GestionClientes(enCliente,"Guardar Cambios",provincias,ciudades);
+            Formu.StartPosition = FormStartPosition.CenterScreen;
+            Formu.ShowDialog();
         }
     }
 }
