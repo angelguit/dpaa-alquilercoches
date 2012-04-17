@@ -47,20 +47,22 @@ namespace AlquilerCoches
                 enPedidos.Observaciones = TObservTextBox.Text;/* enPedidos.Fecha = TDateTimePickerFecha; */
                 //falta fecha, tipo envio, y empleado
 
-                EN.ENPersonal enPersonal = new EN.ENPersonal();
+           
 
                 enPedidos.AnyadirPedidos();
 
 
-                if (TAceptarbutton1.Text.ToString() == "Guardar")
+         /*       if (TAceptarbutton1.Text.ToString() == "Guardar")
                 {
                     enPersonal.AnyadirPersonal();
                 }
                 else
                 {
                     enPersonal.EditarPersonal();
-                }
+                }   */
             }
+
+            this.Close();
 
              
                 
