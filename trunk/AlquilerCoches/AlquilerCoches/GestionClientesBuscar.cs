@@ -10,7 +10,7 @@ using System.Text.RegularExpressions;
 using EN;
 using System.Collections;
 
-namespace AlquilerCoches
+namespace AlquilerCoches 
 {
     public partial class GestionClientesBuscar : Form
     {
