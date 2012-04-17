@@ -160,10 +160,10 @@ namespace EN
                 linea[2] = marca;
                 linea[3] = modelo;
                 linea[4] = cantidad;
-                linea[5] = tipoenvio;
-                linea[6] = observaciones;
-                linea[7] = estadopedido;
-                linea[8] = empleado;
+                linea[5] = observaciones;
+                linea[6] = estadopedido;
+                linea[7] = empleado;
+                linea[8] = tipoenvio;
               //  linea[9] = fecha;
                 resultado.Tables["Pedidos"].Rows.Add(linea);
                 cadPedidos.AnyadirPedidos(resultado);
