@@ -230,7 +230,8 @@ namespace AlquilerCoches
                         Formu.StartPosition = FormStartPosition.CenterScreen;
                         Formu.MdiParent = this.MdiParent;
                         Formu.Show();
-                     
+                       // ActualizaDatagridView();
+                                           
                     }
                 }
                 else
@@ -342,6 +343,14 @@ namespace AlquilerCoches
 
        }
 
+       public void ActualizaDatagridView()
+       {
+
+           DataSet ou = new DataSet();
+           ou = enPerson.ObtenerListaPersonal(eliminado);
+           TDataGridViewPersonal.DataSource = ou;
+
+       }
       
     }
 }

@@ -16,6 +16,25 @@ namespace AlquilerCoches
         {
             InitializeComponent();
         }
+        public GestionClientes(string nombre,string dni, string apell, string telef, string mail, string direc, string ciu, string prov, string puesac, string nombrebotonguardar)//constructor sobrecargado
+        {
+            InitializeComponent();
+            TTextBoxDNI.Enabled = false;
+            TTextBoxNombre.Text = nombre;
+            TTextBoxApellidos.Text = apell;
+            TTextBoxDNI.Text = dni;
+            TTextBoxTelefono.Text = telef;
+            TTextBoxEmail.Text = mail;
+            TTextBoxDireccion.Text = direc;
+            
+            TComboBoxProvincias.Items.Add(prov);
+            TComboBoxProvincias.SelectedIndex = 0;
+            TComboBoxCiudades.Items.Add(ciu);
+            TComboBoxCiudades.SelectedIndex = 0;
+           
+            TButtonGuardarCliente.Text = nombrebotonguardar; // importante le cambiamos el nombre al boton para saber que venimos del formulario buscar, y estamos editando no guardando uno nuevo
+            TButtonGuardarCliente.Size = new Size(105, 24);
+        }
 
         bool incorrecto = false;
         private void TTextBoxDNI_Leave(object sender, EventArgs e)
@@ -79,7 +98,7 @@ namespace AlquilerCoches
             else { errorProvider1.SetError(TTextBoxDireccion, ""); }
         }
 
-        private void TTextBoxCiudad_Leave(object sender, EventArgs e)
+       /* private void TTextBoxCiudad_Leave(object sender, EventArgs e)
         {
             if (!Regex.Match(TTextBoxCiudad.Text, @"^[A-Za-z]{3,40}$").Success)
             {
@@ -98,7 +117,7 @@ namespace AlquilerCoches
             }
             else { errorProvider1.SetError(TTextBoxProvincia, ""); }
         }
-
+        */
 
 
 
