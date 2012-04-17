@@ -81,20 +81,6 @@ namespace AlquilerCoches
             }
         }
 
-        private void TTextBoxAnyo_Leave(object sender, EventArgs e)
-        {
-            if ((!Regex.Match(TTextBoxAnyo.Text, @"^\d{4}$").Success) || (int.Parse(TTextBoxAnyo.Text) < 1960))
-            {
-                errorProvider1.SetError(TTextBoxAnyo, "Año incorrecto. Debe ser mayor 1960 y ser del formato 1234.");
-                incorrecto = true;
-            }
-            else
-            {
-                errorProvider1.SetError(TTextBoxAnyo, "");
-                incorrecto = false;
-            }
-        }
-
         private void TTextBoxKm_Leave(object sender, EventArgs e)
         {
             if (!Regex.Match(TTextBoxKm.Text, @"^\d{1,6}$").Success)
@@ -135,6 +121,11 @@ namespace AlquilerCoches
                 errorProvider1.SetError(TTextBoxPrecioVenta, "");
                 incorrecto = false;
             }
+        }
+
+        private void TGroupBoxDatosVehiculo_Enter(object sender, EventArgs e)
+        {
+
         }
 
     }
