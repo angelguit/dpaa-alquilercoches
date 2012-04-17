@@ -17,7 +17,6 @@ namespace EN
         private string matricula;
         private string marca;
         private string modelo;
-        private string anyo;
         private string km;
         private string garantia;
 
@@ -74,9 +73,37 @@ namespace EN
             set { precioVenta = PrecioVenta; }
         }
 
+        public string Matricula
+        {
+            get { return matricula; }
+            set { matricula = value; }
+        }
+        public string Marca
+        {
+            get { return marca; }
+            set { marca = value; }
+        }
+        public string Modelo
+        {
+            get { return modelo; }
+            set { modelo = value; }
+        }
+
+        public string KM
+        {
+            get { return km; }
+            set { km = value; }
+        }
+
+        public string Garantia
+        {
+            get { return garantia; }
+            set { garantia = value; }
+        }
+
         public void ClearEnVentas()
         {
-            matricula = marca = modelo = garantia = anyo = km = "";
+            matricula = marca = modelo = garantia = km = "";
             numVend = precioVenta = numCliente = numFactura = fechaVenta = "";
         }
 
@@ -161,7 +188,6 @@ namespace EN
                 matricula = resultado.Tables["Ventas"].Rows[0][0].ToString();
                 marca = resultado.Tables["Ventas"].Rows[0][1].ToString();
                 modelo = resultado.Tables["Ventas"].Rows[0][2].ToString();
-                anyo = resultado.Tables["Ventas"].Rows[0][3].ToString();
                 km = resultado.Tables["Ventas"].Rows[0][4].ToString();
                 garantia = resultado.Tables["Ventas"].Rows[0][5].ToString();
                 precioVenta = resultado.Tables["Ventas"].Rows[0][6].ToString();
@@ -216,14 +242,13 @@ namespace EN
                 linea[0] = matricula;
                 linea[1] = marca;
                 linea[2] = modelo;
-                linea[3] = anyo;
-                linea[4] = km;
-                linea[5] = garantia;
-                linea[6] = precioVenta;
-                linea[7] = numVend;
-                linea[8] = numCliente;
-                linea[9] = numFactura;
-                linea[10] = fechaVenta;
+                linea[3] = km;
+                linea[4] = garantia;
+                linea[5] = precioVenta;
+                linea[6] = numVend;
+                linea[7] = numCliente;
+                linea[8] = numFactura;
+                linea[9] = fechaVenta;
                 resultado.Tables["Ventas"].Rows.Add(linea);
                 cadVentas.AnyadirVenta(resultado);
             }
