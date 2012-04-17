@@ -107,12 +107,12 @@ namespace EN
             numVend = precioVenta = numCliente = numFactura = fechaVenta = "";
         }
 
-        public DataSet ObtenerListaVentas(string todo)
+        public DataSet ObtenerListaVentas()
         {
             DataSet resultado = new DataSet();
             try
             {
-                resultado = cadVentas.ObtenerTablaVentas(todo);
+                resultado = cadVentas.ObtenerTablaVentas();
             }
             catch (Exception ex)
             {
