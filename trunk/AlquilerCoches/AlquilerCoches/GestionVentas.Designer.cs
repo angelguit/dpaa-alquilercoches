@@ -75,9 +75,9 @@
             this.TListBoxMatriculas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.TListBoxMatriculas.FormattingEnabled = true;
-            this.TListBoxMatriculas.Location = new System.Drawing.Point(388, 25);
+            this.TListBoxMatriculas.Location = new System.Drawing.Point(533, 41);
             this.TListBoxMatriculas.Name = "TListBoxMatriculas";
-            this.TListBoxMatriculas.Size = new System.Drawing.Size(376, 95);
+            this.TListBoxMatriculas.Size = new System.Drawing.Size(253, 147);
             this.TListBoxMatriculas.TabIndex = 38;
             // 
             // TListBoxModelos
@@ -85,9 +85,9 @@
             this.TListBoxModelos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.TListBoxModelos.FormattingEnabled = true;
-            this.TListBoxModelos.Location = new System.Drawing.Point(201, 25);
+            this.TListBoxModelos.Location = new System.Drawing.Point(271, 41);
             this.TListBoxModelos.Name = "TListBoxModelos";
-            this.TListBoxModelos.Size = new System.Drawing.Size(376, 95);
+            this.TListBoxModelos.Size = new System.Drawing.Size(253, 147);
             this.TListBoxModelos.TabIndex = 37;
             // 
             // TListBoxMarcas
@@ -95,14 +95,14 @@
             this.TListBoxMarcas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.TListBoxMarcas.FormattingEnabled = true;
-            this.TListBoxMarcas.Location = new System.Drawing.Point(15, 25);
+            this.TListBoxMarcas.Location = new System.Drawing.Point(12, 41);
             this.TListBoxMarcas.Name = "TListBoxMarcas";
-            this.TListBoxMarcas.Size = new System.Drawing.Size(376, 95);
+            this.TListBoxMarcas.Size = new System.Drawing.Size(253, 147);
             this.TListBoxMarcas.TabIndex = 36;
             // 
             // TButtonBuscar
             // 
-            this.TButtonBuscar.Location = new System.Drawing.Point(564, 25);
+            this.TButtonBuscar.Location = new System.Drawing.Point(792, 41);
             this.TButtonBuscar.Name = "TButtonBuscar";
             this.TButtonBuscar.Size = new System.Drawing.Size(75, 23);
             this.TButtonBuscar.TabIndex = 35;
@@ -113,7 +113,7 @@
             // 
             this.TLabelMatriculas.AutoSize = true;
             this.TLabelMatriculas.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelMatriculas.Location = new System.Drawing.Point(385, 9);
+            this.TLabelMatriculas.Location = new System.Drawing.Point(530, 25);
             this.TLabelMatriculas.Name = "TLabelMatriculas";
             this.TLabelMatriculas.Size = new System.Drawing.Size(57, 13);
             this.TLabelMatriculas.TabIndex = 32;
@@ -123,7 +123,7 @@
             // 
             this.TLabelModelos.AutoSize = true;
             this.TLabelModelos.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelModelos.Location = new System.Drawing.Point(198, 9);
+            this.TLabelModelos.Location = new System.Drawing.Point(268, 25);
             this.TLabelModelos.Name = "TLabelModelos";
             this.TLabelModelos.Size = new System.Drawing.Size(47, 13);
             this.TLabelModelos.TabIndex = 31;
@@ -133,7 +133,7 @@
             // 
             this.TLabelMarcas.AutoSize = true;
             this.TLabelMarcas.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelMarcas.Location = new System.Drawing.Point(12, 9);
+            this.TLabelMarcas.Location = new System.Drawing.Point(12, 25);
             this.TLabelMarcas.Name = "TLabelMarcas";
             this.TLabelMarcas.Size = new System.Drawing.Size(42, 13);
             this.TLabelMarcas.TabIndex = 30;
@@ -158,9 +158,9 @@
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelAnyo);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TextBoxMatricula);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelMatricula);
-            this.TGroupBoxDatosVehiculo.Location = new System.Drawing.Point(17, 129);
+            this.TGroupBoxDatosVehiculo.Location = new System.Drawing.Point(15, 207);
             this.TGroupBoxDatosVehiculo.Name = "TGroupBoxDatosVehiculo";
-            this.TGroupBoxDatosVehiculo.Size = new System.Drawing.Size(531, 185);
+            this.TGroupBoxDatosVehiculo.Size = new System.Drawing.Size(418, 222);
             this.TGroupBoxDatosVehiculo.TabIndex = 29;
             this.TGroupBoxDatosVehiculo.TabStop = false;
             this.TGroupBoxDatosVehiculo.Text = "DatosVehiculo";
@@ -179,7 +179,7 @@
             this.textBox1.Location = new System.Drawing.Point(64, 128);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.Size = new System.Drawing.Size(138, 20);
             this.textBox1.TabIndex = 40;
             // 
             // TLabelKM
@@ -197,7 +197,7 @@
             this.TTextBoxModelo.Location = new System.Drawing.Point(64, 78);
             this.TTextBoxModelo.Name = "TTextBoxModelo";
             this.TTextBoxModelo.ReadOnly = true;
-            this.TTextBoxModelo.Size = new System.Drawing.Size(100, 20);
+            this.TTextBoxModelo.Size = new System.Drawing.Size(138, 20);
             this.TTextBoxModelo.TabIndex = 38;
             // 
             // TLabelModelo
@@ -215,7 +215,7 @@
             this.TTextBoxMarca.Location = new System.Drawing.Point(64, 48);
             this.TTextBoxMarca.Name = "TTextBoxMarca";
             this.TTextBoxMarca.ReadOnly = true;
-            this.TTextBoxMarca.Size = new System.Drawing.Size(100, 20);
+            this.TTextBoxMarca.Size = new System.Drawing.Size(138, 20);
             this.TTextBoxMarca.TabIndex = 36;
             // 
             // TLabelGarantia
@@ -241,7 +241,7 @@
             this.textBox2.Location = new System.Drawing.Point(64, 154);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.Size = new System.Drawing.Size(138, 20);
             this.textBox2.TabIndex = 42;
             this.textBox2.MouseLeave += new System.EventHandler(this.textBox2_MouseLeave);
             this.textBox2.MouseHover += new System.EventHandler(this.textBox2_MouseHover);
@@ -249,9 +249,9 @@
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(186, 22);
+            this.pictureBox1.Location = new System.Drawing.Point(223, 11);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(124, 102);
+            this.pictureBox1.Size = new System.Drawing.Size(189, 186);
             this.pictureBox1.TabIndex = 31;
             this.pictureBox1.TabStop = false;
             // 
@@ -260,7 +260,7 @@
             this.TTextBoxAnyo.Location = new System.Drawing.Point(64, 104);
             this.TTextBoxAnyo.Name = "TTextBoxAnyo";
             this.TTextBoxAnyo.ReadOnly = true;
-            this.TTextBoxAnyo.Size = new System.Drawing.Size(100, 20);
+            this.TTextBoxAnyo.Size = new System.Drawing.Size(138, 20);
             this.TTextBoxAnyo.TabIndex = 22;
             // 
             // TLabelAnyo
@@ -278,7 +278,7 @@
             this.TextBoxMatricula.Location = new System.Drawing.Point(64, 22);
             this.TextBoxMatricula.Name = "TextBoxMatricula";
             this.TextBoxMatricula.ReadOnly = true;
-            this.TextBoxMatricula.Size = new System.Drawing.Size(100, 20);
+            this.TextBoxMatricula.Size = new System.Drawing.Size(138, 20);
             this.TextBoxMatricula.TabIndex = 20;
             // 
             // TLabelMatricula
@@ -304,7 +304,7 @@
             this.TTextBoxFecha.Location = new System.Drawing.Point(82, 100);
             this.TTextBoxFecha.Name = "TTextBoxFecha";
             this.TTextBoxFecha.ReadOnly = true;
-            this.TTextBoxFecha.Size = new System.Drawing.Size(100, 20);
+            this.TTextBoxFecha.Size = new System.Drawing.Size(130, 20);
             this.TTextBoxFecha.TabIndex = 47;
             // 
             // TLabelCliente
@@ -331,7 +331,7 @@
             this.TTextBoxCliente.Location = new System.Drawing.Point(82, 74);
             this.TTextBoxCliente.Name = "TTextBoxCliente";
             this.TTextBoxCliente.ReadOnly = true;
-            this.TTextBoxCliente.Size = new System.Drawing.Size(100, 20);
+            this.TTextBoxCliente.Size = new System.Drawing.Size(130, 20);
             this.TTextBoxCliente.TabIndex = 44;
             // 
             // TTextBoxVendedor
@@ -340,7 +340,7 @@
             this.TTextBoxVendedor.Location = new System.Drawing.Point(82, 48);
             this.TTextBoxVendedor.Name = "TTextBoxVendedor";
             this.TTextBoxVendedor.ReadOnly = true;
-            this.TTextBoxVendedor.Size = new System.Drawing.Size(100, 20);
+            this.TTextBoxVendedor.Size = new System.Drawing.Size(130, 20);
             this.TTextBoxVendedor.TabIndex = 43;
             // 
             // TTextBoxPrecioVenta
@@ -348,7 +348,7 @@
             this.TTextBoxPrecioVenta.Location = new System.Drawing.Point(82, 22);
             this.TTextBoxPrecioVenta.Name = "TTextBoxPrecioVenta";
             this.TTextBoxPrecioVenta.ReadOnly = true;
-            this.TTextBoxPrecioVenta.Size = new System.Drawing.Size(100, 20);
+            this.TTextBoxPrecioVenta.Size = new System.Drawing.Size(130, 20);
             this.TTextBoxPrecioVenta.TabIndex = 26;
             // 
             // TLabelPrecioVenta
@@ -375,7 +375,7 @@
             this.TTextBoxFactura.Location = new System.Drawing.Point(82, 128);
             this.TTextBoxFactura.Name = "TTextBoxFactura";
             this.TTextBoxFactura.ReadOnly = true;
-            this.TTextBoxFactura.Size = new System.Drawing.Size(100, 20);
+            this.TTextBoxFactura.Size = new System.Drawing.Size(130, 20);
             this.TTextBoxFactura.TabIndex = 50;
             // 
             // TGroupBoxDatosVenta
@@ -394,16 +394,16 @@
             this.TGroupBoxDatosVenta.Controls.Add(this.TLabelVendedor);
             this.TGroupBoxDatosVenta.Controls.Add(this.TTextBoxVendedor);
             this.TGroupBoxDatosVenta.Controls.Add(this.TTextBoxCliente);
-            this.TGroupBoxDatosVenta.Location = new System.Drawing.Point(340, 129);
+            this.TGroupBoxDatosVenta.Location = new System.Drawing.Point(449, 207);
             this.TGroupBoxDatosVenta.Name = "TGroupBoxDatosVenta";
-            this.TGroupBoxDatosVenta.Size = new System.Drawing.Size(305, 185);
+            this.TGroupBoxDatosVenta.Size = new System.Drawing.Size(337, 222);
             this.TGroupBoxDatosVenta.TabIndex = 39;
             this.TGroupBoxDatosVenta.TabStop = false;
             this.TGroupBoxDatosVenta.Text = "Datos Venta";
             // 
             // TButtonDetallesVendedor
             // 
-            this.TButtonDetallesVendedor.Location = new System.Drawing.Point(188, 74);
+            this.TButtonDetallesVendedor.Location = new System.Drawing.Point(220, 71);
             this.TButtonDetallesVendedor.Name = "TButtonDetallesVendedor";
             this.TButtonDetallesVendedor.Size = new System.Drawing.Size(111, 23);
             this.TButtonDetallesVendedor.TabIndex = 53;
@@ -412,7 +412,7 @@
             // 
             // TButtonDetallesFactura
             // 
-            this.TButtonDetallesFactura.Location = new System.Drawing.Point(188, 48);
+            this.TButtonDetallesFactura.Location = new System.Drawing.Point(220, 45);
             this.TButtonDetallesFactura.Name = "TButtonDetallesFactura";
             this.TButtonDetallesFactura.Size = new System.Drawing.Size(111, 23);
             this.TButtonDetallesFactura.TabIndex = 52;
@@ -421,7 +421,7 @@
             // 
             // TButtonDetallesCliente
             // 
-            this.TButtonDetallesCliente.Location = new System.Drawing.Point(188, 22);
+            this.TButtonDetallesCliente.Location = new System.Drawing.Point(220, 19);
             this.TButtonDetallesCliente.Name = "TButtonDetallesCliente";
             this.TButtonDetallesCliente.Size = new System.Drawing.Size(111, 23);
             this.TButtonDetallesCliente.TabIndex = 51;
@@ -430,7 +430,7 @@
             // 
             // TButtonAtras
             // 
-            this.TButtonAtras.Location = new System.Drawing.Point(564, 97);
+            this.TButtonAtras.Location = new System.Drawing.Point(792, 95);
             this.TButtonAtras.Name = "TButtonAtras";
             this.TButtonAtras.Size = new System.Drawing.Size(75, 23);
             this.TButtonAtras.TabIndex = 40;
@@ -457,6 +457,7 @@
             this.MaximumSize = new System.Drawing.Size(894, 608);
             this.MinimumSize = new System.Drawing.Size(894, 608);
             this.Name = "GestionVentas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Ventas";
             this.TGroupBoxDatosVehiculo.ResumeLayout(false);
             this.TGroupBoxDatosVehiculo.PerformLayout();
