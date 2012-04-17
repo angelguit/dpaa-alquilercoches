@@ -134,32 +134,14 @@ namespace AlquilerCoches
             else
             {
                 EN.ENReservas enRe = new EN.ENReservas();
-                /*DataSet dsRe = new DataSet();
-                dsRe = enRe.ObtenerReservas();
-                DataTable dtRe = new DataTable();
-                dtRe = dsRe.Tables["Reservas"];
-                DataRow drRe = dtRe.NewRow();
-                drRe[1] = "11111111A";
-                drRe[2] = TComboBoxMatricula.Text;
-                drRe[3] = TDateTimePickerFechaInicio.Text;
-                drRe[4] = TDateTimePickerFechaFin.Text;
-                drRe[5] = TComboBoxConductores.Text;
-                dtRe.Rows.Add(drRe);
-                if ( enRe.ActualizarReservas(dsRe))*/
                 enRe.Cliente = enCliente.DNI;
-                MessageBox.Show(enRe.Cliente);
                 enRe.Conductores = Int32.Parse(TComboBoxConductores.Text);
                 enRe.FechaFin = TDateTimePickerFechaFin.Value;
                 enRe.FechaInicio = TDateTimePickerFechaInicio.Value;
                 enRe.Matricula = TComboBoxMatricula.Text.ToString();
                 enRe.Modelo = TComboBoxModelo.Text.ToString();
-                MessageBox.Show(enRe.Modelo);
                 enRe.AnyadirReserva();
-                /*string sentencia = "INSERT INTO Reservas (FK_Cliente,FK_Coche,FechaInicio,FechaFin,Conductores) VALUES ('11111111A','" + TComboBoxMatricula.Text + "','" + TDateTimePickerFechaInicio.Text + "','" + TDateTimePickerFechaFin.Text + "'," + Int32.Parse(TComboBoxConductores.Text) + ")";
-                if (enRe.EjecutarSentencia(sentencia) == 1)
-                {
-                    MessageBox.Show("Reserva realizada con éxito", "Nueva Reserva", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }*/
+                MessageBox.Show("Reserva realizada con éxito", "Nueva Reserva", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
             }
         }

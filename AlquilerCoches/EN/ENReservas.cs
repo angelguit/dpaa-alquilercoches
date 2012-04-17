@@ -39,10 +39,7 @@ namespace EN
             cadReservas.AnyadirReserva(res);
 
         }
-        public bool ActualizarReservas(DataSet dsRes)
-        {
-            return cadReservas.ActualizarReservas(dsRes);
-        }
+
         public DataSet ObtenerReservas()
         {
             DataSet resultado = new DataSet();

@@ -14,11 +14,10 @@ namespace CAD
     public class CADReservas
     {
         static private String cadenaConexion = ConfigurationManager.ConnectionStrings["AlquilerCoches"].ConnectionString; // @"Data Source=|DataDirectory|\BBDD.sdf";
-        static private SqlDataAdapter daRes;
         public DataSet RellenarCategoria()
         {
             DataSet dsCat = new DataSet();
-
+            SqlDataAdapter daRes;
             try
             {
                 SqlConnection conexion = new SqlConnection(cadenaConexion);
@@ -38,7 +37,7 @@ namespace CAD
         public DataSet ObtenerReservas()
         {
             DataSet dsRes = new DataSet();
-
+            SqlDataAdapter daRes;
             try
             {
                 SqlConnection conexion = new SqlConnection(cadenaConexion);
@@ -55,22 +54,6 @@ namespace CAD
             return dsRes;
         }
 
-        public bool ActualizarReservas(DataSet dsRes)
-        {
-            bool retorno = true;
-            try
-            {
-                SqlCommandBuilder cbuilder = new SqlCommandBuilder(daRes);
-                daRes.Update(dsRes, "Reservas");
-            }
-            catch (Exception ex)
-            {
-                retorno = false;
-                throw (ex);
-            }
-
-            return retorno;
-        }
         public int EjecutarSentencia(string comando)
         {
             int affectedRows = -1;
@@ -105,11 +88,11 @@ namespace CAD
             {
                 SqlConnection conexion = new SqlConnection(cadenaConexion);
                 String consulta = "Select * from Reservas";
-                SqlDataAdapter daReser = new SqlDataAdapter(consulta, conexion);
-                daReser.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-                daReser.Fill(dsReser, "Reservas");
-                SqlCommandBuilder cbuilder = new SqlCommandBuilder(daReser);
-                daReser.Update(dsRes, "Reservas");
+                SqlDataAdapter daRes = new SqlDataAdapter(consulta, conexion);
+                daRes.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daRes.Fill(dsReser, "Reservas");
+                SqlCommandBuilder cbuilder = new SqlCommandBuilder(daRes);
+                daRes.Update(dsRes, "Reservas");
 
             }
             catch (Exception ex)
