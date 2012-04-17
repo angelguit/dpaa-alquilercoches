@@ -54,6 +54,29 @@ namespace CAD
             return dsRes;
         }
 
+        public DataSet ObtenerReservas(string sentencia)
+        {
+            DataSet dsRes = new DataSet();
+            SqlDataAdapter daRes;
+            string consulta;
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                if ( sentencia != "" )
+                    consulta = "Select * from Reservas where" + sentencia;
+                else
+                    consulta = "Select * from Reservas";
+                daRes = new SqlDataAdapter(consulta, conexion);
+                daRes.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daRes.Fill(dsRes, "Reservas");
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            return dsRes;
+        }
+
         public int EjecutarSentencia(string comando)
         {
             int affectedRows = -1;

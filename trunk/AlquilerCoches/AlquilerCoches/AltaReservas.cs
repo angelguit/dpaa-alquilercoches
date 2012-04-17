@@ -55,7 +55,7 @@ namespace AlquilerCoches
             RellenarCategoria(dsRes); 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void TButtonBuscarCliente_Click(object sender, EventArgs e)
         {
             GestionClientesBuscar F1 = new GestionClientesBuscar(false);
             F1.ShowDialog();

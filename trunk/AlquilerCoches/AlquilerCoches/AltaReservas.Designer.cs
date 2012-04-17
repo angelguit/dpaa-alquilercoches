@@ -68,7 +68,7 @@
             this.TButtonBuscarCliente.TabIndex = 26;
             this.TButtonBuscarCliente.Text = "Buscar cliente";
             this.TButtonBuscarCliente.UseVisualStyleBackColor = true;
-            this.TButtonBuscarCliente.Click += new System.EventHandler(this.button1_Click);
+            this.TButtonBuscarCliente.Click += new System.EventHandler(this.TButtonBuscarCliente_Click);
             // 
             // TComboBoxCategoria
             // 
@@ -305,7 +305,7 @@
             this.TButtonBuscarOtro.Text = "Buscar Cliente";
             this.TButtonBuscarOtro.UseVisualStyleBackColor = true;
             this.TButtonBuscarOtro.Visible = false;
-            this.TButtonBuscarOtro.Click += new System.EventHandler(this.button1_Click);
+            this.TButtonBuscarOtro.Click += new System.EventHandler(this.TButtonBuscarCliente_Click);
             // 
             // shapeContainer1
             // 
