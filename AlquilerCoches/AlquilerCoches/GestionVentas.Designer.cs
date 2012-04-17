@@ -46,8 +46,6 @@
             this.TLabelMarca = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.TTextBoxAnyo = new System.Windows.Forms.TextBox();
-            this.TLabelAnyo = new System.Windows.Forms.Label();
             this.TextBoxMatricula = new System.Windows.Forms.TextBox();
             this.TLabelMatricula = new System.Windows.Forms.Label();
             this.TLablelFecha = new System.Windows.Forms.Label();
@@ -154,8 +152,6 @@
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelMarca);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.textBox2);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.pictureBox1);
-            this.TGroupBoxDatosVehiculo.Controls.Add(this.TTextBoxAnyo);
-            this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelAnyo);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TextBoxMatricula);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelMatricula);
             this.TGroupBoxDatosVehiculo.Location = new System.Drawing.Point(15, 207);
@@ -169,14 +165,14 @@
             // TLabelMeses
             // 
             this.TLabelMeses.AutoSize = true;
-            this.TLabelMeses.Location = new System.Drawing.Point(171, 160);
+            this.TLabelMeses.Location = new System.Drawing.Point(171, 136);
             this.TLabelMeses.Name = "TLabelMeses";
             this.TLabelMeses.Size = new System.Drawing.Size(0, 13);
             this.TLabelMeses.TabIndex = 43;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(64, 128);
+            this.textBox1.Location = new System.Drawing.Point(64, 104);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(138, 20);
@@ -185,7 +181,7 @@
             // TLabelKM
             // 
             this.TLabelKM.AutoSize = true;
-            this.TLabelKM.Location = new System.Drawing.Point(33, 135);
+            this.TLabelKM.Location = new System.Drawing.Point(33, 111);
             this.TLabelKM.Name = "TLabelKM";
             this.TLabelKM.Size = new System.Drawing.Size(23, 13);
             this.TLabelKM.TabIndex = 39;
@@ -221,7 +217,7 @@
             // TLabelGarantia
             // 
             this.TLabelGarantia.AutoSize = true;
-            this.TLabelGarantia.Location = new System.Drawing.Point(9, 161);
+            this.TLabelGarantia.Location = new System.Drawing.Point(9, 137);
             this.TLabelGarantia.Name = "TLabelGarantia";
             this.TLabelGarantia.Size = new System.Drawing.Size(49, 13);
             this.TLabelGarantia.TabIndex = 41;
@@ -238,7 +234,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(64, 154);
+            this.textBox2.Location = new System.Drawing.Point(64, 130);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(138, 20);
@@ -254,23 +250,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(189, 186);
             this.pictureBox1.TabIndex = 31;
             this.pictureBox1.TabStop = false;
-            // 
-            // TTextBoxAnyo
-            // 
-            this.TTextBoxAnyo.Location = new System.Drawing.Point(64, 104);
-            this.TTextBoxAnyo.Name = "TTextBoxAnyo";
-            this.TTextBoxAnyo.ReadOnly = true;
-            this.TTextBoxAnyo.Size = new System.Drawing.Size(138, 20);
-            this.TTextBoxAnyo.TabIndex = 22;
-            // 
-            // TLabelAnyo
-            // 
-            this.TLabelAnyo.AutoSize = true;
-            this.TLabelAnyo.Location = new System.Drawing.Point(25, 111);
-            this.TLabelAnyo.Name = "TLabelAnyo";
-            this.TLabelAnyo.Size = new System.Drawing.Size(26, 13);
-            this.TLabelAnyo.TabIndex = 21;
-            this.TLabelAnyo.Text = "Año";
             // 
             // TextBoxMatricula
             // 
@@ -490,8 +469,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox TTextBoxPrecioVenta;
         private System.Windows.Forms.Label TLabelPrecioVenta;
-        private System.Windows.Forms.TextBox TTextBoxAnyo;
-        private System.Windows.Forms.Label TLabelAnyo;
         private System.Windows.Forms.TextBox TextBoxMatricula;
         private System.Windows.Forms.Label TLabelMatricula;
         private System.Windows.Forms.Label TLablelFecha;
