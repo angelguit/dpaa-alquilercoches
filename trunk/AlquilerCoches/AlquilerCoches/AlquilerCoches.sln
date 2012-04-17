@@ -7,27 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EN", "..\EN\EN.csproj", "{A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CAD", "..\CAD\CAD.csproj", "{614BDE5E-2233-4C75-BD40-4E7CEF8E718C}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebSite2", "..\..\..\..\WebSites\WebSite2\", "{963C9E38-5742-464A-B771-61676EA38B89}"
-	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		Debug.AspNetCompiler.VirtualPath = "/WebSite2"
-		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\WebSites\WebSite2\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\WebSite2\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/WebSite2"
-		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\WebSites\WebSite2\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\WebSite2\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "2665"
-		DefaultWebSiteLanguage = "Visual C#"
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -72,16 +51,6 @@ Global
 		{614BDE5E-2233-4C75-BD40-4E7CEF8E718C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{614BDE5E-2233-4C75-BD40-4E7CEF8E718C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{614BDE5E-2233-4C75-BD40-4E7CEF8E718C}.Release|x86.ActiveCfg = Release|Any CPU
-		{963C9E38-5742-464A-B771-61676EA38B89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{963C9E38-5742-464A-B771-61676EA38B89}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{963C9E38-5742-464A-B771-61676EA38B89}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{963C9E38-5742-464A-B771-61676EA38B89}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{963C9E38-5742-464A-B771-61676EA38B89}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{963C9E38-5742-464A-B771-61676EA38B89}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{963C9E38-5742-464A-B771-61676EA38B89}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{963C9E38-5742-464A-B771-61676EA38B89}.Release|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{963C9E38-5742-464A-B771-61676EA38B89}.Release|Mixed Platforms.Build.0 = Debug|Any CPU
-		{963C9E38-5742-464A-B771-61676EA38B89}.Release|x86.ActiveCfg = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
