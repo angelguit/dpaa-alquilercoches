@@ -13,10 +13,37 @@ namespace AlquilerCoches
     public partial class PonerVenta : Form
     {
         bool incorrecto = false;
+        private EN.ENVentas ventas = new EN.ENVentas();
 
         public PonerVenta()
         {
             InitializeComponent();
+            limpiaFormulario();
+        }
+
+        public void limpiaFormulario()
+        {
+            ventas.ClearEnVentas();
+            TListBoxMarcas.Items.Clear();
+            TListBoxModelos.Items.Clear();
+            TListBoxMatriculas.Items.Clear();
+            TTextBoxMatricula.Text = "";
+            TTextBoxMarca.Text = "";
+            TTextBoxModelo.Text = "";
+            TTextBoxAnyo.Text = "";
+            TTextBoxKm.Text = "";
+            TCheckBoxGarantia.Checked = false;
+            TTextBoxMeses.Text = "";
+            TTextBoxPrecioVenta.Text = "";
+            errorProvider1.Clear();
+            TTextBoxMeses.Enabled = false;
+            TGroupBoxDatosVehiculo.Enabled = false;
+        }
+
+        private void PonerVenta_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Hide();
+            Dispose();
         }
 
         private void TButtonVender_MouseHover(object sender, EventArgs e)
@@ -53,7 +80,7 @@ namespace AlquilerCoches
         {
             if (!Regex.Match(TTextBoxKm.Text, @"^\d{1,6}$").Success)
             {
-                errorProvider1.SetError(TTextBoxKm, "KM incorrectos");
+                errorProvider1.SetError(TTextBoxKm, "KM incorrectos, debe contener solo numeros y no más de 6 dígitos.");
                 incorrecto = true;
             }
             else
@@ -67,13 +94,20 @@ namespace AlquilerCoches
         {
             if (!Regex.Match(TTextBoxMeses.Text, @"^\d{1,2}$").Success)
             {
-                errorProvider1.SetError(TTextBoxMeses, "Meses de garantía incorrectos");
+                errorProvider1.SetError(TTextBoxMeses, "Meses de garantía incorrectos, debe contener solo números y como mucho 2 cifras.");
                 incorrecto = true;
             }
             else
             {
-                errorProvider1.SetError(TTextBoxMeses, "");
-                incorrecto = false;
+                if (Int32.Parse(TTextBoxMeses.Text) < 0)
+                {
+                    errorProvider1.SetError(TTextBoxMeses, "Solo se adminten valores mayores que cero");
+                }
+                else
+                {
+                    errorProvider1.SetError(TTextBoxMeses, "");
+                    incorrecto = false;
+                }
             }
         }
 
@@ -81,7 +115,7 @@ namespace AlquilerCoches
         {
             if (!Regex.Match(TTextBoxPrecioVenta.Text, @"^\d{1,6}$").Success)
             {
-                errorProvider1.SetError(TTextBoxPrecioVenta, "Precio incorrecto");
+                errorProvider1.SetError(TTextBoxPrecioVenta, "Precio incorrecto, debe contener solo números y no más de 6 cifras.");
                 incorrecto = true;
             }
             else
@@ -90,5 +124,31 @@ namespace AlquilerCoches
                 incorrecto = false;
             }
         }
+
+        private void TButtonAtras_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void TButtonVender_Click(object sender, EventArgs e)
+        {
+            EN.ENVehiculo vehiculo = new EN.ENVehiculo();
+            
+            
+            vehiculo.Matricula = TTextBoxMatricula.Text;
+            vehiculo.BorrarVehiculo();
+        }
+
+        private void TButtonCancelar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Desea cancelar?\n Se perderan los cambios no guardados", "¿CANCELAR?", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.OK)
+            {
+                limpiaFormulario();
+                TGroupBoxDatosVehiculo.Enabled = false;
+            }
+        }
+
+
+
     }
 }

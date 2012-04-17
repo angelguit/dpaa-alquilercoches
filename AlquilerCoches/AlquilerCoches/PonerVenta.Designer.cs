@@ -38,6 +38,8 @@
             this.TLabelModelos = new System.Windows.Forms.Label();
             this.TLabelMarcas = new System.Windows.Forms.Label();
             this.TGroupBoxDatosVehiculo = new System.Windows.Forms.GroupBox();
+            this.TButtonCancelar = new System.Windows.Forms.Button();
+            this.TLabelObligatorio = new System.Windows.Forms.Label();
             this.TTextBoxMeses = new System.Windows.Forms.TextBox();
             this.TCheckBoxGarantia = new System.Windows.Forms.CheckBox();
             this.TLabelAviso = new System.Windows.Forms.Label();
@@ -54,10 +56,9 @@
             this.TPictureBoxCoche = new System.Windows.Forms.PictureBox();
             this.TTextBoxAnyo = new System.Windows.Forms.TextBox();
             this.TLabelAnyo = new System.Windows.Forms.Label();
-            this.TextBoxMatricula = new System.Windows.Forms.TextBox();
+            this.TTextBoxMatricula = new System.Windows.Forms.TextBox();
             this.TLabelMatricula = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.TLabelObligatorio = new System.Windows.Forms.Label();
             this.TGroupBoxDatosVehiculo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TPictureBoxCoche)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -71,6 +72,7 @@
             this.TButtonAtras.TabIndex = 50;
             this.TButtonAtras.Text = "Atrás";
             this.TButtonAtras.UseVisualStyleBackColor = true;
+            this.TButtonAtras.Click += new System.EventHandler(this.TButtonAtras_Click);
             // 
             // TListBoxMatriculas
             // 
@@ -143,6 +145,7 @@
             this.TGroupBoxDatosVehiculo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.TGroupBoxDatosVehiculo.BackColor = System.Drawing.Color.Transparent;
+            this.TGroupBoxDatosVehiculo.Controls.Add(this.TButtonCancelar);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelObligatorio);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TTextBoxMeses);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TCheckBoxGarantia);
@@ -160,7 +163,7 @@
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TPictureBoxCoche);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TTextBoxAnyo);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelAnyo);
-            this.TGroupBoxDatosVehiculo.Controls.Add(this.TextBoxMatricula);
+            this.TGroupBoxDatosVehiculo.Controls.Add(this.TTextBoxMatricula);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelMatricula);
             this.TGroupBoxDatosVehiculo.Location = new System.Drawing.Point(15, 126);
             this.TGroupBoxDatosVehiculo.Name = "TGroupBoxDatosVehiculo";
@@ -168,6 +171,26 @@
             this.TGroupBoxDatosVehiculo.TabIndex = 41;
             this.TGroupBoxDatosVehiculo.TabStop = false;
             this.TGroupBoxDatosVehiculo.Text = "DatosVehiculo";
+            // 
+            // TButtonCancelar
+            // 
+            this.TButtonCancelar.Location = new System.Drawing.Point(237, 179);
+            this.TButtonCancelar.Name = "TButtonCancelar";
+            this.TButtonCancelar.Size = new System.Drawing.Size(123, 23);
+            this.TButtonCancelar.TabIndex = 50;
+            this.TButtonCancelar.Tag = "";
+            this.TButtonCancelar.Text = "Cancelar Venta";
+            this.TButtonCancelar.UseVisualStyleBackColor = true;
+            this.TButtonCancelar.Click += new System.EventHandler(this.TButtonCancelar_Click);
+            // 
+            // TLabelObligatorio
+            // 
+            this.TLabelObligatorio.AutoSize = true;
+            this.TLabelObligatorio.Location = new System.Drawing.Point(22, 221);
+            this.TLabelObligatorio.Name = "TLabelObligatorio";
+            this.TLabelObligatorio.Size = new System.Drawing.Size(217, 13);
+            this.TLabelObligatorio.TabIndex = 49;
+            this.TLabelObligatorio.Text = "Los campos marcados con * son obligatorios";
             // 
             // TTextBoxMeses
             // 
@@ -202,13 +225,14 @@
             // 
             // TButtonVender
             // 
-            this.TButtonVender.Location = new System.Drawing.Point(285, 150);
+            this.TButtonVender.Location = new System.Drawing.Point(237, 150);
             this.TButtonVender.Name = "TButtonVender";
-            this.TButtonVender.Size = new System.Drawing.Size(75, 23);
+            this.TButtonVender.Size = new System.Drawing.Size(123, 23);
             this.TButtonVender.TabIndex = 45;
             this.TButtonVender.Tag = "";
-            this.TButtonVender.Text = "Vender";
+            this.TButtonVender.Text = "Añadir Venta";
             this.TButtonVender.UseVisualStyleBackColor = true;
+            this.TButtonVender.Click += new System.EventHandler(this.TButtonVender_Click);
             this.TButtonVender.MouseLeave += new System.EventHandler(this.TButtonVender_MouseLeave);
             this.TButtonVender.MouseHover += new System.EventHandler(this.TButtonVender_MouseHover);
             // 
@@ -317,14 +341,14 @@
             this.TLabelAnyo.TabIndex = 21;
             this.TLabelAnyo.Text = "Año";
             // 
-            // TextBoxMatricula
+            // TTextBoxMatricula
             // 
-            this.TextBoxMatricula.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TextBoxMatricula.Location = new System.Drawing.Point(80, 23);
-            this.TextBoxMatricula.Name = "TextBoxMatricula";
-            this.TextBoxMatricula.ReadOnly = true;
-            this.TextBoxMatricula.Size = new System.Drawing.Size(130, 20);
-            this.TextBoxMatricula.TabIndex = 20;
+            this.TTextBoxMatricula.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TTextBoxMatricula.Location = new System.Drawing.Point(80, 23);
+            this.TTextBoxMatricula.Name = "TTextBoxMatricula";
+            this.TTextBoxMatricula.ReadOnly = true;
+            this.TTextBoxMatricula.Size = new System.Drawing.Size(130, 20);
+            this.TTextBoxMatricula.TabIndex = 20;
             // 
             // TLabelMatricula
             // 
@@ -339,15 +363,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // TLabelObligatorio
-            // 
-            this.TLabelObligatorio.AutoSize = true;
-            this.TLabelObligatorio.Location = new System.Drawing.Point(22, 221);
-            this.TLabelObligatorio.Name = "TLabelObligatorio";
-            this.TLabelObligatorio.Size = new System.Drawing.Size(217, 13);
-            this.TLabelObligatorio.TabIndex = 49;
-            this.TLabelObligatorio.Text = "Los campos marcados con * son obligatorios";
             // 
             // PonerVenta
             // 
@@ -366,7 +381,7 @@
             this.Controls.Add(this.TLabelMarcas);
             this.Controls.Add(this.TGroupBoxDatosVehiculo);
             this.Name = "PonerVenta";
-            this.Text = "PonerVenta";
+            this.Text = "Editar Ventas";
             this.TGroupBoxDatosVehiculo.ResumeLayout(false);
             this.TGroupBoxDatosVehiculo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TPictureBoxCoche)).EndInit();
@@ -397,7 +412,7 @@
         private System.Windows.Forms.PictureBox TPictureBoxCoche;
         private System.Windows.Forms.TextBox TTextBoxAnyo;
         private System.Windows.Forms.Label TLabelAnyo;
-        private System.Windows.Forms.TextBox TextBoxMatricula;
+        private System.Windows.Forms.TextBox TTextBoxMatricula;
         private System.Windows.Forms.Label TLabelMatricula;
         private System.Windows.Forms.TextBox TTextBoxPrecioVenta;
         private System.Windows.Forms.Label TLabelPrecioVenta;
@@ -407,6 +422,7 @@
         private System.Windows.Forms.TextBox TTextBoxMeses;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label TLabelObligatorio;
+        private System.Windows.Forms.Button TButtonCancelar;
 
     }
 }
