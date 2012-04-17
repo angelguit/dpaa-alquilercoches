@@ -33,6 +33,9 @@
             this.TSalirbutton2 = new System.Windows.Forms.Button();
             this.TBorrarbutton3 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.TEnviogroupBox3 = new System.Windows.Forms.GroupBox();
+            this.TEnvioButtonUrgente = new System.Windows.Forms.RadioButton();
+            this.TEnvioButtonOrdinario = new System.Windows.Forms.RadioButton();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.TErrorModelo = new System.Windows.Forms.Label();
             this.TErrorMarca = new System.Windows.Forms.Label();
@@ -56,14 +59,11 @@
             this.TIDlabel = new System.Windows.Forms.Label();
             this.TIDtextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.TEnviogroupBox3 = new System.Windows.Forms.GroupBox();
-            this.TEnvioButtonUrgente = new System.Windows.Forms.RadioButton();
-            this.TEnvioButtonOrdinario = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
+            this.TEnviogroupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            this.TEnviogroupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // TAceptarbutton1
@@ -120,6 +120,40 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Pedido";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // TEnviogroupBox3
+            // 
+            this.TEnviogroupBox3.Controls.Add(this.TEnvioButtonUrgente);
+            this.TEnviogroupBox3.Controls.Add(this.TEnvioButtonOrdinario);
+            this.TEnviogroupBox3.Location = new System.Drawing.Point(69, 152);
+            this.TEnviogroupBox3.Name = "TEnviogroupBox3";
+            this.TEnviogroupBox3.Size = new System.Drawing.Size(344, 51);
+            this.TEnviogroupBox3.TabIndex = 42;
+            this.TEnviogroupBox3.TabStop = false;
+            this.TEnviogroupBox3.Text = "Envio";
+            this.TEnviogroupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
+            // 
+            // TEnvioButtonUrgente
+            // 
+            this.TEnvioButtonUrgente.AutoSize = true;
+            this.TEnvioButtonUrgente.Location = new System.Drawing.Point(207, 19);
+            this.TEnvioButtonUrgente.Name = "TEnvioButtonUrgente";
+            this.TEnvioButtonUrgente.Size = new System.Drawing.Size(63, 17);
+            this.TEnvioButtonUrgente.TabIndex = 33;
+            this.TEnvioButtonUrgente.Text = "Urgente";
+            this.TEnvioButtonUrgente.UseVisualStyleBackColor = true;
+            // 
+            // TEnvioButtonOrdinario
+            // 
+            this.TEnvioButtonOrdinario.AutoSize = true;
+            this.TEnvioButtonOrdinario.Checked = true;
+            this.TEnvioButtonOrdinario.Location = new System.Drawing.Point(64, 19);
+            this.TEnvioButtonOrdinario.Name = "TEnvioButtonOrdinario";
+            this.TEnvioButtonOrdinario.Size = new System.Drawing.Size(67, 17);
+            this.TEnvioButtonOrdinario.TabIndex = 32;
+            this.TEnvioButtonOrdinario.TabStop = true;
+            this.TEnvioButtonOrdinario.Text = "Ordinario";
+            this.TEnvioButtonOrdinario.UseVisualStyleBackColor = true;
             // 
             // numericUpDown1
             // 
@@ -180,7 +214,8 @@
             this.TModelocomboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TModelocomboBox3.FormattingEnabled = true;
             this.TModelocomboBox3.Items.AddRange(new object[] {
-            ""});
+            "",
+            "FORD"});
             this.TModelocomboBox3.Location = new System.Drawing.Point(165, 89);
             this.TModelocomboBox3.Name = "TModelocomboBox3";
             this.TModelocomboBox3.Size = new System.Drawing.Size(177, 21);
@@ -278,7 +313,7 @@
             this.groupBox2.Controls.Add(this.TEmpLabel);
             this.groupBox2.Controls.Add(this.TIDlabel);
             this.groupBox2.Controls.Add(this.TIDtextBox);
-            this.groupBox2.Location = new System.Drawing.Point(98, 3);
+            this.groupBox2.Location = new System.Drawing.Point(112, 27);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(436, 89);
             this.groupBox2.TabIndex = 24;
@@ -369,40 +404,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // TEnviogroupBox3
-            // 
-            this.TEnviogroupBox3.Controls.Add(this.TEnvioButtonUrgente);
-            this.TEnviogroupBox3.Controls.Add(this.TEnvioButtonOrdinario);
-            this.TEnviogroupBox3.Location = new System.Drawing.Point(69, 152);
-            this.TEnviogroupBox3.Name = "TEnviogroupBox3";
-            this.TEnviogroupBox3.Size = new System.Drawing.Size(344, 51);
-            this.TEnviogroupBox3.TabIndex = 42;
-            this.TEnviogroupBox3.TabStop = false;
-            this.TEnviogroupBox3.Text = "Envio";
-            this.TEnviogroupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
-            // 
-            // TEnvioButtonUrgente
-            // 
-            this.TEnvioButtonUrgente.AutoSize = true;
-            this.TEnvioButtonUrgente.Location = new System.Drawing.Point(207, 19);
-            this.TEnvioButtonUrgente.Name = "TEnvioButtonUrgente";
-            this.TEnvioButtonUrgente.Size = new System.Drawing.Size(63, 17);
-            this.TEnvioButtonUrgente.TabIndex = 33;
-            this.TEnvioButtonUrgente.Text = "Urgente";
-            this.TEnvioButtonUrgente.UseVisualStyleBackColor = true;
-            // 
-            // TEnvioButtonOrdinario
-            // 
-            this.TEnvioButtonOrdinario.AutoSize = true;
-            this.TEnvioButtonOrdinario.Checked = true;
-            this.TEnvioButtonOrdinario.Location = new System.Drawing.Point(64, 19);
-            this.TEnvioButtonOrdinario.Name = "TEnvioButtonOrdinario";
-            this.TEnvioButtonOrdinario.Size = new System.Drawing.Size(67, 17);
-            this.TEnvioButtonOrdinario.TabIndex = 32;
-            this.TEnvioButtonOrdinario.TabStop = true;
-            this.TEnvioButtonOrdinario.Text = "Ordinario";
-            this.TEnvioButtonOrdinario.UseVisualStyleBackColor = true;
-            // 
             // GestionPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -420,12 +421,12 @@
             this.Load += new System.EventHandler(this.GestionPedidos_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.TEnviogroupBox3.ResumeLayout(false);
+            this.TEnviogroupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            this.TEnviogroupBox3.ResumeLayout(false);
-            this.TEnviogroupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
