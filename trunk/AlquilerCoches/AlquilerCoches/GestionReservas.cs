@@ -24,5 +24,11 @@ namespace AlquilerCoches
             TDataGridViewReservas.DataSource = dsRe;
             TDataGridViewReservas.DataMember = "Reservas";
         }
+
+        private void TButtonCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
     }
 }

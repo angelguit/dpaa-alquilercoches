@@ -71,5 +71,31 @@ namespace CAD
 
             return retorno;
         }
+        public int EjecutarSentencia(string comando)
+        {
+            int affectedRows = -1;
+            //   SqlConnection connection = new SqlConnection(); // Creamos la conexión
+            SqlConnection connection = new SqlConnection(cadenaConexion);
+            SqlCommand command = connection.CreateCommand(); // Creamos el objeto 'command' pasandole la conexión
+            command.CommandText = comando; // Le metemos la sentencia Insert, Update o Delete
+            command.Connection = connection;
+            command.Prepare();
+            try
+            {
+                connection.Open(); // Abrimos la conexión
+                affectedRows = command.ExecuteNonQuery(); // Guardamos las filas afectadas
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                    connection.Close();
+            }
+            return affectedRows;
+        }
     }
 }

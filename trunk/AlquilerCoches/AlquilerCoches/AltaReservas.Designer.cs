@@ -47,6 +47,9 @@
             this.TLabelErrorFecha = new System.Windows.Forms.Label();
             this.TLabelMarca = new System.Windows.Forms.Label();
             this.TComboBoxMarca = new System.Windows.Forms.ComboBox();
+            this.TLabelSinCoche = new System.Windows.Forms.Label();
+            this.TLabelSinConductores = new System.Windows.Forms.Label();
+            this.TButtonCerrar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -164,7 +167,7 @@
             this.TDateTimePickerFechaInicio.Name = "TDateTimePickerFechaInicio";
             this.TDateTimePickerFechaInicio.Size = new System.Drawing.Size(98, 20);
             this.TDateTimePickerFechaInicio.TabIndex = 36;
-            this.TDateTimePickerFechaInicio.Value = new System.DateTime(2012, 3, 22, 21, 10, 41, 0);
+            this.TDateTimePickerFechaInicio.Value = new System.DateTime(2012, 4, 16, 0, 0, 0, 0);
             this.TDateTimePickerFechaInicio.ValueChanged += new System.EventHandler(this.TDateTimePickerFechaInicio_ValueChanged);
             // 
             // TLabelFechaFin
@@ -251,13 +254,50 @@
             this.TComboBoxMarca.Text = "Seleccione Marca";
             this.TComboBoxMarca.TextChanged += new System.EventHandler(this.TComboBoxMarca_TextChanged);
             // 
+            // TLabelSinCoche
+            // 
+            this.TLabelSinCoche.AutoSize = true;
+            this.TLabelSinCoche.Font = new System.Drawing.Font("Broadway", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TLabelSinCoche.ForeColor = System.Drawing.Color.Red;
+            this.TLabelSinCoche.Location = new System.Drawing.Point(337, 112);
+            this.TLabelSinCoche.Name = "TLabelSinCoche";
+            this.TLabelSinCoche.Size = new System.Drawing.Size(188, 12);
+            this.TLabelSinCoche.TabIndex = 45;
+            this.TLabelSinCoche.Text = "Falta seleccionar vehiculo";
+            this.TLabelSinCoche.Visible = false;
+            // 
+            // TLabelSinConductores
+            // 
+            this.TLabelSinConductores.AutoSize = true;
+            this.TLabelSinConductores.Font = new System.Drawing.Font("Broadway", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TLabelSinConductores.ForeColor = System.Drawing.Color.Red;
+            this.TLabelSinConductores.Location = new System.Drawing.Point(77, 256);
+            this.TLabelSinConductores.Name = "TLabelSinConductores";
+            this.TLabelSinConductores.Size = new System.Drawing.Size(143, 12);
+            this.TLabelSinConductores.TabIndex = 46;
+            this.TLabelSinConductores.Text = "Faltan  conductores";
+            this.TLabelSinConductores.Visible = false;
+            // 
+            // TButtonCerrar
+            // 
+            this.TButtonCerrar.Location = new System.Drawing.Point(58, 558);
+            this.TButtonCerrar.Name = "TButtonCerrar";
+            this.TButtonCerrar.Size = new System.Drawing.Size(75, 23);
+            this.TButtonCerrar.TabIndex = 47;
+            this.TButtonCerrar.Text = "Cerrar";
+            this.TButtonCerrar.UseVisualStyleBackColor = true;
+            this.TButtonCerrar.Click += new System.EventHandler(this.TButtonCerrar_Click);
+            // 
             // AltaReservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(837, 590);
+            this.ClientSize = new System.Drawing.Size(894, 608);
+            this.Controls.Add(this.TButtonCerrar);
+            this.Controls.Add(this.TLabelSinConductores);
+            this.Controls.Add(this.TLabelSinCoche);
             this.Controls.Add(this.TComboBoxMarca);
             this.Controls.Add(this.TLabelMarca);
             this.Controls.Add(this.TLabelErrorFecha);
@@ -277,7 +317,13 @@
             this.Controls.Add(this.TComboBoxModelo);
             this.Controls.Add(this.TComboBoxCategoria);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(894, 608);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(894, 608);
             this.Name = "AltaReservas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nueva Reserva";
             this.Load += new System.EventHandler(this.AltaReservas_Load);
             this.ResumeLayout(false);
@@ -306,5 +352,8 @@
         private System.Windows.Forms.Label TLabelErrorFecha;
         private System.Windows.Forms.Label TLabelMarca;
         private System.Windows.Forms.ComboBox TComboBoxMarca;
+        private System.Windows.Forms.Label TLabelSinCoche;
+        private System.Windows.Forms.Label TLabelSinConductores;
+        private System.Windows.Forms.Button TButtonCerrar;
     }
 }
