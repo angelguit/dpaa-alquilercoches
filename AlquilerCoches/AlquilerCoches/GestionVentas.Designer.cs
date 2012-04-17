@@ -455,7 +455,7 @@
             this.Controls.Add(this.TLabelMarcas);
             this.Controls.Add(this.TGroupBoxDatosVehiculo);
             this.Name = "GestionVentas";
-            this.Text = "Gestión de Ventas";
+            this.Text = "Registro de Ventas";
             this.TGroupBoxDatosVehiculo.ResumeLayout(false);
             this.TGroupBoxDatosVehiculo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
