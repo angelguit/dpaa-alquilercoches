@@ -19,6 +19,7 @@ namespace AlquilerCoches
         private bool dondevengo;
         ArrayList arraydni = new ArrayList();
         string eliminado = ""; //string que llevara la selec q usaremos para eliminar clientes de la base de datos
+        public string ciudades, provincias;
 
         public GestionClientesBuscar(bool directo)
         {
@@ -142,6 +143,8 @@ namespace AlquilerCoches
                 string prov = TComboBoxProvincias.Text.ToString();
                 string dni = TTextBoxDNI.Text.ToString();
                 string todo = "";
+                provincias = prov;
+                ciudades = ciu;
 
                 if (apell != "") //apellidos
                 {

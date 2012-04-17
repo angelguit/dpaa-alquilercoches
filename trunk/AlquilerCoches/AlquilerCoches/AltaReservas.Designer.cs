@@ -52,10 +52,10 @@
             this.TButtonEditar = new System.Windows.Forms.Button();
             this.TButtonBuscarOtro = new System.Windows.Forms.Button();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.TRectangleShapeCliente = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.TRectangleShaperReservas = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.TLabelDNI = new System.Windows.Forms.Label();
             this.TLabelNombre = new System.Windows.Forms.Label();
-            this.TRectangleShapeCliente = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.TLabelInfoVehiculo = new System.Windows.Forms.Label();
             this.TLabelDirec = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -294,6 +294,7 @@
             this.TButtonEditar.Text = "Editar";
             this.TButtonEditar.UseVisualStyleBackColor = true;
             this.TButtonEditar.Visible = false;
+            this.TButtonEditar.Click += new System.EventHandler(this.TButtonEditar_Click);
             // 
             // TButtonBuscarOtro
             // 
@@ -317,6 +318,13 @@
             this.shapeContainer1.Size = new System.Drawing.Size(894, 608);
             this.shapeContainer1.TabIndex = 52;
             this.shapeContainer1.TabStop = false;
+            // 
+            // TRectangleShapeCliente
+            // 
+            this.TRectangleShapeCliente.Location = new System.Drawing.Point(178, 56);
+            this.TRectangleShapeCliente.Name = "TRectangleShapeCliente";
+            this.TRectangleShapeCliente.Size = new System.Drawing.Size(529, 137);
+            this.TRectangleShapeCliente.Visible = false;
             // 
             // TRectangleShaperReservas
             // 
@@ -347,13 +355,6 @@
             this.TLabelNombre.TabIndex = 40;
             this.TLabelNombre.Text = "label1";
             this.TLabelNombre.Visible = false;
-            // 
-            // TRectangleShapeCliente
-            // 
-            this.TRectangleShapeCliente.Location = new System.Drawing.Point(178, 56);
-            this.TRectangleShapeCliente.Name = "TRectangleShapeCliente";
-            this.TRectangleShapeCliente.Size = new System.Drawing.Size(529, 137);
-            this.TRectangleShapeCliente.Visible = false;
             // 
             // TLabelInfoVehiculo
             // 
