@@ -219,14 +219,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 600);
+            this.ClientSize = new System.Drawing.Size(894, 608);
             this.Controls.Add(this.TButtonCerrar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.TDataGridViewCliente);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MaximumSize = new System.Drawing.Size(800, 600);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(894, 608);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(800, 600);
+            this.MinimumSize = new System.Drawing.Size(894, 608);
             this.Name = "GestionClientesBuscar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GestionClientesBuscar";

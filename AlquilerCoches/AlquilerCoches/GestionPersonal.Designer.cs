@@ -129,7 +129,7 @@
             this.TGroupBoxAlta.Size = new System.Drawing.Size(374, 344);
             this.TGroupBoxAlta.TabIndex = 27;
             this.TGroupBoxAlta.TabStop = false;
-            this.TGroupBoxAlta.Text = "Personal";
+            this.TGroupBoxAlta.Text = "Datos Personal";
             // 
             // TComboBoxProvincias
             // 
@@ -137,7 +137,7 @@
             this.TComboBoxProvincias.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.TComboBoxProvincias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TComboBoxProvincias.FormattingEnabled = true;
-            this.TComboBoxProvincias.Location = new System.Drawing.Point(148, 180);
+            this.TComboBoxProvincias.Location = new System.Drawing.Point(148, 179);
             this.TComboBoxProvincias.Name = "TComboBoxProvincias";
             this.TComboBoxProvincias.Size = new System.Drawing.Size(108, 21);
             this.TComboBoxProvincias.TabIndex = 6;
@@ -149,7 +149,7 @@
             this.TComboBoxCiudades.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.TComboBoxCiudades.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TComboBoxCiudades.FormattingEnabled = true;
-            this.TComboBoxCiudades.Location = new System.Drawing.Point(148, 202);
+            this.TComboBoxCiudades.Location = new System.Drawing.Point(148, 201);
             this.TComboBoxCiudades.Name = "TComboBoxCiudades";
             this.TComboBoxCiudades.Size = new System.Drawing.Size(108, 21);
             this.TComboBoxCiudades.TabIndex = 7;
@@ -157,7 +157,7 @@
             // 
             // TTextBoxDireccion
             // 
-            this.TTextBoxDireccion.Location = new System.Drawing.Point(148, 159);
+            this.TTextBoxDireccion.Location = new System.Drawing.Point(148, 158);
             this.TTextBoxDireccion.Name = "TTextBoxDireccion";
             this.TTextBoxDireccion.Size = new System.Drawing.Size(108, 20);
             this.TTextBoxDireccion.TabIndex = 5;
@@ -166,7 +166,7 @@
             // TLabelDireccion
             // 
             this.TLabelDireccion.AutoSize = true;
-            this.TLabelDireccion.Location = new System.Drawing.Point(81, 166);
+            this.TLabelDireccion.Location = new System.Drawing.Point(81, 165);
             this.TLabelDireccion.Name = "TLabelDireccion";
             this.TLabelDireccion.Size = new System.Drawing.Size(52, 13);
             this.TLabelDireccion.TabIndex = 45;
@@ -174,7 +174,7 @@
             // 
             // TTextBoxEmail
             // 
-            this.TTextBoxEmail.Location = new System.Drawing.Point(148, 138);
+            this.TTextBoxEmail.Location = new System.Drawing.Point(148, 137);
             this.TTextBoxEmail.Name = "TTextBoxEmail";
             this.TTextBoxEmail.Size = new System.Drawing.Size(108, 20);
             this.TTextBoxEmail.TabIndex = 4;
@@ -183,7 +183,7 @@
             // TLabelEmail
             // 
             this.TLabelEmail.AutoSize = true;
-            this.TLabelEmail.Location = new System.Drawing.Point(98, 145);
+            this.TLabelEmail.Location = new System.Drawing.Point(98, 144);
             this.TLabelEmail.Name = "TLabelEmail";
             this.TLabelEmail.Size = new System.Drawing.Size(32, 13);
             this.TLabelEmail.TabIndex = 43;
@@ -208,7 +208,7 @@
             // 
             // TTextBoxPuestoAc
             // 
-            this.TTextBoxPuestoAc.Location = new System.Drawing.Point(148, 225);
+            this.TTextBoxPuestoAc.Location = new System.Drawing.Point(148, 224);
             this.TTextBoxPuestoAc.Name = "TTextBoxPuestoAc";
             this.TTextBoxPuestoAc.Size = new System.Drawing.Size(108, 20);
             this.TTextBoxPuestoAc.TabIndex = 8;
@@ -249,7 +249,7 @@
             // TLabelPuestoAc
             // 
             this.TLabelPuestoAc.AutoSize = true;
-            this.TLabelPuestoAc.Location = new System.Drawing.Point(57, 232);
+            this.TLabelPuestoAc.Location = new System.Drawing.Point(57, 231);
             this.TLabelPuestoAc.Name = "TLabelPuestoAc";
             this.TLabelPuestoAc.Size = new System.Drawing.Size(73, 13);
             this.TLabelPuestoAc.TabIndex = 33;
@@ -258,7 +258,7 @@
             // TLabelCiudades
             // 
             this.TLabelCiudades.AutoSize = true;
-            this.TLabelCiudades.Location = new System.Drawing.Point(90, 210);
+            this.TLabelCiudades.Location = new System.Drawing.Point(90, 209);
             this.TLabelCiudades.Name = "TLabelCiudades";
             this.TLabelCiudades.Size = new System.Drawing.Size(40, 13);
             this.TLabelCiudades.TabIndex = 32;
@@ -267,7 +267,7 @@
             // TLabelProvincias
             // 
             this.TLabelProvincias.AutoSize = true;
-            this.TLabelProvincias.Location = new System.Drawing.Point(82, 188);
+            this.TLabelProvincias.Location = new System.Drawing.Point(82, 187);
             this.TLabelProvincias.Name = "TLabelProvincias";
             this.TLabelProvincias.Size = new System.Drawing.Size(51, 13);
             this.TLabelProvincias.TabIndex = 31;

@@ -359,6 +359,21 @@ namespace AlquilerCoches
             gestionReservas.Show();
         }
 
+        private void darDeAltaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["GestionClientes"] != null)
+            {
+
+                Application.OpenForms["GestionClientes"].Activate();
+            }
+            else
+            {
+                GestionClientes clientes = new GestionClientes();
+                clientes.MdiParent = this;
+                clientes.Show();
+            }
+        }
+
      
      }   
 }

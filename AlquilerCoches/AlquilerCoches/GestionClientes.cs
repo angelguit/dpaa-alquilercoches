@@ -118,6 +118,11 @@ namespace AlquilerCoches
             else { errorProvider1.SetError(TTextBoxDireccion, ""); }
         }
 
+        private void TButtonCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
        /* private void TTextBoxCiudad_Leave(object sender, EventArgs e)
         {
             if (!Regex.Match(TTextBoxCiudad.Text, @"^[A-Za-z]{3,40}$").Success)
