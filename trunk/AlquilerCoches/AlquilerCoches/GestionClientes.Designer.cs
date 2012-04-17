@@ -31,7 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TGroupBoxCliente = new System.Windows.Forms.GroupBox();
-            this.TLabelObligado = new System.Windows.Forms.Label();
+            this.TComboBoxProvincias = new System.Windows.Forms.ComboBox();
+            this.TComboBoxCiudades = new System.Windows.Forms.ComboBox();
+            this.TLabelCiudades = new System.Windows.Forms.Label();
+            this.TLabelProvincias = new System.Windows.Forms.Label();
             this.TLabelVehiculosAlquiler = new System.Windows.Forms.Label();
             this.listBoxCoches = new System.Windows.Forms.ListBox();
             this.TLabelSexo = new System.Windows.Forms.Label();
@@ -51,12 +54,8 @@
             this.TLabelDNI = new System.Windows.Forms.Label();
             this.TButtonFoto = new System.Windows.Forms.Button();
             this.TButtonGuardarCliente = new System.Windows.Forms.Button();
-            this.TButtonCancelar = new System.Windows.Forms.Button();
+            this.TButtonCerrar = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.TComboBoxProvincias = new System.Windows.Forms.ComboBox();
-            this.TComboBoxCiudades = new System.Windows.Forms.ComboBox();
-            this.TLabelCiudades = new System.Windows.Forms.Label();
-            this.TLabelProvincias = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.TGroupBoxCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -67,7 +66,7 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackgroundImage = global::AlquilerCoches.Properties.Resources.Desconocido;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(645, 59);
+            this.pictureBox1.Location = new System.Drawing.Point(755, 105);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(89, 110);
             this.pictureBox1.TabIndex = 45;
@@ -81,7 +80,6 @@
             this.TGroupBoxCliente.Controls.Add(this.TComboBoxCiudades);
             this.TGroupBoxCliente.Controls.Add(this.TLabelCiudades);
             this.TGroupBoxCliente.Controls.Add(this.TLabelProvincias);
-            this.TGroupBoxCliente.Controls.Add(this.TLabelObligado);
             this.TGroupBoxCliente.Controls.Add(this.TLabelVehiculosAlquiler);
             this.TGroupBoxCliente.Controls.Add(this.listBoxCoches);
             this.TGroupBoxCliente.Controls.Add(this.TLabelSexo);
@@ -99,21 +97,52 @@
             this.TGroupBoxCliente.Controls.Add(this.TLabelApellidos);
             this.TGroupBoxCliente.Controls.Add(this.TLabelNombre);
             this.TGroupBoxCliente.Controls.Add(this.TLabelDNI);
-            this.TGroupBoxCliente.Location = new System.Drawing.Point(37, 59);
+            this.TGroupBoxCliente.Location = new System.Drawing.Point(76, 90);
             this.TGroupBoxCliente.Name = "TGroupBoxCliente";
-            this.TGroupBoxCliente.Size = new System.Drawing.Size(524, 297);
+            this.TGroupBoxCliente.Size = new System.Drawing.Size(581, 334);
             this.TGroupBoxCliente.TabIndex = 46;
             this.TGroupBoxCliente.TabStop = false;
             this.TGroupBoxCliente.Text = "Datos Cliente";
             // 
-            // TLabelObligado
+            // TComboBoxProvincias
             // 
-            this.TLabelObligado.AutoSize = true;
-            this.TLabelObligado.Location = new System.Drawing.Point(401, 271);
-            this.TLabelObligado.Name = "TLabelObligado";
-            this.TLabelObligado.Size = new System.Drawing.Size(108, 13);
-            this.TLabelObligado.TabIndex = 65;
-            this.TLabelObligado.Text = "* Campos obligatorios";
+            this.TComboBoxProvincias.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.TComboBoxProvincias.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.TComboBoxProvincias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TComboBoxProvincias.FormattingEnabled = true;
+            this.TComboBoxProvincias.Location = new System.Drawing.Point(87, 178);
+            this.TComboBoxProvincias.Name = "TComboBoxProvincias";
+            this.TComboBoxProvincias.Size = new System.Drawing.Size(108, 21);
+            this.TComboBoxProvincias.TabIndex = 66;
+            // 
+            // TComboBoxCiudades
+            // 
+            this.TComboBoxCiudades.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.TComboBoxCiudades.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.TComboBoxCiudades.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TComboBoxCiudades.FormattingEnabled = true;
+            this.TComboBoxCiudades.Location = new System.Drawing.Point(87, 200);
+            this.TComboBoxCiudades.Name = "TComboBoxCiudades";
+            this.TComboBoxCiudades.Size = new System.Drawing.Size(108, 21);
+            this.TComboBoxCiudades.TabIndex = 67;
+            // 
+            // TLabelCiudades
+            // 
+            this.TLabelCiudades.AutoSize = true;
+            this.TLabelCiudades.Location = new System.Drawing.Point(29, 208);
+            this.TLabelCiudades.Name = "TLabelCiudades";
+            this.TLabelCiudades.Size = new System.Drawing.Size(40, 13);
+            this.TLabelCiudades.TabIndex = 70;
+            this.TLabelCiudades.Text = "Ciudad";
+            // 
+            // TLabelProvincias
+            // 
+            this.TLabelProvincias.AutoSize = true;
+            this.TLabelProvincias.Location = new System.Drawing.Point(21, 186);
+            this.TLabelProvincias.Name = "TLabelProvincias";
+            this.TLabelProvincias.Size = new System.Drawing.Size(51, 13);
+            this.TLabelProvincias.TabIndex = 69;
+            this.TLabelProvincias.Text = "Provincia";
             // 
             // TLabelVehiculosAlquiler
             // 
@@ -137,9 +166,9 @@
             this.TLabelSexo.AutoSize = true;
             this.TLabelSexo.Location = new System.Drawing.Point(37, 242);
             this.TLabelSexo.Name = "TLabelSexo";
-            this.TLabelSexo.Size = new System.Drawing.Size(35, 13);
+            this.TLabelSexo.Size = new System.Drawing.Size(31, 13);
             this.TLabelSexo.TabIndex = 63;
-            this.TLabelSexo.Text = "*Sexo";
+            this.TLabelSexo.Text = "Sexo";
             // 
             // TRadioButtonM
             // 
@@ -176,9 +205,9 @@
             this.TLabelDireccion.AutoSize = true;
             this.TLabelDireccion.Location = new System.Drawing.Point(20, 163);
             this.TLabelDireccion.Name = "TLabelDireccion";
-            this.TLabelDireccion.Size = new System.Drawing.Size(56, 13);
+            this.TLabelDireccion.Size = new System.Drawing.Size(52, 13);
             this.TLabelDireccion.TabIndex = 59;
-            this.TLabelDireccion.Text = "*Direccion";
+            this.TLabelDireccion.Text = "Direccion";
             // 
             // TTextBoxEmail
             // 
@@ -232,43 +261,43 @@
             // TLabelTelefono1
             // 
             this.TLabelTelefono1.AutoSize = true;
-            this.TLabelTelefono1.Location = new System.Drawing.Point(11, 120);
+            this.TLabelTelefono1.Location = new System.Drawing.Point(24, 120);
             this.TLabelTelefono1.Name = "TLabelTelefono1";
-            this.TLabelTelefono1.Size = new System.Drawing.Size(53, 13);
+            this.TLabelTelefono1.Size = new System.Drawing.Size(49, 13);
             this.TLabelTelefono1.TabIndex = 48;
-            this.TLabelTelefono1.Text = "*Telefono";
+            this.TLabelTelefono1.Text = "Telefono";
             // 
             // TLabelApellidos
             // 
             this.TLabelApellidos.AutoSize = true;
-            this.TLabelApellidos.Location = new System.Drawing.Point(20, 98);
+            this.TLabelApellidos.Location = new System.Drawing.Point(24, 97);
             this.TLabelApellidos.Name = "TLabelApellidos";
-            this.TLabelApellidos.Size = new System.Drawing.Size(53, 13);
+            this.TLabelApellidos.Size = new System.Drawing.Size(49, 13);
             this.TLabelApellidos.TabIndex = 47;
-            this.TLabelApellidos.Text = "*Apellidos";
+            this.TLabelApellidos.Text = "Apellidos";
             // 
             // TLabelNombre
             // 
             this.TLabelNombre.AutoSize = true;
-            this.TLabelNombre.Location = new System.Drawing.Point(25, 76);
+            this.TLabelNombre.Location = new System.Drawing.Point(29, 76);
             this.TLabelNombre.Name = "TLabelNombre";
-            this.TLabelNombre.Size = new System.Drawing.Size(48, 13);
+            this.TLabelNombre.Size = new System.Drawing.Size(44, 13);
             this.TLabelNombre.TabIndex = 46;
-            this.TLabelNombre.Text = "*Nombre";
+            this.TLabelNombre.Text = "Nombre";
             // 
             // TLabelDNI
             // 
             this.TLabelDNI.AutoSize = true;
-            this.TLabelDNI.Location = new System.Drawing.Point(43, 54);
+            this.TLabelDNI.Location = new System.Drawing.Point(46, 54);
             this.TLabelDNI.Name = "TLabelDNI";
-            this.TLabelDNI.Size = new System.Drawing.Size(30, 13);
+            this.TLabelDNI.Size = new System.Drawing.Size(26, 13);
             this.TLabelDNI.TabIndex = 45;
-            this.TLabelDNI.Text = "*DNI";
+            this.TLabelDNI.Text = "DNI";
             // 
             // TButtonFoto
             // 
             this.TButtonFoto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.TButtonFoto.Location = new System.Drawing.Point(660, 175);
+            this.TButtonFoto.Location = new System.Drawing.Point(770, 221);
             this.TButtonFoto.Name = "TButtonFoto";
             this.TButtonFoto.Size = new System.Drawing.Size(56, 23);
             this.TButtonFoto.TabIndex = 47;
@@ -278,66 +307,27 @@
             // TButtonGuardarCliente
             // 
             this.TButtonGuardarCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.TButtonGuardarCliente.Location = new System.Drawing.Point(84, 501);
+            this.TButtonGuardarCliente.Location = new System.Drawing.Point(69, 534);
             this.TButtonGuardarCliente.Name = "TButtonGuardarCliente";
             this.TButtonGuardarCliente.Size = new System.Drawing.Size(75, 23);
             this.TButtonGuardarCliente.TabIndex = 48;
             this.TButtonGuardarCliente.Text = "Guardar";
             this.TButtonGuardarCliente.UseVisualStyleBackColor = true;
             // 
-            // TButtonCancelar
+            // TButtonCerrar
             // 
-            this.TButtonCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.TButtonCancelar.Location = new System.Drawing.Point(165, 501);
-            this.TButtonCancelar.Name = "TButtonCancelar";
-            this.TButtonCancelar.Size = new System.Drawing.Size(75, 23);
-            this.TButtonCancelar.TabIndex = 49;
-            this.TButtonCancelar.Text = "Cancelar";
-            this.TButtonCancelar.UseVisualStyleBackColor = true;
+            this.TButtonCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.TButtonCerrar.Location = new System.Drawing.Point(184, 534);
+            this.TButtonCerrar.Name = "TButtonCerrar";
+            this.TButtonCerrar.Size = new System.Drawing.Size(75, 23);
+            this.TButtonCerrar.TabIndex = 49;
+            this.TButtonCerrar.Text = "Cerrar";
+            this.TButtonCerrar.UseVisualStyleBackColor = true;
+            this.TButtonCerrar.Click += new System.EventHandler(this.TButtonCerrar_Click);
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // TComboBoxProvincias
-            // 
-            this.TComboBoxProvincias.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.TComboBoxProvincias.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.TComboBoxProvincias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.TComboBoxProvincias.FormattingEnabled = true;
-            this.TComboBoxProvincias.Location = new System.Drawing.Point(87, 178);
-            this.TComboBoxProvincias.Name = "TComboBoxProvincias";
-            this.TComboBoxProvincias.Size = new System.Drawing.Size(108, 21);
-            this.TComboBoxProvincias.TabIndex = 66;
-            // 
-            // TComboBoxCiudades
-            // 
-            this.TComboBoxCiudades.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.TComboBoxCiudades.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.TComboBoxCiudades.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.TComboBoxCiudades.FormattingEnabled = true;
-            this.TComboBoxCiudades.Location = new System.Drawing.Point(87, 200);
-            this.TComboBoxCiudades.Name = "TComboBoxCiudades";
-            this.TComboBoxCiudades.Size = new System.Drawing.Size(108, 21);
-            this.TComboBoxCiudades.TabIndex = 67;
-            // 
-            // TLabelCiudades
-            // 
-            this.TLabelCiudades.AutoSize = true;
-            this.TLabelCiudades.Location = new System.Drawing.Point(29, 208);
-            this.TLabelCiudades.Name = "TLabelCiudades";
-            this.TLabelCiudades.Size = new System.Drawing.Size(40, 13);
-            this.TLabelCiudades.TabIndex = 70;
-            this.TLabelCiudades.Text = "Ciudad";
-            // 
-            // TLabelProvincias
-            // 
-            this.TLabelProvincias.AutoSize = true;
-            this.TLabelProvincias.Location = new System.Drawing.Point(21, 186);
-            this.TLabelProvincias.Name = "TLabelProvincias";
-            this.TLabelProvincias.Size = new System.Drawing.Size(51, 13);
-            this.TLabelProvincias.TabIndex = 69;
-            this.TLabelProvincias.Text = "Provincia";
             // 
             // GestionClientes
             // 
@@ -345,13 +335,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(784, 562);
-            this.Controls.Add(this.TButtonCancelar);
+            this.ClientSize = new System.Drawing.Size(894, 608);
+            this.Controls.Add(this.TButtonCerrar);
             this.Controls.Add(this.TButtonGuardarCliente);
             this.Controls.Add(this.TButtonFoto);
             this.Controls.Add(this.TGroupBoxCliente);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GestionClientes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GestionClientes";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.TGroupBoxCliente.ResumeLayout(false);
@@ -384,9 +376,8 @@
         private System.Windows.Forms.RadioButton TRadioButtonM;
         private System.Windows.Forms.RadioButton TRadioButtonH;
         private System.Windows.Forms.Button TButtonGuardarCliente;
-        private System.Windows.Forms.Button TButtonCancelar;
+        private System.Windows.Forms.Button TButtonCerrar;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.Label TLabelObligado;
         private System.Windows.Forms.ComboBox TComboBoxProvincias;
         private System.Windows.Forms.ComboBox TComboBoxCiudades;
         private System.Windows.Forms.Label TLabelCiudades;
