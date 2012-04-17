@@ -399,7 +399,7 @@
             // 
             // TButtonAtras
             // 
-            this.TButtonAtras.Location = new System.Drawing.Point(15, 421);
+            this.TButtonAtras.Location = new System.Drawing.Point(15, 415);
             this.TButtonAtras.Name = "TButtonAtras";
             this.TButtonAtras.Size = new System.Drawing.Size(75, 23);
             this.TButtonAtras.TabIndex = 40;
