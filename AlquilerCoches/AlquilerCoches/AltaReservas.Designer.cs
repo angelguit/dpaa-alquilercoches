@@ -62,9 +62,9 @@
             // 
             // TButtonBuscarCliente
             // 
-            this.TButtonBuscarCliente.Location = new System.Drawing.Point(44, 59);
+            this.TButtonBuscarCliente.Location = new System.Drawing.Point(375, 79);
             this.TButtonBuscarCliente.Name = "TButtonBuscarCliente";
-            this.TButtonBuscarCliente.Size = new System.Drawing.Size(121, 23);
+            this.TButtonBuscarCliente.Size = new System.Drawing.Size(144, 64);
             this.TButtonBuscarCliente.TabIndex = 26;
             this.TButtonBuscarCliente.Text = "Buscar cliente";
             this.TButtonBuscarCliente.UseVisualStyleBackColor = true;
