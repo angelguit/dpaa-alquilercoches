@@ -14,7 +14,7 @@ namespace EN
 {
     public class ENPedidos
     {
-        private int idtransaccion;
+        private string idtransaccion;
         private string proveedor;
         private string marca;
         private string modelo;
@@ -23,12 +23,12 @@ namespace EN
         private string observaciones;
         private string estadopedido;
         private string empleado;
-        private DateTime fecha;
+        private string fecha;
 
         private CAD.CADPedidos cadPedidos = new CAD.CADPedidos();
 
 
-        public int IDTransaccion
+        public string IDTransaccion
         {
             get { return idtransaccion; }
             set { idtransaccion = value; }
@@ -68,7 +68,7 @@ namespace EN
             get { return empleado; }
             set { empleado = value; }
         }
-        public DateTime Fecha
+        public string Fecha
         {
             get { return fecha; }
             set { fecha = value; }
