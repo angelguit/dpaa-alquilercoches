@@ -152,7 +152,7 @@ namespace AlquilerCoches
         private void TButtonVender_Click(object sender, EventArgs e)
         {
             //MODIFICAR COSAS PARA AÑADIR LA VENTA A LA BD
-            if (incorrecto == false)
+            if (incorrecto == false && TTextBoxPrecioVenta.Text != "")
             {
                 guardaCampos();
                 ventas.AnyadirVenta();
@@ -192,6 +192,8 @@ namespace AlquilerCoches
         void rellenaCampos()
         {
             TGroupBoxDatosVehiculo.Enabled = true;
+            TButtonCancelar.Enabled = true;
+            TButtonVender.Enabled = true;
 
             TTextBoxMatricula.Text = vehiculos.Matricula;
             TTextBoxMarca.Text = vehiculos.Marca;
