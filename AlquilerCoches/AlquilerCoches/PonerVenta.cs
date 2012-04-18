@@ -39,6 +39,8 @@ namespace AlquilerCoches
             errorProvider1.Clear();
             TTextBoxMeses.Enabled = false;
             TGroupBoxDatosVehiculo.Enabled = false;
+            TButtonCancelar.Enabled = false;
+            TButtonVender.Enabled = false;
         }
 
         private void PonerVenta_FormClosing(object sender, FormClosingEventArgs e)
@@ -49,7 +51,7 @@ namespace AlquilerCoches
 
         private void TButtonVender_MouseHover(object sender, EventArgs e)
         {
-            TLabelAviso.Text="*El precio de alquiler se pondrá a 0 automáticamente al vender";
+            TLabelAviso.Text="*El vehículo se eliminará de la lista de alquiler automáticamente al vender.";
         }
 
         private void TButtonVender_MouseLeave(object sender, EventArgs e)
@@ -81,13 +83,21 @@ namespace AlquilerCoches
         {
             if (!Regex.Match(TTextBoxKm.Text, @"^\d{1,6}$").Success)
             {
-                errorProvider1.SetError(TTextBoxKm, "KM incorrectos, debe contener solo numeros y no más de 6 dígitos.");
+                errorProvider1.SetError(TTextBoxKm, "KM incorrectos, no puede estar vacío, debe contener solo numeros y no más de 6 dígitos.");
                 incorrecto = true;
             }
             else
             {
-                errorProvider1.SetError(TTextBoxKm, "");
-                incorrecto = false;
+                if (TTextBoxKm.Text == "")
+                {
+                    errorProvider1.SetError(TTextBoxKm, "KM incorrectos, no puede estar vacío, debe contener solo numeros y no más de 6 dígitos.");
+                    incorrecto = true;
+                }
+                else
+                {
+                    errorProvider1.SetError(TTextBoxKm, "");
+                    incorrecto = false;
+                }
             }
         }
 
@@ -172,8 +182,6 @@ namespace AlquilerCoches
 
         private void rellenaMarcas()
         {
-            TGroupBoxDatosVehiculo.Enabled = true;
-
             TListBoxMarcas.Items.Clear();
             TListBoxModelos.Items.Clear();
             TListBoxMatriculas.Items.Clear();
@@ -183,6 +191,8 @@ namespace AlquilerCoches
 
         void rellenaCampos()
         {
+            TGroupBoxDatosVehiculo.Enabled = true;
+
             TTextBoxMatricula.Text = vehiculos.Matricula;
             TTextBoxMarca.Text = vehiculos.Marca;
             TTextBoxModelo.Text = vehiculos.Modelo;
@@ -194,7 +204,14 @@ namespace AlquilerCoches
             ventas.Matricula = TTextBoxMatricula.Text;
             ventas.Marca = TTextBoxMarca.Text;
             ventas.Modelo = TTextBoxModelo.Text;
-            ventas.Garantia = TTextBoxMeses.Text;
+            if (TCheckBoxGarantia.Checked == true)
+            {
+                ventas.Garantia = TTextBoxMeses.Text;
+            }
+            else
+            {
+                ventas.Garantia = "0";
+            }
             ventas.KM = TTextBoxKm.Text;
             ventas.PrecioVenta = TTextBoxPrecioVenta.Text;
         }
@@ -230,11 +247,7 @@ namespace AlquilerCoches
                 vehiculos.Matricula = TListBoxMatriculas.Items[TListBoxMatriculas.SelectedIndex].ToString();
                 vehiculos.ObtenerDatosVehiculos();
                 rellenaCampos();
-
             }
         }
-     
-
-
     }
 }
