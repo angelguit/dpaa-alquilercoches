@@ -72,22 +72,22 @@
             // 
             // TComboBoxCategoria
             // 
+            this.TComboBoxCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TComboBoxCategoria.FormattingEnabled = true;
             this.TComboBoxCategoria.Location = new System.Drawing.Point(258, 232);
             this.TComboBoxCategoria.Name = "TComboBoxCategoria";
             this.TComboBoxCategoria.Size = new System.Drawing.Size(121, 21);
             this.TComboBoxCategoria.TabIndex = 27;
-            this.TComboBoxCategoria.Text = "Seleccione Categoria";
             this.TComboBoxCategoria.TextChanged += new System.EventHandler(this.TComboBoxCategoria_TextChanged);
             // 
             // TComboBoxModelo
             // 
+            this.TComboBoxModelo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TComboBoxModelo.FormattingEnabled = true;
             this.TComboBoxModelo.Location = new System.Drawing.Point(258, 308);
             this.TComboBoxModelo.Name = "TComboBoxModelo";
             this.TComboBoxModelo.Size = new System.Drawing.Size(121, 21);
             this.TComboBoxModelo.TabIndex = 28;
-            this.TComboBoxModelo.Text = "Seleccione Modelo";
             this.TComboBoxModelo.TextChanged += new System.EventHandler(this.TComboBoxModelo_TextChanged);
             // 
             // TLabelCategoria
@@ -122,12 +122,12 @@
             // 
             // TComboBoxMatricula
             // 
+            this.TComboBoxMatricula.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TComboBoxMatricula.FormattingEnabled = true;
             this.TComboBoxMatricula.Location = new System.Drawing.Point(258, 350);
             this.TComboBoxMatricula.Name = "TComboBoxMatricula";
             this.TComboBoxMatricula.Size = new System.Drawing.Size(121, 21);
             this.TComboBoxMatricula.TabIndex = 32;
-            this.TComboBoxMatricula.Text = "Seleccione Matricula";
             // 
             // TLabelConductores
             // 
@@ -232,12 +232,12 @@
             // 
             // TComboBoxMarca
             // 
+            this.TComboBoxMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TComboBoxMarca.FormattingEnabled = true;
             this.TComboBoxMarca.Location = new System.Drawing.Point(258, 272);
             this.TComboBoxMarca.Name = "TComboBoxMarca";
             this.TComboBoxMarca.Size = new System.Drawing.Size(121, 21);
             this.TComboBoxMarca.TabIndex = 44;
-            this.TComboBoxMarca.Text = "Seleccione Marca";
             this.TComboBoxMarca.TextChanged += new System.EventHandler(this.TComboBoxMarca_TextChanged);
             // 
             // TLabelSinCoche
