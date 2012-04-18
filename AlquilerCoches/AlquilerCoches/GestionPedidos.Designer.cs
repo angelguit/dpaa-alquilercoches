@@ -250,10 +250,15 @@
             this.TProveecomboBox1.FormattingEnabled = true;
             this.TProveecomboBox1.Items.AddRange(new object[] {
             "",
-            "FORD"});
+            " HERMANOS ESCLAPEZ S.L.",
+            " MARTÍNEZ E HIJOS S.A.",
+            " TOYOTA SANTA FAZ S.L.",
+            " RENAULT BABEL S.L.",
+            " MERCEDES-BENZ ATALAYAS S.L.",
+            " DACIA LOGAN VIRGEN DEL REMEDIO S.A."});
             this.TProveecomboBox1.Location = new System.Drawing.Point(165, 22);
             this.TProveecomboBox1.Name = "TProveecomboBox1";
-            this.TProveecomboBox1.Size = new System.Drawing.Size(179, 21);
+            this.TProveecomboBox1.Size = new System.Drawing.Size(246, 21);
             this.TProveecomboBox1.TabIndex = 34;
             this.TProveecomboBox1.SelectedIndexChanged += new System.EventHandler(this.TProveecomboBox1_SelectedIndexChanged);
             // 
