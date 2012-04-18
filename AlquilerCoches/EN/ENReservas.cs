@@ -81,9 +81,22 @@ namespace EN
 
             return resultado;
         }
+
         public int EjecutarSentencia(string comando)
         {
             return cadReservas.EjecutarSentencia(comando);
+        }
+
+        public void EliminarReserva(ArrayList numRes)
+        {
+            try
+            {
+                cadReservas.EliminarReserva(numRes);
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
         }
         public string Cliente
         {
