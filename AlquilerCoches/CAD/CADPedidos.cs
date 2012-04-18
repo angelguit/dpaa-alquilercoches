@@ -109,5 +109,27 @@ namespace CAD
             return dsMarc;
         }
 
+
+
+        public DataSet ConseguirModelos(string modelo)
+        {
+            DataSet dsMod = new DataSet();
+
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                String consulta = "Select nom_mod FROM Modelo where num_mod='" + modelo + "'";
+                SqlDataAdapter daMod = new SqlDataAdapter(consulta, conexion);
+                daMod.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daMod.Fill(dsMod, "Modelo"); //dsPersonal es ahora nuestra base de datos local
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+
+            return dsMod;
+        }
+
     }
 }
