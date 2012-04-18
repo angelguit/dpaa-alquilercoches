@@ -51,7 +51,6 @@
             this.gestionVentasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ponerEnVentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mostrarVehículosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mostrarVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionReservasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevaReservaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buscarReservasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -227,8 +226,7 @@
             // 
             this.gestionVentasToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ponerEnVentaToolStripMenuItem,
-            this.mostrarVehículosToolStripMenuItem,
-            this.mostrarVentasToolStripMenuItem});
+            this.mostrarVehículosToolStripMenuItem});
             this.gestionVentasToolStripMenuItem1.Name = "gestionVentasToolStripMenuItem1";
             this.gestionVentasToolStripMenuItem1.Size = new System.Drawing.Size(97, 20);
             this.gestionVentasToolStripMenuItem1.Text = "Gestion Ventas";
@@ -236,23 +234,16 @@
             // ponerEnVentaToolStripMenuItem
             // 
             this.ponerEnVentaToolStripMenuItem.Name = "ponerEnVentaToolStripMenuItem";
-            this.ponerEnVentaToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.ponerEnVentaToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.ponerEnVentaToolStripMenuItem.Text = "Poner en Venta";
             this.ponerEnVentaToolStripMenuItem.Click += new System.EventHandler(this.ponerEnVentaToolStripMenuItem_Click);
             // 
             // mostrarVehículosToolStripMenuItem
             // 
             this.mostrarVehículosToolStripMenuItem.Name = "mostrarVehículosToolStripMenuItem";
-            this.mostrarVehículosToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
-            this.mostrarVehículosToolStripMenuItem.Text = "Mostrar Vehículos";
+            this.mostrarVehículosToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.mostrarVehículosToolStripMenuItem.Text = "Ver y Editar Ventas";
             this.mostrarVehículosToolStripMenuItem.Click += new System.EventHandler(this.mostrarVehículosToolStripMenuItem_Click);
-            // 
-            // mostrarVentasToolStripMenuItem
-            // 
-            this.mostrarVentasToolStripMenuItem.Name = "mostrarVentasToolStripMenuItem";
-            this.mostrarVentasToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
-            this.mostrarVentasToolStripMenuItem.Text = "Mostrar Ventas Realizadas";
-            this.mostrarVentasToolStripMenuItem.Click += new System.EventHandler(this.mostrarVentasToolStripMenuItem_Click);
             // 
             // gestionReservasToolStripMenuItem
             // 
@@ -529,7 +520,6 @@
         private System.Windows.Forms.ToolStripMenuItem TToolStripMenuItemBuscarFactura;
         private System.Windows.Forms.ToolStripMenuItem ponerEnVentaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mostrarVehículosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mostrarVentasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem buscarOModificarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem darDeAltaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem buscarModificarOEliminarToolStripMenuItem;

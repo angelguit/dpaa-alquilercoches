@@ -242,22 +242,6 @@ namespace AlquilerCoches
                 //F9.WindowState = FormWindowState.Maximized;
             }
         }
-
-        private void mostrarVentasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (Application.OpenForms["GestionVentas"] != null)
-            {
-                Application.OpenForms["GestionVentas"].Activate();
-            }
-            else
-            {
-                GestionVentas F10 = new GestionVentas();
-                F10.MdiParent = this;
-                F10.Show();
-                //F10.WindowState = FormWindowState.Maximized;
-            }
-        }
-
    
         private void buscarOModificarToolStripMenuItem_Click(object sender, EventArgs e)
         {
