@@ -261,7 +261,6 @@
             // 
             // TTextBoxModelo
             // 
-            this.TTextBoxModelo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TTextBoxModelo.Location = new System.Drawing.Point(80, 79);
             this.TTextBoxModelo.Name = "TTextBoxModelo";
             this.TTextBoxModelo.ReadOnly = true;
@@ -279,7 +278,6 @@
             // 
             // TTextBoxMarca
             // 
-            this.TTextBoxMarca.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TTextBoxMarca.Location = new System.Drawing.Point(80, 49);
             this.TTextBoxMarca.Name = "TTextBoxMarca";
             this.TTextBoxMarca.ReadOnly = true;
@@ -315,7 +313,6 @@
             // 
             // TTextBoxMatricula
             // 
-            this.TTextBoxMatricula.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TTextBoxMatricula.Location = new System.Drawing.Point(80, 23);
             this.TTextBoxMatricula.Name = "TTextBoxMatricula";
             this.TTextBoxMatricula.ReadOnly = true;
