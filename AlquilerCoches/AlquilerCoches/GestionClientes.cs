@@ -12,6 +12,8 @@ namespace AlquilerCoches
 {
     public partial class GestionClientes : Form
     {
+        public EN.ENCliente enCliPub = new EN.ENCliente();
+        public bool cambios = false;
         public GestionClientes()
         {
             InitializeComponent();
@@ -35,6 +37,8 @@ namespace AlquilerCoches
 
             TButtonGuardarCliente.Text = nombrebotonguardar; // importante le cambiamos el nombre al boton para saber que venimos del formulario buscar, y estamos editando no guardando uno nuevo
             TButtonGuardarCliente.Size = new Size(105, 24);
+
+            
         }
             
         public GestionClientes(string nombre,string dni, string apell, string telef, string mail, string direc, string ciu, string prov, string puesac, string nombrebotonguardar)//constructor sobrecargado
@@ -265,6 +269,18 @@ namespace AlquilerCoches
                 MessageBox.Show("Si desea cambiar la ciudad debe de volver a seleccionar una provincia", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+         private void TButtonGuardarCliente_Click(object sender, EventArgs e)
+         {
+             cambios = true;
+             enCliPub.DNI = TTextBoxDNI.Text.ToString();
+             enCliPub.Nombre = TTextBoxNombre.Text.ToString();
+             enCliPub.Apellidos = TTextBoxApellidos.Text.ToString();
+             enCliPub.Telefono = Int32.Parse(TTextBoxTelefono.Text.ToString());
+             enCliPub.Email = TTextBoxEmail.Text.ToString();
+             enCliPub.Direccion = TTextBoxDireccion.Text.ToString();
+             Close();
+         }
 
 
 
