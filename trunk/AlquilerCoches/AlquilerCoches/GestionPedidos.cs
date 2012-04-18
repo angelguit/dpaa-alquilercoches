@@ -160,6 +160,7 @@ namespace AlquilerCoches
 
         private void TProveecomboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             if(TProveecomboBox1.SelectedIndex==0)
             {
                 errorProvider1.SetError(TProveecomboBox1, "Seleccione un proveedor");
@@ -167,13 +168,39 @@ namespace AlquilerCoches
             }
         }
 
+        private DataSet numMarca;// usado en funcion TComboBoxCiudades_Click
+        private void ObtenerMarcas(DataSet dsMarc)
+        {
+            TMarcacomboBox2.Text = "Seleccione Marca del coche";
+            TMarcacomboBox2.DataSource = dsMarc.Tables["Marca"];
+            TMarcacomboBox2.DisplayMember = dsMarc.Tables["Marca"].Columns[1].Caption.ToString(); // como dsProv lleva el id_prov y el nombre ponemos 1 que es la columna del nombre
+            // TComboBoxProvincias.DisplayMember = dsProv.Tables["Provincia"].Columns[0].Caption.ToString(); // como dsProv lleva el id_prov y el nombre ponemos 1 que es la columna del nombre
+
+
+            numMarca= new DataSet();
+            numMarca = dsMarc;
+
+
+        }
+
+        private void ObtenerModelos(DataSet dsMod)
+        {
+            TModelocomboBox3.Text = "Seleccione Modelo coche";
+            TModelocomboBox3.DataSource = dsMod.Tables["Modelo"];
+            TModelocomboBox3.DisplayMember = dsMod.Tables["Modelo"].Columns[0].Caption.ToString();
+        }
         private void TMarcacomboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
+             
             if (TMarcacomboBox2.SelectedIndex == 0)
             {
                 errorProvider1.SetError(TMarcacomboBox2, "Seleccione una marca");
                 incorrecto = true;
             }
+            EN.ENPedidos enMarc = new EN.ENPedidos();
+            DataSet dsMarc = new DataSet();
+            dsMarc = enMarc.ObtenerListaMarcas();
+            ObtenerMarcas(dsMarc);
 
         }
 
