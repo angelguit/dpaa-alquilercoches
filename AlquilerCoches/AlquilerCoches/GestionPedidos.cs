@@ -255,7 +255,7 @@ namespace AlquilerCoches
                 string marc = TMarcacomboBox2.Text.ToString();
                 bool parar = false;
                 // MessageBox.Show(numProvincia.Tables["Provincia"].Rows.Count.ToString());
-                for (int i = 0; i < 15 && parar != true; i++)
+                for (int i = 0; i < 16 && parar != true; i++)
                 {
                     //MessageBox.Show(numProvincia.Tables["Provincia"].Rows[i][1].ToString());
                     if (numMarca.Tables["Marca"].Rows[i][1].ToString() == marc)
