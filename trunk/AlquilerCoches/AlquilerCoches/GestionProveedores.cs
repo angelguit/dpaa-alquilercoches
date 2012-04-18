@@ -12,9 +12,27 @@ namespace AlquilerCoches
 {
     public partial class GestionProveedores : Form
     {
-        public GestionProveedores(string cif, string marca,string calle,int numero,int telefono,string email,string ciudad,string provincia,int  codigopostal,string horario)
+        private string accionGuardar = "";
+        public GestionProveedores(string cif, string marca,string calle,int numero,int telefono,string email,string ciudad,string provincia,int  codigopostal,string horario,string accion)
         {
             InitializeComponent();
+            accionGuardar = accion;
+            if (accion == "modificar")
+            {
+                TTextBoxCIF.Enabled = false;
+                TTextBoxCalle.Text = calle;
+                TTextBoxCIF.Text = cif;
+                TTextBoxCPostal.Text = codigopostal.ToString();
+                TTextBoxEmail.Text = email;
+                TTextBoxHorario.Text = horario;
+                TTextBoxMarca.Text = marca;
+                TTextBoxNumero.Text = numero.ToString();
+                TTextBoxTelefono.Text = telefono.ToString();
+                TComboBoxProvincias.Items.Add(provincia);
+                TComboBoxProvincias.SelectedIndex = 0;
+                TComboBoxCiudades.Items.Add(ciudad);
+                TComboBoxCiudades.SelectedIndex = 0;
+            }
         }
 
         private void GestionProveedores_Load(object sender, EventArgs e)
@@ -234,27 +252,53 @@ namespace AlquilerCoches
             }
             else
             {
-                EN.ENProveedores insertar = new EN.ENProveedores();
-                DataSet existe = new DataSet();
-                //comprobar si existe en la BD
-                //string cadena = "CIF= " + TTextBoxCIF.Text + "";
-                //existe = insertar.ObtenerListaProveedores(cadena);
+                if (accionGuardar == "modificar")//editar proveedor
+                {
+                    EN.ENProveedores modificar = new EN.ENProveedores();
+
+                    modificar.CIF = TTextBoxCIF.Text;
+                    modificar.Marca = TTextBoxMarca.Text;
+                    modificar.Calle = TTextBoxCalle.Text;
+                    modificar.Numero = Int32.Parse(TTextBoxNumero.Text);
+                    modificar.Telefono = Int32.Parse(TTextBoxTelefono.Text);
+                    modificar.Email = TTextBoxEmail.Text;
+                    modificar.Ciudad = TComboBoxCiudades.Text;
+                    modificar.Provincia = TComboBoxProvincias.Text;
+                    modificar.Codigopostal = Int32.Parse(TTextBoxCPostal.Text);
+                    modificar.Horario = TTextBoxHorario.Text;
+
+                    modificar.modificarProveedorEN();
+
+                    //Close();
+                }
+                else//guardar nuevo proveedor
+                {
+                    MessageBox.Show("guardando");
+                    EN.ENProveedores insertar = new EN.ENProveedores();
+                    DataSet existe = new DataSet();
+                    //comprobar si existe en la BD
+                    //string cadena = " CIF= " + TTextBoxCIF.Text + "";
+                    //existe = insertar.ObtenerListaProveedores(cadena);
+                    //int afectadas = existe.ExecuteNonQuery();
+                    //existe
+                    //ExecuteNonQuery
 
 
-                //insertar datos
-                insertar.CIF = TTextBoxCIF.Text;
-                MessageBox.Show(insertar.CIF);
-                insertar.Marca = TTextBoxMarca.Text;
-                insertar.Calle = TTextBoxCalle.Text;
-                insertar.Numero = Int32.Parse(TTextBoxNumero.Text);
-                insertar.Telefono = Int32.Parse(TTextBoxTelefono.Text);
-                insertar.Email = TTextBoxEmail.Text;
-                insertar.Ciudad = TComboBoxCiudades.Text;
-                insertar.Provincia = TComboBoxProvincias.Text;
-                insertar.Codigopostal = Int32.Parse(TTextBoxCPostal.Text);
-                insertar.Horario = TTextBoxHorario.Text;
+                    //insertar datos
+                    insertar.CIF = TTextBoxCIF.Text;
+                    MessageBox.Show(insertar.CIF);
+                    insertar.Marca = TTextBoxMarca.Text;
+                    insertar.Calle = TTextBoxCalle.Text;
+                    insertar.Numero = Int32.Parse(TTextBoxNumero.Text);
+                    insertar.Telefono = Int32.Parse(TTextBoxTelefono.Text);
+                    insertar.Email = TTextBoxEmail.Text;
+                    insertar.Ciudad = TComboBoxCiudades.Text;
+                    insertar.Provincia = TComboBoxProvincias.Text;
+                    insertar.Codigopostal = Int32.Parse(TTextBoxCPostal.Text);
+                    insertar.Horario = TTextBoxHorario.Text;
 
-                insertar.InsertarProveedorEN();
+                    insertar.InsertarProveedorEN();
+                }
             }
         }
 
