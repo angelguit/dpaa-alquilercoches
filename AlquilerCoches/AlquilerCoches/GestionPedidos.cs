@@ -22,7 +22,14 @@ namespace AlquilerCoches
         private void GestionPedidos_Load(object sender, EventArgs e)
         {            
             TEstadoTextBox.Text = "   ABIERTO";
-
+            EN.ENPedidos enMarc = new EN.ENPedidos();
+            DataSet dsMarc = new DataSet();
+            dsMarc = enMarc.ObtenerListaMarcas();
+            ObtenerMarcas(dsMarc);
+          //  try
+            //{
+                
+                
 
         }
         
@@ -211,7 +218,7 @@ namespace AlquilerCoches
         }
 
 
-        private void TMarcacomboBox2_Click(object sender, EventArgs e)
+       /* private void TMarcacomboBox2_Click(object sender, EventArgs e)
         {
             
             EN.ENPedidos enMarc = new EN.ENPedidos();
@@ -219,7 +226,7 @@ namespace AlquilerCoches
             dsMarc = enMarc.ObtenerListaMarcas();
             ObtenerMarcas(dsMarc);
         
-        }
+        }*/
 
         private void TModelocomboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -233,13 +240,13 @@ namespace AlquilerCoches
 
 
 
-        private void TModelocomboBox3_Click(object sender, EventArgs e)
+        /*private void TModelocomboBox3_Click(object sender, EventArgs e)
         {
 
             EN.ENPedidos enMod = new EN.ENPedidos();
             DataSet dsMod = new DataSet();
-            try
-            {
+          //  try
+            //{
                 string marc = TMarcacomboBox2.Text.ToString();
                 bool parar = false;
                 // MessageBox.Show(numProvincia.Tables["Provincia"].Rows.Count.ToString());
@@ -248,22 +255,25 @@ namespace AlquilerCoches
                     //MessageBox.Show(numProvincia.Tables["Provincia"].Rows[i][1].ToString());
                     if (numMarca.Tables["Marca"].Rows[i][1].ToString() == marc)
                     {
+     
                         string num_marc = numMarca.Tables["Marca"].Rows[i][0].ToString();// en la posicion 0 esta el id de la provincia
                         parar = true;
+                        
                         dsMod = enMod.ObtenerListaModelos(num_marc);
-
+                      
                     }
                 }
                 ObtenerModelos(dsMod);
-            }
-            catch (Exception ex)
+                
+          //  }
+         /*   catch (Exception ex)
             {
                 MessageBox.Show("Si desea cambiar el modelo debe cambiar la marca", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            
 
 
-
-        }
+        }*/
 
         private void TObservTextBox_TextChanged(object sender, EventArgs e)
         {
@@ -303,6 +313,23 @@ namespace AlquilerCoches
                 incorrecto = true;
             }
             else { errorProvider1.SetError(TObservTextBox, ""); } 
+        }
+
+        private void TMarcacomboBox2_TextChanged(object sender, EventArgs e)
+        {
+            if (TMarcacomboBox2.Text != "")
+            {
+                EN.ENPedidos enMod = new EN.ENPedidos();
+                DataSet dsMod = new DataSet();
+                string marc = TMarcacomboBox2.Text.ToString();
+                MessageBox.Show("Campos invalidos, " + marc, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string num_marc = enMod.ObtenerNumMarca(marc);
+        
+
+                dsMod = enMod.ObtenerListaModelos(num_marc);
+
+                ObtenerModelos(dsMod);
+            }
         }
     }
 }

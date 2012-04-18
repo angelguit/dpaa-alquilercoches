@@ -224,10 +224,9 @@
             this.TModelocomboBox3.FormattingEnabled = true;
             this.TModelocomboBox3.Location = new System.Drawing.Point(165, 89);
             this.TModelocomboBox3.Name = "TModelocomboBox3";
-            this.TModelocomboBox3.Size = new System.Drawing.Size(177, 21);
+            this.TModelocomboBox3.Size = new System.Drawing.Size(234, 21);
             this.TModelocomboBox3.TabIndex = 36;
             this.TModelocomboBox3.SelectedIndexChanged += new System.EventHandler(this.TModelocomboBox3_SelectedIndexChanged);
-            this.TModelocomboBox3.Click += new System.EventHandler(this.TModelocomboBox3_Click);
             this.TModelocomboBox3.Leave += new System.EventHandler(this.TMarcacomboBox2_Leave);
             // 
             // TMarcacomboBox2
@@ -236,10 +235,10 @@
             this.TMarcacomboBox2.FormattingEnabled = true;
             this.TMarcacomboBox2.Location = new System.Drawing.Point(165, 55);
             this.TMarcacomboBox2.Name = "TMarcacomboBox2";
-            this.TMarcacomboBox2.Size = new System.Drawing.Size(179, 21);
+            this.TMarcacomboBox2.Size = new System.Drawing.Size(234, 21);
             this.TMarcacomboBox2.TabIndex = 35;
             this.TMarcacomboBox2.SelectedIndexChanged += new System.EventHandler(this.TMarcacomboBox2_SelectedIndexChanged);
-            this.TMarcacomboBox2.Click += new System.EventHandler(this.TMarcacomboBox2_Click);
+            this.TMarcacomboBox2.TextChanged += new System.EventHandler(this.TMarcacomboBox2_TextChanged);
             // 
             // TProveecomboBox1
             // 
