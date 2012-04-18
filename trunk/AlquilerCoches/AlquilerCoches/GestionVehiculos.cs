@@ -47,22 +47,22 @@ namespace AlquilerCoches
             TListBoxMarcas.Items.Clear();
             TListBoxMatriculas.Items.Clear();
             TListBoxModelos.Items.Clear();
-            TTextBoxAnyo.Text = "";
+            //TTextBoxAnyo.Text = "";
             TTextBoxGarantia.Text = "";
             TTextBoxKM.Text = "";
             TTextBoxMarca.Text = "";
             TTextBoxMatricula.Text = "";
             TTextBoxModelo.Text = "";
-            TTextBoxCategoria.Text = "";
+            //TTextBoxCategoria.Text = "";
             TTextBoxPrecioCompra.Text = "";
             TTextBoxPrecioVenta.Text = "";
-            TTextBoxAnyo.Enabled = true;
+            //TTextBoxAnyo.Enabled = true;
             TTextBoxGarantia.Enabled = true;
             TTextBoxKM.Enabled = true;
             TTextBoxMarca.Enabled = true;
             TTextBoxMatricula.Enabled = true;
             TTextBoxModelo.Enabled = true;
-            TTextBoxCategoria.Enabled = true;
+            //TTextBoxCategoria.Enabled = true;
             TTextBoxPrecioCompra.Enabled = true;
             TTextBoxPrecioVenta.Enabled = true;
             TButtonOK.Enabled = false;
@@ -80,9 +80,9 @@ namespace AlquilerCoches
 
         private void TTextBoxMatricula_TextChanged(object sender, EventArgs e)
         {
-            if (!Regex.IsMatch(TTextBoxMatricula.Text, @"^\d{4}\w$"))
+            if (!Regex.IsMatch(TTextBoxMatricula.Text, @"^\d{4}\w{3}$"))
             {
-                errorProvider1.SetError(TTextBoxMatricula, "Formato de la matricula: ddddx");
+                errorProvider1.SetError(TTextBoxMatricula, "Formato de la matricula: ddddxxx");
             }
             else
             {
@@ -95,7 +95,7 @@ namespace AlquilerCoches
         {
             if (!Regex.IsMatch(TTextBoxMarca.Text, @"^\w+$"))
             {
-                errorProvider1.SetError(TTextBoxMarca, "Solo se adminten nombres con letras");
+                errorProvider1.SetError(TTextBoxMarca, "Solo se adminten Marcas con letras");
             }
             else
             {
@@ -107,14 +107,14 @@ namespace AlquilerCoches
         {
             if (!Regex.IsMatch(TTextBoxModelo.Text, @"^[\w\d]+$"))
             {
-                errorProvider1.SetError(TTextBoxModelo, "Solo se adminten nombres con letras y numeros");
+                errorProvider1.SetError(TTextBoxModelo, "Solo se adminten Modelos con letras y numeros");
             }
             else
             {
                 errorProvider1.SetError(TTextBoxModelo, "");
             }
         }
-
+        /*
         private void TTextBoxAnyo_TextChanged(object sender, EventArgs e)
         {
             if (!Regex.IsMatch(TTextBoxAnyo.Text, @"^\d{4}$"))
@@ -133,7 +133,7 @@ namespace AlquilerCoches
                 }
             }
         }
-
+        */
         private void TTextBoxPrecioCompra_TextChanged(object sender, EventArgs e)
         {
             if (!Regex.IsMatch(TTextBoxPrecioCompra.Text, @"^\d+$"))
@@ -171,7 +171,7 @@ namespace AlquilerCoches
                 }
             }
         }
-
+        /*
         private void TTextBoxPrecioAlquiler_TextChanged(object sender, EventArgs e)
         {
             if (!Regex.IsMatch(TTextBoxCategoria.Text, @"^\d+$"))
@@ -190,7 +190,7 @@ namespace AlquilerCoches
                 }
             }
         }
-
+        */
         private void TTextBoxKM_TextChanged(object sender, EventArgs e)
         {
             if (!Regex.IsMatch(TTextBoxKM.Text, @"^\d+$"))
@@ -408,8 +408,8 @@ namespace AlquilerCoches
             TTextBoxMatricula.Text = vehiculos.Matricula;
             TTextBoxMarca.Text = vehiculos.Marca;
             TTextBoxModelo.Text = vehiculos.Modelo;
-            TTextBoxCategoria.Text = vehiculos.Categoria;
-            TTextBoxAnyo.Text = vehiculos.Anyo.ToString();
+            rellenaCategorias();
+             
             TTextBoxGarantia.Text = vehiculos.Garantia;
             TTextBoxKM.Text = vehiculos.KM.ToString();
             TTextBoxPrecioCompra.Text = vehiculos.PrecioCompra.ToString();
@@ -422,13 +422,23 @@ namespace AlquilerCoches
             vehiculos.Matricula = TTextBoxMatricula.Text;
             vehiculos.Marca = TTextBoxMarca.Text;
             vehiculos.Modelo = TTextBoxModelo.Text;
-            vehiculos.Categoria = TTextBoxCategoria.Text;
-            vehiculos.Anyo = TTextBoxAnyo.Text;
+            
+            //vehiculos.Categoria = TTextBoxCategoria.Text;
+            //vehiculos.Anyo = TTextBoxAnyo.Text;
             vehiculos.Garantia = TTextBoxGarantia.Text;
             vehiculos.KM = TTextBoxKM.Text;
             vehiculos.PrecioCompra = TTextBoxPrecioCompra.Text;
             vehiculos.PrecioVenta = TTextBoxPrecioVenta.Text;
             vehiculos.Estado = (TRadioButtonEstado.Checked) ? "Disponible" : "Revision";
+        }
+
+        void rellenaCategorias()
+        {
+            DataSet dsProv = vehiculos.ObtenerCategorias();
+
+            TComboBoxCategoria.DataSource = dsProv.Tables["Categoria"];
+            TComboBoxCategoria.DisplayMember = dsProv.Tables["Categoria"].Columns[0].Caption.ToString();
+            TComboBoxCategoria.SelectedIndex = -1;
         }
     }
 }
