@@ -148,7 +148,7 @@ namespace AlquilerCoches
             
         }
 
-        private void numericUpDown1__Leave(object sender, EventArgs e)
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
             if (!Regex.Match(numericUpDown1.Text, @"^[1-9]{1}$").Success)
             {
@@ -158,7 +158,7 @@ namespace AlquilerCoches
             else { errorProvider1.SetError(numericUpDown1, ""); }
         }
 
-        private void TProveecomboBox1_Leave(object sender, EventArgs e)
+        private void TProveecomboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
             if(TProveecomboBox1.SelectedIndex==0)
@@ -189,7 +189,7 @@ namespace AlquilerCoches
             TModelocomboBox3.DataSource = dsMod.Tables["Modelo"];
             TModelocomboBox3.DisplayMember = dsMod.Tables["Modelo"].Columns[0].Caption.ToString();
         }
-        private void TMarcacomboBox2_Leave(object sender, EventArgs e)
+        private void TMarcacomboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
           
             if (TMarcacomboBox2.SelectedIndex == 0)
@@ -203,18 +203,9 @@ namespace AlquilerCoches
         }
 
 
-        private void TMarcacomboBox2_Click_1(object sender, EventArgs e)
+        private void TMarcacomboBox2_Click(object sender, EventArgs e)
         {
-            /*
-            if (TModelocomboBox3.Items.Count > 0) //lo dejamos en blanco por si hubiera alguna ciudad, para realizar nueva busqueda de provincia
-            {
-                // MessageBox.Show("hola");
-                if (TModelocomboBox3.Items.Count == 1)
-                    TModelocomboBox3.Items.Clear();
-
-                TModelocomboBox3.DataSource = null;
-            }
-              */
+            
             EN.ENPedidos enMarc = new EN.ENPedidos();
             DataSet dsMarc = new DataSet();
             dsMarc = enMarc.ObtenerListaMarcas();
