@@ -124,18 +124,28 @@ namespace EN
         public DataSet ObtenerListaModelos(string modelo)
         {
             DataSet resultado = new DataSet();
+            /*try
+            {*/
+                resultado = cadPedidos.ConseguirModelos(modelo);
+            /*}
+            catch (Exception ex)
+            {
+                throw (ex);
+            }*/
+            return resultado;
+        }
+
+        public string ObtenerNumMarca(string marca)
+        {
             try
             {
-                resultado = cadPedidos.ConseguirModelos(modelo);
+                return cadPedidos.ObtenerNumMarca(marca);
             }
             catch (Exception ex)
             {
                 throw (ex);
             }
-            return resultado;
         }
-
-
       
   /*      public void EditarPedidos()
         {
