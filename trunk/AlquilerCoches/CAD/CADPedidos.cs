@@ -96,10 +96,10 @@ namespace CAD
             try
             {
                 SqlConnection conexion = new SqlConnection(cadenaConexion);
-                String consulta = "Select id_marca,marca FROM Marcas";
+                String consulta = "Select id_marca,marca FROM Marca";
                 SqlDataAdapter daMarc = new SqlDataAdapter(consulta, conexion);
                 daMarc.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-                daMarc.Fill(dsMarc, "Marcas"); //dsPersonal es ahora nuestra base de datos local
+                daMarc.Fill(dsMarc, "Marca"); //dsPersonal es ahora nuestra base de datos local
             }
             catch (Exception ex)
             {
