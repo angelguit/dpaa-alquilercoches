@@ -39,6 +39,7 @@ namespace AlquilerCoches
             TTextBoxMeses.Enabled = false;
             TGroupBoxDatosVehiculo.Enabled = false;
             TButtonBorrar.Enabled = false;
+            TTextBoxMatricula.Enabled = false;
         }
 
         private void rellenaMarcas()
@@ -63,7 +64,7 @@ namespace AlquilerCoches
                 TCheckBoxGarantia.Checked = true;
                 TTextBoxMeses.Text = ventas.Garantia;
             }
-            TTextBoxPrecioVenta.Text = ventas.PrecioVenta;
+            TTextBoxPrecioVenta.Text = ventas.PrecioVenta.ToString();
         }
 
         void guardaCampos()
@@ -105,9 +106,9 @@ namespace AlquilerCoches
 
         private void TextBoxMatricula_Leave(object sender, EventArgs e)
         {
-            if (!Regex.Match(TTextBoxMatricula.Text, @"^\d{4}-[A-Za-z]{3}$").Success)
+            if (!Regex.Match(TTextBoxMatricula.Text, @"^\d{4}\w{3}$").Success)
             {
-                errorProvider1.SetError(TTextBoxMatricula, "Matrícula incorrecta. Formato 0000-XXX");
+                errorProvider1.SetError(TTextBoxMatricula, "Matrícula incorrecta. Formato 0000XXX");
                 incorrecto = true;
             }
             else
@@ -256,6 +257,7 @@ namespace AlquilerCoches
                 ventas.Matricula = TListBoxMatriculas.Items[TListBoxMatriculas.SelectedIndex].ToString();
                 ventas.ObtenerDatosVehiculos();
                 rellenaCampos();
+                TButtonBorrar.Enabled = true;
             }
         }
 
