@@ -107,7 +107,19 @@ namespace EN
             }
         }
 
-
+        public DataSet ObtenerListaMarcas()
+        {
+            DataSet resultado = new DataSet();
+            try
+            {
+                resultado = cadPedidos.ConseguirMarcas();
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            return resultado;
+        }
 
   /*      public void EditarPedidos()
         {
