@@ -239,6 +239,7 @@
             this.TMarcacomboBox2.TabIndex = 35;
             this.TMarcacomboBox2.SelectedIndexChanged += new System.EventHandler(this.TMarcacomboBox2_SelectedIndexChanged);
             this.TMarcacomboBox2.TextChanged += new System.EventHandler(this.TMarcacomboBox2_TextChanged);
+            this.TMarcacomboBox2.Click += new System.EventHandler(this.TMarcacomboBox2_Click);
             // 
             // TProveecomboBox1
             // 
