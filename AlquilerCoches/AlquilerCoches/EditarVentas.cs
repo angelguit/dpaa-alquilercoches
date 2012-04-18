@@ -59,7 +59,7 @@ namespace AlquilerCoches
             TTextBoxMarca.Text = ventas.Marca;
             TTextBoxModelo.Text = ventas.Modelo;
             TTextBoxKm.Text = ventas.KM.ToString();
-            if (ventas.Garantia != "")
+            if (ventas.Garantia != "" && ventas.Garantia != "0")
             {
                 TCheckBoxGarantia.Checked = true;
                 TTextBoxMeses.Text = ventas.Garantia;
@@ -283,6 +283,8 @@ namespace AlquilerCoches
                 ventas.ClearEnVentas();
                 ventas.Matricula = TTextBoxMatricula.Text;
                 ventas.BorrarVentas();
+                limpiaFormulario();
+                rellenaMarcas();
            }
             
         }
