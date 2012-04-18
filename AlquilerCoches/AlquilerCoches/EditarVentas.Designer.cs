@@ -78,6 +78,7 @@
             this.TListBoxMatriculas.Name = "TListBoxMatriculas";
             this.TListBoxMatriculas.Size = new System.Drawing.Size(253, 147);
             this.TListBoxMatriculas.TabIndex = 58;
+            this.TListBoxMatriculas.SelectedIndexChanged += new System.EventHandler(this.TListBoxMatriculas_SelectedIndexChanged);
             // 
             // TListBoxModelos
             // 
@@ -87,6 +88,7 @@
             this.TListBoxModelos.Name = "TListBoxModelos";
             this.TListBoxModelos.Size = new System.Drawing.Size(253, 147);
             this.TListBoxModelos.TabIndex = 57;
+            this.TListBoxModelos.SelectedIndexChanged += new System.EventHandler(this.TListBoxModelos_SelectedIndexChanged);
             // 
             // TListBoxMarcas
             // 
@@ -95,6 +97,7 @@
             this.TListBoxMarcas.Name = "TListBoxMarcas";
             this.TListBoxMarcas.Size = new System.Drawing.Size(253, 147);
             this.TListBoxMarcas.TabIndex = 56;
+            this.TListBoxMarcas.SelectedIndexChanged += new System.EventHandler(this.TListBoxMarcas_SelectedIndexChanged);
             // 
             // TLabelMatriculas
             // 
