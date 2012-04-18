@@ -316,6 +316,7 @@
             this.TButtonGuardarCliente.TabIndex = 48;
             this.TButtonGuardarCliente.Text = "Guardar";
             this.TButtonGuardarCliente.UseVisualStyleBackColor = true;
+            this.TButtonGuardarCliente.Click += new System.EventHandler(this.TButtonGuardarCliente_Click);
             // 
             // TButtonCerrar
             // 

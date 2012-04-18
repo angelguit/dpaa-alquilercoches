@@ -323,10 +323,10 @@ namespace AlquilerCoches
                 DataSet dsMod = new DataSet();
                 string marc = TMarcacomboBox2.Text.ToString();
                 MessageBox.Show("Campos invalidos, " + marc, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                string num_marc = enMod.ObtenerNumMarca(marc);
+               //string num_marc = enMod.ObtenerNumMarca(marc);
         
 
-                dsMod = enMod.ObtenerListaModelos(num_marc);
+                //dsMod = enMod.ObtenerListaModelos(num_marc);
 
                 ObtenerModelos(dsMod);
             }

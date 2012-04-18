@@ -231,9 +231,18 @@ namespace AlquilerCoches
 
         private void TButtonEditar_Click(object sender, EventArgs e)
         {
+            EN.ENCliente enCli = new EN.ENCliente();
             GestionClientes Formu = new GestionClientes(enCliente,"Guardar Cambios",provincias,ciudades);
             Formu.StartPosition = FormStartPosition.CenterScreen;
             Formu.ShowDialog();
+            enCli = Formu.enCliPub;
+            if (Formu.cambios)
+            {
+                TLabelNombre.Text = "Nombre: " + enCli.Nombre + "Apellidos: " + enCli.Apellidos;
+                TLabelDNI.Text = "DNI: " + enCli.DNI + " " + "Telf: " + enCli.Telefono;
+                TLabelDirec.Text = "Direccion: " + enCli.Direccion;
+            }
+
         }
     }
 }
