@@ -19,7 +19,7 @@ namespace AlquilerCoches
         {
             InitializeComponent();
             limpiaFormulario();
-            //rellenaMarcas();
+           // rellenaMarcas();
         }
 
         public void limpiaFormulario()
@@ -38,6 +38,7 @@ namespace AlquilerCoches
             errorProvider1.Clear();
             TTextBoxMeses.Enabled = false;
             TGroupBoxDatosVehiculo.Enabled = false;
+            TButtonBorrar.Enabled = false;
         }
 
         private void TTextBoxMeses_Click(object sender, EventArgs e)

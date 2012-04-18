@@ -55,6 +55,7 @@
             this.TTextBoxMatricula = new System.Windows.Forms.TextBox();
             this.TLabelMatricula = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.TButtonBorrar = new System.Windows.Forms.Button();
             this.TGroupBoxDatosVehiculo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -129,6 +130,7 @@
             this.TGroupBoxDatosVehiculo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.TGroupBoxDatosVehiculo.BackColor = System.Drawing.Color.Transparent;
+            this.TGroupBoxDatosVehiculo.Controls.Add(this.TButtonBorrar);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelObligatorio);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TTextBoxMeses);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TCheckBoxGarantia);
@@ -148,7 +150,7 @@
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelMatricula);
             this.TGroupBoxDatosVehiculo.Location = new System.Drawing.Point(21, 207);
             this.TGroupBoxDatosVehiculo.Name = "TGroupBoxDatosVehiculo";
-            this.TGroupBoxDatosVehiculo.Size = new System.Drawing.Size(503, 222);
+            this.TGroupBoxDatosVehiculo.Size = new System.Drawing.Size(543, 222);
             this.TGroupBoxDatosVehiculo.TabIndex = 51;
             this.TGroupBoxDatosVehiculo.TabStop = false;
             this.TGroupBoxDatosVehiculo.Text = "DatosVehiculo";
@@ -187,20 +189,20 @@
             // 
             // TButtonCancelar
             // 
-            this.TButtonCancelar.Location = new System.Drawing.Point(367, 187);
+            this.TButtonCancelar.Location = new System.Drawing.Point(436, 187);
             this.TButtonCancelar.Name = "TButtonCancelar";
-            this.TButtonCancelar.Size = new System.Drawing.Size(75, 23);
+            this.TButtonCancelar.Size = new System.Drawing.Size(92, 23);
             this.TButtonCancelar.TabIndex = 46;
             this.TButtonCancelar.Text = "Cancelar";
             this.TButtonCancelar.UseVisualStyleBackColor = true;
             // 
             // TButtonAceptar
             // 
-            this.TButtonAceptar.Location = new System.Drawing.Point(286, 187);
+            this.TButtonAceptar.Location = new System.Drawing.Point(324, 187);
             this.TButtonAceptar.Name = "TButtonAceptar";
-            this.TButtonAceptar.Size = new System.Drawing.Size(75, 23);
+            this.TButtonAceptar.Size = new System.Drawing.Size(89, 23);
             this.TButtonAceptar.TabIndex = 45;
-            this.TButtonAceptar.Text = "Aceptar";
+            this.TButtonAceptar.Text = "Guardar";
             this.TButtonAceptar.UseVisualStyleBackColor = true;
             // 
             // TTextBoxPrecioVenta
@@ -285,7 +287,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(264, 19);
+            this.pictureBox1.Location = new System.Drawing.Point(324, 19);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(204, 155);
             this.pictureBox1.TabIndex = 31;
@@ -312,6 +314,15 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // TButtonBorrar
+            // 
+            this.TButtonBorrar.Location = new System.Drawing.Point(232, 30);
+            this.TButtonBorrar.Name = "TButtonBorrar";
+            this.TButtonBorrar.Size = new System.Drawing.Size(86, 23);
+            this.TButtonBorrar.TabIndex = 50;
+            this.TButtonBorrar.Text = "Borrar";
+            this.TButtonBorrar.UseVisualStyleBackColor = true;
             // 
             // EditarVentas
             // 
@@ -369,5 +380,6 @@
         private System.Windows.Forms.CheckBox TCheckBoxGarantia;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label TLabelObligatorio;
+        private System.Windows.Forms.Button TButtonBorrar;
     }
 }
