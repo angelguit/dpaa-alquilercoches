@@ -230,6 +230,7 @@
             this.TModelocomboBox3.Size = new System.Drawing.Size(177, 21);
             this.TModelocomboBox3.TabIndex = 36;
             this.TModelocomboBox3.SelectedIndexChanged += new System.EventHandler(this.TModelocomboBox3_SelectedIndexChanged);
+            this.TModelocomboBox3.Leave += new System.EventHandler(this.TMarcacomboBox2_Leave);
             // 
             // TMarcacomboBox2
             // 
@@ -240,6 +241,7 @@
             this.TMarcacomboBox2.Size = new System.Drawing.Size(179, 21);
             this.TMarcacomboBox2.TabIndex = 35;
             this.TMarcacomboBox2.SelectedIndexChanged += new System.EventHandler(this.TMarcacomboBox2_SelectedIndexChanged);
+            this.TMarcacomboBox2.Click += new System.EventHandler(this.TMarcacomboBox2_Click);
             // 
             // TProveecomboBox1
             // 

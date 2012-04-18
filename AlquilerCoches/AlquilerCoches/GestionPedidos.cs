@@ -192,13 +192,21 @@ namespace AlquilerCoches
         private void TMarcacomboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
           
+          
+           
+            
+
+        }
+        private void TMarcacomboBox2_Leave(object sender, EventArgs e)
+        {
+
             if (TMarcacomboBox2.SelectedIndex == 0)
             {
                 errorProvider1.SetError(TMarcacomboBox2, "Seleccione una marca");
                 incorrecto = true;
             }
-           
-            
+
+
 
         }
 
@@ -220,6 +228,40 @@ namespace AlquilerCoches
                 errorProvider1.SetError(TModelocomboBox3, "Seleccione un modelo");
                 incorrecto = true;
             }
+
+        }
+
+
+
+        private void TModelocomboBox3_Click(object sender, EventArgs e)
+        {
+
+            EN.ENPedidos enMod = new EN.ENPedidos();
+            DataSet dsMod = new DataSet();
+            try
+            {
+                string marc = TMarcacomboBox2.Text.ToString();
+                bool parar = false;
+                // MessageBox.Show(numProvincia.Tables["Provincia"].Rows.Count.ToString());
+                for (int i = 0; i < 15 && parar != true; i++)
+                {
+                    //MessageBox.Show(numProvincia.Tables["Provincia"].Rows[i][1].ToString());
+                    if (numMarca.Tables["Marca"].Rows[i][1].ToString() == marc)
+                    {
+                        string num_marc = numMarca.Tables["Marca"].Rows[i][0].ToString();// en la posicion 0 esta el id de la provincia
+                        parar = true;
+                        dsMod = enMod.ObtenerListaModelos(num_marc);
+
+                    }
+                }
+                ObtenerModelos(dsMod);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Si desea cambiar la ciudad debe de volver a seleccionar una provincia", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+
 
         }
 
