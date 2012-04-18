@@ -46,7 +46,7 @@ namespace EN
         public string PrecioVenta
         {
             get { return precioVenta; }
-            set { precioVenta = PrecioVenta; }
+            set { precioVenta = value; }
         }
 
         public string Matricula
@@ -194,10 +194,6 @@ namespace EN
             try
             {
                 DataSet venta = cadVentas.ObtenerDatosVehiculo(matricula);
-
-                venta.Tables["Ventas"].Rows[0][6] = precioVenta.ToString();
-                
-
 
                 venta.Tables["Ventas"].Rows[0][0] = matricula;
                 venta.Tables["Ventas"].Rows[0][1] = marca;
