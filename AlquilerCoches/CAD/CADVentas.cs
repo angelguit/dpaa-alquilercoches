@@ -146,7 +146,7 @@ namespace CAD
                 daVentas.MissingSchemaAction = MissingSchemaAction.AddWithKey;
                 daVentas.Fill(dsVenta, nombreTabla);
                 SqlCommandBuilder cbuilder = new SqlCommandBuilder(daVentas);
-                daVentas.Update(dsVenta, "Ventas");
+                daVentas.Update(venta, "Ventas");
 
             }
             catch (Exception ex)
