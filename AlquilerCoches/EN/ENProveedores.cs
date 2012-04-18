@@ -27,22 +27,6 @@ namespace EN
 
         private CAD.CADProveedores cadProveedores= new CAD.CADProveedores();
 
-        public DataSet ObtenerListaProveedores(string cadena)
-        {
-            DataSet resultado = new DataSet();
-            try
-            {
-                resultado = cadProveedores.ObtenerTablaProveedores(cadena);
-            }
-            catch (Exception ex)
-            {
-                throw (ex);
-            }
-
-            return resultado;
-        }
-
-
         public string CIF
         {
             get { return cif; }
@@ -92,6 +76,22 @@ namespace EN
         {
             get { return horario; }
             set { horario = value; }
+        }
+
+
+        public DataSet ObtenerListaProveedores(string cadena)
+        {
+            DataSet resultado = new DataSet();
+            try
+            {
+                resultado = cadProveedores.ObtenerTablaProveedores(cadena);
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+
+            return resultado;
         }
 
         public DataSet ObtenerListaProvincias()
@@ -154,6 +154,30 @@ namespace EN
                 linea[9] = horario;
                 resultado.Tables["Proveedores"].Rows.Add(linea);
                 cadProveedores.InsertarProveedorCAD(resultado);
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+        }
+
+        public void modificarProveedorEN()
+        {
+            try
+            {
+                string cadena = " CIF='" + cif + "' ";
+                DataSet proveedor = cadProveedores.ObtenerTablaProveedores(cadena);
+                proveedor.Tables["Proveedores"].Rows[0][1] = marca.ToString();
+                proveedor.Tables["Proveedores"].Rows[0][2] = calle.ToString();
+                proveedor.Tables["Proveedores"].Rows[0][3] = numero.ToString();
+                proveedor.Tables["Proveedores"].Rows[0][4] = telefono.ToString();
+                proveedor.Tables["Proveedores"].Rows[0][5] = email.ToString();
+                proveedor.Tables["Proveedores"].Rows[0][6] = ciudad.ToString();
+                proveedor.Tables["Proveedores"].Rows[0][7] = provincia.ToString();
+                proveedor.Tables["Proveedores"].Rows[0][8] = codigopostal.ToString();
+                proveedor.Tables["Proveedores"].Rows[0][9] = horario.ToString();
+
+                cadProveedores.modificarProveedorCAD(proveedor);
             }
             catch (Exception ex)
             {

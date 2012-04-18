@@ -89,27 +89,27 @@ namespace AlquilerCoches
                 if (TComboBoxProvincias.Text != "" && cadena == "")
                 {
                     MessageBox.Show(TComboBoxProvincias.Text);
-                    cadena += " Provincia='" + buscarProvincia + "' ";
+                    cadena += " Provincia like '%" + buscarProvincia + "%' ";
                 }
                 else
                 {
                     MessageBox.Show("2");
                     if (TComboBoxProvincias.Text != "" && cadena != "")
                     {
-                        cadena += " and Provincia='" + buscarProvincia + "' ";
+                        cadena += " and Provincia like '%" + buscarProvincia + "%' ";
                     }
                 }
 
                 //Ciudad
                 if (TComboBoxCiudades.Text != "" && cadena == "")
                 {
-                    cadena += " Ciudad='" + buscarCiudad + "' ";
+                    cadena += " Ciudad like '%" + buscarCiudad + "%' ";
                 }
                 else
                 {
                     if (TComboBoxCiudades.Text != "" && cadena != "")
                     {
-                        cadena += " and Ciudad='" + buscarCiudad + "' ";
+                        cadena += " and Ciudad like '%" + buscarCiudad + "%' ";
                     }
                 }
 
@@ -271,7 +271,7 @@ namespace AlquilerCoches
                      {
                          Application.OpenForms["GestionPersonal"].Activate();
                      }
-                     else
+                     else///////////////////////modificar
                      {
                          string cif = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
                          string marca = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();//indice 1 para cojer el nombre
@@ -283,14 +283,18 @@ namespace AlquilerCoches
                          string provincia = dataGridView1.Rows[e.RowIndex].Cells[9].Value.ToString();
                          int codigopostal = Int32.Parse(dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString());
                          string horario = dataGridView1.Rows[e.RowIndex].Cells[11].Value.ToString();
-
-                         string nombrebotonguardar = "Guardar Cambios";
-                         GestionProveedores Formu = new GestionProveedores(cif, marca, calle, numero, telefono, email, ciudad, provincia, codigopostal, horario);
+                         string accion= "modificar";
+                         //string nombrebotonguardar = "Guardar Cambios";
+                         GestionProveedores Formu = new GestionProveedores(cif, marca, calle, numero, telefono, email, ciudad, provincia, codigopostal, horario,accion);
 
                          Formu.StartPosition = FormStartPosition.CenterScreen;
                          Formu.MdiParent = this.MdiParent;
                          Formu.Show();
-                         
+
+                         /*EN.ENProveedores refrescar = new EN.ENProveedores();
+                         string cadena = "";
+                         dataGridView1.DataSource = refrescar.ObtenerListaProveedores(cadena);
+                          * */
                      }
                  }
                  else

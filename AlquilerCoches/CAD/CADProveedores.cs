@@ -143,18 +143,24 @@ namespace CAD
             return dsCiu;
         }
 
+        public void modificarProveedorCAD(DataSet proveedor)
+        {
+            DataSet dsProveedores = new DataSet();
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                String consulta = "Select * from Proveedores where CIF='" + proveedor.Tables["Proveedores"].Rows[0][0] + "'";
+                SqlDataAdapter daProveedor = new SqlDataAdapter(consulta, conexion);
+                daProveedor.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daProveedor.Fill(dsProveedores, nombreTabla);
+                SqlCommandBuilder cbuilder = new SqlCommandBuilder(daProveedor);
+                daProveedor.Update(proveedor, "Proveedores");
 
-
-
-
-
-
-
-
-
-
-
-
-
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+        }
     }
 }
