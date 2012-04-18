@@ -9,10 +9,6 @@ namespace EN
 {
     public class ENVentas
     {
-        private string fechaVenta;
-        private string numVend;
-        private string numCliente;
-        private string numFactura;
         private string precioVenta;
         private string matricula;
         private string marca;
@@ -41,30 +37,6 @@ namespace EN
         {
             get { return listaMarcas; }
             set { listaMarcas = value; }
-        }
-
-        public string FechaVenta
-        {
-            get { return fechaVenta; }
-            set { fechaVenta = FechaVenta; }
-        }
-
-        public string NumVend
-        {
-            get { return numVend; }
-            set { numVend = NumVend; }
-        }
-
-        public string NumCliente
-        {
-            get { return numCliente; }
-            set { numCliente = NumCliente; }
-        }
-
-        public string NumFactura
-        {
-            get { return numFactura; }
-            set { numFactura = NumFactura; }
         }
 
         public string PrecioVenta
@@ -104,7 +76,7 @@ namespace EN
         public void ClearEnVentas()
         {
             matricula = marca = modelo = garantia = km = "";
-            numVend = precioVenta = numCliente = numFactura = fechaVenta = "";
+             precioVenta = "";
         }
 
         public DataSet ObtenerListaVentas()
@@ -191,10 +163,6 @@ namespace EN
                 km = resultado.Tables["Ventas"].Rows[0][3].ToString();
                 garantia = resultado.Tables["Ventas"].Rows[0][4].ToString();
                 precioVenta = resultado.Tables["Ventas"].Rows[0][5].ToString();
-                numVend = resultado.Tables["Ventas"].Rows[0][6].ToString();
-                numCliente = resultado.Tables["Ventas"].Rows[0][7].ToString();
-                numFactura = resultado.Tables["Ventas"].Rows[0][8].ToString();
-                fechaVenta = resultado.Tables["Ventas"].Rows[0][9].ToString();
             }
             catch (Exception ex)
             {
@@ -245,10 +213,6 @@ namespace EN
                 linea[3] = km;
                 linea[4] = garantia;
                 linea[5] = precioVenta;
-                linea[6] = numVend;
-                linea[7] = numCliente;
-                linea[8] = numFactura;
-                linea[9] = fechaVenta;
                 resultado.Tables["Ventas"].Rows.Add(linea);
                 cadVentas.AnyadirVenta(resultado);
             }
