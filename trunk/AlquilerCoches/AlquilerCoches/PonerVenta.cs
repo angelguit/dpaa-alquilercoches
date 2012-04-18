@@ -159,9 +159,9 @@ namespace AlquilerCoches
                 limpiaFormulario();
                 rellenaMarcas();
 
-                vehiculos.ClearEnVehiculo();
+                /*vehiculos.ClearEnVehiculo();
                 vehiculos.Matricula = TTextBoxMatricula.Text;
-                vehiculos.BorrarVehiculo();
+                vehiculos.BorrarVehiculo();*/
             }
             else
             {
