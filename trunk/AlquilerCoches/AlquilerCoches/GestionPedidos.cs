@@ -185,7 +185,7 @@ namespace AlquilerCoches
 
         private void ObtenerModelos(DataSet dsMod)
         {
-            TModelocomboBox3.Text = "Seleccione Modelo coche";
+            TModelocomboBox3.Text = "Seleccione el modelo del coche";
             TModelocomboBox3.DataSource = dsMod.Tables["Modelo"];
             TModelocomboBox3.DisplayMember = dsMod.Tables["Modelo"].Columns[0].Caption.ToString();
         }
@@ -258,7 +258,7 @@ namespace AlquilerCoches
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Si desea cambiar la ciudad debe de volver a seleccionar una provincia", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Si desea cambiar el modelo debe cambiar la marca", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
 

@@ -222,14 +222,12 @@
             // 
             this.TModelocomboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TModelocomboBox3.FormattingEnabled = true;
-            this.TModelocomboBox3.Items.AddRange(new object[] {
-            "",
-            "FORD"});
             this.TModelocomboBox3.Location = new System.Drawing.Point(165, 89);
             this.TModelocomboBox3.Name = "TModelocomboBox3";
             this.TModelocomboBox3.Size = new System.Drawing.Size(177, 21);
             this.TModelocomboBox3.TabIndex = 36;
             this.TModelocomboBox3.SelectedIndexChanged += new System.EventHandler(this.TModelocomboBox3_SelectedIndexChanged);
+            this.TModelocomboBox3.Click += new System.EventHandler(this.TModelocomboBox3_Click);
             this.TModelocomboBox3.Leave += new System.EventHandler(this.TMarcacomboBox2_Leave);
             // 
             // TMarcacomboBox2
