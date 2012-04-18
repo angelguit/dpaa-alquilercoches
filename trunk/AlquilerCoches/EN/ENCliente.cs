@@ -99,6 +99,20 @@ namespace EN
             return resultado;
         }
 
+        public DataSet ObtenerDatosClienteConDni(string dni)
+        {
+            DataSet resultado = new DataSet();
+            try
+            {
+                resultado = cadCliente.ObtenerDatosClienteConDni(dni);
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            return resultado;
+        }
+
         public DataSet ObtenerListaProvincias()
         {
             DataSet resultado = new DataSet();

@@ -38,6 +38,8 @@ namespace AlquilerCoches
             TButtonEditar.Visible = true;
 
             TComboBoxConductores.SelectedIndex = TComboBoxConductores.FindStringExact(enRe.Conductores.ToString());
+            TComboBoxCategoria.SelectedIndex = TComboBoxCategoria.FindStringExact(enVe.Categoria);
+            TComboBoxMarca
             
             
         }

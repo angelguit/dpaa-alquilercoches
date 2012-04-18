@@ -123,5 +123,40 @@ namespace CAD
                 throw (ex);
             }
         }
+
+        public void EliminarReserva(ArrayList numRes)
+        {
+            DataSet dsRes = new DataSet();
+            try
+            {
+                string frase = "";
+                for (int i = 0; i < numRes.Count; i++)
+                {
+                    if (i == 0) { frase += "'" + numRes[i] + "'"; }
+                    else
+                    {
+                        frase += ",";
+                        frase += "'" + numRes[i] + "'";
+                    }
+                }
+
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                String consulta = "Select * from Reservas where NºReserva in (" + frase + ")";
+                SqlDataAdapter daPersonal = new SqlDataAdapter(consulta, conexion);
+                daPersonal.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daPersonal.Fill(dsRes, "Reservas");
+                for (int i = 0; i < numRes.Count; i++)//lo hacemos parar borrar las filas que corresponden con los dnis 
+                {
+                    dsRes.Tables["Reservas"].Rows[i].Delete();
+                }
+                SqlCommandBuilder cbuilder = new SqlCommandBuilder(daPersonal);
+                daPersonal.Update(dsRes, "Reservas");
+
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+        }
     }
 }
