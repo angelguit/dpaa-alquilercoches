@@ -79,32 +79,7 @@ namespace EN
             set { tipoenvio = value; }
         }
 
-   /*     public DataSet ObtenerListaPedidos()
-        {
-            DataSet resultado = new DataSet();
-            try
-            {
-                resultado = cadPedidos.ObtenerTablaPedidos();
-            }
-            catch (Exception ex)
-            {
-                throw (ex);
-            }
-
-            return resultado;
-        } */
-
-        public void EliminarPedidos(ArrayList arraypedido)
-        {
-            try
-            {
-             //   cadPedidos.BorrarPedido(arraypedido);
-            }
-            catch (Exception ex)
-            {
-                throw (ex);
-            }
-        }
+  
 
 
         public DataSet ObtenerListaPedidos(string todo)
@@ -120,6 +95,18 @@ namespace EN
             }
             return resultado;
         }
+        public void EliminarPedidos(ArrayList arraypedido)
+        {
+            try
+            {
+             //   cadPedidos.BorrarPedido(arraypedido);
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+        }
+
 
 
   /*      public void EditarPedidos()
@@ -134,7 +121,7 @@ namespace EN
                 pedido.Tables["Pedidos"].Rows[0][5] = cantidad.ToString();
                 pedido.Tables["Pedidos"].Rows[0][6] = tipoenvio.ToString();
                 pedido.Tables["Pedidos"].Rows[0][7] = observaciones.ToString();
-                pedido.Tables["Pedidos"].Rows[0][8] = estadopedido.ToString();
+              pedido.Tables["Pedidos"].Rows[0][8] = estadopedido.ToString();
                 pedido.Tables["Pedidos"].Rows[0][9] = empleado.ToString();
                 pedido.Tables["Pedidos"].Rows[0][10]= fecha;
                 cadPedidos.EditarPedidos(pedidos);
@@ -155,7 +142,7 @@ namespace EN
                 // si la frase esta vacia nos devolvera todos los resultados
                 resultado = cadPedidos.ObtenerTablaPedidos(frase);
                 DataRow linea = resultado.Tables["Pedidos"].NewRow();
-                linea[0] = idtransaccion;
+                linea[0] = idtransaccion;              
                 linea[1] = proveedor;
                 linea[2] = marca;
                 linea[3] = modelo;
