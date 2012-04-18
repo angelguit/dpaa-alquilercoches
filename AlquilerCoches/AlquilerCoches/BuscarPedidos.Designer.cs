@@ -146,7 +146,7 @@
             this.TDataGridViewPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TDataGridViewPedidos.Location = new System.Drawing.Point(31, 157);
             this.TDataGridViewPedidos.Name = "TDataGridViewPedidos";
-            this.TDataGridViewPedidos.Size = new System.Drawing.Size(615, 203);
+            this.TDataGridViewPedidos.Size = new System.Drawing.Size(812, 203);
             this.TDataGridViewPedidos.TabIndex = 3;
             this.TDataGridViewPedidos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TDataGridViewPedidos_CellContentClick);
             // 
@@ -161,7 +161,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(668, 474);
+            this.ClientSize = new System.Drawing.Size(878, 570);
             this.Controls.Add(this.TDataGridViewPedidos);
             this.Controls.Add(this.groupBox1);
             this.Name = "BuscarPedidos";
