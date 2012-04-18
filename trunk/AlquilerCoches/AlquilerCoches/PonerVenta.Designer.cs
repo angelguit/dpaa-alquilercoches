@@ -351,7 +351,7 @@
             this.MaximumSize = new System.Drawing.Size(894, 608);
             this.MinimumSize = new System.Drawing.Size(894, 608);
             this.Name = "PonerVenta";
-            this.Text = "Editar Ventas";
+            this.Text = "Poner en Venta";
             this.TGroupBoxDatosVehiculo.ResumeLayout(false);
             this.TGroupBoxDatosVehiculo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TPictureBoxCoche)).EndInit();
