@@ -15,6 +15,16 @@ namespace AlquilerCoches
         public GestionPedidos()
         {
             InitializeComponent();
+
+            EN.ENPedidos marca = new EN.ENPedidos();
+            DataSet dsMarc = new DataSet();
+            dsMarc = marca.ObtenerListaMarcas();
+            //ObtenerProvincias(dsProv)
+
+            numMarca = new DataSet();
+            numMarca = dsMarc;
+
+
         }
 
         bool incorrecto = false;
@@ -22,12 +32,8 @@ namespace AlquilerCoches
         private void GestionPedidos_Load(object sender, EventArgs e)
         {            
             TEstadoTextBox.Text = "   ABIERTO";
-            EN.ENPedidos enMarc = new EN.ENPedidos();
-            DataSet dsMarc = new DataSet();
-            dsMarc = enMarc.ObtenerListaMarcas();
-            ObtenerMarcas(dsMarc);
-          //  try
-            //{
+          
+          
                 
                 
 
@@ -184,8 +190,7 @@ namespace AlquilerCoches
             // TComboBoxProvincias.DisplayMember = dsProv.Tables["Provincia"].Columns[0].Caption.ToString(); // como dsProv lleva el id_prov y el nombre ponemos 1 que es la columna del nombre
 
 
-            numMarca= new DataSet();
-            numMarca = dsMarc;
+          
 
 
         }
@@ -218,7 +223,7 @@ namespace AlquilerCoches
         }
 
 
-       /* private void TMarcacomboBox2_Click(object sender, EventArgs e)
+        private void TMarcacomboBox2_Click(object sender, EventArgs e)
         {
             
             EN.ENPedidos enMarc = new EN.ENPedidos();
@@ -226,7 +231,7 @@ namespace AlquilerCoches
             dsMarc = enMarc.ObtenerListaMarcas();
             ObtenerMarcas(dsMarc);
         
-        }*/
+        }
 
         private void TModelocomboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
