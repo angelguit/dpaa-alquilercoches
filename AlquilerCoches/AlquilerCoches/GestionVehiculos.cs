@@ -335,6 +335,7 @@ namespace AlquilerCoches
                         TGroupBoxDatosVehiculo.Enabled = false;
                         TButtonCancelar.Enabled = false;
                         TButtonOK.Enabled = true;
+                        
                         break;
                     case "Editar":
                         TGroupBoxDatosVehiculo.Enabled = true;
@@ -362,49 +363,56 @@ namespace AlquilerCoches
         private void TButtonBuscar_Click(object sender, EventArgs e)
         {
             accion = "Buscar";
+            errorProvider1.Clear();
             rellenaMarcas();
         }
 
         private void TButtonAnyadir_Click(object sender, EventArgs e)
         {
             accion = "Anyadir";
+            errorProvider1.Clear();
             rellenaMarcas();
         }
 
         private void TButtonEditar_Click(object sender, EventArgs e)
         {
             accion = "Editar";
+            errorProvider1.Clear();
             rellenaMarcas();
         }
 
         private void TButtonBorrar_Click(object sender, EventArgs e)
         {
-            accion = "Borrar";     
+            accion = "Borrar";
+            errorProvider1.Clear();
             rellenaMarcas();
         }
 
         private void TButtonOK_Click(object sender, EventArgs e)
         {
-            switch (accion)
+            if (ValidarCampos())
             {
-                case "Borrar":
-                    MessageBox.Show(vehiculos.Matricula);
-                    vehiculos.BorrarVehiculo();
-                    break;
-                case "Editar":
-                    guardaCampos();
-                    vehiculos.EditarVehiculo();
-                    break;
-                case "Anyadir":
-                    guardaCampos();
-                    vehiculos.AnyadirVehiculo();
-                    break;
-            }
+                switch (accion)
+                {
+                    case "Borrar":
+                        MessageBox.Show(vehiculos.Matricula);
+                        vehiculos.BorrarVehiculo();
+                        break;
+                    case "Editar":
+                        guardaCampos();
+                        vehiculos.EditarVehiculo();
+                        break;
+                    case "Anyadir":
+                        guardaCampos();
+                        vehiculos.AnyadirVehiculo();
+                        break;
+                }
 
-            TGroupBoxAccion.Enabled = true;
-            TButtonOK.Enabled = false;
-            errorProvider1.Clear();
-            limpiaFormulario();
+                TGroupBoxAccion.Enabled = true;
+                TButtonOK.Enabled = false;
+                errorProvider1.Clear();
+                limpiaFormulario();
+            }
         }
 
         void rellenaCampos()
@@ -417,8 +425,8 @@ namespace AlquilerCoches
             TTextBoxKM.Text = vehiculos.KM.ToString();
             TTextBoxPrecioCompra.Text = vehiculos.PrecioCompra.ToString();
             TTextBoxPrecioVenta.Text = vehiculos.PrecioVenta.ToString();
-            if (vehiculos.Estado == "Revision") TRadioButtonRevision.Checked = true;
-            else TRadioButtonEstado.Checked = true;
+            if (vehiculos.Estado == "Disponible") TRadioButtonEstado.Checked = true;
+            else TRadioButtonRevision.Checked = true;
         }
         void guardaCampos()
         {
@@ -477,6 +485,37 @@ namespace AlquilerCoches
                     vehiculos.Categoria = "D";
                     break;
             }
+        }
+
+        bool ValidarCampos()
+        {
+            bool error = false;
+            string comprobar = "";
+            comprobar += errorProvider1.GetError(TTextBoxMarca);
+            comprobar += errorProvider1.GetError(TTextBoxMatricula);
+            comprobar += errorProvider1.GetError(TTextBoxModelo);
+            comprobar += errorProvider1.GetError(TTextBoxPrecioCompra);
+            comprobar += errorProvider1.GetError(TTextBoxPrecioVenta);
+            comprobar += errorProvider1.GetError(TTextBoxKM);
+            comprobar += errorProvider1.GetError(TTextBoxGarantia);
+            
+            if(comprobar != "")
+            {
+                MessageBox.Show("Solucione los Errores Primero", "ERROR");
+                error = true;
+            }
+            else if (TComboBoxCategoria.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar una Categoria", "ERROR");
+                error = true;
+            }
+            else if(TTextBoxMatricula.Text=="" || TTextBoxMarca.Text=="" || TTextBoxModelo.Text=="" || TTextBoxPrecioCompra.Text=="" || TTextBoxPrecioVenta.Text=="" || TTextBoxGarantia.Text=="" || TTextBoxKM.Text=="")
+            {
+                MessageBox.Show("Hay campos vacios", "ERROR");
+                error=true;
+            }
+
+            return !error;
         }
     }
 }
