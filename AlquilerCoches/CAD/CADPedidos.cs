@@ -88,5 +88,26 @@ namespace CAD
             }
         }
 
+
+        public DataSet ConseguirMarcas()
+        {
+            DataSet dsMarc = new DataSet();
+
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                String consulta = "Select id_marca,marca FROM Marcas";
+                SqlDataAdapter daMarc = new SqlDataAdapter(consulta, conexion);
+                daMarc.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daMarc.Fill(dsMarc, "Marcas"); //dsPersonal es ahora nuestra base de datos local
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+
+            return dsMarc;
+        }
+
     }
 }
