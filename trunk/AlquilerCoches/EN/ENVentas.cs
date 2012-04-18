@@ -222,7 +222,7 @@ namespace EN
             try
             {
                 DataSet venta = cadVentas.ObtenerDatosVehiculo(matricula);
-                venta.Tables["ventas"].Rows[0][6] = precioVenta.ToString();
+                venta.Tables["Ventas"].Rows[0][6] = precioVenta.ToString();
                 cadVentas.EditarVehiculoVenta (venta);
 
             }
