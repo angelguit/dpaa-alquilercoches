@@ -27,6 +27,7 @@ namespace EN
         private ArrayList listaMarcas = new ArrayList();
         private ArrayList listaModelos = new ArrayList();
         private ArrayList listaMatriculas = new ArrayList();
+        private ArrayList listaCategorias = new ArrayList();
 
 
         private CAD.CADVehiculo cadVehiculo = new CAD.CADVehiculo();
@@ -152,7 +153,15 @@ namespace EN
             try
             {
                 DataSet vehiculo=cadVehiculo.ObtenerDatosVehiculo(matricula);
-                vehiculo.Tables["Vehiculo"].Rows[0][3] = precioVenta.ToString();
+                vehiculo.Tables["Vehiculo"].Rows[0][0] = marca;
+                vehiculo.Tables["Vehiculo"].Rows[0][1] = modelo;
+                //vehiculo.Tables["Vehiculo"].Rows[0][2] = matricula;
+                vehiculo.Tables["Vehiculo"].Rows[0][3] = precioVenta;
+                vehiculo.Tables["Vehiculo"].Rows[0][4] = precioCompra;
+                vehiculo.Tables["Vehiculo"].Rows[0][5] = garantia;
+                vehiculo.Tables["Vehiculo"].Rows[0][6] = km;
+                vehiculo.Tables["Vehiculo"].Rows[0][7] = estado;
+                //vehiculo.Tables["Vehiculo"].Rows[0][8] = categoria;
                 cadVehiculo.EditarVehiculo(vehiculo);
 
             }
@@ -249,6 +258,20 @@ namespace EN
             return resultado;
         }
 
+        public DataSet ObtenerCategorias()
+        {
+            DataSet resultado = new DataSet();
+            try
+            {
+                resultado = cadVehiculo.ObtenerCategorias();
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            return resultado;
+        }
+
         public ArrayList ListaMatriculas
         {
             get { return listaMatriculas; }
@@ -258,6 +281,11 @@ namespace EN
         {
             get { return listaModelos; }
             set { listaMarcas = value; }
+        }
+        public ArrayList ListaCategorias
+        {
+            get { return listaCategorias; }
+            set { listaCategorias = value; }
         }
 
         public ArrayList ListaMarcas

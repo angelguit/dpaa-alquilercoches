@@ -171,6 +171,24 @@ namespace CAD
             return dsVehiculo;
         }
 
+        public DataSet ObtenerCategorias()
+        {
+            DataSet dsVehiculo = new DataSet();
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                String consulta = "Select Tipo from Categoria";
+                SqlDataAdapter daVehiculos = new SqlDataAdapter(consulta, conexion);
+                daVehiculos.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daVehiculos.Fill(dsVehiculo, "Categoria");
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+
+            return dsVehiculo;
+        }
 
         /// nuevo
         public void BorrarVehiculo(string matricula)
