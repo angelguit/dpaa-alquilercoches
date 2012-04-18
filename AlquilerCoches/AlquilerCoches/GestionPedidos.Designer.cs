@@ -227,6 +227,7 @@
             this.TModelocomboBox3.Size = new System.Drawing.Size(234, 21);
             this.TModelocomboBox3.TabIndex = 36;
             this.TModelocomboBox3.SelectedIndexChanged += new System.EventHandler(this.TModelocomboBox3_SelectedIndexChanged);
+            this.TModelocomboBox3.Click += new System.EventHandler(this.TModelocomboBox3_Click);
             this.TModelocomboBox3.Leave += new System.EventHandler(this.TMarcacomboBox2_Leave);
             // 
             // TMarcacomboBox2
