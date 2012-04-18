@@ -121,6 +121,22 @@ namespace EN
             return resultado;
         }
 
+        public DataSet ObtenerListaModelos(string modelo)
+        {
+            DataSet resultado = new DataSet();
+            try
+            {
+                resultado = cadPedidos.ConseguirModelos(modelo);
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            return resultado;
+        }
+
+
+      
   /*      public void EditarPedidos()
         {
             try
