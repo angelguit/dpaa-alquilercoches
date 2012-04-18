@@ -33,6 +33,7 @@
             this.TSalirbutton2 = new System.Windows.Forms.Button();
             this.TBorrarbutton3 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.TEnviogroupBox3 = new System.Windows.Forms.GroupBox();
             this.TEnvioButtonUrgente = new System.Windows.Forms.RadioButton();
             this.TEnvioButtonOrdinario = new System.Windows.Forms.RadioButton();
@@ -59,7 +60,6 @@
             this.TIDlabel = new System.Windows.Forms.Label();
             this.TIDtextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.TEnviogroupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -122,6 +122,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Pedido";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(417, 30);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 43;
             // 
             // TEnviogroupBox3
             // 
@@ -264,7 +271,7 @@
             this.TObservTextBox.Location = new System.Drawing.Point(165, 222);
             this.TObservTextBox.Multiline = true;
             this.TObservTextBox.Name = "TObservTextBox";
-            this.TObservTextBox.Size = new System.Drawing.Size(248, 86);
+            this.TObservTextBox.Size = new System.Drawing.Size(283, 86);
             this.TObservTextBox.TabIndex = 29;
             this.TObservTextBox.TextChanged += new System.EventHandler(this.TObservTextBox_TextChanged);
             // 
@@ -317,7 +324,7 @@
             this.groupBox2.Controls.Add(this.TIDtextBox);
             this.groupBox2.Location = new System.Drawing.Point(112, 27);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(436, 89);
+            this.groupBox2.Size = new System.Drawing.Size(480, 89);
             this.groupBox2.TabIndex = 24;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos transacción";
@@ -328,7 +335,7 @@
             this.TDateTimePickerFecha.CalendarMonthBackground = System.Drawing.Color.White;
             this.TDateTimePickerFecha.CustomFormat = "";
             this.TDateTimePickerFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.TDateTimePickerFecha.Location = new System.Drawing.Point(264, 58);
+            this.TDateTimePickerFecha.Location = new System.Drawing.Point(258, 58);
             this.TDateTimePickerFecha.Name = "TDateTimePickerFecha";
             this.TDateTimePickerFecha.Size = new System.Drawing.Size(90, 20);
             this.TDateTimePickerFecha.TabIndex = 31;
@@ -336,7 +343,7 @@
             // TLabelFecha
             // 
             this.TLabelFecha.AutoSize = true;
-            this.TLabelFecha.Location = new System.Drawing.Point(218, 60);
+            this.TLabelFecha.Location = new System.Drawing.Point(212, 60);
             this.TLabelFecha.Name = "TLabelFecha";
             this.TLabelFecha.Size = new System.Drawing.Size(40, 13);
             this.TLabelFecha.TabIndex = 29;
@@ -346,11 +353,12 @@
             // 
             this.TEstadoTextBox.BackColor = System.Drawing.SystemColors.Control;
             this.TEstadoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TEstadoTextBox.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TEstadoTextBox.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.TEstadoTextBox.Location = new System.Drawing.Point(96, 58);
             this.TEstadoTextBox.Name = "TEstadoTextBox";
             this.TEstadoTextBox.ReadOnly = true;
-            this.TEstadoTextBox.Size = new System.Drawing.Size(84, 20);
+            this.TEstadoTextBox.Size = new System.Drawing.Size(84, 23);
             this.TEstadoTextBox.TabIndex = 28;
             this.TEstadoTextBox.TextChanged += new System.EventHandler(this.TEstadoTextBox_TextChanged);
             // 
@@ -366,17 +374,18 @@
             // TVendedorText
             // 
             this.TVendedorText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TVendedorText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TVendedorText.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.TVendedorText.Location = new System.Drawing.Point(264, 33);
+            this.TVendedorText.Location = new System.Drawing.Point(258, 33);
             this.TVendedorText.Name = "TVendedorText";
-            this.TVendedorText.ReadOnly = true;
-            this.TVendedorText.Size = new System.Drawing.Size(146, 20);
+            this.TVendedorText.Size = new System.Drawing.Size(202, 20);
             this.TVendedorText.TabIndex = 26;
+            this.TVendedorText.TextChanged += new System.EventHandler(this.TVendedorText_TextChanged);
             // 
             // TEmpLabel
             // 
             this.TEmpLabel.AutoSize = true;
-            this.TEmpLabel.Location = new System.Drawing.Point(202, 33);
+            this.TEmpLabel.Location = new System.Drawing.Point(196, 33);
             this.TEmpLabel.Name = "TEmpLabel";
             this.TEmpLabel.Size = new System.Drawing.Size(54, 13);
             this.TEmpLabel.TabIndex = 25;
@@ -395,23 +404,18 @@
             // 
             this.TIDtextBox.BackColor = System.Drawing.SystemColors.Control;
             this.TIDtextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TIDtextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TIDtextBox.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.TIDtextBox.Location = new System.Drawing.Point(96, 33);
             this.TIDtextBox.Name = "TIDtextBox";
             this.TIDtextBox.ReadOnly = true;
-            this.TIDtextBox.Size = new System.Drawing.Size(84, 20);
+            this.TIDtextBox.Size = new System.Drawing.Size(84, 21);
             this.TIDtextBox.TabIndex = 23;
+            this.TIDtextBox.TextChanged += new System.EventHandler(this.TIDtextBox_TextChanged);
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(417, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 43;
             // 
             // GestionPedidos
             // 

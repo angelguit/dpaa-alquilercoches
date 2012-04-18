@@ -28,7 +28,7 @@ namespace AlquilerCoches
         
         private void button1_Click(object sender, EventArgs e)
         {
-            if (TProveecomboBox1.Text == "" || TMarcacomboBox2.Text == "" || TModelocomboBox3.Text == "")
+            if (TProveecomboBox1.Text == "" || TMarcacomboBox2.Text == "" || TModelocomboBox3.Text == "" || TVendedorText.Text=="")
             {
                 MessageBox.Show("Campos invalidos, no puede haber ninguno vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -41,10 +41,27 @@ namespace AlquilerCoches
             {
                 EN.ENPedidos enPedidos = new EN.ENPedidos();
 
+                string envio="";
 
-                enPedidos.IDTransaccion = textBox1.Text; enPedidos.Proveedor = TProveecomboBox1.Text; enPedidos.Marca = TMarcacomboBox2.Text;
-                enPedidos.Modelo = TModelocomboBox3.Text; enPedidos.Cantidad = numericUpDown1.Text;
-                enPedidos.Observaciones = TObservTextBox.Text;/* enPedidos.Fecha = TDateTimePickerFecha; */
+                if (TEnvioButtonOrdinario.Checked)
+                {
+                    envio = "Ordinario";
+                }
+                if (TEnvioButtonUrgente.Checked)
+                {
+                    envio = "Urgente";
+                }
+
+                enPedidos.IDTransaccion = textBox1.Text;
+                enPedidos.Proveedor = TProveecomboBox1.Text;
+                enPedidos.Marca = TMarcacomboBox2.Text;
+                enPedidos.Modelo = TModelocomboBox3.Text; 
+                enPedidos.Cantidad = numericUpDown1.Text;
+                enPedidos.Observaciones = TObservTextBox.Text;
+                enPedidos.Empleado = TVendedorText.Text;
+                enPedidos.TipoEnvio = envio;
+
+                /* enPedidos.Fecha = TDateTimePickerFecha; */
                 //falta fecha, tipo envio, y empleado
 
            
@@ -106,6 +123,7 @@ namespace AlquilerCoches
 
         private void TBorrarbutton3_Click(object sender, EventArgs e)
         {
+            TVendedorText.Text = "";
             //Combobox
             TProveecomboBox1.SelectedIndex = 0;
             TMarcacomboBox2.SelectedIndex = 0;
@@ -192,6 +210,21 @@ namespace AlquilerCoches
         private void groupBox3_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void TIDtextBox_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void TVendedorText_TextChanged(object sender, EventArgs e)
+        {
+            if (Regex.Match(TObservTextBox.Text, @"^[A-Za-z\s]{3,100}$").Success)
+            {
+                errorProvider1.SetError(TObservTextBox, "Máximo 50 caracteres.");
+                incorrecto = true;
+            }
+            else { errorProvider1.SetError(TObservTextBox, ""); } 
         }
     }
 }
