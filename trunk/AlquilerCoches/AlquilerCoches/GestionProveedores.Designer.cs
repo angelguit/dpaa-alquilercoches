@@ -154,6 +154,7 @@
             this.TComboBoxProvincias.Name = "TComboBoxProvincias";
             this.TComboBoxProvincias.Size = new System.Drawing.Size(229, 21);
             this.TComboBoxProvincias.TabIndex = 67;
+            this.TComboBoxProvincias.TextChanged += new System.EventHandler(this.TComboBoxProvincias_TextChanged);
             this.TComboBoxProvincias.Click += new System.EventHandler(this.TComboBoxProvincias_Click);
             // 
             // TLabelProvincia

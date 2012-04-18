@@ -216,7 +216,7 @@ namespace AlquilerCoches
 
         private void TComboBoxCiudades_Click(object sender, EventArgs e)
         {
-            EN.ENProveedores enCiu = new EN.ENProveedores();
+           /* EN.ENProveedores enCiu = new EN.ENProveedores();
             DataSet dsCiu = new DataSet();
             try
             {
@@ -239,7 +239,7 @@ namespace AlquilerCoches
             catch (Exception ex)
             {
                 MessageBox.Show("Seleccione primero una provincia", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            }*/
         }
 
         private void TButtonGuardar_Click(object sender, EventArgs e)
@@ -299,6 +299,38 @@ namespace AlquilerCoches
 
                     insertar.InsertarProveedorEN();
                 }
+            }
+        }
+
+        private void TComboBoxProvincias_TextChanged(object sender, EventArgs e)
+        {
+            EN.ENProveedores enCiu = new EN.ENProveedores();
+            DataSet dsCiu = new DataSet();
+            try
+            {
+                if (TComboBoxProvincias.SelectedIndex>0)
+                {
+                    //MessageBox.Show("iusdhg");
+                    string prov = TComboBoxProvincias.Text.ToString();
+                    bool parar = false;
+                    // MessageBox.Show(numProvincia.Tables["Provincia"].Rows.Count.ToString());
+                    for (int i = 0; i < 53 && parar != true; i++)
+                    {
+                        //MessageBox.Show(numProvincia.Tables["Provincia"].Rows[i][1].ToString());
+                        if (numProvincia.Tables["Provincia"].Rows[i][1].ToString() == prov)
+                        {
+                            string numprov = numProvincia.Tables["Provincia"].Rows[i][0].ToString();// en la posicion 0 esta el id de la provincia
+                            parar = true;
+                            dsCiu = enCiu.ObtenerListaCiudades(numprov);
+
+                        }
+                    }
+                    ObtenerCiudades(dsCiu);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Seleccione primero una provincia", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

@@ -54,9 +54,9 @@
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.TRectangleShapeCliente = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.TRectangleShaperReservas = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.TLabelInfoVehiculo = new System.Windows.Forms.Label();
             this.TLabelDNI = new System.Windows.Forms.Label();
             this.TLabelNombre = new System.Windows.Forms.Label();
-            this.TLabelInfoVehiculo = new System.Windows.Forms.Label();
             this.TLabelDirec = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -332,6 +332,16 @@
             this.TRectangleShaperReservas.Name = "TRectangleShaperReservas";
             this.TRectangleShaperReservas.Size = new System.Drawing.Size(528, 209);
             // 
+            // TLabelInfoVehiculo
+            // 
+            this.TLabelInfoVehiculo.AutoSize = true;
+            this.TLabelInfoVehiculo.BackColor = System.Drawing.Color.Transparent;
+            this.TLabelInfoVehiculo.Location = new System.Drawing.Point(197, 208);
+            this.TLabelInfoVehiculo.Name = "TLabelInfoVehiculo";
+            this.TLabelInfoVehiculo.Size = new System.Drawing.Size(122, 13);
+            this.TLabelInfoVehiculo.TabIndex = 53;
+            this.TLabelInfoVehiculo.Text = "Información del vehiculo";
+            // 
             // TLabelDNI
             // 
             this.TLabelDNI.AutoSize = true;
@@ -355,16 +365,6 @@
             this.TLabelNombre.TabIndex = 40;
             this.TLabelNombre.Text = "label1";
             this.TLabelNombre.Visible = false;
-            // 
-            // TLabelInfoVehiculo
-            // 
-            this.TLabelInfoVehiculo.AutoSize = true;
-            this.TLabelInfoVehiculo.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelInfoVehiculo.Location = new System.Drawing.Point(197, 208);
-            this.TLabelInfoVehiculo.Name = "TLabelInfoVehiculo";
-            this.TLabelInfoVehiculo.Size = new System.Drawing.Size(122, 13);
-            this.TLabelInfoVehiculo.TabIndex = 53;
-            this.TLabelInfoVehiculo.Text = "Información del vehiculo";
             // 
             // TLabelDirec
             // 
@@ -455,9 +455,9 @@
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape TRectangleShapeCliente;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape TRectangleShaperReservas;
+        private System.Windows.Forms.Label TLabelInfoVehiculo;
         private System.Windows.Forms.Label TLabelDNI;
         private System.Windows.Forms.Label TLabelNombre;
-        private System.Windows.Forms.Label TLabelInfoVehiculo;
         private System.Windows.Forms.Label TLabelDirec;
     }
 }

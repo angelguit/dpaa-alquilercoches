@@ -31,18 +31,12 @@
             this.TLabelNFactura = new System.Windows.Forms.Label();
             this.TTextBoxNFactura = new System.Windows.Forms.TextBox();
             this.TButtonBuscar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.TLabelCliente = new System.Windows.Forms.Label();
             this.TLabelEmpresa = new System.Windows.Forms.Label();
             this.TButtonDuplicar = new System.Windows.Forms.Button();
             this.TButtonModificar = new System.Windows.Forms.Button();
             this.TButtonEliminar = new System.Windows.Forms.Button();
             this.TGroupBoxBuscarFactura = new System.Windows.Forms.GroupBox();
-            this.TLabelCP = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.TLabelDireccion = new System.Windows.Forms.Label();
-            this.TlabelRentACar = new System.Windows.Forms.Label();
-            this.TLabelCIF = new System.Windows.Forms.Label();
             this.TComboBoxTarifa = new System.Windows.Forms.ComboBox();
             this.TComboBoxConductores = new System.Windows.Forms.ComboBox();
             this.TComboBoxVehiculo = new System.Windows.Forms.ComboBox();
@@ -59,6 +53,12 @@
             this.TLabelConductores = new System.Windows.Forms.Label();
             this.TLabelVehiculo = new System.Windows.Forms.Label();
             this.TLabelCategoria = new System.Windows.Forms.Label();
+            this.TLabelCIF = new System.Windows.Forms.Label();
+            this.TLabelCP = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.TLabelDireccion = new System.Windows.Forms.Label();
+            this.TlabelRentACar = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.TGroupBoxBuscarFactura.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,15 +87,6 @@
             this.TButtonBuscar.TabIndex = 2;
             this.TButtonBuscar.Text = "Buscar";
             this.TButtonBuscar.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(322, 15);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 27);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Buscar por cliente";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // TLabelCliente
             // 
@@ -176,56 +167,6 @@
             this.TGroupBoxBuscarFactura.TabIndex = 45;
             this.TGroupBoxBuscarFactura.TabStop = false;
             this.TGroupBoxBuscarFactura.Text = "Buscar Factura";
-            // 
-            // TLabelCP
-            // 
-            this.TLabelCP.AutoSize = true;
-            this.TLabelCP.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelCP.Location = new System.Drawing.Point(674, 113);
-            this.TLabelCP.Name = "TLabelCP";
-            this.TLabelCP.Size = new System.Drawing.Size(166, 13);
-            this.TLabelCP.TabIndex = 36;
-            this.TLabelCP.Text = "C.P: 03210 (Guarroman) Albacete";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(674, 139);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(169, 13);
-            this.label1.TabIndex = 35;
-            this.label1.Text = "Tfno: 965123123 Fax: 965231231";
-            // 
-            // TLabelDireccion
-            // 
-            this.TLabelDireccion.AutoSize = true;
-            this.TLabelDireccion.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelDireccion.Location = new System.Drawing.Point(674, 87);
-            this.TLabelDireccion.Name = "TLabelDireccion";
-            this.TLabelDireccion.Size = new System.Drawing.Size(250, 13);
-            this.TLabelDireccion.TabIndex = 34;
-            this.TLabelDireccion.Text = "C/ Albatera Nº 123, Centro Comercial Las Castañas";
-            // 
-            // TlabelRentACar
-            // 
-            this.TlabelRentACar.AutoSize = true;
-            this.TlabelRentACar.BackColor = System.Drawing.Color.Transparent;
-            this.TlabelRentACar.Location = new System.Drawing.Point(674, 58);
-            this.TlabelRentACar.Name = "TlabelRentACar";
-            this.TlabelRentACar.Size = new System.Drawing.Size(77, 13);
-            this.TlabelRentACar.TabIndex = 33;
-            this.TlabelRentACar.Text = "Rent a Car S.L";
-            // 
-            // TLabelCIF
-            // 
-            this.TLabelCIF.AutoSize = true;
-            this.TLabelCIF.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelCIF.Location = new System.Drawing.Point(831, 58);
-            this.TLabelCIF.Name = "TLabelCIF";
-            this.TLabelCIF.Size = new System.Drawing.Size(93, 13);
-            this.TLabelCIF.TabIndex = 37;
-            this.TLabelCIF.Text = "CIF: 123456789-A";
             // 
             // TComboBoxTarifa
             // 
@@ -392,6 +333,65 @@
             this.TLabelCategoria.TabIndex = 38;
             this.TLabelCategoria.Text = "Categoría:";
             // 
+            // TLabelCIF
+            // 
+            this.TLabelCIF.AutoSize = true;
+            this.TLabelCIF.BackColor = System.Drawing.Color.Transparent;
+            this.TLabelCIF.Location = new System.Drawing.Point(831, 58);
+            this.TLabelCIF.Name = "TLabelCIF";
+            this.TLabelCIF.Size = new System.Drawing.Size(93, 13);
+            this.TLabelCIF.TabIndex = 37;
+            this.TLabelCIF.Text = "CIF: 123456789-A";
+            // 
+            // TLabelCP
+            // 
+            this.TLabelCP.AutoSize = true;
+            this.TLabelCP.BackColor = System.Drawing.Color.Transparent;
+            this.TLabelCP.Location = new System.Drawing.Point(674, 113);
+            this.TLabelCP.Name = "TLabelCP";
+            this.TLabelCP.Size = new System.Drawing.Size(166, 13);
+            this.TLabelCP.TabIndex = 36;
+            this.TLabelCP.Text = "C.P: 03210 (Guarroman) Albacete";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(674, 139);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(169, 13);
+            this.label1.TabIndex = 35;
+            this.label1.Text = "Tfno: 965123123 Fax: 965231231";
+            // 
+            // TLabelDireccion
+            // 
+            this.TLabelDireccion.AutoSize = true;
+            this.TLabelDireccion.BackColor = System.Drawing.Color.Transparent;
+            this.TLabelDireccion.Location = new System.Drawing.Point(674, 87);
+            this.TLabelDireccion.Name = "TLabelDireccion";
+            this.TLabelDireccion.Size = new System.Drawing.Size(250, 13);
+            this.TLabelDireccion.TabIndex = 34;
+            this.TLabelDireccion.Text = "C/ Albatera Nº 123, Centro Comercial Las Castañas";
+            // 
+            // TlabelRentACar
+            // 
+            this.TlabelRentACar.AutoSize = true;
+            this.TlabelRentACar.BackColor = System.Drawing.Color.Transparent;
+            this.TlabelRentACar.Location = new System.Drawing.Point(674, 58);
+            this.TlabelRentACar.Name = "TlabelRentACar";
+            this.TlabelRentACar.Size = new System.Drawing.Size(77, 13);
+            this.TlabelRentACar.TabIndex = 33;
+            this.TlabelRentACar.Text = "Rent a Car S.L";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(322, 15);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(120, 27);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Buscar por cliente";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // GestionFacturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -422,7 +422,6 @@
         private System.Windows.Forms.Label TLabelNFactura;
         private System.Windows.Forms.TextBox TTextBoxNFactura;
         private System.Windows.Forms.Button TButtonBuscar;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label TLabelCliente;
         private System.Windows.Forms.Label TLabelEmpresa;
         private System.Windows.Forms.Button TButtonDuplicar;
@@ -450,5 +449,6 @@
         private System.Windows.Forms.Label TLabelConductores;
         private System.Windows.Forms.Label TLabelVehiculo;
         private System.Windows.Forms.Label TLabelCategoria;
+        private System.Windows.Forms.Button button1;
     }
 }

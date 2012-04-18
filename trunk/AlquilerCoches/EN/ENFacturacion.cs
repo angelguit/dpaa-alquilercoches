@@ -77,6 +77,20 @@ namespace EN
             get { return idCliente; }
             set { idCliente = IDCliente; }
         }
+
+        public DataSet ObtenerFacturas(string sentencia)
+        {
+            DataSet resultado = new DataSet();
+            try
+            {
+                resultado = cadFacturacion.ObtenerTablaFacturas();//todas
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            return resultado;
+        }
     }
 }
 
