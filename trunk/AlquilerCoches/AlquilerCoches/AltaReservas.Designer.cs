@@ -141,6 +141,7 @@
             // 
             // TComboBoxConductores
             // 
+            this.TComboBoxConductores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TComboBoxConductores.FormattingEnabled = true;
             this.TComboBoxConductores.Items.AddRange(new object[] {
             "1",
@@ -155,7 +156,6 @@
             this.TComboBoxConductores.Name = "TComboBoxConductores";
             this.TComboBoxConductores.Size = new System.Drawing.Size(61, 21);
             this.TComboBoxConductores.TabIndex = 34;
-            this.TComboBoxConductores.Text = "Nº";
             // 
             // TLabelFechaInicio
             // 

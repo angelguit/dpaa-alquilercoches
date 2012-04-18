@@ -6,12 +6,15 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Collections;
 
 namespace AlquilerCoches
 {
     public partial class GestionReservas : Form
     {
         private EN.ENCliente enCliente = new EN.ENCliente();
+        private ArrayList arraynumRes = new ArrayList();
+        private string eliminado = "";
         public GestionReservas()
         {
             InitializeComponent();
@@ -127,7 +130,7 @@ namespace AlquilerCoches
                     sentencia += " and FK_Cliente ='" + enCliente.DNI.ToString() + "'";
                 }
             }
-
+            eliminado = sentencia;
             ds = enRe.ObtenerReservas(sentencia);
             TDataGridViewReservas.DataSource = ds;
             TDataGridViewReservas.DataMember = "Reservas";
@@ -141,5 +144,80 @@ namespace AlquilerCoches
             TButtonBuscarCliente.Visible = true;
         }
 
+
+        private void TDataGridViewReservas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+           // try
+            //{
+
+                if (TDataGridViewReservas.Rows[e.RowIndex].Cells[e.ColumnIndex].ColumnIndex.ToString() == "0") // la columna 0 es el checkbox de eliminiar
+                {
+                    string numRes = TDataGridViewReservas.Rows[e.RowIndex].Cells[2].Value.ToString();
+
+                    if (arraynumRes.Count == 0)
+                    {
+                        arraynumRes.Add(numRes);
+                    }
+                    else
+                    {
+                        bool esta = false;
+                        for (int i = 0; i < arraynumRes.Count; i++)
+                        {
+                            if (arraynumRes[i].ToString() == numRes)
+                            {
+                                arraynumRes.RemoveAt(i);//para borrarlo de la array porque esto quiere decir que lo hemos deseleccionado
+                                esta = true;
+                            }
+                        }
+                        if (esta == false)
+                            arraynumRes.Add(numRes);
+                    }
+                }
+                else if (TDataGridViewReservas.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "Editar")
+                {
+
+                        EN.ENReservas enRe = new EN.ENReservas();
+                        enRe.Cliente = TDataGridViewReservas.Rows[e.RowIndex].Cells[2].Value.ToString();
+                        enRe.Matricula = enRe.Cliente = TDataGridViewReservas.Rows[e.RowIndex].Cells[3].Value.ToString();
+                        enRe.FechaInicio = Convert.ToDateTime(TDataGridViewReservas.Rows[e.RowIndex].Cells[5].Value);
+                        enRe.FechaFin = Convert.ToDateTime(TDataGridViewReservas.Rows[e.RowIndex].Cells[6].Value);
+                        enRe.Conductores = Int32.Parse(TDataGridViewReservas.Rows[e.RowIndex].Cells[7].Value.ToString());
+                        
+
+                        AltaReservas F1 = new AltaReservas(enRe, "Guardar Cambios");
+                        F1.ShowDialog();
+
+                    
+                }
+
+            //}
+           /* catch (Exception ex)
+            {
+                throw (ex);
+            }*/
+        }
+
+        private void TButtonEliminar_Click(object sender, EventArgs e)
+        {
+            EN.ENReservas enRes = new EN.ENReservas();
+            if (arraynumRes.Count > 0)
+            {
+                if (MessageBox.Show("¿Desea eliminar '" + arraynumRes.Count.ToString() + "' registros?", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                {
+                    enRes.EliminarReserva(arraynumRes);
+                }
+
+                arraynumRes.Clear();
+                DataSet ou = new DataSet();
+                ou = enRes.ObtenerReservas(eliminado);
+                TDataGridViewReservas.DataSource = ou;
+
+            }
+            else
+                MessageBox.Show("Debe seleccionar algún registro", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 }
+
+        

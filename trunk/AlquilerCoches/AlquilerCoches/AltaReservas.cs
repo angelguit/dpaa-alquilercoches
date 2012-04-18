@@ -11,6 +11,36 @@ namespace AlquilerCoches
 {
     public partial class AltaReservas : Form
     {
+        public AltaReservas(EN.ENReservas enRe, string texto)
+        {
+            InitializeComponent();
+            DataSet dsCli = new DataSet();
+            EN.ENVehiculo enVe = new EN.ENVehiculo();
+            EN.ENCliente enCli = new EN.ENCliente();
+            dsCli = enCli.ObtenerDatosClienteConDni(enRe.Cliente.ToString());
+            enVe.Matricula = enRe.Matricula;
+            enVe.ObtenerDatosVehiculos();
+
+            string nombre = dsCli.Tables["Cliente"].Rows[0][1].ToString();
+            string apellidos = dsCli.Tables["Cliente"].Rows[0][2].ToString();
+            string dni = dsCli.Tables["Cliente"].Rows[0][0].ToString();
+            string telf = dsCli.Tables["Cliente"].Rows[0][4].ToString();
+            string direc = dsCli.Tables["Cliente"].Rows[0][6].ToString();
+            
+            TLabelNombre.Text = "Nombre: " + nombre + "Apellidos: " + apellidos;
+            TLabelDNI.Text = "DNI: " + dni + "Telf: " + telf;
+            TLabelDirec.Text = "Direccion: " + direc;
+            TButtonBuscarCliente.Visible = false;
+            TLabelNombre.Visible = true;
+            TLabelDirec.Visible = true;
+            TLabelDNI.Visible = true;
+            TRectangleShapeCliente.Visible = true;
+            TButtonEditar.Visible = true;
+
+            TComboBoxConductores.SelectedIndex = TComboBoxConductores.FindStringExact(enRe.Conductores.ToString());
+            
+            
+        }
         private string mens,provincias,ciudades;
         private EN.ENCliente enCliente = new EN.ENCliente();
         private void RellenarMarcas(DataSet dsMar)
