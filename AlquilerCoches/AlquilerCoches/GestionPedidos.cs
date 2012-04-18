@@ -278,7 +278,7 @@ namespace AlquilerCoches
             
 
 
-        }*/
+        }
 
         private void TObservTextBox_TextChanged(object sender, EventArgs e)
         {
