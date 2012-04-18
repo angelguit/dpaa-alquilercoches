@@ -19,7 +19,11 @@ namespace AlquilerCoches
             InitializeComponent();
             TGroupBoxSeleccion.Enabled = false;
             TGroupBoxDatosVehiculo.Enabled = false;
+            DataSet dsProv = vehiculos.ObtenerCategorias();
+            TComboBoxCategoria.DataSource = dsProv.Tables["Categoria"];
+            TComboBoxCategoria.DisplayMember = dsProv.Tables["Categoria"].Columns[0].Caption.ToString();
             limpiaFormulario();
+
         }
 
         public void setTipo(string Option)
@@ -47,22 +51,22 @@ namespace AlquilerCoches
             TListBoxMarcas.Items.Clear();
             TListBoxMatriculas.Items.Clear();
             TListBoxModelos.Items.Clear();
-            //TTextBoxAnyo.Text = "";
+            
             TTextBoxGarantia.Text = "";
             TTextBoxKM.Text = "";
             TTextBoxMarca.Text = "";
             TTextBoxMatricula.Text = "";
             TTextBoxModelo.Text = "";
-            //TTextBoxCategoria.Text = "";
             TTextBoxPrecioCompra.Text = "";
             TTextBoxPrecioVenta.Text = "";
-            //TTextBoxAnyo.Enabled = true;
+            TComboBoxCategoria.SelectedIndex = -1;
+
             TTextBoxGarantia.Enabled = true;
             TTextBoxKM.Enabled = true;
             TTextBoxMarca.Enabled = true;
             TTextBoxMatricula.Enabled = true;
             TTextBoxModelo.Enabled = true;
-            //TTextBoxCategoria.Enabled = true;
+            TComboBoxCategoria.Enabled = true;
             TTextBoxPrecioCompra.Enabled = true;
             TTextBoxPrecioVenta.Enabled = true;
             TButtonOK.Enabled = false;
@@ -408,8 +412,7 @@ namespace AlquilerCoches
             TTextBoxMatricula.Text = vehiculos.Matricula;
             TTextBoxMarca.Text = vehiculos.Marca;
             TTextBoxModelo.Text = vehiculos.Modelo;
-            rellenaCategorias();
-             
+            rellenaCategorias(); 
             TTextBoxGarantia.Text = vehiculos.Garantia;
             TTextBoxKM.Text = vehiculos.KM.ToString();
             TTextBoxPrecioCompra.Text = vehiculos.PrecioCompra.ToString();
@@ -422,9 +425,7 @@ namespace AlquilerCoches
             vehiculos.Matricula = TTextBoxMatricula.Text;
             vehiculos.Marca = TTextBoxMarca.Text;
             vehiculos.Modelo = TTextBoxModelo.Text;
-            
-            //vehiculos.Categoria = TTextBoxCategoria.Text;
-            //vehiculos.Anyo = TTextBoxAnyo.Text;
+            guardaCategoria();
             vehiculos.Garantia = TTextBoxGarantia.Text;
             vehiculos.KM = TTextBoxKM.Text;
             vehiculos.PrecioCompra = TTextBoxPrecioCompra.Text;
@@ -434,11 +435,48 @@ namespace AlquilerCoches
 
         void rellenaCategorias()
         {
-            DataSet dsProv = vehiculos.ObtenerCategorias();
+            
+            if (accion == "Anyadir")
+            {
+                TComboBoxCategoria.SelectedIndex = -1;
+            }
+            else
+            {
+                switch (vehiculos.Categoria)
+                {
+                    case "A":
+                        TComboBoxCategoria.SelectedIndex = 0;
+                        break;
+                    case "B":
+                        TComboBoxCategoria.SelectedIndex = 1;
+                        break;
+                    case "C":
+                        TComboBoxCategoria.SelectedIndex = 2;
+                        break;
+                    case "D":
+                        TComboBoxCategoria.SelectedIndex = 3;
+                        break;
+                }
+            }
+        }
 
-            TComboBoxCategoria.DataSource = dsProv.Tables["Categoria"];
-            TComboBoxCategoria.DisplayMember = dsProv.Tables["Categoria"].Columns[0].Caption.ToString();
-            TComboBoxCategoria.SelectedIndex = -1;
+        void guardaCategoria()
+        {
+            switch (TComboBoxCategoria.SelectedIndex)
+            {
+                case 0:
+                    vehiculos.Categoria = "A";
+                    break;
+                case 1:
+                    vehiculos.Categoria = "B";
+                    break;
+                case 2:
+                    vehiculos.Categoria = "C";
+                    break;
+                case 3:
+                    vehiculos.Categoria = "D";
+                    break;
+            }
         }
     }
 }

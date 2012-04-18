@@ -27,7 +27,6 @@ namespace EN
         private ArrayList listaMarcas = new ArrayList();
         private ArrayList listaModelos = new ArrayList();
         private ArrayList listaMatriculas = new ArrayList();
-        private ArrayList listaCategorias = new ArrayList();
 
 
         private CAD.CADVehiculo cadVehiculo = new CAD.CADVehiculo();
@@ -156,10 +155,10 @@ namespace EN
                 vehiculo.Tables["Vehiculo"].Rows[0][0] = marca;
                 vehiculo.Tables["Vehiculo"].Rows[0][1] = modelo;
                 //vehiculo.Tables["Vehiculo"].Rows[0][2] = matricula;
-                vehiculo.Tables["Vehiculo"].Rows[0][3] = precioVenta;
-                vehiculo.Tables["Vehiculo"].Rows[0][4] = precioCompra;
+                vehiculo.Tables["Vehiculo"].Rows[0][3] = Int32.Parse(precioVenta);
+                vehiculo.Tables["Vehiculo"].Rows[0][4] = Int32.Parse(precioCompra);
                 vehiculo.Tables["Vehiculo"].Rows[0][5] = garantia;
-                vehiculo.Tables["Vehiculo"].Rows[0][6] = km;
+                vehiculo.Tables["Vehiculo"].Rows[0][6] = Int32.Parse(km);
                 vehiculo.Tables["Vehiculo"].Rows[0][7] = estado;
                 //vehiculo.Tables["Vehiculo"].Rows[0][8] = categoria;
                 cadVehiculo.EditarVehiculo(vehiculo);
@@ -182,10 +181,10 @@ namespace EN
                 linea[0] = marca;
                 linea[1] = modelo;
                 linea[2] = matricula;
-                linea[3] = precioVenta;
-                linea[4] = precioCompra;
+                linea[3] = Int32.Parse(precioVenta);
+                linea[4] = Int32.Parse(precioCompra);
                 linea[5] = garantia;
-                linea[6] = km;
+                linea[6] = Int32.Parse(km);
                 linea[7] = estado;
                 linea[8] = categoria;
                 resultado.Tables["Vehiculo"].Rows.Add(linea);
@@ -281,11 +280,6 @@ namespace EN
         {
             get { return listaModelos; }
             set { listaMarcas = value; }
-        }
-        public ArrayList ListaCategorias
-        {
-            get { return listaCategorias; }
-            set { listaCategorias = value; }
         }
 
         public ArrayList ListaMarcas
