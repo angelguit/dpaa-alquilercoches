@@ -105,6 +105,21 @@ namespace AlquilerCoches
             {
                 errorProvider1.SetError(TTextBoxMarca, "");
             }
+
+            foreach (string marca in vehiculos.ListaMarcas)
+            {
+                if (String.Compare(marca, TTextBoxMarca.Text, true) == 0)
+                {
+                    TListBoxModelos.Items.Clear();
+                    TTextBoxMarca.Text = marca;
+                    TListBoxMarcas.SelectedIndex = TListBoxMarcas.FindString(marca);
+                    
+                    TGroupBoxDatosVehiculo.Enabled = false;
+                    TGroupBoxSeleccion.Enabled = true;
+                    break;
+                }
+            }
+            TListBoxMarcas_SelectedIndexChanged(null, null);
         }
 
         private void TTextBoxModelo_TextChanged(object sender, EventArgs e)
@@ -117,27 +132,22 @@ namespace AlquilerCoches
             {
                 errorProvider1.SetError(TTextBoxModelo, "");
             }
-        }
-        /*
-        private void TTextBoxAnyo_TextChanged(object sender, EventArgs e)
-        {
-            if (!Regex.IsMatch(TTextBoxAnyo.Text, @"^\d{4}$"))
+            foreach (string modelo in vehiculos.ListaModelos)
             {
-                errorProvider1.SetError(TTextBoxAnyo, "Solo se adminten numeros");
-            }
-            else
-            {
-                if (Int32.Parse(TTextBoxAnyo.Text) < 1960 || Int32.Parse(TTextBoxAnyo.Text) > DateTime.Now.Year)
+                if (String.Compare(modelo, TTextBoxModelo.Text, true) == 0)
                 {
-                    errorProvider1.SetError(TTextBoxAnyo, "Solo se adminten anyos entre 1960-actual");
-                }
-                else
-                {
-                    errorProvider1.SetError(TTextBoxAnyo, "");
+                    //TListBoxModelos.Items.Clear();
+                    TTextBoxModelo.Text = modelo;
+                    TListBoxModelos.SelectedIndex = TListBoxModelos.FindString(modelo);
+
+                    TGroupBoxDatosVehiculo.Enabled = false;
+                    TGroupBoxSeleccion.Enabled = true;
+                    break;
                 }
             }
+            TListBoxModelos_SelectedIndexChanged(null, null);
         }
-        */
+        
         private void TTextBoxPrecioCompra_TextChanged(object sender, EventArgs e)
         {
             if (!Regex.IsMatch(TTextBoxPrecioCompra.Text, @"^\d+$"))
@@ -175,26 +185,7 @@ namespace AlquilerCoches
                 }
             }
         }
-        /*
-        private void TTextBoxPrecioAlquiler_TextChanged(object sender, EventArgs e)
-        {
-            if (!Regex.IsMatch(TTextBoxCategoria.Text, @"^\d+$"))
-            {
-                errorProvider1.SetError(TTextBoxCategoria, "Solo se adminten numeros");
-            }
-            else
-            {
-                if (Int32.Parse(TTextBoxCategoria.Text) < 0)
-                {
-                    errorProvider1.SetError(TTextBoxCategoria, "Solo se adminten valores mayores que cero");
-                }
-                else
-                {
-                    errorProvider1.SetError(TTextBoxCategoria, "");
-                }
-            }
-        }
-        */
+        
         private void TTextBoxKM_TextChanged(object sender, EventArgs e)
         {
             if (!Regex.IsMatch(TTextBoxKM.Text, @"^\d+$"))
