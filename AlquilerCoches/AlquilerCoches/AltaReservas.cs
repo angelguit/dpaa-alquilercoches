@@ -148,8 +148,9 @@ namespace AlquilerCoches
                 enRe.Matricula = TComboBoxMatricula.Text.ToString();
                 enRe.Modelo = TComboBoxModelo.Text.ToString();
                 enRe.AnyadirReserva();
+                enVe.ObtenerDatosVehiculos();
                 enVe.Estado = "Reservado";
-                //enVe.EditarVehiculo();
+                enVe.EditarVehiculo();
                 MessageBox.Show("Reserva realizada con éxito", "Nueva Reserva", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
             }

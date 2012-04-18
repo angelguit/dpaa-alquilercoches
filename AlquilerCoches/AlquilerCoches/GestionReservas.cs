@@ -107,11 +107,13 @@ namespace AlquilerCoches
             {
                 if (sentencia == "")
                 {
-                    sentencia += " Fecha inicio >='" + TDateTimePickerFechaFin.Value.ToString() + "' and Fecha fin <='" + TDateTimePickerFechaInicio.Value.ToString() + "'";
+                    sentencia += " Fecha inicio between '" + TDateTimePickerFechaInicio.Value.ToString() + "'" + " and '" + TDateTimePickerFechaFin.Value.ToString() + "'";
+                    sentencia += " and Fecha fin between '" + TDateTimePickerFechaInicio.Value.ToString() + "'" + " and '" + TDateTimePickerFechaFin.Value.ToString() + "'";
                 }
                 else
                 {
-                    sentencia += " and Fecha inicio >='" + TDateTimePickerFechaFin.Value.ToString() + "' and Fecha fin <= '" + TDateTimePickerFechaInicio.Value.ToString() + "'";
+                    sentencia += " and Fecha inicio between'" + TDateTimePickerFechaFin.Value.ToString() + "' and '" + TDateTimePickerFechaInicio.Value.ToString() + "'";
+                    sentencia += " and Fecha fin between '" + TDateTimePickerFechaInicio.Value.ToString() + "'" + " and '" + TDateTimePickerFechaFin.Value.ToString() + "'";
                 }
             }
             if (TLabelCliente.Visible == true)
