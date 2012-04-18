@@ -156,12 +156,13 @@ namespace AlquilerCoches
             {
                 guardaCampos();
                 ventas.AnyadirVenta();
+
+                vehiculos.ClearEnVehiculo();
+                vehiculos.Matricula = TTextBoxMatricula.Text;
+                vehiculos.BorrarVehiculo();
+
                 limpiaFormulario();
                 rellenaMarcas();
-
-                /*vehiculos.ClearEnVehiculo();
-                vehiculos.Matricula = TTextBoxMatricula.Text;
-                vehiculos.BorrarVehiculo();*/
             }
             else
             {
