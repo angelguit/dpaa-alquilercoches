@@ -158,16 +158,15 @@ namespace AlquilerCoches
                 ventas.AnyadirVenta();
                 limpiaFormulario();
                 rellenaMarcas();
+
+                vehiculos.ClearEnVehiculo();
+                vehiculos.Matricula = TTextBoxMatricula.Text;
+                vehiculos.BorrarVehiculo();
             }
             else
             {
                 MessageBox.Show("Hay algún error en los datos introducidos.", "¡ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             }
-            
-
-            //vehiculos.ClearEnVehiculo();
-           // vehiculos.Matricula = TTextBoxMatricula.Text;
-            //vehiculos.BorrarVehiculo();
         }
 
         private void TButtonCancelar_Click(object sender, EventArgs e)
