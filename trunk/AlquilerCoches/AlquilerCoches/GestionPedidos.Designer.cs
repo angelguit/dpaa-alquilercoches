@@ -235,9 +235,6 @@
             // 
             this.TMarcacomboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TMarcacomboBox2.FormattingEnabled = true;
-            this.TMarcacomboBox2.Items.AddRange(new object[] {
-            "",
-            "FORD"});
             this.TMarcacomboBox2.Location = new System.Drawing.Point(165, 55);
             this.TMarcacomboBox2.Name = "TMarcacomboBox2";
             this.TMarcacomboBox2.Size = new System.Drawing.Size(179, 21);
