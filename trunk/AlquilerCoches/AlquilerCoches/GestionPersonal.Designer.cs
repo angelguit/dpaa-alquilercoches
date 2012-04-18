@@ -154,6 +154,7 @@
             this.TComboBoxCiudades.Name = "TComboBoxCiudades";
             this.TComboBoxCiudades.Size = new System.Drawing.Size(108, 21);
             this.TComboBoxCiudades.TabIndex = 7;
+            this.TComboBoxCiudades.Click += new System.EventHandler(this.TComboBoxCiudades_Click);
             // 
             // TTextBoxDireccion
             // 
