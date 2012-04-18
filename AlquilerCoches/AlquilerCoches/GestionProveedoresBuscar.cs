@@ -17,8 +17,8 @@ namespace AlquilerCoches
 
         public GestionProveedoresBuscar()
         {
-            InitializeComponent(); 
-
+            InitializeComponent();
+            dataGridView1.Visible = false;
             DataGridViewButtonColumn buttons = new DataGridViewButtonColumn();
             {
                 buttons.HeaderText = "Editar"; //texto de la columna
@@ -50,6 +50,8 @@ namespace AlquilerCoches
 
         private void TButtonBuscar_Click(object sender, EventArgs e)
         {
+            dataGridView1.Visible = true;
+            groupBox1.Location = new Point(70, 330); //para desplazar el panel de busqueda hacia abajo.
             string cadena = "";
             EN.ENProveedores buscarProveedores = new EN.ENProveedores();
             DataSet resultadoProveedores = new DataSet();

@@ -145,7 +145,7 @@
             this.groupBox1.Controls.Add(this.TLabelProvincia);
             this.groupBox1.Controls.Add(this.TLabelMarca);
             this.groupBox1.Controls.Add(this.TLabelCIF);
-            this.groupBox1.Location = new System.Drawing.Point(36, 315);
+            this.groupBox1.Location = new System.Drawing.Point(51, 73);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(473, 144);
             this.groupBox1.TabIndex = 51;

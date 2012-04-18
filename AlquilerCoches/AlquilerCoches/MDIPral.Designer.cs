@@ -72,6 +72,7 @@
             this.TButtonVehiculos = new System.Windows.Forms.Button();
             this.TButtonCliente = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.nuevoBuscarFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -203,7 +204,8 @@
             // 
             this.facturacionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TToolStripMenuItemNuevaFactura,
-            this.TToolStripMenuItemBuscarFactura});
+            this.TToolStripMenuItemBuscarFactura,
+            this.nuevoBuscarFacturaToolStripMenuItem});
             this.facturacionToolStripMenuItem.Name = "facturacionToolStripMenuItem";
             this.facturacionToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
             this.facturacionToolStripMenuItem.Text = "Facturacion";
@@ -211,14 +213,14 @@
             // TToolStripMenuItemNuevaFactura
             // 
             this.TToolStripMenuItemNuevaFactura.Name = "TToolStripMenuItemNuevaFactura";
-            this.TToolStripMenuItemNuevaFactura.Size = new System.Drawing.Size(151, 22);
+            this.TToolStripMenuItemNuevaFactura.Size = new System.Drawing.Size(187, 22);
             this.TToolStripMenuItemNuevaFactura.Text = "Nueva Factura";
             this.TToolStripMenuItemNuevaFactura.Click += new System.EventHandler(this.TToolStripMenuItemNuevaFactura_Click);
             // 
             // TToolStripMenuItemBuscarFactura
             // 
             this.TToolStripMenuItemBuscarFactura.Name = "TToolStripMenuItemBuscarFactura";
-            this.TToolStripMenuItemBuscarFactura.Size = new System.Drawing.Size(151, 22);
+            this.TToolStripMenuItemBuscarFactura.Size = new System.Drawing.Size(187, 22);
             this.TToolStripMenuItemBuscarFactura.Text = "Buscar Factura";
             this.TToolStripMenuItemBuscarFactura.Click += new System.EventHandler(this.TToolStripMenuItemBuscarFactura_Click);
             // 
@@ -234,7 +236,7 @@
             // ponerEnVentaToolStripMenuItem
             // 
             this.ponerEnVentaToolStripMenuItem.Name = "ponerEnVentaToolStripMenuItem";
-            this.ponerEnVentaToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.ponerEnVentaToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.ponerEnVentaToolStripMenuItem.Text = "Poner en Venta";
             this.ponerEnVentaToolStripMenuItem.Click += new System.EventHandler(this.ponerEnVentaToolStripMenuItem_Click);
             // 
@@ -461,6 +463,13 @@
             this.tabPage1.Text = "Administración";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // nuevoBuscarFacturaToolStripMenuItem
+            // 
+            this.nuevoBuscarFacturaToolStripMenuItem.Name = "nuevoBuscarFacturaToolStripMenuItem";
+            this.nuevoBuscarFacturaToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.nuevoBuscarFacturaToolStripMenuItem.Text = "Nuevo buscar factura";
+            this.nuevoBuscarFacturaToolStripMenuItem.Click += new System.EventHandler(this.nuevoBuscarFacturaToolStripMenuItem_Click);
+            // 
             // MDIPral
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -534,6 +543,7 @@
         private System.Windows.Forms.ToolStripMenuItem gestionReservasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevaReservaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem buscarReservasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nuevoBuscarFacturaToolStripMenuItem;
     }
 }
 

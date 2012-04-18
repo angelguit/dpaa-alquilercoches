@@ -358,6 +358,13 @@ namespace AlquilerCoches
             }
         }
 
+        private void nuevoBuscarFacturaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GestionFacturacionBuscar factura = new GestionFacturacionBuscar();
+            factura.MdiParent = this;
+            factura.Show();
+        }
+
      
      }   
 }

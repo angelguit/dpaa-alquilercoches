@@ -82,6 +82,12 @@
     <Compile Include="EditarVentas.Designer.cs">
       <DependentUpon>EditarVentas.cs</DependentUpon>
     </Compile>
+    <Compile Include="GestionFacturacionBuscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionFacturacionBuscar.Designer.cs">
+      <DependentUpon>GestionFacturacionBuscar.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestionClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditarVentas.resx">
       <DependentUpon>EditarVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionFacturacionBuscar.resx">
+      <DependentUpon>GestionFacturacionBuscar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestionClientes.resx">
       <DependentUpon>GestionClientes.cs</DependentUpon>
