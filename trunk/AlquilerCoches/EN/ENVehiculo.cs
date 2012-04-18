@@ -155,8 +155,8 @@ namespace EN
                 vehiculo.Tables["Vehiculo"].Rows[0][0] = marca;
                 vehiculo.Tables["Vehiculo"].Rows[0][1] = modelo;
                 //vehiculo.Tables["Vehiculo"].Rows[0][2] = matricula;
-                vehiculo.Tables["Vehiculo"].Rows[0][3] = Int32.Parse(precioVenta);
-                vehiculo.Tables["Vehiculo"].Rows[0][4] = Int32.Parse(precioCompra);
+                vehiculo.Tables["Vehiculo"].Rows[0][3] = float.Parse(precioVenta);
+                vehiculo.Tables["Vehiculo"].Rows[0][4] = float.Parse(precioCompra);
                 vehiculo.Tables["Vehiculo"].Rows[0][5] = Int32.Parse(garantia);
                 vehiculo.Tables["Vehiculo"].Rows[0][6] = Int32.Parse(km);
                 vehiculo.Tables["Vehiculo"].Rows[0][7] = estado;
@@ -181,8 +181,8 @@ namespace EN
                 linea[0] = marca;
                 linea[1] = modelo;
                 linea[2] = matricula;
-                linea[3] = Int32.Parse(precioVenta);
-                linea[4] = Int32.Parse(precioCompra);
+                linea[3] = float.Parse(precioVenta);
+                linea[4] = float.Parse(precioCompra);
                 linea[5] = garantia;
                 linea[6] = Int32.Parse(km);
                 linea[7] = estado;
