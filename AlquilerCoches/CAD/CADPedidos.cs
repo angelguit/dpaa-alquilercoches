@@ -114,22 +114,45 @@ namespace CAD
         public DataSet ConseguirModelos(string modelo)
         {
             DataSet dsMod = new DataSet();
+            string consulta = "";
+            //try
+            //{
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                if (modelo != "")
+                    consulta = "Select nom_modelo FROM Modelo where num_modelo='" + modelo + "'";
+                else
+                    consulta = "Select * FROM Modelo where 1=2";
+                SqlDataAdapter daMod = new SqlDataAdapter(consulta, conexion);
+                daMod.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daMod.Fill(dsMod, "Modelo"); 
+            /*}
+            catch (Exception ex)
+            {
+                throw (ex);
+            }*/
+
+            return dsMod;
+        }
+
+        public string ObtenerNumMarca(string marca)
+        {
+            DataSet dsMod = new DataSet();
 
             try
             {
                 SqlConnection conexion = new SqlConnection(cadenaConexion);
-                String consulta = "Select nom_mod FROM Modelo where num_mod='" + modelo + "'";
+                String consulta = "Select id_marca FROM Marca where marca='" + marca + "'";
                 SqlDataAdapter daMod = new SqlDataAdapter(consulta, conexion);
                 daMod.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-                daMod.Fill(dsMod, "Modelo"); //dsPersonal es ahora nuestra base de datos local
+                daMod.Fill(dsMod, "Marca"); //dsPersonal es ahora nuestra base de datos local
             }
             catch (Exception ex)
             {
                 throw (ex);
             }
 
-            return dsMod;
+            string retorno = dsMod.Tables["Marca"].Rows[0][0].ToString();
+            return retorno;
         }
-
     }
 }
