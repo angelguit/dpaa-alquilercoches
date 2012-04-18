@@ -255,10 +255,12 @@
             " TOYOTA SANTA FAZ S.L.",
             " RENAULT BABEL S.L.",
             " MERCEDES-BENZ ATALAYAS S.L.",
-            " DACIA LOGAN VIRGEN DEL REMEDIO S.A."});
+            " DACIA LOGAN VIRGEN DEL REMEDIO S.A.",
+            " CONCESIONARIO CAZORLA S.L.",
+            " AUTOMOCIÓN SIERRA TRAMONTANA S.L."});
             this.TProveecomboBox1.Location = new System.Drawing.Point(165, 22);
             this.TProveecomboBox1.Name = "TProveecomboBox1";
-            this.TProveecomboBox1.Size = new System.Drawing.Size(246, 21);
+            this.TProveecomboBox1.Size = new System.Drawing.Size(234, 21);
             this.TProveecomboBox1.TabIndex = 34;
             this.TProveecomboBox1.SelectedIndexChanged += new System.EventHandler(this.TProveecomboBox1_SelectedIndexChanged);
             // 
