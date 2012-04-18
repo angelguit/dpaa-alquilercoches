@@ -208,23 +208,26 @@ namespace AlquilerCoches
                 }
                 else if (TDataGridViewPersonal.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "Editar")
                 {
+                    string nom = TDataGridViewPersonal.Rows[e.RowIndex].Cells[3].Value.ToString();//indice 1 para cojer el nombre
+                    string dni = TDataGridViewPersonal.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    string apell = TDataGridViewPersonal.Rows[e.RowIndex].Cells[4].Value.ToString();
+                    string telef = TDataGridViewPersonal.Rows[e.RowIndex].Cells[5].Value.ToString();
+                    string mail = TDataGridViewPersonal.Rows[e.RowIndex].Cells[6].Value.ToString();
+                    string direc = TDataGridViewPersonal.Rows[e.RowIndex].Cells[7].Value.ToString();
+                    string ciu = TDataGridViewPersonal.Rows[e.RowIndex].Cells[8].Value.ToString();
+                    string prov = TDataGridViewPersonal.Rows[e.RowIndex].Cells[9].Value.ToString();
+                    string puesac = TDataGridViewPersonal.Rows[e.RowIndex].Cells[10].Value.ToString();
+
+                    string nombrebotonguardar = "Guardar Cambios";
+
                     if (Application.OpenForms["GestionPersonal"] != null)
                     {
-                        Application.OpenForms["GestionPersonal"].Activate();
+                        Application.OpenForms["GestionPersonal"].Close();
+
                     }
                     else
                     {
-                        string nom = TDataGridViewPersonal.Rows[e.RowIndex].Cells[3].Value.ToString();//indice 1 para cojer el nombre
-                        string dni = TDataGridViewPersonal.Rows[e.RowIndex].Cells[2].Value.ToString();
-                        string apell = TDataGridViewPersonal.Rows[e.RowIndex].Cells[4].Value.ToString();
-                        string telef = TDataGridViewPersonal.Rows[e.RowIndex].Cells[5].Value.ToString();
-                        string mail = TDataGridViewPersonal.Rows[e.RowIndex].Cells[6].Value.ToString();
-                        string direc = TDataGridViewPersonal.Rows[e.RowIndex].Cells[7].Value.ToString();
-                        string ciu = TDataGridViewPersonal.Rows[e.RowIndex].Cells[8].Value.ToString();
-                        string prov = TDataGridViewPersonal.Rows[e.RowIndex].Cells[9].Value.ToString();
-                        string puesac = TDataGridViewPersonal.Rows[e.RowIndex].Cells[10].Value.ToString();
-
-                        string nombrebotonguardar = "Guardar Cambios";
+                        
                         GestionPersonal Formu = new GestionPersonal(nom,dni,apell,telef,mail,direc,ciu,prov,puesac, nombrebotonguardar);
 
                         Formu.StartPosition = FormStartPosition.CenterScreen;
