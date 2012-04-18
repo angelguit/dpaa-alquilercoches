@@ -204,48 +204,45 @@ namespace AlquilerCoches
             TComboBoxCiudades.DataSource = dsCiu.Tables["Ciudades"];
             TComboBoxCiudades.DisplayMember = dsCiu.Tables["Ciudades"].Columns[0].Caption.ToString();
         }
+
         private void TComboBoxProvincias_Click_1(object sender, EventArgs e)
         {
-            if (TComboBoxCiudades.Items.Count > 0) //lo dejamos en blanco por si hubiera alguna ciudad, para realizar nueva busqueda de provincia
-            {
-                // MessageBox.Show("hola");
-                if(TComboBoxCiudades.Items.Count == 1)
-                    TComboBoxCiudades.Items.Clear();
-                    
-                TComboBoxCiudades.DataSource = null;
-            }
-
-            EN.ENPersonal enProv = new EN.ENPersonal();
+            EN.ENProveedores provincia = new EN.ENProveedores();
             DataSet dsProv = new DataSet();
-            dsProv = enProv.ObtenerListaProvincias();
+            dsProv = provincia.ObtenerListaProvincias();
             ObtenerProvincias(dsProv);
+
         }
 
-        private void TComboBoxCiudades_Click_1(object sender, EventArgs e)
+        private void TComboBoxProvincias_TextChanged(object sender, EventArgs e)
         {
-            EN.ENPersonal enCiu = new EN.ENPersonal();
+            EN.ENProveedores enCiu = new EN.ENProveedores();
             DataSet dsCiu = new DataSet();
             try
             {
-                string prov = TComboBoxProvincias.Text.ToString();
-                bool parar = false;
-                // MessageBox.Show(numProvincia.Tables["Provincia"].Rows.Count.ToString());
-                for (int i = 0; i < 53 && parar != true; i++)
+                if (TComboBoxProvincias.SelectedIndex > 0)
                 {
-                    //MessageBox.Show(numProvincia.Tables["Provincia"].Rows[i][1].ToString());
-                    if (numProvincia.Tables["Provincia"].Rows[i][1].ToString() == prov)
+                    //MessageBox.Show("iusdhg");
+                    string prov = TComboBoxProvincias.Text.ToString();
+                    bool parar = false;
+                    // MessageBox.Show(numProvincia.Tables["Provincia"].Rows.Count.ToString());
+                    for (int i = 0; i < 53 && parar != true; i++)
                     {
-                        string numprov = numProvincia.Tables["Provincia"].Rows[i][0].ToString();// en la posicion 0 esta el id de la provincia
-                        parar = true;
-                        dsCiu = enCiu.ObtenerListaCiudades(numprov);
+                        //MessageBox.Show(numProvincia.Tables["Provincia"].Rows[i][1].ToString());
+                        if (numProvincia.Tables["Provincia"].Rows[i][1].ToString() == prov)
+                        {
+                            string numprov = numProvincia.Tables["Provincia"].Rows[i][0].ToString();// en la posicion 0 esta el id de la provincia
+                            parar = true;
+                            dsCiu = enCiu.ObtenerListaCiudades(numprov);
 
+                        }
                     }
+                    ObtenerCiudades(dsCiu);
                 }
-                ObtenerCiudades(dsCiu);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Si desea cambiar la ciudad debe de volver a seleccionar una provincia", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Seleccione primero una provincia", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
      

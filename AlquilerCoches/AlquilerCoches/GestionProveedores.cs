@@ -32,6 +32,18 @@ namespace AlquilerCoches
                 TComboBoxProvincias.SelectedIndex = 0;
                 TComboBoxCiudades.Items.Add(ciudad);
                 TComboBoxCiudades.SelectedIndex = 0;
+
+                EN.ENProveedores provi = new EN.ENProveedores();
+                DataSet dsProv = new DataSet();
+                dsProv = provi.ObtenerListaProvincias();
+                //ObtenerProvincias(dsProv)
+
+                numProvincia = new DataSet();
+                numProvincia = dsProv;
+
+
+
+
             }
         }
 
@@ -203,8 +215,8 @@ namespace AlquilerCoches
             TComboBoxProvincias.Text = "Seleccione Provincia";
             TComboBoxProvincias.DataSource = dsProv.Tables["Provincia"];
             TComboBoxProvincias.DisplayMember = dsProv.Tables["Provincia"].Columns[1].Caption.ToString(); // como dsProv lleva el id_prov y el nombre ponemos 1 que es la columna del nombre
-            numProvincia = new DataSet();
-            numProvincia = dsProv;
+           // numProvincia = new DataSet();
+           // numProvincia = dsProv;
         }
 
         private void ObtenerCiudades(DataSet dsCiu)
@@ -216,7 +228,7 @@ namespace AlquilerCoches
 
         private void TComboBoxCiudades_Click(object sender, EventArgs e)
         {
-           /* EN.ENProveedores enCiu = new EN.ENProveedores();
+            EN.ENProveedores enCiu = new EN.ENProveedores();
             DataSet dsCiu = new DataSet();
             try
             {
@@ -239,7 +251,7 @@ namespace AlquilerCoches
             catch (Exception ex)
             {
                 MessageBox.Show("Seleccione primero una provincia", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }*/
+            }
         }
 
         private void TButtonGuardar_Click(object sender, EventArgs e)

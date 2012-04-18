@@ -141,6 +141,7 @@
             this.TComboBoxProvincias.Name = "TComboBoxProvincias";
             this.TComboBoxProvincias.Size = new System.Drawing.Size(108, 21);
             this.TComboBoxProvincias.TabIndex = 6;
+            this.TComboBoxProvincias.TextChanged += new System.EventHandler(this.TComboBoxProvincias_TextChanged);
             this.TComboBoxProvincias.Click += new System.EventHandler(this.TComboBoxProvincias_Click_1);
             // 
             // TComboBoxCiudades
@@ -153,7 +154,6 @@
             this.TComboBoxCiudades.Name = "TComboBoxCiudades";
             this.TComboBoxCiudades.Size = new System.Drawing.Size(108, 21);
             this.TComboBoxCiudades.TabIndex = 7;
-            this.TComboBoxCiudades.Click += new System.EventHandler(this.TComboBoxCiudades_Click_1);
             // 
             // TTextBoxDireccion
             // 
