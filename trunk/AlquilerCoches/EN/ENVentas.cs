@@ -2,7 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Configuration;
 using System.Data;
+using System.Data.Common;
+using System.Data.SqlClient;
+using System.Data.SqlTypes;
 using System.Collections;
 
 namespace EN
@@ -190,8 +194,18 @@ namespace EN
             try
             {
                 DataSet venta = cadVentas.ObtenerDatosVehiculo(matricula);
+
                 venta.Tables["Ventas"].Rows[0][6] = precioVenta.ToString();
-                cadVentas.EditarVehiculoVenta (venta);
+                
+
+
+                venta.Tables["Ventas"].Rows[0][0] = matricula;
+                venta.Tables["Ventas"].Rows[0][1] = marca;
+                venta.Tables["Ventas"].Rows[0][2] = modelo;
+                venta.Tables["Ventas"].Rows[0][3] = km;
+                venta.Tables["Ventas"].Rows[0][4] = garantia;
+                venta.Tables["Ventas"].Rows[0][5] = precioVenta;
+                cadVentas.EditarVehiculoVenta(venta);
 
             }
             catch (Exception ex)
