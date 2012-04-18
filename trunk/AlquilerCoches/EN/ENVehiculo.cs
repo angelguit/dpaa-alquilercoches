@@ -155,10 +155,10 @@ namespace EN
                 vehiculo.Tables["Vehiculo"].Rows[0][0] = marca;
                 vehiculo.Tables["Vehiculo"].Rows[0][1] = modelo;
                 //vehiculo.Tables["Vehiculo"].Rows[0][2] = matricula;
-                vehiculo.Tables["Vehiculo"].Rows[0][3] = float.Parse(precioVenta);
-                vehiculo.Tables["Vehiculo"].Rows[0][4] = float.Parse(precioCompra);
-                vehiculo.Tables["Vehiculo"].Rows[0][5] = Int32.Parse(garantia);
-                vehiculo.Tables["Vehiculo"].Rows[0][6] = Int32.Parse(km);
+                vehiculo.Tables["Vehiculo"].Rows[0][3] = double.Parse(precioVenta);
+                vehiculo.Tables["Vehiculo"].Rows[0][4] = double.Parse(precioCompra);
+                vehiculo.Tables["Vehiculo"].Rows[0][5] = int.Parse(garantia);
+                vehiculo.Tables["Vehiculo"].Rows[0][6] = int.Parse(km);
                 vehiculo.Tables["Vehiculo"].Rows[0][7] = estado;
                 //vehiculo.Tables["Vehiculo"].Rows[0][8] = categoria;
                 cadVehiculo.EditarVehiculo(vehiculo);
@@ -181,12 +181,12 @@ namespace EN
                 linea[0] = marca;
                 linea[1] = modelo;
                 linea[2] = matricula;
-                linea[3] = float.Parse(precioVenta);
-                linea[4] = float.Parse(precioCompra);
-                linea[5] = garantia;
-                linea[6] = Int32.Parse(km);
+                linea[3] = double.Parse(precioVenta);
+                linea[4] = double.Parse(precioCompra);
+                linea[5] = int.Parse(garantia);
+                linea[6] = int.Parse(km);
                 linea[7] = estado;
-                linea[8] = Int32.Parse(categoria);
+                linea[8] = categoria;
                 resultado.Tables["Vehiculo"].Rows.Add(linea);
                 cadVehiculo.AnyadirVehiculo(resultado);
             }
