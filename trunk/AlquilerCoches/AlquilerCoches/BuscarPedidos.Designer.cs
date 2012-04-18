@@ -39,10 +39,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.TIDtextBox = new System.Windows.Forms.TextBox();
             this.TDataGridViewPedidos = new System.Windows.Forms.DataGridView();
-            this.TEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TDescripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             this.TEstadogroupbox.SuspendLayout();
@@ -148,36 +144,11 @@
             // TDataGridViewPedidos
             // 
             this.TDataGridViewPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TDataGridViewPedidos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.TEstado,
-            this.TNombre,
-            this.TDescripción,
-            this.TProveedor});
-            this.TDataGridViewPedidos.Location = new System.Drawing.Point(71, 136);
+            this.TDataGridViewPedidos.Location = new System.Drawing.Point(31, 157);
             this.TDataGridViewPedidos.Name = "TDataGridViewPedidos";
-            this.TDataGridViewPedidos.Size = new System.Drawing.Size(445, 263);
+            this.TDataGridViewPedidos.Size = new System.Drawing.Size(615, 203);
             this.TDataGridViewPedidos.TabIndex = 3;
             this.TDataGridViewPedidos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TDataGridViewPedidos_CellContentClick);
-            // 
-            // TEstado
-            // 
-            this.TEstado.HeaderText = "Estado";
-            this.TEstado.Name = "TEstado";
-            // 
-            // TNombre
-            // 
-            this.TNombre.HeaderText = "Nombre";
-            this.TNombre.Name = "TNombre";
-            // 
-            // TDescripción
-            // 
-            this.TDescripción.HeaderText = "Descripción";
-            this.TDescripción.Name = "TDescripción";
-            // 
-            // TProveedor
-            // 
-            this.TProveedor.HeaderText = "Proveedor";
-            this.TProveedor.Name = "TProveedor";
             // 
             // errorProvider1
             // 
@@ -218,10 +189,6 @@
         private System.Windows.Forms.DataGridView TDataGridViewPedidos;
         private System.Windows.Forms.Label TNamelabel;
         private System.Windows.Forms.TextBox TNametextbox;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TEstado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TNombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TDescripción;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TProveedor;
         private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
