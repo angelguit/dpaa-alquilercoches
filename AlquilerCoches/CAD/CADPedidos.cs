@@ -130,7 +130,7 @@ namespace CAD
 
             return dsCiu;
         }
-
+        /*
         public string ObtenerNumMarca(string marca)
         {
             DataSet dsMod = new DataSet();
@@ -151,5 +151,6 @@ namespace CAD
             string retorno = dsMod.Tables["Marca"].Rows[0][0].ToString();
             return retorno;
         }
+        */
     }
 }
