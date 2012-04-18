@@ -39,7 +39,11 @@ namespace AlquilerCoches
 
             TComboBoxConductores.SelectedIndex = TComboBoxConductores.FindStringExact(enRe.Conductores.ToString());
             TComboBoxCategoria.SelectedIndex = TComboBoxCategoria.FindStringExact(enVe.Categoria);
-            //TComboBoxMarca
+            TComboBoxMarca.Items.Add(enVe.Marca.ToString());
+            TComboBoxModelo.Items.Add(enVe.Modelo.ToString());
+            TComboBoxMatricula.Items.Add(enVe.Matricula.ToString());
+            TDateTimePickerFechaFin.Value = enRe.FechaFin;
+            TDateTimePickerFechaInicio.Value = enRe.FechaInicio;
             
             
         }
