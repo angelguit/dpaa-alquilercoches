@@ -268,7 +268,7 @@ namespace EN
             {
                 throw (ex);
             }
-            return resultado;
+            return resultado; 
         }
 
         public ArrayList ListaMatriculas
