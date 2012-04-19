@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.TEnviogroupBox3 = new System.Windows.Forms.GroupBox();
             this.TEnvioButtonUrgente = new System.Windows.Forms.RadioButton();
             this.TEnvioButtonOrdinario = new System.Windows.Forms.RadioButton();
@@ -92,13 +91,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Pedido";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(743, 27);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 43;
             // 
             // TEnviogroupBox3
             // 
@@ -331,7 +323,7 @@
             // 
             this.TEstadoTextBox.BackColor = System.Drawing.SystemColors.Control;
             this.TEstadoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TEstadoTextBox.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TEstadoTextBox.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TEstadoTextBox.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.TEstadoTextBox.Location = new System.Drawing.Point(96, 54);
             this.TEstadoTextBox.Name = "TEstadoTextBox";
@@ -383,12 +375,12 @@
             // 
             this.TIDtextBox.BackColor = System.Drawing.SystemColors.Control;
             this.TIDtextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TIDtextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TIDtextBox.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TIDtextBox.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.TIDtextBox.Location = new System.Drawing.Point(96, 29);
             this.TIDtextBox.Name = "TIDtextBox";
             this.TIDtextBox.ReadOnly = true;
-            this.TIDtextBox.Size = new System.Drawing.Size(84, 21);
+            this.TIDtextBox.Size = new System.Drawing.Size(84, 22);
             this.TIDtextBox.TabIndex = 23;
             this.TIDtextBox.TextChanged += new System.EventHandler(this.TIDtextBox_TextChanged);
             // 
@@ -409,6 +401,7 @@
             this.TButtonBuscar.Text = "Buscar";
             this.TButtonBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.TButtonBuscar.UseVisualStyleBackColor = true;
+            this.TButtonBuscar.Click += new System.EventHandler(this.TButtonBuscar_Click);
             // 
             // TButtonCerrar
             // 
@@ -459,7 +452,6 @@
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(878, 570);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.TButtonBuscar);
             this.Controls.Add(this.TButtonOK);
             this.Controls.Add(this.TButtonBorrar);
@@ -478,7 +470,6 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -511,7 +502,6 @@
         private System.Windows.Forms.GroupBox TEnviogroupBox3;
         private System.Windows.Forms.RadioButton TEnvioButtonUrgente;
         private System.Windows.Forms.RadioButton TEnvioButtonOrdinario;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button TButtonCerrar;
         private System.Windows.Forms.Button TButtonBorrar;
         private System.Windows.Forms.Button TButtonOK;

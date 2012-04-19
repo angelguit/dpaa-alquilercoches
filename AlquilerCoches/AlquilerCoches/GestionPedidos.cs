@@ -28,37 +28,55 @@ namespace AlquilerCoches
         bool incorrecto = false;
 
         private void GestionPedidos_Load(object sender, EventArgs e)
-        {            
+        {
+            EN.ENPedidos enID = new EN.ENPedidos();
+            DataSet dsIDs = new DataSet();
+            dsIDs = enID.ObtenerListaID();
+
+           
+            DataSet id_pedidos = new DataSet();
+            id_pedidos = dsIDs;
+
             TEstadoTextBox.Text = "   ABIERTO";
 
+
+            // Obtener ID base de datos
             try
             {
-              //  string marc = TMarcacomboBox2.Text.ToString();
-               // bool parar = false;
+         
+                bool parar = false;
                 int n = 0;
-                for (int i = 0; i < 20 && parar != true; i++)
+                for (int i = 0; i < 4 && parar!= true; i++)
                 {
 
-                    if (numMarca.Tables["Pedidos"].Rows[i][0].ToString()!=null )
+                    if (id_pedidos.Tables["Pedidos"].Rows[i][0].ToString()!=null )
                     {
 
-                        string num_marc = numMarca.Tables["Marca"].Rows[i][0].ToString();
-                        parar = true;
                         n++;
-                        dsMod = enMod.ObtenerListaModelos(num_marc);
-
+                    }
+                    if (id_pedidos.Tables["Pedidos"].Rows[i][0].ToString() == null)
+                    {
+                        parar = true;
                     }
                 }
-                ObtenerModelos(dsMod);
+
+                n++;
+               
+
+
+                string s = Convert.ToString(n);
+                string p = "P";
+                string total = "";
+                total +=" "+ s + p;
+                TIDtextBox.Text = total;
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Si desea cambiar el modelo debe cambiar la marca", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                throw(ex);
             }
           
-                
-                
+       
 
         }
         
@@ -87,8 +105,8 @@ namespace AlquilerCoches
                 {
                     envio = "Urgente";
                 }
-           
-                enPedidos.IDTransaccion = textBox1.Text; // idtransaccion
+
+                enPedidos.IDTransaccion = TIDtextBox.Text; // idtransaccion
                 enPedidos.Proveedor = TProveecomboBox1.Text;  //proveedor
                 enPedidos.Marca = TMarcacomboBox2.Text;  //marca
                 enPedidos.Modelo = TModelocomboBox3.Text;   //modelo
@@ -371,13 +389,19 @@ namespace AlquilerCoches
         {
             TVendedorText.Text = "";
             //Combobox
-            TProveecomboBox1.SelectedIndex = 0;
-            TMarcacomboBox2.SelectedIndex = 0;
-            TModelocomboBox3.SelectedIndex = 0;
+            TProveecomboBox1.Text ="";
+            TMarcacomboBox2.Text = "";
+            TModelocomboBox3.Text="";
             //Radiobutton
             TEnvioButtonOrdinario.Checked = true;
             TObservTextBox.Text = "";
             numericUpDown1.Value = 1;
+        }
+
+        private void TButtonBuscar_Click(object sender, EventArgs e)
+        {
+            BuscarPedidos buscar = new BuscarPedidos();
+            buscar.Show();
         }
     }
 }
