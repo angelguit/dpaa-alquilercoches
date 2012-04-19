@@ -312,5 +312,20 @@ namespace AlquilerCoches
 
             }
         }
+
+        private void GestionProveedoresBuscar_Activated(object sender, EventArgs e)
+        {
+            ActualizarDataGridView();
+        }
+
+        private void ActualizarDataGridView()
+        {
+            string cadena = "";
+            EN.ENProveedores actualiza = new EN.ENProveedores();
+            DataSet ou = new DataSet();
+            ou = actualiza.ObtenerListaProveedores(cadena);
+            dataGridView1.DataSource = ou;
+
+        }
     }
 }

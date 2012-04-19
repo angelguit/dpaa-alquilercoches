@@ -398,8 +398,9 @@ namespace AlquilerCoches
 
         public void ActualizarDataGridView()
         {
+            string cadena = "";
             DataSet ou = new DataSet();
-            ou = enCliente.ObtenerListaCliente(eliminado);
+            ou = enCliente.ObtenerListaCliente(cadena);
             TDataGridViewCliente.DataSource = ou;
         }
 

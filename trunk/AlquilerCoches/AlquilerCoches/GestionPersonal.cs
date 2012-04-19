@@ -279,6 +279,14 @@ namespace AlquilerCoches
             {
                 MessageBox.Show("Seleccione primero una provincia", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void GestionPersonal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (Application.OpenForms["GestionPersonalBuscar"] != null)
+            {
+                Application.OpenForms["GestionPersonalBuscar"].Activate();
+            }
         }            
 
            

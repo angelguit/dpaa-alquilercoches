@@ -225,6 +225,7 @@
             this.Name = "GestionProveedoresBuscar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GestionProveedoresBuscar";
+            this.Activated += new System.EventHandler(this.GestionProveedoresBuscar_Activated);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
