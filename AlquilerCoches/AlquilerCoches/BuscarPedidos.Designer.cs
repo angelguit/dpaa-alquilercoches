@@ -89,6 +89,7 @@
             this.TModelocomboBox3.Name = "TModelocomboBox3";
             this.TModelocomboBox3.Size = new System.Drawing.Size(234, 21);
             this.TModelocomboBox3.TabIndex = 41;
+            this.TModelocomboBox3.Click += new System.EventHandler(this.TModelocomboBox3_Click);
             // 
             // TMarcacomboBox2
             // 
@@ -98,6 +99,7 @@
             this.TMarcacomboBox2.Name = "TMarcacomboBox2";
             this.TMarcacomboBox2.Size = new System.Drawing.Size(234, 21);
             this.TMarcacomboBox2.TabIndex = 40;
+            this.TMarcacomboBox2.Click += new System.EventHandler(this.TMarcacomboBox2_Click);
             // 
             // TProveecomboBox1
             // 
