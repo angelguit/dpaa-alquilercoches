@@ -58,15 +58,19 @@
             this.TLabelDNI = new System.Windows.Forms.Label();
             this.TLabelNombre = new System.Windows.Forms.Label();
             this.TLabelDirec = new System.Windows.Forms.Label();
+            this.TLabelTitulo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // TButtonBuscarCliente
             // 
+            this.TButtonBuscarCliente.Image = global::AlquilerCoches.Properties.Resources.Search_icon;
+            this.TButtonBuscarCliente.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.TButtonBuscarCliente.Location = new System.Drawing.Point(375, 79);
             this.TButtonBuscarCliente.Name = "TButtonBuscarCliente";
             this.TButtonBuscarCliente.Size = new System.Drawing.Size(144, 64);
             this.TButtonBuscarCliente.TabIndex = 26;
-            this.TButtonBuscarCliente.Text = "Buscar cliente";
+            this.TButtonBuscarCliente.Text = "Buscar Cliente";
+            this.TButtonBuscarCliente.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.TButtonBuscarCliente.UseVisualStyleBackColor = true;
             this.TButtonBuscarCliente.Click += new System.EventHandler(this.TButtonBuscarCliente_Click);
             // 
@@ -199,11 +203,14 @@
             // 
             // TButtonReserva
             // 
+            this.TButtonReserva.Image = global::AlquilerCoches.Properties.Resources.Accept_icon;
+            this.TButtonReserva.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.TButtonReserva.Location = new System.Drawing.Point(268, 503);
             this.TButtonReserva.Name = "TButtonReserva";
             this.TButtonReserva.Size = new System.Drawing.Size(125, 78);
             this.TButtonReserva.TabIndex = 39;
             this.TButtonReserva.Text = "Realizar Reserva";
+            this.TButtonReserva.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.TButtonReserva.UseVisualStyleBackColor = true;
             this.TButtonReserva.Click += new System.EventHandler(this.TButtonReserva_Click);
             // 
@@ -266,11 +273,13 @@
             // 
             // TButtonCerrar
             // 
-            this.TButtonCerrar.Location = new System.Drawing.Point(58, 558);
+            this.TButtonCerrar.Image = global::AlquilerCoches.Properties.Resources.Close_icon;
+            this.TButtonCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TButtonCerrar.Location = new System.Drawing.Point(45, 524);
             this.TButtonCerrar.Name = "TButtonCerrar";
-            this.TButtonCerrar.Size = new System.Drawing.Size(75, 23);
+            this.TButtonCerrar.Size = new System.Drawing.Size(94, 36);
             this.TButtonCerrar.TabIndex = 47;
-            this.TButtonCerrar.Text = "Cerrar";
+            this.TButtonCerrar.Text = "      Cerrar";
             this.TButtonCerrar.UseVisualStyleBackColor = true;
             this.TButtonCerrar.Click += new System.EventHandler(this.TButtonCerrar_Click);
             // 
@@ -287,20 +296,24 @@
             // 
             // TButtonEditar
             // 
-            this.TButtonEditar.Location = new System.Drawing.Point(719, 120);
+            this.TButtonEditar.Image = global::AlquilerCoches.Properties.Resources.Edit_icon2;
+            this.TButtonEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TButtonEditar.Location = new System.Drawing.Point(720, 143);
             this.TButtonEditar.Name = "TButtonEditar";
-            this.TButtonEditar.Size = new System.Drawing.Size(89, 23);
+            this.TButtonEditar.Size = new System.Drawing.Size(135, 35);
             this.TButtonEditar.TabIndex = 50;
-            this.TButtonEditar.Text = "Editar";
+            this.TButtonEditar.Text = "Editar Cliente";
             this.TButtonEditar.UseVisualStyleBackColor = true;
             this.TButtonEditar.Visible = false;
             this.TButtonEditar.Click += new System.EventHandler(this.TButtonEditar_Click);
             // 
             // TButtonBuscarOtro
             // 
-            this.TButtonBuscarOtro.Location = new System.Drawing.Point(719, 68);
+            this.TButtonBuscarOtro.Image = global::AlquilerCoches.Properties.Resources.Search_icon;
+            this.TButtonBuscarOtro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TButtonBuscarOtro.Location = new System.Drawing.Point(720, 76);
             this.TButtonBuscarOtro.Name = "TButtonBuscarOtro";
-            this.TButtonBuscarOtro.Size = new System.Drawing.Size(89, 23);
+            this.TButtonBuscarOtro.Size = new System.Drawing.Size(135, 35);
             this.TButtonBuscarOtro.TabIndex = 51;
             this.TButtonBuscarOtro.Text = "Buscar Cliente";
             this.TButtonBuscarOtro.UseVisualStyleBackColor = true;
@@ -321,6 +334,7 @@
             // 
             // TRectangleShapeCliente
             // 
+            this.TRectangleShapeCliente.BorderColor = System.Drawing.Color.White;
             this.TRectangleShapeCliente.Location = new System.Drawing.Point(178, 56);
             this.TRectangleShapeCliente.Name = "TRectangleShapeCliente";
             this.TRectangleShapeCliente.Size = new System.Drawing.Size(529, 137);
@@ -328,6 +342,7 @@
             // 
             // TRectangleShaperReservas
             // 
+            this.TRectangleShaperReservas.BorderColor = System.Drawing.Color.White;
             this.TRectangleShaperReservas.Location = new System.Drawing.Point(178, 215);
             this.TRectangleShaperReservas.Name = "TRectangleShaperReservas";
             this.TRectangleShaperReservas.Size = new System.Drawing.Size(528, 209);
@@ -378,6 +393,17 @@
             this.TLabelDirec.Text = "label1";
             this.TLabelDirec.Visible = false;
             // 
+            // TLabelTitulo
+            // 
+            this.TLabelTitulo.AutoSize = true;
+            this.TLabelTitulo.BackColor = System.Drawing.Color.Transparent;
+            this.TLabelTitulo.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Italic);
+            this.TLabelTitulo.Location = new System.Drawing.Point(2, -1);
+            this.TLabelTitulo.Name = "TLabelTitulo";
+            this.TLabelTitulo.Size = new System.Drawing.Size(87, 18);
+            this.TLabelTitulo.TabIndex = 55;
+            this.TLabelTitulo.Text = "Nueva Reserva";
+            // 
             // AltaReservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -385,6 +411,7 @@
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(894, 608);
+            this.Controls.Add(this.TLabelTitulo);
             this.Controls.Add(this.TLabelDirec);
             this.Controls.Add(this.TLabelInfoVehiculo);
             this.Controls.Add(this.TButtonEditar);
@@ -459,5 +486,6 @@
         private System.Windows.Forms.Label TLabelDNI;
         private System.Windows.Forms.Label TLabelNombre;
         private System.Windows.Forms.Label TLabelDirec;
+        private System.Windows.Forms.Label TLabelTitulo;
     }
 }
