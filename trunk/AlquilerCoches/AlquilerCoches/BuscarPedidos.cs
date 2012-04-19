@@ -206,12 +206,7 @@ namespace AlquilerCoches
                 }
                 else if (TDataGridViewPedidos.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "Editar")
                 {
-                    if (Application.OpenForms["GestionPedidos"] != null)
-                    {
-                        Application.OpenForms["GestionPedidos"].Activate();
-                    }
-                    else
-                    {
+                        arrayid.Clear();
                         string id = TDataGridViewPedidos.Rows[e.RowIndex].Cells[2].Value.ToString();
                         string proveedor = TDataGridViewPedidos.Rows[e.RowIndex].Cells[3].Value.ToString();//indice 1 para cojer el nombre
                         string marca = TDataGridViewPedidos.Rows[e.RowIndex].Cells[4].Value.ToString();
@@ -223,22 +218,20 @@ namespace AlquilerCoches
                         string tipoenvio = TDataGridViewPedidos.Rows[e.RowIndex].Cells[10].Value.ToString();
 
                         string nombrebotonguardar = "Guardar Cambios";
-                    //    GestionPedidos Formu = new GestionPedidos(id,proveedor,marca,modelo,cantidad,observaciones,estado,
-                      //      ,empleado, tipoenvio,nombrebotonguardar);
 
-                    //    Formu.StartPosition = FormStartPosition.CenterScreen;
-                      //  Formu.MdiParent = this.MdiParent;
-                      //  Formu.Show();
-                       // ActualizaDatagridView();
-                                           
-                    }
-                }
-                else
-                {
+                        if (Application.OpenForms["GestionPedidos"] != null)
+                        {
+                            Application.OpenForms["GestionPedidos"].Close();
 
-                   TNametextbox.Text = TDataGridViewPedidos.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
-                    
+                        }
+
+                        GestionPersonal Formu = new GestionPersonal(id, proveedor, marca, modelo, cantidad, observaciones, estado, empleado, tipoenvio, nombrebotonguardar);
+                        Formu.StartPosition = FormStartPosition.CenterScreen;
+                        Formu.MdiParent = this.MdiParent;
+                        Formu.Show();
+                   
                 }
+                
             }
             catch (Exception ex)
             {
