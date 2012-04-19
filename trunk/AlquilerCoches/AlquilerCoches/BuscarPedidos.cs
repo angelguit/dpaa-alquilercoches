@@ -20,6 +20,13 @@ namespace AlquilerCoches
         {
             InitializeComponent();
 
+            EN.ENPedidos marca = new EN.ENPedidos();
+            DataSet dsMarc = new DataSet();
+            dsMarc = marca.ObtenerListaMarcas();
+
+            numMarca = new DataSet();
+            numMarca = dsMarc;
+
             DataGridViewButtonColumn buttons = new DataGridViewButtonColumn();
             {
                 buttons.HeaderText = "Editar"; //texto de la columna
@@ -85,7 +92,7 @@ namespace AlquilerCoches
         }
 
         string eliminado = "";
-        private void TBuscarbutton_Click(object sender, EventArgs e)
+        private void TButtonBuscar_Click(object sender, EventArgs e)
         {
                 TDataGridViewPedidos.Visible = true;
           /*  if (incorrecto == true)
@@ -99,6 +106,7 @@ namespace AlquilerCoches
                 DataSet ds = new DataSet();
 
                 string envio="";
+                string estado="";
 
                 if (radioButton1.Checked)
                 {
@@ -106,24 +114,55 @@ namespace AlquilerCoches
                 }
                 if (radioButton2.Checked)
                 {
-                    envio = "Urgente";
+                    envio = "Cerrado";
+                }
+                if (radioButton3.Checked)
+                {
+                    estado = "Ordinario";
+                }
+                if (radioButton4.Checked)
+                {
+                    estado = "Urgente";
                 }
 
                 string id= TIDtextBox.Text.ToString();
-                string nombre = TNametextbox.Text.ToString();
+                string marca = TNametextbox.Text.ToString();
+                string modelo = TModelocomboBox3.Text.ToString();
                 string tipo_envio = envio;
+                string empleado = TNametextbox.Text.ToString();
                 string todo = "";
+                int n = 0;
 
                 if (id != "") //id transaccion
                 {
                     todo += " IDTransaccion='" + id + "' ";
+                    n++; // Si hay mas de un criterio
                 }
-                if (nombre != "" ) //nombre
-                {
-                    todo += " Marca='" + nombre + "' ";
-                }
-             
 
+                if (marca != "") //nombre
+                {
+                    if (n != 0)
+                    {
+                        todo += "and Marca='" + marca + "' and Modelo='" + modelo + "' and";
+                    }
+                    else
+                    {
+                        todo += "Marca='" + marca + "' and Modelo='" + modelo + "'";
+                    }
+                }
+                if (empleado!="")
+                {
+                    if (n != 0)
+                    {
+                        todo += "and Marca='" + marca + "' and Modelo='" + modelo + "' and Empleado='" + empleado + "'";
+                    }
+                    else
+                    {
+                        todo += "Marca='" + marca + "' and Modelo='" + modelo + "' and Empleado='" + empleado + "'";
+                    }
+
+                }
+                
 
                 MessageBox.Show("select * from tabla where" + todo);
                 ds = enPedidos.ObtenerListaPedidos(todo);
@@ -209,11 +248,6 @@ namespace AlquilerCoches
                         
         }
 
-        private void TButtonBuscar_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void groupBox2_Enter_1(object sender, EventArgs e)
         {
 
@@ -241,6 +275,41 @@ namespace AlquilerCoches
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question,
                     MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                 this.Close();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private DataSet numMarca; //usado en funcion TModelos
+        private void ObtenerMarcas(DataSet dsMarc)
+        {
+            TMarcacomboBox2.Text = "Seleccione Marca del coche";
+            TMarcacomboBox2.DataSource = dsMarc.Tables["Marca"];
+            TMarcacomboBox2.DisplayMember = dsMarc.Tables["Marca"].Columns[1].Caption.ToString();
+
+        }
+
+        private void ObtenerModelos(DataSet dsMod)
+        {
+            TModelocomboBox3.Text = "Seleccione el modelo del coche";
+            TModelocomboBox3.DataSource = dsMod.Tables["Modelo"];
+            TModelocomboBox3.DisplayMember = dsMod.Tables["Modelo"].Columns[0].Caption.ToString();
+        }
+        private void TProveecomboBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TMarcacomboBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TModelocomboBox3_Click(object sender, EventArgs e)
+        {
+
         }
 
     }

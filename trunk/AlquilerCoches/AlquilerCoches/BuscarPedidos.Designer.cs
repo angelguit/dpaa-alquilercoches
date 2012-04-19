@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.TModelocomboBox3 = new System.Windows.Forms.ComboBox();
+            this.TMarcacomboBox2 = new System.Windows.Forms.ComboBox();
+            this.TProveecomboBox1 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
@@ -47,10 +50,6 @@
             this.TDataGridViewPedidos = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.TButtonCerrar = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.TProveecomboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.TBuscarbutton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.TEstadogroupbox.SuspendLayout();
@@ -61,9 +60,9 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.TModelocomboBox3);
+            this.groupBox1.Controls.Add(this.TMarcacomboBox2);
             this.groupBox1.Controls.Add(this.TProveecomboBox1);
-            this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.TButtonBuscar);
@@ -81,6 +80,46 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Criterios de búsqueda ";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // TModelocomboBox3
+            // 
+            this.TModelocomboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TModelocomboBox3.FormattingEnabled = true;
+            this.TModelocomboBox3.Location = new System.Drawing.Point(239, 174);
+            this.TModelocomboBox3.Name = "TModelocomboBox3";
+            this.TModelocomboBox3.Size = new System.Drawing.Size(234, 21);
+            this.TModelocomboBox3.TabIndex = 41;
+            // 
+            // TMarcacomboBox2
+            // 
+            this.TMarcacomboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TMarcacomboBox2.FormattingEnabled = true;
+            this.TMarcacomboBox2.Location = new System.Drawing.Point(239, 135);
+            this.TMarcacomboBox2.Name = "TMarcacomboBox2";
+            this.TMarcacomboBox2.Size = new System.Drawing.Size(234, 21);
+            this.TMarcacomboBox2.TabIndex = 40;
+            // 
+            // TProveecomboBox1
+            // 
+            this.TProveecomboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TProveecomboBox1.FormattingEnabled = true;
+            this.TProveecomboBox1.Items.AddRange(new object[] {
+            "",
+            "HERMANOS ESCLAPEZ S.L.",
+            "MARTÍNEZ E HIJOS S.A.",
+            "TOYOTA SANTA FAZ S.L.",
+            "RENAULT BABEL S.L.",
+            "MERCEDES-BENZ ATALAYAS S.L.",
+            "DACIA LOGAN VIRGEN DEL REMEDIO S.A.",
+            "CONCESIONARIO CAZORLA S.L.",
+            "AUTOMOCIÓN SIERRA TRAMONTANA S.L.",
+            "CONCESIONARIO IBAÑEZ E HIJOS S.L.",
+            "ASOCIACIÓN AUTOMÓVIL FELIZ S.L."});
+            this.TProveecomboBox1.Location = new System.Drawing.Point(238, 100);
+            this.TProveecomboBox1.Name = "TProveecomboBox1";
+            this.TProveecomboBox1.Size = new System.Drawing.Size(234, 21);
+            this.TProveecomboBox1.TabIndex = 39;
+            this.TProveecomboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -131,9 +170,9 @@
             this.TButtonBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.errorProvider1.SetIconAlignment(this.TButtonBuscar, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
             this.TButtonBuscar.Image = global::AlquilerCoches.Properties.Resources.Search_icon;
-            this.TButtonBuscar.Location = new System.Drawing.Point(512, 67);
+            this.TButtonBuscar.Location = new System.Drawing.Point(517, 67);
             this.TButtonBuscar.Name = "TButtonBuscar";
-            this.TButtonBuscar.Size = new System.Drawing.Size(75, 73);
+            this.TButtonBuscar.Size = new System.Drawing.Size(71, 65);
             this.TButtonBuscar.TabIndex = 33;
             this.TButtonBuscar.Text = "Buscar";
             this.TButtonBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -245,63 +284,14 @@
             this.TButtonCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.TButtonCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.TButtonCerrar.Image = global::AlquilerCoches.Properties.Resources.Close_icon;
-            this.TButtonCerrar.Location = new System.Drawing.Point(331, 476);
+            this.TButtonCerrar.Location = new System.Drawing.Point(345, 482);
             this.TButtonCerrar.Name = "TButtonCerrar";
-            this.TButtonCerrar.Size = new System.Drawing.Size(145, 72);
+            this.TButtonCerrar.Size = new System.Drawing.Size(121, 66);
             this.TButtonCerrar.TabIndex = 31;
             this.TButtonCerrar.Text = "Cerrar";
             this.TButtonCerrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.TButtonCerrar.UseVisualStyleBackColor = true;
             this.TButtonCerrar.Click += new System.EventHandler(this.TButtonCerrar_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "",
-            "HERMANOS ESCLAPEZ S.L.",
-            "MARTÍNEZ E HIJOS S.A.",
-            "TOYOTA SANTA FAZ S.L.",
-            "RENAULT BABEL S.L.",
-            "MERCEDES-BENZ ATALAYAS S.L.",
-            "DACIA LOGAN VIRGEN DEL REMEDIO S.A.",
-            "CONCESIONARIO CAZORLA S.L.",
-            "AUTOMOCIÓN SIERRA TRAMONTANA S.L.",
-            "CONCESIONARIO IBAÑEZ E HIJOS S.L.",
-            "ASOCIACIÓN AUTOMÓVIL FELIZ S.L."});
-            this.comboBox1.Location = new System.Drawing.Point(238, 100);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(234, 21);
-            this.comboBox1.TabIndex = 39;
-            // 
-            // TProveecomboBox1
-            // 
-            this.TProveecomboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.TProveecomboBox1.FormattingEnabled = true;
-            this.TProveecomboBox1.Location = new System.Drawing.Point(239, 135);
-            this.TProveecomboBox1.Name = "TProveecomboBox1";
-            this.TProveecomboBox1.Size = new System.Drawing.Size(234, 21);
-            this.TProveecomboBox1.TabIndex = 40;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(239, 174);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(234, 21);
-            this.comboBox2.TabIndex = 41;
-            // 
-            // TBuscarbutton
-            // 
-            this.TBuscarbutton.Location = new System.Drawing.Point(716, 65);
-            this.TBuscarbutton.Name = "TBuscarbutton";
-            this.TBuscarbutton.Size = new System.Drawing.Size(133, 23);
-            this.TBuscarbutton.TabIndex = 4;
-            this.TBuscarbutton.Text = "BUSCAR";
-            this.TBuscarbutton.UseVisualStyleBackColor = true;
-            this.TBuscarbutton.Click += new System.EventHandler(this.TBuscarbutton_Click);
             // 
             // BuscarPedidos
             // 
@@ -314,8 +304,8 @@
             this.Controls.Add(this.TButtonCerrar);
             this.Controls.Add(this.TDataGridViewPedidos);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.TBuscarbutton);
             this.Name = "BuscarPedidos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Buscar Pedidos";
             this.Load += new System.EventHandler(this.BuscarPedidos_Load);
             this.groupBox1.ResumeLayout(false);
@@ -350,9 +340,8 @@
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.Button TButtonCerrar;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox TModelocomboBox3;
+        private System.Windows.Forms.ComboBox TMarcacomboBox2;
         private System.Windows.Forms.ComboBox TProveecomboBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button TBuscarbutton;
     }
 }
