@@ -57,22 +57,28 @@
             // 
             // TButtonEliminar
             // 
-            this.TButtonEliminar.Location = new System.Drawing.Point(136, 166);
+            this.TButtonEliminar.Image = global::AlquilerCoches.Properties.Resources.Delete_icon;
+            this.TButtonEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TButtonEliminar.Location = new System.Drawing.Point(136, 157);
             this.TButtonEliminar.Name = "TButtonEliminar";
-            this.TButtonEliminar.Size = new System.Drawing.Size(75, 23);
+            this.TButtonEliminar.Size = new System.Drawing.Size(77, 32);
             this.TButtonEliminar.TabIndex = 23;
             this.TButtonEliminar.Text = "Eliminar";
+            this.TButtonEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.TButtonEliminar.UseVisualStyleBackColor = true;
             this.TButtonEliminar.Visible = false;
             this.TButtonEliminar.Click += new System.EventHandler(this.TButtonEliminar_Click);
             // 
             // TButtonBuscar
             // 
-            this.TButtonBuscar.Location = new System.Drawing.Point(31, 166);
+            this.TButtonBuscar.Image = global::AlquilerCoches.Properties.Resources.Search_icon;
+            this.TButtonBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TButtonBuscar.Location = new System.Drawing.Point(31, 157);
             this.TButtonBuscar.Name = "TButtonBuscar";
-            this.TButtonBuscar.Size = new System.Drawing.Size(75, 23);
+            this.TButtonBuscar.Size = new System.Drawing.Size(76, 32);
             this.TButtonBuscar.TabIndex = 6;
             this.TButtonBuscar.Text = "Buscar";
+            this.TButtonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.TButtonBuscar.UseVisualStyleBackColor = true;
             this.TButtonBuscar.Click += new System.EventHandler(this.TButtonBuscar_Click);
             // 
@@ -230,11 +236,14 @@
             // 
             // TButtonCerrar
             // 
-            this.TButtonCerrar.Location = new System.Drawing.Point(57, 547);
+            this.TButtonCerrar.Image = global::AlquilerCoches.Properties.Resources.Close_icon;
+            this.TButtonCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TButtonCerrar.Location = new System.Drawing.Point(57, 538);
             this.TButtonCerrar.Name = "TButtonCerrar";
-            this.TButtonCerrar.Size = new System.Drawing.Size(75, 23);
+            this.TButtonCerrar.Size = new System.Drawing.Size(76, 32);
             this.TButtonCerrar.TabIndex = 30;
             this.TButtonCerrar.Text = "Cerrar";
+            this.TButtonCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.TButtonCerrar.UseVisualStyleBackColor = true;
             this.TButtonCerrar.Click += new System.EventHandler(this.TButtonCerrar_Click);
             // 
@@ -245,7 +254,7 @@
             this.TLabelTitulo.AutoSize = true;
             this.TLabelTitulo.BackColor = System.Drawing.Color.Transparent;
             this.TLabelTitulo.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TLabelTitulo.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.TLabelTitulo.ForeColor = System.Drawing.SystemColors.Desktop;
             this.TLabelTitulo.Location = new System.Drawing.Point(3, 0);
             this.TLabelTitulo.Name = "TLabelTitulo";
             this.TLabelTitulo.Size = new System.Drawing.Size(117, 18);
