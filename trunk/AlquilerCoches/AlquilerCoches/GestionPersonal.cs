@@ -70,7 +70,7 @@ namespace AlquilerCoches
 
         private void TTextBoxNombre_Leave(object sender, EventArgs e)
         {
-            if (!Regex.Match(TTextBoxNombre.Text, @"^[A-Za-z]{3,15}$").Success)
+            if (!Regex.Match(TTextBoxNombre.Text, @"^[A-Za-zñÑáéíóúÁÉÍÓÚçÇ]{3,25}$").Success)
             {
                 errorProvider1.SetError(TTextBoxNombre, "Nombre incorrecto");
                 incorrecto = true;
@@ -80,7 +80,7 @@ namespace AlquilerCoches
 
         private void TTextBoxApellidos_Leave(object sender, EventArgs e)
         {
-            if (!Regex.Match(TTextBoxApellidos.Text, @"^[A-Za-z\s]{3,40}$").Success) // "\s" para que admita espacios en blanco
+            if (!Regex.Match(TTextBoxApellidos.Text, @"^[A-Za-zñÑáéíóúÁÉÍÓÚçÇ\s]{3,40}$").Success) // "\s" para que admita espacios en blanco
             {
                 errorProvider1.SetError(TTextBoxApellidos, "Apellidos incorrectos, caracteres invalidos");
                 incorrecto = true;
@@ -110,7 +110,7 @@ namespace AlquilerCoches
         }
         private void TTextBoxDireccion_Leave(object sender, EventArgs e)
         {
-            if (!Regex.Match(TTextBoxDireccion.Text, @"^[A-Za-z\s]{3,50}$").Success)
+            if (!Regex.Match(TTextBoxDireccion.Text, @"^[A-Za-zñÑáéíóúÁÉÍÓÚçÇ\s]{3,50}$").Success)
             {
                 errorProvider1.SetError(TTextBoxDireccion, "Dirección incorrecta, caracteres invalidos");
                 incorrecto = true;
@@ -118,9 +118,9 @@ namespace AlquilerCoches
             else { errorProvider1.SetError(TTextBoxDireccion, ""); incorrecto = false; }
         }
 
-        private void TTextBoxCiudad_Leave(object sender, EventArgs e)
+       /* private void TTextBoxCiudad_Leave(object sender, EventArgs e)
         {
-            if (!Regex.Match(TComboBoxCiudades.Text, @"^[A-Za-z]{3,40}$").Success)
+            if (!Regex.Match(TComboBoxCiudades.Text, @"^[A-Za-zñÑáéíóúÁÉÍÓÚ]{3,40}$").Success)
             {
                 errorProvider1.SetError(TComboBoxCiudades, "Ciudad incorrecta, caracteres invalidos");
                 incorrecto = true;
@@ -128,7 +128,7 @@ namespace AlquilerCoches
             else { errorProvider1.SetError(TComboBoxCiudades, ""); incorrecto = false; }
         }
 
-       /* private void TTextBoxProvincia_Leave(object sender, EventArgs e)
+        private void TTextBoxProvincia_Leave(object sender, EventArgs e)
         {
             if (!Regex.Match(TTextBoxProvincia.Text, @"^[A-Za-z]{3,40}$").Success)
             {
@@ -140,7 +140,7 @@ namespace AlquilerCoches
 
         private void TTextBoxPuestoAc_Leave(object sender, EventArgs e)
         {
-            if (!Regex.Match(TTextBoxPuestoAc.Text, @"^[A-Za-z\s]{3,100}$").Success) // "\s" para que admita espacios en blanco
+            if (!Regex.Match(TTextBoxPuestoAc.Text, @"^[A-Za-zñÑáéíóúÁÉÍÓÚçÇ\s]{3,100}$").Success) // "\s" para que admita espacios en blanco
             {
                 errorProvider1.SetError(TTextBoxPuestoAc, "Puesto incorrecto, caracteres invalidos");
                 incorrecto = true;
