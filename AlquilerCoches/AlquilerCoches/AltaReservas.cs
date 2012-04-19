@@ -94,21 +94,29 @@ namespace AlquilerCoches
         private void TButtonBuscarCliente_Click(object sender, EventArgs e)
         {
             GestionClientesBuscar F1 = new GestionClientesBuscar(false);
+            F1.StartPosition = FormStartPosition.Manual;
+            F1.Location = Location;
+            F1.Left += 147;
+            F1.Top += 49;
             F1.ShowDialog();
+            
             enCliente = F1.enClientePub;
-            provincias = F1.provincias;
-            ciudades = F1.ciudades;
-            TLabelNombre.Text = "Nombre: " + enCliente.Nombre + "Apellidos: " + enCliente.Apellidos;
-            TLabelDNI.Text = "DNI: " + enCliente.DNI + " " + "Telf: " + enCliente.Telefono;
-            TLabelDirec.Text = "Direccion: " + enCliente.Direccion;
-            TLabelDNI.Visible = true;
-            TLabelNombre.Visible = true;
-            TLabelDirec.Visible = true;
-            TButtonBuscarCliente.Visible = false;
-            TLabelInfoCliente.Visible = true;
-            TButtonBuscarOtro.Visible = true;
-            TButtonEditar.Visible = true;
-            TRectangleShapeCliente.Visible = true;
+            if (enCliente.Nombre != null)
+            {
+                provincias = F1.provincias;
+                ciudades = F1.ciudades;
+                TLabelNombre.Text = "Nombre: " + enCliente.Nombre + "Apellidos: " + enCliente.Apellidos;
+                TLabelDNI.Text = "DNI: " + enCliente.DNI + " " + "Telf: " + enCliente.Telefono;
+                TLabelDirec.Text = "Direccion: " + enCliente.Direccion;
+                TLabelDNI.Visible = true;
+                TLabelNombre.Visible = true;
+                TLabelDirec.Visible = true;
+                TButtonBuscarCliente.Visible = false;
+                TLabelInfoCliente.Visible = true;
+                TButtonBuscarOtro.Visible = true;
+                TButtonEditar.Visible = true;
+                TRectangleShapeCliente.Visible = true;
+            }
         }
 
 
@@ -233,7 +241,10 @@ namespace AlquilerCoches
         {
             EN.ENCliente enCli = new EN.ENCliente();
             GestionClientes Formu = new GestionClientes(enCliente,"Guardar Cambios",provincias,ciudades);
-            Formu.StartPosition = FormStartPosition.CenterScreen;
+            Formu.StartPosition = FormStartPosition.Manual;
+            Formu.Location = Location;
+            Formu.Left += 147;
+            Formu.Top += 49;
             Formu.ShowDialog();
             enCli = Formu.enCliPub;
             if (Formu.cambios)
