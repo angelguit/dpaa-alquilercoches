@@ -19,11 +19,9 @@ namespace AlquilerCoches
             EN.ENPedidos marca = new EN.ENPedidos();
             DataSet dsMarc = new DataSet();
             dsMarc = marca.ObtenerListaMarcas();
-            //ObtenerProvincias(dsProv)
 
             numMarca = new DataSet();
             numMarca = dsMarc;
-
 
         }
 
@@ -64,16 +62,15 @@ namespace AlquilerCoches
                 {
                     envio = "Urgente";
                 }
-                MessageBox.Show(envio, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                enPedidos.IDTransaccion = textBox1.Text;
-                enPedidos.Proveedor = TProveecomboBox1.Text;
-                enPedidos.Marca = TMarcacomboBox2.Text;
-                enPedidos.Modelo = TModelocomboBox3.Text; 
-                enPedidos.Cantidad = numericUpDown1.Text;
-                enPedidos.Observaciones = TObservTextBox.Text;
-                enPedidos.Empleado = TVendedorText.Text;
-                enPedidos.TipoEnvio = envio;
-
+           
+                enPedidos.IDTransaccion = textBox1.Text; // idtransaccion
+                enPedidos.Proveedor = TProveecomboBox1.Text;  //proveedor
+                enPedidos.Marca = TMarcacomboBox2.Text;  //marca
+                enPedidos.Modelo = TModelocomboBox3.Text;   //modelo
+                enPedidos.Cantidad = numericUpDown1.Text;  //cantidad
+                enPedidos.Observaciones = TObservTextBox.Text;  //observaciones
+                enPedidos.Empleado = TVendedorText.Text; //empleado
+                enPedidos.TipoEnvio = envio;  //tipo de envio
 
            
 
@@ -148,7 +145,7 @@ namespace AlquilerCoches
 
         private void TCancelarbutton2_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Desea Salir", "",
+            if (MessageBox.Show("¿Desea Salir?", "Advertencia",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question,
                     MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                 Close();
@@ -175,17 +172,12 @@ namespace AlquilerCoches
             
         }
 
-        private DataSet numMarca;// usado en funcion TComboBoxCiudades_Click
+        private DataSet numMarca; //usado en funcion TModelos
         private void ObtenerMarcas(DataSet dsMarc)
         {
             TMarcacomboBox2.Text = "Seleccione Marca del coche";
             TMarcacomboBox2.DataSource = dsMarc.Tables["Marca"];
-            TMarcacomboBox2.DisplayMember = dsMarc.Tables["Marca"].Columns[1].Caption.ToString(); // como dsProv lleva el id_prov y el nombre ponemos 1 que es la columna del nombre
-            // TComboBoxProvincias.DisplayMember = dsProv.Tables["Provincia"].Columns[0].Caption.ToString(); // como dsProv lleva el id_prov y el nombre ponemos 1 que es la columna del nombre
-
-
-          
-
+            TMarcacomboBox2.DisplayMember = dsMarc.Tables["Marca"].Columns[1].Caption.ToString(); /
 
         }
 
@@ -197,41 +189,42 @@ namespace AlquilerCoches
         }
         private void TMarcacomboBox2_Leave(object sender, EventArgs e)
         {
-          /*  if (!Regex.Match(TMarcacomboBox2.Text, @"^[A-Za-z]{3,20}$").Success)
+            if (TMarcacomboBox2.Text=="")
             {
                 errorProvider1.SetError(TMarcacomboBox2, "Seleccione la marca del coche");
                 incorrecto = true;
-            } */
-           /* else
+            } 
+            else
             {
                 errorProvider1.SetError(TMarcacomboBox2, "");
-            } */
+            } 
         }
 
         private void TModelocomboBox3_Leave(object sender, EventArgs e)
         {
-           /* if (!Regex.Match(TModelocomboBox3.Text, @"^[A-Za-z]{3,20}$").Success)
-            {
-                errorProvider1.SetError(TModelocomboBox3, "Seleccione el modelo del coche");
-                incorrecto = true;
-            } */
-         /*   else
+             if (TModelocomboBox3.Text=="")
+             {
+                 errorProvider1.SetError(TModelocomboBox3, "Seleccione el modelo del coche");
+                 incorrecto = true;
+             } 
+            else
             {
                 errorProvider1.SetError(TModelocomboBox3, "");
-            } */
+            } 
         }
 
         private void TProveecomboBox1_Leave(object sender, EventArgs e)
         {
-           /* if (Regex.Match(TProveecomboBox1.Text, @"^[A-Za-z]{3,20}$").Success)
+            incorrecto = false;
+            if (TProveecomboBox1.Text=="")
             {
                 errorProvider1.SetError(TProveecomboBox1, "Seleccione un proveedor");
                 incorrecto = true;
-            } */
-        /*    else
+            } 
+            else
             {
                 errorProvider1.SetError(TProveecomboBox1, "");
-            } */
+            } 
         }
         
 
@@ -262,14 +255,14 @@ namespace AlquilerCoches
             {
                 string marc = TMarcacomboBox2.Text.ToString();
                 bool parar = false;
-                // MessageBox.Show(numProvincia.Tables["Provincia"].Rows.Count.ToString());
+    
                 for (int i = 0; i < 16 && parar != true; i++)
                 {
-                    //MessageBox.Show(numProvincia.Tables["Provincia"].Rows[i][1].ToString());
+     
                     if (numMarca.Tables["Marca"].Rows[i][1].ToString() == marc)
                     {
      
-                        string num_marc = numMarca.Tables["Marca"].Rows[i][0].ToString();// en la posicion 0 esta el id de la provincia
+                        string num_marc = numMarca.Tables["Marca"].Rows[i][0].ToString();
                         parar = true;
                         
                         dsMod = enMod.ObtenerListaModelos(num_marc);
@@ -284,8 +277,6 @@ namespace AlquilerCoches
                 MessageBox.Show("Si desea cambiar el modelo debe cambiar la marca", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             
-
-
         }
 
         private void TObservTextBox_Leave(object sender, EventArgs e)
@@ -294,6 +285,10 @@ namespace AlquilerCoches
             {
                 errorProvider1.SetError(TObservTextBox, "Máximo 300 caracteres.");
                 incorrecto = true;
+            }
+            if (TObservTextBox.Text == "")
+            {
+                errorProvider1.SetError(TObservTextBox, "Introduzca un comentario.");
             }
             else { errorProvider1.SetError(TObservTextBox, ""); }
         }
