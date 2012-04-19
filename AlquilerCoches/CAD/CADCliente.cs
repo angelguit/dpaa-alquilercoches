@@ -205,5 +205,25 @@ namespace CAD
             return dsTarifa;
 
         }
+
+        public int ReservasCliente(string dni)
+        {
+            DataSet dsResCliente = new DataSet();
+
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                String consulta = "Select * FROM Reservas where FK_Cliente = '" + dni + "'";
+                SqlDataAdapter daResCliente = new SqlDataAdapter(consulta, conexion);
+                daResCliente.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daResCliente.Fill(dsResCliente, "Reservas");
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+
+            return dsResCliente.Tables["Reservas"].Rows.Count;
+        }
     }
 }

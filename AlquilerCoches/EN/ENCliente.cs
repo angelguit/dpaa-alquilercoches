@@ -220,6 +220,10 @@ namespace EN
              return resultado;
         }
 
+        public int ReservasCliente()
+        {
+            return cadCliente.ReservasCliente(dni);
+        }
     }
 }
 
