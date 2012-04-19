@@ -184,5 +184,26 @@ namespace CAD
                 throw (ex);
             }
         }
+
+        public DataSet SacarTarifa()
+        {
+            DataSet dsTarifa = new DataSet();
+
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                String consulta = "Select tipo FROM Tarifas";
+                SqlDataAdapter daTarifa = new SqlDataAdapter(consulta, conexion);
+                daTarifa.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daTarifa.Fill(dsTarifa, "Tarifas"); //dsPersonal es ahora nuestra base de datos local
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+
+            return dsTarifa;
+
+        }
     }
 }

@@ -22,8 +22,7 @@ namespace EN
         private string direccion;
         private string ciudad;
         private string provincia;
-        private string puestoac;
-        private string otrospuestos;
+        private string sexo;
         private string tarifa;
 
 
@@ -69,15 +68,10 @@ namespace EN
             get { return provincia; }
             set { provincia = value; }
         }
-        public string PuestoAc
+        public string Sexo
         {
-            get { return puestoac; }
-            set { puestoac = value; }
-        }
-        public string OtrosPuestos
-        {
-            get { return otrospuestos; }
-            set { otrospuestos = value; }
+            get { return sexo; }
+            set { sexo = value; }
         }
         public string Tarifa
         {
@@ -172,10 +166,10 @@ namespace EN
                 linea[3] = telefono;
                 linea[4] = email;
                 linea[5] = direccion;
-                linea[6] = ciudad;
-                linea[7] = provincia;
-                linea[8] = puestoac;
-                linea[9] = otrospuestos;
+                linea[6] = provincia;
+                linea[7] = ciudad;
+                linea[8] = tarifa;
+                linea[9] = sexo;
                 resultado.Tables["Cliente"].Rows.Add(linea);
                 cadCliente.AnyadirCliente(resultado);
             }
@@ -190,16 +184,17 @@ namespace EN
         {
             try
             {
-                DataSet cliente = cadCliente.ObtenerDatosClienteConDni(dni);
-                cliente.Tables["Personal"].Rows[0][1] = nombre.ToString(); //el dni no se puede cambiar asique saltamos la posicion 0 que es del dni
-                cliente.Tables["Personal"].Rows[0][2] = apellidos.ToString();
-                cliente.Tables["Personal"].Rows[0][3] = telefono.ToString();
-                cliente.Tables["Personal"].Rows[0][4] = email.ToString();
-                cliente.Tables["Personal"].Rows[0][5] = direccion.ToString();
-                cliente.Tables["Personal"].Rows[0][6] = ciudad.ToString();
-                cliente.Tables["Personal"].Rows[0][7] = provincia.ToString();
-                cliente.Tables["Personal"].Rows[0][8] = puestoac.ToString();
-                cliente.Tables["Personal"].Rows[0][9] = otrospuestos.ToString();
+            DataSet cliente = new DataSet();
+                cliente = cadCliente.ObtenerDatosClienteConDni(dni);
+                cliente.Tables["Cliente"].Rows[0][1] = nombre.ToString(); //el dni no se puede cambiar asique saltamos la posicion 0 que es del dni
+                cliente.Tables["Cliente"].Rows[0][2] = apellidos.ToString();
+                cliente.Tables["Cliente"].Rows[0][3] = telefono.ToString();
+                cliente.Tables["Cliente"].Rows[0][4] = email.ToString();
+                cliente.Tables["Cliente"].Rows[0][5] = direccion.ToString();
+                cliente.Tables["Cliente"].Rows[0][6] = provincia.ToString();
+                cliente.Tables["Cliente"].Rows[0][7] = ciudad.ToString();
+                cliente.Tables["Cliente"].Rows[0][8] = tarifa.ToString();
+                cliente.Tables["Cliente"].Rows[0][9] = sexo.ToString();
                 cadCliente.EditarCliente(cliente);
 
             }
@@ -208,6 +203,21 @@ namespace EN
                 throw (ex);
             }
 
+        }
+
+        public DataSet ConseguirTarifa()
+        {
+
+            DataSet resultado = new DataSet();
+            try
+            {
+                resultado = cadCliente.SacarTarifa();
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+             return resultado;
         }
 
     }

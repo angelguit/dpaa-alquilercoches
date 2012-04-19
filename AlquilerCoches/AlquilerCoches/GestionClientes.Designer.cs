@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TGroupBoxCliente = new System.Windows.Forms.GroupBox();
+            this.TComboBoxTarifa = new System.Windows.Forms.ComboBox();
+            this.TLabelTarifa = new System.Windows.Forms.Label();
             this.TComboBoxProvincias = new System.Windows.Forms.ComboBox();
             this.TComboBoxCiudades = new System.Windows.Forms.ComboBox();
             this.TLabelCiudades = new System.Windows.Forms.Label();
@@ -77,6 +79,8 @@
             // 
             this.TGroupBoxCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.TGroupBoxCliente.BackColor = System.Drawing.Color.Transparent;
+            this.TGroupBoxCliente.Controls.Add(this.TComboBoxTarifa);
+            this.TGroupBoxCliente.Controls.Add(this.TLabelTarifa);
             this.TGroupBoxCliente.Controls.Add(this.TComboBoxProvincias);
             this.TGroupBoxCliente.Controls.Add(this.TComboBoxCiudades);
             this.TGroupBoxCliente.Controls.Add(this.TLabelCiudades);
@@ -105,6 +109,27 @@
             this.TGroupBoxCliente.TabStop = false;
             this.TGroupBoxCliente.Text = "Datos Cliente";
             // 
+            // TComboBoxTarifa
+            // 
+            this.TComboBoxTarifa.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.TComboBoxTarifa.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.TComboBoxTarifa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TComboBoxTarifa.FormattingEnabled = true;
+            this.TComboBoxTarifa.Location = new System.Drawing.Point(87, 227);
+            this.TComboBoxTarifa.Name = "TComboBoxTarifa";
+            this.TComboBoxTarifa.Size = new System.Drawing.Size(108, 21);
+            this.TComboBoxTarifa.TabIndex = 71;
+            this.TComboBoxTarifa.Click += new System.EventHandler(this.TComboBoxTarifa_Click);
+            // 
+            // TLabelTarifa
+            // 
+            this.TLabelTarifa.AutoSize = true;
+            this.TLabelTarifa.Location = new System.Drawing.Point(29, 235);
+            this.TLabelTarifa.Name = "TLabelTarifa";
+            this.TLabelTarifa.Size = new System.Drawing.Size(34, 13);
+            this.TLabelTarifa.TabIndex = 72;
+            this.TLabelTarifa.Text = "Tarifa";
+            // 
             // TComboBoxProvincias
             // 
             this.TComboBoxProvincias.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
@@ -115,6 +140,7 @@
             this.TComboBoxProvincias.Name = "TComboBoxProvincias";
             this.TComboBoxProvincias.Size = new System.Drawing.Size(108, 21);
             this.TComboBoxProvincias.TabIndex = 66;
+            this.TComboBoxProvincias.TextChanged += new System.EventHandler(this.TComboBoxProvincias_TextChanged);
             this.TComboBoxProvincias.Click += new System.EventHandler(this.TComboBoxProvincias_Click);
             // 
             // TComboBoxCiudades
@@ -167,7 +193,7 @@
             // TLabelSexo
             // 
             this.TLabelSexo.AutoSize = true;
-            this.TLabelSexo.Location = new System.Drawing.Point(37, 242);
+            this.TLabelSexo.Location = new System.Drawing.Point(37, 276);
             this.TLabelSexo.Name = "TLabelSexo";
             this.TLabelSexo.Size = new System.Drawing.Size(31, 13);
             this.TLabelSexo.TabIndex = 63;
@@ -176,7 +202,7 @@
             // TRadioButtonM
             // 
             this.TRadioButtonM.AutoSize = true;
-            this.TRadioButtonM.Location = new System.Drawing.Point(136, 238);
+            this.TRadioButtonM.Location = new System.Drawing.Point(136, 272);
             this.TRadioButtonM.Name = "TRadioButtonM";
             this.TRadioButtonM.Size = new System.Drawing.Size(34, 17);
             this.TRadioButtonM.TabIndex = 62;
@@ -187,7 +213,7 @@
             // TRadioButtonH
             // 
             this.TRadioButtonH.AutoSize = true;
-            this.TRadioButtonH.Location = new System.Drawing.Point(87, 238);
+            this.TRadioButtonH.Location = new System.Drawing.Point(87, 272);
             this.TRadioButtonH.Name = "TRadioButtonH";
             this.TRadioButtonH.Size = new System.Drawing.Size(33, 17);
             this.TRadioButtonH.TabIndex = 61;
@@ -306,6 +332,7 @@
             this.TButtonFoto.TabIndex = 47;
             this.TButtonFoto.Text = "Foto";
             this.TButtonFoto.UseVisualStyleBackColor = true;
+            this.TButtonFoto.Click += new System.EventHandler(this.TButtonFoto_Click);
             // 
             // TButtonGuardarCliente
             // 
@@ -349,6 +376,7 @@
             this.Name = "GestionClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GestionClientes";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GestionClientes_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.TGroupBoxCliente.ResumeLayout(false);
             this.TGroupBoxCliente.PerformLayout();
@@ -386,6 +414,8 @@
         private System.Windows.Forms.ComboBox TComboBoxCiudades;
         private System.Windows.Forms.Label TLabelCiudades;
         private System.Windows.Forms.Label TLabelProvincias;
+        private System.Windows.Forms.ComboBox TComboBoxTarifa;
+        private System.Windows.Forms.Label TLabelTarifa;
 
 
     }
