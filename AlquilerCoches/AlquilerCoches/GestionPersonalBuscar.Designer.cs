@@ -48,6 +48,7 @@
             this.TLabelProvincia = new System.Windows.Forms.Label();
             this.TButtonCerrar = new System.Windows.Forms.Button();
             this.bBDDDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.TLabelTitulo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.TDataGridViewPersonal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -237,6 +238,20 @@
             this.TButtonCerrar.UseVisualStyleBackColor = true;
             this.TButtonCerrar.Click += new System.EventHandler(this.TButtonCerrar_Click);
             // 
+            // TLabelTitulo
+            // 
+            this.TLabelTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.TLabelTitulo.AutoSize = true;
+            this.TLabelTitulo.BackColor = System.Drawing.Color.Transparent;
+            this.TLabelTitulo.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TLabelTitulo.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.TLabelTitulo.Location = new System.Drawing.Point(3, 0);
+            this.TLabelTitulo.Name = "TLabelTitulo";
+            this.TLabelTitulo.Size = new System.Drawing.Size(117, 18);
+            this.TLabelTitulo.TabIndex = 39;
+            this.TLabelTitulo.Text = "Buscador de Personal";
+            // 
             // GestionPersonalBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -244,6 +259,7 @@
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(894, 608);
+            this.Controls.Add(this.TLabelTitulo);
             this.Controls.Add(this.TButtonCerrar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.TDataGridViewPersonal);
@@ -262,6 +278,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bBDDDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
 		}
 
@@ -287,5 +304,6 @@
         private System.Windows.Forms.Label TLabelProvincia;
         private System.Windows.Forms.ComboBox TComboBoxProvincias;
         private System.Windows.Forms.ComboBox TComboBoxCiudades;
+        private System.Windows.Forms.Label TLabelTitulo;
 	}
 }

@@ -51,7 +51,8 @@ namespace AlquilerCoches
         private void TButtonBuscar_Click(object sender, EventArgs e)
         {
             dataGridView1.Visible = true;
-            groupBox1.Location = new Point(70, 330); //para desplazar el panel de busqueda hacia abajo.
+            TButtonEliminar.Visible = true;
+            groupBox1.Location = new Point(36, 303); //para desplazar el panel de busqueda hacia abajo.
             string cadena = "";
             EN.ENProveedores buscarProveedores = new EN.ENProveedores();
             DataSet resultadoProveedores = new DataSet();
@@ -131,6 +132,12 @@ namespace AlquilerCoches
                 resultadoProveedores = buscarProveedores.ObtenerListaProveedores(cadena);
                 dataGridView1.DataSource = resultadoProveedores;
                 dataGridView1.DataMember = "Proveedores";
+
+            }
+
+            for (int i = 0; i < dataGridView1.Columns.Count; i++) //esto nos servira para bloquear todas las columnas para que no se puedan editar 
+            {
+                if (i != 0) { dataGridView1.Columns[i].ReadOnly = true; } //dejamos desbloqueada la columna de eliminar para que podamos pulsar, la columna boton no se bloquea asiq no hace falta desbloquearla
             }
         }
 
@@ -269,6 +276,8 @@ namespace AlquilerCoches
                 }
                  else if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "Editar")
                  {
+                     arraydni.Clear();//la vaciamos ya que al cambiar de formulario se borran las marcas de los checkbox
+
                      if (Application.OpenForms["GestionPersonal"] != null)
                      {
                          Application.OpenForms["GestionPersonal"].Activate();
