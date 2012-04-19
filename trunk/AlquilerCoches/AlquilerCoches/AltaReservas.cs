@@ -97,7 +97,7 @@ namespace AlquilerCoches
             F1.StartPosition = FormStartPosition.Manual;
             F1.Location = Location;
             F1.Left += 147;
-            F1.Top += 49;
+            F1.Top += 48;
             F1.ShowDialog();
             
             enCliente = F1.enClientePub;
@@ -244,7 +244,7 @@ namespace AlquilerCoches
             Formu.StartPosition = FormStartPosition.Manual;
             Formu.Location = Location;
             Formu.Left += 147;
-            Formu.Top += 49;
+            Formu.Top += 48;
             Formu.ShowDialog();
             enCli = Formu.enCliPub;
             if (Formu.cambios)
