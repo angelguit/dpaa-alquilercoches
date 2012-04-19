@@ -124,7 +124,7 @@ namespace AlquilerCoches
         private void TButtonBuscar_Click(object sender, EventArgs e)
         {
 
-            panel1.Location = new Point(103, 292); //para desplazar el panel de busqueda hacia abajo.
+            panel1.Location = new Point(66, 299); //para desplazar el panel de busqueda hacia abajo.
             TDataGridViewCliente.Visible = true;
 
             if (incorrecto == true)

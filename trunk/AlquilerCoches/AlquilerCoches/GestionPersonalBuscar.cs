@@ -15,11 +15,16 @@ namespace AlquilerCoches
     public partial class GestionPersonalBuscar : Form
     {
         EN.ENPersonal enPerson = new EN.ENPersonal();//declaramos enPerson que lo usaremos en cualquier operacion relacionada con personal
-        
+        private DataSet numProvincia;// usado en funcion TComboBoxCiudades_Click
+        bool incorrecto = false;
+        string eliminado = "";
+        ArrayList arraydni = new ArrayList();
+
         public GestionPersonalBuscar()
         {
             InitializeComponent();
 
+          
 
             DataGridViewButtonColumn buttons = new DataGridViewButtonColumn();
             {
@@ -42,14 +47,9 @@ namespace AlquilerCoches
 
             TDataGridViewPersonal.Columns.Add(boton);
             TDataGridViewPersonal.Columns.Add(buttons);
-           /* TDataGridViewPersonal.ReadOnly = true;
-            TDataGridViewPersonal.Columns[1].ReadOnly = false;*/
            
         }
 
-        
-
-        bool incorrecto = false;
         private void TTextBoxDNI_Leave(object sender, EventArgs e)
         {
 
@@ -97,7 +97,7 @@ namespace AlquilerCoches
             }
             else { errorProvider1.SetError(TTextBoxPuestoAc, ""); }
         }
-        string eliminado = "";
+        
         private void TButtonBuscar_Click(object sender, EventArgs e)
         {
             TDataGridViewPersonal.Visible = true;
@@ -166,7 +166,11 @@ namespace AlquilerCoches
 
                   TDataGridViewPersonal.DataSource = ds;
                   TDataGridViewPersonal.DataMember = "Personal";
-                
+
+                  for (int i = 0; i < TDataGridViewPersonal.Columns.Count; i++) //esto nos servira para bloquear todas las columnas para que no se puedan editar 
+                  {
+                     if (i != 0) { TDataGridViewPersonal.Columns[i].ReadOnly = true; } //dejamos desbloqueada la columna de eliminar para que podamos pulsar, la columna boton no se bloquea asiq no hace falta desbloquearla
+                  }
 
             }
         }
@@ -176,12 +180,12 @@ namespace AlquilerCoches
             this.Close();
         }
 
-        ArrayList arraydni = new ArrayList();
+        
         private void TDataGridViewPersonal_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
-          //  try
-          //  {
+            try
+            {
 
                 if (TDataGridViewPersonal.Rows[e.RowIndex].Cells[e.ColumnIndex].ColumnIndex.ToString()=="0") // la columna 0 es el checkbox de eliminiar
                 {
@@ -208,6 +212,8 @@ namespace AlquilerCoches
                 }
                 else if (TDataGridViewPersonal.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "Editar")
                 {
+                    arraydni.Clear();//la vaciamos ya que al cambiar de formulario se borran las marcas de los checkbox
+
                     string nom = TDataGridViewPersonal.Rows[e.RowIndex].Cells[3].Value.ToString();//indice 1 para cojer el nombre
                     string dni = TDataGridViewPersonal.Rows[e.RowIndex].Cells[2].Value.ToString();
                     string apell = TDataGridViewPersonal.Rows[e.RowIndex].Cells[4].Value.ToString();
@@ -227,33 +233,22 @@ namespace AlquilerCoches
                     }
                       
                         GestionPersonal Formu = new GestionPersonal(nom,dni,apell,telef,mail,direc,ciu,prov,puesac, nombrebotonguardar);
-                        //Formu.Location = new Point(this.Location.X, this.Location.Y);
                         Formu.StartPosition = FormStartPosition.CenterScreen;
                         Formu.MdiParent = this.MdiParent;
-                       // Formu.Location = new System.Drawing.Point(Bottom - Width, Right - Height);
                         Formu.Show();
-                        
-                      
-                                           
-                    
-                }
-                else
-                {
 
-                   TTextBoxNombre.Text = TDataGridViewPersonal.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
-                    
                 }
-           // }
-           // catch (Exception ex)
-            //{
-            //    MessageBox.Show("Error no hay valores en la fila");
-
-          //  }
+               
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error no hay valores en la fila");
+            }
         
            
         }
 
-        private DataSet numProvincia;// usado en funcion TComboBoxCiudades_Click
+        
         private void ObtenerProvincias(DataSet dsProv)
         {
             TComboBoxProvincias.Text = "Seleccione Provincia";
