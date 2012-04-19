@@ -51,7 +51,7 @@ namespace AlquilerCoches
 
             TEnvioButtonOrdinario.Checked = true;
             TObservTextBox.Text = observaciones;
-            numericUpDown1.Value = cantidad;
+            numericUpDown1.Text = cantidad;
 
             EN.ENPedidos pedid = new EN.ENPedidos();
             DataSet dsPedid = new DataSet();
