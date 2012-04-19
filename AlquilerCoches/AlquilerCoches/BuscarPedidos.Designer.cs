@@ -306,6 +306,8 @@
             this.Controls.Add(this.TButtonCerrar);
             this.Controls.Add(this.TDataGridViewPedidos);
             this.Controls.Add(this.groupBox1);
+            this.ForeColor = System.Drawing.Color.Black;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BuscarPedidos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Buscar Pedidos";
