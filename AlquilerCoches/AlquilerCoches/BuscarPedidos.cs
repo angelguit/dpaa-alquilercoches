@@ -225,7 +225,7 @@ namespace AlquilerCoches
 
                         }
 
-                        GestionPersonal Formu = new GestionPersonal(id, proveedor, marca, modelo, cantidad, observaciones, estado, empleado, tipoenvio, nombrebotonguardar);
+                        GestionPedidos Formu = new GestionPedidos(id, proveedor, marca, modelo, cantidad, observaciones, estado, empleado, tipoenvio, nombrebotonguardar);
                         Formu.StartPosition = FormStartPosition.CenterScreen;
                         Formu.MdiParent = this.MdiParent;
                         Formu.Show();
