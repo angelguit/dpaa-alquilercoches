@@ -344,6 +344,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="otroProyecto.txt" />
+    <None Include="Resources\Search-icon2.png" />
     <None Include="Resources\Edit-icon2.png" />
     <None Include="Resources\carretera2.jpg" />
     <None Include="Resources\Cancel-icon1.png" />
