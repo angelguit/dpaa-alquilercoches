@@ -178,7 +178,7 @@ namespace AlquilerCoches
                 //}
                 //else { TDataGridViewPersonal.ReadOnly = true; MessageBox.Show("hola"); }
 
-                    TDataGridViewPersonal.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                    //TDataGridViewPersonal.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
             }
         }
