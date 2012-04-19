@@ -110,19 +110,19 @@ namespace AlquilerCoches
 
                 if (radioButton1.Checked)
                 {
-                    envio = "Abierto";
+                    estado = "Abierto";
                 }
                 if (radioButton2.Checked)
                 {
-                    envio = "Cerrado";
+                    estado = "Cerrado";
                 }
                 if (radioButton3.Checked)
                 {
-                    estado = "Ordinario";
+                    envio = "Ordinario";
                 }
                 if (radioButton4.Checked)
                 {
-                    estado = "Urgente";
+                    envio = "Urgente";
                 }
 
                 string id= TIDtextBox.Text.ToString();
@@ -130,6 +130,7 @@ namespace AlquilerCoches
                 string modelo = TModelocomboBox3.Text.ToString();
                 string tipo_envio = envio;
                 string empleado = TNametextbox.Text.ToString();
+                string siguiente = "";
                 string todo = "";
                 int n = 0;
 
@@ -143,7 +144,7 @@ namespace AlquilerCoches
                 {
                     if (n != 0)
                     {
-                        todo += "and Marca='" + marca + "' and Modelo='" + modelo + "' and";
+                        todo += "and Marca='" + marca + "' and Modelo='" + modelo + "' and EstadoPedido='"+estado+"' and TipoEnvio='"+envio+"'";
                     }
                     else
                     {
@@ -154,11 +155,11 @@ namespace AlquilerCoches
                 {
                     if (n != 0)
                     {
-                        todo += "and Marca='" + marca + "' and Modelo='" + modelo + "' and Empleado='" + empleado + "'";
+                        todo += "and Marca='" + marca + "' and Modelo='" + modelo + "' and EstadoPedido='" + estado + "' and TipoEnvio='" + envio + "'";
                     }
                     else
                     {
-                        todo += "Marca='" + marca + "' and Modelo='" + modelo + "' and Empleado='" + empleado + "'";
+                        todo += "Marca='" + marca + "' and Modelo='" + modelo + "' and EstadoPedido='" + estado + "' and TipoEnvio='" + envio + "'";
                     }
 
                 }
@@ -253,16 +254,7 @@ namespace AlquilerCoches
 
         }
 
-        private void TMarcacomboBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void TModelocomboBox3_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
@@ -304,12 +296,44 @@ namespace AlquilerCoches
 
         private void TMarcacomboBox2_Click(object sender, EventArgs e)
         {
+            if (TModelocomboBox3.Items.Count > 0) //lo dejamos en blanco por si hubiera alguna ciudad, para realizar nueva busqueda de provincia
+                TModelocomboBox3.DataSource = null;
 
+            EN.ENPedidos enMarc = new EN.ENPedidos();
+            DataSet dsMarc = new DataSet();
+            dsMarc = enMarc.ObtenerListaMarcas();
+            ObtenerMarcas(dsMarc);
         }
 
         private void TModelocomboBox3_Click(object sender, EventArgs e)
         {
+            EN.ENPedidos enMod = new EN.ENPedidos();
+            DataSet dsMod = new DataSet();
+            try
+            {
+                string marc = TMarcacomboBox2.Text.ToString();
+                bool parar = false;
 
+                for (int i = 0; i < 16 && parar != true; i++)
+                {
+
+                    if (numMarca.Tables["Marca"].Rows[i][1].ToString() == marc)
+                    {
+
+                        string num_marc = numMarca.Tables["Marca"].Rows[i][0].ToString();
+                        parar = true;
+
+                        dsMod = enMod.ObtenerListaModelos(num_marc);
+
+                    }
+                }
+                ObtenerModelos(dsMod);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Si desea cambiar el modelo debe cambiar la marca", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
     }
