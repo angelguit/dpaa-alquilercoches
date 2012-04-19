@@ -43,13 +43,13 @@ namespace AlquilerCoches
                 boton.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells; //tamaño
                 boton.DisplayIndex = 0; //indice que ocupara en la tabla
             }
-
+            
 
             TDataGridViewPersonal.Columns.Add(boton);
             TDataGridViewPersonal.Columns.Add(buttons);
            
         }
-
+        
         private void TTextBoxDNI_Leave(object sender, EventArgs e)
         {
 

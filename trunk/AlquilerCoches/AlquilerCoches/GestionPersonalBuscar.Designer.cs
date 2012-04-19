@@ -49,6 +49,8 @@
             this.TButtonCerrar = new System.Windows.Forms.Button();
             this.bBDDDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.TLabelTitulo = new System.Windows.Forms.Label();
+            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.rectangleShape1 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             ((System.ComponentModel.ISupportInitialize)(this.TDataGridViewPersonal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -169,7 +171,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.TComboBoxCiudades);
             this.panel1.Controls.Add(this.TComboBoxProvincias);
             this.panel1.Controls.Add(this.TLabelCiudad);
@@ -184,6 +185,7 @@
             this.panel1.Controls.Add(this.TLabelApellidos);
             this.panel1.Controls.Add(this.TLabelNombre);
             this.panel1.Controls.Add(this.TLabelDNI);
+            this.panel1.Controls.Add(this.shapeContainer1);
             this.panel1.Location = new System.Drawing.Point(94, 64);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(473, 216);
@@ -263,6 +265,24 @@
             this.TLabelTitulo.TabIndex = 39;
             this.TLabelTitulo.Text = "Buscador de Personal";
             // 
+            // shapeContainer1
+            // 
+            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer1.Name = "shapeContainer1";
+            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.rectangleShape1});
+            this.shapeContainer1.Size = new System.Drawing.Size(473, 216);
+            this.shapeContainer1.TabIndex = 33;
+            this.shapeContainer1.TabStop = false;
+            // 
+            // rectangleShape1
+            // 
+            this.rectangleShape1.BorderColor = System.Drawing.Color.White;
+            this.rectangleShape1.Location = new System.Drawing.Point(4, 6);
+            this.rectangleShape1.Name = "rectangleShape1";
+            this.rectangleShape1.Size = new System.Drawing.Size(468, 209);
+            // 
             // GestionPersonalBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -316,5 +336,7 @@
         private System.Windows.Forms.ComboBox TComboBoxProvincias;
         private System.Windows.Forms.ComboBox TComboBoxCiudades;
         private System.Windows.Forms.Label TLabelTitulo;
+        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
+        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape1;
 	}
 }
