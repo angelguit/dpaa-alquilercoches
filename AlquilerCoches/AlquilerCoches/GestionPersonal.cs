@@ -110,7 +110,7 @@ namespace AlquilerCoches
         }
         private void TTextBoxDireccion_Leave(object sender, EventArgs e)
         {
-            if (!Regex.Match(TTextBoxDireccion.Text, @"^[A-Za-z\s]{3,40}$").Success)
+            if (!Regex.Match(TTextBoxDireccion.Text, @"^[A-Za-z\s]{3,50}$").Success)
             {
                 errorProvider1.SetError(TTextBoxDireccion, "Dirección incorrecta, caracteres invalidos");
                 incorrecto = true;

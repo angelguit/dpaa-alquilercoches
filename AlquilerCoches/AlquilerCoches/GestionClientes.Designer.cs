@@ -338,22 +338,28 @@
             // TButtonGuardarCliente
             // 
             this.TButtonGuardarCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.TButtonGuardarCliente.Location = new System.Drawing.Point(69, 534);
+            this.TButtonGuardarCliente.Image = global::AlquilerCoches.Properties.Resources.Add_icon;
+            this.TButtonGuardarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TButtonGuardarCliente.Location = new System.Drawing.Point(69, 524);
             this.TButtonGuardarCliente.Name = "TButtonGuardarCliente";
-            this.TButtonGuardarCliente.Size = new System.Drawing.Size(75, 23);
+            this.TButtonGuardarCliente.Size = new System.Drawing.Size(80, 33);
             this.TButtonGuardarCliente.TabIndex = 48;
             this.TButtonGuardarCliente.Text = "Guardar";
+            this.TButtonGuardarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.TButtonGuardarCliente.UseVisualStyleBackColor = true;
             this.TButtonGuardarCliente.Click += new System.EventHandler(this.TButtonGuardarCliente_Click);
             // 
             // TButtonCerrar
             // 
             this.TButtonCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.TButtonCerrar.Location = new System.Drawing.Point(184, 534);
+            this.TButtonCerrar.Image = global::AlquilerCoches.Properties.Resources.Close_icon;
+            this.TButtonCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TButtonCerrar.Location = new System.Drawing.Point(183, 524);
             this.TButtonCerrar.Name = "TButtonCerrar";
-            this.TButtonCerrar.Size = new System.Drawing.Size(75, 23);
+            this.TButtonCerrar.Size = new System.Drawing.Size(78, 33);
             this.TButtonCerrar.TabIndex = 49;
             this.TButtonCerrar.Text = "Cerrar";
+            this.TButtonCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.TButtonCerrar.UseVisualStyleBackColor = true;
             this.TButtonCerrar.Click += new System.EventHandler(this.TButtonCerrar_Click);
             // 
