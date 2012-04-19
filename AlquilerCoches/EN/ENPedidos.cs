@@ -135,6 +135,20 @@ namespace EN
             return resultado;
         }
 
+        public DataSet ObtenerListaID()
+        {
+            DataSet resultado = new DataSet();
+            try
+            {
+                resultado = cadPedidos.ConseguirID();
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            return resultado;
+        }
+
    /*   public string ObtenerNumMarca(string marca)
         {
             try
