@@ -57,6 +57,7 @@ namespace AlquilerCoches
             EN.ENProveedores buscarProveedores = new EN.ENProveedores();
             DataSet resultadoProveedores = new DataSet();
             //muestra todo
+
             if (TTextBoxCIF.Text == "" && TComboBoxProvincias.Text == "" && TTextBoxMarca.Text == "" && TComboBoxCiudades.Text == "" && TTextBoxCPostal.Text=="")
             {
                 resultadoProveedores = buscarProveedores.ObtenerListaProveedores(cadena);
