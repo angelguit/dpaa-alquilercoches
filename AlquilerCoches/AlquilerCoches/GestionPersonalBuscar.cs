@@ -164,13 +164,21 @@ namespace AlquilerCoches
                 ds = enPerson.ObtenerListaPersonal(todo);
                 eliminado = todo;
 
-                  TDataGridViewPersonal.DataSource = ds;
-                  TDataGridViewPersonal.DataMember = "Personal";
+                TDataGridViewPersonal.DataSource = ds;
+                TDataGridViewPersonal.DataMember = "Personal";
 
-                  for (int i = 0; i < TDataGridViewPersonal.Columns.Count; i++) //esto nos servira para bloquear todas las columnas para que no se puedan editar 
-                  {
-                     if (i != 0) { TDataGridViewPersonal.Columns[i].ReadOnly = true; } //dejamos desbloqueada la columna de eliminar para que podamos pulsar, la columna boton no se bloquea asiq no hace falta desbloquearla
-                  }
+               // if (ds.Tables[0].Rows.Count > 0)
+               // {
+                    
+                    for (int i = 0; i < TDataGridViewPersonal.Columns.Count; i++) //esto nos servira para bloquear todas las columnas para que no se puedan editar 
+                    {
+                        if (i != 0) { TDataGridViewPersonal.Columns[i].ReadOnly = true; } //dejamos desbloqueada la columna de eliminar para que podamos pulsar, la columna boton no se bloquea asiq no hace falta desbloquearla
+                    }
+                 //   MessageBox.Show("Adios");
+                //}
+                //else { TDataGridViewPersonal.ReadOnly = true; MessageBox.Show("hola"); }
+
+                    TDataGridViewPersonal.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
             }
         }

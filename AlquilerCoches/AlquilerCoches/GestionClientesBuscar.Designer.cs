@@ -81,6 +81,8 @@
             // 
             // TDataGridViewCliente
             // 
+            this.TDataGridViewCliente.AllowUserToAddRows = false;
+            this.TDataGridViewCliente.AllowUserToDeleteRows = false;
             this.TDataGridViewCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TDataGridViewCliente.Location = new System.Drawing.Point(66, 54);
             this.TDataGridViewCliente.Name = "TDataGridViewCliente";
