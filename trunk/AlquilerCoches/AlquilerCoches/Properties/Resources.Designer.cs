@@ -185,5 +185,12 @@ namespace AlquilerCoches.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        internal static System.Drawing.Bitmap Search_icon2 {
+            get {
+                object obj = ResourceManager.GetObject("Search-icon2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
