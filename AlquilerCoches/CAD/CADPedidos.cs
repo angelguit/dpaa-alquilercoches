@@ -130,27 +130,25 @@ namespace CAD
 
             return dsCiu;
         }
-        /*
-        public string ObtenerNumMarca(string marca)
-        {
-            DataSet dsMod = new DataSet();
 
+        public DataSet ConseguirID()
+        {
+            DataSet dsId = new DataSet();
             try
             {
                 SqlConnection conexion = new SqlConnection(cadenaConexion);
-                String consulta = "Select id_marca FROM Marca where marca='" + marca + "'";
-                SqlDataAdapter daMod = new SqlDataAdapter(consulta, conexion);
-                daMod.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-                daMod.Fill(dsMod, "Marca"); //dsPersonal es ahora nuestra base de datos local
+                String consulta = "Select IDTransaccion FROM Pedidos";
+                SqlDataAdapter daID = new SqlDataAdapter(consulta, conexion);
+                daID.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daID.Fill(dsId, "Pedidos");
             }
             catch (Exception ex)
             {
                 throw (ex);
             }
 
-            string retorno = dsMod.Tables["Marca"].Rows[0][0].ToString();
-            return retorno;
+            return dsId;
         }
-        */
+
     }
 }
