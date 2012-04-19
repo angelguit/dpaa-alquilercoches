@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Collections;
+using System.Text.RegularExpressions;
 
 namespace AlquilerCoches
 {
@@ -15,6 +16,8 @@ namespace AlquilerCoches
         private EN.ENCliente enCliente = new EN.ENCliente();
         private ArrayList arraynumRes = new ArrayList();
         private string eliminado = "";
+        private ErrorProvider err1 = new ErrorProvider();
+        private ErrorProvider err2 = new ErrorProvider();
         public GestionReservas()
         {
             InitializeComponent();
@@ -94,29 +97,42 @@ namespace AlquilerCoches
 
         private void TButtonBuscar_Click(object sender, EventArgs e)
         {
-            TDataGridViewReservas.Visible = true;
-            TPanelReservas.Location = new Point(175, 372); //para desplazar el panel de busqueda hacia abajo.
-            EN.ENReservas enRe = new EN.ENReservas();
 
-            TButtonEliminar.Visible = true;
-            DataSet ds = new DataSet();
-
+            bool correcto = true;
             string sentencia = "";
-            if (TTextBoxNumeroReserva.Text.ToString() != "")
+            if (!Regex.Match(TTextBoxNumeroReserva.Text, @"^[0-9]{1,10000}$").Success && TTextBoxNumeroReserva.Text.ToString() != "")
             {
-                sentencia += " NºReserva='" + TTextBoxNumeroReserva.Text.ToString() + "'";
+                err1.SetError(TTextBoxNumeroReserva, "Solo se admiten números (vacio para buscar todas)");
+                correcto = false;
+            }
+            else
+            {
+                err1.Clear();
+                if (TTextBoxNumeroReserva.Text.ToString() != "")
+                {
+                    sentencia += " NºReserva='" + TTextBoxNumeroReserva.Text.ToString() + "'";
+                }
             }
             if (TDateTimePickerFechaFin.Visible == true)
             {
-                if (sentencia == "")
+                if (TDateTimePickerFechaInicio.Value <= TDateTimePickerFechaFin.Value)
                 {
-                    sentencia += " Fecha inicio between '" + TDateTimePickerFechaInicio.Value.ToString() + "'" + " and '" + TDateTimePickerFechaFin.Value.ToString() + "'";
-                    sentencia += " and Fecha fin between '" + TDateTimePickerFechaInicio.Value.ToString() + "'" + " and '" + TDateTimePickerFechaFin.Value.ToString() + "'";
+                    err2.Clear();
+                    if (sentencia == "")
+                    {
+                        sentencia += " Fecha inicio between " + Convert.ToDateTime(TDateTimePickerFechaInicio.Value.ToString()) + " and " + Convert.ToDateTime(TDateTimePickerFechaFin.Value.ToString());
+                        sentencia += " and Fecha fin between " + Convert.ToDateTime(TDateTimePickerFechaInicio.Value.ToString()) + " and " + Convert.ToDateTime(TDateTimePickerFechaFin.Value.ToString());
+                    }
+                    else
+                    {
+                        sentencia += " and Fecha inicio between'" + Convert.ToDateTime(TDateTimePickerFechaFin.Value.ToString()) + "' and '" + Convert.ToDateTime(TDateTimePickerFechaInicio.Value.ToString()) + "'";
+                        sentencia += " and Fecha fin between '" + Convert.ToDateTime(TDateTimePickerFechaInicio.Value.ToString()) + "'" + " and '" + Convert.ToDateTime(TDateTimePickerFechaFin.Value.ToString()) + "'";
+                    }
                 }
                 else
                 {
-                    sentencia += " and Fecha inicio between'" + TDateTimePickerFechaFin.Value.ToString() + "' and '" + TDateTimePickerFechaInicio.Value.ToString() + "'";
-                    sentencia += " and Fecha fin between '" + TDateTimePickerFechaInicio.Value.ToString() + "'" + " and '" + TDateTimePickerFechaFin.Value.ToString() + "'";
+                    err2.SetError(TDateTimePickerFechaFin, "Fecha fin superior a fecha inicio");
+                    correcto = false;
                 }
             }
             if (TLabelCliente.Visible == true)
@@ -130,10 +146,20 @@ namespace AlquilerCoches
                     sentencia += " and FK_Cliente ='" + enCliente.DNI.ToString() + "'";
                 }
             }
-            eliminado = sentencia;
-            ds = enRe.ObtenerReservas(sentencia);
-            TDataGridViewReservas.DataSource = ds;
-            TDataGridViewReservas.DataMember = "Reservas";
+            if (correcto)
+            {
+                TDataGridViewReservas.Visible = true;
+                TPanelReservas.Location = new Point(175, 372); //para desplazar el panel de busqueda hacia abajo.
+                EN.ENReservas enRe = new EN.ENReservas();
+
+                TButtonEliminar.Visible = true;
+                DataSet ds = new DataSet();
+
+                eliminado = sentencia;
+                ds = enRe.ObtenerReservas(sentencia);
+                TDataGridViewReservas.DataSource = ds;
+                TDataGridViewReservas.DataMember = "Reservas";
+            }
         }
 
         private void TButtonQuitarCliente_Click(object sender, EventArgs e)
@@ -216,6 +242,42 @@ namespace AlquilerCoches
             }
             else
                 MessageBox.Show("Debe seleccionar algún registro", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void TTextBoxNumeroReserva_TextChanged(object sender, EventArgs e)
+        {
+            if (!Regex.Match(TTextBoxNumeroReserva.Text, @"^[0-9]{1,10000}$").Success && TTextBoxNumeroReserva.Text.ToString() != "")
+            {
+                err1.SetError(TTextBoxNumeroReserva, "Solo se admiten números (vacio para buscar todas)");
+            }
+            else
+            {
+                err1.Clear();
+            }
+        }
+
+        private void TDateTimePickerFechaFin_ValueChanged(object sender, EventArgs e)
+        {
+            if (TDateTimePickerFechaInicio.Value <= TDateTimePickerFechaFin.Value)
+            {
+                err2.Clear();
+            }
+            else
+            {
+                err2.SetError(TDateTimePickerFechaFin, "Fecha fin superior a fecha inicio");
+            }
+        }
+
+        private void TDateTimePickerFechaInicio_ValueChanged(object sender, EventArgs e)
+        {
+            if (TDateTimePickerFechaInicio.Value <= TDateTimePickerFechaFin.Value)
+            {
+                err2.Clear();
+            }
+            else
+            {
+                err2.SetError(TDateTimePickerFechaFin, "Fecha fin superior a fecha inicio");
+            }
         }
     }
 }

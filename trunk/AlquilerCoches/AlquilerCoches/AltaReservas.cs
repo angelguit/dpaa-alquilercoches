@@ -116,6 +116,10 @@ namespace AlquilerCoches
                 TButtonBuscarOtro.Visible = true;
                 TButtonEditar.Visible = true;
                 TRectangleShapeCliente.Visible = true;
+                TLabelResRapida.Visible = true;
+
+                TRadioButtonFavorito.Visible = true;
+                TRadioButtonUltimoCoche.Visible = true;
             }
         }
 
