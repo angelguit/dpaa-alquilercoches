@@ -45,7 +45,8 @@ namespace AlquilerCoches
 
         private void BuscarPedidos_Load(object sender, EventArgs e)
         {
-
+            TDataGridViewPedidos.Visible = false;
+            radioButton3.Checked = true;
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -86,6 +87,7 @@ namespace AlquilerCoches
         string eliminado = "";
         private void TBuscarbutton_Click(object sender, EventArgs e)
         {
+                TDataGridViewPedidos.Visible = true;
           /*  if (incorrecto == true)
             {
                 MessageBox.Show("Campos invalidos, reviselos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -120,7 +122,8 @@ namespace AlquilerCoches
                 {
                     todo += " Marca='" + nombre + "' ";
                 }
-                
+             
+
 
                 MessageBox.Show("select * from tabla where" + todo);
                 ds = enPedidos.ObtenerListaPedidos(todo);
@@ -205,5 +208,40 @@ namespace AlquilerCoches
 
                         
         }
+
+        private void TButtonBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TMarcacomboBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void TModelocomboBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TButtonCerrar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Desea Salir?", "Advertencia",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+                    MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                this.Close();
+        }
+
     }
 }
