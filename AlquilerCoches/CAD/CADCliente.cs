@@ -16,6 +16,7 @@ namespace CAD
         static private String cadenaConexion = ConfigurationManager.ConnectionStrings["AlquilerCoches"].ConnectionString; // @"Data Source=|DataDirectory|\BBDD.sdf";
         static private String nombreTabla = "Cliente";
 
+
         public DataSet ObtenerTablaCliente(string todo)
         {
             DataSet dsCliente = new DataSet();
@@ -224,6 +225,46 @@ namespace CAD
             }
 
             return dsResCliente.Tables["Reservas"].Rows.Count;
+        }
+
+        public string UltimaReserva(string dni)
+        {
+            DataSet dsResCliente = new DataSet();
+
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                String consulta = "Select * FROM Reservas where FK_Cliente = '" + dni + "'";
+                SqlDataAdapter daResCliente = new SqlDataAdapter(consulta, conexion);
+                daResCliente.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daResCliente.Fill(dsResCliente, "Reservas");
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+
+            return dsResCliente.Tables["Reservas"].Rows[dsResCliente.Tables["Reservas"].Rows.Count - 1][2].ToString();
+        }
+
+        public string ReservaFavorita(string dni)
+        {
+            DataSet dsResCliente = new DataSet();
+
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                String consulta = "Select FK_Coche,count(FK_Coche) as total FROM Reservas where FK_Cliente = '" + dni + "' group by FK_Coche order by 2 desc";
+                SqlDataAdapter daResCliente = new SqlDataAdapter(consulta, conexion);
+                daResCliente.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daResCliente.Fill(dsResCliente, "Reservas");
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+
+            return dsResCliente.Tables["Reservas"].Rows[0][0].ToString();
         }
     }
 }
