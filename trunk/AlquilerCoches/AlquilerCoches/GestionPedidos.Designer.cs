@@ -117,7 +117,7 @@
             this.groupBox1.Controls.Add(this.TMarca);
             this.groupBox1.Location = new System.Drawing.Point(75, 122);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(539, 345);
+            this.groupBox1.Size = new System.Drawing.Size(612, 345);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Pedido";
@@ -125,7 +125,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(417, 30);
+            this.textBox1.Location = new System.Drawing.Point(457, 39);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 43;
@@ -134,7 +134,7 @@
             // 
             this.TEnviogroupBox3.Controls.Add(this.TEnvioButtonUrgente);
             this.TEnviogroupBox3.Controls.Add(this.TEnvioButtonOrdinario);
-            this.TEnviogroupBox3.Location = new System.Drawing.Point(69, 152);
+            this.TEnviogroupBox3.Location = new System.Drawing.Point(109, 161);
             this.TEnviogroupBox3.Name = "TEnviogroupBox3";
             this.TEnviogroupBox3.Size = new System.Drawing.Size(344, 51);
             this.TEnviogroupBox3.TabIndex = 42;
@@ -166,7 +166,7 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(167, 126);
+            this.numericUpDown1.Location = new System.Drawing.Point(207, 135);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             10,
             0,
@@ -192,7 +192,7 @@
             this.TErrorModelo.AutoSize = true;
             this.TErrorModelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TErrorModelo.ForeColor = System.Drawing.Color.Red;
-            this.TErrorModelo.Location = new System.Drawing.Point(349, 92);
+            this.TErrorModelo.Location = new System.Drawing.Point(389, 101);
             this.TErrorModelo.Name = "TErrorModelo";
             this.TErrorModelo.Size = new System.Drawing.Size(0, 13);
             this.TErrorModelo.TabIndex = 39;
@@ -202,7 +202,7 @@
             this.TErrorMarca.AutoSize = true;
             this.TErrorMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TErrorMarca.ForeColor = System.Drawing.Color.Red;
-            this.TErrorMarca.Location = new System.Drawing.Point(350, 63);
+            this.TErrorMarca.Location = new System.Drawing.Point(390, 72);
             this.TErrorMarca.Name = "TErrorMarca";
             this.TErrorMarca.Size = new System.Drawing.Size(0, 13);
             this.TErrorMarca.TabIndex = 38;
@@ -212,7 +212,7 @@
             this.TErrorProvee.AutoSize = true;
             this.TErrorProvee.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TErrorProvee.ForeColor = System.Drawing.Color.Red;
-            this.TErrorProvee.Location = new System.Drawing.Point(350, 30);
+            this.TErrorProvee.Location = new System.Drawing.Point(390, 39);
             this.TErrorProvee.Name = "TErrorProvee";
             this.TErrorProvee.Size = new System.Drawing.Size(0, 13);
             this.TErrorProvee.TabIndex = 37;
@@ -222,25 +222,25 @@
             // 
             this.TModelocomboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TModelocomboBox3.FormattingEnabled = true;
-            this.TModelocomboBox3.Location = new System.Drawing.Point(165, 89);
+            this.TModelocomboBox3.Location = new System.Drawing.Point(205, 98);
             this.TModelocomboBox3.Name = "TModelocomboBox3";
             this.TModelocomboBox3.Size = new System.Drawing.Size(234, 21);
             this.TModelocomboBox3.TabIndex = 36;
             this.TModelocomboBox3.SelectedIndexChanged += new System.EventHandler(this.TModelocomboBox3_SelectedIndexChanged);
             this.TModelocomboBox3.Click += new System.EventHandler(this.TModelocomboBox3_Click);
-            this.TModelocomboBox3.Leave += new System.EventHandler(this.TMarcacomboBox2_Leave);
+            this.TModelocomboBox3.Leave += new System.EventHandler(this.TModelocomboBox3_Leave);
             // 
             // TMarcacomboBox2
             // 
             this.TMarcacomboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TMarcacomboBox2.FormattingEnabled = true;
-            this.TMarcacomboBox2.Location = new System.Drawing.Point(165, 55);
+            this.TMarcacomboBox2.Location = new System.Drawing.Point(205, 64);
             this.TMarcacomboBox2.Name = "TMarcacomboBox2";
             this.TMarcacomboBox2.Size = new System.Drawing.Size(234, 21);
             this.TMarcacomboBox2.TabIndex = 35;
-            this.TMarcacomboBox2.SelectedIndexChanged += new System.EventHandler(this.TMarcacomboBox2_SelectedIndexChanged);
             this.TMarcacomboBox2.TextChanged += new System.EventHandler(this.TMarcacomboBox2_TextChanged);
             this.TMarcacomboBox2.Click += new System.EventHandler(this.TMarcacomboBox2_Click);
+            this.TMarcacomboBox2.Leave += new System.EventHandler(this.TMarcacomboBox2_Leave);
             // 
             // TProveecomboBox1
             // 
@@ -248,24 +248,27 @@
             this.TProveecomboBox1.FormattingEnabled = true;
             this.TProveecomboBox1.Items.AddRange(new object[] {
             "",
-            " HERMANOS ESCLAPEZ S.L.",
-            " MARTÍNEZ E HIJOS S.A.",
-            " TOYOTA SANTA FAZ S.L.",
-            " RENAULT BABEL S.L.",
-            " MERCEDES-BENZ ATALAYAS S.L.",
-            " DACIA LOGAN VIRGEN DEL REMEDIO S.A.",
-            " CONCESIONARIO CAZORLA S.L.",
-            " AUTOMOCIÓN SIERRA TRAMONTANA S.L."});
-            this.TProveecomboBox1.Location = new System.Drawing.Point(165, 22);
+            "HERMANOS ESCLAPEZ S.L.",
+            "MARTÍNEZ E HIJOS S.A.",
+            "TOYOTA SANTA FAZ S.L.",
+            "RENAULT BABEL S.L.",
+            "MERCEDES-BENZ ATALAYAS S.L.",
+            "DACIA LOGAN VIRGEN DEL REMEDIO S.A.",
+            "CONCESIONARIO CAZORLA S.L.",
+            "AUTOMOCIÓN SIERRA TRAMONTANA S.L.",
+            "CONCESIONARIO IBAÑEZ E HIJOS S.L.",
+            "ASOCIACIÓN AUTOMÓVIL FELIZ S.L."});
+            this.TProveecomboBox1.Location = new System.Drawing.Point(205, 31);
             this.TProveecomboBox1.Name = "TProveecomboBox1";
             this.TProveecomboBox1.Size = new System.Drawing.Size(234, 21);
             this.TProveecomboBox1.TabIndex = 34;
             this.TProveecomboBox1.SelectedIndexChanged += new System.EventHandler(this.TProveecomboBox1_SelectedIndexChanged);
+            this.TProveecomboBox1.Leave += new System.EventHandler(this.TProveecomboBox1_Leave);
             // 
             // TProveLabel
             // 
             this.TProveLabel.AutoSize = true;
-            this.TProveLabel.Location = new System.Drawing.Point(69, 25);
+            this.TProveLabel.Location = new System.Drawing.Point(109, 34);
             this.TProveLabel.Name = "TProveLabel";
             this.TProveLabel.Size = new System.Drawing.Size(56, 13);
             this.TProveLabel.TabIndex = 32;
@@ -273,17 +276,17 @@
             // 
             // TObservTextBox
             // 
-            this.TObservTextBox.Location = new System.Drawing.Point(165, 222);
+            this.TObservTextBox.Location = new System.Drawing.Point(205, 231);
             this.TObservTextBox.Multiline = true;
             this.TObservTextBox.Name = "TObservTextBox";
             this.TObservTextBox.Size = new System.Drawing.Size(283, 86);
             this.TObservTextBox.TabIndex = 29;
-            this.TObservTextBox.TextChanged += new System.EventHandler(this.TObservTextBox_TextChanged);
+            this.TObservTextBox.Leave += new System.EventHandler(this.TObservTextBox_Leave);
             // 
             // TObserLabel
             // 
             this.TObserLabel.AutoSize = true;
-            this.TObserLabel.Location = new System.Drawing.Point(66, 225);
+            this.TObserLabel.Location = new System.Drawing.Point(106, 234);
             this.TObserLabel.Name = "TObserLabel";
             this.TObserLabel.Size = new System.Drawing.Size(78, 13);
             this.TObserLabel.TabIndex = 28;
@@ -292,7 +295,7 @@
             // TCantidadLabel
             // 
             this.TCantidadLabel.AutoSize = true;
-            this.TCantidadLabel.Location = new System.Drawing.Point(66, 126);
+            this.TCantidadLabel.Location = new System.Drawing.Point(106, 135);
             this.TCantidadLabel.Name = "TCantidadLabel";
             this.TCantidadLabel.Size = new System.Drawing.Size(49, 13);
             this.TCantidadLabel.TabIndex = 23;
@@ -301,7 +304,7 @@
             // TModeloLabel
             // 
             this.TModeloLabel.AutoSize = true;
-            this.TModeloLabel.Location = new System.Drawing.Point(69, 92);
+            this.TModeloLabel.Location = new System.Drawing.Point(109, 101);
             this.TModeloLabel.Name = "TModeloLabel";
             this.TModeloLabel.Size = new System.Drawing.Size(42, 13);
             this.TModeloLabel.TabIndex = 22;
@@ -310,7 +313,7 @@
             // TMarca
             // 
             this.TMarca.AutoSize = true;
-            this.TMarca.Location = new System.Drawing.Point(69, 58);
+            this.TMarca.Location = new System.Drawing.Point(109, 67);
             this.TMarca.Name = "TMarca";
             this.TMarca.Size = new System.Drawing.Size(37, 13);
             this.TMarca.TabIndex = 21;
@@ -386,6 +389,7 @@
             this.TVendedorText.Size = new System.Drawing.Size(202, 20);
             this.TVendedorText.TabIndex = 26;
             this.TVendedorText.TextChanged += new System.EventHandler(this.TVendedorText_TextChanged);
+            this.TVendedorText.Leave += new System.EventHandler(this.TVendedorText_Leave);
             // 
             // TEmpLabel
             // 

@@ -64,7 +64,7 @@ namespace AlquilerCoches
                 {
                     envio = "Urgente";
                 }
-
+                MessageBox.Show(envio, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 enPedidos.IDTransaccion = textBox1.Text;
                 enPedidos.Proveedor = TProveecomboBox1.Text;
                 enPedidos.Marca = TMarcacomboBox2.Text;
@@ -74,8 +74,6 @@ namespace AlquilerCoches
                 enPedidos.Empleado = TVendedorText.Text;
                 enPedidos.TipoEnvio = envio;
 
-                /* enPedidos.Fecha = TDateTimePickerFecha; */
-                //falta fecha, tipo envio, y empleado
 
            
 
@@ -92,7 +90,7 @@ namespace AlquilerCoches
                 }   */
             }
 
-            this.Close();
+           // this.Close();
 
              
                 
@@ -174,11 +172,7 @@ namespace AlquilerCoches
         private void TProveecomboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            if(TProveecomboBox1.SelectedIndex==0)
-            {
-                errorProvider1.SetError(TProveecomboBox1, "Seleccione un proveedor");
-                incorrecto = true;
-            }
+            
         }
 
         private DataSet numMarca;// usado en funcion TComboBoxCiudades_Click
@@ -201,26 +195,45 @@ namespace AlquilerCoches
             TModelocomboBox3.DataSource = dsMod.Tables["Modelo"];
             TModelocomboBox3.DisplayMember = dsMod.Tables["Modelo"].Columns[0].Caption.ToString();
         }
-        private void TMarcacomboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-          
-          
-           
-            
-
-        }
         private void TMarcacomboBox2_Leave(object sender, EventArgs e)
         {
-
-            if (TMarcacomboBox2.SelectedIndex == 0)
+          /*  if (!Regex.Match(TMarcacomboBox2.Text, @"^[A-Za-z]{3,20}$").Success)
             {
-                errorProvider1.SetError(TMarcacomboBox2, "Seleccione una marca");
+                errorProvider1.SetError(TMarcacomboBox2, "Seleccione la marca del coche");
                 incorrecto = true;
-            }
-
-
-
+            } */
+           /* else
+            {
+                errorProvider1.SetError(TMarcacomboBox2, "");
+            } */
         }
+
+        private void TModelocomboBox3_Leave(object sender, EventArgs e)
+        {
+           /* if (!Regex.Match(TModelocomboBox3.Text, @"^[A-Za-z]{3,20}$").Success)
+            {
+                errorProvider1.SetError(TModelocomboBox3, "Seleccione el modelo del coche");
+                incorrecto = true;
+            } */
+         /*   else
+            {
+                errorProvider1.SetError(TModelocomboBox3, "");
+            } */
+        }
+
+        private void TProveecomboBox1_Leave(object sender, EventArgs e)
+        {
+           /* if (Regex.Match(TProveecomboBox1.Text, @"^[A-Za-z]{3,20}$").Success)
+            {
+                errorProvider1.SetError(TProveecomboBox1, "Seleccione un proveedor");
+                incorrecto = true;
+            } */
+        /*    else
+            {
+                errorProvider1.SetError(TProveecomboBox1, "");
+            } */
+        }
+        
 
 
         private void TMarcacomboBox2_Click(object sender, EventArgs e)
@@ -235,12 +248,7 @@ namespace AlquilerCoches
 
         private void TModelocomboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (TModelocomboBox3.SelectedIndex == 0)
-            {
-                errorProvider1.SetError(TModelocomboBox3, "Seleccione un modelo");
-                incorrecto = true;
-            }
-
+           
         }
 
 
@@ -280,14 +288,14 @@ namespace AlquilerCoches
 
         }
 
-        private void TObservTextBox_TextChanged(object sender, EventArgs e)
+        private void TObservTextBox_Leave(object sender, EventArgs e)
         {
-          /*  if (Regex.Match(TObservTextBox.Text, @"^[A-Za-z\s]{3,100}$").Success)
+            if (!Regex.Match(TObservTextBox.Text, @"^[A-Za-z\s]{3,100}$").Success)
             {
                 errorProvider1.SetError(TObservTextBox, "Máximo 300 caracteres.");
                 incorrecto = true;
             }
-            else { errorProvider1.SetError(TObservTextBox, ""); } */
+            else { errorProvider1.SetError(TObservTextBox, ""); }
         }
 
         private void TEnvioButtonOrdinario_CheckedChanged(object sender, EventArgs e)
@@ -310,20 +318,25 @@ namespace AlquilerCoches
             
         }
 
-        private void TVendedorText_TextChanged(object sender, EventArgs e)
+        private void TVendedorText_Leave(object sender, EventArgs e)
         {
-            if (Regex.Match(TObservTextBox.Text, @"^[A-Za-z\s]{3,100}$").Success)
+            if (!Regex.Match(TVendedorText.Text, @"^[A-Za-z\s]{3,100}$").Success)
             {
-                errorProvider1.SetError(TObservTextBox, "Máximo 50 caracteres.");
+                errorProvider1.SetError(TVendedorText, "Máximo 100 caracteres.");
                 incorrecto = true;
             }
-            else { errorProvider1.SetError(TObservTextBox, ""); } 
+            else { errorProvider1.SetError(TVendedorText, ""); } 
         }
 
         private void TMarcacomboBox2_TextChanged(object sender, EventArgs e)
         {
             
             
+        }
+
+        private void TVendedorText_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
