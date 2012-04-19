@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.TAceptarbutton1 = new System.Windows.Forms.Button();
-            this.TSalirbutton2 = new System.Windows.Forms.Button();
-            this.TBorrarbutton3 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.TEnviogroupBox3 = new System.Windows.Forms.GroupBox();
@@ -60,6 +57,10 @@
             this.TIDlabel = new System.Windows.Forms.Label();
             this.TIDtextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.TButtonBuscar = new System.Windows.Forms.Button();
+            this.TButtonCerrar = new System.Windows.Forms.Button();
+            this.TButtonBorrar = new System.Windows.Forms.Button();
+            this.TButtonOK = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.TEnviogroupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -67,40 +68,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
-            // TAceptarbutton1
-            // 
-            this.TAceptarbutton1.Location = new System.Drawing.Point(81, 483);
-            this.TAceptarbutton1.Name = "TAceptarbutton1";
-            this.TAceptarbutton1.Size = new System.Drawing.Size(138, 23);
-            this.TAceptarbutton1.TabIndex = 0;
-            this.TAceptarbutton1.Text = "ACEPTAR";
-            this.TAceptarbutton1.UseVisualStyleBackColor = true;
-            this.TAceptarbutton1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // TSalirbutton2
-            // 
-            this.TSalirbutton2.Location = new System.Drawing.Point(440, 483);
-            this.TSalirbutton2.Name = "TSalirbutton2";
-            this.TSalirbutton2.Size = new System.Drawing.Size(132, 23);
-            this.TSalirbutton2.TabIndex = 1;
-            this.TSalirbutton2.Text = "SALIR";
-            this.TSalirbutton2.UseVisualStyleBackColor = true;
-            this.TSalirbutton2.Click += new System.EventHandler(this.TCancelarbutton2_Click);
-            // 
-            // TBorrarbutton3
-            // 
-            this.TBorrarbutton3.Location = new System.Drawing.Point(259, 483);
-            this.TBorrarbutton3.Name = "TBorrarbutton3";
-            this.TBorrarbutton3.Size = new System.Drawing.Size(126, 23);
-            this.TBorrarbutton3.TabIndex = 2;
-            this.TBorrarbutton3.Text = "BORRAR";
-            this.TBorrarbutton3.UseVisualStyleBackColor = true;
-            this.TBorrarbutton3.Click += new System.EventHandler(this.TBorrarbutton3_Click);
-            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.TEnviogroupBox3);
             this.groupBox1.Controls.Add(this.numericUpDown1);
             this.groupBox1.Controls.Add(this.TErrorModelo);
@@ -117,7 +87,7 @@
             this.groupBox1.Controls.Add(this.TMarca);
             this.groupBox1.Location = new System.Drawing.Point(75, 122);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(612, 345);
+            this.groupBox1.Size = new System.Drawing.Size(611, 326);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Pedido";
@@ -125,7 +95,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(457, 39);
+            this.textBox1.Location = new System.Drawing.Point(743, 27);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 43;
@@ -363,7 +333,7 @@
             this.TEstadoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TEstadoTextBox.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TEstadoTextBox.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.TEstadoTextBox.Location = new System.Drawing.Point(96, 58);
+            this.TEstadoTextBox.Location = new System.Drawing.Point(96, 54);
             this.TEstadoTextBox.Name = "TEstadoTextBox";
             this.TEstadoTextBox.ReadOnly = true;
             this.TEstadoTextBox.Size = new System.Drawing.Size(84, 23);
@@ -415,7 +385,7 @@
             this.TIDtextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TIDtextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TIDtextBox.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.TIDtextBox.Location = new System.Drawing.Point(96, 33);
+            this.TIDtextBox.Location = new System.Drawing.Point(96, 29);
             this.TIDtextBox.Name = "TIDtextBox";
             this.TIDtextBox.ReadOnly = true;
             this.TIDtextBox.Size = new System.Drawing.Size(84, 21);
@@ -426,6 +396,62 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // TButtonBuscar
+            // 
+            this.TButtonBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.TButtonBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.errorProvider1.SetIconAlignment(this.TButtonBuscar, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
+            this.TButtonBuscar.Image = global::AlquilerCoches.Properties.Resources.Search_icon;
+            this.TButtonBuscar.Location = new System.Drawing.Point(743, 85);
+            this.TButtonBuscar.Name = "TButtonBuscar";
+            this.TButtonBuscar.Size = new System.Drawing.Size(86, 73);
+            this.TButtonBuscar.TabIndex = 38;
+            this.TButtonBuscar.Text = "Buscar";
+            this.TButtonBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.TButtonBuscar.UseVisualStyleBackColor = true;
+            // 
+            // TButtonCerrar
+            // 
+            this.TButtonCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.TButtonCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.TButtonCerrar.Image = global::AlquilerCoches.Properties.Resources.Close_icon;
+            this.TButtonCerrar.Location = new System.Drawing.Point(743, 234);
+            this.TButtonCerrar.Name = "TButtonCerrar";
+            this.TButtonCerrar.Size = new System.Drawing.Size(86, 72);
+            this.TButtonCerrar.TabIndex = 31;
+            this.TButtonCerrar.Text = "Cerrar";
+            this.TButtonCerrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.TButtonCerrar.UseVisualStyleBackColor = true;
+            this.TButtonCerrar.Click += new System.EventHandler(this.TButtonCerrar_Click);
+            // 
+            // TButtonBorrar
+            // 
+            this.TButtonBorrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.TButtonBorrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.TButtonBorrar.Image = global::AlquilerCoches.Properties.Resources.Delete_icon;
+            this.TButtonBorrar.Location = new System.Drawing.Point(341, 466);
+            this.TButtonBorrar.Name = "TButtonBorrar";
+            this.TButtonBorrar.Size = new System.Drawing.Size(123, 75);
+            this.TButtonBorrar.TabIndex = 34;
+            this.TButtonBorrar.Text = "Delete";
+            this.TButtonBorrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.TButtonBorrar.UseVisualStyleBackColor = true;
+            this.TButtonBorrar.Click += new System.EventHandler(this.TButtonBorrar_Click);
+            // 
+            // TButtonOK
+            // 
+            this.TButtonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.TButtonOK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.TButtonOK.Image = global::AlquilerCoches.Properties.Resources.Accept_icon;
+            this.TButtonOK.Location = new System.Drawing.Point(135, 466);
+            this.TButtonOK.Name = "TButtonOK";
+            this.TButtonOK.Size = new System.Drawing.Size(124, 69);
+            this.TButtonOK.TabIndex = 37;
+            this.TButtonOK.Text = "OK";
+            this.TButtonOK.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.TButtonOK.UseVisualStyleBackColor = true;
+            this.TButtonOK.Click += new System.EventHandler(this.TButtonOK_Click);
+            // 
             // GestionPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -433,11 +459,13 @@
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(878, 570);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TButtonBuscar);
+            this.Controls.Add(this.TButtonOK);
+            this.Controls.Add(this.TButtonBorrar);
+            this.Controls.Add(this.TButtonCerrar);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.TBorrarbutton3);
-            this.Controls.Add(this.TSalirbutton2);
-            this.Controls.Add(this.TAceptarbutton1);
             this.Name = "GestionPedidos";
             this.Text = "Gestión de Pedidos";
             this.Load += new System.EventHandler(this.GestionPedidos_Load);
@@ -450,14 +478,12 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button TAceptarbutton1;
-        private System.Windows.Forms.Button TSalirbutton2;
-        private System.Windows.Forms.Button TBorrarbutton3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label TProveLabel;
         private System.Windows.Forms.TextBox TObservTextBox;
@@ -486,5 +512,9 @@
         private System.Windows.Forms.RadioButton TEnvioButtonUrgente;
         private System.Windows.Forms.RadioButton TEnvioButtonOrdinario;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button TButtonCerrar;
+        private System.Windows.Forms.Button TButtonBorrar;
+        private System.Windows.Forms.Button TButtonOK;
+        private System.Windows.Forms.Button TButtonBuscar;
     }
 }

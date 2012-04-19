@@ -30,14 +30,39 @@ namespace AlquilerCoches
         private void GestionPedidos_Load(object sender, EventArgs e)
         {            
             TEstadoTextBox.Text = "   ABIERTO";
-          
+
+            try
+            {
+              //  string marc = TMarcacomboBox2.Text.ToString();
+               // bool parar = false;
+                int n = 0;
+                for (int i = 0; i < 20 && parar != true; i++)
+                {
+
+                    if (numMarca.Tables["Pedidos"].Rows[i][0].ToString()!=null )
+                    {
+
+                        string num_marc = numMarca.Tables["Marca"].Rows[i][0].ToString();
+                        parar = true;
+                        n++;
+                        dsMod = enMod.ObtenerListaModelos(num_marc);
+
+                    }
+                }
+                ObtenerModelos(dsMod);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Si desea cambiar el modelo debe cambiar la marca", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
           
                 
                 
 
         }
         
-        private void button1_Click(object sender, EventArgs e)
+        private void TButtonOK_Click(object sender, EventArgs e)
         {
             if (TProveecomboBox1.Text == "" || TMarcacomboBox2.Text == "" || TModelocomboBox3.Text == "" || TVendedorText.Text=="")
             {
@@ -148,7 +173,7 @@ namespace AlquilerCoches
             if (MessageBox.Show("¿Desea Salir?", "Advertencia",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question,
                     MessageBoxDefaultButton.Button2) == DialogResult.Yes)
-                Close();
+                this.Close();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -177,7 +202,7 @@ namespace AlquilerCoches
         {
             TMarcacomboBox2.Text = "Seleccione Marca del coche";
             TMarcacomboBox2.DataSource = dsMarc.Tables["Marca"];
-            TMarcacomboBox2.DisplayMember = dsMarc.Tables["Marca"].Columns[1].Caption.ToString(); /
+            TMarcacomboBox2.DisplayMember = dsMarc.Tables["Marca"].Columns[1].Caption.ToString(); 
 
         }
 
@@ -273,9 +298,9 @@ namespace AlquilerCoches
                 
           }
           catch (Exception ex)
-            {
+          {
                 MessageBox.Show("Si desea cambiar el modelo debe cambiar la marca", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+          }
             
         }
 
@@ -332,6 +357,27 @@ namespace AlquilerCoches
         private void TVendedorText_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void TButtonCerrar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Desea Salir?", "Advertencia",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+                    MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                this.Close();
+        }
+
+        private void TButtonBorrar_Click(object sender, EventArgs e)
+        {
+            TVendedorText.Text = "";
+            //Combobox
+            TProveecomboBox1.SelectedIndex = 0;
+            TMarcacomboBox2.SelectedIndex = 0;
+            TModelocomboBox3.SelectedIndex = 0;
+            //Radiobutton
+            TEnvioButtonOrdinario.Checked = true;
+            TObservTextBox.Text = "";
+            numericUpDown1.Value = 1;
         }
     }
 }
