@@ -84,6 +84,8 @@
             // 
             // TDataGridViewPersonal
             // 
+            this.TDataGridViewPersonal.AllowUserToAddRows = false;
+            this.TDataGridViewPersonal.AllowUserToDeleteRows = false;
             this.TDataGridViewPersonal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TDataGridViewPersonal.Location = new System.Drawing.Point(94, 35);
             this.TDataGridViewPersonal.Name = "TDataGridViewPersonal";
