@@ -222,13 +222,13 @@ namespace AlquilerCoches
                         enClientePub.DNI = TDataGridViewCliente.Rows[e.RowIndex].Cells[1].Value.ToString();
                         enClientePub.Nombre = TDataGridViewCliente.Rows[e.RowIndex].Cells[2].Value.ToString();
                         enClientePub.Apellidos = TDataGridViewCliente.Rows[e.RowIndex].Cells[3].Value.ToString();
-                        enClientePub.Tarifa = TDataGridViewCliente.Rows[e.RowIndex].Cells[4].Value.ToString();
-                        enClientePub.Telefono = int.Parse(TDataGridViewCliente.Rows[e.RowIndex].Cells[5].Value.ToString());
-                        enClientePub.Email = TDataGridViewCliente.Rows[e.RowIndex].Cells[6].Value.ToString();
-                        enClientePub.Direccion = TDataGridViewCliente.Rows[e.RowIndex].Cells[7].Value.ToString();
+                        enClientePub.Tarifa = TDataGridViewCliente.Rows[e.RowIndex].Cells[9].Value.ToString();
+                        enClientePub.Telefono = int.Parse(TDataGridViewCliente.Rows[e.RowIndex].Cells[4].Value.ToString());
+                        enClientePub.Email = TDataGridViewCliente.Rows[e.RowIndex].Cells[5].Value.ToString();
+                        enClientePub.Direccion = TDataGridViewCliente.Rows[e.RowIndex].Cells[6].Value.ToString();
                         enClientePub.Ciudad = TDataGridViewCliente.Rows[e.RowIndex].Cells[8].Value.ToString();
-                        enClientePub.Provincia = TDataGridViewCliente.Rows[e.RowIndex].Cells[9].Value.ToString();
-
+                        enClientePub.Provincia = TDataGridViewCliente.Rows[e.RowIndex].Cells[7].Value.ToString();
+                       
                         Close();
                     }
                     else
@@ -283,14 +283,6 @@ namespace AlquilerCoches
                                                    
                         }
                    }
-                /*else if (TDataGridViewCliente.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "Seleccionar")
-                {
-                    nombre = TDataGridViewCliente.Rows[e.RowIndex].Cells[3].Value.ToString();
-                    dni = TDataGridViewCliente.Rows[e.RowIndex].Cells[2].Value.ToString();
-                    telefono = TDataGridViewCliente.Rows[e.RowIndex].Cells[5].Value.ToString();
-                    Close();
-                    MessageBox.Show("HOLA");
-                }*/
                 else
                 {
 
@@ -298,11 +290,11 @@ namespace AlquilerCoches
 
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error no hay valores en la fila");
+           catch (Exception ex)
+           {
+              MessageBox.Show("Error no hay valores en la fila");
 
-            }
+           }
 
         }
 
