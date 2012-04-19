@@ -258,6 +258,7 @@ namespace AlquilerCoches
             {
                 if (TComboBoxProvincias.SelectedIndex > 0)
                 {
+                   
                     //MessageBox.Show("iusdhg");
                     string prov = TComboBoxProvincias.Text.ToString();
                     bool parar = false;
@@ -275,7 +276,7 @@ namespace AlquilerCoches
                     }
                     ObtenerCiudades(dsCiu);
                 }
-                else { TComboBoxCiudades.SelectedIndex = -1; }
+                else { TComboBoxCiudades.SelectedIndex = -1; TComboBoxCiudades.DataSource = null; }
             }
             catch (Exception ex)
             {
