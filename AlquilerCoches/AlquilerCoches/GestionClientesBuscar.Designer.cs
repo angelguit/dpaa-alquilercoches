@@ -53,22 +53,29 @@
             // 
             // TButtonEliminar
             // 
-            this.TButtonEliminar.Location = new System.Drawing.Point(139, 157);
+            this.TButtonEliminar.Image = global::AlquilerCoches.Properties.Resources.Delete_icon;
+            this.TButtonEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TButtonEliminar.Location = new System.Drawing.Point(133, 176);
             this.TButtonEliminar.Name = "TButtonEliminar";
-            this.TButtonEliminar.Size = new System.Drawing.Size(75, 23);
+            this.TButtonEliminar.Size = new System.Drawing.Size(78, 32);
             this.TButtonEliminar.TabIndex = 35;
             this.TButtonEliminar.Text = "Eliminar";
+            this.TButtonEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.TButtonEliminar.UseVisualStyleBackColor = true;
             this.TButtonEliminar.Visible = false;
             this.TButtonEliminar.Click += new System.EventHandler(this.TButtonEliminar_Click);
             // 
             // TButtonBuscar
             // 
-            this.TButtonBuscar.Location = new System.Drawing.Point(34, 157);
+            this.TButtonBuscar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.TButtonBuscar.Image = global::AlquilerCoches.Properties.Resources.Search_icon;
+            this.TButtonBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TButtonBuscar.Location = new System.Drawing.Point(43, 176);
             this.TButtonBuscar.Name = "TButtonBuscar";
-            this.TButtonBuscar.Size = new System.Drawing.Size(75, 23);
+            this.TButtonBuscar.Size = new System.Drawing.Size(73, 32);
             this.TButtonBuscar.TabIndex = 34;
             this.TButtonBuscar.Text = "Buscar";
+            this.TButtonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.TButtonBuscar.UseVisualStyleBackColor = true;
             this.TButtonBuscar.Click += new System.EventHandler(this.TButtonBuscar_Click);
             // 
@@ -100,7 +107,7 @@
             this.panel1.Controls.Add(this.TLabelDNI);
             this.panel1.Location = new System.Drawing.Point(66, 54);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(507, 209);
+            this.panel1.Size = new System.Drawing.Size(511, 228);
             this.panel1.TabIndex = 36;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -208,12 +215,17 @@
             // 
             // TButtonCerrar
             // 
-            this.TButtonCerrar.Location = new System.Drawing.Point(41, 556);
+            this.TButtonCerrar.BackColor = System.Drawing.Color.Transparent;
+            this.TButtonCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.TButtonCerrar.Image = global::AlquilerCoches.Properties.Resources.Close_icon;
+            this.TButtonCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TButtonCerrar.Location = new System.Drawing.Point(38, 540);
             this.TButtonCerrar.Name = "TButtonCerrar";
-            this.TButtonCerrar.Size = new System.Drawing.Size(75, 23);
+            this.TButtonCerrar.Size = new System.Drawing.Size(79, 35);
             this.TButtonCerrar.TabIndex = 37;
             this.TButtonCerrar.Text = "Cerrar";
-            this.TButtonCerrar.UseVisualStyleBackColor = true;
+            this.TButtonCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.TButtonCerrar.UseVisualStyleBackColor = false;
             this.TButtonCerrar.Click += new System.EventHandler(this.TButtonCerrar_Click);
             // 
             // TLabelTitulo
@@ -223,7 +235,7 @@
             this.TLabelTitulo.AutoSize = true;
             this.TLabelTitulo.BackColor = System.Drawing.Color.Transparent;
             this.TLabelTitulo.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TLabelTitulo.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.TLabelTitulo.ForeColor = System.Drawing.SystemColors.Desktop;
             this.TLabelTitulo.Location = new System.Drawing.Point(3, 0);
             this.TLabelTitulo.Name = "TLabelTitulo";
             this.TLabelTitulo.Size = new System.Drawing.Size(114, 18);

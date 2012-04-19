@@ -58,6 +58,7 @@
             this.TButtonGuardarCliente = new System.Windows.Forms.Button();
             this.TButtonCerrar = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.TLabelTitulo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.TGroupBoxCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -360,6 +361,20 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // TLabelTitulo
+            // 
+            this.TLabelTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.TLabelTitulo.AutoSize = true;
+            this.TLabelTitulo.BackColor = System.Drawing.Color.Transparent;
+            this.TLabelTitulo.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TLabelTitulo.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.TLabelTitulo.Location = new System.Drawing.Point(3, 0);
+            this.TLabelTitulo.Name = "TLabelTitulo";
+            this.TLabelTitulo.Size = new System.Drawing.Size(97, 18);
+            this.TLabelTitulo.TabIndex = 50;
+            this.TLabelTitulo.Text = "Datos del Cliente";
+            // 
             // GestionClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -367,6 +382,7 @@
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(894, 608);
+            this.Controls.Add(this.TLabelTitulo);
             this.Controls.Add(this.TButtonCerrar);
             this.Controls.Add(this.TButtonGuardarCliente);
             this.Controls.Add(this.TButtonFoto);
@@ -382,6 +398,7 @@
             this.TGroupBoxCliente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -416,6 +433,7 @@
         private System.Windows.Forms.Label TLabelProvincias;
         private System.Windows.Forms.ComboBox TComboBoxTarifa;
         private System.Windows.Forms.Label TLabelTarifa;
+        private System.Windows.Forms.Label TLabelTitulo;
 
 
     }

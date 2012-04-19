@@ -186,7 +186,7 @@ namespace AlquilerCoches
                     todo += " provincia like '%" + prov + "%' ";
                 }
 
-                MessageBox.Show("select * from tabla where" + todo);
+                //MessageBox.Show("select * from tabla where" + todo);
                 ds = enCliente.ObtenerListaCliente(todo);
                 eliminado = todo;
 
