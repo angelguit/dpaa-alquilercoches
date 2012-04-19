@@ -78,6 +78,7 @@
             this.TDataGridViewCliente.Name = "TDataGridViewCliente";
             this.TDataGridViewCliente.Size = new System.Drawing.Size(661, 209);
             this.TDataGridViewCliente.TabIndex = 24;
+            this.TDataGridViewCliente.Visible = false;
             this.TDataGridViewCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TDataGridViewCliente_CellContentClick);
             // 
             // panel1
@@ -96,7 +97,7 @@
             this.panel1.Controls.Add(this.TLabelApellidos);
             this.panel1.Controls.Add(this.TLabelNombre);
             this.panel1.Controls.Add(this.TLabelDNI);
-            this.panel1.Location = new System.Drawing.Point(103, 292);
+            this.panel1.Location = new System.Drawing.Point(66, 54);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(507, 209);
             this.panel1.TabIndex = 36;
