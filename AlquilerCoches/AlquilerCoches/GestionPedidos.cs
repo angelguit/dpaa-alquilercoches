@@ -24,6 +24,49 @@ namespace AlquilerCoches
             numMarca = dsMarc;
 
         }
+      
+         public GestionPedidos(string id,string proveedor, string marca, string modelo, string cantidad, string observaciones, string estado, string empleado, string tipoenvio, string nombrebotonguardar)//constructor sobrecargado
+        {
+            InitializeComponent();
+          
+            
+            TMarcacomboBox2.Items.Add(marca);
+            TMarcacomboBox2.SelectedIndex = 0;
+            TModelocomboBox3.Items.Add(modelo);
+            TModelocomboBox3.SelectedIndex = 0;
+
+            TProveecomboBox1.Text = proveedor;
+
+            TVendedorText.Text = empleado;
+            //Combobox
+            TProveecomboBox1.Text = proveedor;
+            TMarcacomboBox2.Text = marca;
+            TModelocomboBox3.Text = modelo;
+            //Radiobutton
+            if (tipoenvio == "Ordinario")
+            {
+                TEnvioButtonOrdinario.Checked = true;
+            }
+            else TEnvioButtonOrdinario.Checked = true;
+
+            TEnvioButtonOrdinario.Checked = true;
+            TObservTextBox.Text = observaciones;
+            numericUpDown1.Value = cantidad;
+
+            EN.ENPedidos pedid = new EN.ENPedidos();
+            DataSet dsPedid = new DataSet();
+            dsPedid = pedid.ObtenerListaMarcas();
+            //ObtenerProvincias(dsProv)
+
+            numMarca = new DataSet();
+            numMarca = dsPedid;
+           
+            /*
+
+            TButtonGuardarPersonal.Text = nombrebotonguardar; // importante le cambiamos el nombre al boton para saber que venimos del formulario buscar, y estamos editando no guardando uno nuevo
+            TButtonGuardarPersonal.Size = new Size(105, 24);
+            */
+        }
 
         bool incorrecto = false;
 
