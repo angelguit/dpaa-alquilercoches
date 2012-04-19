@@ -458,6 +458,7 @@
             this.Controls.Add(this.TButtonCerrar);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GestionPedidos";
             this.Text = "Gestión de Pedidos";
             this.Load += new System.EventHandler(this.GestionPedidos_Load);
