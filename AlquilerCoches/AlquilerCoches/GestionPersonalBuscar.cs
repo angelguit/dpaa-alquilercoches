@@ -348,11 +348,16 @@ namespace AlquilerCoches
 
        public void ActualizaDatagridView()
        {
-
+           string cadena = "";
            DataSet ou = new DataSet();
-           ou = enPerson.ObtenerListaPersonal(eliminado);
+           ou = enPerson.ObtenerListaPersonal(cadena);
            TDataGridViewPersonal.DataSource = ou;
 
+       }
+
+       private void GestionPersonalBuscar_Activated(object sender, EventArgs e)
+       {
+           ActualizaDatagridView();
        }
       
     }

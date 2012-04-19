@@ -346,5 +346,13 @@ namespace AlquilerCoches
             }
         }
 
+        private void GestionProveedores_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (Application.OpenForms["GestionProveedoresBuscar"] != null)
+            {
+                Application.OpenForms["GestionProveedoresBuscar"].Activate();
+            }
+        }
+
     }
 }

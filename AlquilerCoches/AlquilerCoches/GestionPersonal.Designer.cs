@@ -332,6 +332,7 @@
             this.Name = "GestionPersonal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GestionPersonal";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GestionPersonal_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.TGroupBoxAlta.ResumeLayout(false);
             this.TGroupBoxAlta.PerformLayout();
