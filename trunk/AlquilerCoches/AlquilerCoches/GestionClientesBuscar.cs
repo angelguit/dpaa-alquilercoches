@@ -267,11 +267,12 @@ namespace AlquilerCoches
                            string telef = TDataGridViewCliente.Rows[e.RowIndex].Cells[5].Value.ToString();
                            string mail = TDataGridViewCliente.Rows[e.RowIndex].Cells[6].Value.ToString();
                            string direc = TDataGridViewCliente.Rows[e.RowIndex].Cells[7].Value.ToString();
-                           string ciu = TDataGridViewCliente.Rows[e.RowIndex].Cells[8].Value.ToString();
-                           string prov = TDataGridViewCliente.Rows[e.RowIndex].Cells[9].Value.ToString();
-                           string puesac = TDataGridViewCliente.Rows[e.RowIndex].Cells[10].Value.ToString();
+                           string prov = TDataGridViewCliente.Rows[e.RowIndex].Cells[8].Value.ToString();
+                           string ciu = TDataGridViewCliente.Rows[e.RowIndex].Cells[9].Value.ToString();
+                           string tarifa = TDataGridViewCliente.Rows[e.RowIndex].Cells[10].Value.ToString();
+                           string sexo = TDataGridViewCliente.Rows[e.RowIndex].Cells[11].Value.ToString();
                            string nombrebotonguardar = "Guardar Cambios";
-                           GestionClientes Formu = new GestionClientes(nom, dni, apell, telef, mail, direc, ciu, prov, puesac, nombrebotonguardar);
+                           GestionClientes Formu = new GestionClientes(nom, dni, apell, telef, mail, direc, ciu, prov, tarifa,sexo, nombrebotonguardar);
                            Formu.StartPosition = FormStartPosition.CenterScreen;
                            Formu.MdiParent = this.MdiParent;
                            Formu.Show();
@@ -362,6 +363,49 @@ namespace AlquilerCoches
                 MessageBox.Show("Seleccione primero una provincia", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         
+        }
+
+        private void TButtonEliminar_Click(object sender, EventArgs e)
+        {
+            if (arraydni.Count > 0)
+            {
+                if (MessageBox.Show("¿Desea eliminar '" + arraydni.Count.ToString() + "' registros?", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                {
+
+                    string frase = "";
+                    for (int i = 0; i < arraydni.Count; i++)
+                    {
+                        if (i == 0) { frase += "'" + arraydni[i] + "'"; }
+                        else
+                        {
+                            frase += ",";
+                            frase += "'" + arraydni[i] + "'";
+                        }
+                    }
+                    MessageBox.Show("Select * from Personal where DNI in (" + frase + ")");
+                    enCliente.EliminarCliente(arraydni);
+                }
+
+                arraydni.Clear();
+                DataSet ou = new DataSet();
+                ou = enCliente.ObtenerListaCliente(eliminado);
+                TDataGridViewCliente.DataSource = ou;
+
+            }
+            else
+                MessageBox.Show("Debe seleccionar algún registro", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        public void ActualizarDataGridView()
+        {
+            DataSet ou = new DataSet();
+            ou = enCliente.ObtenerListaCliente(eliminado);
+            TDataGridViewCliente.DataSource = ou;
+        }
+
+        private void GestionClientesBuscar_Activated(object sender, EventArgs e)
+        {
+            ActualizarDataGridView();
         }
 
         

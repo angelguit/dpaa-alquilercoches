@@ -12,6 +12,9 @@ namespace AlquilerCoches
 {
     public partial class GestionPersonal : Form
     {
+        bool incorrecto = false;//variable global usada para validar campos
+        private DataSet numProvincia;// usado en funcion TComboBoxCiudades_Click
+
         public GestionPersonal()
         {
             InitializeComponent();
@@ -53,7 +56,7 @@ namespace AlquilerCoches
             TButtonGuardarPersonal.Size = new Size(105, 24);
         }
 
-        bool incorrecto = false;
+        
         
         private void TTextBoxDNI_Leave(object sender, EventArgs e)
         {
@@ -174,10 +177,6 @@ namespace AlquilerCoches
                 else
                     enPersonal.EditarPersonal();
 
-                  
-               
-
-                
                 this.Close();
 
             }
@@ -198,7 +197,6 @@ namespace AlquilerCoches
                 pictureBox1.Image = System.Drawing.Image.FromFile(OFich.FileName); 
         }
 
-        private DataSet numProvincia;// usado en funcion TComboBoxCiudades_Click
         private void ObtenerProvincias(DataSet dsProv)
         {
             TComboBoxProvincias.Text = "Seleccione Provincia";
@@ -220,7 +218,6 @@ namespace AlquilerCoches
             DataSet dsProv = new DataSet();
             dsProv = provincia.ObtenerListaProvincias();
             ObtenerProvincias(dsProv);
-
         }
 
         private void TComboBoxProvincias_TextChanged(object sender, EventArgs e)
@@ -248,6 +245,7 @@ namespace AlquilerCoches
                     }
                     ObtenerCiudades(dsCiu);
                 }
+                else { TComboBoxCiudades.SelectedIndex = -1; }
             }
             catch (Exception ex)
             {

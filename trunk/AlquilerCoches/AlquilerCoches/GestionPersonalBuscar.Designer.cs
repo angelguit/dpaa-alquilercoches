@@ -197,6 +197,7 @@
             // 
             this.TComboBoxProvincias.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.TComboBoxProvincias.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.TComboBoxProvincias.BackColor = System.Drawing.Color.White;
             this.TComboBoxProvincias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TComboBoxProvincias.FormattingEnabled = true;
             this.TComboBoxProvincias.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -254,7 +255,6 @@
             this.Name = "GestionPersonalBuscar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GestionPersonalBuscar";
-           // this.EnabledChanged += new System.EventHandler(this.GestionPersonalBuscar_EnabledChanged);
             ((System.ComponentModel.ISupportInitialize)(this.TDataGridViewPersonal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.panel1.ResumeLayout(false);

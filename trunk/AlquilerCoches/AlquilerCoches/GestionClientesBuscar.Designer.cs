@@ -59,6 +59,7 @@
             this.TButtonEliminar.Text = "Eliminar";
             this.TButtonEliminar.UseVisualStyleBackColor = true;
             this.TButtonEliminar.Visible = false;
+            this.TButtonEliminar.Click += new System.EventHandler(this.TButtonEliminar_Click);
             // 
             // TButtonBuscar
             // 
@@ -231,6 +232,7 @@
             this.Name = "GestionClientesBuscar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GestionClientesBuscar";
+            this.Activated += new System.EventHandler(this.GestionClientesBuscar_Activated);
             ((System.ComponentModel.ISupportInitialize)(this.TDataGridViewCliente)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

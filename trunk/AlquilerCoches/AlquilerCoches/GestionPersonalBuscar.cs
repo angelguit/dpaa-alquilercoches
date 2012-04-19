@@ -180,8 +180,8 @@ namespace AlquilerCoches
         private void TDataGridViewPersonal_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
-            try
-            {
+          //  try
+          //  {
 
                 if (TDataGridViewPersonal.Rows[e.RowIndex].Cells[e.ColumnIndex].ColumnIndex.ToString()=="0") // la columna 0 es el checkbox de eliminiar
                 {
@@ -225,17 +225,17 @@ namespace AlquilerCoches
                         Application.OpenForms["GestionPersonal"].Close();
 
                     }
-                    else
-                    {
-                        
+                      
                         GestionPersonal Formu = new GestionPersonal(nom,dni,apell,telef,mail,direc,ciu,prov,puesac, nombrebotonguardar);
-
+                        //Formu.Location = new Point(this.Location.X, this.Location.Y);
                         Formu.StartPosition = FormStartPosition.CenterScreen;
                         Formu.MdiParent = this.MdiParent;
+                       // Formu.Location = new System.Drawing.Point(Bottom - Width, Right - Height);
                         Formu.Show();
-                       // ActualizaDatagridView();
+                        
+                      
                                            
-                    }
+                    
                 }
                 else
                 {
@@ -243,13 +243,13 @@ namespace AlquilerCoches
                    TTextBoxNombre.Text = TDataGridViewPersonal.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
                     
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error no hay valores en la fila");
+           // }
+           // catch (Exception ex)
+            //{
+            //    MessageBox.Show("Error no hay valores en la fila");
 
-            }
-
+          //  }
+        
            
         }
 
