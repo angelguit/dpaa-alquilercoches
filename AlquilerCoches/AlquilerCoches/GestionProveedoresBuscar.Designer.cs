@@ -39,12 +39,13 @@
             this.TLabelCiudad = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.TButtonEliminar = new System.Windows.Forms.Button();
             this.TTextBoxCPostal = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.TComboBoxCiudades = new System.Windows.Forms.ComboBox();
             this.TComboBoxProvincias = new System.Windows.Forms.ComboBox();
-            this.TButtonEliminar = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.TLabelTitulo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -153,6 +154,17 @@
             this.groupBox1.TabIndex = 51;
             this.groupBox1.TabStop = false;
             // 
+            // TButtonEliminar
+            // 
+            this.TButtonEliminar.Location = new System.Drawing.Point(124, 164);
+            this.TButtonEliminar.Name = "TButtonEliminar";
+            this.TButtonEliminar.Size = new System.Drawing.Size(75, 23);
+            this.TButtonEliminar.TabIndex = 52;
+            this.TButtonEliminar.Text = "Eliminar";
+            this.TButtonEliminar.UseVisualStyleBackColor = true;
+            this.TButtonEliminar.Visible = false;
+            this.TButtonEliminar.Click += new System.EventHandler(this.TButtonEliminar_Click);
+            // 
             // TTextBoxCPostal
             // 
             this.TTextBoxCPostal.Location = new System.Drawing.Point(99, 93);
@@ -195,20 +207,23 @@
             this.TComboBoxProvincias.TabIndex = 50;
             this.TComboBoxProvincias.Click += new System.EventHandler(this.TComboBoxProvincias_Click);
             // 
-            // TButtonEliminar
-            // 
-            this.TButtonEliminar.Location = new System.Drawing.Point(124, 164);
-            this.TButtonEliminar.Name = "TButtonEliminar";
-            this.TButtonEliminar.Size = new System.Drawing.Size(75, 23);
-            this.TButtonEliminar.TabIndex = 52;
-            this.TButtonEliminar.Text = "Eliminar";
-            this.TButtonEliminar.UseVisualStyleBackColor = true;
-            this.TButtonEliminar.Visible = false;
-            this.TButtonEliminar.Click += new System.EventHandler(this.TButtonEliminar_Click);
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // TLabelTitulo
+            // 
+            this.TLabelTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.TLabelTitulo.AutoSize = true;
+            this.TLabelTitulo.BackColor = System.Drawing.Color.Transparent;
+            this.TLabelTitulo.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TLabelTitulo.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.TLabelTitulo.Location = new System.Drawing.Point(4, -1);
+            this.TLabelTitulo.Name = "TLabelTitulo";
+            this.TLabelTitulo.Size = new System.Drawing.Size(133, 18);
+            this.TLabelTitulo.TabIndex = 56;
+            this.TLabelTitulo.Text = "Buscador de Proveedores";
             // 
             // GestionProveedoresBuscar
             // 
@@ -217,6 +232,7 @@
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(894, 608);
+            this.Controls.Add(this.TLabelTitulo);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
@@ -232,6 +248,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -253,5 +270,6 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.TextBox TTextBoxCPostal;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label TLabelTitulo;
     }
 }
