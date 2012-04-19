@@ -365,6 +365,21 @@ namespace AlquilerCoches
             factura.Show();
         }
 
+        private void buscarModificarOEliminarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["GestionClientesBuscar"] != null)
+            {
+
+                Application.OpenForms["GestionClientesBuscar"].Activate();
+            }
+            else
+            {
+                GestionClientesBuscar clientesBuscar = new GestionClientesBuscar(true);
+                clientesBuscar.MdiParent = this;
+                clientesBuscar.Show();
+            }
+        }
+
      
      }   
 }
