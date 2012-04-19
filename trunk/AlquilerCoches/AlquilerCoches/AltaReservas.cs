@@ -262,5 +262,21 @@ namespace AlquilerCoches
             }
 
         }
+
+        private void TRadioButtonUltimoCoche_CheckedChanged(object sender, EventArgs e)
+        {
+            if (TRadioButtonUltimoCoche.Checked == true)
+            {
+                MessageBox.Show(enCliente.UltimaReserva());
+            }
+        }
+
+        private void TRadioButtonFavorito_CheckedChanged(object sender, EventArgs e)
+        {
+            if (TRadioButtonFavorito.Checked == true)
+            {
+                MessageBox.Show(enCliente.ReservaFavorita());
+            }
+        }
     }
 }

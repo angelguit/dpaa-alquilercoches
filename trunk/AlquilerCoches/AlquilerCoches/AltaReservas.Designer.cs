@@ -420,6 +420,7 @@
             this.TRadioButtonFavorito.Text = "Vehículo Favorito";
             this.TRadioButtonFavorito.UseVisualStyleBackColor = false;
             this.TRadioButtonFavorito.Visible = false;
+            this.TRadioButtonFavorito.CheckedChanged += new System.EventHandler(this.TRadioButtonFavorito_CheckedChanged);
             // 
             // TRadioButtonUltimoCoche
             // 
@@ -433,6 +434,7 @@
             this.TRadioButtonUltimoCoche.Text = "Último Vehículo";
             this.TRadioButtonUltimoCoche.UseVisualStyleBackColor = false;
             this.TRadioButtonUltimoCoche.Visible = false;
+            this.TRadioButtonUltimoCoche.CheckedChanged += new System.EventHandler(this.TRadioButtonUltimoCoche_CheckedChanged);
             // 
             // TLabelResRapida
             // 

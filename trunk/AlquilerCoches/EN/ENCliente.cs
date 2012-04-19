@@ -224,6 +224,16 @@ namespace EN
         {
             return cadCliente.ReservasCliente(dni);
         }
+
+        public string UltimaReserva()
+        {
+            return cadCliente.UltimaReserva(dni);
+        }
+
+        public string ReservaFavorita()
+        {
+            return cadCliente.ReservaFavorita(dni);
+        }
     }
 }
 
