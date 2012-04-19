@@ -192,8 +192,11 @@ namespace AlquilerCoches
 
                 TDataGridViewCliente.DataSource = ds;
                 TDataGridViewCliente.DataMember = "Cliente";
-                
 
+                for (int i = 0; i < TDataGridViewCliente.Columns.Count; i++) //esto nos servira para bloquear todas las columnas para que no se puedan editar 
+                {
+                    if (i != 0) { TDataGridViewCliente.Columns[i].ReadOnly = true; } //dejamos desbloqueada la columna de eliminar para que podamos pulsar, la columna boton no se bloquea asiq no hace falta desbloquearla
+                }
             }
                 
             
@@ -283,12 +286,7 @@ namespace AlquilerCoches
                                                    
                         }
                    }
-                else
-                {
-
-                    TTextBoxNombre.Text = TDataGridViewCliente.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
-
-                }
+              
             }
            catch (Exception ex)
            {
