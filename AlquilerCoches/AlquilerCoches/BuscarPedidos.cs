@@ -126,7 +126,7 @@ namespace AlquilerCoches
                 }
 
                 string id= TIDtextBox.Text.ToString();
-                string marca = TNametextbox.Text.ToString();
+                string marca = TMarcacomboBox2.Text.ToString();
                 string modelo = TModelocomboBox3.Text.ToString();
                 string tipo_envio = envio;
                 string empleado = TNametextbox.Text.ToString();
@@ -140,31 +140,32 @@ namespace AlquilerCoches
                     n++; // Si hay mas de un criterio
                 }
 
-                if (marca != "") //nombre
+                if (marca != "") //marca
                 {
                     if (n != 0)
                     {
-                        todo += "and Marca='" + marca + "' and Modelo='" + modelo + "' and EstadoPedido='"+estado+"' and TipoEnvio='"+envio+"'";
+                        siguiente += " and Marca='" + marca + "' and Modelo='" + modelo + "' and EstadoPedido='" + estado + "' and TipoEnvio='" + envio + "'";
+                                           
                     }
                     else
                     {
-                        todo += "Marca='" + marca + "' and Modelo='" + modelo + "'";
+                        siguiente += " Marca='" + marca + "' and Modelo='" + modelo + "'";
                     }
                 }
                 if (empleado!="")
                 {
                     if (n != 0)
                     {
-                        todo += "and Marca='" + marca + "' and Modelo='" + modelo + "' and EstadoPedido='" + estado + "' and TipoEnvio='" + envio + "'";
+                        siguiente += " and Empleado='"+empleado+"' and Marca='" + marca + "' and Modelo='" + modelo + "' and EstadoPedido='" + estado + "' and TipoEnvio='" + envio + "'";
                     }
                     else
                     {
-                        todo += "Marca='" + marca + "' and Modelo='" + modelo + "' and EstadoPedido='" + estado + "' and TipoEnvio='" + envio + "'";
+                        siguiente += " Empleado='"+empleado+"' and Marca='" + marca + "' and Modelo='" + modelo + "' and EstadoPedido='" + estado + "' and TipoEnvio='" + envio + "'";
                     }
 
                 }
-                
 
+                todo += siguiente;
                 MessageBox.Show("select * from tabla where" + todo);
                 ds = enPedidos.ObtenerListaPedidos(todo);
                 eliminado = todo;
