@@ -63,7 +63,7 @@ namespace CAD
             {
                 SqlConnection conexion = new SqlConnection(cadenaConexion);
                 if ( sentencia != "" )
-                    consulta = "Select * from Reservas where" + sentencia;
+                    consulta = "Select * from Reservas where " + sentencia;
                 else
                     consulta = "Select * from Reservas";
                 daRes = new SqlDataAdapter(consulta, conexion);

@@ -59,6 +59,9 @@
             this.TLabelNombre = new System.Windows.Forms.Label();
             this.TLabelDirec = new System.Windows.Forms.Label();
             this.TLabelTitulo = new System.Windows.Forms.Label();
+            this.TRadioButtonFavorito = new System.Windows.Forms.RadioButton();
+            this.TRadioButtonUltimoCoche = new System.Windows.Forms.RadioButton();
+            this.TLabelResRapida = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // TButtonBuscarCliente
@@ -404,6 +407,44 @@
             this.TLabelTitulo.TabIndex = 55;
             this.TLabelTitulo.Text = "Nueva Reserva";
             // 
+            // TRadioButtonFavorito
+            // 
+            this.TRadioButtonFavorito.AutoSize = true;
+            this.TRadioButtonFavorito.BackColor = System.Drawing.Color.Transparent;
+            this.TRadioButtonFavorito.Location = new System.Drawing.Point(720, 236);
+            this.TRadioButtonFavorito.Name = "TRadioButtonFavorito";
+            this.TRadioButtonFavorito.Size = new System.Drawing.Size(109, 17);
+            this.TRadioButtonFavorito.TabIndex = 56;
+            this.TRadioButtonFavorito.TabStop = true;
+            this.TRadioButtonFavorito.Tag = "";
+            this.TRadioButtonFavorito.Text = "Vehículo Favorito";
+            this.TRadioButtonFavorito.UseVisualStyleBackColor = false;
+            this.TRadioButtonFavorito.Visible = false;
+            // 
+            // TRadioButtonUltimoCoche
+            // 
+            this.TRadioButtonUltimoCoche.AutoSize = true;
+            this.TRadioButtonUltimoCoche.BackColor = System.Drawing.Color.Transparent;
+            this.TRadioButtonUltimoCoche.Location = new System.Drawing.Point(720, 259);
+            this.TRadioButtonUltimoCoche.Name = "TRadioButtonUltimoCoche";
+            this.TRadioButtonUltimoCoche.Size = new System.Drawing.Size(100, 17);
+            this.TRadioButtonUltimoCoche.TabIndex = 57;
+            this.TRadioButtonUltimoCoche.TabStop = true;
+            this.TRadioButtonUltimoCoche.Text = "Último Vehículo";
+            this.TRadioButtonUltimoCoche.UseVisualStyleBackColor = false;
+            this.TRadioButtonUltimoCoche.Visible = false;
+            // 
+            // TLabelResRapida
+            // 
+            this.TLabelResRapida.AutoSize = true;
+            this.TLabelResRapida.BackColor = System.Drawing.Color.Transparent;
+            this.TLabelResRapida.Location = new System.Drawing.Point(717, 215);
+            this.TLabelResRapida.Name = "TLabelResRapida";
+            this.TLabelResRapida.Size = new System.Drawing.Size(87, 13);
+            this.TLabelResRapida.TabIndex = 58;
+            this.TLabelResRapida.Text = "Reserva Rápida:";
+            this.TLabelResRapida.Visible = false;
+            // 
             // AltaReservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -411,6 +452,9 @@
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(894, 608);
+            this.Controls.Add(this.TLabelResRapida);
+            this.Controls.Add(this.TRadioButtonUltimoCoche);
+            this.Controls.Add(this.TRadioButtonFavorito);
             this.Controls.Add(this.TLabelTitulo);
             this.Controls.Add(this.TLabelDirec);
             this.Controls.Add(this.TLabelInfoVehiculo);
@@ -487,5 +531,8 @@
         private System.Windows.Forms.Label TLabelNombre;
         private System.Windows.Forms.Label TLabelDirec;
         private System.Windows.Forms.Label TLabelTitulo;
+        private System.Windows.Forms.RadioButton TRadioButtonFavorito;
+        private System.Windows.Forms.RadioButton TRadioButtonUltimoCoche;
+        private System.Windows.Forms.Label TLabelResRapida;
     }
 }

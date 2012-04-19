@@ -194,6 +194,7 @@
             this.TTextBoxNumeroReserva.Name = "TTextBoxNumeroReserva";
             this.TTextBoxNumeroReserva.Size = new System.Drawing.Size(36, 20);
             this.TTextBoxNumeroReserva.TabIndex = 5;
+            this.TTextBoxNumeroReserva.TextChanged += new System.EventHandler(this.TTextBoxNumeroReserva_TextChanged);
             // 
             // TDateTimePickerFechaFin
             // 
@@ -203,6 +204,7 @@
             this.TDateTimePickerFechaFin.Size = new System.Drawing.Size(86, 20);
             this.TDateTimePickerFechaFin.TabIndex = 4;
             this.TDateTimePickerFechaFin.Visible = false;
+            this.TDateTimePickerFechaFin.ValueChanged += new System.EventHandler(this.TDateTimePickerFechaFin_ValueChanged);
             // 
             // TDateTimePickerFechaInicio
             // 
@@ -212,6 +214,7 @@
             this.TDateTimePickerFechaInicio.Size = new System.Drawing.Size(86, 20);
             this.TDateTimePickerFechaInicio.TabIndex = 3;
             this.TDateTimePickerFechaInicio.Visible = false;
+            this.TDateTimePickerFechaInicio.ValueChanged += new System.EventHandler(this.TDateTimePickerFechaInicio_ValueChanged);
             // 
             // TLabelFechaFin
             // 
