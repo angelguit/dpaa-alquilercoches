@@ -44,13 +44,13 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.TIDtextBox = new System.Windows.Forms.TextBox();
-            this.TBuscarbutton = new System.Windows.Forms.Button();
             this.TDataGridViewPedidos = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.TButtonCerrar = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.TProveecomboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.TBuscarbutton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.TEstadogroupbox.SuspendLayout();
@@ -227,16 +227,6 @@
             this.TIDtextBox.Size = new System.Drawing.Size(158, 20);
             this.TIDtextBox.TabIndex = 2;
             // 
-            // TBuscarbutton
-            // 
-            this.TBuscarbutton.Location = new System.Drawing.Point(716, 65);
-            this.TBuscarbutton.Name = "TBuscarbutton";
-            this.TBuscarbutton.Size = new System.Drawing.Size(133, 23);
-            this.TBuscarbutton.TabIndex = 4;
-            this.TBuscarbutton.Text = "BUSCAR";
-            this.TBuscarbutton.UseVisualStyleBackColor = true;
-            this.TBuscarbutton.Click += new System.EventHandler(this.TBuscarbutton_Click);
-            // 
             // TDataGridViewPedidos
             // 
             this.TDataGridViewPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -303,6 +293,16 @@
             this.comboBox2.Size = new System.Drawing.Size(234, 21);
             this.comboBox2.TabIndex = 41;
             // 
+            // TBuscarbutton
+            // 
+            this.TBuscarbutton.Location = new System.Drawing.Point(716, 65);
+            this.TBuscarbutton.Name = "TBuscarbutton";
+            this.TBuscarbutton.Size = new System.Drawing.Size(133, 23);
+            this.TBuscarbutton.TabIndex = 4;
+            this.TBuscarbutton.Text = "BUSCAR";
+            this.TBuscarbutton.UseVisualStyleBackColor = true;
+            this.TBuscarbutton.Click += new System.EventHandler(this.TBuscarbutton_Click);
+            // 
             // BuscarPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -338,7 +338,6 @@
         private System.Windows.Forms.GroupBox TEstadogroupbox;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.Button TBuscarbutton;
         private System.Windows.Forms.DataGridView TDataGridViewPedidos;
         private System.Windows.Forms.Label TNamelabel;
         private System.Windows.Forms.TextBox TNametextbox;
@@ -354,5 +353,6 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox TProveecomboBox1;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button TBuscarbutton;
     }
 }
