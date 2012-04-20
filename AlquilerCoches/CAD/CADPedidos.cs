@@ -150,5 +150,41 @@ namespace CAD
             return dsId;
         }
 
+
+        public void BorrarPedido(ArrayList arrayid)
+        {
+            DataSet dsPedidos = new DataSet();
+            try
+            {
+                string frase = "";
+                for (int i = 0; i < arrayid.Count; i++)
+                {
+                    if (i == 0) { frase += "'" + arrayid[i] + "'"; }
+                    else
+                    {
+                        frase += ",";
+                        frase += "'" + arrayid[i] + "'";
+                    }
+                }
+
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                String consulta = "Select * from Pedidos where DNI in (" + frase + ")";
+                SqlDataAdapter daPedidos = new SqlDataAdapter(consulta, conexion);
+                daPedidos.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daPedidos.Fill(dsPedidos, nombreTabla);
+                for (int i = 0; i < arrayid.Count; i++)//lo hacemos parar borrar las filas que corresponden con los dnis 
+                {
+                    dsPedidos.Tables["Pedidos"].Rows[i].Delete();
+                }
+                SqlCommandBuilder cbuilder = new SqlCommandBuilder(daPedidos);
+                daPedidos.Update(dsPedidos, "Pedidos");
+
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+        }
+
     }
 }
