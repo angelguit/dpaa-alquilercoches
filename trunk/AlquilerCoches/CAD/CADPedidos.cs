@@ -186,5 +186,28 @@ namespace CAD
             }
         }
 
+
+
+        public DataSet ObtenerDatosPedidosConId(string idtransaccion)
+        {
+            DataSet dsPedido = new DataSet();
+
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                String consulta = "SELECT * FROM Pedidos WHERE IDTransaccion='" + idtransaccion + "'";
+                SqlDataAdapter daPedido = new SqlDataAdapter(consulta, conexion);
+                daPedido.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daPedido.Fill(dsPedido, nombreTabla);
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+
+            return dsPedido;
+        }
+
+
     }
 }
