@@ -66,7 +66,7 @@
             this.TButtonAtras.Location = new System.Drawing.Point(25, 477);
             this.TButtonAtras.Name = "TButtonAtras";
             this.TButtonAtras.Size = new System.Drawing.Size(75, 23);
-            this.TButtonAtras.TabIndex = 50;
+            this.TButtonAtras.TabIndex = 7;
             this.TButtonAtras.Text = "Salir";
             this.TButtonAtras.UseVisualStyleBackColor = true;
             this.TButtonAtras.Click += new System.EventHandler(this.TButtonAtras_Click);
@@ -163,19 +163,22 @@
             // 
             // TButtonCancelar
             // 
-            this.TButtonCancelar.Location = new System.Drawing.Point(380, 197);
+            this.TButtonCancelar.Image = global::AlquilerCoches.Properties.Resources.Close_icon;
+            this.TButtonCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TButtonCancelar.Location = new System.Drawing.Point(348, 190);
             this.TButtonCancelar.Name = "TButtonCancelar";
-            this.TButtonCancelar.Size = new System.Drawing.Size(95, 23);
-            this.TButtonCancelar.TabIndex = 50;
+            this.TButtonCancelar.Size = new System.Drawing.Size(84, 37);
+            this.TButtonCancelar.TabIndex = 6;
             this.TButtonCancelar.Tag = "";
-            this.TButtonCancelar.Text = "Cancelar Venta";
+            this.TButtonCancelar.Text = "Cancelar";
+            this.TButtonCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.TButtonCancelar.UseVisualStyleBackColor = true;
             this.TButtonCancelar.Click += new System.EventHandler(this.TButtonCancelar_Click);
             // 
             // TLabelObligatorio
             // 
             this.TLabelObligatorio.AutoSize = true;
-            this.TLabelObligatorio.Location = new System.Drawing.Point(22, 197);
+            this.TLabelObligatorio.Location = new System.Drawing.Point(22, 202);
             this.TLabelObligatorio.Name = "TLabelObligatorio";
             this.TLabelObligatorio.Size = new System.Drawing.Size(217, 13);
             this.TLabelObligatorio.TabIndex = 49;
@@ -187,9 +190,10 @@
             this.TTextBoxMeses.Location = new System.Drawing.Point(144, 129);
             this.TTextBoxMeses.Name = "TTextBoxMeses";
             this.TTextBoxMeses.Size = new System.Drawing.Size(95, 20);
-            this.TTextBoxMeses.TabIndex = 48;
+            this.TTextBoxMeses.TabIndex = 3;
             this.TTextBoxMeses.Text = "Meses";
             this.TTextBoxMeses.Click += new System.EventHandler(this.TTextBoxMeses_Click);
+            this.TTextBoxMeses.TextChanged += new System.EventHandler(this.TTextBoxMeses_TextChanged);
             this.TTextBoxMeses.Leave += new System.EventHandler(this.TTextBoxMeses_Leave);
             // 
             // TCheckBoxGarantia
@@ -198,7 +202,7 @@
             this.TCheckBoxGarantia.Location = new System.Drawing.Point(81, 133);
             this.TCheckBoxGarantia.Name = "TCheckBoxGarantia";
             this.TCheckBoxGarantia.Size = new System.Drawing.Size(56, 17);
-            this.TCheckBoxGarantia.TabIndex = 47;
+            this.TCheckBoxGarantia.TabIndex = 2;
             this.TCheckBoxGarantia.Text = "Sí/No";
             this.TCheckBoxGarantia.UseVisualStyleBackColor = true;
             this.TCheckBoxGarantia.CheckedChanged += new System.EventHandler(this.TCheckBoxGarantia_CheckedChanged);
@@ -214,12 +218,15 @@
             // 
             // TButtonVender
             // 
-            this.TButtonVender.Location = new System.Drawing.Point(288, 197);
+            this.TButtonVender.Image = global::AlquilerCoches.Properties.Resources.Add_icon;
+            this.TButtonVender.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TButtonVender.Location = new System.Drawing.Point(246, 190);
             this.TButtonVender.Name = "TButtonVender";
-            this.TButtonVender.Size = new System.Drawing.Size(86, 23);
-            this.TButtonVender.TabIndex = 45;
+            this.TButtonVender.Size = new System.Drawing.Size(78, 37);
+            this.TButtonVender.TabIndex = 5;
             this.TButtonVender.Tag = "";
-            this.TButtonVender.Text = "Añadir Venta";
+            this.TButtonVender.Text = "Añadir";
+            this.TButtonVender.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.TButtonVender.UseVisualStyleBackColor = true;
             this.TButtonVender.Click += new System.EventHandler(this.TButtonVender_Click);
             this.TButtonVender.MouseLeave += new System.EventHandler(this.TButtonVender_MouseLeave);
@@ -230,7 +237,7 @@
             this.TTextBoxPrecioVenta.Location = new System.Drawing.Point(80, 157);
             this.TTextBoxPrecioVenta.Name = "TTextBoxPrecioVenta";
             this.TTextBoxPrecioVenta.Size = new System.Drawing.Size(159, 20);
-            this.TTextBoxPrecioVenta.TabIndex = 44;
+            this.TTextBoxPrecioVenta.TabIndex = 4;
             this.TTextBoxPrecioVenta.Leave += new System.EventHandler(this.TTextBoxPrecioVenta_Leave);
             // 
             // TLabelPrecioVenta
@@ -247,7 +254,7 @@
             this.TTextBoxKm.Location = new System.Drawing.Point(80, 105);
             this.TTextBoxKm.Name = "TTextBoxKm";
             this.TTextBoxKm.Size = new System.Drawing.Size(159, 20);
-            this.TTextBoxKm.TabIndex = 40;
+            this.TTextBoxKm.TabIndex = 1;
             this.TTextBoxKm.Leave += new System.EventHandler(this.TTextBoxKm_Leave);
             // 
             // TLabelKM
@@ -305,7 +312,7 @@
             // TPictureBoxCoche
             // 
             this.TPictureBoxCoche.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.TPictureBoxCoche.Location = new System.Drawing.Point(289, 19);
+            this.TPictureBoxCoche.Location = new System.Drawing.Point(246, 19);
             this.TPictureBoxCoche.Name = "TPictureBoxCoche";
             this.TPictureBoxCoche.Size = new System.Drawing.Size(186, 158);
             this.TPictureBoxCoche.TabIndex = 31;

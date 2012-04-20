@@ -251,5 +251,10 @@ namespace AlquilerCoches
                 rellenaCampos();
             }
         }
+
+        private void TTextBoxMeses_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
