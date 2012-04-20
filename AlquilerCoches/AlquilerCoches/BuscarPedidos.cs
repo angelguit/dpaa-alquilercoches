@@ -370,6 +370,18 @@ namespace AlquilerCoches
             }
         }
 
+        public void ActualizaDatagridView()
+        {
+            string cadena = "";
+            DataSet ou = new DataSet();
+            ou = enPedidos.ObtenerListaPedidos(cadena);
+            TDataGridViewPedidos.DataSource = ou;
+
+        }
+        private void BuscarPedidos_Activated(object sender, EventArgs e)
+        {
+            ActualizaDatagridView();
+        }
        
 
     }

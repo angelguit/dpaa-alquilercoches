@@ -298,16 +298,16 @@
             // 
             // TButtonEliminar
             // 
+            this.TButtonEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.TButtonEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.TButtonEliminar.Image = global::AlquilerCoches.Properties.Resources.Delete_icon;
-            this.TButtonEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.TButtonEliminar.Location = new System.Drawing.Point(85, 482);
+            this.TButtonEliminar.Location = new System.Drawing.Point(99, 482);
             this.TButtonEliminar.Name = "TButtonEliminar";
-            this.TButtonEliminar.Size = new System.Drawing.Size(100, 57);
-            this.TButtonEliminar.TabIndex = 32;
-            this.TButtonEliminar.Text = "Eliminar";
-            this.TButtonEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.TButtonEliminar.Size = new System.Drawing.Size(75, 75);
+            this.TButtonEliminar.TabIndex = 34;
+            this.TButtonEliminar.Text = "Delete";
+            this.TButtonEliminar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.TButtonEliminar.UseVisualStyleBackColor = true;
-            this.TButtonEliminar.Visible = false;
             this.TButtonEliminar.Click += new System.EventHandler(this.TButtonEliminar_Click);
             // 
             // BuscarPedidos
@@ -327,6 +327,7 @@
             this.Name = "BuscarPedidos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Buscar Pedidos";
+            this.Activated += new System.EventHandler(this.BuscarPedidos_Activated);
             this.Load += new System.EventHandler(this.BuscarPedidos_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
