@@ -66,11 +66,11 @@
             // 
             // TButtonBuscarCliente
             // 
-            this.TButtonBuscarCliente.Image = global::AlquilerCoches.Properties.Resources.Search_icon;
+            this.TButtonBuscarCliente.Image = global::AlquilerCoches.Properties.Resources.Search_icon2;
             this.TButtonBuscarCliente.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.TButtonBuscarCliente.Location = new System.Drawing.Point(375, 79);
+            this.TButtonBuscarCliente.Location = new System.Drawing.Point(375, 67);
             this.TButtonBuscarCliente.Name = "TButtonBuscarCliente";
-            this.TButtonBuscarCliente.Size = new System.Drawing.Size(144, 64);
+            this.TButtonBuscarCliente.Size = new System.Drawing.Size(144, 76);
             this.TButtonBuscarCliente.TabIndex = 26;
             this.TButtonBuscarCliente.Text = "Buscar Cliente";
             this.TButtonBuscarCliente.TextAlign = System.Drawing.ContentAlignment.TopCenter;
