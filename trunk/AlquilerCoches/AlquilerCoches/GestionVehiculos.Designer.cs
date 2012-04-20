@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionVehiculos));
             this.TGroupBoxDatosVehiculo = new System.Windows.Forms.GroupBox();
+            this.TComboBoxCategoria = new System.Windows.Forms.ComboBox();
             this.TTextBoxGarantia = new System.Windows.Forms.TextBox();
             this.TLabelGarantia = new System.Windows.Forms.Label();
             this.TTextBoxKM = new System.Windows.Forms.TextBox();
@@ -66,7 +67,6 @@
             this.TButtonEditar = new System.Windows.Forms.Button();
             this.TButtonCancelar = new System.Windows.Forms.Button();
             this.TButtonOK = new System.Windows.Forms.Button();
-            this.TComboBoxCategoria = new System.Windows.Forms.ComboBox();
             this.TGroupBoxDatosVehiculo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TPictureBoxMatricula)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -107,13 +107,24 @@
             this.TGroupBoxDatosVehiculo.TabStop = false;
             this.TGroupBoxDatosVehiculo.Text = "3 DatosVehiculo";
             // 
+            // TComboBoxCategoria
+            // 
+            this.TComboBoxCategoria.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.TComboBoxCategoria.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.TComboBoxCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TComboBoxCategoria.FormattingEnabled = true;
+            this.TComboBoxCategoria.Location = new System.Drawing.Point(128, 165);
+            this.TComboBoxCategoria.Name = "TComboBoxCategoria";
+            this.TComboBoxCategoria.Size = new System.Drawing.Size(261, 21);
+            this.TComboBoxCategoria.TabIndex = 6;
+            // 
             // TTextBoxGarantia
             // 
             this.TTextBoxGarantia.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.TTextBoxGarantia.Location = new System.Drawing.Point(128, 216);
             this.TTextBoxGarantia.Name = "TTextBoxGarantia";
             this.TTextBoxGarantia.Size = new System.Drawing.Size(261, 20);
-            this.TTextBoxGarantia.TabIndex = 42;
+            this.TTextBoxGarantia.TabIndex = 8;
             this.TTextBoxGarantia.Leave += new System.EventHandler(this.TTextBoxGarantia_TextChanged);
             // 
             // TLabelGarantia
@@ -132,7 +143,7 @@
             this.TTextBoxKM.Location = new System.Drawing.Point(128, 190);
             this.TTextBoxKM.Name = "TTextBoxKM";
             this.TTextBoxKM.Size = new System.Drawing.Size(261, 20);
-            this.TTextBoxKM.TabIndex = 40;
+            this.TTextBoxKM.TabIndex = 7;
             this.TTextBoxKM.Leave += new System.EventHandler(this.TTextBoxKM_TextChanged);
             // 
             // TLabelKM
@@ -151,7 +162,7 @@
             this.TTextBoxModelo.Location = new System.Drawing.Point(128, 88);
             this.TTextBoxModelo.Name = "TTextBoxModelo";
             this.TTextBoxModelo.Size = new System.Drawing.Size(261, 20);
-            this.TTextBoxModelo.TabIndex = 38;
+            this.TTextBoxModelo.TabIndex = 3;
             this.TTextBoxModelo.Leave += new System.EventHandler(this.TTextBoxModelo_TextChanged);
             // 
             // TLabelModelo
@@ -170,7 +181,7 @@
             this.TTextBoxMarca.Location = new System.Drawing.Point(128, 60);
             this.TTextBoxMarca.Name = "TTextBoxMarca";
             this.TTextBoxMarca.Size = new System.Drawing.Size(261, 20);
-            this.TTextBoxMarca.TabIndex = 36;
+            this.TTextBoxMarca.TabIndex = 2;
             this.TTextBoxMarca.Leave += new System.EventHandler(this.TTextBoxMarca_TextChanged);
             // 
             // TLabelMarca
@@ -190,7 +201,7 @@
             this.TRadioButtonRevision.Location = new System.Drawing.Point(208, 240);
             this.TRadioButtonRevision.Name = "TRadioButtonRevision";
             this.TRadioButtonRevision.Size = new System.Drawing.Size(66, 17);
-            this.TRadioButtonRevision.TabIndex = 34;
+            this.TRadioButtonRevision.TabIndex = 10;
             this.TRadioButtonRevision.TabStop = true;
             this.TRadioButtonRevision.Text = "Revision";
             this.TRadioButtonRevision.UseVisualStyleBackColor = true;
@@ -212,7 +223,7 @@
             this.TRadioButtonEstado.Location = new System.Drawing.Point(128, 240);
             this.TRadioButtonEstado.Name = "TRadioButtonEstado";
             this.TRadioButtonEstado.Size = new System.Drawing.Size(74, 17);
-            this.TRadioButtonEstado.TabIndex = 32;
+            this.TRadioButtonEstado.TabIndex = 9;
             this.TRadioButtonEstado.TabStop = true;
             this.TRadioButtonEstado.Text = "Disponible";
             this.TRadioButtonEstado.UseVisualStyleBackColor = true;
@@ -245,7 +256,7 @@
             this.TTextBoxPrecioVenta.Location = new System.Drawing.Point(128, 138);
             this.TTextBoxPrecioVenta.Name = "TTextBoxPrecioVenta";
             this.TTextBoxPrecioVenta.Size = new System.Drawing.Size(261, 20);
-            this.TTextBoxPrecioVenta.TabIndex = 26;
+            this.TTextBoxPrecioVenta.TabIndex = 5;
             this.TTextBoxPrecioVenta.Leave += new System.EventHandler(this.TTextBoxPrecioVenta_TextChanged);
             // 
             // TLabelPrecioVenta
@@ -264,7 +275,7 @@
             this.TTextBoxPrecioCompra.Location = new System.Drawing.Point(128, 113);
             this.TTextBoxPrecioCompra.Name = "TTextBoxPrecioCompra";
             this.TTextBoxPrecioCompra.Size = new System.Drawing.Size(261, 20);
-            this.TTextBoxPrecioCompra.TabIndex = 24;
+            this.TTextBoxPrecioCompra.TabIndex = 4;
             this.TTextBoxPrecioCompra.Leave += new System.EventHandler(this.TTextBoxPrecioCompra_TextChanged);
             // 
             // TLabelPrecioCompra
@@ -283,7 +294,7 @@
             this.TTextBoxMatricula.Location = new System.Drawing.Point(128, 34);
             this.TTextBoxMatricula.Name = "TTextBoxMatricula";
             this.TTextBoxMatricula.Size = new System.Drawing.Size(261, 20);
-            this.TTextBoxMatricula.TabIndex = 20;
+            this.TTextBoxMatricula.TabIndex = 1;
             this.TTextBoxMatricula.Leave += new System.EventHandler(this.TTextBoxMatricula_TextChanged);
             // 
             // TLabelMatricula
@@ -481,7 +492,7 @@
             this.TButtonCancelar.Location = new System.Drawing.Point(62, 425);
             this.TButtonCancelar.Name = "TButtonCancelar";
             this.TButtonCancelar.Size = new System.Drawing.Size(75, 69);
-            this.TButtonCancelar.TabIndex = 37;
+            this.TButtonCancelar.TabIndex = 12;
             this.TButtonCancelar.Text = "Cancel";
             this.TButtonCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.TButtonCancelar.UseVisualStyleBackColor = true;
@@ -495,22 +506,11 @@
             this.TButtonOK.Location = new System.Drawing.Point(143, 425);
             this.TButtonOK.Name = "TButtonOK";
             this.TButtonOK.Size = new System.Drawing.Size(75, 69);
-            this.TButtonOK.TabIndex = 36;
+            this.TButtonOK.TabIndex = 11;
             this.TButtonOK.Text = "OK";
             this.TButtonOK.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.TButtonOK.UseVisualStyleBackColor = true;
             this.TButtonOK.Click += new System.EventHandler(this.TButtonOK_Click);
-            // 
-            // TComboBoxCategoria
-            // 
-            this.TComboBoxCategoria.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.TComboBoxCategoria.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.TComboBoxCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.TComboBoxCategoria.FormattingEnabled = true;
-            this.TComboBoxCategoria.Location = new System.Drawing.Point(128, 165);
-            this.TComboBoxCategoria.Name = "TComboBoxCategoria";
-            this.TComboBoxCategoria.Size = new System.Drawing.Size(261, 21);
-            this.TComboBoxCategoria.TabIndex = 43;
             // 
             // GestionVehiculos
             // 

@@ -251,7 +251,7 @@ namespace AlquilerCoches
 
             TListBoxMarcas.Items.Clear();
             TListBoxModelos.Items.Clear();
-            TListBoxMatriculas.Items.Clear();
+            //TListBoxMatriculas.Items.Clear();
             vehiculos.ObtenerMarcas();
             TListBoxMarcas.Items.AddRange(vehiculos.ListaMarcas.ToArray());
             if (accion == "Anyadir")
@@ -278,6 +278,11 @@ namespace AlquilerCoches
                     vehiculos.Marca = TListBoxMarcas.Items[TListBoxMarcas.SelectedIndex].ToString();
                     vehiculos.ObtenerModelo();
                     TListBoxModelos.Items.AddRange(vehiculos.ListaModelos.ToArray());
+                    
+                    TListBoxMatriculas.Items.Clear();
+                    vehiculos.ObtenerMatriculas();
+                    TListBoxMatriculas.Items.AddRange(vehiculos.ListaMatriculas.ToArray());
+                    
                     if (accion == "Anyadir")
                     {
                         TListBoxModelos.Items.Add("[Otra Modelo]");
@@ -356,6 +361,10 @@ namespace AlquilerCoches
             accion = "Buscar";
             errorProvider1.Clear();
             rellenaMarcas();
+            vehiculos.Marca = "";
+            vehiculos.Modelo = "";
+            vehiculos.ObtenerMatriculas();
+            TListBoxMatriculas.Items.AddRange(vehiculos.ListaMatriculas.ToArray());
         }
 
         private void TButtonAnyadir_Click(object sender, EventArgs e)
@@ -370,6 +379,11 @@ namespace AlquilerCoches
             accion = "Editar";
             errorProvider1.Clear();
             rellenaMarcas();
+            vehiculos.Marca = "";
+            vehiculos.Modelo = "";
+            vehiculos.ObtenerMatriculas();
+            TListBoxMatriculas.Items.AddRange(vehiculos.ListaMatriculas.ToArray());
+            
         }
 
         private void TButtonBorrar_Click(object sender, EventArgs e)
@@ -377,6 +391,11 @@ namespace AlquilerCoches
             accion = "Borrar";
             errorProvider1.Clear();
             rellenaMarcas();
+            vehiculos.Marca = "";
+            vehiculos.Modelo = "";
+            vehiculos.ObtenerMatriculas();
+            TListBoxMatriculas.Items.AddRange(vehiculos.ListaMatriculas.ToArray());
+            
         }
 
         private void TButtonOK_Click(object sender, EventArgs e)

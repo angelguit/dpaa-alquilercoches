@@ -82,7 +82,21 @@ namespace CAD
             try
             {
                 SqlConnection conexion = new SqlConnection(cadenaConexion);
-                String consulta = "Select Matricula from Vehiculo where Modelo='" + modelo + "' and Marca='" + marca + "'";
+                String consulta = "";
+                
+                if (!marca.Equals("") && !modelo.Equals(""))
+                {
+                    consulta = "Select Matricula from Vehiculo where Modelo='" + modelo + "' and Marca='" + marca + "'";
+                }
+                else if (!marca.Equals(""))
+                {
+                    consulta = "Select Matricula from Vehiculo where Marca='" + marca + "'";
+                }
+                else
+                {
+                    consulta = "Select Matricula from Vehiculo";
+                }
+                
                 SqlDataAdapter daVehiculo = new SqlDataAdapter(consulta, conexion);
                 daVehiculo.MissingSchemaAction = MissingSchemaAction.AddWithKey;
                 daVehiculo.Fill(dsVehiculo, nombreTabla);
