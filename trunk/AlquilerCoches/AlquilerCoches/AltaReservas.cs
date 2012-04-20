@@ -302,7 +302,7 @@ namespace AlquilerCoches
             {
                 char[] separadores = { '|', ',' };
                 string[] favorito = enCliente.ReservaFavorita().Split(separadores);
-                MessageBox.Show("Marca = " + favorito[0] + "Modelo = " + favorito[1]);
+                MessageBox.Show("Categoria = " + favorito[2] + " Marca = " + favorito[0] + " Modelo = " + favorito[1]);
             }
         }
 
