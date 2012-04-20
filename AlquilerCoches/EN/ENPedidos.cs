@@ -157,7 +157,7 @@ namespace EN
             try
             {
                 DataSet pedido = cadPedidos.ObtenerDatosPedidosConId(idtransaccion);
-                pedido.Tables["Pedidos"].Rows[0][1] = idtransaccion.ToString(); //el dni no se puede cambiar asique saltamos la posicion 0 que es del dni
+                pedido.Tables["Pedidos"].Rows[0][1] = idtransaccion.ToString(); 
                 pedido.Tables["Pedidos"].Rows[0][2] = proveedor.ToString();
                 pedido.Tables["Pedidos"].Rows[0][3] = marca.ToString();
                 pedido.Tables["Pedidos"].Rows[0][4] = modelo.ToString();
