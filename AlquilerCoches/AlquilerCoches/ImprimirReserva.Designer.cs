@@ -301,6 +301,7 @@
             this.Controls.Add(this.TLabelNumRes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ImprimirReserva";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ImprimirReserva";
             this.TGroupBoxInfoCliente.ResumeLayout(false);
             this.TGroupBoxInfoCliente.PerformLayout();
