@@ -191,6 +191,29 @@ namespace EN
 
         }
 
+        public void ObtenerDatosPersonal()
+        {
+            try
+            {
+                DataSet persona = cadPersonal.ObtenerDatosPersonalConDni(dni);
+                nombre = persona.Tables["Personal"].Rows[0][1].ToString(); //el dni no se puede cambiar asique saltamos la posicion 0 que es del dni
+                apellidos = persona.Tables["Personal"].Rows[0][2].ToString();
+                telefono = int.Parse(persona.Tables["Personal"].Rows[0][3].ToString());
+                email = persona.Tables["Personal"].Rows[0][4].ToString();
+                direccion = persona.Tables["Personal"].Rows[0][5].ToString();
+                ciudad = persona.Tables["Personal"].Rows[0][6].ToString();
+                provincia = persona.Tables["Personal"].Rows[0][7].ToString();
+                puestoac = persona.Tables["Personal"].Rows[0][8].ToString();
+                otrospuestos= persona.Tables["Personal"].Rows[0][9].ToString();
+
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+
+        }
+
     }
 }
 

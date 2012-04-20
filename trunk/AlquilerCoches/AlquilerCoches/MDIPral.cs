@@ -12,46 +12,18 @@ namespace AlquilerCoches
     public partial class MDIPral : Form
     {
         private int childFormNumber = 0;
+        private EN.ENPersonal Personal;
 
-        public class User
-        {
-            string nombre;
-            string id;
-            string status;
-            public User(string Nombre, string ID, string Status)
-            {
-                nombre = Nombre;
-                id = ID;
-                status = Status;
-            }
-            public string Nombre
-            {
-                set { nombre = Nombre; }
-                get { return nombre; }
-            }
-            public string ID
-            {
-                set { id = ID; }
-                get { return id; }
-            }
-            public string Status
-            {
-                set { status = Status; }
-                get { return status; }
-            }
-        }
-        User UsuarioSistema;
-         
-
-        public MDIPral(User usuario)
+        public MDIPral(string dni)
         {
             InitializeComponent();
-            UsuarioSistema = usuario;
+            Personal = new EN.ENPersonal();
+            Personal.DNI = dni;
+            Personal.ObtenerDatosPersonal();
+            toolStripStatusLabel.Text = "Nombre:" + Personal.Nombre + " " + Personal.Apellidos;
+            toolStripStatusLabel1.Text = "ID:" + Personal.DNI;
+            toolStripStatusLabel2.Text = "Status:" + Personal.PuestoAc;
 
-            toolStripStatusLabel.Text = "Nombre:" + usuario.Nombre;
-            toolStripStatusLabel1.Text = "ID:" + usuario.ID;
-            toolStripStatusLabel2.Text = "Status:" + usuario.Status;
-            
         }
         
         

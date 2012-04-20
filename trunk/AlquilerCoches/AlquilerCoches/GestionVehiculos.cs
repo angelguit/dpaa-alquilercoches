@@ -251,7 +251,7 @@ namespace AlquilerCoches
 
             TListBoxMarcas.Items.Clear();
             TListBoxModelos.Items.Clear();
-            //TListBoxMatriculas.Items.Clear();
+            TListBoxMatriculas.Items.Clear();
             vehiculos.ObtenerMarcas();
             TListBoxMarcas.Items.AddRange(vehiculos.ListaMarcas.ToArray());
             if (accion == "Anyadir")
