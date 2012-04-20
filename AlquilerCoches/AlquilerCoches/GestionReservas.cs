@@ -127,13 +127,13 @@ namespace AlquilerCoches
                     err2.Clear();
                     if (sentencia == "")
                     {
-                        sentencia += " Fecha inicio between " + Convert.ToDateTime(TDateTimePickerFechaInicio.Value.ToString()) + " and " + Convert.ToDateTime(TDateTimePickerFechaFin.Value.ToString());
-                        sentencia += " and Fecha fin between " + Convert.ToDateTime(TDateTimePickerFechaInicio.Value.ToString()) + " and " + Convert.ToDateTime(TDateTimePickerFechaFin.Value.ToString());
+                        sentencia += " FechaInicio BETWEEN '" + TDateTimePickerFechaInicio.Value + "' AND '" + TDateTimePickerFechaFin.Value + "'";
+                        sentencia += " and FechaFin <= '" + TDateTimePickerFechaFin.Value+ "'";
                     }
                     else
                     {
-                        sentencia += " and Fecha inicio between'" + Convert.ToDateTime(TDateTimePickerFechaFin.Value.ToString()) + "' and '" + Convert.ToDateTime(TDateTimePickerFechaInicio.Value.ToString()) + "'";
-                        sentencia += " and Fecha fin between '" + Convert.ToDateTime(TDateTimePickerFechaInicio.Value.ToString()) + "'" + " and '" + Convert.ToDateTime(TDateTimePickerFechaFin.Value.ToString()) + "'";
+                        sentencia += " and FechaInicio BETWEEN '" + Convert.ToDateTime(TDateTimePickerFechaFin.Value.ToString()) + "' and '" + Convert.ToDateTime(TDateTimePickerFechaInicio.Value.ToString()) + "'";
+                        sentencia += " and FechaFin <= '" + Convert.ToDateTime(TDateTimePickerFechaFin.Value.ToString()) + "'";
                     }
                 }
                 else
@@ -161,7 +161,6 @@ namespace AlquilerCoches
 
                 TButtonEliminar.Visible = true;
                 DataSet ds = new DataSet();
-
                 eliminado = sentencia;
                 ds = enRe.ObtenerReservas(sentencia);
                 TDataGridViewReservas.DataSource = ds;

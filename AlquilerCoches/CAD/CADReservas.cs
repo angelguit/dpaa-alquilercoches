@@ -58,14 +58,15 @@ namespace CAD
         {
             DataSet dsRes = new DataSet();
             SqlDataAdapter daRes;
-            string consulta;
+            string consulta = "Select * from Reservas WHERE Activa = 1 "; ;
             try
             {
                 SqlConnection conexion = new SqlConnection(cadenaConexion);
-                if ( sentencia != "" )
-                    consulta = "Select * from Reservas where " + sentencia;
-                else
-                    consulta = "Select * from Reservas";
+                if (sentencia != "")
+                {
+                    consulta += "AND " + sentencia;
+                }
+                
                 daRes = new SqlDataAdapter(consulta, conexion);
                 daRes.MissingSchemaAction = MissingSchemaAction.AddWithKey;
                 daRes.Fill(dsRes, "Reservas");
