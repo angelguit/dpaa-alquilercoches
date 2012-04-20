@@ -272,9 +272,12 @@
             // 
             // TDataGridViewPedidos
             // 
+            this.TDataGridViewPedidos.AllowUserToAddRows = false;
+            this.TDataGridViewPedidos.AllowUserToDeleteRows = false;
             this.TDataGridViewPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TDataGridViewPedidos.Location = new System.Drawing.Point(37, 239);
             this.TDataGridViewPedidos.Name = "TDataGridViewPedidos";
+            this.TDataGridViewPedidos.ReadOnly = true;
             this.TDataGridViewPedidos.Size = new System.Drawing.Size(818, 219);
             this.TDataGridViewPedidos.TabIndex = 3;
             this.TDataGridViewPedidos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TDataGridViewPedidos_CellContentClick);
