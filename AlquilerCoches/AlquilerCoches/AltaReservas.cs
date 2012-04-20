@@ -300,7 +300,9 @@ namespace AlquilerCoches
         {
             if (TRadioButtonFavorito.Checked == true)
             {
-                MessageBox.Show(enCliente.ReservaFavorita());
+                char[] separadores = { '|', ',' };
+                string[] favorito = enCliente.ReservaFavorita().Split(separadores);
+                MessageBox.Show("Marca = " + favorito[0] + "Modelo = " + favorito[1]);
             }
         }
 
