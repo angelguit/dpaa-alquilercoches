@@ -255,7 +255,8 @@ namespace CAD
             {
                 SqlConnection conexion = new SqlConnection(cadenaConexion);
                 //String consulta = "Select FK_Coche,count(FK_Coche) as total FROM Reservas where FK_Cliente = '" + dni + "' group by FK_Coche order by 2 desc";
-                String consulta = "Select Marca,Modelo,FK_Categoria,count(Modelo) from Vehiculo where Matricula in ( select FK_Coche from Reservas where FK_Cliente = '" + dni + "') group by FK_Categoria,Marca,Modelo order by 4 desc";
+                //String consulta = "Select Marca,Modelo,FK_Categoria,count(Modelo) from Vehiculo where Matricula in ( select FK_Coche from Reservas where FK_Cliente = '" + dni + "') group by FK_Categoria,Marca,Modelo order by 4 desc";
+                String consulta = "Select Marca,Modelo,FK_Categoria,count(Modelo) from Vehiculo where Marca in ( select Marca from Vehiculo where Matricula in (select FK_Coche from Reservas where FK_Cliente = '" + dni + "')) and Modelo in (select Modelo from Vehiculo where Matricula in (select FK_Coche from Reservas where FK_Cliente = '" + dni + "')) group by FK_Categoria,Marca,Modelo order by 4 desc";
                 SqlDataAdapter daResCliente = new SqlDataAdapter(consulta, conexion);
                 daResCliente.MissingSchemaAction = MissingSchemaAction.AddWithKey;
                 daResCliente.Fill(dsResCliente, "Reservas");
