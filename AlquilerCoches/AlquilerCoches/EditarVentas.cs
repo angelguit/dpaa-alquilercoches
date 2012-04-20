@@ -265,10 +265,13 @@ namespace AlquilerCoches
         {
             if (incorrecto == false && (TTextBoxPrecioVenta.Text != "" && TTextBoxModelo.Text != "" && TTextBoxMatricula.Text != "" && TTextBoxMarca.Text != "" && TTextBoxKm.Text != ""))
             {
-                guardaCampos();
-                ventas.EditarVentas();
-                limpiaFormulario();
-                rellenaMarcas();
+                if (MessageBox.Show("¿Desea guardar cambios?\n Se sobrescribirán los datos.", "¿SOBRESCRIBIR?", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.OK)
+                {
+                    guardaCampos();
+                    ventas.EditarVentas();
+                    limpiaFormulario();
+                    rellenaMarcas();
+                }
             }
             else
             {
