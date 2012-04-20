@@ -81,7 +81,7 @@ namespace EN
         public DataSet ObtenerFacturas(string sentencia)
         {
             DataSet resultado = new DataSet();
-            try
+             try
             {
                 resultado = cadFacturacion.ObtenerTablaFacturas(sentencia);
             }

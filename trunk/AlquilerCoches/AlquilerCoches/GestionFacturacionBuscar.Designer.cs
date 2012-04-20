@@ -46,10 +46,10 @@
             this.TLabelFechaFin = new System.Windows.Forms.Label();
             this.TLabelFechaInicio = new System.Windows.Forms.Label();
             this.TLabelNFactura = new System.Windows.Forms.Label();
-            this.rectangleShape1 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.rectangleShape2 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.rectangleShape1 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridBuscarFacturas)).BeginInit();
             this.TPanelReservas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -239,17 +239,6 @@
             this.TLabelNFactura.TabIndex = 0;
             this.TLabelNFactura.Text = "Numero Factura:";
             // 
-            // rectangleShape1
-            // 
-            this.rectangleShape1.BorderColor = System.Drawing.Color.White;
-            this.rectangleShape1.Location = new System.Drawing.Point(-107, -7);
-            this.rectangleShape1.Name = "rectangleShape1";
-            this.rectangleShape1.Size = new System.Drawing.Size(86, 217);
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
             // shapeContainer1
             // 
             this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
@@ -269,13 +258,24 @@
             this.rectangleShape2.Name = "rectangleShape2";
             this.rectangleShape2.Size = new System.Drawing.Size(449, 197);
             // 
+            // rectangleShape1
+            // 
+            this.rectangleShape1.BorderColor = System.Drawing.Color.White;
+            this.rectangleShape1.Location = new System.Drawing.Point(-107, -7);
+            this.rectangleShape1.Name = "rectangleShape1";
+            this.rectangleShape1.Size = new System.Drawing.Size(86, 217);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // GestionFacturacionBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(878, 570);
+            this.ClientSize = new System.Drawing.Size(894, 608);
             this.Controls.Add(this.TPanelReservas);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridBuscarFacturas);
