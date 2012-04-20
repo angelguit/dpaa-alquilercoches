@@ -158,5 +158,27 @@ namespace CAD
                 throw (ex);
             }
         }
+
+        public int NumeroUltimaReserva()
+        {
+            DataSet dsReser = new DataSet();
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                String consulta = "Select * from Reservas";
+                SqlDataAdapter daRes = new SqlDataAdapter(consulta, conexion);
+                daRes.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daRes.Fill(dsReser, "Reservas");
+                
+                
+
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+
+            return Int32.Parse(dsReser.Tables["Reservas"].Rows[dsReser.Tables["Reservas"].Rows.Count - 1][0].ToString());
+        }
     }
 }

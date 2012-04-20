@@ -261,7 +261,10 @@ namespace AlquilerCoches
                 enVe.Estado = "Reservado";
                 enVe.EditarVehiculo();
                 MessageBox.Show("Reserva realizada con éxito", "Nueva Reserva", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                TPrintFormReservas.Print(this,Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.PrintOption.Scrollable);
+                ImprimirReserva FPrint = new ImprimirReserva(enCliente,enRe,enVe,enRe.NumeroUltimaReserva());
+                FPrint.Show();
+                FPrint.Imprimir();
+
                 Close();
             }
         }
