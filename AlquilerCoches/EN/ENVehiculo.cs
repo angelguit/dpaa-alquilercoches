@@ -196,6 +196,24 @@ namespace EN
             }
 
         }
+        public bool ComprobarDuplicados()
+        {
+            bool duplicado = true;
+            try
+            {
+                DataSet vehiculo = cadVehiculo.ObtenerDatosVehiculo(matricula);
+                if (vehiculo.Tables["Vehiculo"].Rows.Count == 0)
+                {
+                    duplicado = false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            return duplicado;
+        }
 
         public DataSet ObtenerMarcas(string cat)
         {
