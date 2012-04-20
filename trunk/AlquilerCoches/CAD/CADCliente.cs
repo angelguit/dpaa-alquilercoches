@@ -268,5 +268,33 @@ namespace CAD
 
             return dsResCliente.Tables["Reservas"].Rows[0][0].ToString() + "|" + dsResCliente.Tables["Reservas"].Rows[0][1].ToString() + "|" + dsResCliente.Tables["Reservas"].Rows[0][2].ToString();
         }
+
+        public bool ReservasActiva(string dni)
+        {
+            DataSet dsResCliente = new DataSet();
+            DateTime hoy = new DateTime();
+            hoy = DateTime.Today;
+            bool retorno = false;
+
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                String consulta = "Select * from Reservas where Activa = 1";
+                SqlDataAdapter daResCliente = new SqlDataAdapter(consulta, conexion);
+                daResCliente.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daResCliente.Fill(dsResCliente, "Reservas");
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+
+            if (dsResCliente.Tables["Reservas"].Rows.Count > 0)
+            {
+                retorno = true;
+            }
+
+            return retorno;
+        }
     }
 }

@@ -22,6 +22,7 @@ namespace EN
         private int conductores;
         private DateTime fechaInicio;
         private DateTime fechaFin;
+        private bool activa;
 
         private CAD.CADReservas cadReservas = new CAD.CADReservas();
 
@@ -35,6 +36,7 @@ namespace EN
             linea[3] = fechaInicio;
             linea[4] = fechaFin;
             linea[5] = conductores;
+            linea[6] = activa;
             res.Tables["Reservas"].Rows.Add(linea);
             cadReservas.AnyadirReserva(res);
 
@@ -138,6 +140,12 @@ namespace EN
         {
             get { return fechaFin; }
             set { fechaFin = value; }
+        }
+
+        public bool Activa
+        {
+            get { return activa; }
+            set { activa = value; }
         }
     }
 }
