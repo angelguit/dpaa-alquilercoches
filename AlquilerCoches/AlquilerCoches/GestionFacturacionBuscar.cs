@@ -20,14 +20,29 @@ namespace AlquilerCoches
 
         private void TButtonBuscarCliente_Click(object sender, EventArgs e)
         {
-            GestionClientesBuscar F1 = new GestionClientesBuscar(false);
+            /*GestionClientesBuscar F1 = new GestionClientesBuscar(false);
             F1.ShowDialog();
             enCliente = F1.enClientePub;
             TButtonBuscarCliente.Visible = false;
             TLabelCliente.Text = "Cliente: " + enCliente.Nombre + enCliente.Apellidos;
             TLabelCliente.Visible = true;
             TButtonCambiarCliente.Visible = true;
-            TButtonQuitarCliente.Visible = true;
+            TButtonQuitarCliente.Visible = true;*/
+            GestionClientesBuscar F1 = new GestionClientesBuscar(false);
+            F1.StartPosition = FormStartPosition.Manual;
+            F1.Location = Location;
+            F1.Left += 147;
+            F1.Top += 48;
+            F1.ShowDialog();
+            enCliente = F1.enClientePub;
+            if (enCliente.Nombre != null)
+            {
+                TButtonBuscarCliente.Visible = false;
+                TLabelCliente.Text = "Cliente: " + enCliente.Nombre + enCliente.Apellidos;
+                TLabelCliente.Visible = true;
+                TButtonCambiarCliente.Visible = true;
+                TButtonQuitarCliente.Visible = true;
+            }
         }
 
         private void TButtonQuitarCliente_Click(object sender, EventArgs e)
@@ -123,6 +138,14 @@ namespace AlquilerCoches
             dsFacturacion = enFacturacion.ObtenerFacturas(sentencia);
             dataGridBuscarFacturas.DataSource = dsFacturacion;
             dataGridBuscarFacturas.DataMember = "Facturas";
+        }
+
+        private void TButtonQuitarCliente_Click_1(object sender, EventArgs e)
+        {
+            TLabelCliente.Visible = false;
+            TButtonCambiarCliente.Visible = false;
+            TButtonQuitarCliente.Visible = false;
+            TButtonBuscarCliente.Visible = true;
         }
     }
 }

@@ -166,6 +166,11 @@ namespace AlquilerCoches
                 ds = enRe.ObtenerReservas(sentencia);
                 TDataGridViewReservas.DataSource = ds;
                 TDataGridViewReservas.DataMember = "Reservas";
+
+                for (int i = 0; i < TDataGridViewReservas.Columns.Count; i++) //esto nos servira para bloquear todas las columnas para que no se puedan editar 
+                {
+                    if (i != 0) { TDataGridViewReservas.Columns[i].ReadOnly = true; } //dejamos desbloqueada la columna de eliminar para que podamos pulsar, la columna boton no se bloquea asiq no hace falta desbloquearla
+                }
             }
         }
 
@@ -181,8 +186,8 @@ namespace AlquilerCoches
         private void TDataGridViewReservas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-           // try
-            //{
+            try
+            {
 
                 if (TDataGridViewReservas.Rows[e.RowIndex].Cells[e.ColumnIndex].ColumnIndex.ToString() == "0") // la columna 0 es el checkbox de eliminiar
                 {
@@ -224,11 +229,11 @@ namespace AlquilerCoches
                     
                 }
 
-            //}
-           /* catch (Exception ex)
+            }
+            catch (Exception ex)
             {
-                throw (ex);
-            }*/
+                MessageBox.Show("Error no hay valores en esta fila");
+            }
         }
 
         private void TButtonEliminar_Click(object sender, EventArgs e)
