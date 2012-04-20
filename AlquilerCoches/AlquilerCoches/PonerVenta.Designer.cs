@@ -348,6 +348,7 @@
             this.Controls.Add(this.TLabelModelos);
             this.Controls.Add(this.TLabelMarcas);
             this.Controls.Add(this.TGroupBoxDatosVehiculo);
+            this.DoubleBuffered = true;
             this.MaximumSize = new System.Drawing.Size(894, 608);
             this.MinimumSize = new System.Drawing.Size(894, 608);
             this.Name = "PonerVenta";
