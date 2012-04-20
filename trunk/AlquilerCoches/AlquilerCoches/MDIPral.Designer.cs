@@ -48,7 +48,6 @@
             this.facturacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TToolStripMenuItemNuevaFactura = new System.Windows.Forms.ToolStripMenuItem();
             this.TToolStripMenuItemBuscarFactura = new System.Windows.Forms.ToolStripMenuItem();
-            this.nuevoBuscarFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionVentasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ponerEnVentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mostrarVehículosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -216,8 +215,7 @@
             // 
             this.facturacionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TToolStripMenuItemNuevaFactura,
-            this.TToolStripMenuItemBuscarFactura,
-            this.nuevoBuscarFacturaToolStripMenuItem});
+            this.TToolStripMenuItemBuscarFactura});
             this.facturacionToolStripMenuItem.Name = "facturacionToolStripMenuItem";
             this.facturacionToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
             this.facturacionToolStripMenuItem.Text = "Facturacion";
@@ -225,23 +223,16 @@
             // TToolStripMenuItemNuevaFactura
             // 
             this.TToolStripMenuItemNuevaFactura.Name = "TToolStripMenuItemNuevaFactura";
-            this.TToolStripMenuItemNuevaFactura.Size = new System.Drawing.Size(187, 22);
+            this.TToolStripMenuItemNuevaFactura.Size = new System.Drawing.Size(152, 22);
             this.TToolStripMenuItemNuevaFactura.Text = "Nueva Factura";
             this.TToolStripMenuItemNuevaFactura.Click += new System.EventHandler(this.TToolStripMenuItemNuevaFactura_Click);
             // 
             // TToolStripMenuItemBuscarFactura
             // 
             this.TToolStripMenuItemBuscarFactura.Name = "TToolStripMenuItemBuscarFactura";
-            this.TToolStripMenuItemBuscarFactura.Size = new System.Drawing.Size(187, 22);
+            this.TToolStripMenuItemBuscarFactura.Size = new System.Drawing.Size(152, 22);
             this.TToolStripMenuItemBuscarFactura.Text = "Buscar Factura";
             this.TToolStripMenuItemBuscarFactura.Click += new System.EventHandler(this.TToolStripMenuItemBuscarFactura_Click);
-            // 
-            // nuevoBuscarFacturaToolStripMenuItem
-            // 
-            this.nuevoBuscarFacturaToolStripMenuItem.Name = "nuevoBuscarFacturaToolStripMenuItem";
-            this.nuevoBuscarFacturaToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
-            this.nuevoBuscarFacturaToolStripMenuItem.Text = "Nuevo buscar factura";
-            this.nuevoBuscarFacturaToolStripMenuItem.Click += new System.EventHandler(this.nuevoBuscarFacturaToolStripMenuItem_Click);
             // 
             // gestionVentasToolStripMenuItem1
             // 
@@ -323,7 +314,7 @@
             // acercadeToolStripMenuItem
             // 
             this.acercadeToolStripMenuItem.Name = "acercadeToolStripMenuItem";
-            this.acercadeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.acercadeToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.acercadeToolStripMenuItem.Text = "&Acerca de...";
             // 
             // statusStrip
@@ -595,7 +586,6 @@
         private System.Windows.Forms.ToolStripMenuItem gestionReservasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevaReservaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem buscarReservasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem nuevoBuscarFacturaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem acercadeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionPedidosToolStripMenuItem1;

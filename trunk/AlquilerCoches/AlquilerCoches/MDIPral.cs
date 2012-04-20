@@ -155,14 +155,14 @@ namespace AlquilerCoches
 
         private void TToolStripMenuItemNuevaFactura_Click(object sender, EventArgs e)
         {
-            if (Application.OpenForms["Facturacion"] != null)
+            if (Application.OpenForms["NuevaFactura"] != null)
             {
 
-                Application.OpenForms["Facturacion"].Activate();
+                Application.OpenForms["NuevaFactura"].Activate();
             }
             else
             {
-                Facturacion F6 = new Facturacion();
+                NuevaFactura F6 = new NuevaFactura();
                 F6.MdiParent = this;
                 F6.Show();
                 //F6.WindowState = FormWindowState.Maximized;
