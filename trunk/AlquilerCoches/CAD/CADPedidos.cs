@@ -168,7 +168,7 @@ namespace CAD
                 }
 
                 SqlConnection conexion = new SqlConnection(cadenaConexion);
-                String consulta = "Select * from Pedidos where DNI in (" + frase + ")";
+                String consulta = "Select * from Pedidos where IDTransaccion in (" + frase + ")";
                 SqlDataAdapter daPedidos = new SqlDataAdapter(consulta, conexion);
                 daPedidos.MissingSchemaAction = MissingSchemaAction.AddWithKey;
                 daPedidos.Fill(dsPedidos, nombreTabla);
