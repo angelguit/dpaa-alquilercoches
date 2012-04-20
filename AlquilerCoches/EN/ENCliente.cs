@@ -234,6 +234,11 @@ namespace EN
         {
             return cadCliente.ReservaFavorita(dni);
         }
+
+        public bool ReservaActiva()
+        {
+            return cadCliente.ReservasActiva(dni);
+        }
     }
 }
 

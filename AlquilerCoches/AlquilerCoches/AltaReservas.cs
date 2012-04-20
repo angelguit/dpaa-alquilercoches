@@ -15,6 +15,8 @@ namespace AlquilerCoches
         private ErrorProvider err2 = new ErrorProvider();
         private ErrorProvider err3 = new ErrorProvider();
         private ErrorProvider err4 = new ErrorProvider();
+        private string mens, provincias, ciudades;
+        private EN.ENCliente enCliente = new EN.ENCliente();
 
         public AltaReservas(EN.ENReservas enRe, string texto)
         {
@@ -52,8 +54,7 @@ namespace AlquilerCoches
             
             
         }
-        private string mens,provincias,ciudades;
-        private EN.ENCliente enCliente = new EN.ENCliente();
+
         private void RellenarMarcas(DataSet dsMar)
         {
             TComboBoxMarca.DataSource = dsMar.Tables["Marcas"];
@@ -96,6 +97,7 @@ namespace AlquilerCoches
             RellenarCategoria(dsRes); 
         }
 
+
         private void TButtonBuscarCliente_Click(object sender, EventArgs e)
         {
             GestionClientesBuscar F1 = new GestionClientesBuscar(false);
@@ -108,26 +110,56 @@ namespace AlquilerCoches
             enCliente = F1.enClientePub;
             if (enCliente.Nombre != null)
             {
-                provincias = F1.provincias;
-                ciudades = F1.ciudades;
-                TLabelNombre.Text = "Nombre: " + enCliente.Nombre + "Apellidos: " + enCliente.Apellidos;
-                TLabelDNI.Text = "DNI: " + enCliente.DNI + " " + "Telf: " + enCliente.Telefono;
-                TLabelDirec.Text = "Direccion: " + enCliente.Direccion;
-                TLabelDNI.Visible = true;
-                TLabelNombre.Visible = true;
-                TLabelDirec.Visible = true;
-                TButtonBuscarCliente.Visible = false;
-                TLabelInfoCliente.Visible = true;
-                TButtonBuscarOtro.Visible = true;
-                TButtonEditar.Visible = true;
-                TRectangleShapeCliente.Visible = true;
-         
-                if (enCliente.ReservasCliente() > 0)
+                if (enCliente.ReservaActiva())
                 {
-                    TRadioButtonFavorito.Visible = true;
-                    TRadioButtonUltimoCoche.Visible = true;
-                    TLabelResRapida.Visible = true;
+                    if (MessageBox.Show("El usuario seleccionado ya tiene una reserva activa,¿Desea continuar?", "Usuario con reserva activa", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2) == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        provincias = F1.provincias;
+                        ciudades = F1.ciudades;
+                        TLabelNombre.Text = "Nombre: " + enCliente.Nombre + "Apellidos: " + enCliente.Apellidos;
+                        TLabelDNI.Text = "DNI: " + enCliente.DNI + " " + "Telf: " + enCliente.Telefono;
+                        TLabelDirec.Text = "Direccion: " + enCliente.Direccion;
+                        TLabelDNI.Visible = true;
+                        TLabelNombre.Visible = true;
+                        TLabelDirec.Visible = true;
+                        TButtonBuscarCliente.Visible = false;
+                        TLabelInfoCliente.Visible = true;
+                        TButtonBuscarOtro.Visible = true;
+                        TButtonEditar.Visible = true;
+                        TRectangleShapeCliente.Visible = true;
+
+                        if (enCliente.ReservasCliente() > 0)
+                        {
+                            TRadioButtonFavorito.Visible = true;
+                            TRadioButtonUltimoCoche.Visible = true;
+                            TLabelResRapida.Visible = true;
+                        }
+                    }
                 }
+                else
+                {
+                    provincias = F1.provincias;
+                    ciudades = F1.ciudades;
+                    TLabelNombre.Text = "Nombre: " + enCliente.Nombre + "Apellidos: " + enCliente.Apellidos;
+                    TLabelDNI.Text = "DNI: " + enCliente.DNI + " " + "Telf: " + enCliente.Telefono;
+                    TLabelDirec.Text = "Direccion: " + enCliente.Direccion;
+                    TLabelDNI.Visible = true;
+                    TLabelNombre.Visible = true;
+                    TLabelDirec.Visible = true;
+                    TButtonBuscarCliente.Visible = false;
+                    TLabelInfoCliente.Visible = true;
+                    TButtonBuscarOtro.Visible = true;
+                    TButtonEditar.Visible = true;
+                    TRectangleShapeCliente.Visible = true;
+
+                    if (enCliente.ReservasCliente() > 0)
+                    {
+                        TRadioButtonFavorito.Visible = true;
+                        TRadioButtonUltimoCoche.Visible = true;
+                        TLabelResRapida.Visible = true;
+                    }
+                }
+         
             }
         }
 
@@ -221,6 +253,7 @@ namespace AlquilerCoches
                 enRe.FechaInicio = TDateTimePickerFechaInicio.Value;
                 enRe.Matricula = TComboBoxMatricula.Text.ToString();
                 enRe.Modelo = TComboBoxModelo.Text.ToString();
+                enRe.Activa = true;
                 enRe.AnyadirReserva();
                 enVe.ObtenerDatosVehiculos();
                 enVe.Estado = "Reservado";
@@ -367,6 +400,7 @@ namespace AlquilerCoches
             else
             {
                 err4.Clear();
+                
             }
         }
 
