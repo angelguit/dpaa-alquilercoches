@@ -128,6 +128,7 @@ namespace AlquilerCoches
                     errorProvider1.Clear();
                     if (sentencia == "")
                     {
+                        MessageBox.Show(TDateTimePickerFechaInicio.Value.ToString());
                         sentencia += " DiaFacturacion between " + Convert.ToDateTime(TDateTimePickerFechaInicio.Value.ToString()) + " and " + Convert.ToDateTime(TDateTimePickerFechaFin.Value.ToString());
                     }
                     else
