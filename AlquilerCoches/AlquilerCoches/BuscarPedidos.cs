@@ -85,7 +85,7 @@ namespace AlquilerCoches
         {
             if (!Regex.Match(TNametextbox.Text, @"^[A-Za-z]{5,20}$").Success)
             {
-                errorProvider1.SetError(TNametextbox, "Nombre incorrecta, caracteres invalidos");
+                errorProvider1.SetError(TNametextbox, "Nombre incorrecto, caracteres invalidos");
                 incorrecto = true;
             }
             else { errorProvider1.SetError(TNametextbox, ""); }
@@ -183,7 +183,7 @@ namespace AlquilerCoches
 
                 if (TDataGridViewPedidos.Rows[e.RowIndex].Cells[e.ColumnIndex].ColumnIndex.ToString()=="0") // la columna 0 es el checkbox de eliminiar
                 {
-                    string id = TDataGridViewPedidos.Rows[e.RowIndex].Cells[2].Value.ToString(); //el indice 2 hace referencia al dni del datagridview
+                    string id = TDataGridViewPedidos.Rows[e.RowIndex].Cells[2].Value.ToString(); 
                     
                     if (arrayid.Count == 0)
                     {
@@ -214,8 +214,8 @@ namespace AlquilerCoches
                         string cantidad = TDataGridViewPedidos.Rows[e.RowIndex].Cells[6].Value.ToString();
                         string observaciones = TDataGridViewPedidos.Rows[e.RowIndex].Cells[7].Value.ToString();
                         string estado = TDataGridViewPedidos.Rows[e.RowIndex].Cells[8].Value.ToString();
-                        string empleado = TDataGridViewPedidos.Rows[e.RowIndex].Cells[9].Value.ToString();
-                        string tipoenvio = TDataGridViewPedidos.Rows[e.RowIndex].Cells[10].Value.ToString();
+                        string tipoenvio = TDataGridViewPedidos.Rows[e.RowIndex].Cells[9].Value.ToString();
+                        string empleado = TDataGridViewPedidos.Rows[e.RowIndex].Cells[10].Value.ToString();
 
                         string nombrebotonguardar = "Guardar Cambios";
 
