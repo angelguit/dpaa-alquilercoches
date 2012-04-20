@@ -433,7 +433,7 @@ namespace AlquilerCoches
             TVendedorText.Text = "";
             //Combobox
             TProveecomboBox1.Text ="";
-            TMarcacomboBox2.SelectedIndex=0;
+            TMarcacomboBox2.Text="";
             TModelocomboBox3.Text="";
             //Radiobutton
             TEnvioButtonOrdinario.Checked = true;
@@ -445,6 +445,11 @@ namespace AlquilerCoches
         {
             BuscarPedidos buscar = new BuscarPedidos();
             buscar.Show();
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

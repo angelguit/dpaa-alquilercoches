@@ -60,6 +60,7 @@
             this.TButtonCerrar = new System.Windows.Forms.Button();
             this.TButtonBorrar = new System.Windows.Forms.Button();
             this.TButtonOK = new System.Windows.Forms.Button();
+            this.TLabelTitulo = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.TEnviogroupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -445,6 +446,20 @@
             this.TButtonOK.UseVisualStyleBackColor = true;
             this.TButtonOK.Click += new System.EventHandler(this.TButtonOK_Click);
             // 
+            // TLabelTitulo
+            // 
+            this.TLabelTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.TLabelTitulo.AutoSize = true;
+            this.TLabelTitulo.BackColor = System.Drawing.Color.Transparent;
+            this.TLabelTitulo.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TLabelTitulo.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.TLabelTitulo.Location = new System.Drawing.Point(-1, -1);
+            this.TLabelTitulo.Name = "TLabelTitulo";
+            this.TLabelTitulo.Size = new System.Drawing.Size(94, 18);
+            this.TLabelTitulo.TabIndex = 41;
+            this.TLabelTitulo.Text = "Datos del Pedido";
+            // 
             // GestionPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -452,6 +467,7 @@
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(878, 570);
+            this.Controls.Add(this.TLabelTitulo);
             this.Controls.Add(this.TButtonBuscar);
             this.Controls.Add(this.TButtonOK);
             this.Controls.Add(this.TButtonBorrar);
@@ -460,6 +476,7 @@
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GestionPedidos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestión de Pedidos";
             this.Load += new System.EventHandler(this.GestionPedidos_Load);
             this.groupBox1.ResumeLayout(false);
@@ -471,6 +488,7 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -507,5 +525,6 @@
         private System.Windows.Forms.Button TButtonBorrar;
         private System.Windows.Forms.Button TButtonOK;
         private System.Windows.Forms.Button TButtonBuscar;
+        private System.Windows.Forms.Label TLabelTitulo;
     }
 }
