@@ -128,6 +128,7 @@ namespace AlquilerCoches
                     envio = "Urgente";
                 }
 
+                string proveedor = TProveecomboBox1.Text.ToString();
                 string id= TIDtextBox.Text.ToString();
                 string marca = TMarcacomboBox2.Text.ToString();
                 string modelo = TModelocomboBox3.Text.ToString();
@@ -175,6 +176,10 @@ namespace AlquilerCoches
 
                 TDataGridViewPedidos.DataSource = ds;
                 TDataGridViewPedidos.DataMember = "Pedidos";
+                for (int i = 0; i < TDataGridViewPedidos.Columns.Count; i++) //esto nos servira para bloquear todas las columnas para que no se puedan editar 
+                {
+                    if (i != 0) { TDataGridViewPedidos.Columns[i].ReadOnly = true; } //dejamos desbloqueada la columna de eliminar para que podamos pulsar, la columna boton no se bloquea asiq no hace falta desbloquearla
+                }
          //   }
         }
 

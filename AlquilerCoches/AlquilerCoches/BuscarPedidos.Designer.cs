@@ -287,7 +287,7 @@
             this.TButtonCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.TButtonCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.TButtonCerrar.Image = global::AlquilerCoches.Properties.Resources.Close_icon;
-            this.TButtonCerrar.Location = new System.Drawing.Point(291, 482);
+            this.TButtonCerrar.Location = new System.Drawing.Point(294, 482);
             this.TButtonCerrar.Name = "TButtonCerrar";
             this.TButtonCerrar.Size = new System.Drawing.Size(121, 57);
             this.TButtonCerrar.TabIndex = 31;
@@ -301,9 +301,9 @@
             this.TButtonEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.TButtonEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.TButtonEliminar.Image = global::AlquilerCoches.Properties.Resources.Delete_icon;
-            this.TButtonEliminar.Location = new System.Drawing.Point(99, 482);
+            this.TButtonEliminar.Location = new System.Drawing.Point(95, 482);
             this.TButtonEliminar.Name = "TButtonEliminar";
-            this.TButtonEliminar.Size = new System.Drawing.Size(75, 75);
+            this.TButtonEliminar.Size = new System.Drawing.Size(120, 57);
             this.TButtonEliminar.TabIndex = 34;
             this.TButtonEliminar.Text = "Delete";
             this.TButtonEliminar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
