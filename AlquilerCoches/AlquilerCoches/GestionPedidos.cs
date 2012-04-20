@@ -433,7 +433,7 @@ namespace AlquilerCoches
             TVendedorText.Text = "";
             //Combobox
             TProveecomboBox1.Text ="";
-            TMarcacomboBox2.Text = "";
+            TMarcacomboBox2.SelectedIndex=0;
             TModelocomboBox3.Text="";
             //Radiobutton
             TEnvioButtonOrdinario.Checked = true;
