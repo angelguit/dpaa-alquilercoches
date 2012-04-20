@@ -431,6 +431,54 @@ namespace AlquilerCoches
             }
         }
 
+        private void darAltaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["GestionVehiculos"] != null)
+            {
+
+                Application.OpenForms["GestionVehiculos"].Activate();
+            }
+            else
+            {
+                GestionVehiculos F2 = new GestionVehiculos();
+                F2.MdiParent = this;
+                F2.setTipo("Insertar");
+                F2.Show();
+            }
+        }
+
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["GestionVehiculos"] != null)
+            {
+
+                Application.OpenForms["GestionVehiculos"].Activate();
+            }
+            else
+            {
+                GestionVehiculos F2 = new GestionVehiculos();
+                F2.MdiParent = this;
+                F2.setTipo("Editar");
+                F2.Show();
+            }
+        }
+
+        private void borrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["GestionVehiculos"] != null)
+            {
+
+                Application.OpenForms["GestionVehiculos"].Activate();
+            }
+            else
+            {
+                GestionVehiculos F2 = new GestionVehiculos();
+                F2.MdiParent = this;
+                F2.setTipo("Borrar");
+                F2.Show();
+            }
+        }
+
      
      }   
 }
