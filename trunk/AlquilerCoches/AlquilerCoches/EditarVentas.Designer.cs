@@ -66,7 +66,7 @@
             this.TButtonAtras.Location = new System.Drawing.Point(21, 454);
             this.TButtonAtras.Name = "TButtonAtras";
             this.TButtonAtras.Size = new System.Drawing.Size(75, 23);
-            this.TButtonAtras.TabIndex = 59;
+            this.TButtonAtras.TabIndex = 10;
             this.TButtonAtras.Text = "Salir";
             this.TButtonAtras.UseVisualStyleBackColor = true;
             this.TButtonAtras.Click += new System.EventHandler(this.TButtonAtras_Click);
@@ -167,7 +167,7 @@
             this.TButtonBorrar.Location = new System.Drawing.Point(448, 187);
             this.TButtonBorrar.Name = "TButtonBorrar";
             this.TButtonBorrar.Size = new System.Drawing.Size(72, 33);
-            this.TButtonBorrar.TabIndex = 50;
+            this.TButtonBorrar.TabIndex = 9;
             this.TButtonBorrar.Text = "Borrar";
             this.TButtonBorrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.TButtonBorrar.UseVisualStyleBackColor = true;
@@ -188,7 +188,7 @@
             this.TTextBoxMeses.Location = new System.Drawing.Point(142, 130);
             this.TTextBoxMeses.Name = "TTextBoxMeses";
             this.TTextBoxMeses.Size = new System.Drawing.Size(84, 20);
-            this.TTextBoxMeses.TabIndex = 48;
+            this.TTextBoxMeses.TabIndex = 5;
             this.TTextBoxMeses.Text = "Meses";
             this.TTextBoxMeses.Click += new System.EventHandler(this.TTextBoxMeses_Click);
             this.TTextBoxMeses.Leave += new System.EventHandler(this.TTextBoxMeses_Leave);
@@ -199,7 +199,7 @@
             this.TCheckBoxGarantia.Location = new System.Drawing.Point(80, 133);
             this.TCheckBoxGarantia.Name = "TCheckBoxGarantia";
             this.TCheckBoxGarantia.Size = new System.Drawing.Size(56, 17);
-            this.TCheckBoxGarantia.TabIndex = 47;
+            this.TCheckBoxGarantia.TabIndex = 4;
             this.TCheckBoxGarantia.Text = "Sí/No";
             this.TCheckBoxGarantia.UseVisualStyleBackColor = true;
             this.TCheckBoxGarantia.CheckedChanged += new System.EventHandler(this.TCheckBoxGarantia_CheckedChanged);
@@ -211,7 +211,7 @@
             this.TButtonCancelar.Location = new System.Drawing.Point(324, 187);
             this.TButtonCancelar.Name = "TButtonCancelar";
             this.TButtonCancelar.Size = new System.Drawing.Size(86, 33);
-            this.TButtonCancelar.TabIndex = 46;
+            this.TButtonCancelar.TabIndex = 8;
             this.TButtonCancelar.Text = "Cancelar";
             this.TButtonCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.TButtonCancelar.UseVisualStyleBackColor = true;
@@ -224,7 +224,7 @@
             this.TButtonAceptar.Location = new System.Drawing.Point(232, 187);
             this.TButtonAceptar.Name = "TButtonAceptar";
             this.TButtonAceptar.Size = new System.Drawing.Size(86, 33);
-            this.TButtonAceptar.TabIndex = 45;
+            this.TButtonAceptar.TabIndex = 7;
             this.TButtonAceptar.Text = "Guardar";
             this.TButtonAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.TButtonAceptar.UseVisualStyleBackColor = true;
@@ -235,7 +235,7 @@
             this.TTextBoxPrecioVenta.Location = new System.Drawing.Point(80, 157);
             this.TTextBoxPrecioVenta.Name = "TTextBoxPrecioVenta";
             this.TTextBoxPrecioVenta.Size = new System.Drawing.Size(146, 20);
-            this.TTextBoxPrecioVenta.TabIndex = 44;
+            this.TTextBoxPrecioVenta.TabIndex = 6;
             this.TTextBoxPrecioVenta.Leave += new System.EventHandler(this.TTextBoxPrecioVenta_Leave);
             // 
             // TLabelPrecioVenta
@@ -252,7 +252,7 @@
             this.TTextBoxKm.Location = new System.Drawing.Point(80, 105);
             this.TTextBoxKm.Name = "TTextBoxKm";
             this.TTextBoxKm.Size = new System.Drawing.Size(146, 20);
-            this.TTextBoxKm.TabIndex = 40;
+            this.TTextBoxKm.TabIndex = 3;
             this.TTextBoxKm.Leave += new System.EventHandler(this.TTextBoxKm_Leave);
             // 
             // TLabelKM
@@ -269,7 +269,7 @@
             this.TTextBoxModelo.Location = new System.Drawing.Point(80, 79);
             this.TTextBoxModelo.Name = "TTextBoxModelo";
             this.TTextBoxModelo.Size = new System.Drawing.Size(146, 20);
-            this.TTextBoxModelo.TabIndex = 38;
+            this.TTextBoxModelo.TabIndex = 2;
             this.TTextBoxModelo.Leave += new System.EventHandler(this.TTextBoxModelo_Leave);
             // 
             // TLabelModelo
@@ -286,7 +286,7 @@
             this.TTextBoxMarca.Location = new System.Drawing.Point(80, 49);
             this.TTextBoxMarca.Name = "TTextBoxMarca";
             this.TTextBoxMarca.Size = new System.Drawing.Size(146, 20);
-            this.TTextBoxMarca.TabIndex = 36;
+            this.TTextBoxMarca.TabIndex = 1;
             this.TTextBoxMarca.Leave += new System.EventHandler(this.TTextBoxMarca_Leave);
             // 
             // TLabelGarantia
