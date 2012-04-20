@@ -14,6 +14,7 @@ namespace AlquilerCoches
         private ErrorProvider err1 = new ErrorProvider();
         private ErrorProvider err2 = new ErrorProvider();
         private ErrorProvider err3 = new ErrorProvider();
+        private ErrorProvider err4 = new ErrorProvider();
 
         public AltaReservas(EN.ENReservas enRe, string texto)
         {
@@ -189,11 +190,16 @@ namespace AlquilerCoches
             {
                 err3.Clear();
             }
-  
+
             if (TLabelDNI.Visible == false)
             {
                 mens = "Falta seleccionar un cliente";
                 retorno = false;
+                err4.SetError(TButtonBuscarCliente, "Falta seleccionar cliente");
+            }
+            else
+            {
+                err4.Clear();
             }
             return retorno;
         }
@@ -329,5 +335,18 @@ namespace AlquilerCoches
                 err3.Clear();
             }
         }
+
+        private void TLabelNombre_VisibleChanged(object sender, EventArgs e)
+        {
+            if ( TLabelNombre.Visible == false)
+            {
+                err4.SetError(TButtonBuscarCliente, "Falta seleccionar cliente");
+            }
+            else
+            {
+                err4.Clear();
+            }
+        }
+
     }
 }

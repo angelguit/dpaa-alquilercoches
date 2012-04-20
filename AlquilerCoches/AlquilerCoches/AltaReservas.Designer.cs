@@ -42,11 +42,8 @@
             this.TLabelFechaFin = new System.Windows.Forms.Label();
             this.TDateTimePickerFechaFin = new System.Windows.Forms.DateTimePicker();
             this.TButtonReserva = new System.Windows.Forms.Button();
-            this.TLabelErrorFecha = new System.Windows.Forms.Label();
             this.TLabelMarca = new System.Windows.Forms.Label();
             this.TComboBoxMarca = new System.Windows.Forms.ComboBox();
-            this.TLabelSinCoche = new System.Windows.Forms.Label();
-            this.TLabelSinConductores = new System.Windows.Forms.Label();
             this.TButtonCerrar = new System.Windows.Forms.Button();
             this.TLabelInfoCliente = new System.Windows.Forms.Label();
             this.TButtonEditar = new System.Windows.Forms.Button();
@@ -219,19 +216,6 @@
             this.TButtonReserva.UseVisualStyleBackColor = true;
             this.TButtonReserva.Click += new System.EventHandler(this.TButtonReserva_Click);
             // 
-            // TLabelErrorFecha
-            // 
-            this.TLabelErrorFecha.AutoSize = true;
-            this.TLabelErrorFecha.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelErrorFecha.Font = new System.Drawing.Font("Broadway", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TLabelErrorFecha.ForeColor = System.Drawing.Color.Red;
-            this.TLabelErrorFecha.Location = new System.Drawing.Point(468, 388);
-            this.TLabelErrorFecha.Name = "TLabelErrorFecha";
-            this.TLabelErrorFecha.Size = new System.Drawing.Size(225, 12);
-            this.TLabelErrorFecha.TabIndex = 42;
-            this.TLabelErrorFecha.Text = "Fecha fin inferior a fecha inicio";
-            this.TLabelErrorFecha.Visible = false;
-            // 
             // TLabelMarca
             // 
             this.TLabelMarca.AutoSize = true;
@@ -251,30 +235,6 @@
             this.TComboBoxMarca.Size = new System.Drawing.Size(121, 21);
             this.TComboBoxMarca.TabIndex = 44;
             this.TComboBoxMarca.TextChanged += new System.EventHandler(this.TComboBoxMarca_TextChanged);
-            // 
-            // TLabelSinCoche
-            // 
-            this.TLabelSinCoche.AutoSize = true;
-            this.TLabelSinCoche.Font = new System.Drawing.Font("Broadway", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TLabelSinCoche.ForeColor = System.Drawing.Color.Red;
-            this.TLabelSinCoche.Location = new System.Drawing.Point(200, 389);
-            this.TLabelSinCoche.Name = "TLabelSinCoche";
-            this.TLabelSinCoche.Size = new System.Drawing.Size(188, 12);
-            this.TLabelSinCoche.TabIndex = 45;
-            this.TLabelSinCoche.Text = "Falta seleccionar vehiculo";
-            this.TLabelSinCoche.Visible = false;
-            // 
-            // TLabelSinConductores
-            // 
-            this.TLabelSinConductores.AutoSize = true;
-            this.TLabelSinConductores.Font = new System.Drawing.Font("Broadway", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TLabelSinConductores.ForeColor = System.Drawing.Color.Red;
-            this.TLabelSinConductores.Location = new System.Drawing.Point(503, 272);
-            this.TLabelSinConductores.Name = "TLabelSinConductores";
-            this.TLabelSinConductores.Size = new System.Drawing.Size(143, 12);
-            this.TLabelSinConductores.TabIndex = 46;
-            this.TLabelSinConductores.Text = "Faltan  conductores";
-            this.TLabelSinConductores.Visible = false;
             // 
             // TButtonCerrar
             // 
@@ -385,6 +345,7 @@
             this.TLabelNombre.TabIndex = 40;
             this.TLabelNombre.Text = "label1";
             this.TLabelNombre.Visible = false;
+            this.TLabelNombre.VisibleChanged += new System.EventHandler(this.TLabelNombre_VisibleChanged);
             // 
             // TLabelDirec
             // 
@@ -466,11 +427,8 @@
             this.Controls.Add(this.TButtonBuscarOtro);
             this.Controls.Add(this.TLabelInfoCliente);
             this.Controls.Add(this.TButtonCerrar);
-            this.Controls.Add(this.TLabelSinConductores);
-            this.Controls.Add(this.TLabelSinCoche);
             this.Controls.Add(this.TComboBoxMarca);
             this.Controls.Add(this.TLabelMarca);
-            this.Controls.Add(this.TLabelErrorFecha);
             this.Controls.Add(this.TButtonReserva);
             this.Controls.Add(this.TDateTimePickerFechaFin);
             this.Controls.Add(this.TLabelFechaFin);
@@ -518,18 +476,14 @@
         private System.Windows.Forms.Label TLabelFechaFin;
         private System.Windows.Forms.DateTimePicker TDateTimePickerFechaFin;
         private System.Windows.Forms.Button TButtonReserva;
-        private System.Windows.Forms.Label TLabelErrorFecha;
         private System.Windows.Forms.Label TLabelMarca;
         private System.Windows.Forms.ComboBox TComboBoxMarca;
-        private System.Windows.Forms.Label TLabelSinCoche;
-        private System.Windows.Forms.Label TLabelSinConductores;
         private System.Windows.Forms.Button TButtonCerrar;
         private System.Windows.Forms.Label TLabelInfoCliente;
         private System.Windows.Forms.Button TButtonEditar;
         private System.Windows.Forms.Button TButtonBuscarOtro;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape TRectangleShapeCliente;
-        private Microsoft.VisualBasic.PowerPacks.RectangleShape TRectangleShaperReservas;
         private System.Windows.Forms.Label TLabelInfoVehiculo;
         private System.Windows.Forms.Label TLabelDNI;
         private System.Windows.Forms.Label TLabelNombre;
@@ -538,5 +492,6 @@
         private System.Windows.Forms.RadioButton TRadioButtonFavorito;
         private System.Windows.Forms.RadioButton TRadioButtonUltimoCoche;
         private System.Windows.Forms.Label TLabelResRapida;
+        private Microsoft.VisualBasic.PowerPacks.RectangleShape TRectangleShaperReservas;
     }
 }
