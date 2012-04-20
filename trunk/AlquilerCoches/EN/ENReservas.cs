@@ -26,6 +26,11 @@ namespace EN
 
         private CAD.CADReservas cadReservas = new CAD.CADReservas();
 
+        public int NumeroUltimaReserva()
+        {
+            return cadReservas.NumeroUltimaReserva();
+        }
+
         public void AnyadirReserva()
         {
             DataSet res = new DataSet();
@@ -147,5 +152,7 @@ namespace EN
             get { return activa; }
             set { activa = value; }
         }
+
+            
     }
 }

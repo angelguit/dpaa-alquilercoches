@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AltaReservas));
             this.TButtonBuscarCliente = new System.Windows.Forms.Button();
             this.TComboBoxCategoria = new System.Windows.Forms.ComboBox();
             this.TComboBoxModelo = new System.Windows.Forms.ComboBox();
@@ -61,7 +59,6 @@
             this.TRadioButtonFavorito = new System.Windows.Forms.RadioButton();
             this.TRadioButtonUltimoCoche = new System.Windows.Forms.RadioButton();
             this.TLabelResRapida = new System.Windows.Forms.Label();
-            this.TPrintFormReservas = new Microsoft.VisualBasic.PowerPacks.Printing.PrintForm(this.components);
             this.SuspendLayout();
             // 
             // TButtonBuscarCliente
@@ -413,14 +410,6 @@
             this.TLabelResRapida.Text = "Reserva Rápida:";
             this.TLabelResRapida.Visible = false;
             // 
-            // TPrintFormReservas
-            // 
-            this.TPrintFormReservas.DocumentName = "document";
-            this.TPrintFormReservas.Form = this;
-            this.TPrintFormReservas.PrintAction = System.Drawing.Printing.PrintAction.PrintToPreview;
-            this.TPrintFormReservas.PrinterSettings = ((System.Drawing.Printing.PrinterSettings)(resources.GetObject("TPrintFormReservas.PrinterSettings")));
-            this.TPrintFormReservas.PrintFileName = null;
-            // 
             // AltaReservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -504,6 +493,5 @@
         private System.Windows.Forms.RadioButton TRadioButtonUltimoCoche;
         private System.Windows.Forms.Label TLabelResRapida;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape TRectangleShaperReservas;
-        private Microsoft.VisualBasic.PowerPacks.Printing.PrintForm TPrintFormReservas;
     }
 }
