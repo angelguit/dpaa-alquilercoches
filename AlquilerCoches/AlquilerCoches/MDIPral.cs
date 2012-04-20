@@ -171,14 +171,14 @@ namespace AlquilerCoches
 
         private void TToolStripMenuItemBuscarFactura_Click(object sender, EventArgs e)
         {
-            if (Application.OpenForms["GestionFacturacion"] != null)
+            if (Application.OpenForms["GestionFacturacionBuscar"] != null)
             {
 
-                Application.OpenForms["GestionFacturacion"].Activate();
+                Application.OpenForms["GestionFacturacionBuscar"].Activate();
             }
             else
             {
-                GestionFacturacion F7 = new GestionFacturacion();
+                GestionFacturacionBuscar F7 = new GestionFacturacionBuscar();
                 F7.MdiParent = this;
                 F7.Show();
                 //F7.WindowState = FormWindowState.Maximized;

@@ -128,12 +128,13 @@ namespace AlquilerCoches
                     errorProvider1.Clear();
                     if (sentencia == "")
                     {
-                        MessageBox.Show(TDateTimePickerFechaInicio.Value.ToString());
-                        sentencia += " DiaFacturacion between " + Convert.ToDateTime(TDateTimePickerFechaInicio.Value.ToString()) + " and " + Convert.ToDateTime(TDateTimePickerFechaFin.Value.ToString());
+                        sentencia += " DiaFacturacion BETWEEN '" + TDateTimePickerFechaInicio.Value + "' AND '" + TDateTimePickerFechaFin.Value + "'";
+                        //sentencia += " and FechaFin <= '" + TDateTimePickerFechaFin.Value + "'";
                     }
                     else
                     {
-                        sentencia += " and DiaFacturacion between'" + Convert.ToDateTime(TDateTimePickerFechaFin.Value.ToString()) + "' and '" + Convert.ToDateTime(TDateTimePickerFechaInicio.Value.ToString()) + "'";
+                        sentencia += " and DiaFacturacion BETWEEN '" + TDateTimePickerFechaFin.Value+ "' and '" +TDateTimePickerFechaInicio.Value+ "'";
+                       // sentencia += " and FechaFin <= '" + Convert.ToDateTime(TDateTimePickerFechaFin.Value.ToString()) + "'";
                     }
                 }
                 else
@@ -163,7 +164,7 @@ namespace AlquilerCoches
 
                 TButtonEliminar.Visible = true;
                 DataSet ds = new DataSet();
-
+                MessageBox.Show(sentencia);
                 eliminado = sentencia;
                 ds = enFa.ObtenerFacturas(sentencia);
                 dataGridBuscarFacturas.DataSource = ds;
