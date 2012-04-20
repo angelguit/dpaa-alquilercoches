@@ -48,5 +48,6 @@ namespace AlquilerCoches
             TRectangleShapeCliente.Visible = true;
              */
         }
+
     }
 }

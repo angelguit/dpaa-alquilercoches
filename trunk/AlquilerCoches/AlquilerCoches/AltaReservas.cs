@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Collections;
 
 namespace AlquilerCoches
 {
@@ -51,6 +52,7 @@ namespace AlquilerCoches
             TComboBoxMatricula.Items.Add(enVe.Matricula.ToString());
             TDateTimePickerFechaFin.Value = enRe.FechaFin;
             TDateTimePickerFechaInicio.Value = enRe.FechaInicio;
+            TButtonReserva.Text = texto;
             
             
         }
@@ -259,6 +261,7 @@ namespace AlquilerCoches
                 enVe.Estado = "Reservado";
                 enVe.EditarVehiculo();
                 MessageBox.Show("Reserva realizada con éxito", "Nueva Reserva", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                TPrintFormReservas.Print(this,Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.PrintOption.Scrollable);
                 Close();
             }
         }
