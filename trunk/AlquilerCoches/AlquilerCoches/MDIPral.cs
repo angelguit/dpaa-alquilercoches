@@ -396,6 +396,41 @@ namespace AlquilerCoches
             }
         }
 
+        private void menuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void realizarPedidoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["GestionPedidos"] != null)
+            {
+
+                Application.OpenForms["GestionPedidos"].Activate();
+            }
+            else
+            {
+                GestionPedidos formPedidos = new GestionPedidos();
+                formPedidos.MdiParent = this;
+                formPedidos.Show();
+            }
+        }
+
+        private void buscarPedidoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["BuscarPedidos"] != null)
+            {
+
+                Application.OpenForms["BuscarPedidos"].Activate();
+            }
+            else
+            {
+                BuscarPedidos formBuscarPedido = new BuscarPedidos();
+                formBuscarPedido.MdiParent = this;
+                formBuscarPedido.Show();
+            }
+        }
+
      
      }   
 }
