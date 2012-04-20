@@ -417,7 +417,14 @@ namespace AlquilerCoches
                         break;
                     case "Anyadir":
                         guardaCampos();
-                        vehiculos.AnyadirVehiculo();
+                        if (vehiculos.ComprobarDuplicados())
+                        {
+                            MessageBox.Show("Exite un vehiculo registrado con la misma matricula", "Error");
+                        }
+                        else
+                        {
+                            vehiculos.AnyadirVehiculo();
+                        }
                         break;
                 }
 
