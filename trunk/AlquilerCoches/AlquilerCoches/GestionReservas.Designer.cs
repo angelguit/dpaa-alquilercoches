@@ -59,7 +59,6 @@
             this.TDataGridViewReservas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TDataGridViewReservas.Location = new System.Drawing.Point(130, 48);
             this.TDataGridViewReservas.Name = "TDataGridViewReservas";
-            this.TDataGridViewReservas.ReadOnly = true;
             this.TDataGridViewReservas.Size = new System.Drawing.Size(598, 318);
             this.TDataGridViewReservas.TabIndex = 0;
             this.TDataGridViewReservas.Visible = false;

@@ -111,8 +111,8 @@ namespace EN
         public void ObtenerDatosVehiculos()
         {
             DataSet resultado = new DataSet();
-            try
-            {
+          //  try
+           // {
                 resultado = cadVehiculo.ObtenerDatosVehiculo(matricula);
                 
                 marca = resultado.Tables["Vehiculo"].Rows[0][0].ToString();
@@ -125,11 +125,11 @@ namespace EN
                 estado = resultado.Tables["Vehiculo"].Rows[0][7].ToString();
                 categoria = resultado.Tables["Vehiculo"].Rows[0][8].ToString();
 
-            }
-            catch (Exception ex)
-            {
-                throw (ex);
-            }
+          //  }
+          //  catch (Exception ex)
+           // {
+              //  throw (ex);
+           // }
 
             //return resultado;
         }
