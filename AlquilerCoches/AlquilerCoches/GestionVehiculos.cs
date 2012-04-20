@@ -279,13 +279,15 @@ namespace AlquilerCoches
                     vehiculos.ObtenerModelo();
                     TListBoxModelos.Items.AddRange(vehiculos.ListaModelos.ToArray());
                     
-                    TListBoxMatriculas.Items.Clear();
-                    vehiculos.ObtenerMatriculas();
-                    TListBoxMatriculas.Items.AddRange(vehiculos.ListaMatriculas.ToArray());
-                    
                     if (accion == "Anyadir")
                     {
                         TListBoxModelos.Items.Add("[Otra Modelo]");
+                    }
+                    else
+                    {
+                        TListBoxMatriculas.Items.Clear();
+                        vehiculos.ObtenerMatriculas();
+                        TListBoxMatriculas.Items.AddRange(vehiculos.ListaMatriculas.ToArray());
                     }
                 }
             }
@@ -304,6 +306,7 @@ namespace AlquilerCoches
                         TTextBoxModelo.Text= vehiculos.Modelo = TListBoxModelos.Items[TListBoxModelos.SelectedIndex].ToString();
                         TTextBoxModelo.Enabled = false;
                     }
+                    
                     TTextBoxMarca.Text = TListBoxMarcas.Items[TListBoxMarcas.SelectedIndex].ToString();
                     TTextBoxMarca.Enabled = false;
                     TGroupBoxDatosVehiculo.Enabled = true;
