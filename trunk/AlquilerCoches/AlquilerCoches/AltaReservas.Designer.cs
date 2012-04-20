@@ -135,6 +135,7 @@
             this.TComboBoxMatricula.Name = "TComboBoxMatricula";
             this.TComboBoxMatricula.Size = new System.Drawing.Size(121, 21);
             this.TComboBoxMatricula.TabIndex = 32;
+            this.TComboBoxMatricula.TextChanged += new System.EventHandler(this.TComboBoxMatricula_TextChanged);
             // 
             // TLabelConductores
             // 
@@ -163,6 +164,7 @@
             this.TComboBoxConductores.Name = "TComboBoxConductores";
             this.TComboBoxConductores.Size = new System.Drawing.Size(61, 21);
             this.TComboBoxConductores.TabIndex = 34;
+            this.TComboBoxConductores.TextChanged += new System.EventHandler(this.TComboBoxConductores_TextChanged);
             // 
             // TLabelFechaInicio
             // 

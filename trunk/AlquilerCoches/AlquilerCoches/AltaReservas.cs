@@ -11,6 +11,10 @@ namespace AlquilerCoches
 {
     public partial class AltaReservas : Form
     {
+        private ErrorProvider err1 = new ErrorProvider();
+        private ErrorProvider err2 = new ErrorProvider();
+        private ErrorProvider err3 = new ErrorProvider();
+
         public AltaReservas(EN.ENReservas enRe, string texto)
         {
             InitializeComponent();
@@ -135,6 +139,14 @@ namespace AlquilerCoches
             DataSet dsVe = new DataSet();
             dsVe = enVe.ObtenerMarcas(TComboBoxCategoria.Text.ToString());
             RellenarMarcas(dsVe);
+            if (TComboBoxMarca.Text == "")
+            {
+                err2.SetError(TComboBoxMatricula, "Falta seleccionar vehículo");
+            }
+            else
+            {
+                err2.Clear();
+            }
         }
 
         private void TComboBoxModelo_TextChanged(object sender, EventArgs e)
@@ -143,12 +155,20 @@ namespace AlquilerCoches
             DataSet dsVe = new DataSet();
             dsVe = enVe.ObtenerMatriculas(TComboBoxMarca.Text.ToString(), TComboBoxModelo.Text.ToString());
             RellenarMatriculas(dsVe);
+            if (TComboBoxModelo.Text == "")
+            {
+                err2.SetError(TComboBoxMatricula, "Falta seleccionar vehículo");
+            }
+            else
+            {
+                err2.Clear();
+            }
         }
 
         private bool Comprobar_OK()
         {
             bool retorno = true;
-            if (TLabelErrorFecha.Visible)
+            if (TDateTimePickerFechaFin.Value < TDateTimePickerFechaInicio.Value)
             {
                 mens = "Fecha fin no puede ser superior a fecha inicio";
                 retorno = false;
@@ -157,22 +177,19 @@ namespace AlquilerCoches
             {
                 mens = "Falta añadir vehiculo";
                 retorno = false;
-                TLabelSinCoche.Visible = true;
             }
-            else
-            {
-                TLabelSinCoche.Visible = false;
-            }
+
             if (TComboBoxConductores.Text == "")
             {
                 mens = "Falta añadir conductores";
                 retorno = false;
-                TLabelSinConductores.Visible = true;
+                err3.SetError(TComboBoxConductores, "Falta seleccionar conductores");
             }
             else
             {
-                TLabelSinConductores.Visible = false;
+                err3.Clear();
             }
+  
             if (TLabelDNI.Visible == false)
             {
                 mens = "Falta seleccionar un cliente";
@@ -211,11 +228,11 @@ namespace AlquilerCoches
             {
                 if (TDateTimePickerFechaInicio.Value > TDateTimePickerFechaFin.Value)
                 {
-                    TLabelErrorFecha.Visible = true;
+                    err1.SetError(TDateTimePickerFechaFin, "Fecha fin no puede ser inferior a fecha inicio");
                 }
                 else
                 {
-                    TLabelErrorFecha.Visible = false;
+                    err1.Clear();
                 }
             }
 
@@ -223,11 +240,11 @@ namespace AlquilerCoches
         {
             if (TDateTimePickerFechaInicio.Value > TDateTimePickerFechaFin.Value)
             {
-                TLabelErrorFecha.Visible = true;
+                err1.SetError(TDateTimePickerFechaFin, "Fecha fin no puede ser inferior a fecha inicio");
             }
             else
             {
-                TLabelErrorFecha.Visible = false;
+                err1.Clear();
             }
         }
 
@@ -237,6 +254,14 @@ namespace AlquilerCoches
             DataSet dsVe = new DataSet();
             dsVe = enVe.ObtenerModelosVehiculos(TComboBoxCategoria.Text.ToString(), TComboBoxMarca.Text.ToString());
             RellenarModelos(dsVe);
+            if (TComboBoxMarca.Text == "")
+            {
+                err2.SetError(TComboBoxMatricula, "Falta seleccionar vehículo");
+            }
+            else
+            {
+                err2.Clear();
+            }
         }
 
         private void TButtonCerrar_Click(object sender, EventArgs e)
@@ -276,6 +301,30 @@ namespace AlquilerCoches
             if (TRadioButtonFavorito.Checked == true)
             {
                 MessageBox.Show(enCliente.ReservaFavorita());
+            }
+        }
+
+        private void TComboBoxMatricula_TextChanged(object sender, EventArgs e)
+        {
+            if (TComboBoxMatricula.Text == "")
+            {
+                err2.SetError(TComboBoxMatricula, "Falta seleccionar vehículo");
+            }
+            else
+            {
+                err2.Clear();
+            }
+        }
+
+        private void TComboBoxConductores_TextChanged(object sender, EventArgs e)
+        {
+            if (TComboBoxConductores.Text == "")
+            {
+                err3.SetError(TComboBoxConductores, "Falta seleccionar conductores");
+            }
+            else
+            {
+                err3.Clear();
             }
         }
     }
