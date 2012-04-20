@@ -150,30 +150,34 @@ namespace EN
         }
 
   
-      /*
-         public void EditarPedidos()
+   
+        public void EditarPedidos()
         {
+        
             try
             {
-                DataSet pedido =cadPedidos.ObtenerDatosPedidoIdTrans(idtransaccion);
-                pedido.Tables["Pedidos"].Rows[0][1] = idtransaccion.ToString();
-                pedido.Tables["Pedidos"].Rows[0][2] = proveedor.ToString()];
+                DataSet pedido = cadPedidos.ObtenerDatosPedidosConId(idtransaccion);
+                pedido.Tables["Pedidos"].Rows[0][1] = idtransaccion.ToString(); //el dni no se puede cambiar asique saltamos la posicion 0 que es del dni
+                pedido.Tables["Pedidos"].Rows[0][2] = proveedor.ToString();
                 pedido.Tables["Pedidos"].Rows[0][3] = marca.ToString();
                 pedido.Tables["Pedidos"].Rows[0][4] = modelo.ToString();
                 pedido.Tables["Pedidos"].Rows[0][5] = cantidad.ToString();
-                pedido.Tables["Pedidos"].Rows[0][6] = tipoenvio.ToString();
-                pedido.Tables["Pedidos"].Rows[0][7] = observaciones.ToString();
-              pedido.Tables["Pedidos"].Rows[0][8] = estadopedido.ToString();
+                pedido.Tables["Pedidos"].Rows[0][6] = observaciones.ToString();
+                pedido.Tables["Pedidos"].Rows[0][7] = estadopedido.ToString();
+                pedido.Tables["Pedidos"].Rows[0][8] = tipoenvio.ToString();
                 pedido.Tables["Pedidos"].Rows[0][9] = empleado.ToString();
-                pedido.Tables["Pedidos"].Rows[0][10]= fecha;
-                cadPedidos.EditarPedidos(pedidos);
+                cadPedidos.EditarPedidos(pedido);
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                throw(ex);
+                throw (ex);
             }
 
-        } */
+        
+
+        }
+     
 
         public void AnyadirPedidos()
         {
