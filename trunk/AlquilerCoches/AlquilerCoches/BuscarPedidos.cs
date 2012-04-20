@@ -20,13 +20,16 @@ namespace AlquilerCoches
         {
             InitializeComponent();
 
-            EN.ENPedidos marca = new EN.ENPedidos();
+            EN.ENPedidos enPedido = new EN.ENPedidos();
             DataSet dsMarc = new DataSet();
-            dsMarc = marca.ObtenerListaMarcas();
+            dsMarc = enPedido.ObtenerListaMarcas();
+            
 
             numMarca = new DataSet();
             numMarca = dsMarc;
 
+
+    
             DataGridViewButtonColumn buttons = new DataGridViewButtonColumn();
             {
                 buttons.HeaderText = "Editar"; //texto de la columna
@@ -174,7 +177,10 @@ namespace AlquilerCoches
                 TDataGridViewPedidos.DataMember = "Pedidos";
          //   }
         }
+
+       
         ArrayList arrayid = new ArrayList();
+        
         private void TDataGridViewPedidos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
           
@@ -243,6 +249,40 @@ namespace AlquilerCoches
                         
         }
 
+
+        private void TButtonEliminar_Click(object sender, EventArgs e)
+        {
+            EN.ENPedidos enPedido = new EN.ENPedidos();
+            if (arrayid.Count > 0)
+            {
+                if (MessageBox.Show("¿Desea eliminar '" + arrayid.Count.ToString() + "' registros?", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                {
+
+                    string frase = "";
+                    for (int i = 0; i < arrayid.Count; i++)
+                    {
+                        if (i == 0) { frase += "'" + arrayid[i] + "'"; }
+                        else
+                        {
+                            frase += ",";
+                            frase += "'" + arrayid[i] + "'";
+                        }
+                    }
+                    MessageBox.Show("Select * from Pedidos where IDTransaccion in (" + frase + ")");
+                    enPedido.EliminarPedidos(arrayid);
+                }
+
+                arrayid.Clear();
+                DataSet ou = new DataSet();
+                ou = enPedido.ObtenerListaPedidos(eliminado);
+                TDataGridViewPedidos.DataSource = ou;
+
+            }
+            else
+                MessageBox.Show("Debe seleccionar algún registro", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+        }
         private void groupBox2_Enter_1(object sender, EventArgs e)
         {
 
@@ -329,6 +369,8 @@ namespace AlquilerCoches
                 MessageBox.Show("Si desea cambiar el modelo debe cambiar la marca", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+       
 
     }
 }
