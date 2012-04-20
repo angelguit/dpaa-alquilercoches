@@ -342,6 +342,7 @@
             this.Controls.Add(this.TButtonFoto);
             this.Controls.Add(this.TButtonCancelar);
             this.Controls.Add(this.pictureBox1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximumSize = new System.Drawing.Size(894, 608);
             this.MinimumSize = new System.Drawing.Size(894, 608);
