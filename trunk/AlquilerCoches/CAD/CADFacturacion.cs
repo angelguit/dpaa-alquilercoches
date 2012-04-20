@@ -17,9 +17,9 @@ namespace CAD
         static private String cadenaConexion = ConfigurationManager.ConnectionStrings["AlquilerCoches"].ConnectionString; // @"Data Source=|DataDirectory|\BBDD.sdf";
         static private String nombreTabla = "Facturas";
 
-        public DataSet ObtenerTablaFacturas()
+        public DataSet ObtenerTablaFacturas(string sentencia)
         {
-            DataSet dsFacturas = new DataSet();
+            /*DataSet dsFacturas = new DataSet();
             try
             {
                 SqlConnection conexion = new SqlConnection(cadenaConexion);
@@ -33,7 +33,26 @@ namespace CAD
                 throw (ex);
             }
 
-            return dsFacturas;
+            return dsFacturas;*/
+            DataSet dsFac = new DataSet();
+            SqlDataAdapter daFac;
+            string consulta;
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                if (sentencia != "")
+                    consulta = "Select * from Facturas where " + sentencia;
+                else
+                    consulta = "Select * from Facturas";
+                daFac = new SqlDataAdapter(consulta, conexion);
+                daFac.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daFac.Fill(dsFac, "Facturas");
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            return dsFac;
         }
     }
 }

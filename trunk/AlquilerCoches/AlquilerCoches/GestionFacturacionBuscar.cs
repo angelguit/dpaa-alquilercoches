@@ -6,12 +6,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace AlquilerCoches
 {
     public partial class GestionFacturacionBuscar : Form
     {
         EN.ENCliente enCliente = new EN.ENCliente();
+        private string eliminado = "";
         public GestionFacturacionBuscar()
         {
             InitializeComponent();
@@ -99,28 +101,44 @@ namespace AlquilerCoches
 
         private void TButtonBuscar_Click(object sender, EventArgs e)
         {
-            dataGridBuscarFacturas.Visible = true;
-            TPanelReservas.Location = new Point(175, 372); //para desplazar el panel de busqueda hacia abajo.
             EN.ENFacturacion enFacturacion = new EN.ENFacturacion();
 
             DataSet dsFacturacion = new DataSet();
-
+            
+            bool correcto = true;
             string sentencia = "";
-            if (TTextBoxNumeroFactura.Text.ToString() != "")
+           
+            if (!Regex.Match(TTextBoxNumeroFactura.Text, @"^[0-9]{1,10000}$").Success && TTextBoxNumeroFactura.Text.ToString() != "")
             {
-                sentencia += " numero='" + TTextBoxNumeroFactura.Text.ToString() + "'";
+                errorProvider1.SetError(TTextBoxNumeroFactura, "Solo se admiten números (vacio para buscar todas)");
+                correcto = false;
+            }
+            else
+            {
+                errorProvider1.Clear();
+                if (TTextBoxNumeroFactura.Text.ToString() != "")
+                {
+                    sentencia += " Numero='" + TTextBoxNumeroFactura.Text.ToString() + "'";
+                }
             }
             if (TDateTimePickerFechaFin.Visible == true)
             {
-                if (sentencia == "")
+                if (TDateTimePickerFechaInicio.Value <= TDateTimePickerFechaFin.Value)
                 {
-                    sentencia += " Fecha inicio between '" + TDateTimePickerFechaInicio.Value.ToString() + "'" + " and '" + TDateTimePickerFechaFin.Value.ToString() + "'";
-                    sentencia += " and Fecha fin between '" + TDateTimePickerFechaInicio.Value.ToString() + "'" + " and '" + TDateTimePickerFechaFin.Value.ToString() + "'";
+                    errorProvider1.Clear();
+                    if (sentencia == "")
+                    {
+                        sentencia += " DiaFacturacion between " + Convert.ToDateTime(TDateTimePickerFechaInicio.Value.ToString()) + " and " + Convert.ToDateTime(TDateTimePickerFechaFin.Value.ToString());
+                    }
+                    else
+                    {
+                        sentencia += " and DiaFacturacion between'" + Convert.ToDateTime(TDateTimePickerFechaFin.Value.ToString()) + "' and '" + Convert.ToDateTime(TDateTimePickerFechaInicio.Value.ToString()) + "'";
+                    }
                 }
                 else
                 {
-                    sentencia += " and Fecha inicio between'" + TDateTimePickerFechaFin.Value.ToString() + "' and '" + TDateTimePickerFechaInicio.Value.ToString() + "'";
-                    sentencia += " and Fecha fin between '" + TDateTimePickerFechaInicio.Value.ToString() + "'" + " and '" + TDateTimePickerFechaFin.Value.ToString() + "'";
+                    errorProvider1.SetError(TDateTimePickerFechaFin, "Fecha fin superior a fecha inicio");
+                    correcto = false;
                 }
             }
             if (TLabelCliente.Visible == true)
@@ -135,9 +153,26 @@ namespace AlquilerCoches
                 }
             }
 
-            dsFacturacion = enFacturacion.ObtenerFacturas(sentencia);
-            dataGridBuscarFacturas.DataSource = dsFacturacion;
-            dataGridBuscarFacturas.DataMember = "Facturas";
+   
+            if (correcto)
+            {
+                dataGridBuscarFacturas.Visible = true;
+                TPanelReservas.Location = new Point(108, 277); //para desplazar el panel de busqueda hacia abajo.
+                EN.ENFacturacion enFa = new EN.ENFacturacion();
+
+                TButtonEliminar.Visible = true;
+                DataSet ds = new DataSet();
+
+                eliminado = sentencia;
+                ds = enFa.ObtenerFacturas(sentencia);
+                dataGridBuscarFacturas.DataSource = ds;
+                dataGridBuscarFacturas.DataMember = "Facturas";
+
+                for (int i = 0; i < dataGridBuscarFacturas.Columns.Count; i++) //esto nos servira para bloquear todas las columnas para que no se puedan editar 
+                {
+                    if (i != 0) { dataGridBuscarFacturas.Columns[i].ReadOnly = true; } //dejamos desbloqueada la columna de eliminar para que podamos pulsar, la columna boton no se bloquea asiq no hace falta desbloquearla
+                }
+            }
         }
 
         private void TButtonQuitarCliente_Click_1(object sender, EventArgs e)

@@ -83,7 +83,7 @@ namespace EN
             DataSet resultado = new DataSet();
             try
             {
-                resultado = cadFacturacion.ObtenerTablaFacturas();//todas
+                resultado = cadFacturacion.ObtenerTablaFacturas(sentencia);
             }
             catch (Exception ex)
             {
