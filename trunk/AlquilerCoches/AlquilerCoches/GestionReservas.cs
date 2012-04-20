@@ -64,13 +64,20 @@ namespace AlquilerCoches
         private void TButtonBuscarCliente_Click(object sender, EventArgs e)
         {
             GestionClientesBuscar F1 = new GestionClientesBuscar(false);
+            F1.StartPosition = FormStartPosition.Manual;
+            F1.Location = Location;
+            F1.Left += 147;
+            F1.Top += 48;
             F1.ShowDialog();
             enCliente = F1.enClientePub;
-            TButtonBuscarCliente.Visible = false;
-            TLabelCliente.Text = "Cliente: " + enCliente.Nombre + enCliente.Apellidos;
-            TLabelCliente.Visible = true;
-            TButtonCambiarCliente.Visible = true;
-            TButtonQuitarCliente.Visible = true;
+            if (enCliente.Nombre != null)
+            {
+                TButtonBuscarCliente.Visible = false;
+                TLabelCliente.Text = "Cliente: " + enCliente.Nombre + enCliente.Apellidos;
+                TLabelCliente.Visible = true;
+                TButtonCambiarCliente.Visible = true;
+                TButtonQuitarCliente.Visible = true;
+            }
         }
 
         private void TButtonBuscarFechas_Click(object sender, EventArgs e)

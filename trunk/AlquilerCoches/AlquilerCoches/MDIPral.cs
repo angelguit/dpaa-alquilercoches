@@ -331,16 +331,32 @@ namespace AlquilerCoches
 
         private void nuevaReservaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AltaReservas altaReserva = new AltaReservas();
-            altaReserva.MdiParent = this;
-            altaReserva.Show();
+            if (Application.OpenForms["AltaReservas"] != null)
+            {
+
+                Application.OpenForms["AltaReservas"].Activate();
+            }
+            else
+            {
+                AltaReservas altaReserva = new AltaReservas();
+                altaReserva.MdiParent = this;
+                altaReserva.Show();
+            }
         }
 
         private void buscarReservasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GestionReservas gestionReservas = new GestionReservas();
-            gestionReservas.MdiParent = this;
-            gestionReservas.Show();
+            if (Application.OpenForms["GestionReservas"] != null)
+            {
+
+                Application.OpenForms["GestionReservas"].Activate();
+            }
+            else
+            {
+                GestionReservas gestionReservas = new GestionReservas();
+                gestionReservas.MdiParent = this;
+                gestionReservas.Show();
+            }
         }
 
         private void darDeAltaToolStripMenuItem1_Click(object sender, EventArgs e)

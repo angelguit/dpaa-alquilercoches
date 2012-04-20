@@ -163,7 +163,7 @@ namespace AlquilerCoches
             {
                 TLabelSinCoche.Visible = false;
             }
-            if (TComboBoxConductores.Text == "Nº")
+            if (TComboBoxConductores.Text == "")
             {
                 mens = "Falta añadir conductores";
                 retorno = false;
