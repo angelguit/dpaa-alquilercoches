@@ -289,5 +289,10 @@ namespace AlquilerCoches
             
         }
 
+        private void TGroupBoxDatosVehiculo_Enter(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

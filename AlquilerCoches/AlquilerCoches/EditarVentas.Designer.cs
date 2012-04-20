@@ -154,18 +154,22 @@
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelMatricula);
             this.TGroupBoxDatosVehiculo.Location = new System.Drawing.Point(21, 207);
             this.TGroupBoxDatosVehiculo.Name = "TGroupBoxDatosVehiculo";
-            this.TGroupBoxDatosVehiculo.Size = new System.Drawing.Size(543, 222);
+            this.TGroupBoxDatosVehiculo.Size = new System.Drawing.Size(543, 241);
             this.TGroupBoxDatosVehiculo.TabIndex = 51;
             this.TGroupBoxDatosVehiculo.TabStop = false;
             this.TGroupBoxDatosVehiculo.Text = "DatosVehiculo";
+            this.TGroupBoxDatosVehiculo.Enter += new System.EventHandler(this.TGroupBoxDatosVehiculo_Enter);
             // 
             // TButtonBorrar
             // 
-            this.TButtonBorrar.Location = new System.Drawing.Point(232, 30);
+            this.TButtonBorrar.Image = global::AlquilerCoches.Properties.Resources.Delete_icon;
+            this.TButtonBorrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TButtonBorrar.Location = new System.Drawing.Point(448, 187);
             this.TButtonBorrar.Name = "TButtonBorrar";
-            this.TButtonBorrar.Size = new System.Drawing.Size(86, 23);
+            this.TButtonBorrar.Size = new System.Drawing.Size(72, 33);
             this.TButtonBorrar.TabIndex = 50;
             this.TButtonBorrar.Text = "Borrar";
+            this.TButtonBorrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.TButtonBorrar.UseVisualStyleBackColor = true;
             this.TButtonBorrar.Click += new System.EventHandler(this.TButtonBorrar_Click);
             // 
@@ -202,21 +206,27 @@
             // 
             // TButtonCancelar
             // 
-            this.TButtonCancelar.Location = new System.Drawing.Point(436, 187);
+            this.TButtonCancelar.Image = global::AlquilerCoches.Properties.Resources.Close_icon;
+            this.TButtonCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TButtonCancelar.Location = new System.Drawing.Point(324, 187);
             this.TButtonCancelar.Name = "TButtonCancelar";
-            this.TButtonCancelar.Size = new System.Drawing.Size(92, 23);
+            this.TButtonCancelar.Size = new System.Drawing.Size(86, 33);
             this.TButtonCancelar.TabIndex = 46;
             this.TButtonCancelar.Text = "Cancelar";
+            this.TButtonCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.TButtonCancelar.UseVisualStyleBackColor = true;
             this.TButtonCancelar.Click += new System.EventHandler(this.TButtonCancelar_Click);
             // 
             // TButtonAceptar
             // 
-            this.TButtonAceptar.Location = new System.Drawing.Point(324, 187);
+            this.TButtonAceptar.Image = global::AlquilerCoches.Properties.Resources.Add_icon;
+            this.TButtonAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TButtonAceptar.Location = new System.Drawing.Point(232, 187);
             this.TButtonAceptar.Name = "TButtonAceptar";
-            this.TButtonAceptar.Size = new System.Drawing.Size(89, 23);
+            this.TButtonAceptar.Size = new System.Drawing.Size(86, 33);
             this.TButtonAceptar.TabIndex = 45;
             this.TButtonAceptar.Text = "Guardar";
+            this.TButtonAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.TButtonAceptar.UseVisualStyleBackColor = true;
             this.TButtonAceptar.Click += new System.EventHandler(this.TButtonAceptar_Click);
             // 
@@ -300,7 +310,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(324, 19);
+            this.pictureBox1.Location = new System.Drawing.Point(232, 23);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(204, 155);
             this.pictureBox1.TabIndex = 31;
