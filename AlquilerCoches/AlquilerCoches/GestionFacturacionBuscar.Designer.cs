@@ -92,7 +92,8 @@
             // 
             // dataGridBuscarFacturas
             // 
-            this.dataGridBuscarFacturas.AllowUserToOrderColumns = true;
+            this.dataGridBuscarFacturas.AllowUserToAddRows = false;
+            this.dataGridBuscarFacturas.AllowUserToDeleteRows = false;
             this.dataGridBuscarFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridBuscarFacturas.Location = new System.Drawing.Point(62, 38);
             this.dataGridBuscarFacturas.Name = "dataGridBuscarFacturas";

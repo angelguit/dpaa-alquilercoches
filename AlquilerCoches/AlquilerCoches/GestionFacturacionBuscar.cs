@@ -133,7 +133,7 @@ namespace AlquilerCoches
                     }
                     else
                     {
-                        sentencia += " and DiaFacturacion BETWEEN '" + TDateTimePickerFechaFin.Value+ "' and '" +TDateTimePickerFechaInicio.Value+ "'";
+                        sentencia += " and DiaFacturacion BETWEEN '" + TDateTimePickerFechaFin.Value + "' AND '" + TDateTimePickerFechaInicio.Value + "'";
                        // sentencia += " and FechaFin <= '" + Convert.ToDateTime(TDateTimePickerFechaFin.Value.ToString()) + "'";
                     }
                 }
