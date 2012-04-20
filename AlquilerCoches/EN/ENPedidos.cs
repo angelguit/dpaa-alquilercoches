@@ -95,11 +95,11 @@ namespace EN
             }
             return resultado;
         }
-        public void EliminarPedidos(ArrayList arraypedido)
+        public void EliminarPedidos(ArrayList arrayid)
         {
             try
             {
-             //   cadPedidos.BorrarPedido(arraypedido);
+                cadPedidos.BorrarPedido(arrayid);
             }
             catch (Exception ex)
             {
@@ -149,19 +149,9 @@ namespace EN
             return resultado;
         }
 
-   /*   public string ObtenerNumMarca(string marca)
-        {
-            try
-            {
-                return cadPedidos.ObtenerNumMarca(marca);
-            }
-            catch (Exception ex)
-            {
-                throw (ex);
-            }
-        } */
-      
-  /*      public void EditarPedidos()
+  
+      /*
+         public void EditarPedidos()
         {
             try
             {
@@ -201,8 +191,8 @@ namespace EN
                 linea[4] = cantidad;
                 linea[5] = observaciones;
                 linea[6] = estadopedido;
-                linea[7] = empleado;
-                linea[8] = tipoenvio;
+                linea[7] = tipoenvio;
+                linea[8] = empleado;
               //  linea[9] = fecha;
                 resultado.Tables["Pedidos"].Rows.Add(linea);
                 cadPedidos.AnyadirPedidos(resultado);
@@ -214,7 +204,7 @@ namespace EN
         }
 
 
-
+        
 
 
 
