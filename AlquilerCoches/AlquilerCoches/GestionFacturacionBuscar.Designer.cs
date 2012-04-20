@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.TButtonEliminar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.TButtonBuscar = new System.Windows.Forms.Button();
@@ -45,17 +46,20 @@
             this.TLabelFechaFin = new System.Windows.Forms.Label();
             this.TLabelFechaInicio = new System.Windows.Forms.Label();
             this.TLabelNFactura = new System.Windows.Forms.Label();
-            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.rectangleShape1 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.rectangleShape2 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridBuscarFacturas)).BeginInit();
             this.TPanelReservas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // TButtonEliminar
             // 
             this.TButtonEliminar.Image = global::AlquilerCoches.Properties.Resources.Delete_icon;
             this.TButtonEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.TButtonEliminar.Location = new System.Drawing.Point(427, 270);
+            this.TButtonEliminar.Location = new System.Drawing.Point(368, 161);
             this.TButtonEliminar.Name = "TButtonEliminar";
             this.TButtonEliminar.Size = new System.Drawing.Size(79, 34);
             this.TButtonEliminar.TabIndex = 57;
@@ -65,7 +69,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(62, 513);
+            this.button1.Location = new System.Drawing.Point(37, 515);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 55;
@@ -77,7 +81,7 @@
             // 
             this.TButtonBuscar.Image = global::AlquilerCoches.Properties.Resources.Search_icon;
             this.TButtonBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.TButtonBuscar.Location = new System.Drawing.Point(330, 270);
+            this.TButtonBuscar.Location = new System.Drawing.Point(250, 161);
             this.TButtonBuscar.Name = "TButtonBuscar";
             this.TButtonBuscar.Size = new System.Drawing.Size(82, 34);
             this.TButtonBuscar.TabIndex = 54;
@@ -90,7 +94,7 @@
             // 
             this.dataGridBuscarFacturas.AllowUserToOrderColumns = true;
             this.dataGridBuscarFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridBuscarFacturas.Location = new System.Drawing.Point(78, 29);
+            this.dataGridBuscarFacturas.Location = new System.Drawing.Point(62, 38);
             this.dataGridBuscarFacturas.Name = "dataGridBuscarFacturas";
             this.dataGridBuscarFacturas.Size = new System.Drawing.Size(722, 209);
             this.dataGridBuscarFacturas.TabIndex = 53;
@@ -113,14 +117,14 @@
             this.TPanelReservas.Controls.Add(this.TLabelFechaInicio);
             this.TPanelReservas.Controls.Add(this.TLabelNFactura);
             this.TPanelReservas.Controls.Add(this.shapeContainer1);
-            this.TPanelReservas.Location = new System.Drawing.Point(78, 29);
+            this.TPanelReservas.Location = new System.Drawing.Point(62, 39);
             this.TPanelReservas.Name = "TPanelReservas";
-            this.TPanelReservas.Size = new System.Drawing.Size(556, 333);
+            this.TPanelReservas.Size = new System.Drawing.Size(462, 208);
             this.TPanelReservas.TabIndex = 58;
             // 
             // TButtonQuitarCliente
             // 
-            this.TButtonQuitarCliente.Location = new System.Drawing.Point(153, 249);
+            this.TButtonQuitarCliente.Location = new System.Drawing.Point(164, 129);
             this.TButtonQuitarCliente.Name = "TButtonQuitarCliente";
             this.TButtonQuitarCliente.Size = new System.Drawing.Size(79, 23);
             this.TButtonQuitarCliente.TabIndex = 14;
@@ -131,7 +135,7 @@
             // 
             // TButtonOcultarFechas
             // 
-            this.TButtonOcultarFechas.Location = new System.Drawing.Point(315, 120);
+            this.TButtonOcultarFechas.Location = new System.Drawing.Point(310, 50);
             this.TButtonOcultarFechas.Name = "TButtonOcultarFechas";
             this.TButtonOcultarFechas.Size = new System.Drawing.Size(97, 23);
             this.TButtonOcultarFechas.TabIndex = 11;
@@ -142,7 +146,7 @@
             // 
             // TButtonBuscarFechas
             // 
-            this.TButtonBuscarFechas.Location = new System.Drawing.Point(36, 120);
+            this.TButtonBuscarFechas.Location = new System.Drawing.Point(31, 50);
             this.TButtonBuscarFechas.Name = "TButtonBuscarFechas";
             this.TButtonBuscarFechas.Size = new System.Drawing.Size(129, 23);
             this.TButtonBuscarFechas.TabIndex = 10;
@@ -152,7 +156,7 @@
             // 
             // TButtonCambiarCliente
             // 
-            this.TButtonCambiarCliente.Location = new System.Drawing.Point(36, 249);
+            this.TButtonCambiarCliente.Location = new System.Drawing.Point(31, 129);
             this.TButtonCambiarCliente.Name = "TButtonCambiarCliente";
             this.TButtonCambiarCliente.Size = new System.Drawing.Size(100, 23);
             this.TButtonCambiarCliente.TabIndex = 8;
@@ -164,7 +168,7 @@
             // TLabelCliente
             // 
             this.TLabelCliente.AutoSize = true;
-            this.TLabelCliente.Location = new System.Drawing.Point(33, 220);
+            this.TLabelCliente.Location = new System.Drawing.Point(33, 93);
             this.TLabelCliente.Name = "TLabelCliente";
             this.TLabelCliente.Size = new System.Drawing.Size(35, 13);
             this.TLabelCliente.TabIndex = 7;
@@ -173,7 +177,7 @@
             // 
             // TButtonBuscarCliente
             // 
-            this.TButtonBuscarCliente.Location = new System.Drawing.Point(36, 215);
+            this.TButtonBuscarCliente.Location = new System.Drawing.Point(31, 88);
             this.TButtonBuscarCliente.Name = "TButtonBuscarCliente";
             this.TButtonBuscarCliente.Size = new System.Drawing.Size(129, 23);
             this.TButtonBuscarCliente.TabIndex = 6;
@@ -183,7 +187,7 @@
             // 
             // TTextBoxNumeroFactura
             // 
-            this.TTextBoxNumeroFactura.Location = new System.Drawing.Point(117, 54);
+            this.TTextBoxNumeroFactura.Location = new System.Drawing.Point(128, 15);
             this.TTextBoxNumeroFactura.Name = "TTextBoxNumeroFactura";
             this.TTextBoxNumeroFactura.Size = new System.Drawing.Size(36, 20);
             this.TTextBoxNumeroFactura.TabIndex = 5;
@@ -191,7 +195,7 @@
             // TDateTimePickerFechaFin
             // 
             this.TDateTimePickerFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.TDateTimePickerFechaFin.Location = new System.Drawing.Point(199, 120);
+            this.TDateTimePickerFechaFin.Location = new System.Drawing.Point(194, 50);
             this.TDateTimePickerFechaFin.Name = "TDateTimePickerFechaFin";
             this.TDateTimePickerFechaFin.Size = new System.Drawing.Size(86, 20);
             this.TDateTimePickerFechaFin.TabIndex = 4;
@@ -200,7 +204,7 @@
             // TDateTimePickerFechaInicio
             // 
             this.TDateTimePickerFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.TDateTimePickerFechaInicio.Location = new System.Drawing.Point(89, 120);
+            this.TDateTimePickerFechaInicio.Location = new System.Drawing.Point(84, 50);
             this.TDateTimePickerFechaInicio.Name = "TDateTimePickerFechaInicio";
             this.TDateTimePickerFechaInicio.Size = new System.Drawing.Size(86, 20);
             this.TDateTimePickerFechaInicio.TabIndex = 3;
@@ -209,7 +213,7 @@
             // TLabelFechaFin
             // 
             this.TLabelFechaFin.AutoSize = true;
-            this.TLabelFechaFin.Location = new System.Drawing.Point(181, 126);
+            this.TLabelFechaFin.Location = new System.Drawing.Point(176, 56);
             this.TLabelFechaFin.Name = "TLabelFechaFin";
             this.TLabelFechaFin.Size = new System.Drawing.Size(12, 13);
             this.TLabelFechaFin.TabIndex = 2;
@@ -219,7 +223,7 @@
             // TLabelFechaInicio
             // 
             this.TLabelFechaInicio.AutoSize = true;
-            this.TLabelFechaInicio.Location = new System.Drawing.Point(16, 126);
+            this.TLabelFechaInicio.Location = new System.Drawing.Point(11, 56);
             this.TLabelFechaInicio.Name = "TLabelFechaInicio";
             this.TLabelFechaInicio.Size = new System.Drawing.Size(67, 13);
             this.TLabelFechaInicio.TabIndex = 1;
@@ -229,11 +233,22 @@
             // TLabelNFactura
             // 
             this.TLabelNFactura.AutoSize = true;
-            this.TLabelNFactura.Location = new System.Drawing.Point(21, 57);
+            this.TLabelNFactura.Location = new System.Drawing.Point(32, 18);
             this.TLabelNFactura.Name = "TLabelNFactura";
             this.TLabelNFactura.Size = new System.Drawing.Size(86, 13);
             this.TLabelNFactura.TabIndex = 0;
             this.TLabelNFactura.Text = "Numero Factura:";
+            // 
+            // rectangleShape1
+            // 
+            this.rectangleShape1.BorderColor = System.Drawing.Color.White;
+            this.rectangleShape1.Location = new System.Drawing.Point(-107, -7);
+            this.rectangleShape1.Name = "rectangleShape1";
+            this.rectangleShape1.Size = new System.Drawing.Size(86, 217);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // shapeContainer1
             // 
@@ -241,17 +256,18 @@
             this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.rectangleShape2,
             this.rectangleShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(556, 333);
-            this.shapeContainer1.TabIndex = 15;
+            this.shapeContainer1.Size = new System.Drawing.Size(462, 208);
+            this.shapeContainer1.TabIndex = 58;
             this.shapeContainer1.TabStop = false;
             // 
-            // rectangleShape1
+            // rectangleShape2
             // 
-            this.rectangleShape1.BorderColor = System.Drawing.Color.White;
-            this.rectangleShape1.Location = new System.Drawing.Point(10, 9);
-            this.rectangleShape1.Name = "rectangleShape1";
-            this.rectangleShape1.Size = new System.Drawing.Size(537, 315);
+            this.rectangleShape2.BorderColor = System.Drawing.Color.White;
+            this.rectangleShape2.Location = new System.Drawing.Point(6, 5);
+            this.rectangleShape2.Name = "rectangleShape2";
+            this.rectangleShape2.Size = new System.Drawing.Size(449, 197);
             // 
             // GestionFacturacionBuscar
             // 
@@ -270,6 +286,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridBuscarFacturas)).EndInit();
             this.TPanelReservas.ResumeLayout(false);
             this.TPanelReservas.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -294,6 +311,8 @@
         private System.Windows.Forms.DateTimePicker TDateTimePickerFechaFin;
         private System.Windows.Forms.DateTimePicker TDateTimePickerFechaInicio;
         private System.Windows.Forms.Label TLabelFechaFin;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
+        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape2;
     }
 }
