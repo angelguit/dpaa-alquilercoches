@@ -308,7 +308,29 @@ namespace AlquilerCoches
             {
                 char[] separadores = { '|', ',' };
                 string[] favorito = enCliente.ReservaFavorita().Split(separadores);
-                MessageBox.Show("Categoria = " + favorito[2] + " Marca = " + favorito[0] + " Modelo = " + favorito[1]);
+
+                TComboBoxCategoria.SelectedIndex = TComboBoxCategoria.FindStringExact(favorito[2]);
+                if (TComboBoxMarca.FindStringExact(favorito[0]) == -1 && TComboBoxMatricula.Text != "")
+                {
+                    MessageBox.Show("No hay modelos disponibles, se ha escogido un modelo de igual categoría");
+                }
+                else if (TComboBoxMarca.FindStringExact(favorito[0]) > -1 && TComboBoxMatricula.Text != "")
+                {
+                    TComboBoxMarca.SelectedIndex = TComboBoxMarca.FindStringExact(favorito[0]);
+                    if (TComboBoxModelo.FindStringExact(favorito[1]) < 0)
+                    {
+                        MessageBox.Show("No hay modelos disponibles, se ha escogido un modelo de igual categoría y marca");
+                    }
+                    else
+                    {
+                        TComboBoxModelo.SelectedIndex = TComboBoxModelo.FindStringExact(favorito[1]);
+                        MessageBox.Show("Se ha escogido el vehiculo " + favorito[0] + " " + favorito[1] + ".");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No hay modelos disponibles de la misma categoría");
+                }
             }
         }
 
