@@ -18,9 +18,8 @@ namespace AlquilerCoches
         private ErrorProvider err4 = new ErrorProvider();
         private string mens, provincias, ciudades;
         private EN.ENCliente enCliente = new EN.ENCliente();
-        private bool editar = false;
+        private bool editar = false,editar2 = false;
         private EN.ENReservas aux = new EN.ENReservas();
-        private EN.ENVehiculo enVeaux = new EN.ENVehiculo();
 
         public AltaReservas()
         {
@@ -29,19 +28,17 @@ namespace AlquilerCoches
         public AltaReservas(EN.ENReservas enRe, string texto)
         {
             InitializeComponent();
-            editar = true;
+            editar = editar2 = true;
             DataSet dsCli = new DataSet();
             EN.ENVehiculo enVe = new EN.ENVehiculo();
-            EN.ENCliente enCli = new EN.ENCliente();
             EN.ENReservas enRes = new EN.ENReservas();
             DataSet dsRes = new DataSet();
-            
 
+            enCliente.DNI = enRe.Cliente;
             aux = enRe;
-            dsCli = enCli.ObtenerDatosClienteConDni(enRe.Cliente.ToString());
+            dsCli = enCliente.ObtenerDatosClienteConDni(enRe.Cliente.ToString());
             enVe.Matricula = enRe.Matricula;
             enVe.ObtenerDatosVehiculos();
-            enVeaux = enVe;
 
             string nombre = dsCli.Tables["Cliente"].Rows[0][1].ToString();
             string apellidos = dsCli.Tables["Cliente"].Rows[0][2].ToString();
@@ -491,7 +488,7 @@ namespace AlquilerCoches
 
         private void TComboBoxMarca_Click(object sender, EventArgs e)
         {
-            if (editar)
+            if (editar && editar2)
             {
                 string[] texto = { TComboBoxCategoria.Text, TComboBoxMarca.Text, TComboBoxModelo.Text, TComboBoxMatricula.Text };
                 EN.ENReservas enRes = new EN.ENReservas();
@@ -510,7 +507,7 @@ namespace AlquilerCoches
 
         private void TComboBoxModelo_Click(object sender, EventArgs e)
         {
-            if (editar)
+            if (editar && editar2)
             {
                 string[] texto = { TComboBoxCategoria.Text, TComboBoxMarca.Text, TComboBoxModelo.Text, TComboBoxMatricula.Text };
                 EN.ENReservas enRes = new EN.ENReservas();
@@ -529,7 +526,7 @@ namespace AlquilerCoches
 
         private void TComboBoxMatricula_Click(object sender, EventArgs e)
         {
-            if (editar)
+            if (editar && editar2)
             {
                 string[] texto = { TComboBoxCategoria.Text, TComboBoxMarca.Text, TComboBoxModelo.Text, TComboBoxMatricula.Text };
                 EN.ENReservas enRes = new EN.ENReservas();

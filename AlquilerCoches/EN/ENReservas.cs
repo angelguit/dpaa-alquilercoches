@@ -54,6 +54,11 @@ namespace EN
             {
                 DataSet res = new DataSet();
                 res = cadReservas.ObtenerReservas(numRes);
+                res.Tables["Reservas"].Rows[0][1] = Cliente;
+                res.Tables["Reservas"].Rows[0][2] = Matricula;
+                res.Tables["Reservas"].Rows[0][3] = FechaInicio;
+                res.Tables["Reservas"].Rows[0][4] = FechaFin;
+                res.Tables["Reservas"].Rows[0][5] = Conductores;
                 cadReservas.EditarReserva(res);
 
             }
