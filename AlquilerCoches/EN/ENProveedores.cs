@@ -24,7 +24,7 @@ namespace EN
         private string provincia;
         private int codigopostal;
         private string horario;
-
+        private string foto;
         private CAD.CADProveedores cadProveedores= new CAD.CADProveedores();
 
         public string CIF
@@ -77,8 +77,11 @@ namespace EN
             get { return horario; }
             set { horario = value; }
         }
-
-
+        public string Foto
+        {
+            get { return foto; }
+            set { foto = value; }
+        }
         public DataSet ObtenerListaProveedores(string cadena)
         {
             DataSet resultado = new DataSet();
@@ -152,6 +155,7 @@ namespace EN
                 linea[7] = provincia;
                 linea[8] = codigopostal;
                 linea[9] = horario;
+                linea[10] = foto;
                 resultado.Tables["Proveedores"].Rows.Add(linea);
                 cadProveedores.InsertarProveedorCAD(resultado);
             }
