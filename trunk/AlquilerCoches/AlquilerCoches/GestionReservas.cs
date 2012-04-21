@@ -37,7 +37,7 @@ namespace AlquilerCoches
             {
                 boton.HeaderText = "Eliminar";//texto de la columna
                 boton.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells; //tamaño
-                boton.DisplayIndex = 0; //indice que ocupara en la tabla
+                boton.DisplayIndex = 1; //indice que ocupara en la tabla
             }
 
 
@@ -185,8 +185,8 @@ namespace AlquilerCoches
         private void TDataGridViewReservas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            try
-            {
+            //try
+            //{
 
                 if (TDataGridViewReservas.Rows[e.RowIndex].Cells[e.ColumnIndex].ColumnIndex.ToString() == "0") // la columna 0 es el checkbox de eliminiar
                 {
@@ -214,25 +214,25 @@ namespace AlquilerCoches
                 else if (TDataGridViewReservas.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "Editar")
                 {
 
-                        EN.ENReservas enRe = new EN.ENReservas();
-                        enRe.Cliente = TDataGridViewReservas.Rows[e.RowIndex].Cells[2].Value.ToString();
-                        enRe.Matricula = enRe.Cliente = TDataGridViewReservas.Rows[e.RowIndex].Cells[3].Value.ToString();
-                        enRe.FechaInicio = Convert.ToDateTime(TDataGridViewReservas.Rows[e.RowIndex].Cells[5].Value);
-                        enRe.FechaFin = Convert.ToDateTime(TDataGridViewReservas.Rows[e.RowIndex].Cells[6].Value);
-                        enRe.Conductores = Int32.Parse(TDataGridViewReservas.Rows[e.RowIndex].Cells[7].Value.ToString());
+                    EN.ENReservas enRe = new EN.ENReservas();
+                    enRe.Matricula = enRe.Cliente = TDataGridViewReservas.Rows[e.RowIndex].Cells[4].Value.ToString();
+                    enRe.FechaInicio = Convert.ToDateTime(TDataGridViewReservas.Rows[e.RowIndex].Cells[5].Value.ToString());
+                    enRe.FechaFin = Convert.ToDateTime(TDataGridViewReservas.Rows[e.RowIndex].Cells[6].Value.ToString());
+                    enRe.Conductores = Int32.Parse(TDataGridViewReservas.Rows[e.RowIndex].Cells[7].Value.ToString());
+                    enRe.Cliente = TDataGridViewReservas.Rows[e.RowIndex].Cells[3].Value.ToString();
                         
 
-                        AltaReservas F1 = new AltaReservas(enRe, "Guardar Cambios");
-                        F1.ShowDialog();
+                    AltaReservas F1 = new AltaReservas(enRe, "Guardar Cambios");
+                    F1.ShowDialog();
 
                     
                 }
 
-            }
+            /*}
             catch (Exception ex)
             {
                 MessageBox.Show("Error no hay valores en esta fila");
-            }
+            }*/
         }
 
         private void TButtonEliminar_Click(object sender, EventArgs e)

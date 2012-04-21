@@ -272,14 +272,12 @@ namespace CAD
         public bool ReservasActiva(string dni)
         {
             DataSet dsResCliente = new DataSet();
-            DateTime hoy = new DateTime();
-            hoy = DateTime.Today;
             bool retorno = false;
 
             try
             {
                 SqlConnection conexion = new SqlConnection(cadenaConexion);
-                String consulta = "Select * from Reservas where Activa = 1";
+                String consulta = "Select * from Reservas where Activa = 1 AND FK_Cliente = '" + dni + "'";
                 SqlDataAdapter daResCliente = new SqlDataAdapter(consulta, conexion);
                 daResCliente.MissingSchemaAction = MissingSchemaAction.AddWithKey;
                 daResCliente.Fill(dsResCliente, "Reservas");

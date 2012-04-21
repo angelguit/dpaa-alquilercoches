@@ -18,16 +18,27 @@ namespace AlquilerCoches
         private ErrorProvider err4 = new ErrorProvider();
         private string mens, provincias, ciudades;
         private EN.ENCliente enCliente = new EN.ENCliente();
+        bool editar = false;
 
+        public AltaReservas()
+        {
+            InitializeComponent();
+        }
         public AltaReservas(EN.ENReservas enRe, string texto)
         {
             InitializeComponent();
+            editar = true;
             DataSet dsCli = new DataSet();
             EN.ENVehiculo enVe = new EN.ENVehiculo();
             EN.ENCliente enCli = new EN.ENCliente();
+            EN.ENReservas enRes = new EN.ENReservas();
+            DataSet dsRes = new DataSet();
+            
             dsCli = enCli.ObtenerDatosClienteConDni(enRe.Cliente.ToString());
             enVe.Matricula = enRe.Matricula;
             enVe.ObtenerDatosVehiculos();
+            enVe.Estado = "Disponible";
+            enVe.EditarVehiculo();
 
             string nombre = dsCli.Tables["Cliente"].Rows[0][1].ToString();
             string apellidos = dsCli.Tables["Cliente"].Rows[0][2].ToString();
@@ -45,11 +56,15 @@ namespace AlquilerCoches
             TRectangleShapeCliente.Visible = true;
             TButtonEditar.Visible = true;
 
+            dsRes = enRes.RellenarCategoria();
+            RellenarCategoria(dsRes);
+
             TComboBoxConductores.SelectedIndex = TComboBoxConductores.FindStringExact(enRe.Conductores.ToString());
             TComboBoxCategoria.SelectedIndex = TComboBoxCategoria.FindStringExact(enVe.Categoria);
-            TComboBoxMarca.Items.Add(enVe.Marca.ToString());
-            TComboBoxModelo.Items.Add(enVe.Modelo.ToString());
-            TComboBoxMatricula.Items.Add(enVe.Matricula.ToString());
+            TComboBoxMarca.SelectedIndex = TComboBoxMarca.FindStringExact(enVe.Marca);
+            TComboBoxModelo.SelectedIndex = TComboBoxModelo.FindStringExact(enVe.Modelo);
+            TComboBoxMatricula.SelectedIndex = TComboBoxMatricula.FindStringExact(enVe.Matricula);
+            
             TDateTimePickerFechaFin.Value = enRe.FechaFin;
             TDateTimePickerFechaInicio.Value = enRe.FechaInicio;
             TButtonReserva.Text = texto;
@@ -85,18 +100,18 @@ namespace AlquilerCoches
             TComboBoxMatricula.Text = "Seleccione Matricula";
         }
 
-        public AltaReservas()
-        {
-            InitializeComponent();
-        }
+        
 
         private void AltaReservas_Load(object sender, EventArgs e)
         {
-            TDateTimePickerFechaInicio.Value = TDateTimePickerFechaFin.Value = DateTime.Today;
-            EN.ENReservas enRes = new EN.ENReservas();
-            DataSet dsRes = new DataSet();
-            dsRes = enRes.RellenarCategoria();
-            RellenarCategoria(dsRes); 
+            if (!editar)
+            {
+                TDateTimePickerFechaInicio.Value = TDateTimePickerFechaFin.Value = DateTime.Today;
+                EN.ENReservas enRes = new EN.ENReservas();
+                DataSet dsRes = new DataSet();
+                dsRes = enRes.RellenarCategoria();
+                RellenarCategoria(dsRes);
+            }
         }
 
 
@@ -108,7 +123,7 @@ namespace AlquilerCoches
             F1.Left += 147;
             F1.Top += 48;
             F1.ShowDialog();
-            
+
             enCliente = F1.enClientePub;
             if (enCliente.Nombre != null)
             {
@@ -166,10 +181,9 @@ namespace AlquilerCoches
         }
 
 
- 
+
         private void TComboBoxCategoria_TextChanged(object sender, EventArgs e)
         {
-
             EN.ENVehiculo enVe = new EN.ENVehiculo();
             DataSet dsVe = new DataSet();
             dsVe = enVe.ObtenerMarcas(TComboBoxCategoria.Text.ToString());
@@ -182,6 +196,7 @@ namespace AlquilerCoches
             {
                 err2.Clear();
             }
+            
         }
 
         private void TComboBoxModelo_TextChanged(object sender, EventArgs e)
@@ -264,6 +279,7 @@ namespace AlquilerCoches
                 ImprimirReserva FPrint = new ImprimirReserva(enCliente,enRe,enVe,enRe.NumeroUltimaReserva());
                 FPrint.Show();
                 FPrint.Imprimir();
+                FPrint.Visible = false;
 
                 Close();
             }
@@ -410,5 +426,5 @@ namespace AlquilerCoches
             }
         }
 
-    }
+     }
 }
