@@ -84,7 +84,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(89, 110);
             this.pictureBox1.TabIndex = 48;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // TButtonGuardarProveedor
             // 
@@ -135,7 +134,6 @@
             this.TGroupBoxProveedores.TabIndex = 52;
             this.TGroupBoxProveedores.TabStop = false;
             this.TGroupBoxProveedores.Text = "Datos Proveedor";
-            this.TGroupBoxProveedores.Enter += new System.EventHandler(this.TGroupBoxProveedores_Enter);
             // 
             // TComboBoxCiudades
             // 

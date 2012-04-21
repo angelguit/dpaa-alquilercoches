@@ -40,10 +40,6 @@ namespace AlquilerCoches
 
                 numProvincia = new DataSet();
                 numProvincia = dsProv;
-
-
-
-
             }
         }
 
@@ -167,11 +163,6 @@ namespace AlquilerCoches
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void TTextBoxMarca_Leave(object sender, EventArgs e)
         {
             if (!Regex.Match(TTextBoxMarca.Text, @"^[A-Za-z]{3,15}$").Success)
@@ -195,18 +186,12 @@ namespace AlquilerCoches
             Close();
         }
 
-        private void TGroupBoxProveedores_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void TComboBoxProvincias_Click(object sender, EventArgs e)
         {
             EN.ENProveedores provincia = new EN.ENProveedores();
             DataSet dsProv = new DataSet();
             dsProv = provincia.ObtenerListaProvincias();
             ObtenerProvincias(dsProv);
-
         }
 
         private DataSet numProvincia;// usado en funcion TComboBoxCiudades_Click
@@ -215,8 +200,8 @@ namespace AlquilerCoches
             TComboBoxProvincias.Text = "Seleccione Provincia";
             TComboBoxProvincias.DataSource = dsProv.Tables["Provincia"];
             TComboBoxProvincias.DisplayMember = dsProv.Tables["Provincia"].Columns[1].Caption.ToString(); // como dsProv lleva el id_prov y el nombre ponemos 1 que es la columna del nombre
-           // numProvincia = new DataSet();
-           // numProvincia = dsProv;
+            numProvincia = new DataSet();
+            numProvincia = dsProv;
         }
 
         private void ObtenerCiudades(DataSet dsCiu)
@@ -234,10 +219,8 @@ namespace AlquilerCoches
             {
                 string prov = TComboBoxProvincias.Text.ToString();
                 bool parar = false;
-                // MessageBox.Show(numProvincia.Tables["Provincia"].Rows.Count.ToString());
                 for (int i = 0; i < 53 && parar != true; i++)
                 {
-                    //MessageBox.Show(numProvincia.Tables["Provincia"].Rows[i][1].ToString());
                     if (numProvincia.Tables["Provincia"].Rows[i][1].ToString() == prov)
                     {
                         string numprov = numProvincia.Tables["Provincia"].Rows[i][0].ToString();// en la posicion 0 esta el id de la provincia
@@ -258,7 +241,7 @@ namespace AlquilerCoches
         {
             if (TTextBoxCalle.Text == "" || TTextBoxCIF.Text == "" || TComboBoxCiudades.Text == ""
                || TTextBoxCPostal.Text == "" || TTextBoxEmail.Text == "" || TTextBoxMarca.Text == ""
-                 || TTextBoxTelefono.Text == "" || TTextBoxHorario.Text == "" || TTextBoxNumero.Text == "" || TComboBoxProvincias.Text == "")
+                 || TTextBoxTelefono.Text == "" || TTextBoxHorario.Text == "" || TTextBoxNumero.Text == "" || TComboBoxProvincias.Text == "" || TComboBoxProvincias.SelectedIndex <1)
             {
                 MessageBox.Show("No pueden haber campos vacios");
             }
@@ -353,6 +336,8 @@ namespace AlquilerCoches
                 Application.OpenForms["GestionProveedoresBuscar"].Activate();
             }
         }
+
+
 
     }
 }

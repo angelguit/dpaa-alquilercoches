@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.TButtonBuscar = new System.Windows.Forms.Button();
             this.TTextBoxMarca = new System.Windows.Forms.TextBox();
             this.TTextBoxCIF = new System.Windows.Forms.TextBox();
             this.TLabelProvincia = new System.Windows.Forms.Label();
@@ -37,29 +36,20 @@
             this.TLabelCIF = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.TLabelCiudad = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.TButtonEliminar = new System.Windows.Forms.Button();
+            this.TButtonBuscar = new System.Windows.Forms.Button();
             this.TTextBoxCPostal = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.TComboBoxCiudades = new System.Windows.Forms.ComboBox();
             this.TComboBoxProvincias = new System.Windows.Forms.ComboBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.TLabelTitulo = new System.Windows.Forms.Label();
+            this.TButtonCerrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // TButtonBuscar
-            // 
-            this.TButtonBuscar.Location = new System.Drawing.Point(26, 164);
-            this.TButtonBuscar.Name = "TButtonBuscar";
-            this.TButtonBuscar.Size = new System.Drawing.Size(75, 23);
-            this.TButtonBuscar.TabIndex = 46;
-            this.TButtonBuscar.Text = "Buscar";
-            this.TButtonBuscar.UseVisualStyleBackColor = true;
-            this.TButtonBuscar.Click += new System.EventHandler(this.TButtonBuscar_Click);
             // 
             // TTextBoxMarca
             // 
@@ -74,7 +64,6 @@
             this.TTextBoxCIF.Name = "TTextBoxCIF";
             this.TTextBoxCIF.Size = new System.Drawing.Size(100, 20);
             this.TTextBoxCIF.TabIndex = 42;
-            this.TTextBoxCIF.Leave += new System.EventHandler(this.TTextBoxCIF_Leave);
             // 
             // TLabelProvincia
             // 
@@ -106,10 +95,13 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(36, 55);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(722, 209);
             this.dataGridView1.TabIndex = 36;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -123,24 +115,14 @@
             this.TLabelCiudad.TabIndex = 48;
             this.TLabelCiudad.Text = "Ciudad";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(36, 553);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 50;
-            this.button1.Text = "Cerrar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.TButtonEliminar);
+            this.groupBox1.Controls.Add(this.TButtonBuscar);
             this.groupBox1.Controls.Add(this.TTextBoxCPostal);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.TComboBoxCiudades);
-            this.groupBox1.Controls.Add(this.TButtonBuscar);
             this.groupBox1.Controls.Add(this.TComboBoxProvincias);
             this.groupBox1.Controls.Add(this.TLabelCiudad);
             this.groupBox1.Controls.Add(this.TTextBoxMarca);
@@ -156,14 +138,30 @@
             // 
             // TButtonEliminar
             // 
-            this.TButtonEliminar.Location = new System.Drawing.Point(124, 164);
+            this.TButtonEliminar.Image = global::AlquilerCoches.Properties.Resources.Delete_icon;
+            this.TButtonEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TButtonEliminar.Location = new System.Drawing.Point(130, 154);
             this.TButtonEliminar.Name = "TButtonEliminar";
-            this.TButtonEliminar.Size = new System.Drawing.Size(75, 23);
-            this.TButtonEliminar.TabIndex = 52;
+            this.TButtonEliminar.Size = new System.Drawing.Size(77, 32);
+            this.TButtonEliminar.TabIndex = 58;
             this.TButtonEliminar.Text = "Eliminar";
+            this.TButtonEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.TButtonEliminar.UseVisualStyleBackColor = true;
             this.TButtonEliminar.Visible = false;
             this.TButtonEliminar.Click += new System.EventHandler(this.TButtonEliminar_Click);
+            // 
+            // TButtonBuscar
+            // 
+            this.TButtonBuscar.Image = global::AlquilerCoches.Properties.Resources.Search_icon;
+            this.TButtonBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TButtonBuscar.Location = new System.Drawing.Point(25, 154);
+            this.TButtonBuscar.Name = "TButtonBuscar";
+            this.TButtonBuscar.Size = new System.Drawing.Size(76, 32);
+            this.TButtonBuscar.TabIndex = 57;
+            this.TButtonBuscar.Text = "Buscar";
+            this.TButtonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.TButtonBuscar.UseVisualStyleBackColor = true;
+            this.TButtonBuscar.Click += new System.EventHandler(this.TButtonBuscar_Click);
             // 
             // TTextBoxCPostal
             // 
@@ -225,6 +223,19 @@
             this.TLabelTitulo.TabIndex = 56;
             this.TLabelTitulo.Text = "Buscador de Proveedores";
             // 
+            // TButtonCerrar
+            // 
+            this.TButtonCerrar.Image = global::AlquilerCoches.Properties.Resources.Close_icon;
+            this.TButtonCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TButtonCerrar.Location = new System.Drawing.Point(50, 551);
+            this.TButtonCerrar.Name = "TButtonCerrar";
+            this.TButtonCerrar.Size = new System.Drawing.Size(76, 32);
+            this.TButtonCerrar.TabIndex = 59;
+            this.TButtonCerrar.Text = "Cerrar";
+            this.TButtonCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.TButtonCerrar.UseVisualStyleBackColor = true;
+            this.TButtonCerrar.Click += new System.EventHandler(this.TButtonCerrar_Click);
+            // 
             // GestionProveedoresBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -232,9 +243,9 @@
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(894, 608);
+            this.Controls.Add(this.TButtonCerrar);
             this.Controls.Add(this.TLabelTitulo);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -254,7 +265,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button TButtonBuscar;
         private System.Windows.Forms.TextBox TTextBoxMarca;
         private System.Windows.Forms.TextBox TTextBoxCIF;
         private System.Windows.Forms.Label TLabelProvincia;
@@ -262,14 +272,15 @@
         private System.Windows.Forms.Label TLabelCIF;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label TLabelCiudad;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button TButtonEliminar;
         private System.Windows.Forms.ComboBox TComboBoxProvincias;
         private System.Windows.Forms.ComboBox TComboBoxCiudades;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.TextBox TTextBoxCPostal;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label TLabelTitulo;
+        private System.Windows.Forms.Button TButtonEliminar;
+        private System.Windows.Forms.Button TButtonBuscar;
+        private System.Windows.Forms.Button TButtonCerrar;
     }
 }

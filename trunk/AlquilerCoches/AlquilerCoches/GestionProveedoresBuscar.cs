@@ -40,113 +40,6 @@ namespace AlquilerCoches
             dataGridView1.Columns.Add(buttons);
         }
 
-
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void TButtonBuscar_Click(object sender, EventArgs e)
-        {
-            dataGridView1.Visible = true;
-            TButtonEliminar.Visible = true;
-            groupBox1.Location = new Point(36, 303); //para desplazar el panel de busqueda hacia abajo.
-            string cadena = "";
-            EN.ENProveedores buscarProveedores = new EN.ENProveedores();
-            DataSet resultadoProveedores = new DataSet();
-            //muestra todo
-
-            if (TTextBoxCIF.Text == "" && TComboBoxProvincias.Text == "" && TTextBoxMarca.Text == "" && TComboBoxCiudades.Text == "" && TTextBoxCPostal.Text=="")
-            {
-                resultadoProveedores = buscarProveedores.ObtenerListaProveedores(cadena);
-                dataGridView1.DataSource = resultadoProveedores;
-                dataGridView1.DataMember = "Proveedores";
-            }
-            else//con filtro
-            {
-                string buscarCIF = TTextBoxCIF.Text;
-                string buscarMarca = TTextBoxMarca.Text;
-                string buscarProvincia = TComboBoxProvincias.Text;
-                string buscarCiudad = TComboBoxCiudades.Text;
-                string buscarCPostal = TTextBoxCPostal.Text;
-                if (TTextBoxCIF.Text != "")
-                {
-                    cadena += " CIF='"+buscarCIF+"' ";
-                }
-
-                //Marca
-                if (TTextBoxMarca.Text != "" && cadena == "")
-                {
-                    cadena += " Marca='" + buscarMarca + "' ";
-                }
-                else
-                {
-                    if (TTextBoxMarca.Text != "" && cadena != "")
-                    {
-                        cadena += " and Marca='" + buscarMarca + "' ";
-                    }
-                }
-
-                //Provincia
-                if (TComboBoxProvincias.Text != "" && cadena == "")
-                {
-                    MessageBox.Show(TComboBoxProvincias.Text);
-                    cadena += " Provincia like '%" + buscarProvincia + "%' ";
-                }
-                else
-                {
-                    MessageBox.Show("2");
-                    if (TComboBoxProvincias.Text != "" && cadena != "")
-                    {
-                        cadena += " and Provincia like '%" + buscarProvincia + "%' ";
-                    }
-                }
-
-                //Ciudad
-                if (TComboBoxCiudades.Text != "" && cadena == "")
-                {
-                    cadena += " Ciudad like '%" + buscarCiudad + "%' ";
-                }
-                else
-                {
-                    if (TComboBoxCiudades.Text != "" && cadena != "")
-                    {
-                        cadena += " and Ciudad like '%" + buscarCiudad + "%' ";
-                    }
-                }
-
-                //Codigo Postal
-                if (TTextBoxCPostal.Text != "" && cadena == "")
-                {
-                    cadena += " CodigoPostal='" + buscarCPostal + "' ";
-                }
-                else
-                {
-                    if (TTextBoxCPostal.Text != "" && cadena != "")
-                    {
-                        cadena += " and CodigoPostal='" + buscarCPostal + "' ";
-                    }
-                }
-                MessageBox.Show("Select * FROM Proveedores where " + cadena + "");
-                resultadoProveedores = buscarProveedores.ObtenerListaProveedores(cadena);
-                dataGridView1.DataSource = resultadoProveedores;
-                dataGridView1.DataMember = "Proveedores";
-
-            }
-
-            for (int i = 0; i < dataGridView1.Columns.Count; i++) //esto nos servira para bloquear todas las columnas para que no se puedan editar 
-            {
-                if (i != 0) { dataGridView1.Columns[i].ReadOnly = true; } //dejamos desbloqueada la columna de eliminar para que podamos pulsar, la columna boton no se bloquea asiq no hace falta desbloquearla
-            }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void TComboBoxProvincias_Click(object sender, EventArgs e)
         {
             EN.ENProveedores provincia = new EN.ENProveedores();
@@ -180,10 +73,8 @@ namespace AlquilerCoches
             {
                 string prov = TComboBoxProvincias.Text.ToString();
                 bool parar = false;
-                // MessageBox.Show(numProvincia.Tables["Provincia"].Rows.Count.ToString());
                 for (int i = 0; i < 53 && parar != true; i++)
                 {
-                    //MessageBox.Show(numProvincia.Tables["Provincia"].Rows[i][1].ToString());
                     if (numProvincia.Tables["Provincia"].Rows[i][1].ToString() == prov)
                     {
                         string numprov = numProvincia.Tables["Provincia"].Rows[i][0].ToString();// en la posicion 0 esta el id de la provincia
@@ -200,16 +91,91 @@ namespace AlquilerCoches
             }
         }
 
-        private void TTextBoxCIF_Leave(object sender, EventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (!Regex.Match(TTextBoxCIF.Text, @"^(([A-Z]\d{8}))$").Success)
+            try
             {
-                errorProvider1.SetError(TTextBoxCIF, "Formato correcto: X00000000");
+                if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].ColumnIndex.ToString() == "0") // la columna 0 es el checkbox de eliminiar
+                {
+                    string dni = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString(); //el indice 2 hace referencia al dni del datagridview
+
+                    if (arraydni.Count == 0)
+                    {
+                        arraydni.Add(dni);
+                    }
+                    else
+                    {
+                        bool esta = false;
+                        for (int i = 0; i < arraydni.Count; i++)
+                        {
+                            if (arraydni[i].ToString() == dni)
+                            {
+                                arraydni.RemoveAt(i);//para borrarlo de la array porque esto quiere decir que lo hemos deseleccionado
+                                esta = true;
+                            }
+                        }
+                        if (esta == false)
+                        {
+                            arraydni.Add(dni);
+                        }
+                    }
+                }
+                 else if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "Editar")
+                 {
+                     arraydni.Clear();//la vaciamos ya que al cambiar de formulario se borran las marcas de los checkbox
+
+                     if (Application.OpenForms["GestionProveedores"] != null)
+                     {
+                         Application.OpenForms["GestionProveedores"].Activate();
+                     }
+                     else///////////////////////modificar
+                     {
+                         string cif = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                         string marca = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();//indice 1 para cojer el nombre
+                         string calle = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+                         int numero = Int32.Parse(dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString());
+                         int telefono = Int32.Parse(dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString());
+                         string email = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
+                         string ciudad = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
+                         string provincia = dataGridView1.Rows[e.RowIndex].Cells[9].Value.ToString();
+                         int codigopostal = Int32.Parse(dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString());
+                         string horario = dataGridView1.Rows[e.RowIndex].Cells[11].Value.ToString();
+                         string accion= "modificar";
+                         //string nombrebotonguardar = "Guardar Cambios";
+                         GestionProveedores Formu = new GestionProveedores(cif, marca, calle, numero, telefono, email, ciudad, provincia, codigopostal, horario,accion);
+
+                         Formu.Location = new Point(this.Location.X,this.Location.Y);
+                         Formu.StartPosition = FormStartPosition.CenterScreen;
+                         Formu.MdiParent = this.MdiParent;
+                         Formu.Show();
+                     }
+                 }
+                 else
+                 {
+
+                    // TTextBoxNombre.Text = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+
+                 }
             }
-            else 
-            { 
-               errorProvider1.SetError(TTextBoxCIF, ""); 
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error no hay valores en la fila");
             }
+        }
+
+        private void GestionProveedoresBuscar_Activated(object sender, EventArgs e)
+        {
+            ActualizarDataGridView();
+        }
+
+        private void ActualizarDataGridView()
+        {
+            string cadena = "";
+            EN.ENProveedores actualiza = new EN.ENProveedores();
+            DataSet ou = new DataSet();
+            ou = actualiza.ObtenerListaProveedores(cadena);
+            dataGridView1.DataSource = ou;
+
         }
 
         private void TButtonEliminar_Click(object sender, EventArgs e)
@@ -246,96 +212,104 @@ namespace AlquilerCoches
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void TButtonCerrar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].ColumnIndex.ToString() == "0") // la columna 0 es el checkbox de eliminiar
-                {
-                    string dni = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString(); //el indice 2 hace referencia al dni del datagridview
+            this.Close();
+        }
 
-                    if (arraydni.Count == 0)
+        private void TButtonBuscar_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Visible = true;
+            TButtonEliminar.Visible = true;
+            groupBox1.Location = new Point(36, 303); //para desplazar el panel de busqueda hacia abajo.
+            string cadena = "";
+            EN.ENProveedores buscarProveedores = new EN.ENProveedores();
+            DataSet resultadoProveedores = new DataSet();
+            //muestra todo
+
+            if (TTextBoxCIF.Text == "" && TComboBoxProvincias.Text == "" && TTextBoxMarca.Text == "" && TComboBoxCiudades.Text == "" && TTextBoxCPostal.Text == "")
+            {
+                resultadoProveedores = buscarProveedores.ObtenerListaProveedores(cadena);
+                dataGridView1.DataSource = resultadoProveedores;
+                dataGridView1.DataMember = "Proveedores";
+            }
+            else//con filtro
+            {
+                string buscarCIF = TTextBoxCIF.Text;
+                string buscarMarca = TTextBoxMarca.Text;
+                string buscarProvincia = TComboBoxProvincias.Text;
+                string buscarCiudad = TComboBoxCiudades.Text;
+                string buscarCPostal = TTextBoxCPostal.Text;
+                if (TTextBoxCIF.Text != "")
+                {
+                    cadena += " CIF='" + buscarCIF + "' ";
+                }
+
+                //Marca
+                if (TTextBoxMarca.Text != "" && cadena == "")
+                {
+                    cadena += " Marca='" + buscarMarca + "' ";
+                }
+                else
+                {
+                    if (TTextBoxMarca.Text != "" && cadena != "")
                     {
-                        arraydni.Add(dni);
-                    }
-                    else
-                    {
-                        bool esta = false;
-                        for (int i = 0; i < arraydni.Count; i++)
-                        {
-                            if (arraydni[i].ToString() == dni)
-                            {
-                                arraydni.RemoveAt(i);//para borrarlo de la array porque esto quiere decir que lo hemos deseleccionado
-                                esta = true;
-                            }
-                        }
-                        if (esta == false)
-                        {
-                            arraydni.Add(dni);
-                        }
+                        cadena += " and Marca='" + buscarMarca + "' ";
                     }
                 }
-                 else if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "Editar")
-                 {
-                     arraydni.Clear();//la vaciamos ya que al cambiar de formulario se borran las marcas de los checkbox
 
-                     if (Application.OpenForms["GestionPersonal"] != null)
-                     {
-                         Application.OpenForms["GestionPersonal"].Activate();
-                     }
-                     else///////////////////////modificar
-                     {
-                         string cif = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-                         string marca = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();//indice 1 para cojer el nombre
-                         string calle = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
-                         int numero = Int32.Parse(dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString());
-                         int telefono = Int32.Parse(dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString());
-                         string email = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
-                         string ciudad = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
-                         string provincia = dataGridView1.Rows[e.RowIndex].Cells[9].Value.ToString();
-                         int codigopostal = Int32.Parse(dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString());
-                         string horario = dataGridView1.Rows[e.RowIndex].Cells[11].Value.ToString();
-                         string accion= "modificar";
-                         //string nombrebotonguardar = "Guardar Cambios";
-                         GestionProveedores Formu = new GestionProveedores(cif, marca, calle, numero, telefono, email, ciudad, provincia, codigopostal, horario,accion);
+                //Provincia
+                if (TComboBoxProvincias.Text != "" && cadena == "")
+                {
+                    cadena += " Provincia like '%" + buscarProvincia + "%' ";
+                }
+                else
+                {
+                    if (TComboBoxProvincias.Text != "" && cadena != "")
+                    {
+                        cadena += " and Provincia like '%" + buscarProvincia + "%' ";
+                    }
+                }
 
-                         Formu.StartPosition = FormStartPosition.CenterScreen;
-                         Formu.MdiParent = this.MdiParent;
-                         Formu.Show();
+                //Ciudad
+                if (TComboBoxCiudades.Text != "" && cadena == "")
+                {
+                    cadena += " Ciudad like '%" + buscarCiudad + "%' ";
+                }
+                else
+                {
+                    if (TComboBoxCiudades.Text != "" && cadena != "")
+                    {
+                        cadena += " and Ciudad like '%" + buscarCiudad + "%' ";
+                    }
+                }
 
-                         /*EN.ENProveedores refrescar = new EN.ENProveedores();
-                         string cadena = "";
-                         dataGridView1.DataSource = refrescar.ObtenerListaProveedores(cadena);
-                          * */
-                     }
-                 }
-                 else
-                 {
+                //Codigo Postal
+                if (TTextBoxCPostal.Text != "" && cadena == "")
+                {
+                    cadena += " CodigoPostal='" + buscarCPostal + "' ";
+                }
+                else
+                {
+                    if (TTextBoxCPostal.Text != "" && cadena != "")
+                    {
+                        cadena += " and CodigoPostal='" + buscarCPostal + "' ";
+                    }
+                }
+                resultadoProveedores = buscarProveedores.ObtenerListaProveedores(cadena);
 
-                    // TTextBoxNombre.Text = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
-
-                 }
+                dataGridView1.DataSource = resultadoProveedores;
+                dataGridView1.DataMember = "Proveedores";
             }
-            catch (Exception ex)
+
+            for (int i = 0; i < dataGridView1.Columns.Count; i++) //esto nos servira para bloquear todas las columnas para que no se puedan editar 
             {
-                MessageBox.Show("Error no hay valores en la fila");
-
+                if (i != 0) { dataGridView1.Columns[i].ReadOnly = true; } //dejamos desbloqueada la columna de eliminar para que podamos pulsar, la columna boton no se bloquea asiq no hace falta desbloquearla
             }
         }
 
-        private void GestionProveedoresBuscar_Activated(object sender, EventArgs e)
-        {
-            ActualizarDataGridView();
-        }
 
-        private void ActualizarDataGridView()
-        {
-            string cadena = "";
-            EN.ENProveedores actualiza = new EN.ENProveedores();
-            DataSet ou = new DataSet();
-            ou = actualiza.ObtenerListaProveedores(cadena);
-            dataGridView1.DataSource = ou;
 
-        }
+
     }
 }
