@@ -33,6 +33,9 @@ namespace AlquilerCoches
             DataSet dsCli = new DataSet();
             EN.ENVehiculo enVe = new EN.ENVehiculo();
             EN.ENCliente enCli = new EN.ENCliente();
+            EN.ENReservas enRes = new EN.ENReservas();
+            DataSet dsRes = new DataSet();
+            
 
             aux = enRe;
             dsCli = enCli.ObtenerDatosClienteConDni(enRe.Cliente.ToString());
@@ -57,25 +60,28 @@ namespace AlquilerCoches
             TRectangleShapeCliente.Visible = true;
             TButtonEditar.Visible = true;
             TButtonReserva.Text = texto;
-            
+
+            TComboBoxConductores.SelectedIndex = TComboBoxConductores.FindStringExact(enRe.Conductores.ToString());
+            TDateTimePickerFechaFin.Value = enRe.FechaFin;
+            TDateTimePickerFechaInicio.Value = enRe.FechaInicio;
+            TComboBoxCategoria.Items.Add(enVe.Categoria);
+            TComboBoxCategoria.SelectedIndex = 0;
+            TComboBoxMarca.Items.Add(enVe.Marca);
+            TComboBoxMarca.SelectedIndex = 0;
+            TComboBoxModelo.Items.Add(enVe.Modelo);
+            TComboBoxModelo.SelectedIndex = 0;
+            TComboBoxMatricula.Items.Add(enVe.Matricula);
+            TComboBoxMatricula.SelectedIndex = 0;
             
         }
 
-        private void RellenarEditar()
-        {
-            TComboBoxConductores.SelectedIndex = TComboBoxConductores.FindStringExact(aux.Conductores.ToString());
-            TComboBoxCategoria.SelectedIndex = TComboBoxCategoria.FindStringExact(enVeaux.Categoria);
-            TComboBoxMarca.SelectedIndex = TComboBoxMarca.FindStringExact(enVeaux.Marca);
-            TComboBoxModelo.SelectedIndex = TComboBoxModelo.FindStringExact(enVeaux.Modelo);
-            TComboBoxMatricula.SelectedIndex = TComboBoxMatricula.FindStringExact(enVeaux.Matricula);
-            TDateTimePickerFechaFin.Value = aux.FechaFin;
-            TDateTimePickerFechaInicio.Value = aux.FechaInicio;
-        }
         private void RellenarMarcas(DataSet dsMar)
         {
-            TComboBoxMarca.DataSource = dsMar.Tables["Marcas"];
-            TComboBoxMarca.DisplayMember = dsMar.Tables["Marcas"].Columns[0].Caption.ToString();
-            TComboBoxMarca.Text = "Seleccione Marca";
+            if (!editar)
+            {
+                TComboBoxMarca.DataSource = dsMar.Tables["Marcas"];
+                TComboBoxMarca.DisplayMember = dsMar.Tables["Marcas"].Columns[0].Caption.ToString();
+            }
         }
 
         private void RellenarCategoria(DataSet dsCat)
@@ -86,18 +92,19 @@ namespace AlquilerCoches
 
         private void RellenarModelos(DataSet dsMod)
         {
-            TComboBoxModelo.DataSource = dsMod.Tables["Modelos"];
-            TComboBoxModelo.DisplayMember = dsMod.Tables["Modelos"].Columns[0].Caption.ToString();
+            if (!editar)
+            {
+                TComboBoxModelo.DataSource = dsMod.Tables["Modelos"];
+                TComboBoxModelo.DisplayMember = dsMod.Tables["Modelos"].Columns[0].Caption.ToString();
+            }
         }
 
         private void RellenarMatriculas(DataSet dsMod)
         {
-            TComboBoxMatricula.DataSource = dsMod.Tables["Vehiculo"];
-            TComboBoxMatricula.DisplayMember = dsMod.Tables["Vehiculo"].Columns[0].Caption.ToString();
-            if (editar)
+            if (!editar)
             {
-                RellenarEditar();
-                editar = false;
+                TComboBoxMatricula.DataSource = dsMod.Tables["Vehiculo"];
+                TComboBoxMatricula.DisplayMember = dsMod.Tables["Vehiculo"].Columns[0].Caption.ToString();
             }
         }
 
@@ -105,13 +112,14 @@ namespace AlquilerCoches
 
         private void AltaReservas_Load(object sender, EventArgs e)
         {
-
-            TDateTimePickerFechaInicio.Value = TDateTimePickerFechaFin.Value = DateTime.Today;
-            EN.ENReservas enRes = new EN.ENReservas();
-            DataSet dsRes = new DataSet();
-            dsRes = enRes.RellenarCategoria();
-            RellenarCategoria(dsRes);
-
+            if (!editar)
+            {
+                TDateTimePickerFechaInicio.Value = TDateTimePickerFechaFin.Value = DateTime.Today;
+                EN.ENReservas enRes = new EN.ENReservas();
+                DataSet dsRes = new DataSet();
+                dsRes = enRes.RellenarCategoria();
+                RellenarCategoria(dsRes);
+            }
         }
 
 
@@ -461,6 +469,83 @@ namespace AlquilerCoches
                 
             }
         }
+
+        private void TComboBoxCategoria_Click(object sender, EventArgs e)
+        {
+            if (editar)
+            {
+                string[] texto = {TComboBoxCategoria.Text,TComboBoxMarca.Text,TComboBoxModelo.Text,TComboBoxMatricula.Text};
+                EN.ENReservas enRes = new EN.ENReservas();
+                DataSet dsRes = new DataSet();
+                editar = false;
+                dsRes = enRes.RellenarCategoria();                
+                RellenarCategoria(dsRes);
+                TComboBoxCategoria.SelectedIndex = TComboBoxCategoria.FindStringExact(texto[0]);
+                TComboBoxMarca.SelectedIndex = TComboBoxMarca.FindStringExact(texto[1]);
+                TComboBoxModelo.SelectedIndex = TComboBoxModelo.FindStringExact(texto[2]);
+                TComboBoxMatricula.SelectedIndex = TComboBoxMatricula.FindStringExact(texto[3]);
+            }
+            
+            
+        }
+
+        private void TComboBoxMarca_Click(object sender, EventArgs e)
+        {
+            if (editar)
+            {
+                string[] texto = { TComboBoxCategoria.Text, TComboBoxMarca.Text, TComboBoxModelo.Text, TComboBoxMatricula.Text };
+                EN.ENReservas enRes = new EN.ENReservas();
+                DataSet dsRes = new DataSet();
+                dsRes = enRes.RellenarCategoria();
+                editar = false;
+                RellenarCategoria(dsRes);
+                TComboBoxCategoria.SelectedIndex = TComboBoxCategoria.FindStringExact(texto[0]);
+                TComboBoxMarca.SelectedIndex = TComboBoxMarca.FindStringExact(texto[1]);
+                TComboBoxModelo.SelectedIndex = TComboBoxModelo.FindStringExact(texto[2]);
+                TComboBoxMatricula.SelectedIndex = TComboBoxMatricula.FindStringExact(texto[3]);
+            }
+            
+            
+        }
+
+        private void TComboBoxModelo_Click(object sender, EventArgs e)
+        {
+            if (editar)
+            {
+                string[] texto = { TComboBoxCategoria.Text, TComboBoxMarca.Text, TComboBoxModelo.Text, TComboBoxMatricula.Text };
+                EN.ENReservas enRes = new EN.ENReservas();
+                DataSet dsRes = new DataSet();
+                dsRes = enRes.RellenarCategoria();
+                editar = false;
+                RellenarCategoria(dsRes);
+                TComboBoxCategoria.SelectedIndex = TComboBoxCategoria.FindStringExact(texto[0]);
+                TComboBoxMarca.SelectedIndex = TComboBoxMarca.FindStringExact(texto[1]);
+                TComboBoxModelo.SelectedIndex = TComboBoxModelo.FindStringExact(texto[2]);
+                TComboBoxMatricula.SelectedIndex = TComboBoxMatricula.FindStringExact(texto[3]);
+            }
+           
+            
+        }
+
+        private void TComboBoxMatricula_Click(object sender, EventArgs e)
+        {
+            if (editar)
+            {
+                string[] texto = { TComboBoxCategoria.Text, TComboBoxMarca.Text, TComboBoxModelo.Text, TComboBoxMatricula.Text };
+                EN.ENReservas enRes = new EN.ENReservas();
+                DataSet dsRes = new DataSet();
+                dsRes = enRes.RellenarCategoria();
+                editar = false;
+                RellenarCategoria(dsRes);
+                TComboBoxCategoria.SelectedIndex = TComboBoxCategoria.FindStringExact(texto[0]);
+                TComboBoxMarca.SelectedIndex = TComboBoxMarca.FindStringExact(texto[1]);
+                TComboBoxModelo.SelectedIndex = TComboBoxModelo.FindStringExact(texto[2]);
+                TComboBoxMatricula.SelectedIndex = TComboBoxMatricula.FindStringExact(texto[3]);
+            }
+            
+            
+        }
+
 
      }
 }
