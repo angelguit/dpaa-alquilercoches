@@ -23,6 +23,7 @@ namespace EN
         private DateTime fechaInicio;
         private DateTime fechaFin;
         private bool activa;
+        private int numRes;
 
         private CAD.CADReservas cadReservas = new CAD.CADReservas();
 
@@ -47,18 +48,30 @@ namespace EN
 
         }
 
-        public DataSet ObtenerReservas()
+        public void EditarReserva()
         {
-            DataSet resultado = new DataSet();
             try
             {
-                resultado = cadReservas.ObtenerReservas();
+                DataSet res = new DataSet();
+                res = cadReservas.ObtenerReservas(numRes);
+                cadReservas.EditarReserva(res);
+
             }
             catch (Exception ex)
             {
                 throw (ex);
             }
-            return resultado;
+        }
+        public DataSet ObtenerReservas()
+        {
+            try
+            {
+                return cadReservas.ObtenerReservas();
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
         }
 
         public DataSet ObtenerReservas(string sentencia)
@@ -151,6 +164,11 @@ namespace EN
             set { activa = value; }
         }
 
+        public int NumRes
+        {
+            get { return numRes; }
+            set { numRes = value; }
+        }
             
     }
 }

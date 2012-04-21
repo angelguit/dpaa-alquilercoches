@@ -18,7 +18,9 @@ namespace AlquilerCoches
         private ErrorProvider err4 = new ErrorProvider();
         private string mens, provincias, ciudades;
         private EN.ENCliente enCliente = new EN.ENCliente();
-        bool editar = false;
+        private bool editar = false;
+        private EN.ENReservas aux = new EN.ENReservas();
+        private EN.ENVehiculo enVeaux = new EN.ENVehiculo();
 
         public AltaReservas()
         {
@@ -31,21 +33,20 @@ namespace AlquilerCoches
             DataSet dsCli = new DataSet();
             EN.ENVehiculo enVe = new EN.ENVehiculo();
             EN.ENCliente enCli = new EN.ENCliente();
-            EN.ENReservas enRes = new EN.ENReservas();
-            DataSet dsRes = new DataSet();
-            
+
+            aux = enRe;
             dsCli = enCli.ObtenerDatosClienteConDni(enRe.Cliente.ToString());
             enVe.Matricula = enRe.Matricula;
             enVe.ObtenerDatosVehiculos();
-            enVe.Estado = "Disponible";
-            enVe.EditarVehiculo();
+            enVeaux = enVe;
 
             string nombre = dsCli.Tables["Cliente"].Rows[0][1].ToString();
             string apellidos = dsCli.Tables["Cliente"].Rows[0][2].ToString();
             string dni = dsCli.Tables["Cliente"].Rows[0][0].ToString();
             string telf = dsCli.Tables["Cliente"].Rows[0][4].ToString();
             string direc = dsCli.Tables["Cliente"].Rows[0][6].ToString();
-            
+
+ 
             TLabelNombre.Text = "Nombre: " + nombre + "Apellidos: " + apellidos;
             TLabelDNI.Text = "DNI: " + dni + "Telf: " + telf;
             TLabelDirec.Text = "Direccion: " + direc;
@@ -55,23 +56,21 @@ namespace AlquilerCoches
             TLabelDNI.Visible = true;
             TRectangleShapeCliente.Visible = true;
             TButtonEditar.Visible = true;
-
-            dsRes = enRes.RellenarCategoria();
-            RellenarCategoria(dsRes);
-
-            TComboBoxConductores.SelectedIndex = TComboBoxConductores.FindStringExact(enRe.Conductores.ToString());
-            TComboBoxCategoria.SelectedIndex = TComboBoxCategoria.FindStringExact(enVe.Categoria);
-            TComboBoxMarca.SelectedIndex = TComboBoxMarca.FindStringExact(enVe.Marca);
-            TComboBoxModelo.SelectedIndex = TComboBoxModelo.FindStringExact(enVe.Modelo);
-            TComboBoxMatricula.SelectedIndex = TComboBoxMatricula.FindStringExact(enVe.Matricula);
-            
-            TDateTimePickerFechaFin.Value = enRe.FechaFin;
-            TDateTimePickerFechaInicio.Value = enRe.FechaInicio;
             TButtonReserva.Text = texto;
             
             
         }
 
+        private void RellenarEditar()
+        {
+            TComboBoxConductores.SelectedIndex = TComboBoxConductores.FindStringExact(aux.Conductores.ToString());
+            TComboBoxCategoria.SelectedIndex = TComboBoxCategoria.FindStringExact(enVeaux.Categoria);
+            TComboBoxMarca.SelectedIndex = TComboBoxMarca.FindStringExact(enVeaux.Marca);
+            TComboBoxModelo.SelectedIndex = TComboBoxModelo.FindStringExact(enVeaux.Modelo);
+            TComboBoxMatricula.SelectedIndex = TComboBoxMatricula.FindStringExact(enVeaux.Matricula);
+            TDateTimePickerFechaFin.Value = aux.FechaFin;
+            TDateTimePickerFechaInicio.Value = aux.FechaInicio;
+        }
         private void RellenarMarcas(DataSet dsMar)
         {
             TComboBoxMarca.DataSource = dsMar.Tables["Marcas"];
@@ -83,35 +82,36 @@ namespace AlquilerCoches
         {
             TComboBoxCategoria.DataSource = dsCat.Tables["Categorias"];
             TComboBoxCategoria.DisplayMember = dsCat.Tables["Categorias"].Columns[0].Caption.ToString();
-            TComboBoxCategoria.Text = "Seleccione Categoria";
         }
 
         private void RellenarModelos(DataSet dsMod)
         {
             TComboBoxModelo.DataSource = dsMod.Tables["Modelos"];
             TComboBoxModelo.DisplayMember = dsMod.Tables["Modelos"].Columns[0].Caption.ToString();
-            TComboBoxModelo.Text = "Seleccione Modelo";
         }
 
         private void RellenarMatriculas(DataSet dsMod)
         {
             TComboBoxMatricula.DataSource = dsMod.Tables["Vehiculo"];
             TComboBoxMatricula.DisplayMember = dsMod.Tables["Vehiculo"].Columns[0].Caption.ToString();
-            TComboBoxMatricula.Text = "Seleccione Matricula";
+            if (editar)
+            {
+                RellenarEditar();
+                editar = false;
+            }
         }
 
         
 
         private void AltaReservas_Load(object sender, EventArgs e)
         {
-            if (!editar)
-            {
-                TDateTimePickerFechaInicio.Value = TDateTimePickerFechaFin.Value = DateTime.Today;
-                EN.ENReservas enRes = new EN.ENReservas();
-                DataSet dsRes = new DataSet();
-                dsRes = enRes.RellenarCategoria();
-                RellenarCategoria(dsRes);
-            }
+
+            TDateTimePickerFechaInicio.Value = TDateTimePickerFechaFin.Value = DateTime.Today;
+            EN.ENReservas enRes = new EN.ENReservas();
+            DataSet dsRes = new DataSet();
+            dsRes = enRes.RellenarCategoria();
+            RellenarCategoria(dsRes);
+
         }
 
 
@@ -191,6 +191,7 @@ namespace AlquilerCoches
             if (TComboBoxMarca.Text == "")
             {
                 err2.SetError(TComboBoxMatricula, "Falta seleccionar vehículo");
+                TComboBoxMatricula.DataSource = null;
             }
             else
             {
@@ -271,15 +272,24 @@ namespace AlquilerCoches
                 enRe.Matricula = TComboBoxMatricula.Text.ToString();
                 enRe.Modelo = TComboBoxModelo.Text.ToString();
                 enRe.Activa = true;
-                enRe.AnyadirReserva();
+                enRe.NumRes = aux.NumRes;
+
+                if (TButtonReserva.Text == "Realizar Reserva")
+                {
+                    enRe.AnyadirReserva();
+                    MessageBox.Show("Reserva realizada con éxito", "Nueva Reserva", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    enRe.EditarReserva();
+                    MessageBox.Show("Cambios guardados con éxito", "Editar Reserva", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
                 enVe.ObtenerDatosVehiculos();
                 enVe.Estado = "Reservado";
                 enVe.EditarVehiculo();
-                MessageBox.Show("Reserva realizada con éxito", "Nueva Reserva", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ImprimirReserva FPrint = new ImprimirReserva(enCliente,enRe,enVe,enRe.NumeroUltimaReserva());
-                FPrint.Show();
+                FPrint.Show(); 
                 FPrint.Imprimir();
-                FPrint.Visible = false;
 
                 Close();
             }
@@ -353,7 +363,33 @@ namespace AlquilerCoches
         {
             if (TRadioButtonUltimoCoche.Checked == true)
             {
-                MessageBox.Show(enCliente.UltimaReserva());
+                EN.ENVehiculo enVe = new EN.ENVehiculo();
+
+                enVe.Matricula = enCliente.UltimaReserva();
+                enVe.ObtenerDatosVehiculos();
+
+                TComboBoxCategoria.SelectedIndex = TComboBoxCategoria.FindStringExact(enVe.Categoria);
+                if (TComboBoxMarca.FindStringExact(enVe.Marca) == -1 && TComboBoxMatricula.Text != "")
+                {
+                    MessageBox.Show("No hay modelos disponibles, se ha escogido un modelo de igual categoría", "No hay modelos disponibles", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (TComboBoxMarca.FindStringExact(enVe.Marca) > -1 && TComboBoxMatricula.Text != "")
+                {
+                    TComboBoxMarca.SelectedIndex = TComboBoxMarca.FindStringExact(enVe.Marca);
+                    if (TComboBoxModelo.FindStringExact(enVe.Modelo) < 0)
+                    {
+                        MessageBox.Show("No hay modelos disponibles, se ha escogido un modelo de igual categoría y marca","No hay modelos disponibles",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        TComboBoxModelo.SelectedIndex = TComboBoxModelo.FindStringExact(enVe.Modelo);
+                        MessageBox.Show("Se ha escogido el vehiculo " + enVe.Marca + " " + enVe.Modelo + ".","Vehículo favorito seleccionado",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No hay modelos disponibles de la misma categoría","No hay modelos disponibles",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                }
             }
         }
 
@@ -367,24 +403,24 @@ namespace AlquilerCoches
                 TComboBoxCategoria.SelectedIndex = TComboBoxCategoria.FindStringExact(favorito[2]);
                 if (TComboBoxMarca.FindStringExact(favorito[0]) == -1 && TComboBoxMatricula.Text != "")
                 {
-                    MessageBox.Show("No hay modelos disponibles, se ha escogido un modelo de igual categoría");
+                    MessageBox.Show("No hay modelos disponibles, se ha escogido un modelo de igual categoría","No hay modelos disponibles",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 }
                 else if (TComboBoxMarca.FindStringExact(favorito[0]) > -1 && TComboBoxMatricula.Text != "")
                 {
                     TComboBoxMarca.SelectedIndex = TComboBoxMarca.FindStringExact(favorito[0]);
                     if (TComboBoxModelo.FindStringExact(favorito[1]) < 0)
                     {
-                        MessageBox.Show("No hay modelos disponibles, se ha escogido un modelo de igual categoría y marca");
+                        MessageBox.Show("No hay modelos disponibles, se ha escogido un modelo de igual categoría y marca","No hay modelos disponibles",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     }
                     else
                     {
                         TComboBoxModelo.SelectedIndex = TComboBoxModelo.FindStringExact(favorito[1]);
-                        MessageBox.Show("Se ha escogido el vehiculo " + favorito[0] + " " + favorito[1] + ".");
+                        MessageBox.Show("Se ha escogido el vehiculo " + favorito[0] + " " + favorito[1] + ".","Vehículo favorito seleccionado",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("No hay modelos disponibles de la misma categoría");
+                    MessageBox.Show("No hay modelos disponibles de la misma categoría","No hay modelos disponibles",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 }
             }
         }
