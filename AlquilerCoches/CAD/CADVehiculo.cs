@@ -173,7 +173,7 @@ namespace CAD
             try
             {
                 SqlConnection conexion = new SqlConnection(cadenaConexion);
-                String consulta = "Select Marca from Vehiculo WHERE (FK_Categoria = '" + cat + "') AND (Estado = 'Disponible')";
+                String consulta = "Select Marca from Vehiculo WHERE (FK_Categoria = '" + cat + "') AND (Estado = 'Disponible') group by Marca";
                 SqlDataAdapter daVehiculos = new SqlDataAdapter(consulta, conexion);
                 daVehiculos.MissingSchemaAction = MissingSchemaAction.AddWithKey;
                 daVehiculos.Fill(dsVehiculo, "Marcas");

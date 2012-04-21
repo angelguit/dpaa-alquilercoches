@@ -83,6 +83,7 @@
             this.TComboBoxCategoria.Size = new System.Drawing.Size(121, 21);
             this.TComboBoxCategoria.TabIndex = 27;
             this.TComboBoxCategoria.TextChanged += new System.EventHandler(this.TComboBoxCategoria_TextChanged);
+            this.TComboBoxCategoria.Click += new System.EventHandler(this.TComboBoxCategoria_Click);
             // 
             // TComboBoxModelo
             // 
@@ -93,6 +94,7 @@
             this.TComboBoxModelo.Size = new System.Drawing.Size(121, 21);
             this.TComboBoxModelo.TabIndex = 28;
             this.TComboBoxModelo.TextChanged += new System.EventHandler(this.TComboBoxModelo_TextChanged);
+            this.TComboBoxModelo.Click += new System.EventHandler(this.TComboBoxModelo_Click);
             // 
             // TLabelCategoria
             // 
@@ -133,6 +135,7 @@
             this.TComboBoxMatricula.Size = new System.Drawing.Size(121, 21);
             this.TComboBoxMatricula.TabIndex = 32;
             this.TComboBoxMatricula.TextChanged += new System.EventHandler(this.TComboBoxMatricula_TextChanged);
+            this.TComboBoxMatricula.Click += new System.EventHandler(this.TComboBoxMatricula_Click);
             // 
             // TLabelConductores
             // 
@@ -235,6 +238,7 @@
             this.TComboBoxMarca.Size = new System.Drawing.Size(121, 21);
             this.TComboBoxMarca.TabIndex = 44;
             this.TComboBoxMarca.TextChanged += new System.EventHandler(this.TComboBoxMarca_TextChanged);
+            this.TComboBoxMarca.Click += new System.EventHandler(this.TComboBoxMarca_Click);
             // 
             // TButtonCerrar
             // 
