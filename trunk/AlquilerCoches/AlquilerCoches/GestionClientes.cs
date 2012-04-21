@@ -32,12 +32,13 @@ namespace AlquilerCoches
             TTextBoxTelefono.Text = enCliente.Telefono.ToString();
             TTextBoxEmail.Text = enCliente.Email;
             TTextBoxDireccion.Text = enCliente.Direccion;
-
-            TComboBoxProvincias.Items.Add(provincias);
-            TComboBoxProvincias.SelectedIndex = 0;
-            TComboBoxCiudades.Items.Add(ciudades);
-            TComboBoxCiudades.SelectedIndex = 0;
-
+            if (provincias != null && ciudades != null)
+            {
+                TComboBoxProvincias.Items.Add(provincias);
+                TComboBoxProvincias.SelectedIndex = 0;
+                TComboBoxCiudades.Items.Add(ciudades);
+                TComboBoxCiudades.SelectedIndex = 0;
+            }
             TButtonGuardarCliente.Text = nombrebotonguardar; // importante le cambiamos el nombre al boton para saber que venimos del formulario buscar, y estamos editando no guardando uno nuevo
             TButtonGuardarCliente.Size = new Size(105, 24);
 
