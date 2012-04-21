@@ -215,13 +215,19 @@ namespace AlquilerCoches
                 {
 
                     EN.ENReservas enRe = new EN.ENReservas();
+                    EN.ENVehiculo enVe = new EN.ENVehiculo();
+
                     enRe.Matricula = enRe.Cliente = TDataGridViewReservas.Rows[e.RowIndex].Cells[4].Value.ToString();
                     enRe.FechaInicio = Convert.ToDateTime(TDataGridViewReservas.Rows[e.RowIndex].Cells[5].Value.ToString());
                     enRe.FechaFin = Convert.ToDateTime(TDataGridViewReservas.Rows[e.RowIndex].Cells[6].Value.ToString());
                     enRe.Conductores = Int32.Parse(TDataGridViewReservas.Rows[e.RowIndex].Cells[7].Value.ToString());
                     enRe.Cliente = TDataGridViewReservas.Rows[e.RowIndex].Cells[3].Value.ToString();
-                        
+                    enRe.NumRes = Int32.Parse(TDataGridViewReservas.Rows[e.RowIndex].Cells[2].Value.ToString());
 
+                    enVe.Matricula = enRe.Matricula;
+                    enVe.ObtenerDatosVehiculos();
+                    enVe.Estado = "Disponible";
+                    enVe.EditarVehiculo();
                     AltaReservas F1 = new AltaReservas(enRe, "Guardar Cambios");
                     F1.ShowDialog();
 

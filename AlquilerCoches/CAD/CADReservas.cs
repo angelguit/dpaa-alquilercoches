@@ -54,6 +54,26 @@ namespace CAD
             return dsRes;
         }
 
+        public DataSet ObtenerReservas(int numRes)
+        {
+            DataSet dsRes = new DataSet();
+            SqlDataAdapter daRes;
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                String consulta = "Select * from Reservas where NºReserva = '" + numRes + "'";
+                daRes = new SqlDataAdapter(consulta, conexion);
+                daRes.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daRes.Fill(dsRes, "Reservas");
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+
+            return dsRes;
+        }
+
         public DataSet ObtenerReservas(string sentencia)
         {
             DataSet dsRes = new DataSet();
@@ -180,6 +200,26 @@ namespace CAD
             }
 
             return Int32.Parse(dsReser.Tables["Reservas"].Rows[dsReser.Tables["Reservas"].Rows.Count - 1][0].ToString());
+        }
+
+        public void EditarReserva(DataSet dsRes)
+        {
+            DataSet dsRe = new DataSet();
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                String consulta = "Select * from Reservas where NºReserva = '" + dsRes.Tables["Reservas"].Rows[0][0] + "'";
+                SqlDataAdapter daRes = new SqlDataAdapter(consulta, conexion);
+                daRes.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daRes.Fill(dsRe, "Reservas");
+                SqlCommandBuilder cbuilder = new SqlCommandBuilder(daRes);
+                daRes.Update(dsRes, "Reservas");
+
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
         }
     }
 }
