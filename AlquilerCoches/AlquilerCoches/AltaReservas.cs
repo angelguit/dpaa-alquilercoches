@@ -482,8 +482,7 @@ namespace AlquilerCoches
                 TComboBoxModelo.SelectedIndex = TComboBoxModelo.FindStringExact(texto[2]);
                 TComboBoxMatricula.SelectedIndex = TComboBoxMatricula.FindStringExact(texto[3]);
             }
-            
-            
+
         }
 
         private void TComboBoxMarca_Click(object sender, EventArgs e)
