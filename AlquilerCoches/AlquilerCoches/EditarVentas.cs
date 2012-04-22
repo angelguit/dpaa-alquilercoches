@@ -64,6 +64,11 @@ namespace AlquilerCoches
                 TCheckBoxGarantia.Checked = true;
                 TTextBoxMeses.Text = ventas.Garantia;
             }
+            else
+            {
+                TCheckBoxGarantia.Checked = false;
+                TTextBoxMeses.Text = "Meses";
+            }
             TTextBoxPrecioVenta.Text = ventas.PrecioVenta.ToString();
         }
 
