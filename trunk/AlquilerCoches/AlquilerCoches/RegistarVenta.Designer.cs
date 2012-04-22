@@ -43,7 +43,6 @@
             this.TTextBoxApellidos = new System.Windows.Forms.TextBox();
             this.TTextBoxNombre = new System.Windows.Forms.TextBox();
             this.TTextBoxDNI = new System.Windows.Forms.TextBox();
-            this.TButtonBuscarCliente = new System.Windows.Forms.Button();
             this.TLabelObligatorio = new System.Windows.Forms.Label();
             this.TTextBoxMeses = new System.Windows.Forms.TextBox();
             this.TCheckBoxGarantia = new System.Windows.Forms.CheckBox();
@@ -63,7 +62,7 @@
             this.TLabelMatricula = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.TLabelTitulo = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.TListBoxClientes = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
             this.TGroupBoxDatosVehiculo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -147,14 +146,13 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.TGroupBoxDatosVehiculo.BackColor = System.Drawing.Color.Transparent;
             this.TGroupBoxDatosVehiculo.Controls.Add(this.label4);
-            this.TGroupBoxDatosVehiculo.Controls.Add(this.listBox1);
+            this.TGroupBoxDatosVehiculo.Controls.Add(this.TListBoxClientes);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.label3);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.label2);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.label1);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TTextBoxApellidos);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TTextBoxNombre);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TTextBoxDNI);
-            this.TGroupBoxDatosVehiculo.Controls.Add(this.TButtonBuscarCliente);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelObligatorio);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TTextBoxMeses);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TCheckBoxGarantia);
@@ -231,18 +229,6 @@
             this.TTextBoxDNI.Size = new System.Drawing.Size(93, 20);
             this.TTextBoxDNI.TabIndex = 51;
             // 
-            // TButtonBuscarCliente
-            // 
-            this.TButtonBuscarCliente.Image = global::AlquilerCoches.Properties.Resources.Search_icon;
-            this.TButtonBuscarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.TButtonBuscarCliente.Location = new System.Drawing.Point(640, 187);
-            this.TButtonBuscarCliente.Name = "TButtonBuscarCliente";
-            this.TButtonBuscarCliente.Size = new System.Drawing.Size(115, 33);
-            this.TButtonBuscarCliente.TabIndex = 50;
-            this.TButtonBuscarCliente.Text = "Buscar Cliente";
-            this.TButtonBuscarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.TButtonBuscarCliente.UseVisualStyleBackColor = true;
-            // 
             // TLabelObligatorio
             // 
             this.TLabelObligatorio.AutoSize = true;
@@ -294,7 +280,7 @@
             this.TButtonAceptar.Name = "TButtonAceptar";
             this.TButtonAceptar.Size = new System.Drawing.Size(86, 33);
             this.TButtonAceptar.TabIndex = 7;
-            this.TButtonAceptar.Text = "Guardar";
+            this.TButtonAceptar.Text = "Añadir";
             this.TButtonAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.TButtonAceptar.UseVisualStyleBackColor = true;
             this.TButtonAceptar.Click += new System.EventHandler(this.TButtonAceptar_Click);
@@ -421,18 +407,18 @@
             this.TLabelTitulo.TabIndex = 59;
             this.TLabelTitulo.Text = "Registrar Venta";
             // 
-            // listBox1
+            // TListBoxClientes
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(607, 19);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(148, 160);
-            this.listBox1.TabIndex = 59;
+            this.TListBoxClientes.FormattingEnabled = true;
+            this.TListBoxClientes.Location = new System.Drawing.Point(607, 32);
+            this.TListBoxClientes.Name = "TListBoxClientes";
+            this.TListBoxClientes.Size = new System.Drawing.Size(148, 199);
+            this.TListBoxClientes.TabIndex = 59;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(557, 19);
+            this.label4.Location = new System.Drawing.Point(604, 16);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 13);
             this.label4.TabIndex = 60;
@@ -505,8 +491,7 @@
         private System.Windows.Forms.TextBox TTextBoxApellidos;
         private System.Windows.Forms.TextBox TTextBoxNombre;
         private System.Windows.Forms.TextBox TTextBoxDNI;
-        private System.Windows.Forms.Button TButtonBuscarCliente;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox TListBoxClientes;
     }
 }

@@ -14,6 +14,7 @@ namespace AlquilerCoches
     {
         public bool incorrecto = false;
         private EN.ENVentas ventas = new EN.ENVentas();
+        private EN.ENCliente cliente = new EN.ENCliente();
 
         public RegistrarVenta()
         {
@@ -40,6 +41,12 @@ namespace AlquilerCoches
             TGroupBoxDatosVehiculo.Enabled = false;
             //TButtonBorrar.Enabled = false;
             TTextBoxMatricula.Enabled = false;
+        }
+
+        private void rellenaClientes()
+        {
+            TListBoxClientes.Items.Clear();
+
         }
 
         private void rellenaMarcas()
