@@ -362,7 +362,11 @@ namespace AlquilerCoches
         {
             if (arraydni.Count > 0)
             {
-                if (MessageBox.Show("¿Desea eliminar '" + arraydni.Count.ToString() + "' registros?", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                string plural="";
+                if (arraydni.Count == 1) { plural = " registro"; }
+                else { plural = " registros"; }
+
+                if (MessageBox.Show("¿Desea eliminar '" + arraydni.Count.ToString() + "'"+ plural+"?", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                 {
 
                     string frase = "";
@@ -375,7 +379,7 @@ namespace AlquilerCoches
                             frase += "'" + arraydni[i] + "'";
                         }
                     }
-                    MessageBox.Show("Select * from Personal where DNI in (" + frase + ")");
+                   // MessageBox.Show("Select * from Personal where DNI in (" + frase + ")");
                     enCliente.EliminarCliente(arraydni);
                 }
 

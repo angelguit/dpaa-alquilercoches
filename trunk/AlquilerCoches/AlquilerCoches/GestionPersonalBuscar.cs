@@ -121,6 +121,7 @@ namespace AlquilerCoches
                 string nom = TTextBoxNombre.Text.ToString();
                 string prov = TComboBoxProvincias.Text.ToString();
                 string dni = TTextBoxDNI.Text.ToString();
+                string puesto = TTextBoxPuestoAc.Text.ToString();
                 string todo = "";
 
                 if (apell != "") //apellidos
@@ -159,6 +160,15 @@ namespace AlquilerCoches
                 {
                     todo += " provincia like '%" + prov + "%' ";
                 }
+                if (puesto != " " && todo != "") //puesto
+                {
+                    todo += "and PuestoActual like '%" + puesto + "%' ";
+                }
+                else if (puesto != " " && todo == "")
+                {
+                    todo += " PuestoActual like '%" + puesto + "%' ";
+                }
+
 
                 //MessageBox.Show("select * from tabla where" + todo);
                 ds = enPerson.ObtenerListaPersonal(todo);
@@ -334,7 +344,7 @@ namespace AlquilerCoches
                            frase += "'" + arraydni[i] + "'";
                        }
                    }
-                   MessageBox.Show("Select * from Personal where DNI in (" + frase + ")");
+                  // MessageBox.Show("Select * from Personal where DNI in (" + frase + ")");
                    enPerson.EliminarPersonal(arraydni);
                }
 
