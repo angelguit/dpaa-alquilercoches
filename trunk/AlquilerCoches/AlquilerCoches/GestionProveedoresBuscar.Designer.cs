@@ -34,7 +34,7 @@
             this.TLabelProvincia = new System.Windows.Forms.Label();
             this.TLabelMarca = new System.Windows.Forms.Label();
             this.TLabelCIF = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewProveedores = new System.Windows.Forms.DataGridView();
             this.TLabelCiudad = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.TButtonEliminar = new System.Windows.Forms.Button();
@@ -46,7 +46,7 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.TLabelTitulo = new System.Windows.Forms.Label();
             this.TButtonCerrar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProveedores)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -93,18 +93,17 @@
             this.TLabelCIF.TabIndex = 38;
             this.TLabelCIF.Text = "CIF";
             // 
-            // dataGridView1
+            // dataGridViewProveedores
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(36, 55);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(722, 209);
-            this.dataGridView1.TabIndex = 36;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridViewProveedores.AllowUserToAddRows = false;
+            this.dataGridViewProveedores.AllowUserToDeleteRows = false;
+            this.dataGridViewProveedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewProveedores.Location = new System.Drawing.Point(36, 55);
+            this.dataGridViewProveedores.Name = "dataGridViewProveedores";
+            this.dataGridViewProveedores.Size = new System.Drawing.Size(722, 209);
+            this.dataGridViewProveedores.TabIndex = 36;
+            this.dataGridViewProveedores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // TLabelCiudad
             // 
@@ -246,7 +245,7 @@
             this.Controls.Add(this.TButtonCerrar);
             this.Controls.Add(this.TLabelTitulo);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewProveedores);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -254,7 +253,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GestionProveedoresBuscar";
             this.Activated += new System.EventHandler(this.GestionProveedoresBuscar_Activated);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProveedores)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
@@ -270,7 +269,7 @@
         private System.Windows.Forms.Label TLabelProvincia;
         private System.Windows.Forms.Label TLabelMarca;
         private System.Windows.Forms.Label TLabelCIF;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewProveedores;
         private System.Windows.Forms.Label TLabelCiudad;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox TComboBoxProvincias;

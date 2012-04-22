@@ -385,7 +385,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GestionProveedores";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GestionProveedores_FormClosed);
-            this.Load += new System.EventHandler(this.GestionProveedores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.TGroupBoxProveedores.ResumeLayout(false);
             this.TGroupBoxProveedores.PerformLayout();

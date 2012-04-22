@@ -155,7 +155,7 @@ namespace EN
                 linea[7] = provincia;
                 linea[8] = codigopostal;
                 linea[9] = horario;
-                linea[10] = foto;
+                //linea[10] = foto;
                 resultado.Tables["Proveedores"].Rows.Add(linea);
                 cadProveedores.InsertarProveedorCAD(resultado);
             }
