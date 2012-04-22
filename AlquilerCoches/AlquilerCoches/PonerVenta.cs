@@ -154,15 +154,18 @@ namespace AlquilerCoches
             //MODIFICAR COSAS PARA AÑADIR LA VENTA A LA BD
             if (incorrecto == false && TTextBoxPrecioVenta.Text != "")
             {
-                guardaCampos();
-                ventas.AnyadirVenta();
+                if (MessageBox.Show("¿Desea poner en venta?\n El vehículo dejará de estar disponible para alquiler.", "¿VENDER?", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.OK)
+                {
+                    guardaCampos();
+                    ventas.AnyadirVenta();
 
-                vehiculos.ClearEnVehiculo();
-                vehiculos.Matricula = TTextBoxMatricula.Text;
-                vehiculos.BorrarVehiculo();
+                    vehiculos.ClearEnVehiculo();
+                    vehiculos.Matricula = TTextBoxMatricula.Text;
+                    vehiculos.BorrarVehiculo();
 
-                limpiaFormulario();
-                rellenaMarcas();
+                    limpiaFormulario();
+                    rellenaMarcas();
+                }
             }
             else
             {
