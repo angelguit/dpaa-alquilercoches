@@ -50,6 +50,15 @@ namespace AlquilerCoches
             }
             else
                 TTextBoxNumeroReservas.Text = "0";
+
+            TGroupBoxCliente.Size = new Size(581, 334);
+            TLabelVehiculosAlquiler.Visible = true;
+            TListBoxCoches.Visible = true;
+            TLabelNumeroReserva.Visible = true;
+            TTextBoxNumeroReservas.Visible = true;
+            TTextBoxNumeroReservas.Enabled = false;
+            TListBoxCoches.Enabled = false;
+
             /////////////
 
 
@@ -94,7 +103,7 @@ namespace AlquilerCoches
 
 
             TButtonGuardarCliente.Text = nombrebotonguardar; // importante le cambiamos el nombre al boton para saber que venimos del formulario buscar, y estamos editando no guardando uno nuevo
-            TButtonGuardarCliente.Size = new Size(105, 24);
+            TButtonGuardarCliente.Size = new Size(120, 33);
 
             ////////////////////////////////////////////////
             EN.ENProveedores provi = new EN.ENProveedores(); //PAra arreglar el problema de los combobox y que el de ciudad vaya a la primera sin pulsar primero provincia
@@ -131,6 +140,14 @@ namespace AlquilerCoches
             }
             else
                 TTextBoxNumeroReservas.Text = "0";
+
+            TGroupBoxCliente.Size = new Size(581, 334);
+            TLabelVehiculosAlquiler.Visible = true;
+            TListBoxCoches.Visible = true;
+            TLabelNumeroReserva.Visible = true;
+            TTextBoxNumeroReservas.Visible = true;
+            TTextBoxNumeroReservas.Enabled = false;
+            TListBoxCoches.Enabled = false;
             /////////////
 
             TTextBoxDNI.Enabled = false;
@@ -166,13 +183,7 @@ namespace AlquilerCoches
 
             TButtonGuardarCliente.Text = nombrebotonguardar; // importante le cambiamos el nombre al boton para saber que venimos del formulario buscar, y estamos editando no guardando uno nuevo
             TButtonGuardarCliente.Size = new Size(120, 33);
-            TGroupBoxCliente.Size = new Size(581, 334);
-            TLabelVehiculosAlquiler.Visible = true;
-            TListBoxCoches.Visible = true;
-            TLabelNumeroReserva.Visible = true;
-            TTextBoxNumeroReservas.Visible = true;
-            TTextBoxNumeroReservas.Enabled = false;
-            TListBoxCoches.Enabled = false;
+       
         }
 
         private void TTextBoxDNI_Leave(object sender, EventArgs e)
