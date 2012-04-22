@@ -20,6 +20,7 @@ namespace AlquilerCoches
         private EN.ENCliente enCliente = new EN.ENCliente();
         private bool editar = false,editar2 = false;
         private EN.ENReservas aux = new EN.ENReservas();
+        private EN.ENFacturacion enFa = new EN.ENFacturacion();
 
         public AltaReservas()
         {
@@ -126,6 +127,7 @@ namespace AlquilerCoches
 
         private void TButtonBuscarCliente_Click(object sender, EventArgs e)
         {
+            TimeSpan ts = TDateTimePickerFechaFin.Value - TDateTimePickerFechaInicio.Value;
             GestionClientesBuscar F1 = new GestionClientesBuscar(false);
             F1.StartPosition = FormStartPosition.Manual;
             F1.Location = Location;
@@ -145,6 +147,19 @@ namespace AlquilerCoches
                         TLabelNombre.Text = "Nombre: " + enCliente.Nombre + "Apellidos: " + enCliente.Apellidos;
                         TLabelDNI.Text = "DNI: " + enCliente.DNI + " " + "Telf: " + enCliente.Telefono;
                         TLabelDirec.Text = "Direccion: " + enCliente.Direccion;
+                        TLabelTarifa.Text = "Tarifa aplicada: " + enCliente.Tarifa;
+                        if (TComboBoxConductores.Text == "")
+                            enFa.Conductores = 1;
+                        else
+                            enFa.Conductores = Int32.Parse(TComboBoxConductores.Text.ToString());
+                        enFa.Tarifa = enCliente.Tarifa;
+                        enFa.Tiempo = ts.Days + 1;
+                        enFa.Categoria = TComboBoxCategoria.Text;
+                        enFa.ObtenerPrecio();
+                        TTextBoxPrecio.Text = enFa.PrecioTotal.ToString();
+                        TLabelTarifa.Visible = true;
+                        TLabelPrecio.Visible = true;
+                        TTextBoxPrecio.Visible = true;
                         TLabelDNI.Visible = true;
                         TLabelNombre.Visible = true;
                         TLabelDirec.Visible = true;
@@ -169,6 +184,19 @@ namespace AlquilerCoches
                     TLabelNombre.Text = "Nombre: " + enCliente.Nombre + "Apellidos: " + enCliente.Apellidos;
                     TLabelDNI.Text = "DNI: " + enCliente.DNI + " " + "Telf: " + enCliente.Telefono;
                     TLabelDirec.Text = "Direccion: " + enCliente.Direccion;
+                    TLabelTarifa.Text = "Tarifa aplicada: " + enCliente.Tarifa;
+                    if (TComboBoxConductores.Text == "")
+                        enFa.Conductores = 1;
+                    else
+                        enFa.Conductores = Int32.Parse(TComboBoxConductores.Text.ToString());
+                    enFa.Tarifa = enCliente.Tarifa;
+                    enFa.Tiempo = ts.Days + 1;
+                    enFa.Categoria = TComboBoxCategoria.Text;
+                    enFa.ObtenerPrecio();
+                    TTextBoxPrecio.Text = enFa.PrecioTotal.ToString();
+                    TLabelTarifa.Visible = true;
+                    TLabelPrecio.Visible = true;
+                    TTextBoxPrecio.Visible = true;
                     TLabelDNI.Visible = true;
                     TLabelNombre.Visible = true;
                     TLabelDirec.Visible = true;
@@ -204,6 +232,12 @@ namespace AlquilerCoches
             }
             else
             {
+                if (enFa.ExisteCat(TComboBoxCategoria.Text.ToString()) && enCliente.Nombre != null)
+                {
+                    enFa.Categoria = TComboBoxCategoria.Text.ToString();
+                    enFa.ObtenerPrecio();
+                    TTextBoxPrecio.Text = enFa.PrecioTotal.ToString();
+                }
                 err2.Clear();
             }
             
@@ -312,6 +346,13 @@ namespace AlquilerCoches
                 }
                 else
                 {
+                    TimeSpan ts = TDateTimePickerFechaFin.Value - TDateTimePickerFechaInicio.Value;
+                    enFa.Tiempo = ts.Days + 1;
+                    if (enCliente.Nombre != null)
+                    {
+                        enFa.ObtenerPrecio();
+                        TTextBoxPrecio.Text = enFa.PrecioTotal.ToString();
+                    }
                     err1.Clear();
                 }
             }
@@ -324,6 +365,13 @@ namespace AlquilerCoches
             }
             else
             {
+                TimeSpan ts = TDateTimePickerFechaFin.Value - TDateTimePickerFechaInicio.Value;
+                enFa.Tiempo = ts.Days + 1;
+                if (enCliente.Nombre != null)
+                {
+                    enFa.ObtenerPrecio();
+                    TTextBoxPrecio.Text = enFa.PrecioTotal.ToString();
+                }
                 err1.Clear();
             }
         }
@@ -461,6 +509,12 @@ namespace AlquilerCoches
             }
             else
             {
+                if (enCliente.Nombre != null)
+                {
+                    enFa.Conductores = Int32.Parse(TComboBoxConductores.Text.ToString());
+                    enFa.ObtenerPrecio();
+                    TTextBoxPrecio.Text = enFa.PrecioTotal.ToString();
+                }
                 err3.Clear();
             }
         }
