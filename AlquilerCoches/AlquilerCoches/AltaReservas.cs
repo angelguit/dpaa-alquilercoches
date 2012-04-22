@@ -330,7 +330,7 @@ namespace AlquilerCoches
                 enVe.ObtenerDatosVehiculos();
                 enVe.Estado = "Reservado";
                 enVe.EditarVehiculo();
-                ImprimirReserva FPrint = new ImprimirReserva(enCliente,enRe,enVe,enRe.NumeroUltimaReserva());
+                ImprimirReserva FPrint = new ImprimirReserva(enCliente,enRe,enVe,enRe.NumeroUltimaReserva(),enFa.PrecioTotal,TLabelTarifa.Text.ToString());
                 FPrint.Show(); 
                 FPrint.Imprimir();
 

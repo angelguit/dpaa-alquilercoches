@@ -30,6 +30,15 @@
         {
             this.TLabelCliente = new System.Windows.Forms.Label();
             this.TGroupBoxBuscarFactura = new System.Windows.Forms.GroupBox();
+            this.TLabelTar = new System.Windows.Forms.Label();
+            this.TTextBoxTiempo = new System.Windows.Forms.TextBox();
+            this.TTextBoxTarifa = new System.Windows.Forms.TextBox();
+            this.TTextBoxConductores = new System.Windows.Forms.TextBox();
+            this.TTextBoxVehiculo = new System.Windows.Forms.TextBox();
+            this.TTextBoxCategoria = new System.Windows.Forms.TextBox();
+            this.TLabelTelf = new System.Windows.Forms.Label();
+            this.TLabelDirec = new System.Windows.Forms.Label();
+            this.TLabelDNI = new System.Windows.Forms.Label();
             this.TTextBoxPTotal = new System.Windows.Forms.TextBox();
             this.TTextBoxTIva = new System.Windows.Forms.TextBox();
             this.TTextBoxTPSinIva = new System.Windows.Forms.TextBox();
@@ -46,17 +55,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.TLabelDireccion = new System.Windows.Forms.Label();
             this.TlabelRentACar = new System.Windows.Forms.Label();
-            this.TLabelDNI = new System.Windows.Forms.Label();
-            this.TLabelDirec = new System.Windows.Forms.Label();
-            this.TLabelTelf = new System.Windows.Forms.Label();
-            this.TTextBoxCategoria = new System.Windows.Forms.TextBox();
-            this.TTextBoxVehiculo = new System.Windows.Forms.TextBox();
-            this.TTextBoxConductores = new System.Windows.Forms.TextBox();
-            this.TTextBoxTarifa = new System.Windows.Forms.TextBox();
-            this.TTextBoxTiempo = new System.Windows.Forms.TextBox();
             this.TButtonCerrar = new System.Windows.Forms.Button();
             this.TButtonReserva = new System.Windows.Forms.Button();
-            this.TLabelTar = new System.Windows.Forms.Label();
             this.TGroupBoxBuscarFactura.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -105,6 +105,82 @@
             this.TGroupBoxBuscarFactura.TabIndex = 45;
             this.TGroupBoxBuscarFactura.TabStop = false;
             this.TGroupBoxBuscarFactura.Text = "Realizar Factura";
+            // 
+            // TLabelTar
+            // 
+            this.TLabelTar.AutoSize = true;
+            this.TLabelTar.Location = new System.Drawing.Point(472, 193);
+            this.TLabelTar.Name = "TLabelTar";
+            this.TLabelTar.Size = new System.Drawing.Size(35, 13);
+            this.TLabelTar.TabIndex = 62;
+            this.TLabelTar.Text = "label2";
+            // 
+            // TTextBoxTiempo
+            // 
+            this.TTextBoxTiempo.Location = new System.Drawing.Point(192, 195);
+            this.TTextBoxTiempo.Name = "TTextBoxTiempo";
+            this.TTextBoxTiempo.ReadOnly = true;
+            this.TTextBoxTiempo.Size = new System.Drawing.Size(100, 20);
+            this.TTextBoxTiempo.TabIndex = 61;
+            // 
+            // TTextBoxTarifa
+            // 
+            this.TTextBoxTarifa.Location = new System.Drawing.Point(192, 163);
+            this.TTextBoxTarifa.Name = "TTextBoxTarifa";
+            this.TTextBoxTarifa.ReadOnly = true;
+            this.TTextBoxTarifa.Size = new System.Drawing.Size(100, 20);
+            this.TTextBoxTarifa.TabIndex = 60;
+            // 
+            // TTextBoxConductores
+            // 
+            this.TTextBoxConductores.Location = new System.Drawing.Point(192, 127);
+            this.TTextBoxConductores.Name = "TTextBoxConductores";
+            this.TTextBoxConductores.ReadOnly = true;
+            this.TTextBoxConductores.Size = new System.Drawing.Size(100, 20);
+            this.TTextBoxConductores.TabIndex = 59;
+            // 
+            // TTextBoxVehiculo
+            // 
+            this.TTextBoxVehiculo.Location = new System.Drawing.Point(192, 92);
+            this.TTextBoxVehiculo.Name = "TTextBoxVehiculo";
+            this.TTextBoxVehiculo.ReadOnly = true;
+            this.TTextBoxVehiculo.Size = new System.Drawing.Size(100, 20);
+            this.TTextBoxVehiculo.TabIndex = 58;
+            // 
+            // TTextBoxCategoria
+            // 
+            this.TTextBoxCategoria.Location = new System.Drawing.Point(192, 55);
+            this.TTextBoxCategoria.Name = "TTextBoxCategoria";
+            this.TTextBoxCategoria.ReadOnly = true;
+            this.TTextBoxCategoria.Size = new System.Drawing.Size(100, 20);
+            this.TTextBoxCategoria.TabIndex = 57;
+            // 
+            // TLabelTelf
+            // 
+            this.TLabelTelf.AutoSize = true;
+            this.TLabelTelf.Location = new System.Drawing.Point(472, 167);
+            this.TLabelTelf.Name = "TLabelTelf";
+            this.TLabelTelf.Size = new System.Drawing.Size(35, 13);
+            this.TLabelTelf.TabIndex = 56;
+            this.TLabelTelf.Text = "label4";
+            // 
+            // TLabelDirec
+            // 
+            this.TLabelDirec.AutoSize = true;
+            this.TLabelDirec.Location = new System.Drawing.Point(472, 141);
+            this.TLabelDirec.Name = "TLabelDirec";
+            this.TLabelDirec.Size = new System.Drawing.Size(35, 13);
+            this.TLabelDirec.TabIndex = 55;
+            this.TLabelDirec.Text = "label3";
+            // 
+            // TLabelDNI
+            // 
+            this.TLabelDNI.AutoSize = true;
+            this.TLabelDNI.Location = new System.Drawing.Point(472, 115);
+            this.TLabelDNI.Name = "TLabelDNI";
+            this.TLabelDNI.Size = new System.Drawing.Size(35, 13);
+            this.TLabelDNI.TabIndex = 54;
+            this.TLabelDNI.Text = "label2";
             // 
             // TTextBoxPTotal
             // 
@@ -264,73 +340,6 @@
             this.TlabelRentACar.Text = "Rent a Car S.L";
             this.TlabelRentACar.Visible = false;
             // 
-            // TLabelDNI
-            // 
-            this.TLabelDNI.AutoSize = true;
-            this.TLabelDNI.Location = new System.Drawing.Point(472, 115);
-            this.TLabelDNI.Name = "TLabelDNI";
-            this.TLabelDNI.Size = new System.Drawing.Size(35, 13);
-            this.TLabelDNI.TabIndex = 54;
-            this.TLabelDNI.Text = "label2";
-            // 
-            // TLabelDirec
-            // 
-            this.TLabelDirec.AutoSize = true;
-            this.TLabelDirec.Location = new System.Drawing.Point(472, 141);
-            this.TLabelDirec.Name = "TLabelDirec";
-            this.TLabelDirec.Size = new System.Drawing.Size(35, 13);
-            this.TLabelDirec.TabIndex = 55;
-            this.TLabelDirec.Text = "label3";
-            // 
-            // TLabelTelf
-            // 
-            this.TLabelTelf.AutoSize = true;
-            this.TLabelTelf.Location = new System.Drawing.Point(472, 167);
-            this.TLabelTelf.Name = "TLabelTelf";
-            this.TLabelTelf.Size = new System.Drawing.Size(35, 13);
-            this.TLabelTelf.TabIndex = 56;
-            this.TLabelTelf.Text = "label4";
-            // 
-            // TTextBoxCategoria
-            // 
-            this.TTextBoxCategoria.Location = new System.Drawing.Point(192, 55);
-            this.TTextBoxCategoria.Name = "TTextBoxCategoria";
-            this.TTextBoxCategoria.ReadOnly = true;
-            this.TTextBoxCategoria.Size = new System.Drawing.Size(100, 20);
-            this.TTextBoxCategoria.TabIndex = 57;
-            // 
-            // TTextBoxVehiculo
-            // 
-            this.TTextBoxVehiculo.Location = new System.Drawing.Point(192, 92);
-            this.TTextBoxVehiculo.Name = "TTextBoxVehiculo";
-            this.TTextBoxVehiculo.ReadOnly = true;
-            this.TTextBoxVehiculo.Size = new System.Drawing.Size(100, 20);
-            this.TTextBoxVehiculo.TabIndex = 58;
-            // 
-            // TTextBoxConductores
-            // 
-            this.TTextBoxConductores.Location = new System.Drawing.Point(192, 127);
-            this.TTextBoxConductores.Name = "TTextBoxConductores";
-            this.TTextBoxConductores.ReadOnly = true;
-            this.TTextBoxConductores.Size = new System.Drawing.Size(100, 20);
-            this.TTextBoxConductores.TabIndex = 59;
-            // 
-            // TTextBoxTarifa
-            // 
-            this.TTextBoxTarifa.Location = new System.Drawing.Point(192, 163);
-            this.TTextBoxTarifa.Name = "TTextBoxTarifa";
-            this.TTextBoxTarifa.ReadOnly = true;
-            this.TTextBoxTarifa.Size = new System.Drawing.Size(100, 20);
-            this.TTextBoxTarifa.TabIndex = 60;
-            // 
-            // TTextBoxTiempo
-            // 
-            this.TTextBoxTiempo.Location = new System.Drawing.Point(192, 195);
-            this.TTextBoxTiempo.Name = "TTextBoxTiempo";
-            this.TTextBoxTiempo.ReadOnly = true;
-            this.TTextBoxTiempo.Size = new System.Drawing.Size(100, 20);
-            this.TTextBoxTiempo.TabIndex = 61;
-            // 
             // TButtonCerrar
             // 
             this.TButtonCerrar.Image = global::AlquilerCoches.Properties.Resources.Close_icon;
@@ -341,6 +350,7 @@
             this.TButtonCerrar.TabIndex = 49;
             this.TButtonCerrar.Text = "      Cerrar";
             this.TButtonCerrar.UseVisualStyleBackColor = true;
+            this.TButtonCerrar.Click += new System.EventHandler(this.TButtonCerrar_Click);
             // 
             // TButtonReserva
             // 
@@ -353,15 +363,7 @@
             this.TButtonReserva.Text = "Realizar Factura";
             this.TButtonReserva.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.TButtonReserva.UseVisualStyleBackColor = true;
-            // 
-            // TLabelTar
-            // 
-            this.TLabelTar.AutoSize = true;
-            this.TLabelTar.Location = new System.Drawing.Point(472, 193);
-            this.TLabelTar.Name = "TLabelTar";
-            this.TLabelTar.Size = new System.Drawing.Size(35, 13);
-            this.TLabelTar.TabIndex = 62;
-            this.TLabelTar.Text = "label2";
+            this.TButtonReserva.Click += new System.EventHandler(this.TButtonReserva_Click);
             // 
             // GestionFacturacion
             // 
@@ -370,11 +372,15 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(878, 566);
+            this.ClientSize = new System.Drawing.Size(894, 604);
             this.Controls.Add(this.TButtonReserva);
             this.Controls.Add(this.TButtonCerrar);
             this.Controls.Add(this.TGroupBoxBuscarFactura);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximumSize = new System.Drawing.Size(894, 604);
+            this.MinimumSize = new System.Drawing.Size(894, 604);
             this.Name = "GestionFacturacion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestión Facturas";
             this.TGroupBoxBuscarFactura.ResumeLayout(false);
             this.TGroupBoxBuscarFactura.PerformLayout();
