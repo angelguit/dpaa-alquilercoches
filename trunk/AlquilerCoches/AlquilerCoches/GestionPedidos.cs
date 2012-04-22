@@ -135,13 +135,13 @@ namespace AlquilerCoches
         
         private void TButtonOK_Click(object sender, EventArgs e)
         {
-          /*  if (TProveecomboBox1.Text == "" || TMarcacomboBox2.Text == "" || TModelocomboBox3.Text == "" || TVendedorText.Text=="")
+            if (TProveecomboBox1.Text == "" || TMarcacomboBox2.Text == "" || TModelocomboBox3.Text == "" || TVendedorText.Text=="")
             {
                 MessageBox.Show("Campos invalidos, no puede haber ninguno vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            } */
-            if (incorrecto == false)
+            } 
+            if (incorrecto == true)
             {
-                MessageBox.Show("Campos invalidos, reviselos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Campos invalidos, revíselos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             else
@@ -173,7 +173,7 @@ namespace AlquilerCoches
                 enPedidos.AnyadirPedidos();
 
 
-                groupBox1.Visible = false;
+                groupBox1.Enabled = false;
 
                 label1.Text = "* Pedido realizado con éxito. *";
 
