@@ -136,6 +136,12 @@
     <Compile Include="GestionVehiculos.Designer.cs">
       <DependentUpon>GestionVehiculos.cs</DependentUpon>
     </Compile>
+    <Compile Include="ImprimirFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImprimirFactura.Designer.cs">
+      <DependentUpon>ImprimirFactura.cs</DependentUpon>
+    </Compile>
     <Compile Include="ImprimirReserva.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -224,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GestionVehiculos.resx">
       <DependentUpon>GestionVehiculos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImprimirFactura.resx">
+      <DependentUpon>ImprimirFactura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ImprimirReserva.resx">
       <DependentUpon>ImprimirReserva.cs</DependentUpon>
