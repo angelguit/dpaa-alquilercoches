@@ -39,13 +39,17 @@ namespace AlquilerCoches
             dsCli = enCliente.ObtenerDatosClienteConDni(enRe.Cliente.ToString());
             enVe.Matricula = enRe.Matricula;
             enVe.ObtenerDatosVehiculos();
-
+            
             string nombre = dsCli.Tables["Cliente"].Rows[0][1].ToString();
             string apellidos = dsCli.Tables["Cliente"].Rows[0][2].ToString();
             string dni = dsCli.Tables["Cliente"].Rows[0][0].ToString();
-            string telf = dsCli.Tables["Cliente"].Rows[0][4].ToString();
-            string direc = dsCli.Tables["Cliente"].Rows[0][6].ToString();
-
+            string telf = dsCli.Tables["Cliente"].Rows[0][3].ToString();
+            string direc = dsCli.Tables["Cliente"].Rows[0][5].ToString();
+            provincias = dsCli.Tables["Cliente"].Rows[0][6].ToString();
+            ciudades = dsCli.Tables["Cliente"].Rows[0][7].ToString();
+            string sexo = dsCli.Tables["Cliente"].Rows[0][9].ToString();
+            enCliente.Sexo = sexo;
+           
  
             TLabelNombre.Text = "Nombre: " + nombre + "Apellidos: " + apellidos;
             TLabelDNI.Text = "DNI: " + dni + "Telf: " + telf;
@@ -348,6 +352,10 @@ namespace AlquilerCoches
         private void TButtonEditar_Click(object sender, EventArgs e)
         {
             EN.ENCliente enCli = new EN.ENCliente();
+          /* MessageBox.Show(enCliente.DNI+" hola");
+            DataSet cli = new DataSet(); 
+            cli = enCliente.ObtenerDatosClienteConDni(enCliente.DNI);
+            cli.Tables[0][0]*/
             GestionClientes Formu = new GestionClientes(enCliente,"Guardar Cambios",provincias,ciudades);
             Formu.StartPosition = FormStartPosition.Manual;
             Formu.Location = Location;

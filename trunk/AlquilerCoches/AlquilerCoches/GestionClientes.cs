@@ -26,21 +26,55 @@ namespace AlquilerCoches
         {
             InitializeComponent();
             TTextBoxDNI.Enabled = false;
-            TTextBoxNombre.Text = enCliente.Nombre;
-            TTextBoxApellidos.Text = enCliente.Apellidos;
-            TTextBoxDNI.Text = enCliente.DNI;
+            DataSet dscli = new DataSet();
+            dscli = enCliente.ObtenerDatosClienteConDni(enCliente.DNI);
+
+            TTextBoxNombre.Text = enCliente.Nombre = dscli.Tables["Cliente"].Rows[0][1].ToString();
+            TTextBoxApellidos.Text = enCliente.Apellidos =  dscli.Tables["Cliente"].Rows[0][2].ToString();
+            TTextBoxDNI.Text = enCliente.DNI = dscli.Tables["Cliente"].Rows[0][0].ToString(); 
+            enCliente.Telefono = int.Parse(dscli.Tables["Cliente"].Rows[0][3].ToString());
             TTextBoxTelefono.Text = enCliente.Telefono.ToString();
-            TTextBoxEmail.Text = enCliente.Email;
-            TTextBoxDireccion.Text = enCliente.Direccion;
-            if (provincias != null && ciudades != null)
+            TTextBoxEmail.Text = enCliente.Email = dscli.Tables["Cliente"].Rows[0][4].ToString();;
+            TTextBoxDireccion.Text = enCliente.Direccion = dscli.Tables["Cliente"].Rows[0][5].ToString(); 
+          /* if (provincias != null && ciudades != null)
             {
                 TComboBoxProvincias.Items.Add(provincias);
                 TComboBoxProvincias.SelectedIndex = 0;
                 TComboBoxCiudades.Items.Add(ciudades);
                 TComboBoxCiudades.SelectedIndex = 0;
-            }
+            }*/
+            enCliente.Provincia = dscli.Tables["Cliente"].Rows[0][6].ToString();
+            enCliente.Ciudad = dscli.Tables["Cliente"].Rows[0][7].ToString();
+
+            TComboBoxProvincias.Items.Add(enCliente.Provincia);
+            TComboBoxProvincias.SelectedIndex = 0;
+            TComboBoxCiudades.Items.Add(enCliente.Ciudad);
+            TComboBoxCiudades.SelectedIndex = 0;
+
+            enCliente.Tarifa = dscli.Tables["Cliente"].Rows[0][8].ToString();
+            TComboBoxTarifa.Items.Add(enCliente.Tarifa);
+            TComboBoxTarifa.SelectedIndex = 0;
+
+            enCliente.Sexo = dscli.Tables["Cliente"].Rows[0][9].ToString();
+
+            if (enCliente.Sexo == "V")
+                TRadioButtonH.Checked = true;
+            else if (enCliente.Sexo == "M")
+                TRadioButtonM.Checked = true;
+
+
             TButtonGuardarCliente.Text = nombrebotonguardar; // importante le cambiamos el nombre al boton para saber que venimos del formulario buscar, y estamos editando no guardando uno nuevo
             TButtonGuardarCliente.Size = new Size(105, 24);
+
+            ////////////////////////////////////////////////
+            EN.ENProveedores provi = new EN.ENProveedores(); //PAra arreglar el problema de los combobox y que el de ciudad vaya a la primera sin pulsar primero provincia
+            DataSet dsProv = new DataSet();
+            dsProv = provi.ObtenerListaProvincias();
+            //ObtenerProvincias(dsProv)
+
+            numProvincia = new DataSet();
+            numProvincia = dsProv;
+            /////////////////////////////////////////////////
 
             
         }
@@ -307,9 +341,9 @@ namespace AlquilerCoches
                 }
                 ObtenerCiudades(dsCiu);
             }
-            catch (Exception ex)
+           catch (Exception ex)
             {
-                MessageBox.Show("Seleccione primero una provincia", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               MessageBox.Show("Seleccione primero una provincia", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
