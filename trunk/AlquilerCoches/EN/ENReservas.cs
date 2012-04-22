@@ -58,6 +58,7 @@ namespace EN
                 res.Tables["Reservas"].Rows[0][3] = FechaInicio;
                 res.Tables["Reservas"].Rows[0][4] = FechaFin;
                 res.Tables["Reservas"].Rows[0][5] = Conductores;
+                res.Tables["Reservas"].Rows[0][6] = Activa;
                 cadReservas.EditarReserva(res);
 
             }

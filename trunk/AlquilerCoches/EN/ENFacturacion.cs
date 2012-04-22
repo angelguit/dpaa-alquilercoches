@@ -148,6 +148,7 @@ namespace EN
             linea[5] = tarifa;
             linea[6] = precioTotal;
             linea[7] = diaFacturacion;
+            dsFa.Tables["Facturas"].Rows.Add(linea);
             cadFacturacion.AnyadirFactura(dsFa);
         }
 
