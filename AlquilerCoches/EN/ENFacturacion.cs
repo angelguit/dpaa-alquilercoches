@@ -108,7 +108,7 @@ namespace EN
 
             if ( (tarifa == "Normal" || tarifa == "Socio" ) && conductores > 1 )
             {
-                precio += conductores * 5;
+                precio += (conductores - 1) * 5;
             }
             else if (tarifa == "Premium" && conductores > 3)
             {
