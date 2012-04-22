@@ -37,7 +37,6 @@
             this.TLabelModelos = new System.Windows.Forms.Label();
             this.TLabelMarcas = new System.Windows.Forms.Label();
             this.TGroupBoxDatosVehiculo = new System.Windows.Forms.GroupBox();
-            this.TButtonBorrar = new System.Windows.Forms.Button();
             this.TLabelObligatorio = new System.Windows.Forms.Label();
             this.TTextBoxMeses = new System.Windows.Forms.TextBox();
             this.TCheckBoxGarantia = new System.Windows.Forms.CheckBox();
@@ -57,6 +56,13 @@
             this.TLabelMatricula = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.TLabelTitulo = new System.Windows.Forms.Label();
+            this.TButtonBuscarCliente = new System.Windows.Forms.Button();
+            this.TTextBoxDNI = new System.Windows.Forms.TextBox();
+            this.TTextBoxNombre = new System.Windows.Forms.TextBox();
+            this.TTextBoxApellidos = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.TGroupBoxDatosVehiculo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -138,7 +144,13 @@
             this.TGroupBoxDatosVehiculo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.TGroupBoxDatosVehiculo.BackColor = System.Drawing.Color.Transparent;
-            this.TGroupBoxDatosVehiculo.Controls.Add(this.TButtonBorrar);
+            this.TGroupBoxDatosVehiculo.Controls.Add(this.label3);
+            this.TGroupBoxDatosVehiculo.Controls.Add(this.label2);
+            this.TGroupBoxDatosVehiculo.Controls.Add(this.label1);
+            this.TGroupBoxDatosVehiculo.Controls.Add(this.TTextBoxApellidos);
+            this.TGroupBoxDatosVehiculo.Controls.Add(this.TTextBoxNombre);
+            this.TGroupBoxDatosVehiculo.Controls.Add(this.TTextBoxDNI);
+            this.TGroupBoxDatosVehiculo.Controls.Add(this.TButtonBuscarCliente);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelObligatorio);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TTextBoxMeses);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TCheckBoxGarantia);
@@ -158,24 +170,11 @@
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelMatricula);
             this.TGroupBoxDatosVehiculo.Location = new System.Drawing.Point(21, 207);
             this.TGroupBoxDatosVehiculo.Name = "TGroupBoxDatosVehiculo";
-            this.TGroupBoxDatosVehiculo.Size = new System.Drawing.Size(559, 241);
+            this.TGroupBoxDatosVehiculo.Size = new System.Drawing.Size(761, 241);
             this.TGroupBoxDatosVehiculo.TabIndex = 51;
             this.TGroupBoxDatosVehiculo.TabStop = false;
             this.TGroupBoxDatosVehiculo.Text = "DatosVehiculo";
             this.TGroupBoxDatosVehiculo.Enter += new System.EventHandler(this.TGroupBoxDatosVehiculo_Enter);
-            // 
-            // TButtonBorrar
-            // 
-            this.TButtonBorrar.Image = global::AlquilerCoches.Properties.Resources.Delete_icon;
-            this.TButtonBorrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.TButtonBorrar.Location = new System.Drawing.Point(448, 187);
-            this.TButtonBorrar.Name = "TButtonBorrar";
-            this.TButtonBorrar.Size = new System.Drawing.Size(72, 33);
-            this.TButtonBorrar.TabIndex = 9;
-            this.TButtonBorrar.Text = "Borrar";
-            this.TButtonBorrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.TButtonBorrar.UseVisualStyleBackColor = true;
-            this.TButtonBorrar.Click += new System.EventHandler(this.TButtonBorrar_Click);
             // 
             // TLabelObligatorio
             // 
@@ -191,22 +190,21 @@
             this.TTextBoxMeses.Enabled = false;
             this.TTextBoxMeses.Location = new System.Drawing.Point(159, 130);
             this.TTextBoxMeses.Name = "TTextBoxMeses";
+            this.TTextBoxMeses.ReadOnly = true;
             this.TTextBoxMeses.Size = new System.Drawing.Size(84, 20);
             this.TTextBoxMeses.TabIndex = 5;
             this.TTextBoxMeses.Text = "Meses";
-            this.TTextBoxMeses.Click += new System.EventHandler(this.TTextBoxMeses_Click);
-            this.TTextBoxMeses.Leave += new System.EventHandler(this.TTextBoxMeses_Leave);
             // 
             // TCheckBoxGarantia
             // 
             this.TCheckBoxGarantia.AutoSize = true;
+            this.TCheckBoxGarantia.Enabled = false;
             this.TCheckBoxGarantia.Location = new System.Drawing.Point(97, 133);
             this.TCheckBoxGarantia.Name = "TCheckBoxGarantia";
             this.TCheckBoxGarantia.Size = new System.Drawing.Size(56, 17);
             this.TCheckBoxGarantia.TabIndex = 4;
             this.TCheckBoxGarantia.Text = "Sí/No";
             this.TCheckBoxGarantia.UseVisualStyleBackColor = true;
-            this.TCheckBoxGarantia.CheckedChanged += new System.EventHandler(this.TCheckBoxGarantia_CheckedChanged);
             // 
             // TButtonCancelar
             // 
@@ -238,9 +236,9 @@
             // 
             this.TTextBoxPrecioVenta.Location = new System.Drawing.Point(97, 157);
             this.TTextBoxPrecioVenta.Name = "TTextBoxPrecioVenta";
+            this.TTextBoxPrecioVenta.ReadOnly = true;
             this.TTextBoxPrecioVenta.Size = new System.Drawing.Size(146, 20);
             this.TTextBoxPrecioVenta.TabIndex = 6;
-            this.TTextBoxPrecioVenta.Leave += new System.EventHandler(this.TTextBoxPrecioVenta_Leave);
             // 
             // TLabelPrecioVenta
             // 
@@ -255,9 +253,9 @@
             // 
             this.TTextBoxKm.Location = new System.Drawing.Point(97, 105);
             this.TTextBoxKm.Name = "TTextBoxKm";
+            this.TTextBoxKm.ReadOnly = true;
             this.TTextBoxKm.Size = new System.Drawing.Size(146, 20);
             this.TTextBoxKm.TabIndex = 3;
-            this.TTextBoxKm.Leave += new System.EventHandler(this.TTextBoxKm_Leave);
             // 
             // TLabelKM
             // 
@@ -272,9 +270,9 @@
             // 
             this.TTextBoxModelo.Location = new System.Drawing.Point(97, 79);
             this.TTextBoxModelo.Name = "TTextBoxModelo";
+            this.TTextBoxModelo.ReadOnly = true;
             this.TTextBoxModelo.Size = new System.Drawing.Size(146, 20);
             this.TTextBoxModelo.TabIndex = 2;
-            this.TTextBoxModelo.Leave += new System.EventHandler(this.TTextBoxModelo_Leave);
             // 
             // TLabelModelo
             // 
@@ -289,9 +287,9 @@
             // 
             this.TTextBoxMarca.Location = new System.Drawing.Point(97, 49);
             this.TTextBoxMarca.Name = "TTextBoxMarca";
+            this.TTextBoxMarca.ReadOnly = true;
             this.TTextBoxMarca.Size = new System.Drawing.Size(146, 20);
             this.TTextBoxMarca.TabIndex = 1;
-            this.TTextBoxMarca.Leave += new System.EventHandler(this.TTextBoxMarca_Leave);
             // 
             // TLabelGarantia
             // 
@@ -325,9 +323,9 @@
             // 
             this.TTextBoxMatricula.Location = new System.Drawing.Point(97, 23);
             this.TTextBoxMatricula.Name = "TTextBoxMatricula";
+            this.TTextBoxMatricula.ReadOnly = true;
             this.TTextBoxMatricula.Size = new System.Drawing.Size(146, 20);
             this.TTextBoxMatricula.TabIndex = 20;
-            this.TTextBoxMatricula.Leave += new System.EventHandler(this.TextBoxMatricula_Leave);
             // 
             // TLabelMatricula
             // 
@@ -355,6 +353,69 @@
             this.TLabelTitulo.Size = new System.Drawing.Size(88, 18);
             this.TLabelTitulo.TabIndex = 59;
             this.TLabelTitulo.Text = "Registrar Venta";
+            // 
+            // TButtonBuscarCliente
+            // 
+            this.TButtonBuscarCliente.Image = global::AlquilerCoches.Properties.Resources.Search_icon;
+            this.TButtonBuscarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TButtonBuscarCliente.Location = new System.Drawing.Point(568, 187);
+            this.TButtonBuscarCliente.Name = "TButtonBuscarCliente";
+            this.TButtonBuscarCliente.Size = new System.Drawing.Size(115, 33);
+            this.TButtonBuscarCliente.TabIndex = 50;
+            this.TButtonBuscarCliente.Text = "Buscar Cliente";
+            this.TButtonBuscarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.TButtonBuscarCliente.UseVisualStyleBackColor = true;
+            // 
+            // TTextBoxDNI
+            // 
+            this.TTextBoxDNI.Location = new System.Drawing.Point(568, 44);
+            this.TTextBoxDNI.Name = "TTextBoxDNI";
+            this.TTextBoxDNI.ReadOnly = true;
+            this.TTextBoxDNI.Size = new System.Drawing.Size(115, 20);
+            this.TTextBoxDNI.TabIndex = 51;
+            // 
+            // TTextBoxNombre
+            // 
+            this.TTextBoxNombre.Location = new System.Drawing.Point(568, 75);
+            this.TTextBoxNombre.Name = "TTextBoxNombre";
+            this.TTextBoxNombre.ReadOnly = true;
+            this.TTextBoxNombre.Size = new System.Drawing.Size(115, 20);
+            this.TTextBoxNombre.TabIndex = 52;
+            // 
+            // TTextBoxApellidos
+            // 
+            this.TTextBoxApellidos.Location = new System.Drawing.Point(568, 105);
+            this.TTextBoxApellidos.Name = "TTextBoxApellidos";
+            this.TTextBoxApellidos.ReadOnly = true;
+            this.TTextBoxApellidos.Size = new System.Drawing.Size(115, 20);
+            this.TTextBoxApellidos.TabIndex = 53;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(536, 47);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(26, 13);
+            this.label1.TabIndex = 54;
+            this.label1.Text = "DNI";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(518, 82);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.TabIndex = 55;
+            this.label2.Text = "Nombre";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(513, 112);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(49, 13);
+            this.label3.TabIndex = 56;
+            this.label3.Text = "Apellidos";
             // 
             // RegistrarVenta
             // 
@@ -416,7 +477,13 @@
         private System.Windows.Forms.CheckBox TCheckBoxGarantia;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label TLabelObligatorio;
-        private System.Windows.Forms.Button TButtonBorrar;
         private System.Windows.Forms.Label TLabelTitulo;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox TTextBoxApellidos;
+        private System.Windows.Forms.TextBox TTextBoxNombre;
+        private System.Windows.Forms.TextBox TTextBoxDNI;
+        private System.Windows.Forms.Button TButtonBuscarCliente;
     }
 }
