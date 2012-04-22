@@ -187,7 +187,7 @@
             this.TModelocomboBox3.FormattingEnabled = true;
             this.TModelocomboBox3.Location = new System.Drawing.Point(205, 98);
             this.TModelocomboBox3.Name = "TModelocomboBox3";
-            this.TModelocomboBox3.Size = new System.Drawing.Size(234, 21);
+            this.TModelocomboBox3.Size = new System.Drawing.Size(248, 21);
             this.TModelocomboBox3.TabIndex = 36;
             this.TModelocomboBox3.SelectedIndexChanged += new System.EventHandler(this.TModelocomboBox3_SelectedIndexChanged);
             this.TModelocomboBox3.Click += new System.EventHandler(this.TModelocomboBox3_Click);
@@ -199,7 +199,7 @@
             this.TMarcacomboBox2.FormattingEnabled = true;
             this.TMarcacomboBox2.Location = new System.Drawing.Point(205, 64);
             this.TMarcacomboBox2.Name = "TMarcacomboBox2";
-            this.TMarcacomboBox2.Size = new System.Drawing.Size(234, 21);
+            this.TMarcacomboBox2.Size = new System.Drawing.Size(248, 21);
             this.TMarcacomboBox2.TabIndex = 35;
             this.TMarcacomboBox2.TextChanged += new System.EventHandler(this.TMarcacomboBox2_TextChanged);
             this.TMarcacomboBox2.Click += new System.EventHandler(this.TMarcacomboBox2_Click);
@@ -209,23 +209,12 @@
             // 
             this.TProveecomboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TProveecomboBox1.FormattingEnabled = true;
-            this.TProveecomboBox1.Items.AddRange(new object[] {
-            "",
-            "HERMANOS ESCLAPEZ S.L.",
-            "MARTÍNEZ E HIJOS S.A.",
-            "TOYOTA SANTA FAZ S.L.",
-            "RENAULT BABEL S.L.",
-            "MERCEDES-BENZ ATALAYAS S.L.",
-            "DACIA LOGAN VIRGEN DEL REMEDIO S.A.",
-            "CONCESIONARIO CAZORLA S.L.",
-            "AUTOMOCIÓN SIERRA TRAMONTANA S.L.",
-            "CONCESIONARIO IBAÑEZ E HIJOS S.L.",
-            "ASOCIACIÓN AUTOMÓVIL FELIZ S.L."});
             this.TProveecomboBox1.Location = new System.Drawing.Point(205, 31);
             this.TProveecomboBox1.Name = "TProveecomboBox1";
-            this.TProveecomboBox1.Size = new System.Drawing.Size(234, 21);
+            this.TProveecomboBox1.Size = new System.Drawing.Size(248, 21);
             this.TProveecomboBox1.TabIndex = 34;
             this.TProveecomboBox1.SelectedIndexChanged += new System.EventHandler(this.TProveecomboBox1_SelectedIndexChanged);
+            this.TProveecomboBox1.Click += new System.EventHandler(this.TProveecomboBox1_Click);
             this.TProveecomboBox1.Leave += new System.EventHandler(this.TProveecomboBox1_Leave);
             // 
             // TProveLabel
