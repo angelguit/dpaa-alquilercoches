@@ -120,9 +120,9 @@ namespace AlquilerCoches
 
         private void TTextBoxMarca_Leave(object sender, EventArgs e)
         {
-            if (!Regex.Match(TTextBoxMarca.Text, @"^\w+$").Success)
+            if (!Regex.Match(TTextBoxMarca.Text, @"^[\w\d\s]+$").Success)
             {
-                errorProvider1.SetError(TTextBoxMarca, "Marca incorrecta.");
+                errorProvider1.SetError(TTextBoxMarca, "Marca incorrecta, solo admite numeros y letras.");
                 incorrecto = true;
             }
             else
@@ -134,9 +134,9 @@ namespace AlquilerCoches
 
         private void TTextBoxModelo_Leave(object sender, EventArgs e)
         {
-            if (!Regex.Match(TTextBoxModelo.Text, @"^\w+$").Success)
+            if (!Regex.Match(TTextBoxModelo.Text, @"^[\w\d\s]+$").Success)
             {
-                errorProvider1.SetError(TTextBoxModelo, "Modelo incorrecto.");
+                errorProvider1.SetError(TTextBoxModelo, "Modelo incorrecto, solo admite numeros y letras.");
                 incorrecto = true;
             }
             else
