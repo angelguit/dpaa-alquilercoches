@@ -54,5 +54,71 @@ namespace CAD
             }
             return dsFac;
         }
+
+        public double ObtenerPrecioCat(string cat)
+        {
+            DataSet dsFac = new DataSet();
+            SqlDataAdapter daFac;
+            try
+            {
+                if (cat != "")
+                {
+                    SqlConnection conexion = new SqlConnection(cadenaConexion);
+                    string consulta = "Select Precio from Categoria where Tipo = '" + cat + "'";
+                    daFac = new SqlDataAdapter(consulta, conexion);
+                    daFac.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                    daFac.Fill(dsFac, "Facturas");
+                    return double.Parse(dsFac.Tables["Facturas"].Rows[0][0].ToString());
+                }
+                else
+                    return 0;
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+        }
+
+        public double ObtenerDescuentoTar(string tar)
+        {
+            DataSet dsFac = new DataSet();
+            SqlDataAdapter daFac;
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                string consulta = "Select Descuento from Tarifas where Tipo = '" + tar + "'";
+                daFac = new SqlDataAdapter(consulta, conexion);
+                daFac.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daFac.Fill(dsFac, "Facturas");
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            return double.Parse(dsFac.Tables["Facturas"].Rows[0][0].ToString());
+        }
+
+        public bool ExisteCat(string cat)
+        {
+            DataSet dsFac = new DataSet();
+            SqlDataAdapter daFac;
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                string consulta = "Select * from Categoria where Tipo = '" + cat + "'";
+                daFac = new SqlDataAdapter(consulta, conexion);
+                daFac.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daFac.Fill(dsFac, "Facturas");
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            if (dsFac.Tables["Facturas"].Rows.Count > 0)
+                return true;
+            else
+                return false;
+        }
+        
     }
 }
