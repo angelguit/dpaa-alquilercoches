@@ -133,7 +133,7 @@ namespace AlquilerCoches
 
         private void TTextBoxCalle_Leave(object sender, EventArgs e)
         {
-            if (!Regex.Match(TTextBoxCalle.Text, @"^[A-Za-z]{3,30}$").Success)
+            if (!Regex.Match(TTextBoxCalle.Text, @"^[A-Za-zñÑáéíóúÁÉÍÓÚçÇ]{3,30}$").Success)
             {
                 errorProvider1.SetError(TTextBoxCalle, "Entre 3 y 30 caracteres");
                 incorrecto = true;
@@ -159,7 +159,7 @@ namespace AlquilerCoches
 
         private void TTextBoxMarca_Leave(object sender, EventArgs e)
         {
-            if (!Regex.Match(TTextBoxMarca.Text, @"^[A-Za-z]{3,15}$").Success)
+            if (!Regex.Match(TTextBoxMarca.Text, @"^[A-Za-zñÑáéíóúÁÉÍÓÚçÇ]{3,15}$").Success)
             {
                 errorProvider1.SetError(TTextBoxMarca, "Entre 3 y 15 caracteres");
                 incorrecto = true;
@@ -231,59 +231,6 @@ namespace AlquilerCoches
             }
         }
 
-        private void TButtonGuardar_Click(object sender, EventArgs e)
-        {
-            if (TTextBoxCalle.Text == "" || TTextBoxCIF.Text == "" || TComboBoxCiudades.Text == ""
-               || TTextBoxCPostal.Text == "" || TTextBoxEmail.Text == "" || TTextBoxMarca.Text == ""
-                 || TTextBoxTelefono.Text == "" || TTextBoxHorario.Text == "" || TTextBoxNumero.Text == "" || TComboBoxProvincias.Text == "" || (TComboBoxProvincias.SelectedIndex ==0 && TComboBoxProvincias.Text!=textoProvincia))
-            {
-                MessageBox.Show("No pueden haber campos vacios");
-            }
-            else
-            {
-                if (accionGuardar == "modificar")//editar proveedor
-                {
-                    EN.ENProveedores modificar = new EN.ENProveedores();
-
-                    modificar.CIF = TTextBoxCIF.Text;
-                    modificar.Marca = TTextBoxMarca.Text;
-                    modificar.Calle = TTextBoxCalle.Text;
-                    modificar.Numero = Int32.Parse(TTextBoxNumero.Text);
-                    modificar.Telefono = Int32.Parse(TTextBoxTelefono.Text);
-                    modificar.Email = TTextBoxEmail.Text;
-                    modificar.Ciudad = TComboBoxCiudades.Text;
-                    modificar.Provincia = TComboBoxProvincias.Text;
-                    modificar.Codigopostal = Int32.Parse(TTextBoxCPostal.Text);
-                    modificar.Horario = TTextBoxHorario.Text;
-
-                    modificar.modificarProveedorEN();
-
-                    //Close();
-                }
-                else//guardar nuevo proveedor
-                {
-                    MessageBox.Show("guardando");
-                    EN.ENProveedores insertar = new EN.ENProveedores();
-                    DataSet existe = new DataSet();
-
-                    //insertar datos
-                    insertar.CIF = TTextBoxCIF.Text;
-                    MessageBox.Show(insertar.CIF);
-                    insertar.Marca = TTextBoxMarca.Text;
-                    insertar.Calle = TTextBoxCalle.Text;
-                    insertar.Numero = Int32.Parse(TTextBoxNumero.Text);
-                    insertar.Telefono = Int32.Parse(TTextBoxTelefono.Text);
-                    insertar.Email = TTextBoxEmail.Text;
-                    insertar.Ciudad = TComboBoxCiudades.Text;
-                    insertar.Provincia = TComboBoxProvincias.Text;
-                    insertar.Codigopostal = Int32.Parse(TTextBoxCPostal.Text);
-                    insertar.Horario = TTextBoxHorario.Text;
-
-                    insertar.InsertarProveedorEN();
-                }
-            }
-        }
-
         private void TComboBoxProvincias_TextChanged(object sender, EventArgs e)
         {
             EN.ENProveedores enCiu = new EN.ENProveedores();
@@ -318,6 +265,95 @@ namespace AlquilerCoches
             if (Application.OpenForms["GestionProveedoresBuscar"] != null)
             {
                 Application.OpenForms["GestionProveedoresBuscar"].Activate();
+            }
+        }
+
+        private void TButtonCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void TButtonGuardarCliente_Click(object sender, EventArgs e)
+        {
+            if (TTextBoxCalle.Text == "" || TTextBoxCIF.Text == "" || TComboBoxCiudades.Text == ""
+               || TTextBoxCPostal.Text == "" || TTextBoxEmail.Text == "" || TTextBoxMarca.Text == ""
+                 || TTextBoxTelefono.Text == "" || TTextBoxHorario.Text == "" || TTextBoxNumero.Text == "" || TComboBoxProvincias.Text == "" || (TComboBoxProvincias.SelectedIndex ==0 && TComboBoxProvincias.Text!=textoProvincia))
+            {
+                MessageBox.Show("No pueden haber campos vacios");
+            }
+            else
+            {
+                if (!incorrecto)
+                {
+                    if (accionGuardar == "modificar")//editar proveedor
+                    {
+                        EN.ENProveedores modificar = new EN.ENProveedores();
+
+                        modificar.CIF = TTextBoxCIF.Text;
+                        modificar.Marca = TTextBoxMarca.Text;
+                        modificar.Calle = TTextBoxCalle.Text;
+                        modificar.Numero = Int32.Parse(TTextBoxNumero.Text);
+                        modificar.Telefono = Int32.Parse(TTextBoxTelefono.Text);
+                        modificar.Email = TTextBoxEmail.Text;
+                        modificar.Ciudad = TComboBoxCiudades.Text;
+                        modificar.Provincia = TComboBoxProvincias.Text;
+                        modificar.Codigopostal = Int32.Parse(TTextBoxCPostal.Text);
+                        modificar.Horario = TTextBoxHorario.Text;
+
+                        modificar.modificarProveedorEN();
+
+                        //Close();
+                    }
+                    else//guardar nuevo proveedor
+                    {
+                        EN.ENProveedores insertar = new EN.ENProveedores();
+                        DataSet existe = new DataSet();
+
+                        //insertar datos
+                        insertar.CIF = TTextBoxCIF.Text;
+                        insertar.Marca = TTextBoxMarca.Text;
+                        insertar.Calle = TTextBoxCalle.Text;
+                        insertar.Numero = Int32.Parse(TTextBoxNumero.Text);
+                        insertar.Telefono = Int32.Parse(TTextBoxTelefono.Text);
+                        insertar.Email = TTextBoxEmail.Text;
+                        insertar.Ciudad = TComboBoxCiudades.Text;
+                        insertar.Provincia = TComboBoxProvincias.Text;
+                        insertar.Codigopostal = Int32.Parse(TTextBoxCPostal.Text);
+                        insertar.Horario = TTextBoxHorario.Text;
+
+                        insertar.InsertarProveedorEN();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Hay campos incorrectos");
+                }
+            }
+        }
+
+        private void TComboBoxProvincias_Leave_1(object sender, EventArgs e)
+        {
+            if (TComboBoxProvincias.SelectedIndex == -1 || TComboBoxProvincias.SelectedIndex == 0)
+            {
+                errorProvider1.SetError(TComboBoxProvincias, "Debe seleccionar una provincia");
+                incorrecto = true;
+            }
+            else
+            {
+                errorProvider1.SetError(TComboBoxProvincias, "");
+            }
+        }
+
+        private void TComboBoxCiudades_Leave_1(object sender, EventArgs e)
+        {
+            if (TComboBoxCiudades.SelectedIndex == -1 || TComboBoxCiudades.SelectedIndex == 0)
+            {
+                errorProvider1.SetError(TComboBoxCiudades, "Debe seleccionar una ciudad");
+                incorrecto = true;
+            }
+            else
+            {
+                errorProvider1.SetError(TComboBoxCiudades, "");
             }
         }
 
