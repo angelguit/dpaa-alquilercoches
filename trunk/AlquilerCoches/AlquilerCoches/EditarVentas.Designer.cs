@@ -180,7 +180,7 @@
             // TLabelObligatorio
             // 
             this.TLabelObligatorio.AutoSize = true;
-            this.TLabelObligatorio.Location = new System.Drawing.Point(9, 187);
+            this.TLabelObligatorio.Location = new System.Drawing.Point(6, 187);
             this.TLabelObligatorio.Name = "TLabelObligatorio";
             this.TLabelObligatorio.Size = new System.Drawing.Size(217, 13);
             this.TLabelObligatorio.TabIndex = 49;
@@ -189,7 +189,7 @@
             // TTextBoxMeses
             // 
             this.TTextBoxMeses.Enabled = false;
-            this.TTextBoxMeses.Location = new System.Drawing.Point(142, 130);
+            this.TTextBoxMeses.Location = new System.Drawing.Point(159, 130);
             this.TTextBoxMeses.Name = "TTextBoxMeses";
             this.TTextBoxMeses.Size = new System.Drawing.Size(84, 20);
             this.TTextBoxMeses.TabIndex = 5;
@@ -200,7 +200,7 @@
             // TCheckBoxGarantia
             // 
             this.TCheckBoxGarantia.AutoSize = true;
-            this.TCheckBoxGarantia.Location = new System.Drawing.Point(80, 133);
+            this.TCheckBoxGarantia.Location = new System.Drawing.Point(97, 133);
             this.TCheckBoxGarantia.Name = "TCheckBoxGarantia";
             this.TCheckBoxGarantia.Size = new System.Drawing.Size(56, 17);
             this.TCheckBoxGarantia.TabIndex = 4;
@@ -236,7 +236,7 @@
             // 
             // TTextBoxPrecioVenta
             // 
-            this.TTextBoxPrecioVenta.Location = new System.Drawing.Point(80, 157);
+            this.TTextBoxPrecioVenta.Location = new System.Drawing.Point(97, 157);
             this.TTextBoxPrecioVenta.Name = "TTextBoxPrecioVenta";
             this.TTextBoxPrecioVenta.Size = new System.Drawing.Size(146, 20);
             this.TTextBoxPrecioVenta.TabIndex = 6;
@@ -245,15 +245,15 @@
             // TLabelPrecioVenta
             // 
             this.TLabelPrecioVenta.AutoSize = true;
-            this.TLabelPrecioVenta.Location = new System.Drawing.Point(9, 164);
+            this.TLabelPrecioVenta.Location = new System.Drawing.Point(6, 164);
             this.TLabelPrecioVenta.Name = "TLabelPrecioVenta";
-            this.TLabelPrecioVenta.Size = new System.Drawing.Size(69, 13);
+            this.TLabelPrecioVenta.Size = new System.Drawing.Size(87, 13);
             this.TLabelPrecioVenta.TabIndex = 43;
-            this.TLabelPrecioVenta.Text = "PrecioVenta*";
+            this.TLabelPrecioVenta.Text = "Precio de Venta*";
             // 
             // TTextBoxKm
             // 
-            this.TTextBoxKm.Location = new System.Drawing.Point(80, 105);
+            this.TTextBoxKm.Location = new System.Drawing.Point(97, 105);
             this.TTextBoxKm.Name = "TTextBoxKm";
             this.TTextBoxKm.Size = new System.Drawing.Size(146, 20);
             this.TTextBoxKm.TabIndex = 3;
@@ -262,7 +262,7 @@
             // TLabelKM
             // 
             this.TLabelKM.AutoSize = true;
-            this.TLabelKM.Location = new System.Drawing.Point(49, 112);
+            this.TLabelKM.Location = new System.Drawing.Point(66, 108);
             this.TLabelKM.Name = "TLabelKM";
             this.TLabelKM.Size = new System.Drawing.Size(27, 13);
             this.TLabelKM.TabIndex = 39;
@@ -270,7 +270,7 @@
             // 
             // TTextBoxModelo
             // 
-            this.TTextBoxModelo.Location = new System.Drawing.Point(80, 79);
+            this.TTextBoxModelo.Location = new System.Drawing.Point(97, 79);
             this.TTextBoxModelo.Name = "TTextBoxModelo";
             this.TTextBoxModelo.Size = new System.Drawing.Size(146, 20);
             this.TTextBoxModelo.TabIndex = 2;
@@ -279,7 +279,7 @@
             // TLabelModelo
             // 
             this.TLabelModelo.AutoSize = true;
-            this.TLabelModelo.Location = new System.Drawing.Point(30, 86);
+            this.TLabelModelo.Location = new System.Drawing.Point(47, 82);
             this.TLabelModelo.Name = "TLabelModelo";
             this.TLabelModelo.Size = new System.Drawing.Size(46, 13);
             this.TLabelModelo.TabIndex = 37;
@@ -287,7 +287,7 @@
             // 
             // TTextBoxMarca
             // 
-            this.TTextBoxMarca.Location = new System.Drawing.Point(80, 49);
+            this.TTextBoxMarca.Location = new System.Drawing.Point(97, 49);
             this.TTextBoxMarca.Name = "TTextBoxMarca";
             this.TTextBoxMarca.Size = new System.Drawing.Size(146, 20);
             this.TTextBoxMarca.TabIndex = 1;
@@ -296,7 +296,7 @@
             // TLabelGarantia
             // 
             this.TLabelGarantia.AutoSize = true;
-            this.TLabelGarantia.Location = new System.Drawing.Point(25, 138);
+            this.TLabelGarantia.Location = new System.Drawing.Point(44, 137);
             this.TLabelGarantia.Name = "TLabelGarantia";
             this.TLabelGarantia.Size = new System.Drawing.Size(49, 13);
             this.TLabelGarantia.TabIndex = 41;
@@ -305,7 +305,7 @@
             // TLabelMarca
             // 
             this.TLabelMarca.AutoSize = true;
-            this.TLabelMarca.Location = new System.Drawing.Point(35, 56);
+            this.TLabelMarca.Location = new System.Drawing.Point(52, 52);
             this.TLabelMarca.Name = "TLabelMarca";
             this.TLabelMarca.Size = new System.Drawing.Size(41, 13);
             this.TLabelMarca.TabIndex = 35;
@@ -315,7 +315,7 @@
             // 
             this.pictureBox1.BackgroundImage = global::AlquilerCoches.Properties.Resources.portada1;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(232, 23);
+            this.pictureBox1.Location = new System.Drawing.Point(249, 22);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(204, 155);
             this.pictureBox1.TabIndex = 31;
@@ -323,7 +323,7 @@
             // 
             // TTextBoxMatricula
             // 
-            this.TTextBoxMatricula.Location = new System.Drawing.Point(80, 23);
+            this.TTextBoxMatricula.Location = new System.Drawing.Point(97, 23);
             this.TTextBoxMatricula.Name = "TTextBoxMatricula";
             this.TTextBoxMatricula.Size = new System.Drawing.Size(146, 20);
             this.TTextBoxMatricula.TabIndex = 20;
@@ -332,7 +332,7 @@
             // TLabelMatricula
             // 
             this.TLabelMatricula.AutoSize = true;
-            this.TLabelMatricula.Location = new System.Drawing.Point(22, 30);
+            this.TLabelMatricula.Location = new System.Drawing.Point(39, 26);
             this.TLabelMatricula.Name = "TLabelMatricula";
             this.TLabelMatricula.Size = new System.Drawing.Size(56, 13);
             this.TLabelMatricula.TabIndex = 19;
