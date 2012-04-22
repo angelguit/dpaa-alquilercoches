@@ -123,7 +123,6 @@
             this.TLabelCP.Size = new System.Drawing.Size(166, 13);
             this.TLabelCP.TabIndex = 62;
             this.TLabelCP.Text = "C.P: 03210 (Guarroman) Albacete";
-            this.TLabelCP.Visible = false;
             // 
             // label1
             // 
@@ -134,7 +133,6 @@
             this.label1.Size = new System.Drawing.Size(169, 13);
             this.label1.TabIndex = 61;
             this.label1.Text = "Tfno: 965123123 Fax: 965231231";
-            this.label1.Visible = false;
             // 
             // TLabelDireccion
             // 
@@ -145,7 +143,6 @@
             this.TLabelDireccion.Size = new System.Drawing.Size(250, 13);
             this.TLabelDireccion.TabIndex = 60;
             this.TLabelDireccion.Text = "C/ Albatera Nº 123, Centro Comercial Las Castañas";
-            this.TLabelDireccion.Visible = false;
             // 
             // TlabelRentACar
             // 
@@ -156,7 +153,6 @@
             this.TlabelRentACar.Size = new System.Drawing.Size(77, 13);
             this.TlabelRentACar.TabIndex = 59;
             this.TlabelRentACar.Text = "Rent a Car S.L";
-            this.TlabelRentACar.Visible = false;
             // 
             // groupBox1
             // 
@@ -397,7 +393,7 @@
             // 
             this.TPrintFormFacturas.DocumentName = "document";
             this.TPrintFormFacturas.Form = this;
-            this.TPrintFormFacturas.PrintAction = System.Drawing.Printing.PrintAction.PrintToPrinter;
+            this.TPrintFormFacturas.PrintAction = System.Drawing.Printing.PrintAction.PrintToPreview;
             this.TPrintFormFacturas.PrinterSettings = ((System.Drawing.Printing.PrinterSettings)(resources.GetObject("TPrintFormFacturas.PrinterSettings")));
             this.TPrintFormFacturas.PrintFileName = null;
             // 

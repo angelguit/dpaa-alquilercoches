@@ -69,9 +69,9 @@ namespace AlquilerCoches
             enRes.Activa = false;
             enVe.EditarVehiculo();
             enRes.EditarReserva();
-            //ImprimirFactura Fp = new ImprimirFactura(enCli,enRes,enVe,enFa,enFa.UltimaFactura());
-            //Fp.Visible = false;
-            //Application.OpenForms["ImprimirFactura"].Activate();
+            ImprimirFactura Fp = new ImprimirFactura(enCli,enRes,enVe,enFa,enFa.UltimaFactura());
+            Fp.Show();
+            Fp.Imprimir();
             Close();
         }
     }

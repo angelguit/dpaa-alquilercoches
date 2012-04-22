@@ -14,6 +14,7 @@ namespace CAD
     public class CADReservas
     {
         static private String cadenaConexion = ConfigurationManager.ConnectionStrings["AlquilerCoches"].ConnectionString; // @"Data Source=|DataDirectory|\BBDD.sdf";
+        
         public DataSet RellenarCategoria()
         {
             DataSet dsCat = new DataSet();
