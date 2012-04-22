@@ -47,6 +47,7 @@ namespace AlquilerCoches
         {
             TListBoxClientes.Items.Clear();
 
+
         }
 
         private void rellenaMarcas()
