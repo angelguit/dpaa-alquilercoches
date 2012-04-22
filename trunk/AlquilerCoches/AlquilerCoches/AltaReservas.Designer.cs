@@ -59,6 +59,9 @@
             this.TRadioButtonFavorito = new System.Windows.Forms.RadioButton();
             this.TRadioButtonUltimoCoche = new System.Windows.Forms.RadioButton();
             this.TLabelResRapida = new System.Windows.Forms.Label();
+            this.TLabelTarifa = new System.Windows.Forms.Label();
+            this.TLabelPrecio = new System.Windows.Forms.Label();
+            this.TTextBoxPrecio = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // TButtonBuscarCliente
@@ -170,7 +173,7 @@
             // 
             this.TLabelFechaInicio.AutoSize = true;
             this.TLabelFechaInicio.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelFechaInicio.Location = new System.Drawing.Point(500, 329);
+            this.TLabelFechaInicio.Location = new System.Drawing.Point(500, 280);
             this.TLabelFechaInicio.Name = "TLabelFechaInicio";
             this.TLabelFechaInicio.Size = new System.Drawing.Size(68, 13);
             this.TLabelFechaInicio.TabIndex = 35;
@@ -180,7 +183,7 @@
             // 
             this.TDateTimePickerFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.TDateTimePickerFechaInicio.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.TDateTimePickerFechaInicio.Location = new System.Drawing.Point(574, 326);
+            this.TDateTimePickerFechaInicio.Location = new System.Drawing.Point(574, 277);
             this.TDateTimePickerFechaInicio.Name = "TDateTimePickerFechaInicio";
             this.TDateTimePickerFechaInicio.Size = new System.Drawing.Size(98, 20);
             this.TDateTimePickerFechaInicio.TabIndex = 36;
@@ -191,7 +194,7 @@
             // 
             this.TLabelFechaFin.AutoSize = true;
             this.TLabelFechaFin.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelFechaFin.Location = new System.Drawing.Point(511, 359);
+            this.TLabelFechaFin.Location = new System.Drawing.Point(511, 310);
             this.TLabelFechaFin.Name = "TLabelFechaFin";
             this.TLabelFechaFin.Size = new System.Drawing.Size(57, 13);
             this.TLabelFechaFin.TabIndex = 37;
@@ -200,7 +203,7 @@
             // TDateTimePickerFechaFin
             // 
             this.TDateTimePickerFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.TDateTimePickerFechaFin.Location = new System.Drawing.Point(574, 352);
+            this.TDateTimePickerFechaFin.Location = new System.Drawing.Point(574, 303);
             this.TDateTimePickerFechaFin.Name = "TDateTimePickerFechaFin";
             this.TDateTimePickerFechaFin.Size = new System.Drawing.Size(98, 20);
             this.TDateTimePickerFechaFin.TabIndex = 38;
@@ -414,6 +417,37 @@
             this.TLabelResRapida.Text = "Reserva Rápida:";
             this.TLabelResRapida.Visible = false;
             // 
+            // TLabelTarifa
+            // 
+            this.TLabelTarifa.AutoSize = true;
+            this.TLabelTarifa.BackColor = System.Drawing.Color.Transparent;
+            this.TLabelTarifa.Location = new System.Drawing.Point(500, 350);
+            this.TLabelTarifa.Name = "TLabelTarifa";
+            this.TLabelTarifa.Size = new System.Drawing.Size(80, 13);
+            this.TLabelTarifa.TabIndex = 59;
+            this.TLabelTarifa.Text = "Tarifa aplicada:";
+            this.TLabelTarifa.Visible = false;
+            // 
+            // TLabelPrecio
+            // 
+            this.TLabelPrecio.AutoSize = true;
+            this.TLabelPrecio.BackColor = System.Drawing.Color.Transparent;
+            this.TLabelPrecio.Location = new System.Drawing.Point(379, 395);
+            this.TLabelPrecio.Name = "TLabelPrecio";
+            this.TLabelPrecio.Size = new System.Drawing.Size(52, 13);
+            this.TLabelPrecio.TabIndex = 60;
+            this.TLabelPrecio.Text = "Precio(€):";
+            this.TLabelPrecio.Visible = false;
+            // 
+            // TTextBoxPrecio
+            // 
+            this.TTextBoxPrecio.Location = new System.Drawing.Point(437, 392);
+            this.TTextBoxPrecio.Name = "TTextBoxPrecio";
+            this.TTextBoxPrecio.ReadOnly = true;
+            this.TTextBoxPrecio.Size = new System.Drawing.Size(64, 20);
+            this.TTextBoxPrecio.TabIndex = 61;
+            this.TTextBoxPrecio.Visible = false;
+            // 
             // AltaReservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -421,6 +455,9 @@
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(894, 608);
+            this.Controls.Add(this.TTextBoxPrecio);
+            this.Controls.Add(this.TLabelPrecio);
+            this.Controls.Add(this.TLabelTarifa);
             this.Controls.Add(this.TLabelResRapida);
             this.Controls.Add(this.TRadioButtonUltimoCoche);
             this.Controls.Add(this.TRadioButtonFavorito);
@@ -497,5 +534,8 @@
         private System.Windows.Forms.RadioButton TRadioButtonUltimoCoche;
         private System.Windows.Forms.Label TLabelResRapida;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape TRectangleShaperReservas;
+        private System.Windows.Forms.Label TLabelTarifa;
+        private System.Windows.Forms.Label TLabelPrecio;
+        private System.Windows.Forms.TextBox TTextBoxPrecio;
     }
 }
