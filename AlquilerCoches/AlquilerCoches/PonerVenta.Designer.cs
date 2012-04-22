@@ -315,6 +315,7 @@
             // 
             // TPictureBoxCoche
             // 
+            this.TPictureBoxCoche.BackgroundImage = global::AlquilerCoches.Properties.Resources.portada1;
             this.TPictureBoxCoche.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.TPictureBoxCoche.Location = new System.Drawing.Point(246, 19);
             this.TPictureBoxCoche.Name = "TPictureBoxCoche";
