@@ -49,9 +49,9 @@
             this.TIDtextBox = new System.Windows.Forms.TextBox();
             this.TDataGridViewPedidos = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.TButtonCerrar = new System.Windows.Forms.Button();
-            this.TButtonEliminar = new System.Windows.Forms.Button();
             this.TLabelTitulo = new System.Windows.Forms.Label();
+            this.TButtonEliminar = new System.Windows.Forms.Button();
+            this.TButtonCerrar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.TEstadogroupbox.SuspendLayout();
@@ -77,7 +77,7 @@
             this.groupBox1.Controls.Add(this.TIDtextBox);
             this.groupBox1.Location = new System.Drawing.Point(37, 21);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(615, 212);
+            this.groupBox1.Size = new System.Drawing.Size(667, 212);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Criterios de búsqueda ";
@@ -163,7 +163,7 @@
             this.TButtonBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.errorProvider1.SetIconAlignment(this.TButtonBuscar, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
             this.TButtonBuscar.Image = global::AlquilerCoches.Properties.Resources.Search_icon;
-            this.TButtonBuscar.Location = new System.Drawing.Point(521, 29);
+            this.TButtonBuscar.Location = new System.Drawing.Point(564, 29);
             this.TButtonBuscar.Name = "TButtonBuscar";
             this.TButtonBuscar.Size = new System.Drawing.Size(71, 65);
             this.TButtonBuscar.TabIndex = 33;
@@ -275,34 +275,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // TButtonCerrar
-            // 
-            this.TButtonCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.TButtonCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.TButtonCerrar.Image = global::AlquilerCoches.Properties.Resources.Close_icon;
-            this.TButtonCerrar.Location = new System.Drawing.Point(294, 482);
-            this.TButtonCerrar.Name = "TButtonCerrar";
-            this.TButtonCerrar.Size = new System.Drawing.Size(121, 57);
-            this.TButtonCerrar.TabIndex = 31;
-            this.TButtonCerrar.Text = "Cerrar";
-            this.TButtonCerrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.TButtonCerrar.UseVisualStyleBackColor = true;
-            this.TButtonCerrar.Click += new System.EventHandler(this.TButtonCerrar_Click);
-            // 
-            // TButtonEliminar
-            // 
-            this.TButtonEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.TButtonEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.TButtonEliminar.Image = global::AlquilerCoches.Properties.Resources.Delete_icon;
-            this.TButtonEliminar.Location = new System.Drawing.Point(95, 482);
-            this.TButtonEliminar.Name = "TButtonEliminar";
-            this.TButtonEliminar.Size = new System.Drawing.Size(120, 57);
-            this.TButtonEliminar.TabIndex = 34;
-            this.TButtonEliminar.Text = "Delete";
-            this.TButtonEliminar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.TButtonEliminar.UseVisualStyleBackColor = true;
-            this.TButtonEliminar.Click += new System.EventHandler(this.TButtonEliminar_Click);
-            // 
             // TLabelTitulo
             // 
             this.TLabelTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
@@ -317,6 +289,33 @@
             this.TLabelTitulo.TabIndex = 41;
             this.TLabelTitulo.Text = "Búsqueda de Pedido";
             // 
+            // TButtonEliminar
+            // 
+            this.TButtonEliminar.Image = global::AlquilerCoches.Properties.Resources.Delete_icon;
+            this.TButtonEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TButtonEliminar.Location = new System.Drawing.Point(78, 494);
+            this.TButtonEliminar.Name = "TButtonEliminar";
+            this.TButtonEliminar.Size = new System.Drawing.Size(80, 45);
+            this.TButtonEliminar.TabIndex = 42;
+            this.TButtonEliminar.Text = "Eliminar";
+            this.TButtonEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.TButtonEliminar.UseVisualStyleBackColor = true;
+            this.TButtonEliminar.Visible = false;
+            this.TButtonEliminar.Click += new System.EventHandler(this.TButtonEliminar_Click_1);
+            // 
+            // TButtonCerrar
+            // 
+            this.TButtonCerrar.Image = global::AlquilerCoches.Properties.Resources.Close_icon;
+            this.TButtonCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TButtonCerrar.Location = new System.Drawing.Point(238, 494);
+            this.TButtonCerrar.Name = "TButtonCerrar";
+            this.TButtonCerrar.Size = new System.Drawing.Size(86, 45);
+            this.TButtonCerrar.TabIndex = 43;
+            this.TButtonCerrar.Text = "Cerrar";
+            this.TButtonCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.TButtonCerrar.UseVisualStyleBackColor = true;
+            this.TButtonCerrar.Click += new System.EventHandler(this.TButtonCerrar_Click);
+            // 
             // BuscarPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -325,9 +324,9 @@
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(878, 570);
-            this.Controls.Add(this.TLabelTitulo);
-            this.Controls.Add(this.TButtonEliminar);
             this.Controls.Add(this.TButtonCerrar);
+            this.Controls.Add(this.TButtonEliminar);
+            this.Controls.Add(this.TLabelTitulo);
             this.Controls.Add(this.TDataGridViewPedidos);
             this.Controls.Add(this.groupBox1);
             this.ForeColor = System.Drawing.Color.Black;
@@ -368,12 +367,12 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.Button TButtonCerrar;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox TModelocomboBox3;
         private System.Windows.Forms.ComboBox TMarcacomboBox2;
         private System.Windows.Forms.ComboBox TProveecomboBox1;
-        private System.Windows.Forms.Button TButtonEliminar;
         private System.Windows.Forms.Label TLabelTitulo;
+        private System.Windows.Forms.Button TButtonEliminar;
+        private System.Windows.Forms.Button TButtonCerrar;
     }
 }
