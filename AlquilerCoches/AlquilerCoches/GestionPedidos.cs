@@ -103,6 +103,7 @@ namespace AlquilerCoches
                     {
 
                         n++;
+                        k++;
                     }
                     if (id_pedidos.Tables["Pedidos"].Rows[i][0].ToString() == null)
                     {
@@ -111,13 +112,14 @@ namespace AlquilerCoches
                 }
 
                 n++;
+                k++;
                
 
 
                 string s = Convert.ToString(n);
                 string p = "P";
                 string total = "";
-                total +=" "+ s + p;
+                total+=s + p;
                 TIDtextBox.Text = total;
 
             }
@@ -174,17 +176,7 @@ namespace AlquilerCoches
                 groupBox1.Enabled = false;
 
                 label1.Text = "* Pedido realizado con éxito. *";
-/*
-                string s = "";
-                s = TIDtextBox.Text;
-                
-                string p = "P";
-                string total = "";
-                total += " " + s + p;
-                TIDtextBox.Text = total;
 
-                
-                */
             }      
             
         }
@@ -240,7 +232,7 @@ namespace AlquilerCoches
 
         private void TCancelarbutton2_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Desea Salir?", "Advertencia",
+            if (MessageBox.Show("¿Desea salir?", "Advertencia",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question,
                     MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                 this.Close();
@@ -454,39 +446,24 @@ namespace AlquilerCoches
 
         private void TButtonBorrar_Click(object sender, EventArgs e)
         {
+            /*
             EN.ENPedidos enID = new EN.ENPedidos();
             DataSet dsIDs = new DataSet();
             dsIDs = enID.ObtenerListaID();
             DataSet id_pedidos = new DataSet();
             id_pedidos = dsIDs;
-
+            */
             try
             {
 
-                bool parar = false;
-                
-                for (int i = 0; i < 4 && parar != true; i++)
-                {
-
-                    if (id_pedidos.Tables["Pedidos"].Rows[i][0].ToString() != null)
-                    {
-
-                        k++;
-                    }
-                    if (id_pedidos.Tables["Pedidos"].Rows[i][0].ToString() == null)
-                    {
-                        parar = true;
-                    }
-                }
-
-                k++;
+             
                 k++;
 
 
                 string s = Convert.ToString(k);
                 string p = "P";
                 string total = "";
-                total += " " + s + p;
+                total += s + p;
                 TIDtextBox.Text = total;
 
                 MessageBox.Show(TIDtextBox.Text);
