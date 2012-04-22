@@ -12,6 +12,7 @@ namespace AlquilerCoches
 {
     public partial class GestionPedidos : Form
     {
+        int k = 0;
         public GestionPedidos()
         {
             InitializeComponent();
@@ -23,9 +24,10 @@ namespace AlquilerCoches
             numMarca = new DataSet();
             numMarca = dsMarc;
 
-
+            //Variable global
+            
             //Recuperar empleado
-            EN.ENPersonal Personal = new EN.ENPersonal();
+             EN.ENPersonal Personal = new EN.ENPersonal();
              Personal = new EN.ENPersonal();
              Personal.DNI = "33456789E";
              Personal.ObtenerDatosPersonal();
@@ -57,7 +59,7 @@ namespace AlquilerCoches
             {
                 TEnvioButtonOrdinario.Checked = true;
             }
-            else TEnvioButtonOrdinario.Checked = true;
+            else TEnvioButtonUrgente.Checked = true;
 
             TEnvioButtonOrdinario.Checked = true;
             TObservTextBox.Text = observaciones;
@@ -66,16 +68,11 @@ namespace AlquilerCoches
             EN.ENPedidos pedid = new EN.ENPedidos();
             DataSet dsPedid = new DataSet();
             dsPedid = pedid.ObtenerListaMarcas();
-            //ObtenerProvincias(dsProv)
 
             numMarca = new DataSet();
             numMarca = dsPedid;
            
-            /*
-
-            TButtonGuardarPersonal.Text = nombrebotonguardar; // importante le cambiamos el nombre al boton para saber que venimos del formulario buscar, y estamos editando no guardando uno nuevo
-            TButtonGuardarPersonal.Size = new Size(105, 24);
-            */
+           
         }
 
         bool incorrecto = false;
@@ -85,7 +82,7 @@ namespace AlquilerCoches
             EN.ENPedidos enID = new EN.ENPedidos();
             DataSet dsIDs = new DataSet();
             dsIDs = enID.ObtenerListaID();
-
+            groupBox1.Enabled = true;
            
             DataSet id_pedidos = new DataSet();
             id_pedidos = dsIDs;
@@ -135,6 +132,7 @@ namespace AlquilerCoches
         
         private void TButtonOK_Click(object sender, EventArgs e)
         {
+            int n = 0;
             if (TProveecomboBox1.Text == "" || TMarcacomboBox2.Text == "" || TModelocomboBox3.Text == "" || TVendedorText.Text=="")
             {
                 MessageBox.Show("Campos invalidos, no puede haber ninguno vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -176,7 +174,17 @@ namespace AlquilerCoches
                 groupBox1.Enabled = false;
 
                 label1.Text = "* Pedido realizado con éxito. *";
+/*
+                string s = "";
+                s = TIDtextBox.Text;
+                
+                string p = "P";
+                string total = "";
+                total += " " + s + p;
+                TIDtextBox.Text = total;
 
+                
+                */
             }      
             
         }
@@ -227,7 +235,7 @@ namespace AlquilerCoches
             TEnvioButtonOrdinario.Checked = true;
             TObservTextBox.Text = "";
             numericUpDown1.Value = 1;
-
+           
         }
 
         private void TCancelarbutton2_Click(object sender, EventArgs e)
@@ -392,7 +400,7 @@ namespace AlquilerCoches
             {
                 errorProvider1.SetError(TObservTextBox, "Introduzca un comentario.");
             }
-            else { errorProvider1.SetError(TObservTextBox, ""); }
+            else { errorProvider1.SetError(TObservTextBox, ""); incorrecto = false; }
         }
 
         private void TEnvioButtonOrdinario_CheckedChanged(object sender, EventArgs e)
@@ -446,15 +454,60 @@ namespace AlquilerCoches
 
         private void TButtonBorrar_Click(object sender, EventArgs e)
         {
-            TVendedorText.Text = "";
+            EN.ENPedidos enID = new EN.ENPedidos();
+            DataSet dsIDs = new DataSet();
+            dsIDs = enID.ObtenerListaID();
+            DataSet id_pedidos = new DataSet();
+            id_pedidos = dsIDs;
+
+            try
+            {
+
+                bool parar = false;
+                
+                for (int i = 0; i < 4 && parar != true; i++)
+                {
+
+                    if (id_pedidos.Tables["Pedidos"].Rows[i][0].ToString() != null)
+                    {
+
+                        k++;
+                    }
+                    if (id_pedidos.Tables["Pedidos"].Rows[i][0].ToString() == null)
+                    {
+                        parar = true;
+                    }
+                }
+
+                k++;
+                k++;
+
+
+                string s = Convert.ToString(k);
+                string p = "P";
+                string total = "";
+                total += " " + s + p;
+                TIDtextBox.Text = total;
+
+                MessageBox.Show(TIDtextBox.Text);
+
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+
             //Combobox
-            TProveecomboBox1.Text ="";
-            TMarcacomboBox2.Text="";
-            TModelocomboBox3.Text="";
+            TProveecomboBox1.SelectedIndex=0;
+            TMarcacomboBox2.SelectedIndex = 0;
+            TModelocomboBox3.SelectedIndex = 0;
             //Radiobutton
             TEnvioButtonOrdinario.Checked = true;
             TObservTextBox.Text = "";
             numericUpDown1.Value = 1;
+
+            groupBox1.Enabled = true;
+            label1.Text = "";
         }
 
         private void TButtonBuscar_Click(object sender, EventArgs e)
