@@ -26,6 +26,7 @@ namespace EN
         private string fecha;
 
         private CAD.CADPedidos cadPedidos = new CAD.CADPedidos();
+        private CAD.CADProveedores cadProveedores = new CAD.CADProveedores();
 
 
         public string IDTransaccion
@@ -113,6 +114,20 @@ namespace EN
             try
             {
                 resultado = cadPedidos.ConseguirMarcas();
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            return resultado;
+        }
+
+        public DataSet ObtenerListaProveedores()
+        {
+            DataSet resultado = new DataSet();
+            try
+            {
+                resultado = cadProveedores.ConseguirProveedores();
             }
             catch (Exception ex)
             {
