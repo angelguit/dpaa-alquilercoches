@@ -451,6 +451,21 @@ namespace AlquilerCoches
             }
         }
 
+        private void registrarVentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["RegistrarVenta"] != null)
+            {
+                Application.OpenForms["RegistrarVenta"].Activate();
+            }
+            else
+            {
+                RegistrarVenta F20 = new RegistrarVenta();
+                F20.MdiParent = this;
+                F20.Show();
+                //F8.WindowState = FormWindowState.Maximized;
+            }
+        }
+
      
      }   
 }

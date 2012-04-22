@@ -77,6 +77,7 @@
             this.TButtonVehiculos = new System.Windows.Forms.Button();
             this.TButtonCliente = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.registrarVentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -117,28 +118,28 @@
             // darAltaToolStripMenuItem1
             // 
             this.darAltaToolStripMenuItem1.Name = "darAltaToolStripMenuItem1";
-            this.darAltaToolStripMenuItem1.Size = new System.Drawing.Size(116, 22);
+            this.darAltaToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.darAltaToolStripMenuItem1.Text = "Dar Alta";
             this.darAltaToolStripMenuItem1.Click += new System.EventHandler(this.darAltaToolStripMenuItem1_Click);
             // 
             // buscarToolStripMenuItem
             // 
             this.buscarToolStripMenuItem.Name = "buscarToolStripMenuItem";
-            this.buscarToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.buscarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.buscarToolStripMenuItem.Text = "Buscar";
             this.buscarToolStripMenuItem.Click += new System.EventHandler(this.buscarToolStripMenuItem_Click);
             // 
             // editarToolStripMenuItem
             // 
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.editarToolStripMenuItem.Text = "Editar";
             this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
             // 
             // borrarToolStripMenuItem
             // 
             this.borrarToolStripMenuItem.Name = "borrarToolStripMenuItem";
-            this.borrarToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.borrarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.borrarToolStripMenuItem.Text = "Borrar";
             this.borrarToolStripMenuItem.Click += new System.EventHandler(this.borrarToolStripMenuItem_Click);
             // 
@@ -223,14 +224,14 @@
             // TToolStripMenuItemNuevaFactura
             // 
             this.TToolStripMenuItemNuevaFactura.Name = "TToolStripMenuItemNuevaFactura";
-            this.TToolStripMenuItemNuevaFactura.Size = new System.Drawing.Size(152, 22);
+            this.TToolStripMenuItemNuevaFactura.Size = new System.Drawing.Size(151, 22);
             this.TToolStripMenuItemNuevaFactura.Text = "Nueva Factura";
             this.TToolStripMenuItemNuevaFactura.Click += new System.EventHandler(this.TToolStripMenuItemNuevaFactura_Click);
             // 
             // TToolStripMenuItemBuscarFactura
             // 
             this.TToolStripMenuItemBuscarFactura.Name = "TToolStripMenuItemBuscarFactura";
-            this.TToolStripMenuItemBuscarFactura.Size = new System.Drawing.Size(152, 22);
+            this.TToolStripMenuItemBuscarFactura.Size = new System.Drawing.Size(151, 22);
             this.TToolStripMenuItemBuscarFactura.Text = "Buscar Factura";
             this.TToolStripMenuItemBuscarFactura.Click += new System.EventHandler(this.TToolStripMenuItemBuscarFactura_Click);
             // 
@@ -238,7 +239,8 @@
             // 
             this.gestionVentasToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ponerEnVentaToolStripMenuItem,
-            this.mostrarVehículosToolStripMenuItem});
+            this.mostrarVehículosToolStripMenuItem,
+            this.registrarVentaToolStripMenuItem});
             this.gestionVentasToolStripMenuItem1.Name = "gestionVentasToolStripMenuItem1";
             this.gestionVentasToolStripMenuItem1.Size = new System.Drawing.Size(97, 20);
             this.gestionVentasToolStripMenuItem1.Text = "Gestion Ventas";
@@ -510,6 +512,13 @@
             this.tabPage1.Text = "Administración";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // registrarVentaToolStripMenuItem
+            // 
+            this.registrarVentaToolStripMenuItem.Name = "registrarVentaToolStripMenuItem";
+            this.registrarVentaToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.registrarVentaToolStripMenuItem.Text = "Registrar Venta";
+            this.registrarVentaToolStripMenuItem.Click += new System.EventHandler(this.registrarVentaToolStripMenuItem_Click);
+            // 
             // MDIPral
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -591,6 +600,7 @@
         private System.Windows.Forms.ToolStripMenuItem gestionPedidosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem realizarPedidoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem buscarPedidoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registrarVentaToolStripMenuItem;
     }
 }
 
