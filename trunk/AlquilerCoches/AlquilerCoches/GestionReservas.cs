@@ -185,9 +185,8 @@ namespace AlquilerCoches
         private void TDataGridViewReservas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            //try
-            //{
-
+            try
+            {
                 if (TDataGridViewReservas.Rows[e.RowIndex].Cells[e.ColumnIndex].ColumnIndex.ToString() == "0") // la columna 0 es el checkbox de eliminiar
                 {
                     string numRes = TDataGridViewReservas.Rows[e.RowIndex].Cells[2].Value.ToString();
@@ -238,11 +237,11 @@ namespace AlquilerCoches
                     
                 }
 
-            /*}
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("Error no hay valores en esta fila");
-            }*/
+            }
         }
 
         private void TButtonEliminar_Click(object sender, EventArgs e)
