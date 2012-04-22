@@ -20,8 +20,22 @@ namespace AlquilerCoches
         public NuevaFactura()
         {
             InitializeComponent();
+
+            DataGridViewButtonColumn buttons = new DataGridViewButtonColumn();
+            {
+                buttons.HeaderText = "Seleccionar"; //texto de la columna
+                buttons.Text = "Seleccionar"; //texto de cada boton, sale al introducir texto
+                buttons.UseColumnTextForButtonValue = true;
+                buttons.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                buttons.FlatStyle = FlatStyle.Standard;
+                buttons.CellTemplate.Style.BackColor = Color.Honeydew;
+                buttons.DisplayIndex = 0;
+            }
+
+            TDataGridViewReservas.Columns.Add(buttons);
         }
 
+        
         private void TButtonBuscarFechas_Click(object sender, EventArgs e)
         {
             TButtonBuscarFechas.Visible = false;
@@ -157,6 +171,34 @@ namespace AlquilerCoches
         private void NuevaFactura_Load(object sender, EventArgs e)
         {
             TRadioButtonReservas.Checked = TRadioButtonVentas.Checked = false;
+        }
+
+        private void TButtonCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void TDataGridViewReservas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (TDataGridViewReservas.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "Seleccionar")
+            {
+                EN.ENReservas enRe = new EN.ENReservas();
+
+                enRe.NumRes = Int32.Parse(TDataGridViewReservas.Rows[e.RowIndex].Cells[1].Value.ToString());
+                enRe.Cliente = TDataGridViewReservas.Rows[e.RowIndex].Cells[2].Value.ToString();
+                enRe.Matricula = TDataGridViewReservas.Rows[e.RowIndex].Cells[3].Value.ToString();
+                enRe.FechaInicio = Convert.ToDateTime(TDataGridViewReservas.Rows[e.RowIndex].Cells[4].Value.ToString());
+                enRe.FechaFin = Convert.ToDateTime(TDataGridViewReservas.Rows[e.RowIndex].Cells[5].Value.ToString());
+                enRe.Conductores = Int32.Parse(TDataGridViewReservas.Rows[e.RowIndex].Cells[6].Value.ToString());
+
+                GestionFacturacion F1 = new GestionFacturacion(enRe);
+                F1.StartPosition = FormStartPosition.Manual;
+                F1.Location = Location;
+                F1.Left += 147;
+                F1.Top += 44;
+                F1.ShowDialog();
+
+            }
         }
     }
 }
