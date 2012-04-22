@@ -320,8 +320,23 @@ namespace AlquilerCoches
                 errorProvider1.SetError(TProveecomboBox1, "");
             } 
         }
-        
 
+        private void ObtenerProveedores(DataSet dsProvee)
+        {
+            TProveecomboBox1.Text = "Seleccione el proveedor";
+            TProveecomboBox1.DataSource = dsProvee.Tables["Proveedores"];
+            TProveecomboBox1.DisplayMember = dsProvee.Tables["Proveedores"].Columns[0].Caption.ToString();
+
+        }
+        private void TProveecomboBox1_Click(object sender, EventArgs e)
+        {
+
+            EN.ENPedidos enProvee = new EN.ENPedidos();
+            DataSet dsProvee = new DataSet();
+            dsProvee = enProvee.ObtenerListaProveedores();
+            ObtenerProveedores(dsProvee);
+
+        }
 
         private void TMarcacomboBox2_Click(object sender, EventArgs e)
         {
