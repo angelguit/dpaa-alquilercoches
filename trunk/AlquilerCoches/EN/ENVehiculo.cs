@@ -149,8 +149,8 @@ namespace EN
 
         public void EditarVehiculo()
         {
-            try
-            {
+            //try
+            //{
                 DataSet vehiculo=cadVehiculo.ObtenerDatosVehiculo(matricula);
                 vehiculo.Tables["Vehiculo"].Rows[0][0] = marca;
                 vehiculo.Tables["Vehiculo"].Rows[0][1] = modelo;
@@ -163,11 +163,11 @@ namespace EN
                 //vehiculo.Tables["Vehiculo"].Rows[0][8] = categoria;
                 cadVehiculo.EditarVehiculo(vehiculo);
 
-            }
+            /*}
             catch (Exception ex)
             {
                 throw (ex);
-            }
+            }*/
 
         }
 

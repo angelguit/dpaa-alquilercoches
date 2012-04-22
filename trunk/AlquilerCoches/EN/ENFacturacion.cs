@@ -137,7 +137,19 @@ namespace EN
             DataSet dsFa = new DataSet();
             dsFa = cadFacturacion.ObtenerFacturas();
             DataRow linea = dsFa.Tables["Facturas"].NewRow();
+            linea[1] = cliente;
+            linea[2] = vehiculo;
+            linea[3] = conductores;
+            linea[4] = tiempo;
+            linea[5] = tarifa;
+            linea[6] = precioTotal;
+            linea[7] = diaFacturacion;
+            cadFacturacion.AnyadirFactura(dsFa);
+        }
 
+        public int UltimaFactura()
+        {
+            return cadFacturacion.UltimaFactura();
         }
     }
 }

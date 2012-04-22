@@ -12,14 +12,15 @@ namespace AlquilerCoches
     public partial class GestionFacturacion : Form
     {
         private EN.ENFacturacion enFa = new EN.ENFacturacion();
+        private EN.ENReservas enRes = new EN.ENReservas();
+        private EN.ENVehiculo enVe = new EN.ENVehiculo();
+        private EN.ENCliente enCli = new EN.ENCliente();
 
         public GestionFacturacion(EN.ENReservas enRe)
         {
             InitializeComponent();
 
-            EN.ENVehiculo enVe = new EN.ENVehiculo();
-            EN.ENCliente enCli = new EN.ENCliente();
-            
+            enRes = enRe;
 
             TimeSpan ts = enRe.FechaFin - enRe.FechaInicio;
 
@@ -60,8 +61,18 @@ namespace AlquilerCoches
 
         private void TButtonReserva_Click(object sender, EventArgs e)
         {
+            
             enFa.DiaFacturacion = DateTime.Today;
-
+            enFa.AnyadirFactura();
+            MessageBox.Show("Factura realizada con éxito", "Factura Realizada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            enVe.Estado = "Disponible";
+            enRes.Activa = false;
+            enVe.EditarVehiculo();
+            enRes.EditarReserva();
+            //ImprimirFactura Fp = new ImprimirFactura(enCli,enRes,enVe,enFa,enFa.UltimaFactura());
+            //Fp.Visible = false;
+            //Application.OpenForms["ImprimirFactura"].Activate();
+            Close();
         }
     }
 }

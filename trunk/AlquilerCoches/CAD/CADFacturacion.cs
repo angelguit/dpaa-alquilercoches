@@ -138,6 +138,47 @@ namespace CAD
             else
                 return false;
         }
-        
+
+        public void AnyadirFactura(DataSet dsFa)
+        {
+            DataSet dsFac = new DataSet();
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                String consulta = "Select * from Facturas";
+                SqlDataAdapter daFa = new SqlDataAdapter(consulta, conexion);
+                daFa.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daFa.Fill(dsFac, "Facturas");
+                SqlCommandBuilder cbuilder = new SqlCommandBuilder(daFa);
+                daFa.Update(dsFa, "Facturas");
+
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+        }
+
+        public int UltimaFactura()
+        {
+            DataSet dsFa = new DataSet();
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                String consulta = "Select * from Facturas";
+                SqlDataAdapter daRes = new SqlDataAdapter(consulta, conexion);
+                daRes.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daRes.Fill(dsFa, "Reservas");
+
+
+
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+
+            return Int32.Parse(dsFa.Tables["Reservas"].Rows[dsFa.Tables["Reservas"].Rows.Count - 1][0].ToString());
+        }
     }
 }

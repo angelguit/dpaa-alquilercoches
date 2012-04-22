@@ -45,7 +45,6 @@ namespace EN
             linea[6] = activa;
             res.Tables["Reservas"].Rows.Add(linea);
             cadReservas.AnyadirReserva(res);
-
         }
 
         public void EditarReserva()
