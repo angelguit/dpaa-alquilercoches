@@ -63,11 +63,14 @@
             // 
             // TButtonAtras
             // 
+            this.TButtonAtras.Image = global::AlquilerCoches.Properties.Resources.Close_icon;
+            this.TButtonAtras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.TButtonAtras.Location = new System.Drawing.Point(21, 454);
             this.TButtonAtras.Name = "TButtonAtras";
-            this.TButtonAtras.Size = new System.Drawing.Size(75, 23);
+            this.TButtonAtras.Size = new System.Drawing.Size(75, 32);
             this.TButtonAtras.TabIndex = 10;
-            this.TButtonAtras.Text = "Salir";
+            this.TButtonAtras.Text = "Cerrar";
+            this.TButtonAtras.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.TButtonAtras.UseVisualStyleBackColor = true;
             this.TButtonAtras.Click += new System.EventHandler(this.TButtonAtras_Click);
             // 
