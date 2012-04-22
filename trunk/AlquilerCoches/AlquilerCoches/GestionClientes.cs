@@ -132,7 +132,7 @@ namespace AlquilerCoches
             /////////////////////////////////////////////////
 
             TButtonGuardarCliente.Text = nombrebotonguardar; // importante le cambiamos el nombre al boton para saber que venimos del formulario buscar, y estamos editando no guardando uno nuevo
-            TButtonGuardarCliente.Size = new Size(105, 24);
+            TButtonGuardarCliente.Size = new Size(120, 35);
         }
 
         private void TTextBoxDNI_Leave(object sender, EventArgs e)
@@ -203,7 +203,7 @@ namespace AlquilerCoches
 
         private void TComboboxProvincia_Leave(object sender, EventArgs e)
         {
-            if (TComboBoxProvincias.SelectedIndex == -1)
+            if (TComboBoxProvincias.SelectedIndex == -1 )
             {
                 errorProvider1.SetError(TComboBoxProvincias, "Provincia incorrecta, no puede estar vacio");
                 incorrecto = true;
@@ -212,7 +212,7 @@ namespace AlquilerCoches
         }
         private void TComboBoxTarifa_Leave(object sender, EventArgs e)
         {
-            if (TComboBoxTarifa.SelectedIndex == -1)
+            if (TComboBoxTarifa.SelectedIndex == -1 )
             {
                 errorProvider1.SetError(TComboBoxTarifa, "Tarifa incorrecta, no puede estar vacio");
                 incorrecto = true;
@@ -226,6 +226,7 @@ namespace AlquilerCoches
                  TTextBoxEmail.Text == "" || TTextBoxDireccion.Text == "" || (TComboBoxProvincias.SelectedIndex == 0 && TComboBoxProvincias.Text != textoProvincia) || (TComboBoxTarifa.SelectedIndex == -1) ||
                 (TRadioButtonH.Checked== false && TRadioButtonM.Checked==false))
             {
+               
                 MessageBox.Show("Campos invalidos, no puede haber ninguno vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (incorrecto == true)
