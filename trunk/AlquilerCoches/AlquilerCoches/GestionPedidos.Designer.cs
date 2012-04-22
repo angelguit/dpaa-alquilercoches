@@ -61,6 +61,7 @@
             this.TLabelTitulo = new System.Windows.Forms.Label();
             this.TDateTimePickerFecha = new System.Windows.Forms.DateTimePicker();
             this.TVendedorText = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.TEnviogroupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -390,7 +391,7 @@
             this.TButtonBorrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.TButtonBorrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.TButtonBorrar.Image = global::AlquilerCoches.Properties.Resources.Delete_icon;
-            this.TButtonBorrar.Location = new System.Drawing.Point(341, 466);
+            this.TButtonBorrar.Location = new System.Drawing.Point(342, 486);
             this.TButtonBorrar.Name = "TButtonBorrar";
             this.TButtonBorrar.Size = new System.Drawing.Size(123, 75);
             this.TButtonBorrar.TabIndex = 34;
@@ -404,9 +405,9 @@
             this.TButtonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.TButtonOK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.TButtonOK.Image = global::AlquilerCoches.Properties.Resources.Accept_icon;
-            this.TButtonOK.Location = new System.Drawing.Point(135, 466);
+            this.TButtonOK.Location = new System.Drawing.Point(135, 486);
             this.TButtonOK.Name = "TButtonOK";
-            this.TButtonOK.Size = new System.Drawing.Size(124, 69);
+            this.TButtonOK.Size = new System.Drawing.Size(124, 72);
             this.TButtonOK.TabIndex = 37;
             this.TButtonOK.Text = "OK";
             this.TButtonOK.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -450,6 +451,16 @@
             this.TVendedorText.TabIndex = 32;
             this.TVendedorText.Leave += new System.EventHandler(this.TVendedorText_Leave);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Gray;
+            this.label1.Location = new System.Drawing.Point(110, 457);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 42;
+            // 
             // GestionPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -457,6 +468,7 @@
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(878, 570);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.TLabelTitulo);
             this.Controls.Add(this.TButtonBuscar);
             this.Controls.Add(this.TButtonOK);
@@ -516,5 +528,6 @@
         private System.Windows.Forms.Label TLabelTitulo;
         private System.Windows.Forms.DateTimePicker TDateTimePickerFecha;
         private System.Windows.Forms.TextBox TVendedorText;
+        private System.Windows.Forms.Label label1;
     }
 }

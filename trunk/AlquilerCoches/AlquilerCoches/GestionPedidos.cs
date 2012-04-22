@@ -43,7 +43,9 @@ namespace AlquilerCoches
             TModelocomboBox3.Items.Add(modelo);
             TModelocomboBox3.SelectedIndex = 0;
 
-            TProveecomboBox1.Text = proveedor;
+            TProveecomboBox1.Items.Add(proveedor);
+            TProveecomboBox1.SelectedIndex = 0;
+           
 
             TVendedorText.Text = empleado;
             //Combobox
@@ -133,11 +135,11 @@ namespace AlquilerCoches
         
         private void TButtonOK_Click(object sender, EventArgs e)
         {
-            if (TProveecomboBox1.Text == "" || TMarcacomboBox2.Text == "" || TModelocomboBox3.Text == "" || TVendedorText.Text=="")
+          /*  if (TProveecomboBox1.Text == "" || TMarcacomboBox2.Text == "" || TModelocomboBox3.Text == "" || TVendedorText.Text=="")
             {
                 MessageBox.Show("Campos invalidos, no puede haber ninguno vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            if (incorrecto == true)
+            } */
+            if (incorrecto == false)
             {
                 MessageBox.Show("Campos invalidos, reviselos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -146,7 +148,7 @@ namespace AlquilerCoches
             {
                 EN.ENPedidos enPedidos = new EN.ENPedidos();
 
-                string envio="";
+                string envio = "";
 
                 if (TEnvioButtonOrdinario.Checked)
                 {
@@ -166,25 +168,16 @@ namespace AlquilerCoches
                 enPedidos.Empleado = TVendedorText.Text; //empleado
                 enPedidos.TipoEnvio = envio;  //tipo de envio
 
-           
+
 
                 enPedidos.AnyadirPedidos();
 
 
-         /*       if (TAceptarbutton1.Text.ToString() == "Guardar")
-                {
-                    enPersonal.AnyadirPersonal();
-                }
-                else
-                {
-                    enPersonal.EditarPersonal();
-                }   */
-            }
+                groupBox1.Visible = false;
 
-           // this.Close();
+                label1.Text = "* Pedido realizado con éxito. *";
 
-             
-                
+            }      
             
         }
 
