@@ -78,7 +78,7 @@
             // TListBoxMatriculas
             // 
             this.TListBoxMatriculas.FormattingEnabled = true;
-            this.TListBoxMatriculas.Location = new System.Drawing.Point(530, 38);
+            this.TListBoxMatriculas.Location = new System.Drawing.Point(546, 38);
             this.TListBoxMatriculas.Name = "TListBoxMatriculas";
             this.TListBoxMatriculas.Size = new System.Drawing.Size(253, 147);
             this.TListBoxMatriculas.TabIndex = 48;
@@ -88,7 +88,7 @@
             // 
             this.TListBoxModelos.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TListBoxModelos.FormattingEnabled = true;
-            this.TListBoxModelos.Location = new System.Drawing.Point(279, 38);
+            this.TListBoxModelos.Location = new System.Drawing.Point(287, 38);
             this.TListBoxModelos.Name = "TListBoxModelos";
             this.TListBoxModelos.Size = new System.Drawing.Size(253, 147);
             this.TListBoxModelos.TabIndex = 47;
@@ -109,7 +109,7 @@
             // 
             this.TLabelMatriculas.AutoSize = true;
             this.TLabelMatriculas.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelMatriculas.Location = new System.Drawing.Point(527, 22);
+            this.TLabelMatriculas.Location = new System.Drawing.Point(543, 22);
             this.TLabelMatriculas.Name = "TLabelMatriculas";
             this.TLabelMatriculas.Size = new System.Drawing.Size(57, 13);
             this.TLabelMatriculas.TabIndex = 44;
@@ -119,7 +119,7 @@
             // 
             this.TLabelModelos.AutoSize = true;
             this.TLabelModelos.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelModelos.Location = new System.Drawing.Point(268, 22);
+            this.TLabelModelos.Location = new System.Drawing.Point(284, 22);
             this.TLabelModelos.Name = "TLabelModelos";
             this.TLabelModelos.Size = new System.Drawing.Size(47, 13);
             this.TLabelModelos.TabIndex = 43;
