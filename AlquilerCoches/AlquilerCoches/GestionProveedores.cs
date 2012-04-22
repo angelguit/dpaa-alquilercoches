@@ -13,6 +13,7 @@ namespace AlquilerCoches
     public partial class GestionProveedores : Form
     {
         private string accionGuardar = "";
+        private string textoProvincia = "";
         public GestionProveedores(string cif, string marca,string calle,int numero,int telefono,string email,string ciudad,string provincia,int  codigopostal,string horario,string accion)
         {
             InitializeComponent();
@@ -32,22 +33,15 @@ namespace AlquilerCoches
                 TComboBoxProvincias.SelectedIndex = 0;
                 TComboBoxCiudades.Items.Add(ciudad);
                 TComboBoxCiudades.SelectedIndex = 0;
-
+                textoProvincia = TComboBoxProvincias.Text;
                 EN.ENProveedores provi = new EN.ENProveedores();
                 DataSet dsProv = new DataSet();
                 dsProv = provi.ObtenerListaProvincias();
-                //ObtenerProvincias(dsProv)
 
                 numProvincia = new DataSet();
                 numProvincia = dsProv;
             }
         }
-
-        private void GestionProveedores_Load(object sender, EventArgs e)
-        {
-
-        }
-
         bool incorrecto= false;
 
         private void TTextBoxCIF_Leave(object sender, EventArgs e)
@@ -241,7 +235,7 @@ namespace AlquilerCoches
         {
             if (TTextBoxCalle.Text == "" || TTextBoxCIF.Text == "" || TComboBoxCiudades.Text == ""
                || TTextBoxCPostal.Text == "" || TTextBoxEmail.Text == "" || TTextBoxMarca.Text == ""
-                 || TTextBoxTelefono.Text == "" || TTextBoxHorario.Text == "" || TTextBoxNumero.Text == "" || TComboBoxProvincias.Text == "" || TComboBoxProvincias.SelectedIndex <1)
+                 || TTextBoxTelefono.Text == "" || TTextBoxHorario.Text == "" || TTextBoxNumero.Text == "" || TComboBoxProvincias.Text == "" || (TComboBoxProvincias.SelectedIndex ==0 && TComboBoxProvincias.Text!=textoProvincia))
             {
                 MessageBox.Show("No pueden haber campos vacios");
             }
@@ -271,13 +265,6 @@ namespace AlquilerCoches
                     MessageBox.Show("guardando");
                     EN.ENProveedores insertar = new EN.ENProveedores();
                     DataSet existe = new DataSet();
-                    //comprobar si existe en la BD
-                    //string cadena = " CIF= " + TTextBoxCIF.Text + "";
-                    //existe = insertar.ObtenerListaProveedores(cadena);
-                    //int afectadas = existe.ExecuteNonQuery();
-                    //existe
-                    //ExecuteNonQuery
-
 
                     //insertar datos
                     insertar.CIF = TTextBoxCIF.Text;
@@ -305,13 +292,10 @@ namespace AlquilerCoches
             {
                 if (TComboBoxProvincias.SelectedIndex>0)
                 {
-                    //MessageBox.Show("iusdhg");
                     string prov = TComboBoxProvincias.Text.ToString();
                     bool parar = false;
-                    // MessageBox.Show(numProvincia.Tables["Provincia"].Rows.Count.ToString());
                     for (int i = 0; i < 53 && parar != true; i++)
                     {
-                        //MessageBox.Show(numProvincia.Tables["Provincia"].Rows[i][1].ToString());
                         if (numProvincia.Tables["Provincia"].Rows[i][1].ToString() == prov)
                         {
                             string numprov = numProvincia.Tables["Provincia"].Rows[i][0].ToString();// en la posicion 0 esta el id de la provincia

@@ -18,7 +18,7 @@ namespace AlquilerCoches
         public GestionProveedoresBuscar()
         {
             InitializeComponent();
-            dataGridView1.Visible = false;
+            dataGridViewProveedores.Visible = false;
             DataGridViewButtonColumn buttons = new DataGridViewButtonColumn();
             {
                 buttons.HeaderText = "Editar"; //texto de la columna
@@ -36,8 +36,8 @@ namespace AlquilerCoches
                 boton.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells; //tamaño
                 boton.DisplayIndex = 0; //indice que ocupara en la tabla
             }
-            dataGridView1.Columns.Add(boton);
-            dataGridView1.Columns.Add(buttons);
+            dataGridViewProveedores.Columns.Add(boton);
+            dataGridViewProveedores.Columns.Add(buttons);
         }
 
         private void TComboBoxProvincias_Click(object sender, EventArgs e)
@@ -95,9 +95,9 @@ namespace AlquilerCoches
         {
             try
             {
-                if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].ColumnIndex.ToString() == "0") // la columna 0 es el checkbox de eliminiar
+                if (dataGridViewProveedores.Rows[e.RowIndex].Cells[e.ColumnIndex].ColumnIndex.ToString() == "0") // la columna 0 es el checkbox de eliminiar
                 {
-                    string dni = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString(); //el indice 2 hace referencia al dni del datagridview
+                    string dni = dataGridViewProveedores.Rows[e.RowIndex].Cells[2].Value.ToString(); //el indice 2 hace referencia al dni del datagridview
 
                     if (arraydni.Count == 0)
                     {
@@ -120,7 +120,7 @@ namespace AlquilerCoches
                         }
                     }
                 }
-                 else if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "Editar")
+                 else if (dataGridViewProveedores.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "Editar")
                  {
                      arraydni.Clear();//la vaciamos ya que al cambiar de formulario se borran las marcas de los checkbox
 
@@ -130,16 +130,16 @@ namespace AlquilerCoches
                      }
                      else///////////////////////modificar
                      {
-                         string cif = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-                         string marca = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();//indice 1 para cojer el nombre
-                         string calle = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
-                         int numero = Int32.Parse(dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString());
-                         int telefono = Int32.Parse(dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString());
-                         string email = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
-                         string ciudad = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
-                         string provincia = dataGridView1.Rows[e.RowIndex].Cells[9].Value.ToString();
-                         int codigopostal = Int32.Parse(dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString());
-                         string horario = dataGridView1.Rows[e.RowIndex].Cells[11].Value.ToString();
+                         string cif = dataGridViewProveedores.Rows[e.RowIndex].Cells[2].Value.ToString();
+                         string marca = dataGridViewProveedores.Rows[e.RowIndex].Cells[3].Value.ToString();//indice 1 para cojer el nombre
+                         string calle = dataGridViewProveedores.Rows[e.RowIndex].Cells[4].Value.ToString();
+                         int numero = Int32.Parse(dataGridViewProveedores.Rows[e.RowIndex].Cells[5].Value.ToString());
+                         int telefono = Int32.Parse(dataGridViewProveedores.Rows[e.RowIndex].Cells[6].Value.ToString());
+                         string email = dataGridViewProveedores.Rows[e.RowIndex].Cells[7].Value.ToString();
+                         string ciudad = dataGridViewProveedores.Rows[e.RowIndex].Cells[8].Value.ToString();
+                         string provincia = dataGridViewProveedores.Rows[e.RowIndex].Cells[9].Value.ToString();
+                         int codigopostal = Int32.Parse(dataGridViewProveedores.Rows[e.RowIndex].Cells[10].Value.ToString());
+                         string horario = dataGridViewProveedores.Rows[e.RowIndex].Cells[11].Value.ToString();
                          string accion= "modificar";
                          //string nombrebotonguardar = "Guardar Cambios";
                          GestionProveedores Formu = new GestionProveedores(cif, marca, calle, numero, telefono, email, ciudad, provincia, codigopostal, horario,accion);
@@ -174,7 +174,7 @@ namespace AlquilerCoches
             EN.ENProveedores actualiza = new EN.ENProveedores();
             DataSet ou = new DataSet();
             ou = actualiza.ObtenerListaProveedores(cadena);
-            dataGridView1.DataSource = ou;
+            dataGridViewProveedores.DataSource = ou;
 
         }
 
@@ -204,7 +204,7 @@ namespace AlquilerCoches
                 arraydni.Clear();
                 DataSet ou = new DataSet();
                 ou = borrar.ObtenerListaProveedores(cadena);
-                dataGridView1.DataSource = ou;
+                dataGridViewProveedores.DataSource = ou;
 
             }
             else
@@ -219,7 +219,7 @@ namespace AlquilerCoches
 
         private void TButtonBuscar_Click(object sender, EventArgs e)
         {
-            dataGridView1.Visible = true;
+            dataGridViewProveedores.Visible = true;
             TButtonEliminar.Visible = true;
             groupBox1.Location = new Point(36, 303); //para desplazar el panel de busqueda hacia abajo.
             string cadena = "";
@@ -230,8 +230,8 @@ namespace AlquilerCoches
             if (TTextBoxCIF.Text == "" && TComboBoxProvincias.Text == "" && TTextBoxMarca.Text == "" && TComboBoxCiudades.Text == "" && TTextBoxCPostal.Text == "")
             {
                 resultadoProveedores = buscarProveedores.ObtenerListaProveedores(cadena);
-                dataGridView1.DataSource = resultadoProveedores;
-                dataGridView1.DataMember = "Proveedores";
+                dataGridViewProveedores.DataSource = resultadoProveedores;
+                dataGridViewProveedores.DataMember = "Proveedores";
             }
             else//con filtro
             {
@@ -298,13 +298,13 @@ namespace AlquilerCoches
                 }
                 resultadoProveedores = buscarProveedores.ObtenerListaProveedores(cadena);
 
-                dataGridView1.DataSource = resultadoProveedores;
-                dataGridView1.DataMember = "Proveedores";
+                dataGridViewProveedores.DataSource = resultadoProveedores;
+                dataGridViewProveedores.DataMember = "Proveedores";
             }
 
-            for (int i = 0; i < dataGridView1.Columns.Count; i++) //esto nos servira para bloquear todas las columnas para que no se puedan editar 
+            for (int i = 0; i < dataGridViewProveedores.Columns.Count; i++) //esto nos servira para bloquear todas las columnas para que no se puedan editar 
             {
-                if (i != 0) { dataGridView1.Columns[i].ReadOnly = true; } //dejamos desbloqueada la columna de eliminar para que podamos pulsar, la columna boton no se bloquea asiq no hace falta desbloquearla
+                if (i != 0) { dataGridViewProveedores.Columns[i].ReadOnly = true; } //dejamos desbloqueada la columna de eliminar para que podamos pulsar, la columna boton no se bloquea asiq no hace falta desbloquearla
             }
         }
 
