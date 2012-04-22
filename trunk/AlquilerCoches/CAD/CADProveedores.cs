@@ -162,5 +162,26 @@ namespace CAD
                 throw (ex);
             }
         }
+
+
+        public DataSet ConseguirProveedores()
+        {
+            DataSet dsProvee = new DataSet();
+
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                String consulta = "Select Marca FROM Proveedores";
+                SqlDataAdapter daProvee = new SqlDataAdapter(consulta, conexion);
+                daProvee.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daProvee.Fill(dsProvee,"Proveedores");
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+
+            return dsProvee;
+        }
     }
 }
