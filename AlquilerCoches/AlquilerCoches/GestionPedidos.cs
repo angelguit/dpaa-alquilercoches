@@ -23,6 +23,14 @@ namespace AlquilerCoches
             numMarca = new DataSet();
             numMarca = dsMarc;
 
+
+            //Recuperar empleado
+            EN.ENPersonal Personal = new EN.ENPersonal();
+             Personal = new EN.ENPersonal();
+             Personal.DNI = "33456789E";
+             Personal.ObtenerDatosPersonal();
+             TVendedorText.Text = Personal.Nombre+" "+Personal.Apellidos;
+
         }
       
          public GestionPedidos(string id,string proveedor, string marca, string modelo, string cantidad, string observaciones, string estado, string empleado, string tipoenvio, string nombrebotonguardar)//constructor sobrecargado
