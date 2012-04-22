@@ -229,6 +229,10 @@ namespace AlquilerCoches
                     enVe.Estado = "Disponible";
                     enVe.EditarVehiculo();
                     AltaReservas F1 = new AltaReservas(enRe, "Guardar Cambios");
+                    F1.StartPosition = FormStartPosition.Manual;
+                    F1.Location = Location;
+                    F1.Left += 147;
+                    F1.Top += 44;
                     F1.ShowDialog();
 
                     
