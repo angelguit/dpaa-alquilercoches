@@ -65,7 +65,7 @@
             this.TButtonCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.TButtonCancelar.Location = new System.Drawing.Point(153, 543);
             this.TButtonCancelar.Name = "TButtonCancelar";
-            this.TButtonCancelar.Size = new System.Drawing.Size(76, 35);
+            this.TButtonCancelar.Size = new System.Drawing.Size(76, 33);
             this.TButtonCancelar.TabIndex = 2;
             this.TButtonCancelar.Text = "Cerrar";
             this.TButtonCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -99,7 +99,7 @@
             this.TButtonGuardarPersonal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.TButtonGuardarPersonal.Location = new System.Drawing.Point(25, 543);
             this.TButtonGuardarPersonal.Name = "TButtonGuardarPersonal";
-            this.TButtonGuardarPersonal.Size = new System.Drawing.Size(77, 35);
+            this.TButtonGuardarPersonal.Size = new System.Drawing.Size(77, 33);
             this.TButtonGuardarPersonal.TabIndex = 1;
             this.TButtonGuardarPersonal.Text = "Guardar";
             this.TButtonGuardarPersonal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

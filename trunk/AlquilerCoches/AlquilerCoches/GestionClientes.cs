@@ -32,6 +32,27 @@ namespace AlquilerCoches
         public GestionClientes(EN.ENCliente enCliente, string nombrebotonguardar,string provincias,string ciudades)
         {
             InitializeComponent();
+
+            //////////Para rellenar TListBoxCoches con los coches que ha alquilado el cliente.
+            DataSet vehi = new DataSet();
+            EN.ENReservas enVehi = new EN.ENReservas();
+            string dnicadena = "FK_Cliente ='" + enCliente.DNI + "'";
+            vehi = enVehi.ObtenerReservas(dnicadena);
+
+            if (vehi.Tables["Reservas"].Rows.Count > 0)
+            {
+                TTextBoxNumeroReservas.Text = vehi.Tables["Reservas"].Rows.Count.ToString();
+                for (int i = 0; i < vehi.Tables["Reservas"].Rows.Count; i++)
+                {
+                    // MessageBox.Show(vehi.Tables["Reservas"].Rows[i][2].ToString());
+                    TListBoxCoches.Items.Add(vehi.Tables["Reservas"].Rows[i][2].ToString());
+                }
+            }
+            else
+                TTextBoxNumeroReservas.Text = "0";
+            /////////////
+
+
             TTextBoxDNI.Enabled = false;
             DataSet dscli = new DataSet();
             dscli = enCliente.ObtenerDatosClienteConDni(enCliente.DNI);
@@ -93,13 +114,25 @@ namespace AlquilerCoches
 
             InitializeComponent();
             
-            /*DataSet vehi = new DataSet();
+            //////////Para rellenar TListBoxCoches con los coches que ha alquilado el cliente.
+            DataSet vehi = new DataSet();
             EN.ENReservas enVehi = new EN.ENReservas();
-            
-            vehi = enVehi.ObtenerReservas();
-            
-            MessageBox.Show(vehi.Tables["Reservas"].Rows[0][0].ToString());
-            */
+            string dnicadena = "FK_Cliente ='"+dni+"'";
+            vehi = enVehi.ObtenerReservas(dnicadena);
+
+            if (vehi.Tables["Reservas"].Rows.Count > 0)
+            {
+                TTextBoxNumeroReservas.Text = vehi.Tables["Reservas"].Rows.Count.ToString();
+                for (int i = 0; i < vehi.Tables["Reservas"].Rows.Count; i++)
+                {
+                   // MessageBox.Show(vehi.Tables["Reservas"].Rows[i][2].ToString());
+                    TListBoxCoches.Items.Add(vehi.Tables["Reservas"].Rows[i][2].ToString());
+                }
+            }
+            else
+                TTextBoxNumeroReservas.Text = "0";
+            /////////////
+
             TTextBoxDNI.Enabled = false;
             TTextBoxNombre.Text = nombre;
             TTextBoxApellidos.Text = apell;
@@ -132,7 +165,14 @@ namespace AlquilerCoches
             /////////////////////////////////////////////////
 
             TButtonGuardarCliente.Text = nombrebotonguardar; // importante le cambiamos el nombre al boton para saber que venimos del formulario buscar, y estamos editando no guardando uno nuevo
-            TButtonGuardarCliente.Size = new Size(120, 35);
+            TButtonGuardarCliente.Size = new Size(120, 33);
+            TGroupBoxCliente.Size = new Size(581, 334);
+            TLabelVehiculosAlquiler.Visible = true;
+            TListBoxCoches.Visible = true;
+            TLabelNumeroReserva.Visible = true;
+            TTextBoxNumeroReservas.Visible = true;
+            TTextBoxNumeroReservas.Enabled = false;
+            TListBoxCoches.Enabled = false;
         }
 
         private void TTextBoxDNI_Leave(object sender, EventArgs e)

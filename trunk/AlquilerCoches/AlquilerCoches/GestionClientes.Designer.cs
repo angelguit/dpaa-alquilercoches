@@ -38,7 +38,7 @@
             this.TLabelCiudades = new System.Windows.Forms.Label();
             this.TLabelProvincias = new System.Windows.Forms.Label();
             this.TLabelVehiculosAlquiler = new System.Windows.Forms.Label();
-            this.listBoxCoches = new System.Windows.Forms.ListBox();
+            this.TListBoxCoches = new System.Windows.Forms.ListBox();
             this.TLabelSexo = new System.Windows.Forms.Label();
             this.TRadioButtonM = new System.Windows.Forms.RadioButton();
             this.TRadioButtonH = new System.Windows.Forms.RadioButton();
@@ -59,6 +59,8 @@
             this.TButtonCerrar = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.TLabelTitulo = new System.Windows.Forms.Label();
+            this.TTextBoxNumeroReservas = new System.Windows.Forms.TextBox();
+            this.TLabelNumeroReserva = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.TGroupBoxCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -70,7 +72,7 @@
             this.pictureBox1.BackgroundImage = global::AlquilerCoches.Properties.Resources.Desconocido;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Location = new System.Drawing.Point(755, 105);
+            this.pictureBox1.Location = new System.Drawing.Point(724, 91);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(89, 110);
             this.pictureBox1.TabIndex = 45;
@@ -80,6 +82,8 @@
             // 
             this.TGroupBoxCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.TGroupBoxCliente.BackColor = System.Drawing.Color.Transparent;
+            this.TGroupBoxCliente.Controls.Add(this.TTextBoxNumeroReservas);
+            this.TGroupBoxCliente.Controls.Add(this.TLabelNumeroReserva);
             this.TGroupBoxCliente.Controls.Add(this.TComboBoxTarifa);
             this.TGroupBoxCliente.Controls.Add(this.TLabelTarifa);
             this.TGroupBoxCliente.Controls.Add(this.TComboBoxProvincias);
@@ -87,7 +91,7 @@
             this.TGroupBoxCliente.Controls.Add(this.TLabelCiudades);
             this.TGroupBoxCliente.Controls.Add(this.TLabelProvincias);
             this.TGroupBoxCliente.Controls.Add(this.TLabelVehiculosAlquiler);
-            this.TGroupBoxCliente.Controls.Add(this.listBoxCoches);
+            this.TGroupBoxCliente.Controls.Add(this.TListBoxCoches);
             this.TGroupBoxCliente.Controls.Add(this.TLabelSexo);
             this.TGroupBoxCliente.Controls.Add(this.TRadioButtonM);
             this.TGroupBoxCliente.Controls.Add(this.TRadioButtonH);
@@ -105,7 +109,7 @@
             this.TGroupBoxCliente.Controls.Add(this.TLabelDNI);
             this.TGroupBoxCliente.Location = new System.Drawing.Point(76, 90);
             this.TGroupBoxCliente.Name = "TGroupBoxCliente";
-            this.TGroupBoxCliente.Size = new System.Drawing.Size(581, 334);
+            this.TGroupBoxCliente.Size = new System.Drawing.Size(319, 334);
             this.TGroupBoxCliente.TabIndex = 46;
             this.TGroupBoxCliente.TabStop = false;
             this.TGroupBoxCliente.Text = "Datos Cliente";
@@ -179,19 +183,21 @@
             // TLabelVehiculosAlquiler
             // 
             this.TLabelVehiculosAlquiler.AutoSize = true;
-            this.TLabelVehiculosAlquiler.Location = new System.Drawing.Point(255, 50);
+            this.TLabelVehiculosAlquiler.Location = new System.Drawing.Point(311, 95);
             this.TLabelVehiculosAlquiler.Name = "TLabelVehiculosAlquiler";
-            this.TLabelVehiculosAlquiler.Size = new System.Drawing.Size(104, 13);
+            this.TLabelVehiculosAlquiler.Size = new System.Drawing.Size(108, 26);
             this.TLabelVehiculosAlquiler.TabIndex = 64;
-            this.TLabelVehiculosAlquiler.Text = "Vehiculos en alquiler";
+            this.TLabelVehiculosAlquiler.Text = "Vehiculos reservados\r\n       actualmente";
+            this.TLabelVehiculosAlquiler.Visible = false;
             // 
-            // listBoxCoches
+            // TListBoxCoches
             // 
-            this.listBoxCoches.FormattingEnabled = true;
-            this.listBoxCoches.Location = new System.Drawing.Point(365, 47);
-            this.listBoxCoches.Name = "listBoxCoches";
-            this.listBoxCoches.Size = new System.Drawing.Size(158, 121);
-            this.listBoxCoches.TabIndex = 11;
+            this.TListBoxCoches.FormattingEnabled = true;
+            this.TListBoxCoches.Location = new System.Drawing.Point(290, 124);
+            this.TListBoxCoches.Name = "TListBoxCoches";
+            this.TListBoxCoches.Size = new System.Drawing.Size(158, 121);
+            this.TListBoxCoches.TabIndex = 11;
+            this.TListBoxCoches.Visible = false;
             // 
             // TLabelSexo
             // 
@@ -329,7 +335,7 @@
             // TButtonFoto
             // 
             this.TButtonFoto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.TButtonFoto.Location = new System.Drawing.Point(770, 221);
+            this.TButtonFoto.Location = new System.Drawing.Point(739, 207);
             this.TButtonFoto.Name = "TButtonFoto";
             this.TButtonFoto.Size = new System.Drawing.Size(56, 23);
             this.TButtonFoto.TabIndex = 0;
@@ -356,7 +362,7 @@
             this.TButtonCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.TButtonCerrar.Image = global::AlquilerCoches.Properties.Resources.Close_icon;
             this.TButtonCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.TButtonCerrar.Location = new System.Drawing.Point(183, 524);
+            this.TButtonCerrar.Location = new System.Drawing.Point(192, 524);
             this.TButtonCerrar.Name = "TButtonCerrar";
             this.TButtonCerrar.Size = new System.Drawing.Size(78, 33);
             this.TButtonCerrar.TabIndex = 2;
@@ -382,6 +388,24 @@
             this.TLabelTitulo.Size = new System.Drawing.Size(97, 18);
             this.TLabelTitulo.TabIndex = 50;
             this.TLabelTitulo.Text = "Datos del Cliente";
+            // 
+            // TTextBoxNumeroReservas
+            // 
+            this.TTextBoxNumeroReservas.Location = new System.Drawing.Point(365, 47);
+            this.TTextBoxNumeroReservas.Name = "TTextBoxNumeroReservas";
+            this.TTextBoxNumeroReservas.Size = new System.Drawing.Size(32, 20);
+            this.TTextBoxNumeroReservas.TabIndex = 73;
+            this.TTextBoxNumeroReservas.Visible = false;
+            // 
+            // TLabelNumeroReserva
+            // 
+            this.TLabelNumeroReserva.AutoSize = true;
+            this.TLabelNumeroReserva.Location = new System.Drawing.Point(287, 54);
+            this.TLabelNumeroReserva.Name = "TLabelNumeroReserva";
+            this.TLabelNumeroReserva.Size = new System.Drawing.Size(64, 13);
+            this.TLabelNumeroReserva.TabIndex = 74;
+            this.TLabelNumeroReserva.Text = "NºReservas";
+            this.TLabelNumeroReserva.Visible = false;
             // 
             // GestionClientes
             // 
@@ -428,7 +452,7 @@
         private System.Windows.Forms.Label TLabelDNI;
         private System.Windows.Forms.Button TButtonFoto;
         private System.Windows.Forms.Label TLabelVehiculosAlquiler;
-        private System.Windows.Forms.ListBox listBoxCoches;
+        private System.Windows.Forms.ListBox TListBoxCoches;
         private System.Windows.Forms.Label TLabelSexo;
         private System.Windows.Forms.RadioButton TRadioButtonM;
         private System.Windows.Forms.RadioButton TRadioButtonH;
@@ -442,6 +466,8 @@
         private System.Windows.Forms.ComboBox TComboBoxTarifa;
         private System.Windows.Forms.Label TLabelTarifa;
         private System.Windows.Forms.Label TLabelTitulo;
+        private System.Windows.Forms.TextBox TTextBoxNumeroReservas;
+        private System.Windows.Forms.Label TLabelNumeroReserva;
 
 
     }
