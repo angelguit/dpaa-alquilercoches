@@ -33,6 +33,7 @@
             this.TRadioButtonVentas = new System.Windows.Forms.RadioButton();
             this.TLabelSelFac = new System.Windows.Forms.Label();
             this.TGroupBoxReservas = new System.Windows.Forms.GroupBox();
+            this.TLabelFechaInicio = new System.Windows.Forms.Label();
             this.TButtonQuitarCliente = new System.Windows.Forms.Button();
             this.TButtonOcultarFechas = new System.Windows.Forms.Button();
             this.TButtonBuscarFechas = new System.Windows.Forms.Button();
@@ -45,8 +46,8 @@
             this.TDateTimePickerFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.TLabelFechaFin = new System.Windows.Forms.Label();
             this.TLabelNRes = new System.Windows.Forms.Label();
-            this.TLabelFechaInicio = new System.Windows.Forms.Label();
             this.TDataGridViewReservas = new System.Windows.Forms.DataGridView();
+            this.TButtonCerrar = new System.Windows.Forms.Button();
             this.TGroupBoxReservas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TDataGridViewReservas)).BeginInit();
             this.SuspendLayout();
@@ -119,6 +120,16 @@
             this.TGroupBoxReservas.TabStop = false;
             this.TGroupBoxReservas.Visible = false;
             // 
+            // TLabelFechaInicio
+            // 
+            this.TLabelFechaInicio.AutoSize = true;
+            this.TLabelFechaInicio.Location = new System.Drawing.Point(31, 76);
+            this.TLabelFechaInicio.Name = "TLabelFechaInicio";
+            this.TLabelFechaInicio.Size = new System.Drawing.Size(67, 13);
+            this.TLabelFechaInicio.TabIndex = 28;
+            this.TLabelFechaInicio.Text = "Fecha entre:";
+            this.TLabelFechaInicio.Visible = false;
+            // 
             // TButtonQuitarCliente
             // 
             this.TButtonQuitarCliente.Location = new System.Drawing.Point(151, 148);
@@ -157,7 +168,7 @@
             this.TButtonBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.TButtonBuscar.Location = new System.Drawing.Point(327, 195);
             this.TButtonBuscar.Name = "TButtonBuscar";
-            this.TButtonBuscar.Size = new System.Drawing.Size(101, 32);
+            this.TButtonBuscar.Size = new System.Drawing.Size(101, 36);
             this.TButtonBuscar.TabIndex = 23;
             this.TButtonBuscar.Text = "Buscar";
             this.TButtonBuscar.UseVisualStyleBackColor = true;
@@ -238,24 +249,29 @@
             this.TLabelNRes.TabIndex = 15;
             this.TLabelNRes.Text = "Numero Reserva:";
             // 
-            // TLabelFechaInicio
-            // 
-            this.TLabelFechaInicio.AutoSize = true;
-            this.TLabelFechaInicio.Location = new System.Drawing.Point(31, 76);
-            this.TLabelFechaInicio.Name = "TLabelFechaInicio";
-            this.TLabelFechaInicio.Size = new System.Drawing.Size(67, 13);
-            this.TLabelFechaInicio.TabIndex = 28;
-            this.TLabelFechaInicio.Text = "Fecha entre:";
-            this.TLabelFechaInicio.Visible = false;
-            // 
             // TDataGridViewReservas
             // 
+            this.TDataGridViewReservas.AllowUserToAddRows = false;
+            this.TDataGridViewReservas.AllowUserToDeleteRows = false;
             this.TDataGridViewReservas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TDataGridViewReservas.Location = new System.Drawing.Point(195, 38);
             this.TDataGridViewReservas.Name = "TDataGridViewReservas";
             this.TDataGridViewReservas.Size = new System.Drawing.Size(558, 285);
             this.TDataGridViewReservas.TabIndex = 5;
             this.TDataGridViewReservas.Visible = false;
+            this.TDataGridViewReservas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TDataGridViewReservas_CellContentClick);
+            // 
+            // TButtonCerrar
+            // 
+            this.TButtonCerrar.Image = global::AlquilerCoches.Properties.Resources.Close_icon;
+            this.TButtonCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TButtonCerrar.Location = new System.Drawing.Point(44, 541);
+            this.TButtonCerrar.Name = "TButtonCerrar";
+            this.TButtonCerrar.Size = new System.Drawing.Size(94, 36);
+            this.TButtonCerrar.TabIndex = 48;
+            this.TButtonCerrar.Text = "      Cerrar";
+            this.TButtonCerrar.UseVisualStyleBackColor = true;
+            this.TButtonCerrar.Click += new System.EventHandler(this.TButtonCerrar_Click);
             // 
             // NuevaFactura
             // 
@@ -265,6 +281,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(894, 608);
             this.ControlBox = false;
+            this.Controls.Add(this.TButtonCerrar);
             this.Controls.Add(this.TGroupBoxReservas);
             this.Controls.Add(this.TLabelSelFac);
             this.Controls.Add(this.TRadioButtonVentas);
@@ -307,5 +324,6 @@
         private System.Windows.Forms.Label TLabelNRes;
         private System.Windows.Forms.Label TLabelFechaInicio;
         private System.Windows.Forms.DataGridView TDataGridViewReservas;
+        private System.Windows.Forms.Button TButtonCerrar;
     }
 }
