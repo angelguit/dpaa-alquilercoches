@@ -380,11 +380,11 @@
             this.TRadioButtonFavorito.BackColor = System.Drawing.Color.Transparent;
             this.TRadioButtonFavorito.Location = new System.Drawing.Point(720, 236);
             this.TRadioButtonFavorito.Name = "TRadioButtonFavorito";
-            this.TRadioButtonFavorito.Size = new System.Drawing.Size(109, 17);
+            this.TRadioButtonFavorito.Size = new System.Drawing.Size(110, 17);
             this.TRadioButtonFavorito.TabIndex = 56;
             this.TRadioButtonFavorito.TabStop = true;
             this.TRadioButtonFavorito.Tag = "";
-            this.TRadioButtonFavorito.Text = "Vehículo Favorito";
+            this.TRadioButtonFavorito.Text = "Vehículo Habitual";
             this.TRadioButtonFavorito.UseVisualStyleBackColor = false;
             this.TRadioButtonFavorito.Visible = false;
             this.TRadioButtonFavorito.CheckedChanged += new System.EventHandler(this.TRadioButtonFavorito_CheckedChanged);

@@ -28,6 +28,7 @@ namespace AlquilerCoches
             TTextBoxDNI.Enabled = false;
             DataSet dscli = new DataSet();
             dscli = enCliente.ObtenerDatosClienteConDni(enCliente.DNI);
+            
 
             TTextBoxNombre.Text = enCliente.Nombre = dscli.Tables["Cliente"].Rows[0][1].ToString();
             TTextBoxApellidos.Text = enCliente.Apellidos =  dscli.Tables["Cliente"].Rows[0][2].ToString();
