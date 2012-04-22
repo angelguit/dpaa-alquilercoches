@@ -11,7 +11,7 @@ using System.Collections;
 
 namespace EN
 {
-    class ENVentasRealizadas
+    public class ENVentasRealizadas
     {
         private string precioVenta;
         private string matricula;
@@ -20,25 +20,14 @@ namespace EN
         private string dni;
         private string garantia;
 
-        private ArrayList listaMarcas = new ArrayList();
+        private ArrayList listaDNI = new ArrayList();
 
         private CAD.CADVentasRealizadas cadVentasRealizadas = new CAD.CADVentasRealizadas();
 
-        public ArrayList ListaMatriculas
+        public ArrayList ListaDNI
         {
-            get { return listaMatriculas; }
-            set { listaMatriculas = value; }
-        }
-        public ArrayList ListaModelos
-        {
-            get { return listaModelos; }
-            set { listaMarcas = value; }
-        }
-
-        public ArrayList ListaMarcas
-        {
-            get { return listaMarcas; }
-            set { listaMarcas = value; }
+            get { return listaDNI; }
+            set { listaDNI = value; }
         }
 
         public string PrecioVenta
@@ -63,10 +52,10 @@ namespace EN
             set { modelo = value; }
         }
 
-        public string KM
+        public string DNI
         {
-            get { return km; }
-            set { km = value; }
+            get { return dni; }
+            set { dni = value; }
         }
 
         public string Garantia
@@ -77,16 +66,16 @@ namespace EN
 
         public void ClearEnVentas()
         {
-            matricula = marca = modelo = garantia = km = "";
+            matricula = marca = modelo = garantia = dni = "";
              precioVenta = "";
         }
 
-        public DataSet ObtenerListaVentas()
+        public DataSet ObtenerListaVentasRealizadas()
         {
             DataSet resultado = new DataSet();
             try
             {
-                resultado = cadVentasRealizadas.ObtenerTablaVentas();
+                resultado = cadVentasRealizadas.ObtenerTablaVentasRealizadas();
             }
             catch (Exception ex)
             {
@@ -96,15 +85,15 @@ namespace EN
             return resultado;
         }
 
-        public void ObtenerMarcas()
+        public void ObtenerDNI()
         {
             DataSet resultado = new DataSet();
             try
             {
-                listaMarcas.Clear();
-                resultado = cadVentasRealizadas.ObtenerMarcas();
-                for (int i = 0; !resultado.Tables["Ventas"].Rows.Count.Equals(i); i++)
-                    if (!listaMarcas.Contains(resultado.Tables["Ventas"].Rows[i].ItemArray[0])) listaMarcas.Add(resultado.Tables["Ventas"].Rows[i].ItemArray[0]);
+                listaDNI.Clear();
+                resultado = cadVentasRealizadas.ObtenerDNI();
+                for (int i = 0; !resultado.Tables["VentasRealizadas"].Rows.Count.Equals(i); i++)
+                    if (!listaDNI.Contains(resultado.Tables["VentasRealizadas"].Rows[i].ItemArray[0])) listaDNI.Add(resultado.Tables["VentasRealizadas"].Rows[i].ItemArray[0]);
             }
             catch (Exception ex)
             {
@@ -112,44 +101,6 @@ namespace EN
             }
 
             //return resultado;
-        }
-
-        public void ObtenerModelo()
-        {
-            DataSet resultado = new DataSet();
-            try
-            {
-                listaModelos.Clear();
-                resultado = cadVentasRealizadas.ObtenerModelos(marca);
-                for (int i = 0; !resultado.Tables["Ventas"].Rows.Count.Equals(i); i++)
-                    if (!listaModelos.Contains(resultado.Tables["Ventas"].Rows[i].ItemArray[0])) listaModelos.Add(resultado.Tables["Ventas"].Rows[i].ItemArray[0]);
-            }
-            catch (Exception ex)
-            {
-                throw (ex);
-            }
-
-            //return resultado;
-        }
-
-        public void ObtenerMatriculas()
-        {
-            DataSet resultado = new DataSet();
-            try
-            {
-                listaMatriculas.Clear();
-                resultado = cadVentasRealizadas.ObtenerMatricula(marca, modelo);
-                for (int i = 0; !resultado.Tables["Ventas"].Rows.Count.Equals(i); i++)
-                    if (!listaMatriculas.Contains(resultado.Tables["Ventas"].Rows[i].ItemArray[0])) listaMatriculas.Add(resultado.Tables["Ventas"].Rows[i].ItemArray[0]);
-
-
-            }
-            catch (Exception ex)
-            {
-                throw (ex);
-            }
-
-            //return resultado; 
         }
 
         public void ObtenerDatosVehiculos()
@@ -157,14 +108,14 @@ namespace EN
             DataSet resultado = new DataSet();
             try
             {
-                resultado = cadVentasRealizadas.ObtenerDatosVehiculo(matricula);
+                resultado = cadVentasRealizadas.ObtenerDatosVehiculo(dni);
 
-                matricula = resultado.Tables["Ventas"].Rows[0][0].ToString();
-                marca = resultado.Tables["Ventas"].Rows[0][1].ToString();
-                modelo = resultado.Tables["Ventas"].Rows[0][2].ToString();
-                km = resultado.Tables["Ventas"].Rows[0][3].ToString();
-                garantia = resultado.Tables["Ventas"].Rows[0][4].ToString();
-                precioVenta = resultado.Tables["Ventas"].Rows[0][5].ToString();
+                dni = resultado.Tables["VentasRealizadas"].Rows[0][0].ToString();
+                matricula = resultado.Tables["VentasRealizadas"].Rows[0][1].ToString();
+                marca = resultado.Tables["VentasRealizadas"].Rows[0][2].ToString();
+                modelo = resultado.Tables["VentasRealizadas"].Rows[0][3].ToString();
+                garantia = resultado.Tables["VentasRealizadas"].Rows[0][4].ToString();
+                precioVenta = resultado.Tables["VentasRealizadas"].Rows[0][5].ToString();
             }
             catch (Exception ex)
             {
@@ -174,55 +125,21 @@ namespace EN
             //return resultado;
         }
 
-        public void BorrarVentas()
-        {
-            try
-            {
-                cadVentasRealizadas.BorrarVehiculoVenta(matricula);
-            }
-            catch (Exception ex)
-            {
-                throw (ex);
-            }
-
-        }
-
-        public void EditarVentas()
-        {
-            try
-            {
-                DataSet venta = cadVentasRealizadas.ObtenerDatosVehiculo(matricula);
-
-                venta.Tables["Ventas"].Rows[0][0] = matricula;
-                venta.Tables["Ventas"].Rows[0][1] = marca;
-                venta.Tables["Ventas"].Rows[0][2] = modelo;
-                venta.Tables["Ventas"].Rows[0][3] = km;
-                venta.Tables["Ventas"].Rows[0][4] = garantia;
-                venta.Tables["Ventas"].Rows[0][5] = precioVenta;
-                cadVentasRealizadas.EditarVehiculoVenta(venta);
-
-            }
-            catch (Exception ex)
-            {
-                throw (ex);
-            }
-        }
-
         public void AnyadirVenta()
         {
             DataSet resultado = new DataSet();
             try
             {
-                resultado = cadVentasRealizadas.ObtenerTablaVentas();
-                DataRow linea = resultado.Tables["Ventas"].NewRow();
-                linea[0] = matricula;
-                linea[1] = marca;
-                linea[2] = modelo;
-                linea[3] = km;
+                resultado = cadVentasRealizadas.ObtenerTablaVentasRealizadas();
+                DataRow linea = resultado.Tables["VentasRealizadas"].NewRow();
+                linea[0] = dni;
+                linea[1] = matricula;
+                linea[2] = marca;
+                linea[3] = modelo;
                 linea[4] = garantia;
                 linea[5] = precioVenta;
-                resultado.Tables["Ventas"].Rows.Add(linea);
-                cadVentasRealizadas.AnyadirVenta(resultado);
+                resultado.Tables["VentasRealizadas"].Rows.Add(linea);
+                cadVentasRealizadas.AnyadirVentasRealizadas(resultado);
             }
             catch (Exception ex)
             {
