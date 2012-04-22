@@ -142,7 +142,7 @@
             this.TComboBoxCiudades.Location = new System.Drawing.Point(98, 205);
             this.TComboBoxCiudades.Name = "TComboBoxCiudades";
             this.TComboBoxCiudades.Size = new System.Drawing.Size(154, 21);
-            this.TComboBoxCiudades.TabIndex = 68;
+            this.TComboBoxCiudades.TabIndex = 7;
             this.TComboBoxCiudades.Click += new System.EventHandler(this.TComboBoxCiudades_Click);
             this.TComboBoxCiudades.Leave += new System.EventHandler(this.TComboBoxCiudades_Leave_1);
             // 
@@ -153,7 +153,7 @@
             this.TComboBoxProvincias.Location = new System.Drawing.Point(98, 179);
             this.TComboBoxProvincias.Name = "TComboBoxProvincias";
             this.TComboBoxProvincias.Size = new System.Drawing.Size(154, 21);
-            this.TComboBoxProvincias.TabIndex = 67;
+            this.TComboBoxProvincias.TabIndex = 6;
             this.TComboBoxProvincias.TextChanged += new System.EventHandler(this.TComboBoxProvincias_TextChanged);
             this.TComboBoxProvincias.Click += new System.EventHandler(this.TComboBoxProvincias_Click);
             this.TComboBoxProvincias.Leave += new System.EventHandler(this.TComboBoxProvincias_Leave_1);
@@ -350,7 +350,7 @@
             this.TButtonCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.TButtonCerrar.Image = global::AlquilerCoches.Properties.Resources.Close_icon;
             this.TButtonCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.TButtonCerrar.Location = new System.Drawing.Point(40, 538);
+            this.TButtonCerrar.Location = new System.Drawing.Point(127, 546);
             this.TButtonCerrar.Name = "TButtonCerrar";
             this.TButtonCerrar.Size = new System.Drawing.Size(78, 33);
             this.TButtonCerrar.TabIndex = 56;
@@ -364,7 +364,7 @@
             this.TButtonGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.TButtonGuardar.Image = global::AlquilerCoches.Properties.Resources.Add_icon;
             this.TButtonGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.TButtonGuardar.Location = new System.Drawing.Point(124, 538);
+            this.TButtonGuardar.Location = new System.Drawing.Point(29, 546);
             this.TButtonGuardar.Name = "TButtonGuardar";
             this.TButtonGuardar.Size = new System.Drawing.Size(80, 33);
             this.TButtonGuardar.TabIndex = 57;

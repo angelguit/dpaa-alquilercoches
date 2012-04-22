@@ -197,7 +197,6 @@ namespace AlquilerCoches
                             frase += "'" + arraydni[i] + "'";
                         }
                     }
-                    MessageBox.Show("Select * from Personal where DNI in (" + frase + ")");
                     borrar.BorrarProveedorEN(arraydni);
                 }
 
