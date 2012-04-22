@@ -12,6 +12,7 @@ namespace AlquilerCoches
 {
     public partial class GestionPersonal : Form
     {
+        private string textoProvincia = "";
         bool incorrecto = false;//variable global usada para validar campos
         private DataSet numProvincia;// usado en funcion TComboBoxCiudades_Click
 
@@ -41,6 +42,7 @@ namespace AlquilerCoches
             TComboBoxProvincias.SelectedIndex = 0;
             TComboBoxCiudades.Items.Add(ciu);
             TComboBoxCiudades.SelectedIndex = 0;
+            textoProvincia = TComboBoxProvincias.Text;
 
             EN.ENProveedores provi = new EN.ENProveedores();
             DataSet dsProv = new DataSet();
@@ -62,7 +64,7 @@ namespace AlquilerCoches
         {
             if (!Regex.Match(TTextBoxDNI.Text, @"^(([A-Z]\d{8})|(\d{8}[A-Z]))$").Success)
             {
-                errorProvider1.SetError(TTextBoxDNI, "DNI incorrecto");
+                errorProvider1.SetError(TTextBoxDNI, "DNI incorrecto, formato correcto: 00000000X");
                 incorrecto = true;
             }
             else { errorProvider1.SetError(TTextBoxDNI, ""); incorrecto = false; }
@@ -127,16 +129,17 @@ namespace AlquilerCoches
             }
             else { errorProvider1.SetError(TComboBoxCiudades, ""); incorrecto = false; }
         }
+        */
 
-        private void TTextBoxProvincia_Leave(object sender, EventArgs e)
+        private void TComboboxProvincia_Leave(object sender, EventArgs e)
         {
-            if (!Regex.Match(TTextBoxProvincia.Text, @"^[A-Za-z]{3,40}$").Success)
+            if (TComboBoxProvincias.SelectedIndex == 0)
             {
-                errorProvider1.SetError(TTextBoxProvincia, "Provincia incorrecta, caracteres invalidos");
+                errorProvider1.SetError(TComboBoxProvincias, "Provincia incorrecta, no puede estar vacio");
                 incorrecto = true;
             }
-            else {errorProvider1.SetError(TTextBoxProvincia, ""); }
-        }*/
+            else { errorProvider1.SetError(TComboBoxProvincias, ""); incorrecto = false; }
+        }
 
         private void TTextBoxPuestoAc_Leave(object sender, EventArgs e)
         {
@@ -152,8 +155,8 @@ namespace AlquilerCoches
         private void TButtonGuardarPersonal_Click(object sender, EventArgs e)
         {
             if (TTextBoxDNI.Text == "" || TTextBoxNombre.Text == "" || TTextBoxApellidos.Text == "" || TTextBoxTelefono.Text == "" ||
-                 TTextBoxEmail.Text == "" || TTextBoxDireccion.Text == "" || TComboBoxCiudades.Text == null || TComboBoxProvincias.Text == null ||
-                TTextBoxPuestoAc.Text == "")
+                 TTextBoxEmail.Text == "" || TTextBoxDireccion.Text == "" || TComboBoxProvincias.Text == "" ||
+                TTextBoxPuestoAc.Text == "" || (TComboBoxProvincias.SelectedIndex == 0 && TComboBoxProvincias.Text != textoProvincia))
             {
                 MessageBox.Show("Campos invalidos, no puede haber ninguno vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

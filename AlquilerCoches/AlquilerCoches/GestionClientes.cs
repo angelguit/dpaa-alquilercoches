@@ -16,11 +16,18 @@ namespace AlquilerCoches
         private DataSet numProvincia;// usado en funcion TComboBoxCiudades_Click
         public EN.ENCliente enCliPub = new EN.ENCliente();
         public bool cambios = false;
+        private string textoProvincia = "";
 
         public GestionClientes()
         {
             InitializeComponent();
+            EN.ENProveedores provi = new EN.ENProveedores();
+            DataSet dsProv = new DataSet();
+            dsProv = provi.ObtenerListaProvincias();
+            //ObtenerProvincias(dsProv)
 
+            numProvincia = new DataSet();
+            numProvincia = dsProv;
         }
         public GestionClientes(EN.ENCliente enCliente, string nombrebotonguardar,string provincias,string ciudades)
         {
@@ -51,6 +58,7 @@ namespace AlquilerCoches
             TComboBoxProvincias.SelectedIndex = 0;
             TComboBoxCiudades.Items.Add(enCliente.Ciudad);
             TComboBoxCiudades.SelectedIndex = 0;
+            textoProvincia = TComboBoxProvincias.Text;
 
             enCliente.Tarifa = dscli.Tables["Cliente"].Rows[0][8].ToString();
             TComboBoxTarifa.Items.Add(enCliente.Tarifa);
@@ -84,6 +92,14 @@ namespace AlquilerCoches
         {//lo uso yo para editar un usuario a partir del formulario clientebuscar
 
             InitializeComponent();
+            
+            /*DataSet vehi = new DataSet();
+            EN.ENReservas enVehi = new EN.ENReservas();
+            
+            vehi = enVehi.ObtenerReservas();
+            
+            MessageBox.Show(vehi.Tables["Reservas"].Rows[0][0].ToString());
+            */
             TTextBoxDNI.Enabled = false;
             TTextBoxNombre.Text = nombre;
             TTextBoxApellidos.Text = apell;
@@ -96,6 +112,7 @@ namespace AlquilerCoches
             TComboBoxProvincias.SelectedIndex = 0;
             TComboBoxCiudades.Items.Add(ciu);
             TComboBoxCiudades.SelectedIndex = 0;
+            textoProvincia = TComboBoxProvincias.Text;
     
             TComboBoxTarifa.Items.Add(tarifa);
             TComboBoxTarifa.SelectedIndex = 0;
@@ -122,7 +139,7 @@ namespace AlquilerCoches
         {
             if (!Regex.Match(TTextBoxDNI.Text, @"^(([A-Z]\d{8})|(\d{8}[A-Z]))$").Success)
             {
-                errorProvider1.SetError(TTextBoxDNI, "DNI incorrecto");
+                errorProvider1.SetError(TTextBoxDNI, "DNI incorrecto, formato correcto: 00000000X");
                 incorrecto = true;
             }
             else { errorProvider1.SetError(TTextBoxDNI, ""); incorrecto = false; }
@@ -130,7 +147,7 @@ namespace AlquilerCoches
 
         private void TTextBoxNombre_Leave(object sender, EventArgs e)
         {
-            if (!Regex.Match(TTextBoxNombre.Text, @"^[A-Za-z]{3,15}$").Success)
+            if (!Regex.Match(TTextBoxNombre.Text, @"^[A-Za-zñÑáéíóúÁÉÍÓÚçÇ]{3,25}$").Success)
             {
                 errorProvider1.SetError(TTextBoxNombre, "Nombre incorrecto");
                 incorrecto = true;
@@ -140,7 +157,7 @@ namespace AlquilerCoches
 
         private void TTextBoxApellidos_Leave(object sender, EventArgs e)
         {
-            if (!Regex.Match(TTextBoxApellidos.Text, @"^[A-Za-z\s]{3,40}$").Success)
+            if (!Regex.Match(TTextBoxApellidos.Text, @"^[A-Za-zñÑáéíóúÁÉÍÓÚçÇ\s]{3,40}$").Success)
             {
                 errorProvider1.SetError(TTextBoxApellidos, "Apellidos incorrectos, caracteres invalidos");
                 incorrecto = true;
@@ -171,7 +188,7 @@ namespace AlquilerCoches
 
         private void TTextBoxDireccion_Leave(object sender, EventArgs e)
         {
-            if (!Regex.Match(TTextBoxDireccion.Text, @"^[A-Za-z\s]{3,40}$").Success)
+            if (!Regex.Match(TTextBoxDireccion.Text, @"^[A-Za-zñÑáéíóúÁÉÍÓÚçÇ\s]{3,50}$").Success)
             {
                 errorProvider1.SetError(TTextBoxDireccion, "Dirección incorrecta, caracteres invalidos");
                 incorrecto = true;
@@ -184,31 +201,21 @@ namespace AlquilerCoches
             this.Close();
         }
 
-       /* private void TTextBoxCiudad_Leave(object sender, EventArgs e)
+        private void TComboboxProvincia_Leave(object sender, EventArgs e)
         {
-            if (!Regex.Match(TTextBoxCiudad.Text, @"^[A-Za-z]{3,40}$").Success)
+            if (TComboBoxProvincias.SelectedIndex == 0)
             {
-                errorProvider1.SetError(TTextBoxCiudad, "Ciudad incorrecta, caracteres invalidos");
+                errorProvider1.SetError(TComboBoxProvincias, "Provincia incorrecta, no puede estar vacio");
                 incorrecto = true;
             }
-            else { errorProvider1.SetError(TTextBoxCiudad, ""); }
+            else { errorProvider1.SetError(TComboBoxProvincias, ""); incorrecto = false; }
         }
-
-        private void TTextBoxProvincia_Leave(object sender, EventArgs e)
-        {
-            if (!Regex.Match(TTextBoxProvincia.Text, @"^[A-Za-z]{3,40}$").Success)
-            {
-                errorProvider1.SetError(TTextBoxProvincia, "Provincia incorrecta, caracteres invalidos");
-                incorrecto = true;
-            }
-            else { errorProvider1.SetError(TTextBoxProvincia, ""); }
-        }
-        */
 
         private void TButtonGuardarCliente_Click(object sender, EventArgs e)
         {
             if (TTextBoxDNI.Text == "" || TTextBoxNombre.Text == "" || TTextBoxApellidos.Text == "" || TTextBoxTelefono.Text == "" ||
-                 TTextBoxEmail.Text == "" || TTextBoxDireccion.Text == "" || TComboBoxCiudades.Text == null || TComboBoxProvincias.Text == null)
+                 TTextBoxEmail.Text == "" || TTextBoxDireccion.Text == "" || (TComboBoxProvincias.SelectedIndex == 0 && TComboBoxProvincias.Text != textoProvincia) || (TComboBoxTarifa.SelectedIndex == -1) ||
+                (TRadioButtonH.Checked== false && TRadioButtonM.Checked==false))
             {
                 MessageBox.Show("Campos invalidos, no puede haber ninguno vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

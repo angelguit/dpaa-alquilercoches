@@ -144,6 +144,7 @@
             this.TComboBoxProvincias.TabIndex = 6;
             this.TComboBoxProvincias.TextChanged += new System.EventHandler(this.TComboBoxProvincias_TextChanged);
             this.TComboBoxProvincias.Click += new System.EventHandler(this.TComboBoxProvincias_Click_1);
+            this.TComboBoxProvincias.Leave += new System.EventHandler(this.TComboboxProvincia_Leave);
             // 
             // TComboBoxCiudades
             // 
