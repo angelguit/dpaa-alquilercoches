@@ -38,7 +38,7 @@ namespace AlquilerCoches
             errorProvider1.Clear();
             TTextBoxMeses.Enabled = false;
             TGroupBoxDatosVehiculo.Enabled = false;
-            TButtonBorrar.Enabled = false;
+            //TButtonBorrar.Enabled = false;
             TTextBoxMatricula.Enabled = false;
         }
 
@@ -137,7 +137,7 @@ namespace AlquilerCoches
                 ventas.Matricula = TListBoxMatriculas.Items[TListBoxMatriculas.SelectedIndex].ToString();
                 ventas.ObtenerDatosVehiculos();
                 rellenaCampos();
-                TButtonBorrar.Enabled = true;
+                //TButtonBorrar.Enabled = true;
             }
         }
 

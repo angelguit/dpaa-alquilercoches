@@ -180,7 +180,7 @@ namespace EN
                 persona.Tables["Personal"].Rows[0][6] = ciudad.ToString();
                 persona.Tables["Personal"].Rows[0][7] = provincia.ToString();
                 persona.Tables["Personal"].Rows[0][8] = puestoac.ToString();
-                persona.Tables["Personal"].Rows[0][9] = otrospuestos.ToString();
+               // persona.Tables["Personal"].Rows[0][9] = otrospuestos.ToString();
                 cadPersonal.EditarPersonal(persona);
 
             }
