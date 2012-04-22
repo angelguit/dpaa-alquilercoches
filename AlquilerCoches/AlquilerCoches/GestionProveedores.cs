@@ -52,7 +52,8 @@ namespace AlquilerCoches
                 incorrecto = true;
             }
             else 
-            { 
+            {
+                incorrecto = false;
                 errorProvider1.SetError(TTextBoxCIF, ""); 
             }
         }
@@ -66,6 +67,7 @@ namespace AlquilerCoches
             }
             else
             {
+                incorrecto = false;
                 errorProvider1.SetError(TTextBoxEmail, "");
             }
         }
@@ -79,6 +81,7 @@ namespace AlquilerCoches
             }
             else
             {
+                incorrecto = false;
                 errorProvider1.SetError(TTextBoxCPostal, "");
             }
         }
@@ -92,6 +95,7 @@ namespace AlquilerCoches
             }
             else
             {
+                incorrecto = false;
                 errorProvider1.SetError(TTextBoxTelefono, "");
             }
         }
@@ -105,7 +109,8 @@ namespace AlquilerCoches
             }
             else
             {
-                errorProvider1.SetError(TTextBoxMarca, "");
+                incorrecto = false;
+                errorProvider1.SetError(TComboBoxProvincias, "");
             }
         }
 
@@ -118,6 +123,7 @@ namespace AlquilerCoches
             }
             else
             {
+                incorrecto = false;
                 errorProvider1.SetError(TComboBoxCiudades, "");
             }
         }
@@ -133,14 +139,15 @@ namespace AlquilerCoches
 
         private void TTextBoxCalle_Leave(object sender, EventArgs e)
         {
-            if (!Regex.Match(TTextBoxCalle.Text, @"^[A-Za-zñÑáéíóúÁÉÍÓÚçÇ]{3,30}$").Success)
+            if (!Regex.Match(TTextBoxCalle.Text, @"^[A-Za-zñÑáéíóúÁÉÍÓÚçÇ\s]{3,30}$").Success)
             {
                 errorProvider1.SetError(TTextBoxCalle, "Entre 3 y 30 caracteres");
                 incorrecto = true;
             }
             else
             {
-                errorProvider1.SetError(TComboBoxCiudades, "");
+                incorrecto = false;
+                errorProvider1.SetError(TTextBoxCalle, "");
             }
         }
 
@@ -153,19 +160,21 @@ namespace AlquilerCoches
             }
             else
             {
+                incorrecto = false;
                 errorProvider1.SetError(TTextBoxNumero, "");
             }
         }
 
         private void TTextBoxMarca_Leave(object sender, EventArgs e)
         {
-            if (!Regex.Match(TTextBoxMarca.Text, @"^[A-Za-zñÑáéíóúÁÉÍÓÚçÇ]{3,15}$").Success)
+            if (!Regex.Match(TTextBoxMarca.Text, @"^[A-Za-zñÑáéíóúÁÉÍÓÚçÇ\s]{3,50}$").Success)
             {
-                errorProvider1.SetError(TTextBoxMarca, "Entre 3 y 15 caracteres");
+                errorProvider1.SetError(TTextBoxMarca, "Entre 3 y 50 caracteres");
                 incorrecto = true;
             }
             else
             {
+                incorrecto = false;
                 errorProvider1.SetError(TTextBoxMarca, "");
             }
         }
@@ -333,7 +342,7 @@ namespace AlquilerCoches
 
         private void TComboBoxProvincias_Leave_1(object sender, EventArgs e)
         {
-            if (TComboBoxProvincias.SelectedIndex == -1 || TComboBoxProvincias.SelectedIndex == 0)
+            if (TComboBoxProvincias.SelectedIndex == -1)
             {
                 errorProvider1.SetError(TComboBoxProvincias, "Debe seleccionar una provincia");
                 incorrecto = true;
@@ -346,7 +355,7 @@ namespace AlquilerCoches
 
         private void TComboBoxCiudades_Leave_1(object sender, EventArgs e)
         {
-            if (TComboBoxCiudades.SelectedIndex == -1 || TComboBoxCiudades.SelectedIndex == 0)
+            if (TComboBoxCiudades.SelectedIndex == -1)
             {
                 errorProvider1.SetError(TComboBoxCiudades, "Debe seleccionar una ciudad");
                 incorrecto = true;
