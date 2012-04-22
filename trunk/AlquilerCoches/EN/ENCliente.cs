@@ -107,6 +107,24 @@ namespace EN
             return resultado;
         }
 
+        public void RellenarCliente()
+        {
+            DataSet ds = new DataSet();
+            try
+            {
+                ds = cadCliente.ObtenerDatosClienteConDni(dni);
+                nombre = ds.Tables["Cliente"].Rows[0][1].ToString();
+                apellidos = ds.Tables["Cliente"].Rows[0][2].ToString();
+                telefono = Int32.Parse(ds.Tables["Cliente"].Rows[0][3].ToString());
+                direccion = ds.Tables["Cliente"].Rows[0][5].ToString();
+                tarifa = ds.Tables["Cliente"].Rows[0][8].ToString();
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+        }
+
         public DataSet ObtenerListaProvincias()
         {
             DataSet resultado = new DataSet();
