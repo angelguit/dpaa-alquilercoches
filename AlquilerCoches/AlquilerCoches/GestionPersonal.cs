@@ -55,7 +55,7 @@ namespace AlquilerCoches
             TTextBoxPuestoAc.Text = puesac;
 
             TButtonGuardarPersonal.Text = nombrebotonguardar; // importante le cambiamos el nombre al boton para saber que venimos del formulario buscar, y estamos editando no guardando uno nuevo
-            TButtonGuardarPersonal.Size = new Size(105, 24);
+            TButtonGuardarPersonal.Size = new Size(120, 35);
         }
 
         
@@ -171,7 +171,7 @@ namespace AlquilerCoches
 
                 enPersonal.DNI=TTextBoxDNI.Text; enPersonal.Nombre=TTextBoxNombre.Text; enPersonal.Apellidos=TTextBoxApellidos.Text; enPersonal.Telefono = Int32.Parse(TTextBoxTelefono.Text);
                 enPersonal.Email = TTextBoxEmail.Text; enPersonal.Direccion = TTextBoxDireccion.Text; enPersonal.Ciudad = TComboBoxCiudades.Text; enPersonal.Provincia = TComboBoxProvincias.Text;
-                enPersonal.PuestoAc = TTextBoxPuestoAc.Text; enPersonal.OtrosPuestos = TRichTextBoxOtrosPuestos.Text;
+                enPersonal.PuestoAc = TTextBoxPuestoAc.Text;
 
                 if (TButtonGuardarPersonal.Text.ToString() == "Guardar")
                 {

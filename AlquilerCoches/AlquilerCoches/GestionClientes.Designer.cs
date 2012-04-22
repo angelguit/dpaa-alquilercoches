@@ -116,9 +116,9 @@
             this.TComboBoxTarifa.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.TComboBoxTarifa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TComboBoxTarifa.FormattingEnabled = true;
-            this.TComboBoxTarifa.Location = new System.Drawing.Point(87, 227);
+            this.TComboBoxTarifa.Location = new System.Drawing.Point(87, 224);
             this.TComboBoxTarifa.Name = "TComboBoxTarifa";
-            this.TComboBoxTarifa.Size = new System.Drawing.Size(108, 21);
+            this.TComboBoxTarifa.Size = new System.Drawing.Size(137, 21);
             this.TComboBoxTarifa.TabIndex = 8;
             this.TComboBoxTarifa.Click += new System.EventHandler(this.TComboBoxTarifa_Click);
             this.TComboBoxTarifa.Leave += new System.EventHandler(this.TComboBoxTarifa_Leave);
@@ -126,7 +126,7 @@
             // TLabelTarifa
             // 
             this.TLabelTarifa.AutoSize = true;
-            this.TLabelTarifa.Location = new System.Drawing.Point(29, 235);
+            this.TLabelTarifa.Location = new System.Drawing.Point(29, 232);
             this.TLabelTarifa.Name = "TLabelTarifa";
             this.TLabelTarifa.Size = new System.Drawing.Size(34, 13);
             this.TLabelTarifa.TabIndex = 72;
@@ -140,7 +140,7 @@
             this.TComboBoxProvincias.FormattingEnabled = true;
             this.TComboBoxProvincias.Location = new System.Drawing.Point(87, 178);
             this.TComboBoxProvincias.Name = "TComboBoxProvincias";
-            this.TComboBoxProvincias.Size = new System.Drawing.Size(108, 21);
+            this.TComboBoxProvincias.Size = new System.Drawing.Size(137, 21);
             this.TComboBoxProvincias.TabIndex = 6;
             this.TComboBoxProvincias.TextChanged += new System.EventHandler(this.TComboBoxProvincias_TextChanged);
             this.TComboBoxProvincias.Click += new System.EventHandler(this.TComboBoxProvincias_Click);
@@ -154,7 +154,7 @@
             this.TComboBoxCiudades.FormattingEnabled = true;
             this.TComboBoxCiudades.Location = new System.Drawing.Point(87, 200);
             this.TComboBoxCiudades.Name = "TComboBoxCiudades";
-            this.TComboBoxCiudades.Size = new System.Drawing.Size(108, 21);
+            this.TComboBoxCiudades.Size = new System.Drawing.Size(137, 21);
             this.TComboBoxCiudades.TabIndex = 7;
             this.TComboBoxCiudades.Click += new System.EventHandler(this.TComboBoxCiudades_Click);
             // 
@@ -179,7 +179,7 @@
             // TLabelVehiculosAlquiler
             // 
             this.TLabelVehiculosAlquiler.AutoSize = true;
-            this.TLabelVehiculosAlquiler.Location = new System.Drawing.Point(230, 50);
+            this.TLabelVehiculosAlquiler.Location = new System.Drawing.Point(255, 50);
             this.TLabelVehiculosAlquiler.Name = "TLabelVehiculosAlquiler";
             this.TLabelVehiculosAlquiler.Size = new System.Drawing.Size(104, 13);
             this.TLabelVehiculosAlquiler.TabIndex = 64;
@@ -188,7 +188,7 @@
             // listBoxCoches
             // 
             this.listBoxCoches.FormattingEnabled = true;
-            this.listBoxCoches.Location = new System.Drawing.Point(340, 47);
+            this.listBoxCoches.Location = new System.Drawing.Point(365, 47);
             this.listBoxCoches.Name = "listBoxCoches";
             this.listBoxCoches.Size = new System.Drawing.Size(158, 121);
             this.listBoxCoches.TabIndex = 11;
@@ -228,7 +228,7 @@
             // 
             this.TTextBoxDireccion.Location = new System.Drawing.Point(87, 156);
             this.TTextBoxDireccion.Name = "TTextBoxDireccion";
-            this.TTextBoxDireccion.Size = new System.Drawing.Size(108, 20);
+            this.TTextBoxDireccion.Size = new System.Drawing.Size(137, 20);
             this.TTextBoxDireccion.TabIndex = 5;
             this.TTextBoxDireccion.Leave += new System.EventHandler(this.TTextBoxDireccion_Leave);
             // 
@@ -245,7 +245,7 @@
             // 
             this.TTextBoxEmail.Location = new System.Drawing.Point(87, 135);
             this.TTextBoxEmail.Name = "TTextBoxEmail";
-            this.TTextBoxEmail.Size = new System.Drawing.Size(108, 20);
+            this.TTextBoxEmail.Size = new System.Drawing.Size(137, 20);
             this.TTextBoxEmail.TabIndex = 4;
             this.TTextBoxEmail.Leave += new System.EventHandler(this.TTextBoxEmail_Leave);
             // 
@@ -262,7 +262,7 @@
             // 
             this.TTextBoxTelefono.Location = new System.Drawing.Point(87, 113);
             this.TTextBoxTelefono.Name = "TTextBoxTelefono";
-            this.TTextBoxTelefono.Size = new System.Drawing.Size(108, 20);
+            this.TTextBoxTelefono.Size = new System.Drawing.Size(137, 20);
             this.TTextBoxTelefono.TabIndex = 3;
             this.TTextBoxTelefono.Leave += new System.EventHandler(this.TTextBoxTelefono_Leave);
             // 
@@ -270,7 +270,7 @@
             // 
             this.TTextBoxApellidos.Location = new System.Drawing.Point(87, 91);
             this.TTextBoxApellidos.Name = "TTextBoxApellidos";
-            this.TTextBoxApellidos.Size = new System.Drawing.Size(108, 20);
+            this.TTextBoxApellidos.Size = new System.Drawing.Size(137, 20);
             this.TTextBoxApellidos.TabIndex = 2;
             this.TTextBoxApellidos.Leave += new System.EventHandler(this.TTextBoxApellidos_Leave);
             // 
@@ -278,7 +278,7 @@
             // 
             this.TTextBoxNombre.Location = new System.Drawing.Point(87, 69);
             this.TTextBoxNombre.Name = "TTextBoxNombre";
-            this.TTextBoxNombre.Size = new System.Drawing.Size(108, 20);
+            this.TTextBoxNombre.Size = new System.Drawing.Size(137, 20);
             this.TTextBoxNombre.TabIndex = 1;
             this.TTextBoxNombre.Leave += new System.EventHandler(this.TTextBoxNombre_Leave);
             // 
@@ -286,7 +286,7 @@
             // 
             this.TTextBoxDNI.Location = new System.Drawing.Point(87, 47);
             this.TTextBoxDNI.Name = "TTextBoxDNI";
-            this.TTextBoxDNI.Size = new System.Drawing.Size(108, 20);
+            this.TTextBoxDNI.Size = new System.Drawing.Size(137, 20);
             this.TTextBoxDNI.TabIndex = 0;
             this.TTextBoxDNI.Leave += new System.EventHandler(this.TTextBoxDNI_Leave);
             // 
