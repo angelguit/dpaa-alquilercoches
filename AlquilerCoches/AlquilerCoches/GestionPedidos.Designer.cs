@@ -47,6 +47,8 @@
             this.TModeloLabel = new System.Windows.Forms.Label();
             this.TMarca = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.TVendedorText = new System.Windows.Forms.TextBox();
+            this.TDateTimePickerFecha = new System.Windows.Forms.DateTimePicker();
             this.TLabelFecha = new System.Windows.Forms.Label();
             this.TEstadoTextBox = new System.Windows.Forms.TextBox();
             this.TEstadoLabel = new System.Windows.Forms.Label();
@@ -54,13 +56,10 @@
             this.TIDlabel = new System.Windows.Forms.Label();
             this.TIDtextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.TButtonBuscar = new System.Windows.Forms.Button();
             this.TButtonCerrar = new System.Windows.Forms.Button();
             this.TButtonBorrar = new System.Windows.Forms.Button();
             this.TButtonOK = new System.Windows.Forms.Button();
             this.TLabelTitulo = new System.Windows.Forms.Label();
-            this.TDateTimePickerFecha = new System.Windows.Forms.DateTimePicker();
-            this.TVendedorText = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.TEnviogroupBox3.SuspendLayout();
@@ -291,6 +290,29 @@
             this.groupBox2.Text = "Datos transacción";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
+            // TVendedorText
+            // 
+            this.TVendedorText.BackColor = System.Drawing.SystemColors.Control;
+            this.TVendedorText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TVendedorText.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TVendedorText.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.TVendedorText.Location = new System.Drawing.Point(258, 27);
+            this.TVendedorText.Name = "TVendedorText";
+            this.TVendedorText.ReadOnly = true;
+            this.TVendedorText.Size = new System.Drawing.Size(204, 25);
+            this.TVendedorText.TabIndex = 32;
+            this.TVendedorText.Leave += new System.EventHandler(this.TVendedorText_Leave);
+            // 
+            // TDateTimePickerFecha
+            // 
+            this.TDateTimePickerFecha.CalendarMonthBackground = System.Drawing.Color.White;
+            this.TDateTimePickerFecha.CustomFormat = "";
+            this.TDateTimePickerFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.TDateTimePickerFecha.Location = new System.Drawing.Point(258, 58);
+            this.TDateTimePickerFecha.Name = "TDateTimePickerFecha";
+            this.TDateTimePickerFecha.Size = new System.Drawing.Size(90, 20);
+            this.TDateTimePickerFecha.TabIndex = 31;
+            // 
             // TLabelFecha
             // 
             this.TLabelFecha.AutoSize = true;
@@ -357,27 +379,12 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // TButtonBuscar
-            // 
-            this.TButtonBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.TButtonBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.errorProvider1.SetIconAlignment(this.TButtonBuscar, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
-            this.TButtonBuscar.Image = global::AlquilerCoches.Properties.Resources.Search_icon;
-            this.TButtonBuscar.Location = new System.Drawing.Point(743, 85);
-            this.TButtonBuscar.Name = "TButtonBuscar";
-            this.TButtonBuscar.Size = new System.Drawing.Size(86, 73);
-            this.TButtonBuscar.TabIndex = 38;
-            this.TButtonBuscar.Text = "Buscar";
-            this.TButtonBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.TButtonBuscar.UseVisualStyleBackColor = true;
-            this.TButtonBuscar.Click += new System.EventHandler(this.TButtonBuscar_Click);
-            // 
             // TButtonCerrar
             // 
             this.TButtonCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.TButtonCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.TButtonCerrar.Image = global::AlquilerCoches.Properties.Resources.Close_icon;
-            this.TButtonCerrar.Location = new System.Drawing.Point(743, 234);
+            this.TButtonCerrar.Location = new System.Drawing.Point(750, 169);
             this.TButtonCerrar.Name = "TButtonCerrar";
             this.TButtonCerrar.Size = new System.Drawing.Size(86, 72);
             this.TButtonCerrar.TabIndex = 31;
@@ -391,11 +398,11 @@
             this.TButtonBorrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.TButtonBorrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.TButtonBorrar.Image = global::AlquilerCoches.Properties.Resources.Delete_icon;
-            this.TButtonBorrar.Location = new System.Drawing.Point(342, 486);
+            this.TButtonBorrar.Location = new System.Drawing.Point(342, 474);
             this.TButtonBorrar.Name = "TButtonBorrar";
             this.TButtonBorrar.Size = new System.Drawing.Size(123, 75);
             this.TButtonBorrar.TabIndex = 34;
-            this.TButtonBorrar.Text = "Delete";
+            this.TButtonBorrar.Text = "Borrar";
             this.TButtonBorrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.TButtonBorrar.UseVisualStyleBackColor = true;
             this.TButtonBorrar.Click += new System.EventHandler(this.TButtonBorrar_Click);
@@ -405,11 +412,11 @@
             this.TButtonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.TButtonOK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.TButtonOK.Image = global::AlquilerCoches.Properties.Resources.Accept_icon;
-            this.TButtonOK.Location = new System.Drawing.Point(135, 486);
+            this.TButtonOK.Location = new System.Drawing.Point(135, 474);
             this.TButtonOK.Name = "TButtonOK";
             this.TButtonOK.Size = new System.Drawing.Size(124, 72);
             this.TButtonOK.TabIndex = 37;
-            this.TButtonOK.Text = "OK";
+            this.TButtonOK.Text = "Enviar";
             this.TButtonOK.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.TButtonOK.UseVisualStyleBackColor = true;
             this.TButtonOK.Click += new System.EventHandler(this.TButtonOK_Click);
@@ -427,29 +434,6 @@
             this.TLabelTitulo.Size = new System.Drawing.Size(94, 18);
             this.TLabelTitulo.TabIndex = 41;
             this.TLabelTitulo.Text = "Datos del Pedido";
-            // 
-            // TDateTimePickerFecha
-            // 
-            this.TDateTimePickerFecha.CalendarMonthBackground = System.Drawing.Color.White;
-            this.TDateTimePickerFecha.CustomFormat = "";
-            this.TDateTimePickerFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.TDateTimePickerFecha.Location = new System.Drawing.Point(258, 58);
-            this.TDateTimePickerFecha.Name = "TDateTimePickerFecha";
-            this.TDateTimePickerFecha.Size = new System.Drawing.Size(90, 20);
-            this.TDateTimePickerFecha.TabIndex = 31;
-            // 
-            // TVendedorText
-            // 
-            this.TVendedorText.BackColor = System.Drawing.SystemColors.Control;
-            this.TVendedorText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TVendedorText.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TVendedorText.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.TVendedorText.Location = new System.Drawing.Point(258, 27);
-            this.TVendedorText.Name = "TVendedorText";
-            this.TVendedorText.ReadOnly = true;
-            this.TVendedorText.Size = new System.Drawing.Size(204, 25);
-            this.TVendedorText.TabIndex = 32;
-            this.TVendedorText.Leave += new System.EventHandler(this.TVendedorText_Leave);
             // 
             // label1
             // 
@@ -470,7 +454,6 @@
             this.ClientSize = new System.Drawing.Size(878, 570);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TLabelTitulo);
-            this.Controls.Add(this.TButtonBuscar);
             this.Controls.Add(this.TButtonOK);
             this.Controls.Add(this.TButtonBorrar);
             this.Controls.Add(this.TButtonCerrar);
@@ -524,7 +507,6 @@
         private System.Windows.Forms.Button TButtonCerrar;
         private System.Windows.Forms.Button TButtonBorrar;
         private System.Windows.Forms.Button TButtonOK;
-        private System.Windows.Forms.Button TButtonBuscar;
         private System.Windows.Forms.Label TLabelTitulo;
         private System.Windows.Forms.DateTimePicker TDateTimePickerFecha;
         private System.Windows.Forms.TextBox TVendedorText;
