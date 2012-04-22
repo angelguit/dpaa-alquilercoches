@@ -24,8 +24,15 @@ namespace EN
         private double precioTotal;
         private int factura;
         private string cliente;
+        private DateTime diaFacturacion;
 
         private CAD.CADFacturacion cadFacturacion = new CAD.CADFacturacion();
+
+        public DateTime DiaFacturacion
+        {
+            get { return diaFacturacion; }
+            set { diaFacturacion = value; }
+        }
 
         public string Categoria
         {
@@ -123,6 +130,14 @@ namespace EN
         public bool ExisteCat(string cat)
         {
             return cadFacturacion.ExisteCat(cat);
+        }
+
+        public void AnyadirFactura()
+        {
+            DataSet dsFa = new DataSet();
+            dsFa = cadFacturacion.ObtenerFacturas();
+            DataRow linea = dsFa.Tables["Facturas"].NewRow();
+
         }
     }
 }

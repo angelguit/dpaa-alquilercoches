@@ -11,13 +11,15 @@ namespace AlquilerCoches
 {
     public partial class GestionFacturacion : Form
     {
+        private EN.ENFacturacion enFa = new EN.ENFacturacion();
+
         public GestionFacturacion(EN.ENReservas enRe)
         {
             InitializeComponent();
 
             EN.ENVehiculo enVe = new EN.ENVehiculo();
             EN.ENCliente enCli = new EN.ENCliente();
-            EN.ENFacturacion enFa = new EN.ENFacturacion();
+            
 
             TimeSpan ts = enRe.FechaFin - enRe.FechaInicio;
 
@@ -48,6 +50,17 @@ namespace AlquilerCoches
             TTextBoxTIva.Text = enFa.IVA.ToString();
             TTextBoxTPSinIva.Text = enFa.PrecioSinIVA.ToString();
 
+
+        }
+
+        private void TButtonCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void TButtonReserva_Click(object sender, EventArgs e)
+        {
+            enFa.DiaFacturacion = DateTime.Today;
 
         }
     }

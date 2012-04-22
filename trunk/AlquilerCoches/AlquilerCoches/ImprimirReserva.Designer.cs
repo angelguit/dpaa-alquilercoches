@@ -53,6 +53,9 @@
             this.TGroupBoxInfoCliente = new System.Windows.Forms.GroupBox();
             this.TGroupBoxInfoVe = new System.Windows.Forms.GroupBox();
             this.TLabelResRac = new System.Windows.Forms.Label();
+            this.TLabelPrecio = new System.Windows.Forms.Label();
+            this.TTextBoxPrecio = new System.Windows.Forms.TextBox();
+            this.TLabelTarifa = new System.Windows.Forms.Label();
             this.TGroupBoxInfoCliente.SuspendLayout();
             this.TGroupBoxInfoVe.SuspendLayout();
             this.SuspendLayout();
@@ -287,13 +290,42 @@
             this.TLabelResRac.TabIndex = 80;
             this.TLabelResRac.Text = "Reserva Rent a Car";
             // 
+            // TLabelPrecio
+            // 
+            this.TLabelPrecio.AutoSize = true;
+            this.TLabelPrecio.Location = new System.Drawing.Point(403, 504);
+            this.TLabelPrecio.Name = "TLabelPrecio";
+            this.TLabelPrecio.Size = new System.Drawing.Size(52, 13);
+            this.TLabelPrecio.TabIndex = 81;
+            this.TLabelPrecio.Text = "Precio(€):";
+            // 
+            // TTextBoxPrecio
+            // 
+            this.TTextBoxPrecio.Location = new System.Drawing.Point(454, 501);
+            this.TTextBoxPrecio.Name = "TTextBoxPrecio";
+            this.TTextBoxPrecio.ReadOnly = true;
+            this.TTextBoxPrecio.Size = new System.Drawing.Size(68, 20);
+            this.TTextBoxPrecio.TabIndex = 82;
+            // 
+            // TLabelTarifa
+            // 
+            this.TLabelTarifa.AutoSize = true;
+            this.TLabelTarifa.Location = new System.Drawing.Point(137, 504);
+            this.TLabelTarifa.Name = "TLabelTarifa";
+            this.TLabelTarifa.Size = new System.Drawing.Size(35, 13);
+            this.TLabelTarifa.TabIndex = 83;
+            this.TLabelTarifa.Text = "label1";
+            // 
             // ImprimirReserva
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(633, 521);
+            this.ClientSize = new System.Drawing.Size(633, 526);
             this.ControlBox = false;
+            this.Controls.Add(this.TLabelTarifa);
+            this.Controls.Add(this.TTextBoxPrecio);
+            this.Controls.Add(this.TLabelPrecio);
             this.Controls.Add(this.TLabelResRac);
             this.Controls.Add(this.TGroupBoxInfoVe);
             this.Controls.Add(this.TGroupBoxInfoCliente);
@@ -337,6 +369,9 @@
         private System.Windows.Forms.Label TLabelResRac;
         private System.Windows.Forms.GroupBox TGroupBoxInfoVe;
         private System.Windows.Forms.GroupBox TGroupBoxInfoCliente;
+        private System.Windows.Forms.TextBox TTextBoxPrecio;
+        private System.Windows.Forms.Label TLabelPrecio;
+        private System.Windows.Forms.Label TLabelTarifa;
 
     }
 }

@@ -55,6 +55,25 @@ namespace CAD
             return dsFac;
         }
 
+        public DataSet ObtenerFacturas()
+        {
+            DataSet dsFac = new DataSet();
+            SqlDataAdapter daFac;
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                string consulta = "Select * from Facturas";
+                daFac = new SqlDataAdapter(consulta, conexion);
+                daFac.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daFac.Fill(dsFac, "Facturas");
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            return dsFac;
+        }
+
         public double ObtenerPrecioCat(string cat)
         {
             DataSet dsFac = new DataSet();

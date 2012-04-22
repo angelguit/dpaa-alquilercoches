@@ -11,7 +11,7 @@ namespace AlquilerCoches
 {
     public partial class ImprimirReserva : Form
     {
-        public ImprimirReserva( EN.ENCliente cli, EN.ENReservas re, EN.ENVehiculo ve, int numRes)
+        public ImprimirReserva( EN.ENCliente cli, EN.ENReservas re, EN.ENVehiculo ve, int numRes,double precio,string tar)
         {
             InitializeComponent();
 
@@ -27,6 +27,8 @@ namespace AlquilerCoches
             TTextBoxFechaInicio.Text = re.FechaInicio.ToShortDateString();
             TTextBoxFechaFin.Text = re.FechaFin.ToShortDateString();
             TTextBoxCategoria.Text = ve.Categoria;
+            TTextBoxPrecio.Text = precio.ToString();
+            TLabelTarifa.Text = tar;
             TLabelCategoria.Select();
         }
 
