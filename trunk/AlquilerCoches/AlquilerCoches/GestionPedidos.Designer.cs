@@ -384,9 +384,9 @@
             this.TButtonCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.TButtonCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.TButtonCerrar.Image = global::AlquilerCoches.Properties.Resources.Close_icon;
-            this.TButtonCerrar.Location = new System.Drawing.Point(750, 169);
+            this.TButtonCerrar.Location = new System.Drawing.Point(758, 207);
             this.TButtonCerrar.Name = "TButtonCerrar";
-            this.TButtonCerrar.Size = new System.Drawing.Size(86, 72);
+            this.TButtonCerrar.Size = new System.Drawing.Size(77, 67);
             this.TButtonCerrar.TabIndex = 31;
             this.TButtonCerrar.Text = "Cerrar";
             this.TButtonCerrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -398,9 +398,9 @@
             this.TButtonBorrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.TButtonBorrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.TButtonBorrar.Image = global::AlquilerCoches.Properties.Resources.Delete_icon;
-            this.TButtonBorrar.Location = new System.Drawing.Point(342, 474);
+            this.TButtonBorrar.Location = new System.Drawing.Point(342, 480);
             this.TButtonBorrar.Name = "TButtonBorrar";
-            this.TButtonBorrar.Size = new System.Drawing.Size(123, 75);
+            this.TButtonBorrar.Size = new System.Drawing.Size(82, 69);
             this.TButtonBorrar.TabIndex = 34;
             this.TButtonBorrar.Text = "Borrar";
             this.TButtonBorrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -412,9 +412,9 @@
             this.TButtonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.TButtonOK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.TButtonOK.Image = global::AlquilerCoches.Properties.Resources.Accept_icon;
-            this.TButtonOK.Location = new System.Drawing.Point(135, 474);
+            this.TButtonOK.Location = new System.Drawing.Point(164, 480);
             this.TButtonOK.Name = "TButtonOK";
-            this.TButtonOK.Size = new System.Drawing.Size(124, 72);
+            this.TButtonOK.Size = new System.Drawing.Size(86, 69);
             this.TButtonOK.TabIndex = 37;
             this.TButtonOK.Text = "Enviar";
             this.TButtonOK.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
