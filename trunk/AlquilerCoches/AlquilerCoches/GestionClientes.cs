@@ -203,12 +203,21 @@ namespace AlquilerCoches
 
         private void TComboboxProvincia_Leave(object sender, EventArgs e)
         {
-            if (TComboBoxProvincias.SelectedIndex == 0)
+            if (TComboBoxProvincias.SelectedIndex == -1)
             {
                 errorProvider1.SetError(TComboBoxProvincias, "Provincia incorrecta, no puede estar vacio");
                 incorrecto = true;
             }
             else { errorProvider1.SetError(TComboBoxProvincias, ""); incorrecto = false; }
+        }
+        private void TComboBoxTarifa_Leave(object sender, EventArgs e)
+        {
+            if (TComboBoxTarifa.SelectedIndex == -1)
+            {
+                errorProvider1.SetError(TComboBoxTarifa, "Tarifa incorrecta, no puede estar vacio");
+                incorrecto = true;
+            }
+            else { errorProvider1.SetError(TComboBoxTarifa, ""); incorrecto = false; }
         }
 
         private void TButtonGuardarCliente_Click(object sender, EventArgs e)
@@ -383,6 +392,8 @@ namespace AlquilerCoches
                 Application.OpenForms["GestionClienteBuscar"].Activate();
             }
         }
+
+       
 
 
     }

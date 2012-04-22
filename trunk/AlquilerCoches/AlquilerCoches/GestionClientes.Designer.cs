@@ -119,8 +119,9 @@
             this.TComboBoxTarifa.Location = new System.Drawing.Point(87, 227);
             this.TComboBoxTarifa.Name = "TComboBoxTarifa";
             this.TComboBoxTarifa.Size = new System.Drawing.Size(108, 21);
-            this.TComboBoxTarifa.TabIndex = 71;
+            this.TComboBoxTarifa.TabIndex = 8;
             this.TComboBoxTarifa.Click += new System.EventHandler(this.TComboBoxTarifa_Click);
+            this.TComboBoxTarifa.Leave += new System.EventHandler(this.TComboBoxTarifa_Leave);
             // 
             // TLabelTarifa
             // 
@@ -140,7 +141,7 @@
             this.TComboBoxProvincias.Location = new System.Drawing.Point(87, 178);
             this.TComboBoxProvincias.Name = "TComboBoxProvincias";
             this.TComboBoxProvincias.Size = new System.Drawing.Size(108, 21);
-            this.TComboBoxProvincias.TabIndex = 66;
+            this.TComboBoxProvincias.TabIndex = 6;
             this.TComboBoxProvincias.TextChanged += new System.EventHandler(this.TComboBoxProvincias_TextChanged);
             this.TComboBoxProvincias.Click += new System.EventHandler(this.TComboBoxProvincias_Click);
             this.TComboBoxProvincias.Leave += new System.EventHandler(this.TComboboxProvincia_Leave);
@@ -154,7 +155,7 @@
             this.TComboBoxCiudades.Location = new System.Drawing.Point(87, 200);
             this.TComboBoxCiudades.Name = "TComboBoxCiudades";
             this.TComboBoxCiudades.Size = new System.Drawing.Size(108, 21);
-            this.TComboBoxCiudades.TabIndex = 67;
+            this.TComboBoxCiudades.TabIndex = 7;
             this.TComboBoxCiudades.Click += new System.EventHandler(this.TComboBoxCiudades_Click);
             // 
             // TLabelCiudades
@@ -190,7 +191,7 @@
             this.listBoxCoches.Location = new System.Drawing.Point(340, 47);
             this.listBoxCoches.Name = "listBoxCoches";
             this.listBoxCoches.Size = new System.Drawing.Size(158, 121);
-            this.listBoxCoches.TabIndex = 49;
+            this.listBoxCoches.TabIndex = 11;
             // 
             // TLabelSexo
             // 
@@ -207,7 +208,7 @@
             this.TRadioButtonM.Location = new System.Drawing.Point(136, 272);
             this.TRadioButtonM.Name = "TRadioButtonM";
             this.TRadioButtonM.Size = new System.Drawing.Size(34, 17);
-            this.TRadioButtonM.TabIndex = 62;
+            this.TRadioButtonM.TabIndex = 10;
             this.TRadioButtonM.TabStop = true;
             this.TRadioButtonM.Text = "M";
             this.TRadioButtonM.UseVisualStyleBackColor = true;
@@ -218,7 +219,7 @@
             this.TRadioButtonH.Location = new System.Drawing.Point(87, 272);
             this.TRadioButtonH.Name = "TRadioButtonH";
             this.TRadioButtonH.Size = new System.Drawing.Size(33, 17);
-            this.TRadioButtonH.TabIndex = 61;
+            this.TRadioButtonH.TabIndex = 9;
             this.TRadioButtonH.TabStop = true;
             this.TRadioButtonH.Text = "H";
             this.TRadioButtonH.UseVisualStyleBackColor = true;
@@ -228,7 +229,7 @@
             this.TTextBoxDireccion.Location = new System.Drawing.Point(87, 156);
             this.TTextBoxDireccion.Name = "TTextBoxDireccion";
             this.TTextBoxDireccion.Size = new System.Drawing.Size(108, 20);
-            this.TTextBoxDireccion.TabIndex = 60;
+            this.TTextBoxDireccion.TabIndex = 5;
             this.TTextBoxDireccion.Leave += new System.EventHandler(this.TTextBoxDireccion_Leave);
             // 
             // TLabelDireccion
@@ -245,7 +246,7 @@
             this.TTextBoxEmail.Location = new System.Drawing.Point(87, 135);
             this.TTextBoxEmail.Name = "TTextBoxEmail";
             this.TTextBoxEmail.Size = new System.Drawing.Size(108, 20);
-            this.TTextBoxEmail.TabIndex = 58;
+            this.TTextBoxEmail.TabIndex = 4;
             this.TTextBoxEmail.Leave += new System.EventHandler(this.TTextBoxEmail_Leave);
             // 
             // TLabelEmail
@@ -262,7 +263,7 @@
             this.TTextBoxTelefono.Location = new System.Drawing.Point(87, 113);
             this.TTextBoxTelefono.Name = "TTextBoxTelefono";
             this.TTextBoxTelefono.Size = new System.Drawing.Size(108, 20);
-            this.TTextBoxTelefono.TabIndex = 54;
+            this.TTextBoxTelefono.TabIndex = 3;
             this.TTextBoxTelefono.Leave += new System.EventHandler(this.TTextBoxTelefono_Leave);
             // 
             // TTextBoxApellidos
@@ -270,7 +271,7 @@
             this.TTextBoxApellidos.Location = new System.Drawing.Point(87, 91);
             this.TTextBoxApellidos.Name = "TTextBoxApellidos";
             this.TTextBoxApellidos.Size = new System.Drawing.Size(108, 20);
-            this.TTextBoxApellidos.TabIndex = 53;
+            this.TTextBoxApellidos.TabIndex = 2;
             this.TTextBoxApellidos.Leave += new System.EventHandler(this.TTextBoxApellidos_Leave);
             // 
             // TTextBoxNombre
@@ -278,7 +279,7 @@
             this.TTextBoxNombre.Location = new System.Drawing.Point(87, 69);
             this.TTextBoxNombre.Name = "TTextBoxNombre";
             this.TTextBoxNombre.Size = new System.Drawing.Size(108, 20);
-            this.TTextBoxNombre.TabIndex = 52;
+            this.TTextBoxNombre.TabIndex = 1;
             this.TTextBoxNombre.Leave += new System.EventHandler(this.TTextBoxNombre_Leave);
             // 
             // TTextBoxDNI
@@ -286,7 +287,7 @@
             this.TTextBoxDNI.Location = new System.Drawing.Point(87, 47);
             this.TTextBoxDNI.Name = "TTextBoxDNI";
             this.TTextBoxDNI.Size = new System.Drawing.Size(108, 20);
-            this.TTextBoxDNI.TabIndex = 51;
+            this.TTextBoxDNI.TabIndex = 0;
             this.TTextBoxDNI.Leave += new System.EventHandler(this.TTextBoxDNI_Leave);
             // 
             // TLabelTelefono1
@@ -331,7 +332,7 @@
             this.TButtonFoto.Location = new System.Drawing.Point(770, 221);
             this.TButtonFoto.Name = "TButtonFoto";
             this.TButtonFoto.Size = new System.Drawing.Size(56, 23);
-            this.TButtonFoto.TabIndex = 47;
+            this.TButtonFoto.TabIndex = 0;
             this.TButtonFoto.Text = "Foto";
             this.TButtonFoto.UseVisualStyleBackColor = true;
             this.TButtonFoto.Click += new System.EventHandler(this.TButtonFoto_Click);
@@ -344,7 +345,7 @@
             this.TButtonGuardarCliente.Location = new System.Drawing.Point(69, 524);
             this.TButtonGuardarCliente.Name = "TButtonGuardarCliente";
             this.TButtonGuardarCliente.Size = new System.Drawing.Size(80, 33);
-            this.TButtonGuardarCliente.TabIndex = 48;
+            this.TButtonGuardarCliente.TabIndex = 1;
             this.TButtonGuardarCliente.Text = "Guardar";
             this.TButtonGuardarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.TButtonGuardarCliente.UseVisualStyleBackColor = true;
@@ -358,7 +359,7 @@
             this.TButtonCerrar.Location = new System.Drawing.Point(183, 524);
             this.TButtonCerrar.Name = "TButtonCerrar";
             this.TButtonCerrar.Size = new System.Drawing.Size(78, 33);
-            this.TButtonCerrar.TabIndex = 49;
+            this.TButtonCerrar.TabIndex = 2;
             this.TButtonCerrar.Text = "Cerrar";
             this.TButtonCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.TButtonCerrar.UseVisualStyleBackColor = true;

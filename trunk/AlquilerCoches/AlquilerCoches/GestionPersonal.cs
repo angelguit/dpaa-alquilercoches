@@ -133,7 +133,7 @@ namespace AlquilerCoches
 
         private void TComboboxProvincia_Leave(object sender, EventArgs e)
         {
-            if (TComboBoxProvincias.SelectedIndex == 0)
+            if (TComboBoxProvincias.SelectedIndex == -1)
             {
                 errorProvider1.SetError(TComboBoxProvincias, "Provincia incorrecta, no puede estar vacio");
                 incorrecto = true;
