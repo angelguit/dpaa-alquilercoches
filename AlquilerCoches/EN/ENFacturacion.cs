@@ -110,6 +110,10 @@ namespace EN
             {
                 precio += conductores * 5;
             }
+            else if (tarifa == "Premium" && conductores > 3)
+            {
+                precio += 5;
+            }
 
             if (tiempo > 1 && tiempo < 4)
             {
