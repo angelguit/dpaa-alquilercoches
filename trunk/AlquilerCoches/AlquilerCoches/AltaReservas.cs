@@ -130,12 +130,12 @@ namespace AlquilerCoches
             F1.StartPosition = FormStartPosition.Manual;
             F1.Location = Location;
             F1.Left += 147;
-            F1.Top += 48;
+            F1.Top += 44;
             F1.ShowDialog();
 
-            enCliente = F1.enClientePub;
-            if (enCliente.Nombre != null)
+            if (F1.enClientePub.Nombre != null)
             {
+                enCliente = F1.enClientePub;
                 if (enCliente.ReservaActiva())
                 {
                     if (MessageBox.Show("El usuario seleccionado ya tiene una reserva activa,¿Desea continuar?", "Usuario con reserva activa", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2) == System.Windows.Forms.DialogResult.Yes)
@@ -359,8 +359,11 @@ namespace AlquilerCoches
             GestionClientes Formu = new GestionClientes(enCliente,"Guardar Cambios",provincias,ciudades);
             Formu.StartPosition = FormStartPosition.Manual;
             Formu.Location = Location;
-            Formu.Left += 147;
-            Formu.Top += 48;
+            if (!editar2)
+            {
+                Formu.Left += 147;
+                Formu.Top += 44;
+            }
             Formu.ShowDialog();
             enCli = Formu.enCliPub;
             if (Formu.cambios)
