@@ -98,13 +98,7 @@ namespace AlquilerCoches
         private void TButtonBuscar_Click(object sender, EventArgs e)
         {
                 TDataGridViewPedidos.Visible = true;
-          /*  if (incorrecto == true)
-            {
-                MessageBox.Show("Campos invalidos, reviselos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            } 
-            else
-            { */
+              
                 
                 DataSet ds = new DataSet();
 
@@ -140,16 +134,23 @@ namespace AlquilerCoches
 
                 if (id != "") //id transaccion
                 {
+                 
                     todo += " IDTransaccion='" + id + "' ";
                     n++; // Si hay mas de un criterio
+                }
+                if (proveedor != "")
+                {
+                    todo += " Proveedor='" + proveedor + "' ";
+                    n++;
                 }
 
                 if (marca != "") //marca
                 {
+                
                     if (n != 0)
                     {
-                        siguiente += " and Marca='" + marca + "' and Modelo='" + modelo + "' and EstadoPedido='" + estado + "' and TipoEnvio='" + envio + "'";
-                                           
+                        if(proveedor!="") siguiente += " and Proveedor='" + proveedor +" and Marca='" + marca + "' and Modelo='" + modelo + "' and EstadoPedido='" + estado + "' and TipoEnvio='" + envio + "'";
+                        else siguiente += " and Marca='" + marca + "' and Modelo='" + modelo + "' and EstadoPedido='" + estado + "' and TipoEnvio='" + envio + "'";                   
                     }
                     else
                     {
@@ -158,9 +159,11 @@ namespace AlquilerCoches
                 }
                 if (empleado!="")
                 {
+                   
                     if (n != 0)
                     {
-                        siguiente += " and Empleado='"+empleado+"' and Marca='" + marca + "' and Modelo='" + modelo + "' and EstadoPedido='" + estado + "' and TipoEnvio='" + envio + "'";
+                        if (proveedor != "") siguiente += " and Proveedor='" + proveedor + " and Empleado='" + empleado + "' and Marca='" + marca + "' and Modelo='" + modelo + "' and EstadoPedido='" + estado + "' and TipoEnvio='" + envio + "'";
+                        else siguiente +=" and Empleado='" + empleado + "' and Marca='" + marca + "' and Modelo='" + modelo + "' and EstadoPedido='" + estado + "' and TipoEnvio='" + envio + "'";
                     }
                     else
                     {
@@ -169,8 +172,9 @@ namespace AlquilerCoches
 
                 }
 
+              
                 todo += siguiente;
-                MessageBox.Show("select * from tabla where" + todo);
+               // MessageBox.Show("select * from tabla where" + todo);
                 ds = enPedidos.ObtenerListaPedidos(todo);
                 eliminado = todo;
 
@@ -180,7 +184,7 @@ namespace AlquilerCoches
                 {
                     if (i != 0) { TDataGridViewPedidos.Columns[i].ReadOnly = true; } //dejamos desbloqueada la columna de eliminar para que podamos pulsar, la columna boton no se bloquea asiq no hace falta desbloquearla
                 }
-         //   }
+       
         }
 
        
@@ -328,8 +332,20 @@ namespace AlquilerCoches
             TModelocomboBox3.DataSource = dsMod.Tables["Modelo"];
             TModelocomboBox3.DisplayMember = dsMod.Tables["Modelo"].Columns[0].Caption.ToString();
         }
+        private void ObtenerProveedores(DataSet dsProvee)
+        {
+            TProveecomboBox1.Text = "Seleccione el proveedor";
+            TProveecomboBox1.DataSource = dsProvee.Tables["Proveedores"];
+            TProveecomboBox1.DisplayMember = dsProvee.Tables["Proveedores"].Columns[0].Caption.ToString();
+
+        }
         private void TProveecomboBox1_Click(object sender, EventArgs e)
         {
+
+            EN.ENPedidos enProvee = new EN.ENPedidos();
+            DataSet dsProvee = new DataSet();
+            dsProvee = enProvee.ObtenerListaProveedores();
+            ObtenerProveedores(dsProvee);
 
         }
 
