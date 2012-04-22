@@ -56,6 +56,7 @@
             this.TTextBoxMatricula = new System.Windows.Forms.TextBox();
             this.TLabelMatricula = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.TLabelTitulo = new System.Windows.Forms.Label();
             this.TGroupBoxDatosVehiculo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -340,13 +341,28 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // TLabelTitulo
+            // 
+            this.TLabelTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.TLabelTitulo.AutoSize = true;
+            this.TLabelTitulo.BackColor = System.Drawing.Color.Transparent;
+            this.TLabelTitulo.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TLabelTitulo.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.TLabelTitulo.Location = new System.Drawing.Point(3, 0);
+            this.TLabelTitulo.Name = "TLabelTitulo";
+            this.TLabelTitulo.Size = new System.Drawing.Size(107, 18);
+            this.TLabelTitulo.TabIndex = 59;
+            this.TLabelTitulo.Text = "Ver y Editar Ventas";
+            // 
             // EditarVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(878, 572);
+            this.ClientSize = new System.Drawing.Size(894, 608);
+            this.Controls.Add(this.TLabelTitulo);
             this.Controls.Add(this.TButtonAtras);
             this.Controls.Add(this.TListBoxMatriculas);
             this.Controls.Add(this.TListBoxModelos);
@@ -400,5 +416,6 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label TLabelObligatorio;
         private System.Windows.Forms.Button TButtonBorrar;
+        private System.Windows.Forms.Label TLabelTitulo;
     }
 }
