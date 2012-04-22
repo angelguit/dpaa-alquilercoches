@@ -88,7 +88,7 @@
             // 
             this.TListBoxModelos.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TListBoxModelos.FormattingEnabled = true;
-            this.TListBoxModelos.Location = new System.Drawing.Point(279, 43);
+            this.TListBoxModelos.Location = new System.Drawing.Point(270, 43);
             this.TListBoxModelos.Name = "TListBoxModelos";
             this.TListBoxModelos.Size = new System.Drawing.Size(253, 147);
             this.TListBoxModelos.TabIndex = 57;
@@ -313,6 +313,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackgroundImage = global::AlquilerCoches.Properties.Resources.portada1;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Location = new System.Drawing.Point(232, 23);
             this.pictureBox1.Name = "pictureBox1";
