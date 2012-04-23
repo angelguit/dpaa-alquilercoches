@@ -31,7 +31,7 @@ namespace AlquilerCoches
             //Recuperar empleado
              EN.ENPersonal Personal = new EN.ENPersonal();
              Personal = new EN.ENPersonal();
-             Personal.DNI = "33456789E";
+             Personal.DNI = "12345678B";
              Personal.ObtenerDatosPersonal();
              TVendedorText.Text = Personal.Nombre+" "+Personal.Apellidos;
 
@@ -143,7 +143,7 @@ namespace AlquilerCoches
         private void TButtonOK_Click(object sender, EventArgs e)
         {
             int n = 0;
-            if (TProveecomboBox1.Text == "")
+            if (TProveecomboBox1.SelectedIndex == -1)
             {
                 errorProvider1.SetError(TProveecomboBox1, "Seleccione un proveedor");
                 incorrecto = true;
