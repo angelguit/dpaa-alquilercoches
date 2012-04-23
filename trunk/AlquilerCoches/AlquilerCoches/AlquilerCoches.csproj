@@ -82,6 +82,12 @@
     <Compile Include="BuscarPedidos.Designer.cs">
       <DependentUpon>BuscarPedidos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FacturaVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FacturaVentas.Designer.cs">
+      <DependentUpon>FacturaVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegistarVenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AltaReservas.resx">
       <DependentUpon>AltaReservas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FacturaVentas.resx">
+      <DependentUpon>FacturaVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegistarVenta.resx">
       <DependentUpon>RegistarVenta.cs</DependentUpon>
