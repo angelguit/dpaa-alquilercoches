@@ -455,9 +455,7 @@ namespace AlquilerCoches
 
         private void TButtonCerrar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Desea salir?", "Advertencia",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Question,
-                    MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+
                 this.Close();
         }
 
