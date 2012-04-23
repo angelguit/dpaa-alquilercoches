@@ -144,6 +144,13 @@ namespace AlquilerCoches.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap es_sello_duplicado {
+            get {
+                object obj = ResourceManager.GetObject("es-sello_duplicado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap facturacion {
             get {
                 object obj = ResourceManager.GetObject("facturacion", resourceCulture);

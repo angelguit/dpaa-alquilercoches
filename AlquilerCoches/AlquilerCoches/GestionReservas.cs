@@ -67,7 +67,7 @@ namespace AlquilerCoches
             F1.StartPosition = FormStartPosition.Manual;
             F1.Location = Location;
             F1.Left += 147;
-            F1.Top += 48;
+            F1.Top += 44;
             F1.ShowDialog();
             enCliente = F1.enClientePub;
             if (enCliente.Nombre != null)

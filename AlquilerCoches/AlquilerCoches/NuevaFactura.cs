@@ -161,10 +161,15 @@ namespace AlquilerCoches
             if (TRadioButtonReservas.Checked == true)
             {
                 TGroupBoxReservas.Visible = true;
+                if (TDataGridViewReservas.Visible == false)
+                {
+                    TGroupBoxReservas.Location = new Point(195, 177);
+                }
             }
             else
             {
                 TGroupBoxReservas.Visible = false;
+                TDataGridViewReservas.Visible = false;
             }
         }
 

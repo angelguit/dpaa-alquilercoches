@@ -17,28 +17,42 @@ namespace AlquilerCoches
         public GestionFacturacionBuscar()
         {
             InitializeComponent();
-            dataGridBuscarFacturas.Visible = false;
+
+            DataGridViewCheckBoxColumn boton = new DataGridViewCheckBoxColumn();
+            {
+                boton.HeaderText = "Eliminar";//texto de la columna
+                boton.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells; //tamaño
+                boton.DisplayIndex = 1; //indice que ocupara en la tabla
+            }
+
+            DataGridViewButtonColumn buttons = new DataGridViewButtonColumn();
+            {
+                buttons.HeaderText = "Duplicar"; //texto de la columna
+                buttons.Text = "Duplicar"; //texto de cada boton, sale al introducir texto
+                buttons.UseColumnTextForButtonValue = true;
+                buttons.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                buttons.FlatStyle = FlatStyle.Standard;
+                buttons.CellTemplate.Style.BackColor = Color.Honeydew;
+                buttons.DisplayIndex = 0;
+            }
+
+            TDataGridBuscarFacturas.Columns.Add(buttons);
+            TDataGridBuscarFacturas.Columns.Add(boton);
         }
 
         private void TButtonBuscarCliente_Click(object sender, EventArgs e)
         {
-            /*GestionClientesBuscar F1 = new GestionClientesBuscar(false);
-            F1.ShowDialog();
-            enCliente = F1.enClientePub;
-            TButtonBuscarCliente.Visible = false;
-            TLabelCliente.Text = "Cliente: " + enCliente.Nombre + enCliente.Apellidos;
-            TLabelCliente.Visible = true;
-            TButtonCambiarCliente.Visible = true;
-            TButtonQuitarCliente.Visible = true;*/
+
             GestionClientesBuscar F1 = new GestionClientesBuscar(false);
             F1.StartPosition = FormStartPosition.Manual;
             F1.Location = Location;
             F1.Left += 147;
-            F1.Top += 48;
+            F1.Top += 44;
             F1.ShowDialog();
-            enCliente = F1.enClientePub;
-            if (enCliente.Nombre != null)
+            
+            if (F1.enClientePub.Nombre != null)
             {
+                enCliente = F1.enClientePub;
                 TButtonBuscarCliente.Visible = false;
                 TLabelCliente.Text = "Cliente: " + enCliente.Nombre + enCliente.Apellidos;
                 TLabelCliente.Visible = true;
@@ -67,10 +81,6 @@ namespace AlquilerCoches
             TButtonQuitarCliente.Visible = true;
         }
 
-        private void TButtonCerrar_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
 
         private void TButtonBuscarFechas_Click(object sender, EventArgs e)
         {
@@ -158,21 +168,20 @@ namespace AlquilerCoches
    
             if (correcto)
             {
-                dataGridBuscarFacturas.Visible = true;
-                TPanelReservas.Location = new Point(108, 277); //para desplazar el panel de busqueda hacia abajo.
+                TDataGridBuscarFacturas.Visible = true;
+                TPanelReservas.Location = new Point(26, 343); ; //para desplazar el panel de busqueda hacia abajo.
                 EN.ENFacturacion enFa = new EN.ENFacturacion();
 
                 TButtonEliminar.Visible = true;
                 DataSet ds = new DataSet();
-                MessageBox.Show(sentencia);
                 eliminado = sentencia;
                 ds = enFa.ObtenerFacturas(sentencia);
-                dataGridBuscarFacturas.DataSource = ds;
-                dataGridBuscarFacturas.DataMember = "Facturas";
+                TDataGridBuscarFacturas.DataSource = ds;
+                TDataGridBuscarFacturas.DataMember = "Facturas";
 
-                for (int i = 0; i < dataGridBuscarFacturas.Columns.Count; i++) //esto nos servira para bloquear todas las columnas para que no se puedan editar 
+                for (int i = 0; i < TDataGridBuscarFacturas.Columns.Count; i++) //esto nos servira para bloquear todas las columnas para que no se puedan editar 
                 {
-                    if (i != 0) { dataGridBuscarFacturas.Columns[i].ReadOnly = true; } //dejamos desbloqueada la columna de eliminar para que podamos pulsar, la columna boton no se bloquea asiq no hace falta desbloquearla
+                    if (i != 0) { TDataGridBuscarFacturas.Columns[i].ReadOnly = true; } //dejamos desbloqueada la columna de eliminar para que podamos pulsar, la columna boton no se bloquea asiq no hace falta desbloquearla
                 }
             }
         }
@@ -183,6 +192,43 @@ namespace AlquilerCoches
             TButtonCambiarCliente.Visible = false;
             TButtonQuitarCliente.Visible = false;
             TButtonBuscarCliente.Visible = true;
+        }
+
+        private void TButtonCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void TDataGridBuscarFacturas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (TDataGridBuscarFacturas.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "Duplicar")
+            {
+                EN.ENFacturacion enFa = new EN.ENFacturacion();
+                EN.ENVehiculo enVe = new EN.ENVehiculo();
+                EN.ENCliente enCli = new EN.ENCliente();
+
+                enFa.Factura = Int32.Parse(TDataGridBuscarFacturas.Rows[e.RowIndex].Cells[2].Value.ToString());
+                enFa.Cliente = TDataGridBuscarFacturas.Rows[e.RowIndex].Cells[3].Value.ToString();
+                enFa.Vehiculo = TDataGridBuscarFacturas.Rows[e.RowIndex].Cells[4].Value.ToString();
+                enFa.Conductores = Int32.Parse(TDataGridBuscarFacturas.Rows[e.RowIndex].Cells[5].Value.ToString());
+                enFa.Tiempo = Int32.Parse(TDataGridBuscarFacturas.Rows[e.RowIndex].Cells[6].Value.ToString());
+                enFa.Tarifa = TDataGridBuscarFacturas.Rows[e.RowIndex].Cells[7].Value.ToString();
+                MessageBox.Show(TDataGridBuscarFacturas.Rows[e.RowIndex].Cells[8].Value.ToString());
+                enFa.DiaFacturacion = Convert.ToDateTime(TDataGridBuscarFacturas.Rows[e.RowIndex].Cells[9].Value.ToString());
+
+                enVe.Matricula = enFa.Vehiculo;
+                enCli.DNI = enFa.Cliente;
+                enVe.ObtenerDatosVehiculos();
+                enCli.RellenarCliente();
+
+                ImprimirFactura Fp = new ImprimirFactura(enCli, enVe, enFa, enFa.Factura);
+                Fp.BackgroundImage = AlquilerCoches.Properties.Resources.es_sello_duplicado;
+                Fp.BackgroundImageLayout = ImageLayout.Stretch;
+                Fp.Show();
+                Fp.Imprimir();
+                
+
+            }
         }
     }
 }
