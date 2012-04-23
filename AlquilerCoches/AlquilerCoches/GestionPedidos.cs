@@ -145,6 +145,7 @@ namespace AlquilerCoches
             if (TProveecomboBox1.SelectedIndex == -1 || TMarcacomboBox2.SelectedIndex == -1 || TModelocomboBox3.SelectedIndex == -1 || TVendedorText.Text == "")
             {
                 MessageBox.Show("Campos invalidos, no puede haber ninguno vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                incorrecto = true;
             } 
             if (incorrecto == true)
             {
@@ -205,17 +206,10 @@ namespace AlquilerCoches
             TEstadoTextBox.Text = "Abierto";
         }
 
-        private void TProveTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
 
         private void TCancelarbutton2_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Desea salir?", "Advertencia",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Question,
-                    MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+    
                 this.Close();
         }
 
@@ -257,6 +251,7 @@ namespace AlquilerCoches
             else
             {
                 errorProvider1.SetError(TMarcacomboBox2, "");
+                incorrecto = false;
             } 
         }
 
@@ -264,18 +259,20 @@ namespace AlquilerCoches
         {
              if (TModelocomboBox3.SelectedIndex == -1)
              {
+      
                  errorProvider1.SetError(TModelocomboBox3, "Seleccione el modelo del coche");
                  incorrecto = true;
              } 
             else
             {
                 errorProvider1.SetError(TModelocomboBox3, "");
+                incorrecto = false;
             } 
         }
 
         private void TProveecomboBox1_Leave(object sender, EventArgs e)
         {
-            incorrecto = false;
+
             if (TProveecomboBox1.SelectedIndex == -1)
             {
                 errorProvider1.SetError(TProveecomboBox1, "Seleccione un proveedor");
@@ -284,6 +281,7 @@ namespace AlquilerCoches
             else
             {
                 errorProvider1.SetError(TProveecomboBox1, "");
+                incorrecto = false;
             } 
         }
 
