@@ -190,15 +190,28 @@ namespace AlquilerCoches
         private void TButtonBuscar_Click(object sender, EventArgs e)
         {
             EN.ENCliente cliente = new EN.ENCliente();
+            DataSet cli = new DataSet();
 
             if (incorrecto == false)
             {
                 string dni = TTextBoxDNI.Text.ToString();
 
                 cliente.DNI = TTextBoxDNI.Text;
-                cliente.RellenarCliente();
-                 TTextBoxNombre.Text = cliente.Nombre;
-                 TTextBoxApellidos.Text = cliente.Apellidos;
+                cli = cliente.ObtenerDatosClienteConDni(TTextBoxDNI.Text);
+                if (cli.Tables["Cliente"].Rows.Count != 1)
+                {
+                    MessageBox.Show("No se encuentra ningún cliente.", "¡ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                    incorrecto = true;
+                    TTextBoxNombre.Text = "";
+                    TTextBoxApellidos.Text = "";
+                }
+                else
+                {
+                    cliente.RellenarCliente();
+                    incorrecto = false;
+                    TTextBoxNombre.Text = cliente.Nombre;
+                    TTextBoxApellidos.Text = cliente.Apellidos;
+                }
             }
         }
     }
