@@ -188,5 +188,12 @@ namespace EN
                 throw (ex);
             }
         }
+
+        public bool ExisteProveedorEN(string cif)
+        {
+            bool existe = false;
+            existe= cadProveedores.ExisteProveedorCAD(cif);
+            return existe;
+        }
     }
 }

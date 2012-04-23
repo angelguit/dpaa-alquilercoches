@@ -308,15 +308,21 @@ namespace AlquilerCoches
                 if (TRadioButtonH.Checked == true) { enCliente.Sexo = "V"; }
                 else if (TRadioButtonM.Checked == true) { enCliente.Sexo = "M"; }
 
-
-                if (TButtonGuardarCliente.Text.ToString() == "Guardar")
+                if(!enCliPub.ExisteClienteEN(TTextBoxDNI.Text))
                 {
-                    enCliente.AnyadirCliente();
+                    if (TButtonGuardarCliente.Text.ToString() == "Guardar")
+                    {
+                        enCliente.AnyadirCliente();
+                    }
+                    else
+                        enCliente.EditarCliente();
+
+                    this.Close();
                 }
                 else
-                    enCliente.EditarCliente();
-
-                this.Close();
+                {
+                    MessageBox.Show("El DNI introducido ya existe");
+                }
 
             }
 

@@ -316,21 +316,27 @@ namespace AlquilerCoches
                     else//guardar nuevo proveedor
                     {
                         EN.ENProveedores insertar = new EN.ENProveedores();
-                        DataSet existe = new DataSet();
+                        if (!insertar.ExisteProveedorEN(TTextBoxCIF.Text))
+                        {
 
-                        //insertar datos
-                        insertar.CIF = TTextBoxCIF.Text;
-                        insertar.Marca = TTextBoxMarca.Text;
-                        insertar.Calle = TTextBoxCalle.Text;
-                        insertar.Numero = Int32.Parse(TTextBoxNumero.Text);
-                        insertar.Telefono = Int32.Parse(TTextBoxTelefono.Text);
-                        insertar.Email = TTextBoxEmail.Text;
-                        insertar.Ciudad = TComboBoxCiudades.Text;
-                        insertar.Provincia = TComboBoxProvincias.Text;
-                        insertar.Codigopostal = Int32.Parse(TTextBoxCPostal.Text);
-                        insertar.Horario = TTextBoxHorario.Text;
+                            //insertar datos
+                            insertar.CIF = TTextBoxCIF.Text;
+                            insertar.Marca = TTextBoxMarca.Text;
+                            insertar.Calle = TTextBoxCalle.Text;
+                            insertar.Numero = Int32.Parse(TTextBoxNumero.Text);
+                            insertar.Telefono = Int32.Parse(TTextBoxTelefono.Text);
+                            insertar.Email = TTextBoxEmail.Text;
+                            insertar.Ciudad = TComboBoxCiudades.Text;
+                            insertar.Provincia = TComboBoxProvincias.Text;
+                            insertar.Codigopostal = Int32.Parse(TTextBoxCPostal.Text);
+                            insertar.Horario = TTextBoxHorario.Text;
 
-                        insertar.InsertarProveedorEN();
+                            insertar.InsertarProveedorEN();
+                        }
+                        else
+                        {
+                            MessageBox.Show("El CIF ya existe");
+                        }
                     }
                 }
                 else

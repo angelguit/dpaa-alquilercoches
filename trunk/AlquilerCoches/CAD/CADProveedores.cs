@@ -183,5 +183,27 @@ namespace CAD
 
             return dsProvee;
         }
+
+        public bool ExisteProveedorCAD(string cif)
+        {
+            DataSet dsProveedor = new DataSet();
+            SqlDataAdapter daProveedor;
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                string consulta = "Select * from Proveedores where cif = '" + cif + "'";
+                daProveedor = new SqlDataAdapter(consulta, conexion);
+                daProveedor.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daProveedor.Fill(dsProveedor, "Proveedores");
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            if (dsProveedor.Tables["Proveedores"].Rows.Count > 0)
+                return true;
+            else
+                return false;
+        }
     }
 }
