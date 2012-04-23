@@ -71,7 +71,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.TButtonAltaCliente = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.TButtonSalir = new System.Windows.Forms.Button();
             this.TLabelFactura = new System.Windows.Forms.Label();
             this.TButtonFactura = new System.Windows.Forms.Button();
@@ -86,6 +85,7 @@
             this.TButtonVehiculos = new System.Windows.Forms.Button();
             this.TLabelProveedores = new System.Windows.Forms.Label();
             this.TButtonProveedores = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -387,7 +387,6 @@
             this.Gestion.Controls.Add(this.button2);
             this.Gestion.Controls.Add(this.label3);
             this.Gestion.Controls.Add(this.TButtonAltaCliente);
-            this.Gestion.Controls.Add(this.button1);
             this.Gestion.Controls.Add(this.TButtonSalir);
             this.Gestion.Controls.Add(this.TLabelFactura);
             this.Gestion.Controls.Add(this.TButtonFactura);
@@ -442,25 +441,14 @@
             this.TButtonAltaCliente.UseVisualStyleBackColor = true;
             this.TButtonAltaCliente.Click += new System.EventHandler(this.TButtonAltaCliente_Click);
             // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(13, 645);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 24);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Cerrar Formularios";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // TButtonSalir
             // 
             this.TButtonSalir.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.TButtonSalir.Image = global::AlquilerCoches.Properties.Resources.cancel;
             this.TButtonSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.TButtonSalir.Location = new System.Drawing.Point(37, 610);
+            this.TButtonSalir.Location = new System.Drawing.Point(34, 635);
             this.TButtonSalir.Name = "TButtonSalir";
-            this.TButtonSalir.Size = new System.Drawing.Size(51, 23);
+            this.TButtonSalir.Size = new System.Drawing.Size(59, 34);
             this.TButtonSalir.TabIndex = 15;
             this.TButtonSalir.Text = "Salir";
             this.TButtonSalir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -516,6 +504,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.LightGray;
+            this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.TButtonPersonal);
             this.tabPage1.Controls.Add(this.label4);
@@ -622,6 +611,20 @@
             this.TButtonProveedores.UseVisualStyleBackColor = true;
             this.TButtonProveedores.Click += new System.EventHandler(this.TButtonProveedores_Click);
             // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button1.Image = global::AlquilerCoches.Properties.Resources.cancel;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(39, 623);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(59, 34);
+            this.button1.TabIndex = 26;
+            this.button1.Text = "Salir";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.TButtonSalir_Click);
+            // 
             // MDIPral
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -691,7 +694,6 @@
         private System.Windows.Forms.Label TLabelFactura;
         private System.Windows.Forms.Button TButtonFactura;
         private System.Windows.Forms.Button TButtonSalir;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem gestionReservasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevaReservaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem buscarReservasToolStripMenuItem;
@@ -713,6 +715,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button TButtonPersonal;
+        private System.Windows.Forms.Button button1;
     }
 }
 
