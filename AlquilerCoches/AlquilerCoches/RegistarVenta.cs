@@ -88,19 +88,20 @@ namespace AlquilerCoches
         //MODIFICAR!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         void guardaCampos()
         {
-            ventas.Matricula = TTextBoxMatricula.Text;
-            ventas.Marca = TTextBoxMarca.Text;
-            ventas.Modelo = TTextBoxModelo.Text;
+            realizadas.Matricula = TTextBoxMatricula.Text;
+            realizadas.Marca = TTextBoxMarca.Text;
+            realizadas.Modelo = TTextBoxModelo.Text;
             if (TCheckBoxGarantia.Checked == true)
             {
-                ventas.Garantia = TTextBoxMeses.Text;
+                realizadas.Garantia = TTextBoxMeses.Text;
             }
             else
             {
-                ventas.Garantia = "0";
+                realizadas.Garantia = "0";
             }
-            ventas.KM = TTextBoxKm.Text;
-            ventas.PrecioVenta = TTextBoxPrecioVenta.Text;
+            realizadas.DNI = TTextBoxDNI.Text;
+            realizadas.PrecioVenta = TTextBoxPrecioVenta.Text;
+            realizadas.Fecha = TDateTimePicker1.Text.ToString();
         }
 
         private void TButtonAtras_Click(object sender, EventArgs e)
@@ -155,12 +156,15 @@ namespace AlquilerCoches
 
         private void TButtonAceptar_Click(object sender, EventArgs e)
         {
-            if (incorrecto == false && (TTextBoxPrecioVenta.Text != "" && TTextBoxModelo.Text != "" && TTextBoxMatricula.Text != "" && TTextBoxMarca.Text != "" && TTextBoxKm.Text != ""))
+            if (incorrecto == false && TTextBoxDNI.Text !="")
             {
-                if (MessageBox.Show("¿Desea guardar cambios?\n Se sobrescribirán los datos.", "¿SOBRESCRIBIR?", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.OK)
+                if (MessageBox.Show("¿Desea registrar venta?\n Se borrará el coche de la lista de ventas.", "¿REGISTRAR?", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.OK)
                 {
                     guardaCampos();
-                    ventas.EditarVentas();
+                    realizadas.AnyadirVenta();
+                    ventas.ClearEnVentas();
+                    ventas.Matricula = TTextBoxMatricula.Text;
+                    ventas.BorrarVentas();
                     limpiaFormulario();
                     rellenaMarcas();
                 }
@@ -169,19 +173,6 @@ namespace AlquilerCoches
             {
                 MessageBox.Show("Hay algún error en los datos introducidos.", "¡ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             }
-        }
-
-        private void TButtonBorrar_Click(object sender, EventArgs e)
-        {
-           if(MessageBox.Show("¿Desea borrar?\n Se perderan los datos del vehículo.", "¿BORRAR?", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.OK)
-           {
-                ventas.ClearEnVentas();
-                ventas.Matricula = TTextBoxMatricula.Text;
-                ventas.BorrarVentas();
-                limpiaFormulario();
-                rellenaMarcas();
-           }
-            
         }
 
         private void TTextBoxDNI_Leave(object sender, EventArgs e)
@@ -202,11 +193,11 @@ namespace AlquilerCoches
             {
                 string dni = TTextBoxDNI.Text.ToString();
 
-                cliente.ObtenerDatosClienteConDni(dni);
+                cliente.DNI = TTextBoxDNI.Text;
+                cliente.RellenarCliente();
                  TTextBoxNombre.Text = cliente.Nombre;
                  TTextBoxApellidos.Text = cliente.Apellidos;
             }
         }
-
     }
 }
