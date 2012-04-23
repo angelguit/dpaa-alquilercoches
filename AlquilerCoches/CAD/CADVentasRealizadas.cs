@@ -112,5 +112,28 @@ namespace CAD
                 throw (ex);
             }
         }
+
+        public DataSet ObtenerVentasRealizadas(string sentencia)
+        {
+            DataSet dsFac = new DataSet();
+            SqlDataAdapter daFac;
+            string consulta;
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                if (sentencia != "")
+                    consulta = "Select * from VentasRealizadas where Facturado = '0'" + sentencia;
+                else
+                    consulta = "Select * from VentasRealizadas where Facturado = '0'";
+                daFac = new SqlDataAdapter(consulta, conexion);
+                daFac.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daFac.Fill(dsFac, "VentasRealizadas");
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            return dsFac;
+        }
     }
 }
