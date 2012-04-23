@@ -229,6 +229,7 @@ namespace AlquilerCoches
             {
                 err2.SetError(TComboBoxMatricula, "Falta seleccionar vehículo");
                 TComboBoxMatricula.DataSource = null;
+                TComboBoxModelo.DataSource = null;
             }
             else
             {
