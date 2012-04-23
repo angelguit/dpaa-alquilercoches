@@ -99,6 +99,19 @@ namespace EN
             return resultado;
         }
 
+        public DataSet ObtenerFacturas()
+        {
+            DataSet resultado = new DataSet();
+            try
+            {
+                return cadFacturacion.ObtenerFacturas();
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+        }
+
         public void ObtenerPrecio()
         {
             double precio = 0.0;
@@ -155,6 +168,11 @@ namespace EN
         public int UltimaFactura()
         {
             return cadFacturacion.UltimaFactura();
+        }
+
+        public void EliminarReserva(ArrayList array)
+        {
+            cadFacturacion.EliminarFacturas(array);
         }
     }
 }

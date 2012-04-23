@@ -68,6 +68,7 @@
             this.TButtonEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.TButtonEliminar.UseVisualStyleBackColor = true;
             this.TButtonEliminar.Visible = false;
+            this.TButtonEliminar.Click += new System.EventHandler(this.TButtonEliminar_Click);
             // 
             // TButtonBuscar
             // 

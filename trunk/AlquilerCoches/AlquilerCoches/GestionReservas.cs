@@ -141,6 +141,11 @@ namespace AlquilerCoches
                     err2.SetError(TDateTimePickerFechaFin, "Fecha fin superior a fecha inicio");
                     correcto = false;
                 }
+
+                for (int i = 0; i < TDataGridViewReservas.Columns.Count; i++) //esto nos servira para bloquear todas las columnas para que no se puedan editar 
+                {
+                    if (i != 0) { TDataGridViewReservas.Columns[i].ReadOnly = true; } //dejamos desbloqueada la columna de eliminar para que podamos pulsar, la columna boton no se bloquea asiq no hace falta desbloquearla
+                }
             }
             if (TLabelCliente.Visible == true)
             {
