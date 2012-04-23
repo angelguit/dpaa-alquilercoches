@@ -75,7 +75,7 @@ namespace CAD
             try
             {
                 SqlConnection conexion = new SqlConnection(cadenaConexion);
-                string consulta = "Select * from Pedidos where idtransaccion='" + pedido.Tables["Pedidos"].Rows[0][0] + "'";
+                string consulta = "Select * from Pedidos where IDTransaccion='" + pedido.Tables["Pedidos"].Rows[0][0] + "'";
                 SqlDataAdapter daPedidos = new SqlDataAdapter(consulta, conexion);
                 daPedidos.MissingSchemaAction = MissingSchemaAction.AddWithKey;
                 daPedidos.Fill(dsPedidos, nombreTabla);
