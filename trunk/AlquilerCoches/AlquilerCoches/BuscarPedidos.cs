@@ -405,7 +405,13 @@ namespace AlquilerCoches
             ActualizaDatagridView();
         }
 
-        
-
+        private void TButtonBorrar_Click(object sender, EventArgs e)
+        {
+            TProveecomboBox1.SelectedIndex = -1;
+            TMarcacomboBox2.SelectedIndex = -1;
+            TModelocomboBox3.SelectedIndex = -1;
+            TIDtextBox.Text = "";
+        }       
+             
     }
 }
