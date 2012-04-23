@@ -40,19 +40,12 @@ namespace AlquilerCoches
             errorProvider1.Clear();
             TTextBoxMeses.Enabled = false;
             TGroupBoxDatosVehiculo.Enabled = false;
-            //TButtonBorrar.Enabled = false;
             TTextBoxMatricula.Enabled = false;
             TTextBoxApellidos.Text = "";
             TTextBoxDNI.Text = "";
             TTextBoxNombre.Text = "";
             TDateTimePicker1.Text = "";
         }
-
-       /* private void rellenaCliente()
-        {
-            TTextBoxNombre.Text = cliente.Nombre;
-            TTextBoxApellidos.Text = cliente.Apellidos;
-        }*/
 
         private void rellenaMarcas()
         {
