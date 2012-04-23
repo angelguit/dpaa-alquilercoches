@@ -85,7 +85,7 @@ namespace AlquilerCoches
             TTextBoxPrecioVenta.Text = ventas.PrecioVenta.ToString();
         }
 
-        //MODIFICAR!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        
         void guardaCampos()
         {
             realizadas.Matricula = TTextBoxMatricula.Text;
