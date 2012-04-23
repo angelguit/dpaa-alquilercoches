@@ -249,7 +249,7 @@ namespace AlquilerCoches
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+       /* private void button1_Click(object sender, EventArgs e)
         {
            // Application.OpenForms[""].Close();
             //Application.OpenForms.GetEnumerator();
@@ -261,7 +261,7 @@ namespace AlquilerCoches
                 //this.MdiChildren[i].WindowState = FormWindowState.Minimized;
                 this.MdiChildren[i].Close();
             }
-        }
+        }*/
 
         private void darDeAltaToolStripMenuItem_Click(object sender, EventArgs e)
         {
