@@ -260,6 +260,22 @@ namespace EN
             return resultado; 
         }
 
+        public DataSet ObtenerMatriculas2(string marca, string modelo)
+        {
+            DataSet resultado = new DataSet();
+            try
+            {
+                listaMatriculas.Clear();
+                resultado = cadVehiculo.ObtenerMatricula2(marca, modelo);
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+
+            return resultado;
+        }
+
         public DataSet ObtenerListaMatriculasVehiculos(string mod)
         {
             DataSet resultado = new DataSet();
