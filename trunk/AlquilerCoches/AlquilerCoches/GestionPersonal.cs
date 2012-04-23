@@ -27,7 +27,7 @@ namespace AlquilerCoches
             numProvincia = new DataSet();
             numProvincia = dsProv;
         }
-        public GestionPersonal(string nombre,string dni, string apell, string telef, string mail, string direc, string ciu, string prov, string puesac, string nombrebotonguardar)//constructor sobrecargado
+        public GestionPersonal(string nombre,string dni, string apell, string telef, string mail, string direc, string ciu, string prov, string puesac, string pass, string nombrebotonguardar)//constructor sobrecargado
         {
             InitializeComponent();
             TTextBoxDNI.Enabled = false;
@@ -52,9 +52,11 @@ namespace AlquilerCoches
             numProvincia = new DataSet();
             numProvincia = dsProv;
            
-            TTextBoxPuestoAc.Text = puesac;
+           // TTextBoxPuestoAc.Text = puesac;
             TComboBoxPuestoAc.Items.Add(puesac);
             TComboBoxPuestoAc.SelectedIndex = 0;
+
+            TTextBoxPass.Text = pass;
 
             TButtonGuardarPersonal.Text = nombrebotonguardar; // importante le cambiamos el nombre al boton para saber que venimos del formulario buscar, y estamos editando no guardando uno nuevo
             TButtonGuardarPersonal.Size = new Size(120, 33);
@@ -142,15 +144,15 @@ namespace AlquilerCoches
             }
             else { errorProvider1.SetError(TComboBoxProvincias, ""); incorrecto = false; }
         }
-
-        private void TTextBoxPuestoAc_Leave(object sender, EventArgs e)
+        
+        private void TTextBoxPass_Leave(object sender, EventArgs e)
         {
-            if (!Regex.Match(TTextBoxPuestoAc.Text, @"^[A-Za-zñÑáéíóúÁÉÍÓÚçÇ\s]{3,100}$").Success) // "\s" para que admita espacios en blanco
+            if (!Regex.Match(TTextBoxPass.Text, @"^[A-Za-zñÑáéíóúÁÉÍÓÚçÇ0-9]{3,100}$").Success) // "\s" para que admita espacios en blanco
             {
-                errorProvider1.SetError(TTextBoxPuestoAc, "Puesto incorrecto, caracteres invalidos");
+                errorProvider1.SetError(TTextBoxPass, "Password incorrecto, caracteres invalidos");
                 incorrecto = true;
             }
-            else { errorProvider1.SetError(TTextBoxPuestoAc, ""); incorrecto = false; }
+            else { errorProvider1.SetError(TTextBoxPass, ""); incorrecto = false; }
         }
       
        
@@ -158,7 +160,7 @@ namespace AlquilerCoches
         {
             if (TTextBoxDNI.Text == "" || TTextBoxNombre.Text == "" || TTextBoxApellidos.Text == "" || TTextBoxTelefono.Text == "" ||
                  TTextBoxEmail.Text == "" || TTextBoxDireccion.Text == "" || TComboBoxProvincias.Text == "" ||
-                TTextBoxPuestoAc.Text == "" || (TComboBoxProvincias.SelectedIndex == 0 && TComboBoxProvincias.Text != textoProvincia) || TComboBoxPuestoAc.SelectedIndex == -1)
+                TTextBoxPass.Text == "" || (TComboBoxProvincias.SelectedIndex == 0 && TComboBoxProvincias.Text != textoProvincia) || TComboBoxPuestoAc.SelectedIndex == -1)
             {
                 MessageBox.Show("Campos invalidos, no puede haber ninguno vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -174,7 +176,7 @@ namespace AlquilerCoches
                 
                 enPersonal.DNI=TTextBoxDNI.Text; enPersonal.Nombre=TTextBoxNombre.Text; enPersonal.Apellidos=TTextBoxApellidos.Text; enPersonal.Telefono = Int32.Parse(TTextBoxTelefono.Text);
                 enPersonal.Email = TTextBoxEmail.Text; enPersonal.Direccion = TTextBoxDireccion.Text; enPersonal.Ciudad = TComboBoxCiudades.Text; enPersonal.Provincia = TComboBoxProvincias.Text;
-                enPersonal.PuestoAc = TTextBoxPuestoAc.Text; enPersonal.PuestoAc = TComboBoxPuestoAc.Text;
+                enPersonal.Pass = TTextBoxPass.Text; enPersonal.PuestoAc = TComboBoxPuestoAc.Text;
 
                 if (!enPersonal.ExistePersonalEN(TTextBoxDNI.Text))
                 {

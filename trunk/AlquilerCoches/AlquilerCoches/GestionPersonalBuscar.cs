@@ -241,6 +241,7 @@ namespace AlquilerCoches
                     string ciu = TDataGridViewPersonal.Rows[e.RowIndex].Cells[8].Value.ToString();
                     string prov = TDataGridViewPersonal.Rows[e.RowIndex].Cells[9].Value.ToString();
                     string puesac = TDataGridViewPersonal.Rows[e.RowIndex].Cells[10].Value.ToString();
+                    string pass = TDataGridViewPersonal.Rows[e.RowIndex].Cells[11].Value.ToString();
 
                     string nombrebotonguardar = "Guardar Cambios";
 
@@ -250,7 +251,7 @@ namespace AlquilerCoches
 
                     }
                       
-                        GestionPersonal Formu = new GestionPersonal(nom,dni,apell,telef,mail,direc,ciu,prov,puesac, nombrebotonguardar);
+                        GestionPersonal Formu = new GestionPersonal(nom,dni,apell,telef,mail,direc,ciu,prov,puesac, pass, nombrebotonguardar);
                         Formu.StartPosition = FormStartPosition.CenterScreen;
                         Formu.MdiParent = this.MdiParent;
                         Formu.Show();

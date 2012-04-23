@@ -34,13 +34,14 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TButtonGuardarPersonal = new System.Windows.Forms.Button();
             this.TGroupBoxAlta = new System.Windows.Forms.GroupBox();
+            this.TComboBoxPuestoAc = new System.Windows.Forms.ComboBox();
             this.TComboBoxProvincias = new System.Windows.Forms.ComboBox();
             this.TComboBoxCiudades = new System.Windows.Forms.ComboBox();
             this.TTextBoxDireccion = new System.Windows.Forms.TextBox();
             this.TLabelDireccion = new System.Windows.Forms.Label();
             this.TTextBoxEmail = new System.Windows.Forms.TextBox();
             this.TLabelEmail = new System.Windows.Forms.Label();
-            this.TTextBoxPuestoAc = new System.Windows.Forms.TextBox();
+            this.TTextBoxPass = new System.Windows.Forms.TextBox();
             this.TTextBoxTelefono = new System.Windows.Forms.TextBox();
             this.TTextBoxApellidos = new System.Windows.Forms.TextBox();
             this.TTextBoxNombre = new System.Windows.Forms.TextBox();
@@ -54,7 +55,7 @@
             this.TLabelDNI = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.TLabelTitulo = new System.Windows.Forms.Label();
-            this.TComboBoxPuestoAc = new System.Windows.Forms.ComboBox();
+            this.TLabelPass = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.TGroupBoxAlta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -110,6 +111,7 @@
             // TGroupBoxAlta
             // 
             this.TGroupBoxAlta.BackColor = System.Drawing.Color.Transparent;
+            this.TGroupBoxAlta.Controls.Add(this.TLabelPass);
             this.TGroupBoxAlta.Controls.Add(this.TComboBoxPuestoAc);
             this.TGroupBoxAlta.Controls.Add(this.TComboBoxProvincias);
             this.TGroupBoxAlta.Controls.Add(this.TComboBoxCiudades);
@@ -117,7 +119,7 @@
             this.TGroupBoxAlta.Controls.Add(this.TLabelDireccion);
             this.TGroupBoxAlta.Controls.Add(this.TTextBoxEmail);
             this.TGroupBoxAlta.Controls.Add(this.TLabelEmail);
-            this.TGroupBoxAlta.Controls.Add(this.TTextBoxPuestoAc);
+            this.TGroupBoxAlta.Controls.Add(this.TTextBoxPass);
             this.TGroupBoxAlta.Controls.Add(this.TTextBoxTelefono);
             this.TGroupBoxAlta.Controls.Add(this.TTextBoxApellidos);
             this.TGroupBoxAlta.Controls.Add(this.TTextBoxNombre);
@@ -135,6 +137,18 @@
             this.TGroupBoxAlta.TabIndex = 27;
             this.TGroupBoxAlta.TabStop = false;
             this.TGroupBoxAlta.Text = "Datos Personal";
+            // 
+            // TComboBoxPuestoAc
+            // 
+            this.TComboBoxPuestoAc.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.TComboBoxPuestoAc.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.TComboBoxPuestoAc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TComboBoxPuestoAc.FormattingEnabled = true;
+            this.TComboBoxPuestoAc.Location = new System.Drawing.Point(150, 238);
+            this.TComboBoxPuestoAc.Name = "TComboBoxPuestoAc";
+            this.TComboBoxPuestoAc.Size = new System.Drawing.Size(137, 21);
+            this.TComboBoxPuestoAc.TabIndex = 46;
+            this.TComboBoxPuestoAc.Click += new System.EventHandler(this.TComboBoxPuestoAc_Click);
             // 
             // TComboBoxProvincias
             // 
@@ -196,13 +210,13 @@
             this.TLabelEmail.TabIndex = 43;
             this.TLabelEmail.Text = "Email";
             // 
-            // TTextBoxPuestoAc
+            // TTextBoxPass
             // 
-            this.TTextBoxPuestoAc.Location = new System.Drawing.Point(150, 238);
-            this.TTextBoxPuestoAc.Name = "TTextBoxPuestoAc";
-            this.TTextBoxPuestoAc.Size = new System.Drawing.Size(137, 20);
-            this.TTextBoxPuestoAc.TabIndex = 8;
-            this.TTextBoxPuestoAc.Leave += new System.EventHandler(this.TTextBoxPuestoAc_Leave);
+            this.TTextBoxPass.Location = new System.Drawing.Point(150, 261);
+            this.TTextBoxPass.Name = "TTextBoxPass";
+            this.TTextBoxPass.Size = new System.Drawing.Size(137, 20);
+            this.TTextBoxPass.TabIndex = 8;
+            this.TTextBoxPass.Leave += new System.EventHandler(this.TTextBoxPass_Leave);
             // 
             // TTextBoxTelefono
             // 
@@ -317,17 +331,14 @@
             this.TLabelTitulo.TabIndex = 40;
             this.TLabelTitulo.Text = "Datos del Personal";
             // 
-            // TComboBoxPuestoAc
+            // TLabelPass
             // 
-            this.TComboBoxPuestoAc.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.TComboBoxPuestoAc.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.TComboBoxPuestoAc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.TComboBoxPuestoAc.FormattingEnabled = true;
-            this.TComboBoxPuestoAc.Location = new System.Drawing.Point(150, 264);
-            this.TComboBoxPuestoAc.Name = "TComboBoxPuestoAc";
-            this.TComboBoxPuestoAc.Size = new System.Drawing.Size(137, 21);
-            this.TComboBoxPuestoAc.TabIndex = 46;
-            this.TComboBoxPuestoAc.Click += new System.EventHandler(this.TComboBoxPuestoAc_Click);
+            this.TLabelPass.AutoSize = true;
+            this.TLabelPass.Location = new System.Drawing.Point(79, 268);
+            this.TLabelPass.Name = "TLabelPass";
+            this.TLabelPass.Size = new System.Drawing.Size(53, 13);
+            this.TLabelPass.TabIndex = 47;
+            this.TLabelPass.Text = "Password";
             // 
             // GestionPersonal
             // 
@@ -370,7 +381,7 @@
         private System.Windows.Forms.Label TLabelDireccion;
         private System.Windows.Forms.TextBox TTextBoxEmail;
         private System.Windows.Forms.Label TLabelEmail;
-        private System.Windows.Forms.TextBox TTextBoxPuestoAc;
+        private System.Windows.Forms.TextBox TTextBoxPass;
         private System.Windows.Forms.TextBox TTextBoxTelefono;
         private System.Windows.Forms.TextBox TTextBoxApellidos;
         private System.Windows.Forms.TextBox TTextBoxNombre;
@@ -387,5 +398,6 @@
         private System.Windows.Forms.Label TLabelCiudades;
         private System.Windows.Forms.Label TLabelTitulo;
         private System.Windows.Forms.ComboBox TComboBoxPuestoAc;
+        private System.Windows.Forms.Label TLabelPass;
     }
 }

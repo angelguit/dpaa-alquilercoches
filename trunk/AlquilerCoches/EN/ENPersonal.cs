@@ -24,7 +24,7 @@ namespace EN
         private string ciudad;
         private string provincia;
         private string puestoac;
-        private string otrospuestos;
+        private string pass;
 
 
        private CAD.CADPersonal cadPersonal = new CAD.CADPersonal();
@@ -74,10 +74,10 @@ namespace EN
             get { return puestoac; }
             set { puestoac = value; }
         }
-        public string OtrosPuestos
+        public string Pass
         {
-            get { return otrospuestos; }
-            set { otrospuestos = value; }
+            get { return pass; }
+            set { pass = value; }
         }
 
         public DataSet ObtenerListaPersonal(string todo)
@@ -156,7 +156,7 @@ namespace EN
                 linea[6] = ciudad;
                 linea[7] = provincia;
                 linea[8] = puestoac;
-                linea[9] = otrospuestos;
+                linea[9] = pass;
                 resultado.Tables["Personal"].Rows.Add(linea);
                 cadPersonal.AnyadirPersonal(resultado);
             }
@@ -204,7 +204,7 @@ namespace EN
                 ciudad = persona.Tables["Personal"].Rows[0][6].ToString();
                 provincia = persona.Tables["Personal"].Rows[0][7].ToString();
                 puestoac = persona.Tables["Personal"].Rows[0][8].ToString();
-                otrospuestos= persona.Tables["Personal"].Rows[0][9].ToString();
+                pass = persona.Tables["Personal"].Rows[0][9].ToString();
 
             }
             catch (Exception ex)
