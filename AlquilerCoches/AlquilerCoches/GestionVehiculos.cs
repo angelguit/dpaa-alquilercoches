@@ -73,6 +73,7 @@ namespace AlquilerCoches
             TButtonCancelar.Enabled = false;
             TRadioButtonEstado.Checked = false;
             TRadioButtonRevision.Checked = false;
+            TRadioButtonReservado.Checked = false;
             errorProvider1.Clear();
         }
 
@@ -446,7 +447,8 @@ namespace AlquilerCoches
             TTextBoxPrecioCompra.Text = vehiculos.PrecioCompra.ToString();
             TTextBoxPrecioVenta.Text = vehiculos.PrecioVenta.ToString();
             if (vehiculos.Estado == "Disponible") TRadioButtonEstado.Checked = true;
-            else TRadioButtonRevision.Checked = true;
+            else if (vehiculos.Estado == "Revision") TRadioButtonRevision.Checked = true;
+            else TRadioButtonReservado.Checked = true;
         }
         void guardaCampos()
         {
@@ -458,7 +460,7 @@ namespace AlquilerCoches
             vehiculos.KM = TTextBoxKM.Text;
             vehiculos.PrecioCompra = TTextBoxPrecioCompra.Text;
             vehiculos.PrecioVenta = TTextBoxPrecioVenta.Text;
-            vehiculos.Estado = (TRadioButtonEstado.Checked) ? "Disponible" : "Revision";
+            vehiculos.Estado = (TRadioButtonEstado.Checked) ? "Disponible" : (TRadioButtonRevision.Checked) ?"Revision" : "Reservado";
         }
 
         void rellenaCategorias()

@@ -160,7 +160,7 @@ namespace EN
                 vehiculo.Tables["Vehiculo"].Rows[0][5] = int.Parse(garantia);
                 vehiculo.Tables["Vehiculo"].Rows[0][6] = int.Parse(km);
                 vehiculo.Tables["Vehiculo"].Rows[0][7] = estado;
-                //vehiculo.Tables["Vehiculo"].Rows[0][8] = categoria;
+                vehiculo.Tables["Vehiculo"].Rows[0][8] = categoria;
                 cadVehiculo.EditarVehiculo(vehiculo);
 
             /*}

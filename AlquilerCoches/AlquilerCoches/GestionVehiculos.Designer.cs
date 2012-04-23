@@ -67,6 +67,7 @@
             this.TButtonEditar = new System.Windows.Forms.Button();
             this.TButtonCancelar = new System.Windows.Forms.Button();
             this.TButtonOK = new System.Windows.Forms.Button();
+            this.TRadioButtonReservado = new System.Windows.Forms.RadioButton();
             this.TGroupBoxDatosVehiculo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TPictureBoxMatricula)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -80,6 +81,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TGroupBoxDatosVehiculo.BackColor = System.Drawing.Color.Transparent;
+            this.TGroupBoxDatosVehiculo.Controls.Add(this.TRadioButtonReservado);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TComboBoxCategoria);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TTextBoxGarantia);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelGarantia);
@@ -512,6 +514,18 @@
             this.TButtonOK.UseVisualStyleBackColor = true;
             this.TButtonOK.Click += new System.EventHandler(this.TButtonOK_Click);
             // 
+            // TRadioButtonReservado
+            // 
+            this.TRadioButtonReservado.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.TRadioButtonReservado.AutoSize = true;
+            this.TRadioButtonReservado.Location = new System.Drawing.Point(280, 240);
+            this.TRadioButtonReservado.Name = "TRadioButtonReservado";
+            this.TRadioButtonReservado.Size = new System.Drawing.Size(77, 17);
+            this.TRadioButtonReservado.TabIndex = 42;
+            this.TRadioButtonReservado.TabStop = true;
+            this.TRadioButtonReservado.Text = "Reservado";
+            this.TRadioButtonReservado.UseVisualStyleBackColor = true;
+            // 
             // GestionVehiculos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -585,5 +599,6 @@
         private System.Windows.Forms.Button TButtonAnyadir;
         private System.Windows.Forms.Button TButtonEditar;
         private System.Windows.Forms.ComboBox TComboBoxCategoria;
+        private System.Windows.Forms.RadioButton TRadioButtonReservado;
     }
 }
