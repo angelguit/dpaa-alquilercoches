@@ -54,6 +54,7 @@
             this.TLabelDNI = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.TLabelTitulo = new System.Windows.Forms.Label();
+            this.TComboBoxPuestoAc = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.TGroupBoxAlta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -109,6 +110,7 @@
             // TGroupBoxAlta
             // 
             this.TGroupBoxAlta.BackColor = System.Drawing.Color.Transparent;
+            this.TGroupBoxAlta.Controls.Add(this.TComboBoxPuestoAc);
             this.TGroupBoxAlta.Controls.Add(this.TComboBoxProvincias);
             this.TGroupBoxAlta.Controls.Add(this.TComboBoxCiudades);
             this.TGroupBoxAlta.Controls.Add(this.TTextBoxDireccion);
@@ -315,6 +317,18 @@
             this.TLabelTitulo.TabIndex = 40;
             this.TLabelTitulo.Text = "Datos del Personal";
             // 
+            // TComboBoxPuestoAc
+            // 
+            this.TComboBoxPuestoAc.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.TComboBoxPuestoAc.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.TComboBoxPuestoAc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TComboBoxPuestoAc.FormattingEnabled = true;
+            this.TComboBoxPuestoAc.Location = new System.Drawing.Point(150, 264);
+            this.TComboBoxPuestoAc.Name = "TComboBoxPuestoAc";
+            this.TComboBoxPuestoAc.Size = new System.Drawing.Size(137, 21);
+            this.TComboBoxPuestoAc.TabIndex = 46;
+            this.TComboBoxPuestoAc.Click += new System.EventHandler(this.TComboBoxPuestoAc_Click);
+            // 
             // GestionPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -372,5 +386,6 @@
         private System.Windows.Forms.ComboBox TComboBoxCiudades;
         private System.Windows.Forms.Label TLabelCiudades;
         private System.Windows.Forms.Label TLabelTitulo;
+        private System.Windows.Forms.ComboBox TComboBoxPuestoAc;
     }
 }

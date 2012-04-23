@@ -207,6 +207,25 @@ namespace CAD
             else
                 return false;
         }
+
+        public DataSet ConsultaTrabajo()
+        {
+            DataSet dsPersonal = new DataSet();
+            SqlDataAdapter daPersonal;
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                string consulta = "Select * from PuestoTrabajo";
+                daPersonal = new SqlDataAdapter(consulta, conexion);
+                daPersonal.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daPersonal.Fill(dsPersonal, "PuestoTrabajo");
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            return dsPersonal;
+        }
     }
 
 
