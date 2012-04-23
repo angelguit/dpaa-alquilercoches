@@ -52,6 +52,7 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.TIDtextBox = new System.Windows.Forms.TextBox();
+            this.TButtonBorrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.TDataGridViewPedidos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -133,6 +134,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.TButtonBorrar);
             this.groupBox1.Controls.Add(this.TModelocomboBox3);
             this.groupBox1.Controls.Add(this.TMarcacomboBox2);
             this.groupBox1.Controls.Add(this.TProveecomboBox1);
@@ -161,6 +163,7 @@
             this.TModelocomboBox3.Name = "TModelocomboBox3";
             this.TModelocomboBox3.Size = new System.Drawing.Size(259, 21);
             this.TModelocomboBox3.TabIndex = 41;
+            this.TModelocomboBox3.Click += new System.EventHandler(this.TModelocomboBox3_Click);
             // 
             // TMarcacomboBox2
             // 
@@ -170,6 +173,7 @@
             this.TMarcacomboBox2.Name = "TMarcacomboBox2";
             this.TMarcacomboBox2.Size = new System.Drawing.Size(259, 21);
             this.TMarcacomboBox2.TabIndex = 40;
+            this.TMarcacomboBox2.Click += new System.EventHandler(this.TMarcacomboBox2_Click);
             // 
             // TProveecomboBox1
             // 
@@ -179,6 +183,7 @@
             this.TProveecomboBox1.Name = "TProveecomboBox1";
             this.TProveecomboBox1.Size = new System.Drawing.Size(260, 21);
             this.TProveecomboBox1.TabIndex = 39;
+            this.TProveecomboBox1.Click += new System.EventHandler(this.TProveecomboBox1_Click);
             // 
             // label4
             // 
@@ -305,6 +310,20 @@
             this.TIDtextBox.Size = new System.Drawing.Size(158, 20);
             this.TIDtextBox.TabIndex = 2;
             // 
+            // TButtonBorrar
+            // 
+            this.TButtonBorrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.TButtonBorrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.TButtonBorrar.Image = global::AlquilerCoches.Properties.Resources.Delete_icon;
+            this.TButtonBorrar.Location = new System.Drawing.Point(564, 117);
+            this.TButtonBorrar.Name = "TButtonBorrar";
+            this.TButtonBorrar.Size = new System.Drawing.Size(71, 63);
+            this.TButtonBorrar.TabIndex = 42;
+            this.TButtonBorrar.Text = "Borrar";
+            this.TButtonBorrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.TButtonBorrar.UseVisualStyleBackColor = true;
+            this.TButtonBorrar.Click += new System.EventHandler(this.TButtonBorrar_Click);
+            // 
             // BuscarPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -363,5 +382,6 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TIDtextBox;
+        private System.Windows.Forms.Button TButtonBorrar;
     }
 }
