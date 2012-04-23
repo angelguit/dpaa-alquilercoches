@@ -86,6 +86,7 @@
             this.TRadioButtonVentas.TabStop = true;
             this.TRadioButtonVentas.Text = "Ventas";
             this.TRadioButtonVentas.UseVisualStyleBackColor = false;
+            this.TRadioButtonVentas.CheckedChanged += new System.EventHandler(this.TRadioButtonVentas_CheckedChanged);
             // 
             // TLabelSelFac
             // 
@@ -247,7 +248,7 @@
             this.TLabelNRes.Name = "TLabelNRes";
             this.TLabelNRes.Size = new System.Drawing.Size(90, 13);
             this.TLabelNRes.TabIndex = 15;
-            this.TLabelNRes.Text = "Numero Reserva:";
+            this.TLabelNRes.Text = "Número Reserva:";
             // 
             // TDataGridViewReservas
             // 
