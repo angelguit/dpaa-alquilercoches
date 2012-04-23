@@ -482,7 +482,6 @@ namespace AlquilerCoches
                 GestionPedidos F1 = new GestionPedidos();
                 F1.MdiParent = this;
                 F1.Show();
-                //F8.WindowState = FormWindowState.Maximized;
             }
         }
 
@@ -503,9 +502,16 @@ namespace AlquilerCoches
 
         private void acercadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            acercade acerca = new acercade();
-            acerca.MdiParent = this;
-            acerca.Show();
+            if (Application.OpenForms["acercade"] != null)
+            {
+                Application.OpenForms["acercade"].Activate();
+            }
+            else
+            {
+                acercade acerca = new acercade();
+                acerca.MdiParent = this;
+                acerca.Show();
+            }
         }
 
      
