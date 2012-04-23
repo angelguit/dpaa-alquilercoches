@@ -202,5 +202,19 @@ namespace EN
                 throw (ex);
             }
         }
+
+        public DataSet ObtenerVentasRealizadas(string sentencia)
+        {
+            DataSet resultado = new DataSet();
+            try
+            {
+                resultado = cadVentasRealizadas.ObtenerVentasRealizadas(sentencia);
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            return resultado;
+        }
     }
 }
