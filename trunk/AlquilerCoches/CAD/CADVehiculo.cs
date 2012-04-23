@@ -122,15 +122,11 @@ namespace CAD
                 {
                     consulta = "Select Matricula from Vehiculo where Estado = 'Disponible' and Modelo='" + modelo + "' and Marca='" + marca + "'";
                 }
-                else if (!marca.Equals(""))
-                {
-                    consulta = "Select Matricula from Vehiculo where Marca='" + marca + "'";
-                }
                 else
                 {
-                    consulta = "Select Matricula from Vehiculo";
+                    consulta = "Select Matricula from Vehiculo where 1=2";
                 }
-
+   
                 SqlDataAdapter daVehiculo = new SqlDataAdapter(consulta, conexion);
                 daVehiculo.MissingSchemaAction = MissingSchemaAction.AddWithKey;
                 daVehiculo.Fill(dsVehiculo, nombreTabla);
