@@ -118,7 +118,7 @@ namespace AlquilerCoches
                         }
                         else
                         {
-                            sentencia += " and FechaInicio between '" + Convert.ToDateTime(TDateTimePickerFechaFin.Value.ToString()) + "' and '" + Convert.ToDateTime(TDateTimePickerFechaInicio.Value.ToString()) + "'";
+                            sentencia += " and FechaInicio between '" + Convert.ToDateTime(TDateTimePickerFechaInicio.Value.ToString()) + "' and '" + Convert.ToDateTime(TDateTimePickerFechaFin.Value.ToString()) + "'";
                             sentencia += " and FechaFin <= '" + Convert.ToDateTime(TDateTimePickerFechaFin.Value.ToString()) + "'";
                         }
                     }
