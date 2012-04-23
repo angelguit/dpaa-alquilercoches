@@ -51,6 +51,7 @@
             this.gestionVentasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ponerEnVentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mostrarVehículosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarVentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionReservasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevaReservaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buscarReservasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,22 +67,24 @@
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Gestion = new System.Windows.Forms.TabPage();
-            this.TLabelProveedores = new System.Windows.Forms.Label();
-            this.TButtonProveedores = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.TButtonSalir = new System.Windows.Forms.Button();
             this.TLabelFactura = new System.Windows.Forms.Label();
             this.TButtonFactura = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.TButtonVehiculos = new System.Windows.Forms.Button();
             this.TButtonCliente = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.registrarVentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.TLabelProveedores = new System.Windows.Forms.Label();
+            this.TButtonProveedores = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.TButtonVehiculos = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.TButtonAltaCliente = new System.Windows.Forms.Button();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.Gestion.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -118,28 +121,28 @@
             // darAltaToolStripMenuItem1
             // 
             this.darAltaToolStripMenuItem1.Name = "darAltaToolStripMenuItem1";
-            this.darAltaToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.darAltaToolStripMenuItem1.Size = new System.Drawing.Size(116, 22);
             this.darAltaToolStripMenuItem1.Text = "Dar Alta";
             this.darAltaToolStripMenuItem1.Click += new System.EventHandler(this.darAltaToolStripMenuItem1_Click);
             // 
             // buscarToolStripMenuItem
             // 
             this.buscarToolStripMenuItem.Name = "buscarToolStripMenuItem";
-            this.buscarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.buscarToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.buscarToolStripMenuItem.Text = "Buscar";
             this.buscarToolStripMenuItem.Click += new System.EventHandler(this.buscarToolStripMenuItem_Click);
             // 
             // editarToolStripMenuItem
             // 
             this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.editarToolStripMenuItem.Text = "Editar";
             this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
             // 
             // borrarToolStripMenuItem
             // 
             this.borrarToolStripMenuItem.Name = "borrarToolStripMenuItem";
-            this.borrarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.borrarToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.borrarToolStripMenuItem.Text = "Borrar";
             this.borrarToolStripMenuItem.Click += new System.EventHandler(this.borrarToolStripMenuItem_Click);
             // 
@@ -259,6 +262,13 @@
             this.mostrarVehículosToolStripMenuItem.Text = "Ver y Editar Ventas";
             this.mostrarVehículosToolStripMenuItem.Click += new System.EventHandler(this.mostrarVehículosToolStripMenuItem_Click);
             // 
+            // registrarVentaToolStripMenuItem
+            // 
+            this.registrarVentaToolStripMenuItem.Name = "registrarVentaToolStripMenuItem";
+            this.registrarVentaToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.registrarVentaToolStripMenuItem.Text = "Registrar Venta";
+            this.registrarVentaToolStripMenuItem.Click += new System.EventHandler(this.registrarVentaToolStripMenuItem_Click);
+            // 
             // gestionReservasToolStripMenuItem
             // 
             this.gestionReservasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -365,15 +375,13 @@
             // 
             this.Gestion.BackColor = System.Drawing.Color.LightGray;
             this.Gestion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Gestion.Controls.Add(this.TLabelProveedores);
-            this.Gestion.Controls.Add(this.TButtonProveedores);
+            this.Gestion.Controls.Add(this.label3);
+            this.Gestion.Controls.Add(this.TButtonAltaCliente);
             this.Gestion.Controls.Add(this.button1);
             this.Gestion.Controls.Add(this.TButtonSalir);
             this.Gestion.Controls.Add(this.TLabelFactura);
             this.Gestion.Controls.Add(this.TButtonFactura);
-            this.Gestion.Controls.Add(this.label2);
             this.Gestion.Controls.Add(this.label1);
-            this.Gestion.Controls.Add(this.TButtonVehiculos);
             this.Gestion.Controls.Add(this.TButtonCliente);
             this.Gestion.Location = new System.Drawing.Point(4, 22);
             this.Gestion.Name = "Gestion";
@@ -381,31 +389,6 @@
             this.Gestion.Size = new System.Drawing.Size(137, 675);
             this.Gestion.TabIndex = 0;
             this.Gestion.Text = "Géstion";
-            // 
-            // TLabelProveedores
-            // 
-            this.TLabelProveedores.AutoSize = true;
-            this.TLabelProveedores.Location = new System.Drawing.Point(34, 495);
-            this.TLabelProveedores.Name = "TLabelProveedores";
-            this.TLabelProveedores.Size = new System.Drawing.Size(67, 13);
-            this.TLabelProveedores.TabIndex = 17;
-            this.TLabelProveedores.Text = "Proveedores";
-            this.TLabelProveedores.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // TButtonProveedores
-            // 
-            this.TButtonProveedores.BackColor = System.Drawing.Color.Transparent;
-            this.TButtonProveedores.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("TButtonProveedores.BackgroundImage")));
-            this.TButtonProveedores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.TButtonProveedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TButtonProveedores.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.TButtonProveedores.Location = new System.Drawing.Point(6, 395);
-            this.TButtonProveedores.Name = "TButtonProveedores";
-            this.TButtonProveedores.Size = new System.Drawing.Size(125, 86);
-            this.TButtonProveedores.TabIndex = 16;
-            this.TButtonProveedores.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.TButtonProveedores.UseVisualStyleBackColor = true;
-            this.TButtonProveedores.Click += new System.EventHandler(this.TButtonProveedores_Click);
             // 
             // button1
             // 
@@ -435,7 +418,7 @@
             // TLabelFactura
             // 
             this.TLabelFactura.AutoSize = true;
-            this.TLabelFactura.Location = new System.Drawing.Point(34, 365);
+            this.TLabelFactura.Location = new System.Drawing.Point(36, 514);
             this.TLabelFactura.Name = "TLabelFactura";
             this.TLabelFactura.Size = new System.Drawing.Size(63, 13);
             this.TLabelFactura.TabIndex = 14;
@@ -449,22 +432,12 @@
             this.TButtonFactura.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.TButtonFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TButtonFactura.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.TButtonFactura.Location = new System.Drawing.Point(6, 264);
+            this.TButtonFactura.Location = new System.Drawing.Point(8, 413);
             this.TButtonFactura.Name = "TButtonFactura";
             this.TButtonFactura.Size = new System.Drawing.Size(125, 86);
             this.TButtonFactura.TabIndex = 13;
             this.TButtonFactura.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.TButtonFactura.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 236);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 13);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Gestión Vehiculos";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -474,21 +447,6 @@
             this.label1.Size = new System.Drawing.Size(83, 13);
             this.label1.TabIndex = 11;
             this.label1.Text = "Gestión Clientes";
-            // 
-            // TButtonVehiculos
-            // 
-            this.TButtonVehiculos.BackColor = System.Drawing.Color.Transparent;
-            this.TButtonVehiculos.BackgroundImage = global::AlquilerCoches.Properties.Resources.GestionVehiculos;
-            this.TButtonVehiculos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.TButtonVehiculos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TButtonVehiculos.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.TButtonVehiculos.Location = new System.Drawing.Point(6, 138);
-            this.TButtonVehiculos.Name = "TButtonVehiculos";
-            this.TButtonVehiculos.Size = new System.Drawing.Size(125, 86);
-            this.TButtonVehiculos.TabIndex = 10;
-            this.TButtonVehiculos.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.TButtonVehiculos.UseVisualStyleBackColor = true;
-            this.TButtonVehiculos.Click += new System.EventHandler(this.TButtonVehiculos_Click);
             // 
             // TButtonCliente
             // 
@@ -504,20 +462,84 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.Color.LightGray;
+            this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Controls.Add(this.TButtonVehiculos);
+            this.tabPage1.Controls.Add(this.TLabelProveedores);
+            this.tabPage1.Controls.Add(this.TButtonProveedores);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(137, 675);
             this.tabPage1.TabIndex = 1;
             this.tabPage1.Text = "Administración";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // registrarVentaToolStripMenuItem
+            // TLabelProveedores
             // 
-            this.registrarVentaToolStripMenuItem.Name = "registrarVentaToolStripMenuItem";
-            this.registrarVentaToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
-            this.registrarVentaToolStripMenuItem.Text = "Registrar Venta";
-            this.registrarVentaToolStripMenuItem.Click += new System.EventHandler(this.registrarVentaToolStripMenuItem_Click);
+            this.TLabelProveedores.AutoSize = true;
+            this.TLabelProveedores.Location = new System.Drawing.Point(36, 118);
+            this.TLabelProveedores.Name = "TLabelProveedores";
+            this.TLabelProveedores.Size = new System.Drawing.Size(67, 13);
+            this.TLabelProveedores.TabIndex = 19;
+            this.TLabelProveedores.Text = "Proveedores";
+            this.TLabelProveedores.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TButtonProveedores
+            // 
+            this.TButtonProveedores.BackColor = System.Drawing.Color.Transparent;
+            this.TButtonProveedores.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("TButtonProveedores.BackgroundImage")));
+            this.TButtonProveedores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.TButtonProveedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TButtonProveedores.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.TButtonProveedores.Location = new System.Drawing.Point(8, 18);
+            this.TButtonProveedores.Name = "TButtonProveedores";
+            this.TButtonProveedores.Size = new System.Drawing.Size(125, 86);
+            this.TButtonProveedores.TabIndex = 18;
+            this.TButtonProveedores.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.TButtonProveedores.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(24, 250);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(92, 13);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Gestión Vehiculos";
+            // 
+            // TButtonVehiculos
+            // 
+            this.TButtonVehiculos.BackColor = System.Drawing.Color.Transparent;
+            this.TButtonVehiculos.BackgroundImage = global::AlquilerCoches.Properties.Resources.GestionVehiculos;
+            this.TButtonVehiculos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.TButtonVehiculos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TButtonVehiculos.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.TButtonVehiculos.Location = new System.Drawing.Point(6, 152);
+            this.TButtonVehiculos.Name = "TButtonVehiculos";
+            this.TButtonVehiculos.Size = new System.Drawing.Size(125, 86);
+            this.TButtonVehiculos.TabIndex = 20;
+            this.TButtonVehiculos.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.TButtonVehiculos.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(24, 243);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(83, 13);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Gestión Clientes";
+            // 
+            // TButtonAltaCliente
+            // 
+            this.TButtonAltaCliente.BackgroundImage = global::AlquilerCoches.Properties.Resources.Cliente1;
+            this.TButtonAltaCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.TButtonAltaCliente.Location = new System.Drawing.Point(6, 148);
+            this.TButtonAltaCliente.Name = "TButtonAltaCliente";
+            this.TButtonAltaCliente.Size = new System.Drawing.Size(125, 88);
+            this.TButtonAltaCliente.TabIndex = 16;
+            this.TButtonAltaCliente.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.TButtonAltaCliente.UseVisualStyleBackColor = true;
             // 
             // MDIPral
             // 
@@ -546,6 +568,8 @@
             this.tabControl1.ResumeLayout(false);
             this.Gestion.ResumeLayout(false);
             this.Gestion.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -573,9 +597,7 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage Gestion;
         private System.Windows.Forms.Button TButtonCliente;
-        private System.Windows.Forms.Button TButtonVehiculos;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem TToolStripMenuItemNuevaFactura;
         private System.Windows.Forms.ToolStripMenuItem TToolStripMenuItemBuscarFactura;
@@ -590,8 +612,6 @@
         private System.Windows.Forms.Button TButtonFactura;
         private System.Windows.Forms.Button TButtonSalir;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button TButtonProveedores;
-        private System.Windows.Forms.Label TLabelProveedores;
         private System.Windows.Forms.ToolStripMenuItem gestionReservasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevaReservaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem buscarReservasToolStripMenuItem;
@@ -601,6 +621,12 @@
         private System.Windows.Forms.ToolStripMenuItem realizarPedidoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem buscarPedidoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarVentaToolStripMenuItem;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button TButtonAltaCliente;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button TButtonVehiculos;
+        private System.Windows.Forms.Label TLabelProveedores;
+        private System.Windows.Forms.Button TButtonProveedores;
     }
 }
 
