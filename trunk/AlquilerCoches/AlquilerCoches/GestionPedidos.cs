@@ -14,6 +14,7 @@ namespace AlquilerCoches
     {
         int k = 0;
         string editar = "";
+        string cambiar = "";
         public GestionPedidos()
         {
             InitializeComponent();
@@ -135,8 +136,8 @@ namespace AlquilerCoches
                 }
 
             }
-            editar = "NO";
 
+            else cambiar = "SI";
         }
         
         private void TButtonOK_Click(object sender, EventArgs e)
@@ -157,6 +158,7 @@ namespace AlquilerCoches
                 EN.ENPedidos enPedidos = new EN.ENPedidos();
 
                 string envio = "";
+              
 
                 if (TEnvioButtonOrdinario.Checked==true)
                 {
@@ -180,6 +182,7 @@ namespace AlquilerCoches
                 if (editar == "SI")
                 {
                     enPedidos.EditarPedidos();
+                    MessageBox.Show("yepa");
                     label1.Text = "* Pedido modificado con éxito. *";
 
                 }
@@ -189,6 +192,10 @@ namespace AlquilerCoches
                     label1.Text = "* Pedido realizado con éxito. *";
                 }
                 editar = "SI";
+                if (cambiar == "SI")
+                {
+                    editar = "NO";
+                }
 
 
                 groupBox1.Enabled = false;
