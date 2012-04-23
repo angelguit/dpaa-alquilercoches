@@ -486,6 +486,21 @@ namespace AlquilerCoches
             }
         }
 
+        private void TButtonAltaCliente_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["GestionCientes"] != null)
+            {
+                Application.OpenForms["GestionClientes"].Activate();
+            }
+            else
+            {
+                GestionClientes F1 = new GestionClientes();
+                F1.MdiParent = this;
+                F1.Show();
+            }
+           
+        }
+
      
      }   
 }
