@@ -416,7 +416,7 @@ namespace AlquilerCoches
                         }
                         else
                         {
-                            MessageBox.Show("El vehiculo no se encuentra disponible", "ERROR");
+                            MessageBox.Show("El vehiculo no se encuentra disponible", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         break;
                     case "Editar":
@@ -427,7 +427,7 @@ namespace AlquilerCoches
                         guardaCampos();
                         if (vehiculos.ComprobarDuplicados())
                         {
-                            MessageBox.Show("Exite un vehiculo registrado con la misma matricula", "Error");
+                            MessageBox.Show("Exite un vehiculo registrado con la misma matricula", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         else
                         {
@@ -530,17 +530,17 @@ namespace AlquilerCoches
             
             if(comprobar != "")
             {
-                MessageBox.Show("Solucione los Errores Primero", "ERROR");
+                MessageBox.Show("Solucione los Errores Primero", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 error = true;
             }
             else if (TComboBoxCategoria.SelectedIndex == -1)
             {
-                MessageBox.Show("Debe seleccionar una Categoria", "ERROR");
+                MessageBox.Show("Debe seleccionar una Categoria", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 error = true;
             }
             else if(TTextBoxMatricula.Text=="" || TTextBoxMarca.Text=="" || TTextBoxModelo.Text=="" || TTextBoxPrecioCompra.Text=="" || TTextBoxPrecioVenta.Text=="" || TTextBoxGarantia.Text=="" || TTextBoxKM.Text=="")
             {
-                MessageBox.Show("Hay campos vacios", "ERROR");
+                MessageBox.Show("Hay campos vacios", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 error=true;
             }
 
