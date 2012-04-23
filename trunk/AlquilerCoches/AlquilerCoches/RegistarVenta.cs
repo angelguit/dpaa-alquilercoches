@@ -15,7 +15,6 @@ namespace AlquilerCoches
         public bool incorrecto = false;
         private EN.ENVentasRealizadas realizadas = new EN.ENVentasRealizadas();
         private EN.ENVentas ventas = new EN.ENVentas();
-        private EN.ENCliente cliente = new EN.ENCliente();
 
         public RegistrarVenta()
         {
@@ -27,6 +26,7 @@ namespace AlquilerCoches
         public void limpiaFormulario()
         {
             ventas.ClearEnVentas();
+            realizadas.ClearEnVentas();
             TListBoxMarcas.Items.Clear();
             TListBoxModelos.Items.Clear();
             TListBoxMatriculas.Items.Clear();
@@ -48,11 +48,11 @@ namespace AlquilerCoches
             TDateTimePicker1.Text = "";
         }
 
-        private void rellenaCliente()
+       /* private void rellenaCliente()
         {
             TTextBoxNombre.Text = cliente.Nombre;
             TTextBoxApellidos.Text = cliente.Apellidos;
-        }
+        }*/
 
         private void rellenaMarcas()
         {
@@ -196,10 +196,15 @@ namespace AlquilerCoches
 
         private void TButtonBuscar_Click(object sender, EventArgs e)
         {
+            EN.ENCliente cliente = new EN.ENCliente();
+
             if (incorrecto == false)
             {
-                cliente.ObtenerDatosClienteConDni(TTextBoxDNI.Text);
-                rellenaCliente();
+                string dni = TTextBoxDNI.Text.ToString();
+
+                cliente.ObtenerDatosClienteConDni(dni);
+                 TTextBoxNombre.Text = cliente.Nombre;
+                 TTextBoxApellidos.Text = cliente.Apellidos;
             }
         }
 
