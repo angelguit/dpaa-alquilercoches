@@ -43,11 +43,10 @@ namespace AlquilerCoches
             TTextBoxMatricula.Enabled = false;
         }
 
-        private void rellenaClientes()
+        private void rellenaCliente()
         {
-            TListBoxClientes.Items.Clear();
-
-
+            TTextBoxNombre.Text = cliente.Nombre;
+            TTextBoxApellidos.Text = cliente.Apellidos;
         }
 
         private void rellenaMarcas()
@@ -180,9 +179,20 @@ namespace AlquilerCoches
             
         }
 
-        private void TGroupBoxDatosVehiculo_Enter(object sender, EventArgs e)
+        private void TTextBoxDNI_Leave(object sender, EventArgs e)
         {
+            if (!Regex.Match(TTextBoxDNI.Text, @"^(([A-Z]\d{8})|(\d{8}[A-Z]))$").Success)
+            {
+                errorProvider1.SetError(TTextBoxDNI, "DNI incorrecto, formato correcto: 00000000X");
+                incorrecto = true;
+            }
+            else { errorProvider1.SetError(TTextBoxDNI, ""); incorrecto = false; }
+        }
 
+        private void TButtonBuscar_Click(object sender, EventArgs e)
+        {
+            cliente.ObtenerDatosClienteConDni(TTextBoxDNI.Text);
+            rellenaCliente();
         }
 
     }
