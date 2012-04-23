@@ -180,6 +180,7 @@ namespace AlquilerCoches
 
         private void TButtonEliminar_Click(object sender, EventArgs e)
         {
+
             string cadena = "";
             EN.ENProveedores borrar = new EN.ENProveedores();
             if (arraydni.Count > 0)
