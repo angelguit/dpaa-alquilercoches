@@ -102,6 +102,7 @@ namespace AlquilerCoches
             realizadas.DNI = TTextBoxDNI.Text;
             realizadas.PrecioVenta = TTextBoxPrecioVenta.Text;
             realizadas.Fecha = TDateTimePicker1.Text.ToString();
+            realizadas.Facturado = "0";
         }
 
         private void TButtonAtras_Click(object sender, EventArgs e)
