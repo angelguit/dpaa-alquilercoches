@@ -31,17 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MDIPral));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.gestionVehiculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.darAltaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.buscarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.borrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestionVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.darAltaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.buscarOModificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestionProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.darDeAltaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.buscarModificarOEliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.darDeAltaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.buscarModificarOEliminarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,6 +44,17 @@
             this.gestionReservasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevaReservaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buscarReservasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionVehiculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.darAltaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.buscarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.borrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.darAltaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buscarOModificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.darDeAltaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buscarModificarOEliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionPedidosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.realizarPedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buscarPedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -95,13 +95,13 @@
             // 
             this.menuStrip.BackColor = System.Drawing.Color.LightGray;
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gestionVehiculosToolStripMenuItem,
-            this.gestionVentasToolStripMenuItem,
-            this.gestionProveedoresToolStripMenuItem,
             this.gestionClientesToolStripMenuItem,
             this.facturacionToolStripMenuItem,
             this.gestionVentasToolStripMenuItem1,
             this.gestionReservasToolStripMenuItem,
+            this.gestionVehiculosToolStripMenuItem,
+            this.gestionVentasToolStripMenuItem,
+            this.gestionProveedoresToolStripMenuItem,
             this.gestionPedidosToolStripMenuItem1,
             this.ayudaToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
@@ -110,91 +110,6 @@
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
             this.menuStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip_ItemClicked);
-            // 
-            // gestionVehiculosToolStripMenuItem
-            // 
-            this.gestionVehiculosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.darAltaToolStripMenuItem1,
-            this.buscarToolStripMenuItem,
-            this.editarToolStripMenuItem,
-            this.borrarToolStripMenuItem});
-            this.gestionVehiculosToolStripMenuItem.Name = "gestionVehiculosToolStripMenuItem";
-            this.gestionVehiculosToolStripMenuItem.Size = new System.Drawing.Size(113, 20);
-            this.gestionVehiculosToolStripMenuItem.Text = "Gestion Vehiculos";
-            // 
-            // darAltaToolStripMenuItem1
-            // 
-            this.darAltaToolStripMenuItem1.Name = "darAltaToolStripMenuItem1";
-            this.darAltaToolStripMenuItem1.Size = new System.Drawing.Size(116, 22);
-            this.darAltaToolStripMenuItem1.Text = "Dar Alta";
-            this.darAltaToolStripMenuItem1.Click += new System.EventHandler(this.darAltaToolStripMenuItem1_Click);
-            // 
-            // buscarToolStripMenuItem
-            // 
-            this.buscarToolStripMenuItem.Name = "buscarToolStripMenuItem";
-            this.buscarToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
-            this.buscarToolStripMenuItem.Text = "Buscar";
-            this.buscarToolStripMenuItem.Click += new System.EventHandler(this.buscarToolStripMenuItem_Click);
-            // 
-            // editarToolStripMenuItem
-            // 
-            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
-            this.editarToolStripMenuItem.Text = "Editar";
-            this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
-            // 
-            // borrarToolStripMenuItem
-            // 
-            this.borrarToolStripMenuItem.Name = "borrarToolStripMenuItem";
-            this.borrarToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
-            this.borrarToolStripMenuItem.Text = "Borrar";
-            this.borrarToolStripMenuItem.Click += new System.EventHandler(this.borrarToolStripMenuItem_Click);
-            // 
-            // gestionVentasToolStripMenuItem
-            // 
-            this.gestionVentasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.darAltaToolStripMenuItem,
-            this.buscarOModificarToolStripMenuItem});
-            this.gestionVentasToolStripMenuItem.Name = "gestionVentasToolStripMenuItem";
-            this.gestionVentasToolStripMenuItem.Size = new System.Drawing.Size(107, 20);
-            this.gestionVentasToolStripMenuItem.Text = "Gestion Personal";
-            // 
-            // darAltaToolStripMenuItem
-            // 
-            this.darAltaToolStripMenuItem.Name = "darAltaToolStripMenuItem";
-            this.darAltaToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
-            this.darAltaToolStripMenuItem.Text = "Dar de Alta";
-            this.darAltaToolStripMenuItem.Click += new System.EventHandler(this.darAltaToolStripMenuItem_Click);
-            // 
-            // buscarOModificarToolStripMenuItem
-            // 
-            this.buscarOModificarToolStripMenuItem.Name = "buscarOModificarToolStripMenuItem";
-            this.buscarOModificarToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
-            this.buscarOModificarToolStripMenuItem.Text = "Buscar, modificar o eliminar";
-            this.buscarOModificarToolStripMenuItem.Click += new System.EventHandler(this.buscarOModificarToolStripMenuItem_Click);
-            // 
-            // gestionProveedoresToolStripMenuItem
-            // 
-            this.gestionProveedoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.darDeAltaToolStripMenuItem,
-            this.buscarModificarOEliminarToolStripMenuItem});
-            this.gestionProveedoresToolStripMenuItem.Name = "gestionProveedoresToolStripMenuItem";
-            this.gestionProveedoresToolStripMenuItem.Size = new System.Drawing.Size(127, 20);
-            this.gestionProveedoresToolStripMenuItem.Text = "Gestion Proveedores";
-            // 
-            // darDeAltaToolStripMenuItem
-            // 
-            this.darDeAltaToolStripMenuItem.Name = "darDeAltaToolStripMenuItem";
-            this.darDeAltaToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
-            this.darDeAltaToolStripMenuItem.Text = "Dar de alta";
-            this.darDeAltaToolStripMenuItem.Click += new System.EventHandler(this.darDeAltaToolStripMenuItem_Click);
-            // 
-            // buscarModificarOEliminarToolStripMenuItem
-            // 
-            this.buscarModificarOEliminarToolStripMenuItem.Name = "buscarModificarOEliminarToolStripMenuItem";
-            this.buscarModificarOEliminarToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
-            this.buscarModificarOEliminarToolStripMenuItem.Text = "Buscar, modificar o eliminar";
-            this.buscarModificarOEliminarToolStripMenuItem.Click += new System.EventHandler(this.buscarModificarOEliminarToolStripMenuItem_Click);
             // 
             // gestionClientesToolStripMenuItem
             // 
@@ -296,6 +211,91 @@
             this.buscarReservasToolStripMenuItem.Text = "Buscar Reservas";
             this.buscarReservasToolStripMenuItem.Click += new System.EventHandler(this.buscarReservasToolStripMenuItem_Click);
             // 
+            // gestionVehiculosToolStripMenuItem
+            // 
+            this.gestionVehiculosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.darAltaToolStripMenuItem1,
+            this.buscarToolStripMenuItem,
+            this.editarToolStripMenuItem,
+            this.borrarToolStripMenuItem});
+            this.gestionVehiculosToolStripMenuItem.Name = "gestionVehiculosToolStripMenuItem";
+            this.gestionVehiculosToolStripMenuItem.Size = new System.Drawing.Size(113, 20);
+            this.gestionVehiculosToolStripMenuItem.Text = "Gestion Vehiculos";
+            // 
+            // darAltaToolStripMenuItem1
+            // 
+            this.darAltaToolStripMenuItem1.Name = "darAltaToolStripMenuItem1";
+            this.darAltaToolStripMenuItem1.Size = new System.Drawing.Size(116, 22);
+            this.darAltaToolStripMenuItem1.Text = "Dar Alta";
+            this.darAltaToolStripMenuItem1.Click += new System.EventHandler(this.darAltaToolStripMenuItem1_Click);
+            // 
+            // buscarToolStripMenuItem
+            // 
+            this.buscarToolStripMenuItem.Name = "buscarToolStripMenuItem";
+            this.buscarToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.buscarToolStripMenuItem.Text = "Buscar";
+            this.buscarToolStripMenuItem.Click += new System.EventHandler(this.buscarToolStripMenuItem_Click);
+            // 
+            // editarToolStripMenuItem
+            // 
+            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.editarToolStripMenuItem.Text = "Editar";
+            this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
+            // 
+            // borrarToolStripMenuItem
+            // 
+            this.borrarToolStripMenuItem.Name = "borrarToolStripMenuItem";
+            this.borrarToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.borrarToolStripMenuItem.Text = "Borrar";
+            this.borrarToolStripMenuItem.Click += new System.EventHandler(this.borrarToolStripMenuItem_Click);
+            // 
+            // gestionVentasToolStripMenuItem
+            // 
+            this.gestionVentasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.darAltaToolStripMenuItem,
+            this.buscarOModificarToolStripMenuItem});
+            this.gestionVentasToolStripMenuItem.Name = "gestionVentasToolStripMenuItem";
+            this.gestionVentasToolStripMenuItem.Size = new System.Drawing.Size(107, 20);
+            this.gestionVentasToolStripMenuItem.Text = "Gestion Personal";
+            // 
+            // darAltaToolStripMenuItem
+            // 
+            this.darAltaToolStripMenuItem.Name = "darAltaToolStripMenuItem";
+            this.darAltaToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.darAltaToolStripMenuItem.Text = "Dar de Alta";
+            this.darAltaToolStripMenuItem.Click += new System.EventHandler(this.darAltaToolStripMenuItem_Click);
+            // 
+            // buscarOModificarToolStripMenuItem
+            // 
+            this.buscarOModificarToolStripMenuItem.Name = "buscarOModificarToolStripMenuItem";
+            this.buscarOModificarToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.buscarOModificarToolStripMenuItem.Text = "Buscar, modificar o eliminar";
+            this.buscarOModificarToolStripMenuItem.Click += new System.EventHandler(this.buscarOModificarToolStripMenuItem_Click);
+            // 
+            // gestionProveedoresToolStripMenuItem
+            // 
+            this.gestionProveedoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.darDeAltaToolStripMenuItem,
+            this.buscarModificarOEliminarToolStripMenuItem});
+            this.gestionProveedoresToolStripMenuItem.Name = "gestionProveedoresToolStripMenuItem";
+            this.gestionProveedoresToolStripMenuItem.Size = new System.Drawing.Size(127, 20);
+            this.gestionProveedoresToolStripMenuItem.Text = "Gestion Proveedores";
+            // 
+            // darDeAltaToolStripMenuItem
+            // 
+            this.darDeAltaToolStripMenuItem.Name = "darDeAltaToolStripMenuItem";
+            this.darDeAltaToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.darDeAltaToolStripMenuItem.Text = "Dar de alta";
+            this.darDeAltaToolStripMenuItem.Click += new System.EventHandler(this.darDeAltaToolStripMenuItem_Click);
+            // 
+            // buscarModificarOEliminarToolStripMenuItem
+            // 
+            this.buscarModificarOEliminarToolStripMenuItem.Name = "buscarModificarOEliminarToolStripMenuItem";
+            this.buscarModificarOEliminarToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.buscarModificarOEliminarToolStripMenuItem.Text = "Buscar, modificar o eliminar";
+            this.buscarModificarOEliminarToolStripMenuItem.Click += new System.EventHandler(this.buscarModificarOEliminarToolStripMenuItem_Click);
+            // 
             // gestionPedidosToolStripMenuItem1
             // 
             this.gestionPedidosToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -346,6 +346,7 @@
             this.statusStrip.Size = new System.Drawing.Size(1112, 22);
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "StatusStrip";
+            this.statusStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip_ItemClicked);
             // 
             // toolStripStatusLabel
             // 
@@ -416,6 +417,7 @@
             this.button2.TabIndex = 18;
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.nuevaReservaToolStripMenuItem_Click);
             // 
             // label3
             // 
@@ -486,6 +488,7 @@
             this.TButtonFactura.TabIndex = 13;
             this.TButtonFactura.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.TButtonFactura.UseVisualStyleBackColor = true;
+            this.TButtonFactura.Click += new System.EventHandler(this.TToolStripMenuItemNuevaFactura_Click);
             // 
             // label1
             // 
@@ -567,7 +570,7 @@
             this.TButtonVehiculos.TabIndex = 20;
             this.TButtonVehiculos.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.TButtonVehiculos.UseVisualStyleBackColor = true;
-            this.TButtonVehiculos.Click += new System.EventHandler(this.TButtonVehiculos_Click_1);
+            this.TButtonVehiculos.Click += new System.EventHandler(this.TButtonVehiculos_Click);
             // 
             // TLabelProveedores
             // 
@@ -592,6 +595,7 @@
             this.TButtonProveedores.TabIndex = 18;
             this.TButtonProveedores.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.TButtonProveedores.UseVisualStyleBackColor = true;
+            this.TButtonProveedores.Click += new System.EventHandler(this.TButtonProveedores_Click);
             // 
             // MDIPral
             // 

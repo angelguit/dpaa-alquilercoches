@@ -66,8 +66,8 @@
             this.TTextBoxUsuario.Name = "TTextBoxUsuario";
             this.TTextBoxUsuario.Size = new System.Drawing.Size(100, 20);
             this.TTextBoxUsuario.TabIndex = 2;
-            this.TTextBoxUsuario.Text = "Usuario";
             this.TTextBoxUsuario.DoubleClick += new System.EventHandler(this.TTextBoxUsuario_DoubleClick);
+            this.TTextBoxUsuario.Leave += new System.EventHandler(this.TTextBoxUsuario_Leave);
             // 
             // TLabelContrasenya
             // 
@@ -86,7 +86,6 @@
             this.TTextBoxPassword.PasswordChar = '*';
             this.TTextBoxPassword.Size = new System.Drawing.Size(100, 20);
             this.TTextBoxPassword.TabIndex = 4;
-            this.TTextBoxPassword.Text = "contraseña";
             this.TTextBoxPassword.DoubleClick += new System.EventHandler(this.TTextBoxPassword_DoubleClick);
             // 
             // TButtonSalir

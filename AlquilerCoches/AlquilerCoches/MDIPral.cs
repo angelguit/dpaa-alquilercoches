@@ -23,6 +23,16 @@ namespace AlquilerCoches
             toolStripStatusLabel.Text = "Nombre:" + Personal.Nombre + " " + Personal.Apellidos;
             toolStripStatusLabel1.Text = "ID:" + Personal.DNI;
             toolStripStatusLabel2.Text = "Status:" + Personal.PuestoAc;
+            if (Personal.PuestoAc == "Oficinista")
+            {
+                TButtonProveedores.Enabled = false;
+                TButtonVehiculos.Enabled = false;
+                TButtonPedidos.Enabled = false;
+                gestionVentasToolStripMenuItem.Enabled = false;
+                gestionProveedoresToolStripMenuItem.Enabled = false;
+                gestionVehiculosToolStripMenuItem.Enabled = false;
+                gestionPedidosToolStripMenuItem1.Enabled = false;
+            }
 
         }
         
@@ -466,11 +476,6 @@ namespace AlquilerCoches
             }
         }
 
-        private void TButtonVehiculos_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void TButtonPedidos_Click(object sender, EventArgs e)
         {
             if (Application.OpenForms["GestionPedidos"] != null)
@@ -512,6 +517,11 @@ namespace AlquilerCoches
                 acerca.MdiParent = this;
                 acerca.Show();
             }
+        }
+
+        private void statusStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
 
      
