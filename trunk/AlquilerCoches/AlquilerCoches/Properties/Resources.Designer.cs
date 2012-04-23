@@ -74,6 +74,20 @@ namespace AlquilerCoches.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap altacliente {
+            get {
+                object obj = ResourceManager.GetObject("altacliente", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap buscarcliente {
+            get {
+                object obj = ResourceManager.GetObject("buscarcliente", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap cancel {
             get {
                 object obj = ResourceManager.GetObject("cancel", resourceCulture);
@@ -175,6 +189,13 @@ namespace AlquilerCoches.Properties {
         internal static System.Drawing.Bitmap rentacar {
             get {
                 object obj = ResourceManager.GetObject("rentacar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap reserva {
+            get {
+                object obj = ResourceManager.GetObject("reserva", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

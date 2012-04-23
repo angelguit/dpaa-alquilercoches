@@ -82,6 +82,8 @@
             this.TButtonVehiculos = new System.Windows.Forms.Button();
             this.TLabelProveedores = new System.Windows.Forms.Label();
             this.TButtonProveedores = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -223,20 +225,20 @@
             this.TToolStripMenuItemNuevaFactura,
             this.TToolStripMenuItemBuscarFactura});
             this.facturacionToolStripMenuItem.Name = "facturacionToolStripMenuItem";
-            this.facturacionToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
-            this.facturacionToolStripMenuItem.Text = "Facturacion";
+            this.facturacionToolStripMenuItem.Size = new System.Drawing.Size(124, 20);
+            this.facturacionToolStripMenuItem.Text = "Gestión Facturacion";
             // 
             // TToolStripMenuItemNuevaFactura
             // 
             this.TToolStripMenuItemNuevaFactura.Name = "TToolStripMenuItemNuevaFactura";
-            this.TToolStripMenuItemNuevaFactura.Size = new System.Drawing.Size(151, 22);
+            this.TToolStripMenuItemNuevaFactura.Size = new System.Drawing.Size(152, 22);
             this.TToolStripMenuItemNuevaFactura.Text = "Nueva Factura";
             this.TToolStripMenuItemNuevaFactura.Click += new System.EventHandler(this.TToolStripMenuItemNuevaFactura_Click);
             // 
             // TToolStripMenuItemBuscarFactura
             // 
             this.TToolStripMenuItemBuscarFactura.Name = "TToolStripMenuItemBuscarFactura";
-            this.TToolStripMenuItemBuscarFactura.Size = new System.Drawing.Size(151, 22);
+            this.TToolStripMenuItemBuscarFactura.Size = new System.Drawing.Size(152, 22);
             this.TToolStripMenuItemBuscarFactura.Text = "Buscar Factura";
             this.TToolStripMenuItemBuscarFactura.Click += new System.EventHandler(this.TToolStripMenuItemBuscarFactura_Click);
             // 
@@ -377,6 +379,8 @@
             // 
             this.Gestion.BackColor = System.Drawing.Color.LightGray;
             this.Gestion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Gestion.Controls.Add(this.label5);
+            this.Gestion.Controls.Add(this.button2);
             this.Gestion.Controls.Add(this.label3);
             this.Gestion.Controls.Add(this.TButtonAltaCliente);
             this.Gestion.Controls.Add(this.button1);
@@ -395,15 +399,15 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 243);
+            this.label3.Location = new System.Drawing.Point(36, 241);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 13);
+            this.label3.Size = new System.Drawing.Size(64, 13);
             this.label3.TabIndex = 17;
-            this.label3.Text = "Gestión Clientes";
+            this.label3.Text = "Alta clientes";
             // 
             // TButtonAltaCliente
             // 
-            this.TButtonAltaCliente.BackgroundImage = global::AlquilerCoches.Properties.Resources.Cliente1;
+            this.TButtonAltaCliente.BackgroundImage = global::AlquilerCoches.Properties.Resources.altacliente;
             this.TButtonAltaCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.TButtonAltaCliente.Location = new System.Drawing.Point(6, 148);
             this.TButtonAltaCliente.Name = "TButtonAltaCliente";
@@ -464,15 +468,15 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 113);
+            this.label1.Location = new System.Drawing.Point(31, 112);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 13);
+            this.label1.Size = new System.Drawing.Size(80, 13);
             this.label1.TabIndex = 11;
-            this.label1.Text = "Gestión Clientes";
+            this.label1.Text = "Buscar Clientes";
             // 
             // TButtonCliente
             // 
-            this.TButtonCliente.BackgroundImage = global::AlquilerCoches.Properties.Resources.Cliente1;
+            this.TButtonCliente.BackgroundImage = global::AlquilerCoches.Properties.Resources.buscarcliente;
             this.TButtonCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.TButtonCliente.Location = new System.Drawing.Point(6, 18);
             this.TButtonCliente.Name = "TButtonCliente";
@@ -567,6 +571,26 @@
             this.TButtonProveedores.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.TButtonProveedores.UseVisualStyleBackColor = true;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(28, 377);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(77, 13);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Nueva reserva";
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImage = global::AlquilerCoches.Properties.Resources.reserva;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Location = new System.Drawing.Point(6, 284);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(125, 88);
+            this.button2.TabIndex = 18;
+            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // MDIPral
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -655,6 +679,8 @@
         private System.Windows.Forms.Button TButtonProveedores;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button TButtonPedidos;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button2;
     }
 }
 
