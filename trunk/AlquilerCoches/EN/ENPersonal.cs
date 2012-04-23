@@ -221,6 +221,20 @@ namespace EN
             return existe;
         }
 
+        public DataSet PuestoTrabajo()
+        {
+            DataSet resultado = new DataSet();
+            try
+            {
+                resultado = cadPersonal.ConsultaTrabajo();
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            return resultado;
+        }
+
     }
 }
 

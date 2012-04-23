@@ -53,6 +53,8 @@ namespace AlquilerCoches
             numProvincia = dsProv;
            
             TTextBoxPuestoAc.Text = puesac;
+            TComboBoxPuestoAc.Items.Add(puesac);
+            TComboBoxPuestoAc.SelectedIndex = 0;
 
             TButtonGuardarPersonal.Text = nombrebotonguardar; // importante le cambiamos el nombre al boton para saber que venimos del formulario buscar, y estamos editando no guardando uno nuevo
             TButtonGuardarPersonal.Size = new Size(120, 33);
@@ -156,7 +158,7 @@ namespace AlquilerCoches
         {
             if (TTextBoxDNI.Text == "" || TTextBoxNombre.Text == "" || TTextBoxApellidos.Text == "" || TTextBoxTelefono.Text == "" ||
                  TTextBoxEmail.Text == "" || TTextBoxDireccion.Text == "" || TComboBoxProvincias.Text == "" ||
-                TTextBoxPuestoAc.Text == "" || (TComboBoxProvincias.SelectedIndex == 0 && TComboBoxProvincias.Text != textoProvincia))
+                TTextBoxPuestoAc.Text == "" || (TComboBoxProvincias.SelectedIndex == 0 && TComboBoxProvincias.Text != textoProvincia) || TComboBoxPuestoAc.SelectedIndex == -1)
             {
                 MessageBox.Show("Campos invalidos, no puede haber ninguno vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -172,7 +174,7 @@ namespace AlquilerCoches
                 
                 enPersonal.DNI=TTextBoxDNI.Text; enPersonal.Nombre=TTextBoxNombre.Text; enPersonal.Apellidos=TTextBoxApellidos.Text; enPersonal.Telefono = Int32.Parse(TTextBoxTelefono.Text);
                 enPersonal.Email = TTextBoxEmail.Text; enPersonal.Direccion = TTextBoxDireccion.Text; enPersonal.Ciudad = TComboBoxCiudades.Text; enPersonal.Provincia = TComboBoxProvincias.Text;
-                enPersonal.PuestoAc = TTextBoxPuestoAc.Text;
+                enPersonal.PuestoAc = TTextBoxPuestoAc.Text; enPersonal.PuestoAc = TComboBoxPuestoAc.Text;
 
                 if (!enPersonal.ExistePersonalEN(TTextBoxDNI.Text))
                 {
@@ -299,6 +301,18 @@ namespace AlquilerCoches
             {
                 Application.OpenForms["GestionPersonalBuscar"].Activate();
             }
+        }
+
+        private void TComboBoxPuestoAc_Click(object sender, EventArgs e)
+        {
+            EN.ENPersonal enper = new EN.ENPersonal();
+            DataSet dstra = new DataSet();
+
+            dstra = enper.PuestoTrabajo();
+            TComboBoxPuestoAc.DataSource = dstra.Tables["PuestoTrabajo"];
+            TComboBoxPuestoAc.DisplayMember = dstra.Tables["PuestoTrabajo"].Columns[0].Caption.ToString();
+            
+
         }            
 
            
