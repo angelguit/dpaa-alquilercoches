@@ -80,22 +80,10 @@ namespace AlquilerCoches
             realizadas.Facturado = "1";
             realizadas.EditarFacturado(dni);
             MessageBox.Show("Factura realizada con éxito", "Factura Realizada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            ImprimirFacturaVentas Fp = new ImprimirFacturaVentas(enCli, realizadas);
+            Fp.Show();
+            Fp.Imprimir();
             Close();
-
-
-
-            /* enFa.DiaFacturacion = DateTime.Today;
-             enFa.AnyadirFactura();
-             MessageBox.Show("Factura realizada con éxito", "Factura Realizada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-             enVe.Estado = "Disponible";
-             enRes.Activa = false;
-             enVe.EditarVehiculo();
-             enRes.EditarReserva();
-             ImprimirFactura Fp = new ImprimirFactura(enCli,enVe,enFa,enFa.UltimaFactura());
-             Fp.Show();
-             Fp.Imprimir();
-             Close();
-             Application.OpenForms["NuevaFactura"].Close();*/
         }
     }
 }
