@@ -51,10 +51,6 @@
             this.TLabelVehiculo = new System.Windows.Forms.Label();
             this.TLabelCategoria = new System.Windows.Forms.Label();
             this.TLabelCIF = new System.Windows.Forms.Label();
-            this.TLabelCP = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.TLabelDireccion = new System.Windows.Forms.Label();
-            this.TlabelRentACar = new System.Windows.Forms.Label();
             this.TButtonCerrar = new System.Windows.Forms.Button();
             this.TButtonReserva = new System.Windows.Forms.Button();
             this.TGroupBoxBuscarFactura.SuspendLayout();
@@ -94,10 +90,6 @@
             this.TGroupBoxBuscarFactura.Controls.Add(this.TLabelVehiculo);
             this.TGroupBoxBuscarFactura.Controls.Add(this.TLabelCategoria);
             this.TGroupBoxBuscarFactura.Controls.Add(this.TLabelCIF);
-            this.TGroupBoxBuscarFactura.Controls.Add(this.TLabelCP);
-            this.TGroupBoxBuscarFactura.Controls.Add(this.label1);
-            this.TGroupBoxBuscarFactura.Controls.Add(this.TLabelDireccion);
-            this.TGroupBoxBuscarFactura.Controls.Add(this.TlabelRentACar);
             this.TGroupBoxBuscarFactura.Controls.Add(this.TLabelCliente);
             this.TGroupBoxBuscarFactura.Location = new System.Drawing.Point(51, 28);
             this.TGroupBoxBuscarFactura.Name = "TGroupBoxBuscarFactura";
@@ -296,50 +288,6 @@
             this.TLabelCIF.TabIndex = 37;
             this.TLabelCIF.Text = "CIF: 123456789-A";
             // 
-            // TLabelCP
-            // 
-            this.TLabelCP.AutoSize = true;
-            this.TLabelCP.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelCP.Location = new System.Drawing.Point(560, 83);
-            this.TLabelCP.Name = "TLabelCP";
-            this.TLabelCP.Size = new System.Drawing.Size(166, 13);
-            this.TLabelCP.TabIndex = 36;
-            this.TLabelCP.Text = "C.P: 03210 (Guarroman) Albacete";
-            this.TLabelCP.Visible = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(560, 109);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(169, 13);
-            this.label1.TabIndex = 35;
-            this.label1.Text = "Tfno: 965123123 Fax: 965231231";
-            this.label1.Visible = false;
-            // 
-            // TLabelDireccion
-            // 
-            this.TLabelDireccion.AutoSize = true;
-            this.TLabelDireccion.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelDireccion.Location = new System.Drawing.Point(560, 57);
-            this.TLabelDireccion.Name = "TLabelDireccion";
-            this.TLabelDireccion.Size = new System.Drawing.Size(250, 13);
-            this.TLabelDireccion.TabIndex = 34;
-            this.TLabelDireccion.Text = "C/ Albatera Nº 123, Centro Comercial Las Castañas";
-            this.TLabelDireccion.Visible = false;
-            // 
-            // TlabelRentACar
-            // 
-            this.TlabelRentACar.AutoSize = true;
-            this.TlabelRentACar.BackColor = System.Drawing.Color.Transparent;
-            this.TlabelRentACar.Location = new System.Drawing.Point(560, 28);
-            this.TlabelRentACar.Name = "TlabelRentACar";
-            this.TlabelRentACar.Size = new System.Drawing.Size(77, 13);
-            this.TlabelRentACar.TabIndex = 33;
-            this.TlabelRentACar.Text = "Rent a Car S.L";
-            this.TlabelRentACar.Visible = false;
-            // 
             // TButtonCerrar
             // 
             this.TButtonCerrar.Image = global::AlquilerCoches.Properties.Resources.Close_icon;
@@ -392,10 +340,6 @@
 
         private System.Windows.Forms.Label TLabelCliente;
         private System.Windows.Forms.GroupBox TGroupBoxBuscarFactura;
-        private System.Windows.Forms.Label TLabelCP;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label TLabelDireccion;
-        private System.Windows.Forms.Label TlabelRentACar;
         private System.Windows.Forms.Label TLabelCIF;
         private System.Windows.Forms.TextBox TTextBoxPTotal;
         private System.Windows.Forms.TextBox TTextBoxTIva;
