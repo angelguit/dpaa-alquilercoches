@@ -156,11 +156,19 @@ namespace AlquilerCoches
                 {
                     guardaCampos();
                     realizadas.AnyadirVenta();
+
                     ventas.ClearEnVentas();
                     ventas.Matricula = TTextBoxMatricula.Text;
-                    ventas.BorrarVentas();
+                    ventas.BorrarVentas(); 
+
+                    FacturaVentas Formu = new FacturaVentas(realizadas);
+                    Formu.StartPosition = FormStartPosition.CenterScreen;
+                    Formu.MdiParent = this.MdiParent;
+                    Formu.Show(); 
+ 
                     limpiaFormulario();
                     rellenaMarcas();
+                    
                 }
             }
             else
