@@ -411,6 +411,7 @@ namespace AlquilerCoches
             TMarcacomboBox2.SelectedIndex = -1;
             TModelocomboBox3.SelectedIndex = -1;
             TIDtextBox.Text = "";
+            TNametextbox.Text = "";
         }       
              
     }
