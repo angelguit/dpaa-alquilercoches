@@ -37,6 +37,7 @@
             this.TLabelModelos = new System.Windows.Forms.Label();
             this.TLabelMarcas = new System.Windows.Forms.Label();
             this.TGroupBoxDatosVehiculo = new System.Windows.Forms.GroupBox();
+            this.TButtonBuscar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -62,8 +63,6 @@
             this.TLabelMatricula = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.TLabelTitulo = new System.Windows.Forms.Label();
-            this.TListBoxClientes = new System.Windows.Forms.ListBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.TGroupBoxDatosVehiculo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -145,8 +144,7 @@
             this.TGroupBoxDatosVehiculo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.TGroupBoxDatosVehiculo.BackColor = System.Drawing.Color.Transparent;
-            this.TGroupBoxDatosVehiculo.Controls.Add(this.label4);
-            this.TGroupBoxDatosVehiculo.Controls.Add(this.TListBoxClientes);
+            this.TGroupBoxDatosVehiculo.Controls.Add(this.TButtonBuscar);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.label3);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.label2);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.label1);
@@ -175,13 +173,25 @@
             this.TGroupBoxDatosVehiculo.Size = new System.Drawing.Size(761, 241);
             this.TGroupBoxDatosVehiculo.TabIndex = 51;
             this.TGroupBoxDatosVehiculo.TabStop = false;
-            this.TGroupBoxDatosVehiculo.Text = "DatosVehiculo";
-            this.TGroupBoxDatosVehiculo.Enter += new System.EventHandler(this.TGroupBoxDatosVehiculo_Enter);
+            this.TGroupBoxDatosVehiculo.Text = "Datos Venta";
+            // 
+            // TButtonBuscar
+            // 
+            this.TButtonBuscar.Image = global::AlquilerCoches.Properties.Resources.Search_icon;
+            this.TButtonBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TButtonBuscar.Location = new System.Drawing.Point(654, 19);
+            this.TButtonBuscar.Name = "TButtonBuscar";
+            this.TButtonBuscar.Size = new System.Drawing.Size(86, 33);
+            this.TButtonBuscar.TabIndex = 57;
+            this.TButtonBuscar.Text = "Buscar";
+            this.TButtonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.TButtonBuscar.UseVisualStyleBackColor = true;
+            this.TButtonBuscar.Click += new System.EventHandler(this.TButtonBuscar_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(453, 125);
+            this.label3.Location = new System.Drawing.Point(474, 83);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 56;
@@ -190,7 +200,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(459, 95);
+            this.label2.Location = new System.Drawing.Point(480, 53);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 55;
@@ -199,7 +209,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(476, 64);
+            this.label1.Location = new System.Drawing.Point(497, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(26, 13);
             this.label1.TabIndex = 54;
@@ -207,7 +217,7 @@
             // 
             // TTextBoxApellidos
             // 
-            this.TTextBoxApellidos.Location = new System.Drawing.Point(508, 122);
+            this.TTextBoxApellidos.Location = new System.Drawing.Point(529, 80);
             this.TTextBoxApellidos.Name = "TTextBoxApellidos";
             this.TTextBoxApellidos.ReadOnly = true;
             this.TTextBoxApellidos.Size = new System.Drawing.Size(93, 20);
@@ -215,7 +225,7 @@
             // 
             // TTextBoxNombre
             // 
-            this.TTextBoxNombre.Location = new System.Drawing.Point(508, 92);
+            this.TTextBoxNombre.Location = new System.Drawing.Point(529, 50);
             this.TTextBoxNombre.Name = "TTextBoxNombre";
             this.TTextBoxNombre.ReadOnly = true;
             this.TTextBoxNombre.Size = new System.Drawing.Size(93, 20);
@@ -223,11 +233,11 @@
             // 
             // TTextBoxDNI
             // 
-            this.TTextBoxDNI.Location = new System.Drawing.Point(508, 61);
+            this.TTextBoxDNI.Location = new System.Drawing.Point(529, 19);
             this.TTextBoxDNI.Name = "TTextBoxDNI";
-            this.TTextBoxDNI.ReadOnly = true;
             this.TTextBoxDNI.Size = new System.Drawing.Size(93, 20);
             this.TTextBoxDNI.TabIndex = 51;
+            this.TTextBoxDNI.Leave += new System.EventHandler(this.TTextBoxDNI_Leave);
             // 
             // TLabelObligatorio
             // 
@@ -407,23 +417,6 @@
             this.TLabelTitulo.TabIndex = 59;
             this.TLabelTitulo.Text = "Registrar Venta";
             // 
-            // TListBoxClientes
-            // 
-            this.TListBoxClientes.FormattingEnabled = true;
-            this.TListBoxClientes.Location = new System.Drawing.Point(607, 32);
-            this.TListBoxClientes.Name = "TListBoxClientes";
-            this.TListBoxClientes.Size = new System.Drawing.Size(148, 199);
-            this.TListBoxClientes.TabIndex = 59;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(604, 16);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 13);
-            this.label4.TabIndex = 60;
-            this.label4.Text = "Clientes";
-            // 
             // RegistrarVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -491,7 +484,6 @@
         private System.Windows.Forms.TextBox TTextBoxApellidos;
         private System.Windows.Forms.TextBox TTextBoxNombre;
         private System.Windows.Forms.TextBox TTextBoxDNI;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ListBox TListBoxClientes;
+        private System.Windows.Forms.Button TButtonBuscar;
     }
 }
