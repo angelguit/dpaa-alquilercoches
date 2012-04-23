@@ -172,15 +172,15 @@ namespace EN
             try
             {
                 DataSet pedido = cadPedidos.ObtenerDatosPedidosConId(idtransaccion);
-                pedido.Tables["Pedidos"].Rows[0][1] = idtransaccion.ToString(); 
-                pedido.Tables["Pedidos"].Rows[0][2] = proveedor.ToString();
-                pedido.Tables["Pedidos"].Rows[0][3] = marca.ToString();
-                pedido.Tables["Pedidos"].Rows[0][4] = modelo.ToString();
-                pedido.Tables["Pedidos"].Rows[0][5] = cantidad.ToString();
-                pedido.Tables["Pedidos"].Rows[0][6] = observaciones.ToString();
-                pedido.Tables["Pedidos"].Rows[0][7] = estadopedido.ToString();
-                pedido.Tables["Pedidos"].Rows[0][8] = tipoenvio.ToString();
-                pedido.Tables["Pedidos"].Rows[0][9] = empleado.ToString();
+
+                pedido.Tables["Pedidos"].Rows[0][1] = proveedor.ToString();
+                pedido.Tables["Pedidos"].Rows[0][2] = marca.ToString();
+                pedido.Tables["Pedidos"].Rows[0][3] = modelo.ToString();
+                pedido.Tables["Pedidos"].Rows[0][4] = cantidad.ToString();
+                pedido.Tables["Pedidos"].Rows[0][5] = observaciones.ToString();
+                pedido.Tables["Pedidos"].Rows[0][6] = estadopedido.ToString();
+                pedido.Tables["Pedidos"].Rows[0][7] = tipoenvio.ToString();
+                pedido.Tables["Pedidos"].Rows[0][8] = empleado.ToString();
                 cadPedidos.EditarPedidos(pedido);
 
             }
