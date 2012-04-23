@@ -185,7 +185,15 @@ namespace EN
             {
                 DataSet venta = cadVentasRealizadas.ObtenerDatosVentas(dni);
 
-                venta.Tables["VentasRealizadas"].Rows[0][8] = 1;
+                venta.Tables["VentasRealizadas"].Rows[0][0] = numero;
+                venta.Tables["VentasRealizadas"].Rows[0][1] = dni;
+                venta.Tables["VentasRealizadas"].Rows[0][2] = matricula;
+                venta.Tables["VentasRealizadas"].Rows[0][3] = marca;
+                venta.Tables["VentasRealizadas"].Rows[0][4] = modelo;
+                venta.Tables["VentasRealizadas"].Rows[0][5] = garantia;
+                venta.Tables["VentasRealizadas"].Rows[0][6] = precioVenta;
+                venta.Tables["VentasRealizadas"].Rows[0][7] = fecha;
+                venta.Tables["VentasRealizadas"].Rows[0][8] = facturado;
                 cadVentasRealizadas.EditarFacturado(venta);
 
             }
