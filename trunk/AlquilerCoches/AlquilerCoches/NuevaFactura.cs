@@ -223,6 +223,7 @@ namespace AlquilerCoches
             {
                 TLabelNRes.Text = "Número Venta:";
                 TGroupBoxReservas.Visible = true;
+                TButtonBuscarFechas.Visible = false;
                 if (TDataGridViewReservas.Visible == false)
                 {
                     TGroupBoxReservas.Location = new Point(195, 177);
