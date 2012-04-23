@@ -108,16 +108,31 @@ namespace AlquilerCoches
             {
                 if (TDateTimePickerFechaInicio.Value <= TDateTimePickerFechaFin.Value)
                 {
-                    err2.Clear();
-                    if (sentencia == "")
+                    if (TRadioButtonReservas.Checked)
                     {
-                        sentencia += " FechaInicio between '" + Convert.ToDateTime(TDateTimePickerFechaInicio.Value.ToString()) + "' and '" + Convert.ToDateTime(TDateTimePickerFechaFin.Value.ToString())+ "'";
-                        sentencia += " and FechaFin <= '" + Convert.ToDateTime(TDateTimePickerFechaFin.Value.ToString())+"'";
+                        err2.Clear();
+                        if (sentencia == "")
+                        {
+                            sentencia += " FechaInicio between '" + Convert.ToDateTime(TDateTimePickerFechaInicio.Value.ToString()) + "' and '" + Convert.ToDateTime(TDateTimePickerFechaFin.Value.ToString()) + "'";
+                            sentencia += " and FechaFin <= '" + Convert.ToDateTime(TDateTimePickerFechaFin.Value.ToString()) + "'";
+                        }
+                        else
+                        {
+                            sentencia += " and FechaInicio between '" + Convert.ToDateTime(TDateTimePickerFechaFin.Value.ToString()) + "' and '" + Convert.ToDateTime(TDateTimePickerFechaInicio.Value.ToString()) + "'";
+                            sentencia += " and FechaFin <= '" + Convert.ToDateTime(TDateTimePickerFechaFin.Value.ToString()) + "'";
+                        }
                     }
                     else
                     {
-                        sentencia += " and FechaInicio between '" + Convert.ToDateTime(TDateTimePickerFechaFin.Value.ToString()) + "' and '" + Convert.ToDateTime(TDateTimePickerFechaInicio.Value.ToString()) + "'";
-                        sentencia += " and FechaFin <= '" + Convert.ToDateTime(TDateTimePickerFechaFin.Value.ToString()) + "'";
+                        err2.Clear();
+                        if (sentencia == "")
+                        {
+                            sentencia += " Fecha between '" + Convert.ToDateTime(TDateTimePickerFechaInicio.Value.ToString()) + "' and '" + Convert.ToDateTime(TDateTimePickerFechaFin.Value.ToString()) + "'";
+                        }
+                        else
+                        {
+                            sentencia += " and Fecha between '" + Convert.ToDateTime(TDateTimePickerFechaInicio.Value.ToString()) + "' and '" + Convert.ToDateTime(TDateTimePickerFechaFin.Value.ToString()) + "'";
+                        }
                     }
                 }
                 else
@@ -128,14 +143,29 @@ namespace AlquilerCoches
             }
             if (TLabelCliente.Visible == true)
             {
-                if (sentencia == "")
+                if (TRadioButtonReservas.Checked)
                 {
-                    sentencia += " FK_Cliente ='" + enCliente.DNI.ToString() + "'";
+                    if (sentencia == "")
+                    {
+                        sentencia += " FK_Cliente ='" + enCliente.DNI.ToString() + "'";
+                    }
+                    else
+                    {
+                        sentencia += " and FK_Cliente ='" + enCliente.DNI.ToString() + "'";
+                    }
                 }
                 else
                 {
-                    sentencia += " and FK_Cliente ='" + enCliente.DNI.ToString() + "'";
+                    if (sentencia == "")
+                    {
+                        sentencia += " FK_DNI_Cliente ='" + enCliente.DNI.ToString() + "'";
+                    }
+                    else
+                    {
+                        sentencia += " and FK_DNI_Cliente ='" + enCliente.DNI.ToString() + "'";
+                    }
                 }
+                
             }
             if (correcto)
             {
@@ -152,7 +182,7 @@ namespace AlquilerCoches
                 if (TRadioButtonReservas.Checked)
                     ds = enRe.ObtenerReservas(sentencia);
                 else
-                    ds = enVeR.ObtenerListaVentasRealizadas();
+                    ds = enVeR.ObtenerVentasRealizadas(sentencia);
 
                 TDataGridViewReservas.DataSource = ds;
                 if (TRadioButtonReservas.Checked)
@@ -248,7 +278,6 @@ namespace AlquilerCoches
             {
                 TLabelNRes.Text = "Número Venta:";
                 TGroupBoxReservas.Visible = true;
-                TButtonBuscarFechas.Visible = false;
                 if (TDataGridViewReservas.Visible == false)
                 {
                     TGroupBoxReservas.Location = new Point(195, 38);
