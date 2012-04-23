@@ -143,6 +143,27 @@ namespace AlquilerCoches
         private void TButtonOK_Click(object sender, EventArgs e)
         {
             int n = 0;
+            if (TProveecomboBox1.Text == "")
+            {
+                errorProvider1.SetError(TProveecomboBox1, "Seleccione un proveedor");
+                incorrecto = true;
+            }
+            else
+            {
+                errorProvider1.SetError(TProveecomboBox1, "");
+                incorrecto = false;
+            } 
+            if (TModelocomboBox3.SelectedIndex == -1)
+            {
+
+                errorProvider1.SetError(TModelocomboBox3, "Seleccione el modelo del coche");
+                incorrecto = true;
+            }
+            else
+            {
+                errorProvider1.SetError(TModelocomboBox3, "");
+                incorrecto = false;
+            } 
             if (TProveecomboBox1.SelectedIndex == -1 || TMarcacomboBox2.SelectedIndex == -1 || TModelocomboBox3.SelectedIndex == -1 || TVendedorText.Text == "" || TObservTextBox.Text=="")
             {
                 MessageBox.Show("Campos invalidos, no puede haber ninguno vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -248,49 +269,7 @@ namespace AlquilerCoches
             TModelocomboBox3.DataSource = dsMod.Tables["Modelo"];
             TModelocomboBox3.DisplayMember = dsMod.Tables["Modelo"].Columns[0].Caption.ToString();
         }
-        private void TMarcacomboBox2_Leave(object sender, EventArgs e)
-        {
-            if (TMarcacomboBox2.SelectedIndex == -1)
-            {
-                errorProvider1.SetError(TMarcacomboBox2, "Seleccione la marca del coche");
-                incorrecto = true;
-            } 
-            else
-            {
-                errorProvider1.SetError(TMarcacomboBox2, "");
-                incorrecto = false;
-            } 
-        }
-
-        private void TModelocomboBox3_Leave(object sender, EventArgs e)
-        {
-             if (TModelocomboBox3.SelectedIndex == -1)
-             {
-      
-                 errorProvider1.SetError(TModelocomboBox3, "Seleccione el modelo del coche");
-                 incorrecto = true;
-             } 
-            else
-            {
-                errorProvider1.SetError(TModelocomboBox3, "");
-                incorrecto = false;
-            } 
-        }
-
-        private void TProveecomboBox1_Leave(object sender, EventArgs e)
-        {
-
-            if (TProveecomboBox1.SelectedIndex == -1)
-            {
-                errorProvider1.SetError(TProveecomboBox1, "Seleccione un proveedor");
-                incorrecto = true;
-            } 
-            else
-            {
-                errorProvider1.SetError(TProveecomboBox1, "");
-                incorrecto = false;
-            } 
-        }
+        
 
         private void ObtenerProveedores(DataSet dsProvee)
         {
@@ -471,6 +450,8 @@ namespace AlquilerCoches
             BuscarPedidos buscar = new BuscarPedidos();
             buscar.Show();
         }
+
+      
 
      
     }
