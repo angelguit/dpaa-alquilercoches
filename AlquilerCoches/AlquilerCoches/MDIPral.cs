@@ -466,6 +466,26 @@ namespace AlquilerCoches
             }
         }
 
+        private void TButtonVehiculos_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TButtonPedidos_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["GestionPedidos"] != null)
+            {
+                Application.OpenForms["GestionPedidos"].Activate();
+            }
+            else
+            {
+                GestionPedidos F1 = new GestionPedidos();
+                F1.MdiParent = this;
+                F1.Show();
+                //F8.WindowState = FormWindowState.Maximized;
+            }
+        }
+
      
      }   
 }
