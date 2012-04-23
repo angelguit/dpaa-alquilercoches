@@ -282,7 +282,7 @@
             this.groupBox2.Controls.Add(this.TEmpLabel);
             this.groupBox2.Controls.Add(this.TIDlabel);
             this.groupBox2.Controls.Add(this.TIDtextBox);
-            this.groupBox2.Location = new System.Drawing.Point(112, 27);
+            this.groupBox2.Location = new System.Drawing.Point(113, 27);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(480, 89);
             this.groupBox2.TabIndex = 24;

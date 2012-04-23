@@ -13,6 +13,7 @@ namespace AlquilerCoches
     public partial class GestionPedidos : Form
     {
         int k = 0;
+        string editar = "";
         public GestionPedidos()
         {
             InitializeComponent();
@@ -35,11 +36,11 @@ namespace AlquilerCoches
 
         }
       
-         public GestionPedidos(string id,string proveedor, string marca, string modelo, string cantidad, string observaciones, string estado, string empleado, string tipoenvio, string nombrebotonguardar)//constructor sobrecargado
+         public GestionPedidos(string id,string proveedor, string marca, string modelo, string cantidad, string observaciones, string estado, string empleado, string tipoenvio, string nombrebotonguardar,string editado)//constructor sobrecargado
         {
             InitializeComponent();
-          
-            
+
+            editar = editado;
             TMarcacomboBox2.Items.Add(marca);
             TMarcacomboBox2.SelectedIndex = 0;
             TModelocomboBox3.Items.Add(modelo);
@@ -47,7 +48,8 @@ namespace AlquilerCoches
 
             TProveecomboBox1.Items.Add(proveedor);
             TProveecomboBox1.SelectedIndex = 0;
-           
+            
+            TIDtextBox.Text = id;
 
             TVendedorText.Text = empleado;
             //Combobox
@@ -91,44 +93,48 @@ namespace AlquilerCoches
 
 
             // Obtener ID base de datos
-            try
+
+            if (editar!="SI")
             {
-         
-                bool parar = false;
-                int n = 0;
-                for (int i = 0; i < 4 && parar!= true; i++)
+                try
                 {
 
-                    if (id_pedidos.Tables["Pedidos"].Rows[i][0].ToString()!=null )
+                    bool parar = false;
+                    int n = 0;
+                    for (int i = 0; i < 4 && parar != true; i++)
                     {
 
-                        n++;
-                        k++;
+                        if (id_pedidos.Tables["Pedidos"].Rows[i][0].ToString() != null)
+                        {
+
+                            n++;
+                            k++;
+                        }
+                        if (id_pedidos.Tables["Pedidos"].Rows[i][0].ToString() == null)
+                        {
+                            parar = true;
+                        }
                     }
-                    if (id_pedidos.Tables["Pedidos"].Rows[i][0].ToString() == null)
-                    {
-                        parar = true;
-                    }
+
+                    n++;
+                    k++;
+
+
+
+                    string s = Convert.ToString(n);
+                    string p = "P";
+                    string total = "";
+                    total += s + p;
+                    TIDtextBox.Text = total;
+
+
+                }
+                catch (Exception ex)
+                {
+                    throw (ex);
                 }
 
-                n++;
-                k++;
-               
-
-
-                string s = Convert.ToString(n);
-                string p = "P";
-                string total = "";
-                total+=s + p;
-                TIDtextBox.Text = total;
-
             }
-            catch (Exception ex)
-            {
-                throw(ex);
-            }
-          
-       
 
         }
         
@@ -150,11 +156,11 @@ namespace AlquilerCoches
 
                 string envio = "";
 
-                if (TEnvioButtonOrdinario.Checked)
+                if (TEnvioButtonOrdinario.Checked==true)
                 {
                     envio = "Ordinario";
                 }
-                if (TEnvioButtonUrgente.Checked)
+                if (TEnvioButtonUrgente.Checked==true)
                 {
                     envio = "Urgente";
                 }
@@ -167,10 +173,14 @@ namespace AlquilerCoches
                 enPedidos.Observaciones = TObservTextBox.Text;  //observaciones
                 enPedidos.Empleado = TVendedorText.Text; //empleado
                 enPedidos.TipoEnvio = envio;  //tipo de envio
+                enPedidos.EstadoPedido = " Abierto";
 
-
-
-                enPedidos.AnyadirPedidos();
+                if (editar == "SI")
+                {
+                    enPedidos.EditarPedidos();
+                }
+                else enPedidos.AnyadirPedidos();
+                editar = "SI";
 
 
                 groupBox1.Enabled = false;
@@ -438,7 +448,7 @@ namespace AlquilerCoches
 
         private void TButtonCerrar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Desea Salir?", "Advertencia",
+            if (MessageBox.Show("¿Desea salir?", "Advertencia",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question,
                     MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                 this.Close();
@@ -446,38 +456,27 @@ namespace AlquilerCoches
 
         private void TButtonBorrar_Click(object sender, EventArgs e)
         {
-            /*
-            EN.ENPedidos enID = new EN.ENPedidos();
-            DataSet dsIDs = new DataSet();
-            dsIDs = enID.ObtenerListaID();
-            DataSet id_pedidos = new DataSet();
-            id_pedidos = dsIDs;
-            */
-            try
+
+            if (editar == "SI")
             {
-
-             
                 k++;
-
 
                 string s = Convert.ToString(k);
                 string p = "P";
                 string total = "";
                 total += s + p;
                 TIDtextBox.Text = total;
-
-                MessageBox.Show(TIDtextBox.Text);
-
+                editar = "NO";
             }
-            catch (Exception ex)
-            {
-                throw (ex);
-            }
+
+            
+
+
 
             //Combobox
-            TProveecomboBox1.SelectedIndex=0;
-            TMarcacomboBox2.SelectedIndex = 0;
-            TModelocomboBox3.SelectedIndex = 0;
+            TProveecomboBox1.SelectedIndex = -1;
+            TMarcacomboBox2.SelectedIndex = -1;
+            TModelocomboBox3.SelectedIndex = -1;
             //Radiobutton
             TEnvioButtonOrdinario.Checked = true;
             TObservTextBox.Text = "";
