@@ -63,6 +63,8 @@
             this.TLabelMatricula = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.TLabelTitulo = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.TDateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.TGroupBoxDatosVehiculo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -144,6 +146,8 @@
             this.TGroupBoxDatosVehiculo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.TGroupBoxDatosVehiculo.BackColor = System.Drawing.Color.Transparent;
+            this.TGroupBoxDatosVehiculo.Controls.Add(this.TDateTimePicker1);
+            this.TGroupBoxDatosVehiculo.Controls.Add(this.label4);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TButtonBuscar);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.label3);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.label2);
@@ -417,6 +421,23 @@
             this.TLabelTitulo.TabIndex = 59;
             this.TLabelTitulo.Text = "Registrar Venta";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(521, 138);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(93, 13);
+            this.label4.TabIndex = 59;
+            this.label4.Text = "Fecha de la venta";
+            // 
+            // TDateTimePicker1
+            // 
+            this.TDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.TDateTimePicker1.Location = new System.Drawing.Point(620, 131);
+            this.TDateTimePicker1.Name = "TDateTimePicker1";
+            this.TDateTimePicker1.Size = new System.Drawing.Size(120, 20);
+            this.TDateTimePicker1.TabIndex = 60;
+            // 
             // RegistrarVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -485,5 +506,7 @@
         private System.Windows.Forms.TextBox TTextBoxNombre;
         private System.Windows.Forms.TextBox TTextBoxDNI;
         private System.Windows.Forms.Button TButtonBuscar;
+        private System.Windows.Forms.DateTimePicker TDateTimePicker1;
+        private System.Windows.Forms.Label label4;
     }
 }

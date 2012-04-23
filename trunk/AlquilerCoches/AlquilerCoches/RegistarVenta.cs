@@ -13,6 +13,7 @@ namespace AlquilerCoches
     public partial class RegistrarVenta : Form
     {
         public bool incorrecto = false;
+        private EN.ENVentasRealizadas realizadas = new EN.ENVentasRealizadas();
         private EN.ENVentas ventas = new EN.ENVentas();
         private EN.ENCliente cliente = new EN.ENCliente();
 
@@ -41,6 +42,10 @@ namespace AlquilerCoches
             TGroupBoxDatosVehiculo.Enabled = false;
             //TButtonBorrar.Enabled = false;
             TTextBoxMatricula.Enabled = false;
+            TTextBoxApellidos.Text = "";
+            TTextBoxDNI.Text = "";
+            TTextBoxNombre.Text = "";
+            TDateTimePicker1.Text = "";
         }
 
         private void rellenaCliente()
@@ -191,8 +196,11 @@ namespace AlquilerCoches
 
         private void TButtonBuscar_Click(object sender, EventArgs e)
         {
-            cliente.ObtenerDatosClienteConDni(TTextBoxDNI.Text);
-            rellenaCliente();
+            if (incorrecto == false)
+            {
+                cliente.ObtenerDatosClienteConDni(TTextBoxDNI.Text);
+                rellenaCliente();
+            }
         }
 
     }
