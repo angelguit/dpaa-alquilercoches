@@ -114,7 +114,7 @@
             this.TGroupBoxReservas.Controls.Add(this.TDateTimePickerFechaInicio);
             this.TGroupBoxReservas.Controls.Add(this.TLabelFechaFin);
             this.TGroupBoxReservas.Controls.Add(this.TLabelNRes);
-            this.TGroupBoxReservas.Location = new System.Drawing.Point(195, 117);
+            this.TGroupBoxReservas.Location = new System.Drawing.Point(195, 38);
             this.TGroupBoxReservas.Name = "TGroupBoxReservas";
             this.TGroupBoxReservas.Size = new System.Drawing.Size(460, 253);
             this.TGroupBoxReservas.TabIndex = 4;

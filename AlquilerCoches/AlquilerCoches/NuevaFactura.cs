@@ -171,10 +171,12 @@ namespace AlquilerCoches
         {
             if (TRadioButtonReservas.Checked == true)
             {
+                TLabelNRes.Text = "Número Reserva: ";
+                TButtonBuscarFechas.Visible = true;
                 TGroupBoxReservas.Visible = true;
                 if (TDataGridViewReservas.Visible == false)
                 {
-                    TGroupBoxReservas.Location = new Point(195, 177);
+                    TGroupBoxReservas.Location = new Point(195, 38);
                 }
             }
             else
@@ -226,7 +228,7 @@ namespace AlquilerCoches
                 TButtonBuscarFechas.Visible = false;
                 if (TDataGridViewReservas.Visible == false)
                 {
-                    TGroupBoxReservas.Location = new Point(195, 177);
+                    TGroupBoxReservas.Location = new Point(195, 38);
                 }
             }
             else
