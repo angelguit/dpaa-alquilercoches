@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.TDataGridViewPedidos = new System.Windows.Forms.DataGridView();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.TButtonBuscar = new System.Windows.Forms.Button();
+            this.TLabelTitulo = new System.Windows.Forms.Label();
+            this.TButtonCerrar = new System.Windows.Forms.Button();
+            this.TButtonEliminar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.TModelocomboBox3 = new System.Windows.Forms.ComboBox();
             this.TMarcacomboBox2 = new System.Windows.Forms.ComboBox();
@@ -37,7 +43,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.TButtonBuscar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.TNamelabel = new System.Windows.Forms.Label();
@@ -47,17 +52,83 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.TIDtextBox = new System.Windows.Forms.TextBox();
-            this.TDataGridViewPedidos = new System.Windows.Forms.DataGridView();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.TLabelTitulo = new System.Windows.Forms.Label();
-            this.TButtonCerrar = new System.Windows.Forms.Button();
-            this.TButtonEliminar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.TDataGridViewPedidos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.TEstadogroupbox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TDataGridViewPedidos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // TDataGridViewPedidos
+            // 
+            this.TDataGridViewPedidos.AllowUserToAddRows = false;
+            this.TDataGridViewPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TDataGridViewPedidos.Location = new System.Drawing.Point(29, 39);
+            this.TDataGridViewPedidos.Name = "TDataGridViewPedidos";
+            this.TDataGridViewPedidos.Size = new System.Drawing.Size(818, 219);
+            this.TDataGridViewPedidos.TabIndex = 3;
+            this.TDataGridViewPedidos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TDataGridViewPedidos_CellContentClick);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // TButtonBuscar
+            // 
+            this.TButtonBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.TButtonBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.errorProvider1.SetIconAlignment(this.TButtonBuscar, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
+            this.TButtonBuscar.Image = global::AlquilerCoches.Properties.Resources.Search_icon;
+            this.TButtonBuscar.Location = new System.Drawing.Point(564, 29);
+            this.TButtonBuscar.Name = "TButtonBuscar";
+            this.TButtonBuscar.Size = new System.Drawing.Size(71, 65);
+            this.TButtonBuscar.TabIndex = 33;
+            this.TButtonBuscar.Text = "Buscar";
+            this.TButtonBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.TButtonBuscar.UseVisualStyleBackColor = true;
+            this.TButtonBuscar.Click += new System.EventHandler(this.TButtonBuscar_Click);
+            // 
+            // TLabelTitulo
+            // 
+            this.TLabelTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.TLabelTitulo.AutoSize = true;
+            this.TLabelTitulo.BackColor = System.Drawing.Color.Transparent;
+            this.TLabelTitulo.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TLabelTitulo.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.TLabelTitulo.Location = new System.Drawing.Point(-1, 0);
+            this.TLabelTitulo.Name = "TLabelTitulo";
+            this.TLabelTitulo.Size = new System.Drawing.Size(109, 18);
+            this.TLabelTitulo.TabIndex = 41;
+            this.TLabelTitulo.Text = "Búsqueda de Pedido";
+            // 
+            // TButtonCerrar
+            // 
+            this.TButtonCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.TButtonCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.TButtonCerrar.Image = global::AlquilerCoches.Properties.Resources.Close_icon;
+            this.TButtonCerrar.Location = new System.Drawing.Point(300, 492);
+            this.TButtonCerrar.Name = "TButtonCerrar";
+            this.TButtonCerrar.Size = new System.Drawing.Size(121, 57);
+            this.TButtonCerrar.TabIndex = 31;
+            this.TButtonCerrar.Text = "Cerrar";
+            this.TButtonCerrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.TButtonCerrar.UseVisualStyleBackColor = true;
+            this.TButtonCerrar.Click += new System.EventHandler(this.TButtonCerrar_Click);
+            // 
+            // TButtonEliminar
+            // 
+            this.TButtonEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.TButtonEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.TButtonEliminar.Image = global::AlquilerCoches.Properties.Resources.Delete_icon;
+            this.TButtonEliminar.Location = new System.Drawing.Point(101, 492);
+            this.TButtonEliminar.Name = "TButtonEliminar";
+            this.TButtonEliminar.Size = new System.Drawing.Size(120, 57);
+            this.TButtonEliminar.TabIndex = 34;
+            this.TButtonEliminar.Text = "Eliminar";
+            this.TButtonEliminar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.TButtonEliminar.UseVisualStyleBackColor = true;
+            this.TButtonEliminar.Click += new System.EventHandler(this.TButtonEliminar_Click);
             // 
             // groupBox1
             // 
@@ -75,13 +146,12 @@
             this.groupBox1.Controls.Add(this.TEstadogroupbox);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.TIDtextBox);
-            this.groupBox1.Location = new System.Drawing.Point(37, 21);
+            this.groupBox1.Location = new System.Drawing.Point(29, 46);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(667, 212);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabIndex = 42;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Criterios de búsqueda ";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            this.groupBox1.Text = "Criterios de búsqueda";
             // 
             // TModelocomboBox3
             // 
@@ -91,7 +161,6 @@
             this.TModelocomboBox3.Name = "TModelocomboBox3";
             this.TModelocomboBox3.Size = new System.Drawing.Size(259, 21);
             this.TModelocomboBox3.TabIndex = 41;
-            this.TModelocomboBox3.Click += new System.EventHandler(this.TModelocomboBox3_Click);
             // 
             // TMarcacomboBox2
             // 
@@ -101,7 +170,6 @@
             this.TMarcacomboBox2.Name = "TMarcacomboBox2";
             this.TMarcacomboBox2.Size = new System.Drawing.Size(259, 21);
             this.TMarcacomboBox2.TabIndex = 40;
-            this.TMarcacomboBox2.Click += new System.EventHandler(this.TMarcacomboBox2_Click);
             // 
             // TProveecomboBox1
             // 
@@ -111,8 +179,6 @@
             this.TProveecomboBox1.Name = "TProveecomboBox1";
             this.TProveecomboBox1.Size = new System.Drawing.Size(260, 21);
             this.TProveecomboBox1.TabIndex = 39;
-            this.TProveecomboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            this.TProveecomboBox1.Click += new System.EventHandler(this.TProveecomboBox1_Click);
             // 
             // label4
             // 
@@ -133,7 +199,6 @@
             this.groupBox2.TabIndex = 36;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Envío";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter_1);
             // 
             // radioButton4
             // 
@@ -156,21 +221,6 @@
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Ordinario";
             this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // TButtonBuscar
-            // 
-            this.TButtonBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.TButtonBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.errorProvider1.SetIconAlignment(this.TButtonBuscar, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
-            this.TButtonBuscar.Image = global::AlquilerCoches.Properties.Resources.Search_icon;
-            this.TButtonBuscar.Location = new System.Drawing.Point(564, 29);
-            this.TButtonBuscar.Name = "TButtonBuscar";
-            this.TButtonBuscar.Size = new System.Drawing.Size(71, 65);
-            this.TButtonBuscar.TabIndex = 33;
-            this.TButtonBuscar.Text = "Buscar";
-            this.TButtonBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.TButtonBuscar.UseVisualStyleBackColor = true;
-            this.TButtonBuscar.Click += new System.EventHandler(this.TButtonBuscar_Click);
             // 
             // label3
             // 
@@ -198,7 +248,6 @@
             this.TNamelabel.Size = new System.Drawing.Size(47, 13);
             this.TNamelabel.TabIndex = 7;
             this.TNamelabel.Text = "Nombre:";
-            this.TNamelabel.Click += new System.EventHandler(this.label2_Click);
             // 
             // TNametextbox
             // 
@@ -206,7 +255,6 @@
             this.TNametextbox.Name = "TNametextbox";
             this.TNametextbox.Size = new System.Drawing.Size(158, 20);
             this.TNametextbox.TabIndex = 6;
-            this.TNametextbox.TextChanged += new System.EventHandler(this.TNametextbox_TextChanged);
             // 
             // TEstadogroupbox
             // 
@@ -218,7 +266,6 @@
             this.TEstadogroupbox.TabIndex = 5;
             this.TEstadogroupbox.TabStop = false;
             this.TEstadogroupbox.Text = "Estado";
-            this.TEstadogroupbox.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // radioButton2
             // 
@@ -241,7 +288,6 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Abierto";
             this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // label1
             // 
@@ -259,62 +305,6 @@
             this.TIDtextBox.Size = new System.Drawing.Size(158, 20);
             this.TIDtextBox.TabIndex = 2;
             // 
-            // TDataGridViewPedidos
-            // 
-            this.TDataGridViewPedidos.AllowUserToAddRows = false;
-            this.TDataGridViewPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TDataGridViewPedidos.Location = new System.Drawing.Point(37, 239);
-            this.TDataGridViewPedidos.Name = "TDataGridViewPedidos";
-            this.TDataGridViewPedidos.Size = new System.Drawing.Size(818, 219);
-            this.TDataGridViewPedidos.TabIndex = 3;
-            this.TDataGridViewPedidos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TDataGridViewPedidos_CellContentClick);
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
-            // TLabelTitulo
-            // 
-            this.TLabelTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.TLabelTitulo.AutoSize = true;
-            this.TLabelTitulo.BackColor = System.Drawing.Color.Transparent;
-            this.TLabelTitulo.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TLabelTitulo.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.TLabelTitulo.Location = new System.Drawing.Point(-1, 0);
-            this.TLabelTitulo.Name = "TLabelTitulo";
-            this.TLabelTitulo.Size = new System.Drawing.Size(109, 18);
-            this.TLabelTitulo.TabIndex = 41;
-            this.TLabelTitulo.Text = "Búsqueda de Pedido";
-            // 
-            // TButtonCerrar
-            // 
-            this.TButtonCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.TButtonCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.TButtonCerrar.Image = global::AlquilerCoches.Properties.Resources.Close_icon;
-            this.TButtonCerrar.Location = new System.Drawing.Point(294, 482);
-            this.TButtonCerrar.Name = "TButtonCerrar";
-            this.TButtonCerrar.Size = new System.Drawing.Size(121, 57);
-            this.TButtonCerrar.TabIndex = 31;
-            this.TButtonCerrar.Text = "Cerrar";
-            this.TButtonCerrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.TButtonCerrar.UseVisualStyleBackColor = true;
-            this.TButtonCerrar.Click += new System.EventHandler(this.TButtonCerrar_Click);
-            // 
-            // TButtonEliminar
-            // 
-            this.TButtonEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.TButtonEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.TButtonEliminar.Image = global::AlquilerCoches.Properties.Resources.Delete_icon;
-            this.TButtonEliminar.Location = new System.Drawing.Point(95, 482);
-            this.TButtonEliminar.Name = "TButtonEliminar";
-            this.TButtonEliminar.Size = new System.Drawing.Size(120, 57);
-            this.TButtonEliminar.TabIndex = 34;
-            this.TButtonEliminar.Text = "Eliminar";
-            this.TButtonEliminar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.TButtonEliminar.UseVisualStyleBackColor = true;
-            this.TButtonEliminar.Click += new System.EventHandler(this.TButtonEliminar_Click);
-            // 
             // BuscarPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -323,11 +313,11 @@
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(878, 570);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.TLabelTitulo);
             this.Controls.Add(this.TButtonEliminar);
             this.Controls.Add(this.TButtonCerrar);
             this.Controls.Add(this.TDataGridViewPedidos);
-            this.Controls.Add(this.groupBox1);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BuscarPedidos";
@@ -335,14 +325,14 @@
             this.Text = "Buscar Pedidos";
             this.Activated += new System.EventHandler(this.BuscarPedidos_Activated);
             this.Load += new System.EventHandler(this.BuscarPedidos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.TDataGridViewPedidos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.TEstadogroupbox.ResumeLayout(false);
             this.TEstadogroupbox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TDataGridViewPedidos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -350,28 +340,28 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox TIDtextBox;
-        private System.Windows.Forms.GroupBox TEstadogroupbox;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.DataGridView TDataGridViewPedidos;
-        private System.Windows.Forms.Label TNamelabel;
-        private System.Windows.Forms.TextBox TNametextbox;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button TButtonBuscar;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox TModelocomboBox3;
-        private System.Windows.Forms.ComboBox TMarcacomboBox2;
-        private System.Windows.Forms.ComboBox TProveecomboBox1;
         private System.Windows.Forms.Label TLabelTitulo;
         private System.Windows.Forms.Button TButtonEliminar;
         private System.Windows.Forms.Button TButtonCerrar;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox TModelocomboBox3;
+        private System.Windows.Forms.ComboBox TMarcacomboBox2;
+        private System.Windows.Forms.ComboBox TProveecomboBox1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.Button TButtonBuscar;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label TNamelabel;
+        private System.Windows.Forms.TextBox TNametextbox;
+        private System.Windows.Forms.GroupBox TEstadogroupbox;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox TIDtextBox;
     }
 }
