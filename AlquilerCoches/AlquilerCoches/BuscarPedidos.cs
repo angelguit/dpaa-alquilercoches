@@ -239,8 +239,9 @@ namespace AlquilerCoches
                             Application.OpenForms["GestionPedidos"].Close();
 
                         }
-
-                        GestionPedidos Formu = new GestionPedidos(id, proveedor, marca, modelo, cantidad, observaciones, estado, empleado, tipoenvio, nombrebotonguardar);
+                        string editado = "";
+                        editado = "SI";
+                        GestionPedidos Formu = new GestionPedidos(id, proveedor, marca, modelo, cantidad, observaciones, estado, empleado, tipoenvio, nombrebotonguardar,editado);
                         Formu.StartPosition = FormStartPosition.CenterScreen;
                         Formu.MdiParent = this.MdiParent;
                         Formu.Show();
