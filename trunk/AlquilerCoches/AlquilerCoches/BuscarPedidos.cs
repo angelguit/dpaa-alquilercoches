@@ -280,7 +280,7 @@ namespace AlquilerCoches
                             frase += "'" + arrayid[i] + "'";
                         }
                     }
-                    MessageBox.Show("Select * from Pedidos where IDTransaccion in (" + frase + ")");
+ 
                     enPedido.EliminarPedidos(arrayid);
                 }
 
