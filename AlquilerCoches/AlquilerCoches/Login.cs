@@ -27,14 +27,14 @@ namespace AlquilerCoches
             errorProvider1.SetError(TLabelError, "");
             TLabelError.Visible= false;
 
-            if (true && !incorrecto && TTextBoxPassword.Text!="" && TTextBoxUsuario.Text!="")//(TTextBoxUsuario.Text.Equals("root") && TTextBoxPassword.Text.Equals("root"))
+            if (true && !incorrecto && TTextBoxPassword.Text!="" && TTextBoxUsuario.Text!="" )//(TTextBoxUsuario.Text.Equals("root") && TTextBoxPassword.Text.Equals("root"))
             {
                 
                 EN.ENPersonal comprobar = new EN.ENPersonal();
                 DataSet dspers = new DataSet();
                 string cadena=" dni = '"+TTextBoxUsuario.Text+"'";
                 dspers =comprobar.ObtenerListaPersonal(cadena);
-                if (dspers.Tables["Personal"].Rows[0][8].ToString() == "Gerente")
+                if (dspers.Tables["Personal"].Rows.Count == 1 && dspers.Tables["Personal"].Rows[0][8].ToString() == "Gerente")
                 {
                     if (dspers.Tables["Personal"].Rows[0][9].ToString() == TTextBoxPassword.Text)
                     {
@@ -63,9 +63,9 @@ namespace AlquilerCoches
                 }
                 else
                 {
-                    if (dspers.Tables["Personal"].Rows[0][8].ToString() == "Oficinista")
+                    if (dspers.Tables["Personal"].Rows.Count == 1 && dspers.Tables["Personal"].Rows[0][8].ToString() == "Oficinista")
                     {
-                        if (dspers.Tables["Personal"].Rows[0][9].ToString() == TTextBoxPassword.Text)
+                        if ( dspers.Tables["Personal"].Rows[0][9].ToString() == TTextBoxPassword.Text)
                         {
                             this.Hide();
                             MDIPral F2 = new MDIPral(TTextBoxUsuario.Text);
