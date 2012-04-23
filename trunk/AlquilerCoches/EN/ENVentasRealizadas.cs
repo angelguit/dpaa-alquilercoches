@@ -123,7 +123,7 @@ namespace EN
             //return resultado;
         }
 
-        public void ObtenerDatosVentas()
+        public void ObtenerDatosVentas(string dni)
         {
             DataSet resultado = new DataSet();
             try
@@ -179,13 +179,13 @@ namespace EN
 
         }
 
-        public void EditarFacturado()
+        public void EditarFacturado(string dni)
         {
             try
             {
                 DataSet venta = cadVentasRealizadas.ObtenerDatosVentas(dni);
 
-                venta.Tables["VentasRealizadas"].Rows[0][0] = numero;
+
                 venta.Tables["VentasRealizadas"].Rows[0][1] = dni;
                 venta.Tables["VentasRealizadas"].Rows[0][2] = matricula;
                 venta.Tables["VentasRealizadas"].Rows[0][3] = marca;
