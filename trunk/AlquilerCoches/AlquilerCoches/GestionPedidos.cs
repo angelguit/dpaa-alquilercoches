@@ -142,7 +142,7 @@ namespace AlquilerCoches
         private void TButtonOK_Click(object sender, EventArgs e)
         {
             int n = 0;
-            if (TProveecomboBox1.Text == "" || TMarcacomboBox2.Text == "" || TModelocomboBox3.Text == "" || TVendedorText.Text=="")
+            if (TProveecomboBox1.SelectedIndex == -1 || TMarcacomboBox2.SelectedIndex == -1 || TModelocomboBox3.SelectedIndex == -1 || TVendedorText.Text == "")
             {
                 MessageBox.Show("Campos invalidos, no puede haber ninguno vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
             } 
@@ -151,7 +151,7 @@ namespace AlquilerCoches
                 MessageBox.Show("Campos invalidos, revíselos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
-            else
+            if(incorrecto!=true)
             {
                 EN.ENPedidos enPedidos = new EN.ENPedidos();
 
@@ -198,30 +198,7 @@ namespace AlquilerCoches
             
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void TEstadoTextBox_TextChanged(object sender, EventArgs e)
         {
@@ -233,19 +210,6 @@ namespace AlquilerCoches
 
         }
 
-        private void TBorrarbutton3_Click(object sender, EventArgs e)
-        {
-            TVendedorText.Text = "";
-            //Combobox
-            TProveecomboBox1.SelectedIndex = 0;
-            TMarcacomboBox2.SelectedIndex = 0;
-            TModelocomboBox3.SelectedIndex = 0;
-            //Radiobutton
-            TEnvioButtonOrdinario.Checked = true;
-            TObservTextBox.Text = "";
-            numericUpDown1.Value = 1;
-           
-        }
 
         private void TCancelarbutton2_Click(object sender, EventArgs e)
         {
@@ -255,11 +219,7 @@ namespace AlquilerCoches
                 this.Close();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
+       
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
             if (!Regex.Match(numericUpDown1.Text, @"^[1-9]{1}$").Success)
@@ -270,11 +230,7 @@ namespace AlquilerCoches
             else { errorProvider1.SetError(numericUpDown1, ""); }
         }
 
-        private void TProveecomboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            
-        }
+       
 
         private DataSet numMarca; //usado en funcion TModelos
         private void ObtenerMarcas(DataSet dsMarc)
@@ -293,7 +249,7 @@ namespace AlquilerCoches
         }
         private void TMarcacomboBox2_Leave(object sender, EventArgs e)
         {
-            if (TMarcacomboBox2.Text=="")
+            if (TMarcacomboBox2.SelectedIndex == -1)
             {
                 errorProvider1.SetError(TMarcacomboBox2, "Seleccione la marca del coche");
                 incorrecto = true;
@@ -306,7 +262,7 @@ namespace AlquilerCoches
 
         private void TModelocomboBox3_Leave(object sender, EventArgs e)
         {
-             if (TModelocomboBox3.Text=="")
+             if (TModelocomboBox3.SelectedIndex == -1)
              {
                  errorProvider1.SetError(TModelocomboBox3, "Seleccione el modelo del coche");
                  incorrecto = true;
@@ -320,7 +276,7 @@ namespace AlquilerCoches
         private void TProveecomboBox1_Leave(object sender, EventArgs e)
         {
             incorrecto = false;
-            if (TProveecomboBox1.Text=="")
+            if (TProveecomboBox1.SelectedIndex == -1)
             {
                 errorProvider1.SetError(TProveecomboBox1, "Seleccione un proveedor");
                 incorrecto = true;
@@ -356,11 +312,6 @@ namespace AlquilerCoches
             dsMarc = enMarc.ObtenerListaMarcas();
             ObtenerMarcas(dsMarc);
         
-        }
-
-        private void TModelocomboBox3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
         }
 
 
@@ -412,25 +363,7 @@ namespace AlquilerCoches
             else { errorProvider1.SetError(TObservTextBox, ""); incorrecto = false; }
         }
 
-        private void TEnvioButtonOrdinario_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TEnvioButtonUrgente_CheckedChanged(object sender, EventArgs e)
-        {
-       
-        }
-
-        private void groupBox3_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TIDtextBox_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
+      
 
         private void TVendedorText_Leave(object sender, EventArgs e)
         {
@@ -442,17 +375,7 @@ namespace AlquilerCoches
             else { errorProvider1.SetError(TVendedorText, ""); } 
         }
 
-        private void TMarcacomboBox2_TextChanged(object sender, EventArgs e)
-        {
-            
-            
-        }
-
-        private void TVendedorText_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private void TButtonCerrar_Click(object sender, EventArgs e)
         {
 
@@ -543,9 +466,6 @@ namespace AlquilerCoches
             buscar.Show();
         }
 
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
+     
     }
 }
