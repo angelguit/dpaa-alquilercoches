@@ -91,7 +91,7 @@
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Pedido";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+   
             // 
             // TEnviogroupBox3
             // 
@@ -103,7 +103,7 @@
             this.TEnviogroupBox3.TabIndex = 42;
             this.TEnviogroupBox3.TabStop = false;
             this.TEnviogroupBox3.Text = "Envio";
-            this.TEnviogroupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
+
             // 
             // TEnvioButtonUrgente
             // 
@@ -179,7 +179,7 @@
             this.TErrorProvee.Name = "TErrorProvee";
             this.TErrorProvee.Size = new System.Drawing.Size(0, 13);
             this.TErrorProvee.TabIndex = 37;
-            this.TErrorProvee.Click += new System.EventHandler(this.label1_Click);
+
             // 
             // TModelocomboBox3
             // 
@@ -189,7 +189,7 @@
             this.TModelocomboBox3.Name = "TModelocomboBox3";
             this.TModelocomboBox3.Size = new System.Drawing.Size(248, 21);
             this.TModelocomboBox3.TabIndex = 36;
-            this.TModelocomboBox3.SelectedIndexChanged += new System.EventHandler(this.TModelocomboBox3_SelectedIndexChanged);
+
             this.TModelocomboBox3.Click += new System.EventHandler(this.TModelocomboBox3_Click);
             this.TModelocomboBox3.Leave += new System.EventHandler(this.TModelocomboBox3_Leave);
             // 
@@ -201,7 +201,7 @@
             this.TMarcacomboBox2.Name = "TMarcacomboBox2";
             this.TMarcacomboBox2.Size = new System.Drawing.Size(248, 21);
             this.TMarcacomboBox2.TabIndex = 35;
-            this.TMarcacomboBox2.TextChanged += new System.EventHandler(this.TMarcacomboBox2_TextChanged);
+        
             this.TMarcacomboBox2.Click += new System.EventHandler(this.TMarcacomboBox2_Click);
             this.TMarcacomboBox2.Leave += new System.EventHandler(this.TMarcacomboBox2_Leave);
             // 
@@ -213,7 +213,7 @@
             this.TProveecomboBox1.Name = "TProveecomboBox1";
             this.TProveecomboBox1.Size = new System.Drawing.Size(248, 21);
             this.TProveecomboBox1.TabIndex = 34;
-            this.TProveecomboBox1.SelectedIndexChanged += new System.EventHandler(this.TProveecomboBox1_SelectedIndexChanged);
+           
             this.TProveecomboBox1.Click += new System.EventHandler(this.TProveecomboBox1_Click);
             this.TProveecomboBox1.Leave += new System.EventHandler(this.TProveecomboBox1_Leave);
             // 
@@ -288,7 +288,7 @@
             this.groupBox2.TabIndex = 24;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos transacción";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+
             // 
             // TVendedorText
             // 
@@ -373,7 +373,7 @@
             this.TIDtextBox.ReadOnly = true;
             this.TIDtextBox.Size = new System.Drawing.Size(84, 25);
             this.TIDtextBox.TabIndex = 23;
-            this.TIDtextBox.TextChanged += new System.EventHandler(this.TIDtextBox_TextChanged);
+
             // 
             // errorProvider1
             // 
