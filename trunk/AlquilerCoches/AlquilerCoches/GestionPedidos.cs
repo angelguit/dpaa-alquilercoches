@@ -142,7 +142,7 @@ namespace AlquilerCoches
         private void TButtonOK_Click(object sender, EventArgs e)
         {
             int n = 0;
-            if (TProveecomboBox1.SelectedIndex == -1 || TMarcacomboBox2.SelectedIndex == -1 || TModelocomboBox3.SelectedIndex == -1 || TVendedorText.Text == "")
+            if (TProveecomboBox1.SelectedIndex == -1 || TMarcacomboBox2.SelectedIndex == -1 || TModelocomboBox3.SelectedIndex == -1 || TVendedorText.Text == "" || TObservTextBox.Text=="")
             {
                 MessageBox.Show("Campos invalidos, no puede haber ninguno vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 incorrecto = true;
@@ -357,6 +357,7 @@ namespace AlquilerCoches
             if (TObservTextBox.Text == "")
             {
                 errorProvider1.SetError(TObservTextBox, "Introduzca un comentario.");
+                incorrecto = true;
             }
             else { errorProvider1.SetError(TObservTextBox, ""); incorrecto = false; }
         }
