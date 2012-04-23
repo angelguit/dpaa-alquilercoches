@@ -40,7 +40,7 @@ namespace CAD
             try
             {
                 SqlConnection conexion = new SqlConnection(cadenaConexion);
-                String consulta = "Select DNI_Cliente from VentasRealizadas";
+                String consulta = "Select FK_DNI_Cliente from VentasRealizadas";
                 SqlDataAdapter daVentasRealizadas = new SqlDataAdapter(consulta, conexion);
                 daVentasRealizadas.MissingSchemaAction = MissingSchemaAction.AddWithKey;
                 daVentasRealizadas.Fill(dsVentasRealizadas, nombreTabla);
@@ -53,14 +53,14 @@ namespace CAD
             return dsVentasRealizadas;
         } 
 
-        public DataSet ObtenerDatosVehiculo(string dni)
+        public DataSet ObtenerDatosVentas(string dni)
         {
             DataSet dsVentas = new DataSet();
 
             try
             {
                 SqlConnection conexion = new SqlConnection(cadenaConexion);
-                String consulta = "Select * from VentasRealizadas where DNI_Cliente='" + dni + "'";
+                String consulta = "Select * from VentasRealizadas where FK_DNI_Cliente='" + dni + "'";
                 SqlDataAdapter daVentasRealizadas = new SqlDataAdapter(consulta, conexion);
                 daVentasRealizadas.MissingSchemaAction = MissingSchemaAction.AddWithKey;
                 daVentasRealizadas.Fill(dsVentas, nombreTabla);
@@ -85,6 +85,26 @@ namespace CAD
                 daVentasRealizadas.Fill(dsVentasRealizadas, nombreTabla);
                 SqlCommandBuilder cbuilder = new SqlCommandBuilder(daVentasRealizadas);
                 daVentasRealizadas.Update(venta, "VentasRealizadas");
+
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+        }
+
+        public void EditarFacturado(DataSet venta)
+        {
+            DataSet dsVentasRealizadas = new DataSet();
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                String consulta = "Select * from VentasRealizadas where FK_DNI_Cliente='" + venta.Tables["VentasRealizadas"].Rows[0][1] + "'";
+                SqlDataAdapter daVentasRealizas = new SqlDataAdapter(consulta, conexion);
+                daVentasRealizas.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daVentasRealizas.Fill(dsVentasRealizadas, nombreTabla);
+                SqlCommandBuilder cbuilder = new SqlCommandBuilder(daVentasRealizas);
+                daVentasRealizas.Update(venta, "VentasRealizadas");
 
             }
             catch (Exception ex)
