@@ -19,21 +19,6 @@ namespace CAD
 
         public DataSet ObtenerTablaFacturas(string sentencia)
         {
-            /*DataSet dsFacturas = new DataSet();
-            try
-            {
-                SqlConnection conexion = new SqlConnection(cadenaConexion);
-                String consulta = "Select * from Facturas";
-                SqlDataAdapter daCaminos = new SqlDataAdapter(consulta, conexion);
-                daCaminos.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-                daCaminos.Fill(dsFacturas, nombreTabla);
-            }
-            catch (Exception ex)
-            {
-                throw (ex);
-            }
-
-            return dsFacturas;*/
             DataSet dsFac = new DataSet();
             SqlDataAdapter daFac;
             string consulta;
