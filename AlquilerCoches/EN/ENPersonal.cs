@@ -214,6 +214,13 @@ namespace EN
 
         }
 
+        public bool ExistePersonalEN(string dni)
+        {
+            bool existe = false;
+            existe = cadPersonal.ExistePersonalCAD(dni);
+            return existe;
+        }
+
     }
 }
 

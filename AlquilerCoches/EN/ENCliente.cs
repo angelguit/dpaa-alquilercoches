@@ -257,6 +257,13 @@ namespace EN
         {
             return cadCliente.ReservasActiva(dni);
         }
+
+        public bool ExisteClienteEN(string dni)
+        {
+            bool existe = false;
+            existe = cadCliente.ExisteClienteCAD(dni);
+            return existe;
+        }
     }
 }
 

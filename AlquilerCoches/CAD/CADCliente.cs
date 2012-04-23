@@ -294,5 +294,27 @@ namespace CAD
 
             return retorno;
         }
+
+        public bool ExisteClienteCAD(string dni)
+        {
+            DataSet dsCliente = new DataSet();
+            SqlDataAdapter daCliente;
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                string consulta = "Select * from Cliente where dni = '" + dni + "'";
+                daCliente = new SqlDataAdapter(consulta, conexion);
+                daCliente.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daCliente.Fill(dsCliente, "Cliente");
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            if (dsCliente.Tables["Cliente"].Rows.Count > 0)
+                return true;
+            else
+                return false;
+        }
     }
 }

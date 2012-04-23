@@ -501,6 +501,13 @@ namespace AlquilerCoches
            
         }
 
+        private void acercadeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            acercade acerca = new acercade();
+            acerca.MdiParent = this;
+            acerca.Show();
+        }
+
      
      }   
 }

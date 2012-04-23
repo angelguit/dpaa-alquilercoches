@@ -185,6 +185,28 @@ namespace CAD
                 throw (ex);
             }
         }
+
+        public bool ExistePersonalCAD(string dni)
+        {
+            DataSet dsPersonal = new DataSet();
+            SqlDataAdapter daPersonal;
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                string consulta = "Select * from Personal where dni = '" + dni + "'";
+                daPersonal = new SqlDataAdapter(consulta, conexion);
+                daPersonal.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daPersonal.Fill(dsPersonal, "Personal");
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            if (dsPersonal.Tables["Personal"].Rows.Count > 0)
+                return true;
+            else
+                return false;
+        }
     }
 
 
