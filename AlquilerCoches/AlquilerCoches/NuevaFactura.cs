@@ -200,22 +200,45 @@ namespace AlquilerCoches
         {
             if (TDataGridViewReservas.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "Seleccionar")
             {
-                EN.ENReservas enRe = new EN.ENReservas();
+                if (TRadioButtonReservas.Checked)
+                {
+                    EN.ENReservas enRe = new EN.ENReservas();
 
-                enRe.NumRes = Int32.Parse(TDataGridViewReservas.Rows[e.RowIndex].Cells[1].Value.ToString());
-                enRe.Cliente = TDataGridViewReservas.Rows[e.RowIndex].Cells[2].Value.ToString();
-                enRe.Matricula = TDataGridViewReservas.Rows[e.RowIndex].Cells[3].Value.ToString();
-                enRe.FechaInicio = Convert.ToDateTime(TDataGridViewReservas.Rows[e.RowIndex].Cells[4].Value.ToString());
-                enRe.FechaFin = Convert.ToDateTime(TDataGridViewReservas.Rows[e.RowIndex].Cells[5].Value.ToString());
-                enRe.Conductores = Int32.Parse(TDataGridViewReservas.Rows[e.RowIndex].Cells[6].Value.ToString());
+                    enRe.NumRes = Int32.Parse(TDataGridViewReservas.Rows[e.RowIndex].Cells[1].Value.ToString());
+                    enRe.Cliente = TDataGridViewReservas.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    enRe.Matricula = TDataGridViewReservas.Rows[e.RowIndex].Cells[3].Value.ToString();
+                    enRe.FechaInicio = Convert.ToDateTime(TDataGridViewReservas.Rows[e.RowIndex].Cells[4].Value.ToString());
+                    enRe.FechaFin = Convert.ToDateTime(TDataGridViewReservas.Rows[e.RowIndex].Cells[5].Value.ToString());
+                    enRe.Conductores = Int32.Parse(TDataGridViewReservas.Rows[e.RowIndex].Cells[6].Value.ToString());
 
-                GestionFacturacion F1 = new GestionFacturacion(enRe);
-                F1.StartPosition = FormStartPosition.Manual;
-                F1.Location = Location;
-                F1.Left += 147;
-                F1.Top += 44;
-                F1.ShowDialog();
+                    GestionFacturacion F1 = new GestionFacturacion(enRe);
+                    F1.StartPosition = FormStartPosition.Manual;
+                    F1.Location = Location;
+                    F1.Left += 147;
+                    F1.Top += 44;
+                    F1.ShowDialog();
+                }
+                else
+                {
+                    EN.ENVentasRealizadas realizadas = new EN.ENVentasRealizadas();
 
+                    realizadas.Numero = TDataGridViewReservas.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    realizadas.DNI = TDataGridViewReservas.Rows[e.RowIndex].Cells[2].Value.ToString();
+                    realizadas.Matricula = TDataGridViewReservas.Rows[e.RowIndex].Cells[3].Value.ToString();
+                    realizadas.Marca = TDataGridViewReservas.Rows[e.RowIndex].Cells[4].Value.ToString();
+                    realizadas.Modelo = TDataGridViewReservas.Rows[e.RowIndex].Cells[5].Value.ToString();
+                    realizadas.Garantia = TDataGridViewReservas.Rows[e.RowIndex].Cells[6].Value.ToString();
+                    realizadas.PrecioVenta = TDataGridViewReservas.Rows[e.RowIndex].Cells[7].Value.ToString();
+                    realizadas.Fecha = TDataGridViewReservas.Rows[e.RowIndex].Cells[8].Value.ToString();
+                    realizadas.Facturado = TDataGridViewReservas.Rows[e.RowIndex].Cells[9].Value.ToString();
+
+                    FacturaVentas F1 = new FacturaVentas(realizadas);
+                    F1.StartPosition = FormStartPosition.Manual;
+                    F1.Location = Location;
+                    F1.Left += 147;
+                    F1.Top += 44;
+                    F1.ShowDialog();
+                }
             }
         }
 
