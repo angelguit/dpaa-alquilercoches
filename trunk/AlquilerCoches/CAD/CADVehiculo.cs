@@ -109,6 +109,40 @@ namespace CAD
             return dsVehiculo;
         }
 
+        public DataSet ObtenerMatricula2(string marca, string modelo)
+        {
+            DataSet dsVehiculo = new DataSet();
+
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                String consulta = "";
+
+                if (!marca.Equals("") && !modelo.Equals(""))
+                {
+                    consulta = "Select Matricula from Vehiculo where Estado = 'Disponible' and Modelo='" + modelo + "' and Marca='" + marca + "'";
+                }
+                else if (!marca.Equals(""))
+                {
+                    consulta = "Select Matricula from Vehiculo where Marca='" + marca + "'";
+                }
+                else
+                {
+                    consulta = "Select Matricula from Vehiculo";
+                }
+
+                SqlDataAdapter daVehiculo = new SqlDataAdapter(consulta, conexion);
+                daVehiculo.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daVehiculo.Fill(dsVehiculo, nombreTabla);
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+
+            return dsVehiculo;
+        }
+
         public DataSet ObtenerDatosVehiculo(string matricula)
         {
             DataSet dsVehiculo = new DataSet();
