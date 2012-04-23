@@ -232,6 +232,7 @@ namespace AlquilerCoches
                 dataGridViewProveedores.DataSource = resultadoProveedores;
                 dataGridViewProveedores.DataMember = "Proveedores";
             }
+
             else//con filtro
             {
                 string buscarCIF = TTextBoxCIF.Text;
