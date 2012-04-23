@@ -248,7 +248,7 @@ namespace AlquilerCoches
         {
             EN.ENVehiculo enVe = new EN.ENVehiculo();
             DataSet dsVe = new DataSet();
-            dsVe = enVe.ObtenerMatriculas(TComboBoxMarca.Text.ToString(), TComboBoxModelo.Text.ToString());
+            dsVe = enVe.ObtenerMatriculas2(TComboBoxMarca.Text.ToString(), TComboBoxModelo.Text.ToString());
             RellenarMatriculas(dsVe);
             if (TComboBoxModelo.Text == "")
             {
