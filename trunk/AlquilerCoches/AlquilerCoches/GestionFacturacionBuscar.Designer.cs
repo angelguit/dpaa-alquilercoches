@@ -50,6 +50,7 @@
             this.rectangleShape1 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.TButtonCerrar = new System.Windows.Forms.Button();
+            this.TLabelBusFac = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.TDataGridBuscarFacturas)).BeginInit();
             this.TPanelReservas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -275,6 +276,16 @@
             this.TButtonCerrar.UseVisualStyleBackColor = true;
             this.TButtonCerrar.Click += new System.EventHandler(this.TButtonCerrar_Click);
             // 
+            // TLabelBusFac
+            // 
+            this.TLabelBusFac.AutoSize = true;
+            this.TLabelBusFac.BackColor = System.Drawing.Color.Transparent;
+            this.TLabelBusFac.Location = new System.Drawing.Point(1, 2);
+            this.TLabelBusFac.Name = "TLabelBusFac";
+            this.TLabelBusFac.Size = new System.Drawing.Size(84, 13);
+            this.TLabelBusFac.TabIndex = 60;
+            this.TLabelBusFac.Text = "Buscar Facturas";
+            // 
             // GestionFacturacionBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -282,6 +293,7 @@
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(894, 608);
+            this.Controls.Add(this.TLabelBusFac);
             this.Controls.Add(this.TButtonCerrar);
             this.Controls.Add(this.TPanelReservas);
             this.Controls.Add(this.TDataGridBuscarFacturas);
@@ -294,6 +306,7 @@
             this.TPanelReservas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -320,5 +333,6 @@
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape2;
         private System.Windows.Forms.Button TButtonCerrar;
+        private System.Windows.Forms.Label TLabelBusFac;
     }
 }

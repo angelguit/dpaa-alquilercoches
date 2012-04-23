@@ -98,7 +98,10 @@ namespace AlquilerCoches
                 err1.Clear();
                 if (TTextBoxNumeroReserva.Text.ToString() != "")
                 {
-                    sentencia += " NºReserva='" + TTextBoxNumeroReserva.Text.ToString() + "'";
+                    if (TRadioButtonReservas.Checked)
+                        sentencia += " NºReserva='" + TTextBoxNumeroReserva.Text.ToString() + "'";
+                    else
+                        sentencia += " Numero = '" + TTextBoxNumeroReserva.Text.ToString() + "'";
                 }
             }
             if (TDateTimePickerFechaFin.Visible == true)
@@ -141,13 +144,21 @@ namespace AlquilerCoches
                 TDataGridViewReservas.Visible = true;
                 TGroupBoxReservas.Location = new Point(26, 343); //para desplazar el panel de busqueda hacia abajo.
                 EN.ENReservas enRe = new EN.ENReservas();
+                EN.ENVentasRealizadas enVeR = new EN.ENVentasRealizadas();
 
                 DataSet ds = new DataSet();
 
                 eliminado = sentencia;
-                ds = enRe.ObtenerReservas(sentencia);
+                if (TRadioButtonReservas.Checked)
+                    ds = enRe.ObtenerReservas(sentencia);
+                else
+                    ds = enVeR.ObtenerListaVentasRealizadas();
+
                 TDataGridViewReservas.DataSource = ds;
-                TDataGridViewReservas.DataMember = "Reservas";
+                if (TRadioButtonReservas.Checked)
+                    TDataGridViewReservas.DataMember = "Reservas";
+                else
+                    TDataGridViewReservas.DataMember = "VentasRealizadas";
 
                 for (int i = 0; i < TDataGridViewReservas.Columns.Count; i++) //esto nos servira para bloquear todas las columnas para que no se puedan editar 
                 {
@@ -203,6 +214,24 @@ namespace AlquilerCoches
                 F1.Top += 44;
                 F1.ShowDialog();
 
+            }
+        }
+
+        private void TRadioButtonVentas_CheckedChanged(object sender, EventArgs e)
+        {
+            if (TRadioButtonVentas.Checked == true)
+            {
+                TLabelNRes.Text = "Número Venta:";
+                TGroupBoxReservas.Visible = true;
+                if (TDataGridViewReservas.Visible == false)
+                {
+                    TGroupBoxReservas.Location = new Point(195, 177);
+                }
+            }
+            else
+            {
+                TGroupBoxReservas.Visible = false;
+                TDataGridViewReservas.Visible = false;
             }
         }
     }
