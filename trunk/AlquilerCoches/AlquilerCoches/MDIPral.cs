@@ -28,6 +28,7 @@ namespace AlquilerCoches
                 TButtonProveedores.Enabled = false;
                 TButtonVehiculos.Enabled = false;
                 TButtonPedidos.Enabled = false;
+                TButtonPersonal.Enabled = false;
                 gestionVentasToolStripMenuItem.Enabled = false;
                 gestionProveedoresToolStripMenuItem.Enabled = false;
                 gestionVehiculosToolStripMenuItem.Enabled = false;
