@@ -63,6 +63,7 @@
             this.TTextBoxNumFac = new System.Windows.Forms.TextBox();
             this.TLabelNumFac = new System.Windows.Forms.Label();
             this.TPrintFormFacturas = new Microsoft.VisualBasic.PowerPacks.Printing.PrintForm(this.components);
+            this.TLabelFecha = new System.Windows.Forms.Label();
             this.TGroupBoxInfoCliente.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.TGroupBoxInfoVe.SuspendLayout();
@@ -156,6 +157,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.TLabelDireccion);
             this.groupBox1.Controls.Add(this.TLabelCP);
             this.groupBox1.Controls.Add(this.TlabelRentACar);
@@ -397,12 +399,23 @@
             this.TPrintFormFacturas.PrinterSettings = ((System.Drawing.Printing.PrinterSettings)(resources.GetObject("TPrintFormFacturas.PrinterSettings")));
             this.TPrintFormFacturas.PrintFileName = null;
             // 
+            // TLabelFecha
+            // 
+            this.TLabelFecha.AutoSize = true;
+            this.TLabelFecha.Location = new System.Drawing.Point(40, 28);
+            this.TLabelFecha.Name = "TLabelFecha";
+            this.TLabelFecha.Size = new System.Drawing.Size(35, 13);
+            this.TLabelFecha.TabIndex = 90;
+            this.TLabelFecha.Text = "label2";
+            // 
             // ImprimirFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(638, 591);
+            this.Controls.Add(this.TLabelFecha);
             this.Controls.Add(this.TLabelNumFac);
             this.Controls.Add(this.TTextBoxNumFac);
             this.Controls.Add(this.TTextBoxPTotal);
@@ -462,5 +475,6 @@
         private System.Windows.Forms.TextBox TTextBoxNumFac;
         private System.Windows.Forms.Label TLabelNumFac;
         private Microsoft.VisualBasic.PowerPacks.Printing.PrintForm TPrintFormFacturas;
+        private System.Windows.Forms.Label TLabelFecha;
     }
 }

@@ -30,9 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.TButtonEliminar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.TButtonBuscar = new System.Windows.Forms.Button();
-            this.dataGridBuscarFacturas = new System.Windows.Forms.DataGridView();
+            this.TDataGridBuscarFacturas = new System.Windows.Forms.DataGridView();
             this.TPanelReservas = new System.Windows.Forms.Panel();
             this.TButtonQuitarCliente = new System.Windows.Forms.Button();
             this.TButtonOcultarFechas = new System.Windows.Forms.Button();
@@ -50,7 +49,8 @@
             this.rectangleShape2 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.rectangleShape1 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridBuscarFacturas)).BeginInit();
+            this.TButtonCerrar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.TDataGridBuscarFacturas)).BeginInit();
             this.TPanelReservas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -59,29 +59,20 @@
             // 
             this.TButtonEliminar.Image = global::AlquilerCoches.Properties.Resources.Delete_icon;
             this.TButtonEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.TButtonEliminar.Location = new System.Drawing.Point(368, 161);
+            this.TButtonEliminar.Location = new System.Drawing.Point(368, 166);
             this.TButtonEliminar.Name = "TButtonEliminar";
             this.TButtonEliminar.Size = new System.Drawing.Size(79, 34);
             this.TButtonEliminar.TabIndex = 57;
             this.TButtonEliminar.Text = "Eliminar";
             this.TButtonEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.TButtonEliminar.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(37, 515);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 55;
-            this.button1.Text = "Cerrar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.TButtonEliminar.Visible = false;
             // 
             // TButtonBuscar
             // 
             this.TButtonBuscar.Image = global::AlquilerCoches.Properties.Resources.Search_icon;
             this.TButtonBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.TButtonBuscar.Location = new System.Drawing.Point(250, 161);
+            this.TButtonBuscar.Location = new System.Drawing.Point(254, 166);
             this.TButtonBuscar.Name = "TButtonBuscar";
             this.TButtonBuscar.Size = new System.Drawing.Size(82, 34);
             this.TButtonBuscar.TabIndex = 54;
@@ -90,15 +81,17 @@
             this.TButtonBuscar.UseVisualStyleBackColor = true;
             this.TButtonBuscar.Click += new System.EventHandler(this.TButtonBuscar_Click);
             // 
-            // dataGridBuscarFacturas
+            // TDataGridBuscarFacturas
             // 
-            this.dataGridBuscarFacturas.AllowUserToAddRows = false;
-            this.dataGridBuscarFacturas.AllowUserToDeleteRows = false;
-            this.dataGridBuscarFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridBuscarFacturas.Location = new System.Drawing.Point(62, 38);
-            this.dataGridBuscarFacturas.Name = "dataGridBuscarFacturas";
-            this.dataGridBuscarFacturas.Size = new System.Drawing.Size(722, 209);
-            this.dataGridBuscarFacturas.TabIndex = 53;
+            this.TDataGridBuscarFacturas.AllowUserToAddRows = false;
+            this.TDataGridBuscarFacturas.AllowUserToDeleteRows = false;
+            this.TDataGridBuscarFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TDataGridBuscarFacturas.Location = new System.Drawing.Point(62, 38);
+            this.TDataGridBuscarFacturas.Name = "TDataGridBuscarFacturas";
+            this.TDataGridBuscarFacturas.Size = new System.Drawing.Size(729, 243);
+            this.TDataGridBuscarFacturas.TabIndex = 53;
+            this.TDataGridBuscarFacturas.Visible = false;
+            this.TDataGridBuscarFacturas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TDataGridBuscarFacturas_CellContentClick);
             // 
             // TPanelReservas
             // 
@@ -257,7 +250,7 @@
             this.rectangleShape2.BorderColor = System.Drawing.Color.White;
             this.rectangleShape2.Location = new System.Drawing.Point(6, 5);
             this.rectangleShape2.Name = "rectangleShape2";
-            this.rectangleShape2.Size = new System.Drawing.Size(449, 197);
+            this.rectangleShape2.Size = new System.Drawing.Size(449, 205);
             // 
             // rectangleShape1
             // 
@@ -270,6 +263,18 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // TButtonCerrar
+            // 
+            this.TButtonCerrar.Image = global::AlquilerCoches.Properties.Resources.Close_icon;
+            this.TButtonCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TButtonCerrar.Location = new System.Drawing.Point(28, 559);
+            this.TButtonCerrar.Name = "TButtonCerrar";
+            this.TButtonCerrar.Size = new System.Drawing.Size(102, 37);
+            this.TButtonCerrar.TabIndex = 59;
+            this.TButtonCerrar.Text = "Cerrar";
+            this.TButtonCerrar.UseVisualStyleBackColor = true;
+            this.TButtonCerrar.Click += new System.EventHandler(this.TButtonCerrar_Click);
+            // 
             // GestionFacturacionBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -277,14 +282,14 @@
             this.BackgroundImage = global::AlquilerCoches.Properties.Resources.rentacar;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(894, 608);
+            this.Controls.Add(this.TButtonCerrar);
             this.Controls.Add(this.TPanelReservas);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridBuscarFacturas);
+            this.Controls.Add(this.TDataGridBuscarFacturas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "GestionFacturacionBuscar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GestionBuscarFacturacion";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridBuscarFacturas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TDataGridBuscarFacturas)).EndInit();
             this.TPanelReservas.ResumeLayout(false);
             this.TPanelReservas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
@@ -295,9 +300,8 @@
         #endregion
 
         private System.Windows.Forms.Button TButtonEliminar;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button TButtonBuscar;
-        private System.Windows.Forms.DataGridView dataGridBuscarFacturas;
+        private System.Windows.Forms.DataGridView TDataGridBuscarFacturas;
         private System.Windows.Forms.Panel TPanelReservas;
         private System.Windows.Forms.Button TButtonQuitarCliente;
         private System.Windows.Forms.Button TButtonCambiarCliente;
@@ -315,5 +319,6 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape2;
+        private System.Windows.Forms.Button TButtonCerrar;
     }
 }

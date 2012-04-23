@@ -11,17 +11,18 @@ namespace AlquilerCoches
 {
     public partial class ImprimirFactura : Form
     {
-        public ImprimirFactura(EN.ENCliente cli, EN.ENReservas re, EN.ENVehiculo ve, EN.ENFacturacion enFa, int numFac)
+        public ImprimirFactura(EN.ENCliente cli, EN.ENVehiculo ve, EN.ENFacturacion enFa, int numFac)
         {
             InitializeComponent();
 
             TLabelNombre.Text = "Nombre: " + cli.Nombre + " Apellidos: " + cli.Apellidos;
             TLabelDNI.Text = "DNI: " + cli.DNI + " Telf: " + cli.Telefono;
             TLabelDirec.Text = "Dirección: " + cli.Direccion;
+            TLabelFecha.Text = "Fecha factura: " + enFa.DiaFacturacion.ToShortDateString();
             TTextBoxMarca.Text = ve.Marca.ToString();
             TTextBoxModelo.Text = ve.Modelo.ToString();
             TTextBoxMatricula.Text = ve.Matricula.ToString();
-            TTextBoxConductores.Text = re.Conductores.ToString();
+            TTextBoxConductores.Text = enFa.Conductores.ToString();
             TTextBoxCategoria.Text = ve.Categoria;
             TTextBoxNumFac.Text = numFac.ToString();
             TTextBoxTiempo.Text = enFa.Tiempo.ToString();
