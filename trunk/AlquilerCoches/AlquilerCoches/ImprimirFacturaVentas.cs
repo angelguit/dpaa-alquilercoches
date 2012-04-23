@@ -32,7 +32,7 @@ namespace AlquilerCoches
                 TCheckBoxGarantia.Checked = false;
                 TTextBoxMeses.Text = "Meses";
             }
-            TLabelFecha.Text = DateTime.Today.ToString();
+            TLabelFecha.Text = DateTime.Today.ToShortDateString();
             TTextBoxPTotal.Text = realizada.PrecioVenta;
             int iva = Int32.Parse(realizada.PrecioVenta);
             iva = (iva * 18) / 100;
