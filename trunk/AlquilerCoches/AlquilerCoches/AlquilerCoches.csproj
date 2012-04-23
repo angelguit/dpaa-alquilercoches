@@ -88,6 +88,12 @@
     <Compile Include="FacturaVentas.Designer.cs">
       <DependentUpon>FacturaVentas.cs</DependentUpon>
     </Compile>
+    <Compile Include="ImprimirFacturaVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImprimirFacturaVentas.Designer.cs">
+      <DependentUpon>ImprimirFacturaVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegistarVenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -224,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FacturaVentas.resx">
       <DependentUpon>FacturaVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImprimirFacturaVentas.resx">
+      <DependentUpon>ImprimirFacturaVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegistarVenta.resx">
       <DependentUpon>RegistarVenta.cs</DependentUpon>
