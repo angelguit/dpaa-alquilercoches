@@ -198,7 +198,7 @@ namespace AlquilerCoches
 
         private void TTextBoxNombre_Leave(object sender, EventArgs e)
         {
-            if (!Regex.Match(TTextBoxNombre.Text, @"^[A-Za-zñÑáéíóúÁÉÍÓÚçÇ]{3,25}$").Success)
+            if (!Regex.Match(TTextBoxNombre.Text, @"^[A-Za-zñÑáéíóúÁÉÍÓÚçÇ\s]{3,30}$").Success)
             {
                 errorProvider1.SetError(TTextBoxNombre, "Nombre incorrecto");
                 incorrecto = true;
