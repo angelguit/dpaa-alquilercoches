@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionVehiculos));
             this.TGroupBoxDatosVehiculo = new System.Windows.Forms.GroupBox();
+            this.TRadioButtonReservado = new System.Windows.Forms.RadioButton();
             this.TComboBoxCategoria = new System.Windows.Forms.ComboBox();
             this.TTextBoxGarantia = new System.Windows.Forms.TextBox();
             this.TLabelGarantia = new System.Windows.Forms.Label();
@@ -67,7 +68,6 @@
             this.TButtonEditar = new System.Windows.Forms.Button();
             this.TButtonCancelar = new System.Windows.Forms.Button();
             this.TButtonOK = new System.Windows.Forms.Button();
-            this.TRadioButtonReservado = new System.Windows.Forms.RadioButton();
             this.TGroupBoxDatosVehiculo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TPictureBoxMatricula)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -77,9 +77,9 @@
             // 
             // TGroupBoxDatosVehiculo
             // 
-            this.TGroupBoxDatosVehiculo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TGroupBoxDatosVehiculo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.TGroupBoxDatosVehiculo.BackColor = System.Drawing.Color.Transparent;
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TRadioButtonReservado);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TComboBoxCategoria);
@@ -108,6 +108,18 @@
             this.TGroupBoxDatosVehiculo.TabIndex = 19;
             this.TGroupBoxDatosVehiculo.TabStop = false;
             this.TGroupBoxDatosVehiculo.Text = "3 DatosVehiculo";
+            // 
+            // TRadioButtonReservado
+            // 
+            this.TRadioButtonReservado.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.TRadioButtonReservado.AutoSize = true;
+            this.TRadioButtonReservado.Location = new System.Drawing.Point(280, 240);
+            this.TRadioButtonReservado.Name = "TRadioButtonReservado";
+            this.TRadioButtonReservado.Size = new System.Drawing.Size(77, 17);
+            this.TRadioButtonReservado.TabIndex = 42;
+            this.TRadioButtonReservado.TabStop = true;
+            this.TRadioButtonReservado.Text = "Reservado";
+            this.TRadioButtonReservado.UseVisualStyleBackColor = true;
             // 
             // TComboBoxCategoria
             // 
@@ -344,8 +356,8 @@
             // 
             // TGroupBoxSeleccion
             // 
-            this.TGroupBoxSeleccion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TGroupBoxSeleccion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.TGroupBoxSeleccion.BackColor = System.Drawing.Color.Transparent;
             this.TGroupBoxSeleccion.Controls.Add(this.TListBoxMatriculas);
             this.TGroupBoxSeleccion.Controls.Add(this.TListBoxModelos);
@@ -476,7 +488,7 @@
             // 
             this.TButtonEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.TButtonEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.TButtonEditar.Image = global::AlquilerCoches.Properties.Resources.Edit_icon;
+            this.TButtonEditar.Image = global::AlquilerCoches.Properties.Resources.Edit_icon2;
             this.TButtonEditar.Location = new System.Drawing.Point(28, 122);
             this.TButtonEditar.Name = "TButtonEditar";
             this.TButtonEditar.Size = new System.Drawing.Size(75, 75);
@@ -513,18 +525,6 @@
             this.TButtonOK.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.TButtonOK.UseVisualStyleBackColor = true;
             this.TButtonOK.Click += new System.EventHandler(this.TButtonOK_Click);
-            // 
-            // TRadioButtonReservado
-            // 
-            this.TRadioButtonReservado.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.TRadioButtonReservado.AutoSize = true;
-            this.TRadioButtonReservado.Location = new System.Drawing.Point(280, 240);
-            this.TRadioButtonReservado.Name = "TRadioButtonReservado";
-            this.TRadioButtonReservado.Size = new System.Drawing.Size(77, 17);
-            this.TRadioButtonReservado.TabIndex = 42;
-            this.TRadioButtonReservado.TabStop = true;
-            this.TRadioButtonReservado.Text = "Reservado";
-            this.TRadioButtonReservado.UseVisualStyleBackColor = true;
             // 
             // GestionVehiculos
             // 
