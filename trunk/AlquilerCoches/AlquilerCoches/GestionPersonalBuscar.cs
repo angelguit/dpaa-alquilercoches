@@ -87,7 +87,7 @@ namespace AlquilerCoches
             else { errorProvider1.SetError(TTextBoxApellidos, ""); }
         }
 
-        private void TTextBoxPuestoAc_Leave(object sender, EventArgs e)
+        /*private void TTextBoxPuestoAc_Leave(object sender, EventArgs e)
         {
             if (TTextBoxPuestoAc.Text == "") errorProvider1.SetError(TTextBoxPuestoAc, "");         
             else if (!Regex.Match(TTextBoxPuestoAc.Text, @"^[A-Za-z]{3,15}$").Success)
@@ -96,7 +96,7 @@ namespace AlquilerCoches
                 incorrecto = true;
             }
             else { errorProvider1.SetError(TTextBoxPuestoAc, ""); }
-        }
+        }*/
         
         private void TButtonBuscar_Click(object sender, EventArgs e)
         {
@@ -121,7 +121,7 @@ namespace AlquilerCoches
                 string nom = TTextBoxNombre.Text.ToString();
                 string prov = TComboBoxProvincias.Text.ToString();
                 string dni = TTextBoxDNI.Text.ToString();
-                string puesto = TTextBoxPuestoAc.Text.ToString();
+                string puesto = TComboBoxPuesto.Text.ToString();
                 string todo = "";
 
                 if (apell != "") //apellidos
@@ -372,6 +372,16 @@ namespace AlquilerCoches
        private void GestionPersonalBuscar_Activated(object sender, EventArgs e)
        {
            ActualizaDatagridView();
+       }
+
+       private void TComboBoxPuesto_Click(object sender, EventArgs e)
+       {
+           EN.ENPersonal enper = new EN.ENPersonal();
+           DataSet dstra = new DataSet();
+
+           dstra = enper.PuestoTrabajo();
+           TComboBoxPuesto.DataSource = dstra.Tables["PuestoTrabajo"];
+           TComboBoxPuesto.DisplayMember = dstra.Tables["PuestoTrabajo"].Columns[0].Caption.ToString();
        }
       
     }
