@@ -249,7 +249,7 @@ namespace AlquilerCoches
                     enVe.ObtenerDatosVehiculos();
                     enCli.RellenarCliente();
 
-                    ImprimirFacturaVenta Fp = new ImprimirFacturaVenta(enCli, enVe, enFa, enFa.Factura);
+                    ImprimirFactura Fp = new ImprimirFactura(enCli, enVe, enFa, enFa.Factura);
                     Fp.BackgroundImage = AlquilerCoches.Properties.Resources.es_sello_duplicado;
                     Fp.BackgroundImageLayout = ImageLayout.Stretch;
                     Fp.Show();

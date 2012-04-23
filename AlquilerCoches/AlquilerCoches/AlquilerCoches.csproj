@@ -398,6 +398,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="otroProyecto.txt" />
+    <None Include="Resources\personal.jpg" />
     <None Include="Resources\reserva.jpg" />
     <None Include="Resources\altacliente.jpg" />
     <None Include="Resources\buscarcliente.jpg" />
