@@ -13,16 +13,24 @@ namespace EN
 {
     public class ENVentasRealizadas
     {
+        private string numero;
         private string precioVenta;
         private string matricula;
         private string marca;
         private string modelo;
         private string dni;
         private string garantia;
+        private string fecha;
 
         private ArrayList listaDNI = new ArrayList();
 
         private CAD.CADVentasRealizadas cadVentasRealizadas = new CAD.CADVentasRealizadas();
+
+        public string Numero
+        {
+            get { return numero; }
+            set { numero = value; }
+        }
 
         public ArrayList ListaDNI
         {
@@ -64,10 +72,16 @@ namespace EN
             set { garantia = value; }
         }
 
+        public string Fecha
+        {
+            get { return fecha; }
+            set { fecha = value; }
+        }
+
         public void ClearEnVentas()
         {
             matricula = marca = modelo = garantia = dni = "";
-             precioVenta = "";
+             precioVenta = fecha = numero = "";
         }
 
         public DataSet ObtenerListaVentasRealizadas()
@@ -103,19 +117,21 @@ namespace EN
             //return resultado;
         }
 
-        public void ObtenerDatosVehiculos()
+        public void ObtenerDatosVentas()
         {
             DataSet resultado = new DataSet();
             try
             {
                 resultado = cadVentasRealizadas.ObtenerDatosVehiculo(dni);
 
-                dni = resultado.Tables["VentasRealizadas"].Rows[0][0].ToString();
-                matricula = resultado.Tables["VentasRealizadas"].Rows[0][1].ToString();
-                marca = resultado.Tables["VentasRealizadas"].Rows[0][2].ToString();
-                modelo = resultado.Tables["VentasRealizadas"].Rows[0][3].ToString();
-                garantia = resultado.Tables["VentasRealizadas"].Rows[0][4].ToString();
-                precioVenta = resultado.Tables["VentasRealizadas"].Rows[0][5].ToString();
+                numero = resultado.Tables["VentasRealizadas"].Rows[0][0].ToString();
+                dni = resultado.Tables["VentasRealizadas"].Rows[0][1].ToString();
+                matricula = resultado.Tables["VentasRealizadas"].Rows[0][2].ToString();
+                marca = resultado.Tables["VentasRealizadas"].Rows[0][3].ToString();
+                modelo = resultado.Tables["VentasRealizadas"].Rows[0][4].ToString();
+                garantia = resultado.Tables["VentasRealizadas"].Rows[0][5].ToString();
+                precioVenta = resultado.Tables["VentasRealizadas"].Rows[0][6].ToString();
+                fecha = resultado.Tables["VentasRealizadas"].Rows[0][7].ToString();
             }
             catch (Exception ex)
             {
@@ -132,12 +148,13 @@ namespace EN
             {
                 resultado = cadVentasRealizadas.ObtenerTablaVentasRealizadas();
                 DataRow linea = resultado.Tables["VentasRealizadas"].NewRow();
-                linea[0] = dni;
-                linea[1] = matricula;
-                linea[2] = marca;
-                linea[3] = modelo;
-                linea[4] = garantia;
-                linea[5] = precioVenta;
+                linea[1] = dni;
+                linea[2] = matricula;
+                linea[3] = marca;
+                linea[4] = modelo;
+                linea[5] = garantia;
+                linea[6] = precioVenta;
+                linea[7] = fecha;
                 resultado.Tables["VentasRealizadas"].Rows.Add(linea);
                 cadVentasRealizadas.AnyadirVentasRealizadas(resultado);
             }
