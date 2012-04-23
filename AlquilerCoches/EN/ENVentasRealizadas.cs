@@ -128,7 +128,7 @@ namespace EN
             DataSet resultado = new DataSet();
             try
             {
-                resultado = cadVentasRealizadas.ObtenerDatosVehiculo(dni);
+                resultado = cadVentasRealizadas.ObtenerDatosVentas(dni);
 
                 numero = resultado.Tables["VentasRealizadas"].Rows[0][0].ToString();
                 dni = resultado.Tables["VentasRealizadas"].Rows[0][1].ToString();
@@ -179,5 +179,20 @@ namespace EN
 
         }
 
+        public void EditarFacturado()
+        {
+            try
+            {
+                DataSet venta = cadVentasRealizadas.ObtenerDatosVentas(dni);
+
+                venta.Tables["VentasRealizadas"].Rows[0][8] = 1;
+                cadVentasRealizadas.EditarFacturado(venta);
+
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+        }
     }
 }
