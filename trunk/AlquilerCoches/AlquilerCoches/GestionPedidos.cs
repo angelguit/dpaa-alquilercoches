@@ -178,14 +178,20 @@ namespace AlquilerCoches
                 if (editar == "SI")
                 {
                     enPedidos.EditarPedidos();
+                    label1.Text = "* Pedido modificado con éxito. *";
+
                 }
-                else enPedidos.AnyadirPedidos();
+                else
+                {
+                    enPedidos.AnyadirPedidos();
+                    label1.Text = "* Pedido realizado con éxito. *";
+                }
                 editar = "SI";
 
 
                 groupBox1.Enabled = false;
 
-                label1.Text = "* Pedido realizado con éxito. *";
+          
 
             }      
             
