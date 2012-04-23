@@ -235,6 +235,18 @@ namespace AlquilerCoches
         {
             if (TListBoxMarcas.SelectedIndex != -1)
             {
+                TTextBoxMatricula.Text = "";
+                TTextBoxMarca.Text = "";
+                TTextBoxModelo.Text = "";
+                TTextBoxKm.Text = "";
+                TCheckBoxGarantia.Checked = false;
+                TTextBoxMeses.Text = "";
+                TTextBoxPrecioVenta.Text = "";
+                errorProvider1.Clear();
+                TTextBoxMeses.Enabled = false;
+                TGroupBoxDatosVehiculo.Enabled = false;
+                TButtonBorrar.Enabled = false;
+                TTextBoxMatricula.Enabled = false;
                 TListBoxModelos.Items.Clear();
                 TListBoxMatriculas.Items.Clear();
                 ventas.Marca = TListBoxMarcas.Items[TListBoxMarcas.SelectedIndex].ToString();
@@ -247,6 +259,18 @@ namespace AlquilerCoches
         {
             if (TListBoxModelos.SelectedIndex != -1)
             {
+                TTextBoxMatricula.Text = "";
+                TTextBoxMarca.Text = "";
+                TTextBoxModelo.Text = "";
+                TTextBoxKm.Text = "";
+                TCheckBoxGarantia.Checked = false;
+                TTextBoxMeses.Text = "";
+                TTextBoxPrecioVenta.Text = "";
+                errorProvider1.Clear();
+                TTextBoxMeses.Enabled = false;
+                TGroupBoxDatosVehiculo.Enabled = false;
+                TButtonBorrar.Enabled = false;
+                TTextBoxMatricula.Enabled = false;
                 TListBoxMatriculas.Items.Clear();
                 ventas.Modelo = TListBoxModelos.Items[TListBoxModelos.SelectedIndex].ToString();
                 ventas.ObtenerMatriculas();
