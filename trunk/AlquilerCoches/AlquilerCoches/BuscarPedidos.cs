@@ -57,6 +57,7 @@ namespace AlquilerCoches
         {
             TDataGridViewPedidos.Visible = false;
             radioButton3.Checked = true;
+            TButtonEliminar.Visible = false;
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -98,7 +99,8 @@ namespace AlquilerCoches
         private void TButtonBuscar_Click(object sender, EventArgs e)
         {
                 TDataGridViewPedidos.Visible = true;
-              
+                TButtonEliminar.Visible = true;
+                groupBox1.Location = new Point(29, 264);
                 
                 DataSet ds = new DataSet();
 
@@ -174,7 +176,7 @@ namespace AlquilerCoches
 
               
                 todo += siguiente;
-               // MessageBox.Show("select * from tabla where" + todo);
+            
                 ds = enPedidos.ObtenerListaPedidos(todo);
                 eliminado = todo;
 
@@ -307,9 +309,7 @@ namespace AlquilerCoches
 
         private void TButtonCerrar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Desea Salir?", "Advertencia",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Question,
-                    MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+
                 this.Close();
         }
 
@@ -404,7 +404,8 @@ namespace AlquilerCoches
         {
             ActualizaDatagridView();
         }
-       
+
+        
 
     }
 }
