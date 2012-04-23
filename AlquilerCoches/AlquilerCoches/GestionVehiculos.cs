@@ -410,7 +410,14 @@ namespace AlquilerCoches
                 {
                     case "Borrar":
                         MessageBox.Show(vehiculos.Matricula);
-                        vehiculos.BorrarVehiculo();
+                        if (TRadioButtonEstado.Checked)
+                        {
+                            vehiculos.BorrarVehiculo();
+                        }
+                        else
+                        {
+                            MessageBox.Show("El vehiculo no se encuentra disponible", "ERROR");
+                        }
                         break;
                     case "Editar":
                         guardaCampos();
@@ -460,7 +467,7 @@ namespace AlquilerCoches
             vehiculos.KM = TTextBoxKM.Text;
             vehiculos.PrecioCompra = TTextBoxPrecioCompra.Text;
             vehiculos.PrecioVenta = TTextBoxPrecioVenta.Text;
-            vehiculos.Estado = (TRadioButtonEstado.Checked) ? "Disponible" : (TRadioButtonRevision.Checked) ?"Revision" : "Reservado";
+            vehiculos.Estado = (TRadioButtonEstado.Checked) ? "Disponible" : (TRadioButtonRevision.Checked) ?"Revision" : (TRadioButtonRevision.Checked) ?"Reservado":"Disponible";
         }
 
         void rellenaCategorias()
