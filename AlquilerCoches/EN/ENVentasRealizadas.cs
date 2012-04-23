@@ -86,9 +86,8 @@ namespace EN
         }
         public void ClearEnVentas()
         {
-             matricula = marca = modelo = garantia = dni = "";
+            matricula = marca = modelo = garantia = dni = "";
              precioVenta = fecha = numero = "";
-             facturado = 0;
         }
 
         public DataSet ObtenerListaVentasRealizadas()
@@ -139,7 +138,6 @@ namespace EN
                 garantia = resultado.Tables["VentasRealizadas"].Rows[0][5].ToString();
                 precioVenta = resultado.Tables["VentasRealizadas"].Rows[0][6].ToString();
                 fecha = resultado.Tables["VentasRealizadas"].Rows[0][7].ToString();
-                facturado = resultado.Tables["VentasRealizadas"].Rows[0][8].ToString();
             }
             catch (Exception ex)
             {
@@ -163,7 +161,6 @@ namespace EN
                 linea[5] = garantia;
                 linea[6] = precioVenta;
                 linea[7] = fecha;
-                linea[8] = facturado;
                 resultado.Tables["VentasRealizadas"].Rows.Add(linea);
                 cadVentasRealizadas.AnyadirVentasRealizadas(resultado);
             }
