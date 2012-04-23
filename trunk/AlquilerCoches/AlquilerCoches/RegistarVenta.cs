@@ -150,7 +150,7 @@ namespace AlquilerCoches
 
         private void TButtonAceptar_Click(object sender, EventArgs e)
         {
-            if (incorrecto == false && TTextBoxDNI.Text !="")
+            if (incorrecto == false && (TTextBoxDNI.Text !="" || TTextBoxNombre.Text !=""))
             {
                 if (MessageBox.Show("¿Desea registrar venta?\n Se borrará el coche de la lista de ventas.", "¿REGISTRAR?", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.OK)
                 {
