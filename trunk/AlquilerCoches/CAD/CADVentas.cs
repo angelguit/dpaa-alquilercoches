@@ -141,7 +141,7 @@ namespace CAD
             try
             {
                 SqlConnection conexion = new SqlConnection(cadenaConexion);
-                String consulta = "Select * from Ventas where Matricula='" + venta.Tables["Ventas"].Rows[0][2] + "'";
+                String consulta = "Select * from Ventas where Matricula='" + venta.Tables["Ventas"].Rows[0][0] + "'";
                 SqlDataAdapter daVentas = new SqlDataAdapter(consulta, conexion);
                 daVentas.MissingSchemaAction = MissingSchemaAction.AddWithKey;
                 daVentas.Fill(dsVenta, nombreTabla);
