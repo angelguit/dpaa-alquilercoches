@@ -40,17 +40,17 @@
             this.TTextBoxDNI = new System.Windows.Forms.TextBox();
             this.TTextBoxNombre = new System.Windows.Forms.TextBox();
             this.TTextBoxApellidos = new System.Windows.Forms.TextBox();
-            this.TTextBoxPuestoAc = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.TComboBoxCiudades = new System.Windows.Forms.ComboBox();
             this.TComboBoxProvincias = new System.Windows.Forms.ComboBox();
             this.TLabelCiudad = new System.Windows.Forms.Label();
             this.TLabelProvincia = new System.Windows.Forms.Label();
+            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.rectangleShape1 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.TButtonCerrar = new System.Windows.Forms.Button();
             this.bBDDDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.TLabelTitulo = new System.Windows.Forms.Label();
-            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.rectangleShape1 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.TComboBoxPuesto = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.TDataGridViewPersonal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -161,21 +161,14 @@
             this.TTextBoxApellidos.Size = new System.Drawing.Size(100, 20);
             this.TTextBoxApellidos.TabIndex = 1;
             // 
-            // TTextBoxPuestoAc
-            // 
-            this.TTextBoxPuestoAc.Location = new System.Drawing.Point(301, 61);
-            this.TTextBoxPuestoAc.Name = "TTextBoxPuestoAc";
-            this.TTextBoxPuestoAc.Size = new System.Drawing.Size(100, 20);
-            this.TTextBoxPuestoAc.TabIndex = 3;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.TComboBoxPuesto);
             this.panel1.Controls.Add(this.TComboBoxCiudades);
             this.panel1.Controls.Add(this.TComboBoxProvincias);
             this.panel1.Controls.Add(this.TLabelCiudad);
             this.panel1.Controls.Add(this.TLabelProvincia);
-            this.panel1.Controls.Add(this.TTextBoxPuestoAc);
             this.panel1.Controls.Add(this.TButtonEliminar);
             this.panel1.Controls.Add(this.TButtonBuscar);
             this.panel1.Controls.Add(this.TTextBoxApellidos);
@@ -238,6 +231,24 @@
             this.TLabelProvincia.TabIndex = 30;
             this.TLabelProvincia.Text = "Pronvincia";
             // 
+            // shapeContainer1
+            // 
+            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer1.Name = "shapeContainer1";
+            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.rectangleShape1});
+            this.shapeContainer1.Size = new System.Drawing.Size(473, 216);
+            this.shapeContainer1.TabIndex = 33;
+            this.shapeContainer1.TabStop = false;
+            // 
+            // rectangleShape1
+            // 
+            this.rectangleShape1.BorderColor = System.Drawing.Color.White;
+            this.rectangleShape1.Location = new System.Drawing.Point(4, 6);
+            this.rectangleShape1.Name = "rectangleShape1";
+            this.rectangleShape1.Size = new System.Drawing.Size(468, 209);
+            // 
             // TButtonCerrar
             // 
             this.TButtonCerrar.Image = global::AlquilerCoches.Properties.Resources.Close_icon;
@@ -265,23 +276,18 @@
             this.TLabelTitulo.TabIndex = 39;
             this.TLabelTitulo.Text = "Buscador de Personal";
             // 
-            // shapeContainer1
+            // TComboBoxPuesto
             // 
-            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
-            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer1.Name = "shapeContainer1";
-            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.rectangleShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(473, 216);
-            this.shapeContainer1.TabIndex = 33;
-            this.shapeContainer1.TabStop = false;
-            // 
-            // rectangleShape1
-            // 
-            this.rectangleShape1.BorderColor = System.Drawing.Color.White;
-            this.rectangleShape1.Location = new System.Drawing.Point(4, 6);
-            this.rectangleShape1.Name = "rectangleShape1";
-            this.rectangleShape1.Size = new System.Drawing.Size(468, 209);
+            this.TComboBoxPuesto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.TComboBoxPuesto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.TComboBoxPuesto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TComboBoxPuesto.FormattingEnabled = true;
+            this.TComboBoxPuesto.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.TComboBoxPuesto.Location = new System.Drawing.Point(301, 61);
+            this.TComboBoxPuesto.Name = "TComboBoxPuesto";
+            this.TComboBoxPuesto.Size = new System.Drawing.Size(101, 21);
+            this.TComboBoxPuesto.TabIndex = 34;
+            this.TComboBoxPuesto.Click += new System.EventHandler(this.TComboBoxPuesto_Click);
             // 
             // GestionPersonalBuscar
             // 
@@ -320,7 +326,6 @@
         private System.Windows.Forms.DataGridView TDataGridViewPersonal;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox TTextBoxPuestoAc;
         private System.Windows.Forms.TextBox TTextBoxApellidos;
         private System.Windows.Forms.TextBox TTextBoxNombre;
         private System.Windows.Forms.TextBox TTextBoxDNI;
@@ -338,5 +343,6 @@
         private System.Windows.Forms.Label TLabelTitulo;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape1;
+        private System.Windows.Forms.ComboBox TComboBoxPuesto;
 	}
 }
