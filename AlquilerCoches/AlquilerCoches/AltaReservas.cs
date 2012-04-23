@@ -400,10 +400,6 @@ namespace AlquilerCoches
         private void TButtonEditar_Click(object sender, EventArgs e)
         {
             EN.ENCliente enCli = new EN.ENCliente();
-          /* MessageBox.Show(enCliente.DNI+" hola");
-            DataSet cli = new DataSet(); 
-            cli = enCliente.ObtenerDatosClienteConDni(enCliente.DNI);
-            cli.Tables[0][0]*/
             GestionClientes Formu = new GestionClientes(enCliente,"Guardar Cambios",provincias,ciudades);
             Formu.StartPosition = FormStartPosition.Manual;
             Formu.Location = Location;

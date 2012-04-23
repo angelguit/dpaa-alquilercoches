@@ -180,5 +180,40 @@ namespace CAD
 
             return Int32.Parse(dsFa.Tables["Reservas"].Rows[dsFa.Tables["Reservas"].Rows.Count - 1][0].ToString());
         }
+
+        public void EliminarFacturas(ArrayList array)
+        {
+            DataSet dsFa = new DataSet();
+            try
+            {
+                string frase = "";
+                for (int i = 0; i < array.Count; i++)
+                {
+                    if (i == 0) { frase += "'" + array[i] + "'"; }
+                    else
+                    {
+                        frase += ",";
+                        frase += "'" + array[i] + "'";
+                    }
+                }
+
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                String consulta = "Select * from Facturas where Numero in (" + frase + ")";
+                SqlDataAdapter daFa = new SqlDataAdapter(consulta, conexion);
+                daFa.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daFa.Fill(dsFa, "Facturas");
+                for (int i = 0; i < array.Count; i++)//lo hacemos parar borrar las filas que corresponden con los dnis 
+                {
+                    dsFa.Tables["Facturas"].Rows[i].Delete();
+                }
+                SqlCommandBuilder cbuilder = new SqlCommandBuilder(daFa);
+                daFa.Update(dsFa, "Facturas");
+
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+        }
     }
 }
