@@ -524,6 +524,20 @@ namespace AlquilerCoches
 
         }
 
+        private void TButtonPersonal_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["GestionPersonalBuscar"] != null)
+            {
+                Application.OpenForms["GestionPersonalBuscar"].Activate();
+            }
+            else
+            {
+                GestionPersonalBuscar F1 = new GestionPersonalBuscar();
+                F1.MdiParent = this;
+                F1.Show();
+            }
+        }
+
      
      }   
 }

@@ -78,6 +78,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.TButtonCliente = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
+            this.TButtonPersonal = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.TButtonPedidos = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -514,6 +516,8 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.LightGray;
+            this.tabPage1.Controls.Add(this.label6);
+            this.tabPage1.Controls.Add(this.TButtonPersonal);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.TButtonPedidos);
             this.tabPage1.Controls.Add(this.label2);
@@ -526,6 +530,27 @@
             this.tabPage1.Size = new System.Drawing.Size(137, 675);
             this.tabPage1.TabIndex = 1;
             this.tabPage1.Text = "Administración";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(21, 541);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(102, 13);
+            this.label6.TabIndex = 25;
+            this.label6.Text = "Gestión de Personal";
+            // 
+            // TButtonPersonal
+            // 
+            this.TButtonPersonal.BackgroundImage = global::AlquilerCoches.Properties.Resources.personal;
+            this.TButtonPersonal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.TButtonPersonal.Location = new System.Drawing.Point(6, 441);
+            this.TButtonPersonal.Name = "TButtonPersonal";
+            this.TButtonPersonal.Size = new System.Drawing.Size(125, 88);
+            this.TButtonPersonal.TabIndex = 24;
+            this.TButtonPersonal.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.TButtonPersonal.UseVisualStyleBackColor = true;
+            this.TButtonPersonal.Click += new System.EventHandler(this.TButtonPersonal_Click);
             // 
             // label4
             // 
@@ -686,6 +711,8 @@
         private System.Windows.Forms.Button TButtonPedidos;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button TButtonPersonal;
     }
 }
 

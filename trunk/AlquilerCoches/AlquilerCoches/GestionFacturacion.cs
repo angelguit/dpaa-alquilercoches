@@ -69,7 +69,7 @@ namespace AlquilerCoches
             enRes.Activa = false;
             enVe.EditarVehiculo();
             enRes.EditarReserva();
-            ImprimirFacturaVenta Fp = new ImprimirFacturaVenta(enCli,enVe,enFa,enFa.UltimaFactura());
+            ImprimirFactura Fp = new ImprimirFactura(enCli,enVe,enFa,enFa.UltimaFactura());
             Fp.Show();
             Fp.Imprimir();
             Close();
