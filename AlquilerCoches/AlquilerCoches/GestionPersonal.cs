@@ -178,21 +178,27 @@ namespace AlquilerCoches
                 enPersonal.Email = TTextBoxEmail.Text; enPersonal.Direccion = TTextBoxDireccion.Text; enPersonal.Ciudad = TComboBoxCiudades.Text; enPersonal.Provincia = TComboBoxProvincias.Text;
                 enPersonal.Pass = TTextBoxPass.Text; enPersonal.PuestoAc = TComboBoxPuestoAc.Text;
 
-                if (!enPersonal.ExistePersonalEN(TTextBoxDNI.Text))
-                {
+               
                     if (TButtonGuardarPersonal.Text.ToString() == "Guardar")
                     {
-                        enPersonal.AnyadirPersonal();
+                        if (!enPersonal.ExistePersonalEN(TTextBoxDNI.Text))
+                        {
+                            enPersonal.AnyadirPersonal();
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("El DNI introducido ya existe","Atencion", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                        }
                     }
                     else
+                    {
                         enPersonal.EditarPersonal();
-
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("El DNI introducido ya existe");
-                }
+                        this.Close();
+                    }
+                    
+                
+                
 
 
             }
