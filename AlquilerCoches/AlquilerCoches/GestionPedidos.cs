@@ -135,6 +135,7 @@ namespace AlquilerCoches
                 }
 
             }
+            editar = "NO";
 
         }
         
@@ -474,7 +475,53 @@ namespace AlquilerCoches
                 TIDtextBox.Text = total;
                 editar = "NO";
             }
+            else
+            {
+                try
+                {
+                    EN.ENPedidos enID = new EN.ENPedidos();
+                    DataSet dsIDs = new DataSet();
+                    dsIDs = enID.ObtenerListaID();
+                    groupBox1.Enabled = true;
 
+                    DataSet id_pedidos = new DataSet();
+                    id_pedidos = dsIDs;
+                    bool parar = false;
+                    int n = 0;
+                    for (int i = 0; i < 4 && parar != true; i++)
+                    {
+
+                        if (id_pedidos.Tables["Pedidos"].Rows[i][0].ToString() != null)
+                        {
+
+                            n++;
+                            k++;
+                        }
+                        if (id_pedidos.Tables["Pedidos"].Rows[i][0].ToString() == null)
+                        {
+                            parar = true;
+                        }
+                    }
+
+                    n++;
+                    k++;
+
+
+
+                    string s = Convert.ToString(n);
+                    string p = "P";
+                    string total = "";
+                    total += s + p;
+                    TIDtextBox.Text = total;
+
+
+                }
+                catch (Exception ex)
+                {
+                    throw (ex);
+                }
+
+            }
             
 
 
