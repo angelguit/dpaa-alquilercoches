@@ -277,6 +277,7 @@ namespace AlquilerCoches
             if (TRadioButtonVentas.Checked == true)
             {
                 TLabelNRes.Text = "Número Venta:";
+                TButtonBuscarFechas.Visible = false;
                 TGroupBoxReservas.Visible = true;
                 if (TDataGridViewReservas.Visible == false)
                 {
