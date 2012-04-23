@@ -162,7 +162,13 @@ namespace EN
                 linea[5] = garantia;
                 linea[6] = precioVenta;
                 linea[7] = fecha;
-                linea[8] = facturado;
+                if (facturado == "0")
+                    linea[8] = 0;
+                else
+                {
+                    if (facturado == "1")
+                        linea[8] = 1;
+                }
                 resultado.Tables["VentasRealizadas"].Rows.Add(linea);
                 cadVentasRealizadas.AnyadirVentasRealizadas(resultado);
             }
