@@ -30,6 +30,19 @@
     <div id="IndexOfertas">
     </div>
     <div id="IndexReserva">
+    <asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="True"  ></asp:ScriptManager>
+    <ajaxToolkit:CalendarExtender runat="server"
+        TargetControlID="IndexTextFechaInicio"
+        CssClass="IndexFechaInicio"
+        Format="MMMM d, yyyy"
+        PopupButtonID="CalendarioInicio" />
+        <asp:TextBox ID="IndexTextFechaInicio" runat="server"></asp:TextBox>
+        <input type="image" name="CalendarioInicio" 
+            id="CalendarioInicio" src="../Imagenes/Calendario.png" 
+            onclick="javascript:MostrarCalendario()" alt="Click para mostrar calendario" 
+            style="border-width:0px;" /><br />
+
     </div>
 </asp:Content>
+
 
