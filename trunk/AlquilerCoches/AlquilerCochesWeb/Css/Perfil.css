@@ -21,6 +21,25 @@
     border: 1px solid grey;
     height: 650px;
 }
+
+#PerfilDatosUsuario
+{
+     border: 1px solid grey; 
+    text-align: center;
+    float:left;
+    width:6cm;
+    height:10cm;
+}
+#PerfilDatosReservas
+{
+    border: 1px solid grey; 
+    text-align: center;
+    margin-left:6cm;
+    width:15.23cm;
+    height:8cm;
+    position:absolute;
+}
+
 #Pie
 {
     border: 1px solid grey;
