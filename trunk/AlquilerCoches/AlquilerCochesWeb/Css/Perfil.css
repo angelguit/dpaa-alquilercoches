@@ -114,12 +114,13 @@
     margin-left: 232px;
     margin-top:7.2cm;
 }
-#PerfilFechafactura
+.PerfilFechafactura
 {
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
-    border:1px solid #707070;
     position:absolute;
+    margin-left:5px;
+    
 }
 .Foto
 {    height: 95px;
