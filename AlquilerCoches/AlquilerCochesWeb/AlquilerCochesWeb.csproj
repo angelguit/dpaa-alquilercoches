@@ -60,6 +60,7 @@
     <Content Include="Css\Reserva.css" />
     <Content Include="Css\Situacion.css" />
     <Content Include="Imagenes\Cabecera.png" />
+    <Content Include="Imagenes\Imagenes Perfil\Desconocido.jpg" />
     <Content Include="Imagenes\Menu.png" />
     <Content Include="Index.aspx" />
     <Content Include="Ofertas.aspx" />
@@ -137,6 +138,7 @@
   <ItemGroup>
     <Content Include="Maestra.Master" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>
