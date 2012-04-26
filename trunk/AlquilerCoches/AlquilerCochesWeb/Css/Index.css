@@ -1,4 +1,5 @@
-﻿body 
+﻿/*===================== CSS Maestra ========================================*/
+body 
 {
     border: 1px solid grey;
     background-color: White;
@@ -48,3 +49,69 @@
 	color: #7C6F57;
 }
 
+/*===================== CSS Maestra FIN ===================================*/
+
+/*===================== CSS Indexx ========================================*/
+
+#IndexPresentacion
+{
+	height: 300px;
+	width: 600px;
+	float: left;
+}
+
+#IndexLogin
+{
+	height: 150px;
+	width: 204px;
+	float: left;
+	background-color: Red;
+}
+
+#IndexRegistro
+{
+	height: 150px;
+	width: 204px;
+	float: left;
+	background-color: Blue;
+}
+
+#IndexOfertas
+{
+	height: 290px;
+	width: 402px;
+	background-color: Orange;
+	float: left;
+}
+
+#IndexReserva
+{
+	height: 290px;
+	width: 402px;
+	background-color: Purple;
+	float: left;
+}
+
+#IndexTextoPresentacion
+{
+	width: 500;
+	margin-top: 6em;
+	margin-left: 2em;
+	margin-right: 2em;
+	-webkit-border-radius: 37px;
+	-moz-border-radius: 37px;
+	-webkit-box-shadow: -5px -5px 30px #000000;
+	-moz-box-shadow: -5px -5px 30px #000000;
+	-webkit-transform: rotate(-6deg);
+	-moz-transform: rotate(-6deg);
+	-o-transform: rotate(-6deg);
+	border: 6px solid #FFFFFF;
+	background-color: #E6E6FA;
+	padding: 12px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-weight: bold;
+	font-size: 9pt;
+	color: blue;
+	text-align: justify;
+	outline: 0px solid #000000;
+}
