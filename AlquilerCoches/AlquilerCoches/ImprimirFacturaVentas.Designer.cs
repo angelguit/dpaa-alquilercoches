@@ -274,7 +274,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(169, 13);
             this.label1.TabIndex = 61;
-            this.label1.Text = "Tfno: 965123123 Fax: 965231231";
+            this.label1.Text = "Tfno: 967123123 Fax: 967231231";
             // 
             // TGroupBoxInfoCliente
             // 

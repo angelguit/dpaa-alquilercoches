@@ -1,33 +1,41 @@
 ﻿body 
 {
-    background-color: #e6e6e6;
-}
-#bodyCentral
-{
-  	position:absolute;
-	width:30cm;
-	margin-left:10%;	
-	margin-right:10%;
-	height:35cm;
-	border-style:outset;
-	background-color: white;
-    
+    border: 1px solid grey;
+    background-color: White;
+    width: 806px;
+    margin: 0 auto;
 }
 #Menu
 {
-     
+    border: 1px solid grey; 
+    text-align: center;
+    margin: 0 auto; 
+}
+#TMenuMaster
+{
+	margin-left: 150px;
 }
 #Cuerpo
 {
-   
+    border: 1px solid grey;
+    height: 650px;
 }
 #Pie
 {
-    position:absolute;
-    margin-top:32cm;
-   /* border-top: 2px solid black;*/
-    border-style:groove;
-    top: -12px;
-    left: 5px;
-    width: 1120px;
+    border: 1px solid grey;
+    height: 20px;
+    text-align:center;
+    margin: 0 auto;
+    font-size: 0.6em;
+    font-family: Verdana;
+    font-style: normal;
+    font-weight: lighter;
+    font-variant: normal;
+    color: #7C6F57;
 }
+#MaestraContacto
+{
+	text-decoration: none;
+	color: #7C6F57;
+}
+
