@@ -1,12 +1,12 @@
 ﻿body 
 {
-background: -moz-linear-gradient(left, rgba(0,0,0,0.21) 0%, rgba(0,0,0,0) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,0.21)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(left, rgba(0,0,0,0.21) 0%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(left, rgba(0,0,0,0.21) 0%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(left, rgba(0,0,0,0.21) 0%,rgba(0,0,0,0) 100%); /* IE10+ */
-background: linear-gradient(left, rgba(0,0,0,0.21) 0%,rgba(0,0,0,0) 100%); /* W3C */
-background: progid:DXImageTransform.Microsoft.gradient( startColorstr='#36000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */
+/*background: -moz-linear-gradient(left, rgba(0,0,0,0.21) 0%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+/*background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,0.21)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+/*background: -webkit-linear-gradient(left, rgba(0,0,0,0.21) 0%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+/*background: -o-linear-gradient(left, rgba(0,0,0,0.21) 0%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+/*background: -ms-linear-gradient(left, rgba(0,0,0,0.21) 0%,rgba(0,0,0,0) 100%); /* IE10+ */
+/*background: linear-gradient(left, rgba(0,0,0,0.21) 0%,rgba(0,0,0,0) 100%); /* W3C */
+/*background: progid:DXImageTransform.Microsoft.gradient( startColorstr='#36000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */
 }
 #TMenuPerfil
 {
@@ -30,7 +30,7 @@ background: progid:DXImageTransform.Microsoft.gradient( startColorstr='#36000000
     border: 1px solid grey; 
     float:left;
     width:6cm;
-    height:10cm;
+    height:15.4cm;
     margin-left: 2px;
     margin-top: 2px;
     -moz-border-radius: 10px; /*radio de los bordes*/
@@ -41,7 +41,7 @@ background: progid:DXImageTransform.Microsoft.gradient( startColorstr='#36000000
     margin-top: 2px;
     text-align: center;
     width:14.98cm;
-    height:10cm;
+    height:7cm;
     position:absolute;
     margin-left: 232px;
     border: 1px solid grey;
@@ -71,7 +71,7 @@ background: progid:DXImageTransform.Microsoft.gradient( startColorstr='#36000000
 .PerfilbotonUsuario
 {
     float:right;
-    margin-top:3cm;
+    margin-top:1.8cm;
     margin-right:0.8cm;
     cursor: pointer;
     -moz-border-radius: 10px;
@@ -84,7 +84,7 @@ background: progid:DXImageTransform.Microsoft.gradient( startColorstr='#36000000
 .PerfilbotonReserva
 {
     float:right;
-    margin-top:7.2cm;
+    margin-top:4.5cm;
     margin-right:0.8cm;
     cursor: pointer;
     -moz-border-radius: 10px;
@@ -93,8 +93,38 @@ background: progid:DXImageTransform.Microsoft.gradient( startColorstr='#36000000
     padding-left:10px;
     padding-right:10px;
 }
-
+.Perfilbordes
+{
+     margin-top:1cm;
+     margin-left:5px;
+     margin-right:5px;
+}
 #PerfilImagenCliente
 {
     background-image: url('/Imagenes/Imagenes Perfil/Desconocido.jpg');
+}
+#PerfilBuscadorFactura
+{
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border:1px solid #707070;
+    width:14.98cm;
+    height:5cm;
+    position:absolute;
+    margin-left: 232px;
+    margin-top:7.2cm;
+}
+#PerfilFechafactura
+{
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border:1px solid #707070;
+    position:absolute;
+}
+.Foto
+{    height: 95px;
+    width: 82px;
+    margin-left: 65px;
+    margin-top:5px;
+    border:1px solid #707070;
 }

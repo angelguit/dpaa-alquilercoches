@@ -60,7 +60,7 @@
     <Content Include="Css\Reserva.css" />
     <Content Include="Css\Situacion.css" />
     <Content Include="Imagenes\Cabecera.png" />
-    <Content Include="Imagenes\Imagenes Perfil\Desconocido.jpg" />
+    <Content Include="Imagenes\ImagenesPerfil\Desconocido.jpg" />
     <Content Include="Imagenes\Menu.png" />
     <Content Include="Index.aspx" />
     <Content Include="Ofertas.aspx" />
