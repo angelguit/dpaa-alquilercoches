@@ -32,7 +32,7 @@
            Complete los detalles siguientes para encontrar los alquileres realizados</p>
            
            <div class="PerfilFechafactura">
-           <select id="cardType">
+           <select id="Dias">
             <option value="">-- dd --</option>
             <option value="01">01</option>
             <option value="02">02</option>
@@ -59,8 +59,28 @@
             <option value="23">23</option>
             <option value="24">24</option>
             </select>
+            <select id="Mes">
+            <option value="">-- mm --</option>
+            <option value="01">01</option>
+            <option value="02">02</option>
+            <option value="03">03</option>
+            </select>
+            <select id="anyo">
+            <option value="">-- aaaa --</option>
+            <option value="01">01</option>
+            <option value="02">02</option>
+            <option value="03">03</option>
+            </select>
            </div>
-          
+                <asp:Label ID="Label10" CssClass="PerfilbotonFactura" runat="server" Text="Buscar" 
+                    BackColor="Silver" ForeColor="White"></asp:Label>
+            <div class="PerfilNumerofactura">
+                <asp:Label ID="Label11" runat="server" Text="Label">Nº Factura:</asp:Label>
+                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                
+            </div>
+            <asp:Label ID="Label12" CssClass="PerfilbotonNFactura" runat="server" Text="Imprimir" 
+                    BackColor="Silver" ForeColor="White"></asp:Label>
           </div>
     </div>
 </asp:Content>
