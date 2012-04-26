@@ -1,15 +1,42 @@
 ﻿body 
 {
-    border: 2px solid black;
-    background-color: Yellow;
-    height: 10%;
+    border: 1px solid grey;
+    background-color: White;
+    width: 806px;
+    margin: 0 auto;
+}
+#TMenuPerfil
+{
+	margin-left: 150px;
 }
 #Menu
 {
-    border: 2px solid black; 
-    height: 10%;  
+    border: 1px solid grey; 
+    text-align: center;
+    margin: 0 auto; 
 }
+
 #Cuerpo
 {
-    border: 2px solid black;
+    border: 1px solid grey;
+    height: 650px;
 }
+#Pie
+{
+    border: 1px solid grey;
+    height: 20px;
+    text-align:center;
+    margin: 0 auto;
+    font-size: 0.6em;
+    font-family: Verdana;
+    font-style: normal;
+    font-weight: lighter;
+    font-variant: normal;
+    color: #7C6F57;
+}
+#PerfilContacto
+{
+	text-decoration: none;
+	color: #7C6F57;
+}
+
