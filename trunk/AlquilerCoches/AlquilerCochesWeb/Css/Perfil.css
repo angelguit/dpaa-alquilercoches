@@ -33,6 +33,8 @@ background: progid:DXImageTransform.Microsoft.gradient( startColorstr='#36000000
     height:10cm;
     margin-left: 2px;
     margin-top: 2px;
+    -moz-border-radius: 10px; /*radio de los bordes*/
+    -webkit-border-radius: 10px;
 }
 #PerfilDatosReservas
 {
@@ -43,6 +45,8 @@ background: progid:DXImageTransform.Microsoft.gradient( startColorstr='#36000000
     position:absolute;
     margin-left: 232px;
     border: 1px solid grey;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
 }
 
 #Pie
@@ -64,10 +68,33 @@ background: progid:DXImageTransform.Microsoft.gradient( startColorstr='#36000000
 	color: #7C6F57;
 }
 
-.botonderecho
+.PerfilbotonUsuario
 {
     float:right;
     margin-top:3cm;
-    margin-right:2.5cm;
+    margin-right:0.8cm;
     cursor: pointer;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border:1px solid #707070;
+    padding-left:10px;
+    padding-right:10px;
+
+}
+.PerfilbotonReserva
+{
+    float:right;
+    margin-top:7.2cm;
+    margin-right:0.8cm;
+    cursor: pointer;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border:1px solid #707070;
+    padding-left:10px;
+    padding-right:10px;
+}
+
+#PerfilImagenCliente
+{
+    background-image: url('/Imagenes/Imagenes Perfil/Desconocido.jpg');
 }
