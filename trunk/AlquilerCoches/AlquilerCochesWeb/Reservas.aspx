@@ -7,22 +7,29 @@
           <div id="ReservaCuerpoPaso1">
             <p style="text-align:center; text-decoration: underline;">Primer Paso: Seleccion de fechas</p>
             <div>
-                <label for="male">Fecha Inicio:</label>
-                <img src="supercalendario.jgp" alt="some_text"/>
-                <input type="text" name="finicio" />
-                <label for="male">Hora:</label>
-                <input type="text" name="horainicio" />
-                </br></br>
-                <label for="male">Fecha Fin:</label>
-                <input type="text" name="ffinal" />
-                <label for="male">Hora:</label>
-                <input type="text" name="horafinal" />
+                <label for="male"">&nbsp Fecha Inicio</label>
+                </br>
+                <label for="male"">&nbsp Dia:</label>
+                <input type="text" name="finicio" value="01/01/2012" size="10"/>
+                <img src="Imagenes/ImagenesReserva/supercalendario.jpg" alt="texto"/>
+                <label for="male">&nbsp Hora:</label>
+                <input type="text" name="horainicio" value="13:00" size="5"/>
+                </br></br></br>
+                <label for="male">&nbsp Fecha Fin</label>
+                </br>
+                <label for="male"">&nbsp Dia:</label>
+                <input type="text" name="ffinal" value="01/01/2012" size="10"/>
+                <img src="Imagenes/ImagenesReserva/supercalendario.jpg" alt="texto"/>
+                <label for="male">&nbsp Hora:</label>
+                <input type="text" name="horafinal" value="13:00" size="5"/>
                 </br></br>
             </div>        
           </div>	
           <div id="ReservaCuerpoPaso2">
                 <p style="text-align:center; text-decoration: underline;">Segundo paso: Informacion del vehiculo</p>
-                <label for="male">Categoria:</label>
+                </br>
+                <img src="Imagenes/ImagenesReserva/astra.jpg" alt="texto" id="ReservasFotoCoche"/>
+                <label for="male">&nbsp Categoria:</label>
                 <select>
                   <option value="volvo">A</option>
                   <option value="saab">B</option>
@@ -30,7 +37,7 @@
                   <option value="audi">D</option>
                 </select> 
                 </br></br>
-                <label for="male">Marca:</label>
+                <label for="male">&nbsp Marca:</label>
                 <select>
                   <option value="volvo">Opel</option>
                   <option value="saab">Ford</option>
@@ -38,7 +45,7 @@
                   <option value="audi">Seat</option>
                 </select> 
                 </br></br>
-                <label for="male">Modelo:</label>
+                <label for="male">&nbsp Modelo:</label>
                 <select>
                   <option value="volvo">Astra</option>
                   <option value="saab">Saab</option>
@@ -46,9 +53,11 @@
                   <option value="audi">Audi</option>
                 </select> 
                 </br></br>
-                <label for="male">Conductores:</label>
-                <input type="text" name="conductores" />
-                </br></br></br>
+                <label for="male">&nbsp Conductores:</label>
+                <input type="text" name="conductores" size="1"/>
+                
+                </br></br>
+                &nbsp
                 <button type="button" id="ReservabotonConsulta">Consultar precio</button> 
           </div>		
     </div>

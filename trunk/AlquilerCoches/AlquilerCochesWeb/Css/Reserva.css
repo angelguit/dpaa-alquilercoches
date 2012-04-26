@@ -1,12 +1,6 @@
 ﻿body 
 {
-    background: -moz-linear-gradient(left, rgba(0,0,0,0.21) 0%, rgba(0,0,0,0) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,0.21)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(left, rgba(0,0,0,0.21) 0%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(left, rgba(0,0,0,0.21) 0%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(left, rgba(0,0,0,0.21) 0%,rgba(0,0,0,0) 100%); /* IE10+ */
-    background: linear-gradient(left, rgba(0,0,0,0.21) 0%,rgba(0,0,0,0) 100%); /* W3C */
-    background: progid:DXImageTransform.Microsoft.gradient( startColorstr='#36000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */
+    
 }
 #ReservaMenu
 {
@@ -27,23 +21,21 @@
 }
 #ReservabotonConsulta
 {
+    float: right;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
+    margin-right:10px;
+    padding-left:10px;
+    padding-right:10px;
 }
 #ReservaCuerpoPaso3
 {
     border: 2px solid grey;
 }
-#ReservaCalendar1
+#ReservasFotoCoche
 {
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-}
-#ReservaCalendar2
-{
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    margin-left:10cm;
+    float:right;
+    margin-right:300px;
 }
 #ReservaPie
 {
