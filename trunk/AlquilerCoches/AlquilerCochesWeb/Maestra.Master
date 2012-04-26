@@ -18,16 +18,22 @@
             </asp:ContentPlaceHolder>
         </div>
         <div id="Cuerpo">
-
+        	<div id="Div1">	
+					&nbsp;<a href="Principal.aspx">Inicio</a>&nbsp;
+					<a href="registro.html">Registro</a>&nbsp;
+					<a href="buscar.html">Ofertas</a>
+					<a href="buscar.html">Donde estamos</a>
+				</div>				
+				
         </div>
         <div id="Pie">
-            <p>© Copyright VictoriaCars 2012 Aviso legal- Política de privacidad   Tel. 965 830 254
-                <p>
-                    Alquiler Coches Alicante Car Hire Alicante Mietwagen Alicante Flughafen Alquiler
-                    coches Barcelona Alquiler coches Valencia Alquiler coches Murcia Alquiler coches
-                    Malaga Alquiler coches Madrid Turismo en Alicante Turismo en Murcia Turismo en Madrid
-                    Turismo en Barcelona parking Alicante,Valencia, Barcelona Aeropuerto Alquiler coches bodas
-                </p>
+        <p>© Copyright VictoriaCars 2012 Aviso legal- Política de privacidad   Tel. 965 830 254
+            <p>
+                Alquiler Coches Alicante Car Hire Alicante Mietwagen Alicante Flughafen Alquiler
+                coches Barcelona Alquiler coches Valencia Alquiler coches Murcia Alquiler coches
+                Malaga Alquiler coches Madrid Turismo en Alicante Turismo en Murcia Turismo en Madrid
+                Turismo en Barcelona parking Alicante,Valencia, Barcelona Aeropuerto Alquiler coches bodas
+            </p>
             </p>
         </div>
         </form>
