@@ -62,6 +62,7 @@
     <Content Include="Imagenes\Cabecera.png" />
     <Content Include="Imagenes\ImagenesPerfil\Desconocido.jpg" />
     <Content Include="Imagenes\Menu.png" />
+    <Content Include="Imagenes\supercalendario.jpg" />
     <Content Include="Index.aspx" />
     <Content Include="Ofertas.aspx" />
     <Content Include="Perfil.aspx" />
