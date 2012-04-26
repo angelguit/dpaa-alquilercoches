@@ -4,25 +4,12 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MaestraContenedor" runat="server">
  <div id="Cuerpo">	
-          <div id="PerfilDatosUsuario">
-            <p style="text-align:center; text-decoration: underline;">Registro Usuario</p>
-            <div style="height: 318px">
-                <asp:Image ID="PerfilImagenCliente" runat="server" />
-                <asp:Label ID="Label1" runat="server" Text="Nombre"></asp:Label>
-                <asp:TextBox ID="TextBox1" runat="server" style="margin-left: 26px" 
-                    Width="165px"></asp:TextBox>
-                </br></br>
-                <asp:Label ID="Label2" runat="server" Text="Apellidos"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:TextBox ID="TextBox2" runat="server" style="margin-left: 6px" 
-                    Width="232px"></asp:TextBox>
-                </br></br>
-                <asp:Label ID="Label3" runat="server" Text="Label">Provincia</asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:TextBox ID="TextBox3" runat="server" Width="162px"></asp:TextBox>
-                </br></br>
-                <asp:Label ID="Label4" runat="server" Text="Label">Ciudad</asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:TextBox ID="TextBox4" runat="server" Width="160px"></asp:TextBox>
-                </br></br>
+          <div id="RegistroDatosUsuario">
+            <div id="NuevoRegistro" style="height: 487px; width: 401px; margin-top: 0px;">
+                   <p style="text-align:center;background-color:#e6e6e6; width: 398px; font-family: verdana;">Nuevo registro</p>
+                    <asp:Label ID="Label1" runat="server" Text="Label">Nombre</asp:Label>
             </div>        
           </div>	
+    
     </div>
 </asp:Content>
