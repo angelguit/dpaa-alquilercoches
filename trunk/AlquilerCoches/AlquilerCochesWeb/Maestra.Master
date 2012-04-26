@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="Css/Index.css"/>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="MaestraFormulario" runat="server">
     <div id="Menu">
             <asp:Menu ID="TMenuMaster" runat="server" BackColor="#F7F6F3" 
                 DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" 
@@ -30,6 +30,8 @@
                     </asp:MenuItem>
                     <asp:MenuItem NavigateUrl="~/Ofertas.aspx" Text="Ofertas" Value="Ofertas">
                     </asp:MenuItem>
+                    <asp:MenuItem NavigateUrl="~/Compras.aspx" Text="Compras" Value="Compras">
+                    </asp:MenuItem>
                     <asp:MenuItem NavigateUrl="~/Situacion.aspx" Text="¿Donde estamos?" 
                         Value="¿Donde estamos?"></asp:MenuItem>
                 </Items>
@@ -38,8 +40,9 @@
                 <StaticSelectedStyle BackColor="#5D7B9D" />
             </asp:Menu>
     </div>
-    <div id="Cuerpo">
-    
+    <div id="Cuerpo">     
+            <asp:ContentPlaceHolder ID="MaestraContenedor" runat="server">
+            </asp:ContentPlaceHolder>
     </div>
     <div id="Pie">
         &reg Rent A Car  Telf: 967 123 123 Fax: 967 231 231
