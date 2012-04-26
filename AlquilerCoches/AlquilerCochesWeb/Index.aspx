@@ -2,21 +2,34 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="IndexIzquierda" ContentPlaceHolderID="MaestraContenedor" runat="server">
-<div id="IndexPresentacion">
-    <div id="IndexTextoPresentacion">
-        <p>Rent A Car es una empresa con años de experiencia.</p>
-        <p>Nuestros clientes son nuestra mayor prioridad y esperamos ofrecerle un servicio de su agrado. </p>
+    <div id="IndexPresentacion">
+        <div id="IndexTextoPresentacion">
+            <p>Rent A Car es una empresa con años de experiencia.</p>
+            <p>Nuestros clientes son nuestra mayor prioridad y esperamos ofrecerle un servicio de su agrado. </p>
+        </div>
     </div>
-</div>
-<div id="IndexLogin">
-    <asp:Login ID="IndexLogin" runat="server" Height="149px" Width="169px">
-    </asp:Login>
-</div>
-<div id="IndexRegistro">
-</div>
-<div id="IndexOfertas">
-</div>
-<div id="IndexReserva">
-</div>
+    <div id="IndexLogin">
+        <asp:Login ID="IndexLoginC" runat="server" Height="150px" Width="202px" 
+            LoginButtonText="Acceder" RememberMeText="Recordarme la próxima vez.">
+            <CheckBoxStyle CssClass="IndexCheck" />
+            <LabelStyle CssClass="IndexLabel" />
+            <LoginButtonStyle CssClass="IndexBotonAcceder" />
+            <TextBoxStyle CssClass="IndexTextBox" />
+            <TitleTextStyle CssClass="IndexTitle" />
+        </asp:Login>
+    </div>
+    <div id="IndexRegistro">
+        <br />
+        <br />
+        <p>¿No tienes una cuenta Rent A Car?</p>
+        <p>A que estas esperando, consigue todas las ventajas</p>
+        <br />
+        <br />
+        <a id="IndexLinkReg" href="Registro.aspx"> &nbsp Registrate &nbsp </a>
+    </div>
+    <div id="IndexOfertas">
+    </div>
+    <div id="IndexReserva">
+    </div>
 </asp:Content>
 

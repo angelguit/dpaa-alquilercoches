@@ -5,6 +5,9 @@ body
     background-color: White;
     width: 806px;
     margin: 0 auto;
+    /*-moz-border-radius: 10px;
+    -webkit-border-radius: 10px;*/
+
 }
 #Cabecera
 {
@@ -63,17 +66,37 @@ body
 #IndexLogin
 {
 	height: 150px;
-	width: 204px;
+	width: 202px;
 	float: left;
-	background-color: Red;
+	border: 1px solid grey;
+	background-color: #E6E6FA;
 }
 
 #IndexRegistro
 {
 	height: 150px;
-	width: 204px;
+	width: 202px;
 	float: left;
-	background-color: Blue;
+	border: 1px solid grey;
+	color: Black;
+	text-decoration: none;
+	text-align: center;
+	background-color: #E6E6FA;
+	font-family: Verdana, Geneva, sans-serif;
+	font-weight: normal;
+	font-size: x-small;
+	outline: 0px solid #000000;
+}
+
+#IndexLinkReg
+{
+	color: Black;
+	text-decoration: none;
+	border: 1px outset grey;
+	-webkit-border-radius: 1px;
+	-moz-border-radius: 1px;
+	-webkit-box-shadow: -2px -2px 2px #000000;
+	-moz-box-shadow: -2px -2px 2px #000000;
 }
 
 #IndexOfertas
@@ -114,4 +137,36 @@ body
 	color: blue;
 	text-align: justify;
 	outline: 0px solid #000000;
+}
+
+#IndexLoginC
+{
+	font-size: xx-small !important;
+}
+
+.IndexBotonAcceder
+{
+	text-align: center !important;
+	margin-right: 4.5em;
+}
+
+.IndexLabel
+{
+	font-size: xx-small !important;
+}
+
+.IndexTitle
+{
+	font-size: xx-small !important;
+}
+
+.IndexTextBox
+{
+	font-size: xx-small !important;
+}
+
+.IndexCheck
+{
+	font-size: xx-small !important;
+	text-align: center;
 }
