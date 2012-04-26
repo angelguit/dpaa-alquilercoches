@@ -51,6 +51,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Compras.aspx" />
     <Content Include="Css\Compras.css" />
     <Content Include="Css\Index.css" />
     <Content Include="Css\Ofertas.css" />
@@ -59,8 +60,11 @@
     <Content Include="Css\Reserva.css" />
     <Content Include="Css\Situacion.css" />
     <Content Include="Index.aspx" />
+    <Content Include="Ofertas.aspx" />
     <Content Include="Perfil.aspx" />
     <Content Include="Registro.aspx" />
+    <Content Include="Reservas.aspx" />
+    <Content Include="Situacion.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -70,6 +74,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Compras.aspx.cs">
+      <DependentUpon>Compras.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Compras.aspx.designer.cs">
+      <DependentUpon>Compras.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -83,6 +94,13 @@
     </Compile>
     <Compile Include="Maestra.Master.designer.cs">
       <DependentUpon>Maestra.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Ofertas.aspx.cs">
+      <DependentUpon>Ofertas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ofertas.aspx.designer.cs">
+      <DependentUpon>Ofertas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Perfil.aspx.cs">
       <DependentUpon>Perfil.aspx</DependentUpon>
@@ -98,6 +116,20 @@
     </Compile>
     <Compile Include="Registro.aspx.designer.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reservas.aspx.cs">
+      <DependentUpon>Reservas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reservas.aspx.designer.cs">
+      <DependentUpon>Reservas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Situacion.aspx.cs">
+      <DependentUpon>Situacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Situacion.aspx.designer.cs">
+      <DependentUpon>Situacion.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
