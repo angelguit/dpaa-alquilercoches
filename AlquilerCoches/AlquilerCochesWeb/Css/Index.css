@@ -109,9 +109,10 @@ body
 
 #IndexReserva
 {
+	border-left: 1px solid grey;
+	border-top: 1px solid grey;	
 	height: 290px;
-	width: 402px;
-	background-color: Purple;
+	width: 400px;
 	float: left;
 }
 
