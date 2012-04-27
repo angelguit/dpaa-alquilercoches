@@ -55,3 +55,36 @@
             -moz-border-radius: 10px; /*radio de los bordes*/
             -webkit-border-radius: 10px;
         }
+        
+        #OfertasLabelDescripcion
+        {
+            float: left;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            margin-left:170px;
+            margin-top:-100px;
+            padding-left:10px;
+            padding-right:10px;
+        }
+
+        #OfertasLabelPrecio
+        {
+            float: left;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            margin-left:170px;
+            margin-top:-59px;
+            padding-left:10px;
+            padding-right:10px;
+        }
+
+        #OfertasLabelGarantia
+        {
+            float: left;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            margin-left:170px;
+            margin-top:-38px;
+            padding-left:10px;
+            padding-right:10px;
+        }
