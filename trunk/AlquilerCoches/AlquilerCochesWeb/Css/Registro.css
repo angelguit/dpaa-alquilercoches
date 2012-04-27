@@ -1,4 +1,6 @@
-﻿body 
+﻿
+
+/*body 
 {
     border: 2px solid black;
     background-color: Yellow;
@@ -11,14 +13,14 @@
 }
 #Cuerpo
 {
-    border: 2px solid black;
+   border: 2px solid black; 
 }
 #Pie
 {
-    border: 2px solid black;
+  border: 2px solid black;
 }
-
-
+*/
+/*
 #RegistroDatosUsuario
 {
    
@@ -28,14 +30,181 @@
     margin-top: 19px;
 
 }
-
+*/
 #NuevoRegistro
 {
-    border: 1px solid grey;    
+     border: 1px solid grey; 
     
     
     
     
+}
+
+
+#TMenuPerfil
+{
+	margin-left: 150px;
+}
+#Menu
+{
+    border: 1px solid grey; 
+    text-align: center;
+    margin: 0 auto; 
+}
+
+#Cuerpo
+{
+    border: 1px solid grey;
+    height: 650px;
+}
+
+#PerfilDatosUsuario
+{
+    float:left;
+    width:6cm;
+    height:15.4cm;
+    margin-left: 2px;
+    margin-top: 2px;
+    -moz-border-radius: 10px; /*radio de los bordes*/
+    -webkit-border-radius: 10px;
+    margin-right: 107px;
+ 
+}
+#PerfilDatosReservas
+{
+    margin-top: 2px;
+    width:9.4cm;
+    height:7cm;
+    position:absolute;
+   /* margin-left: 232px; */
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    left: 658px;
+    top: 119px;
+    bottom: 179px;
+    border: 1px solid grey; 
+}
+
+#Pie
+{
+    border: 1px solid grey;
+    height: 20px;
+    text-align:center;
+    margin: 0 auto;
+    font-size: 0.6em;
+    font-family: Verdana;
+    font-style: normal;
+    font-weight: lighter;
+    font-variant: normal;
+    color: #7C6F57;
+}
+#PerfilContacto
+{
+	text-decoration: none;
+	color: #7C6F57;
+}
+
+.PerfilbotonUsuario
+{
+    float:right;
+    margin-top:0.8cm;
+    margin-right:0.8cm;
+    cursor: pointer;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border:1px solid #707070;
+    padding-left:10px;
+    padding-right:10px;
+
+}
+.PerfilbotonReserva
+{
+    margin-left:11cm;
+    cursor: pointer;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border:1px solid #707070;
+    padding-left:10px;
+    padding-right:10px;
+    margin-top:4.5cm;
+    position:absolute;
+}
+.PerfilbotonFactura
+{
+    float:left;
+    margin-top:1.2cm;
+    margin-left:5cm;
+    cursor: pointer;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border:1px solid #707070;
+    padding-left:10px;
+    padding-right:10px;
+}
+.Perfilbordes
+{
+     margin-top:1cm;
+     margin-left:5px;
+     margin-right:5px;
+}
+#PerfilImagenCliente
+{
+    background-image: url('/Imagenes/Imagenes Perfil/Desconocido.jpg');
+}
+#PerfilBuscadorFactura
+{
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border:1px solid #707070;
+    width:10.98cm;
+    height:5cm;
+    position:absolute;
+    margin-left: 232px;
+    margin-top:7.2cm;
+}
+.PerfilFechafactura
+{
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    position:absolute;
+    margin-left:5px;
+    border:1px dotted #707070;
+    padding-left:28px;
+    padding-right:28px;
+    padding-bottom:40px;
+    padding-top:10px;
+    
+}
+.Foto
+{    height: 95px;
+    width: 82px;
+    margin-left: 65px;
+    margin-top:5px;
+    border:1px solid #707070;
+}
+.PerfilNumerofactura
+{
+    
+     -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    position:absolute;
+    margin-left:293px;
+    border:1px dotted #707070;
+    padding-left:28px;
+    padding-right:26px;
+    padding-bottom:19px;
+    padding-top:10px;
+}
+.PerfilbotonNFactura
+{
+    float:right;
+    margin-top:1.2cm;
+    margin-right:20px;
+    cursor: pointer;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border:1px solid #707070;
+    cursor: pointer;
 }
 
 
