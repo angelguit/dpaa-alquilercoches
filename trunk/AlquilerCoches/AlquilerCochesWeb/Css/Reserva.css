@@ -47,6 +47,8 @@
 #ReservaCuerpoPaso3
 {
     border: 2px solid grey;
+    position:absolute;
+    width:21.13cm;
 }
 #ReservasFotoCoche
 {
