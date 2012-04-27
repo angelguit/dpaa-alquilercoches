@@ -22,6 +22,11 @@
           </div>	
           <div id="PerfilDatosReservas">
                 <p style="text-align:center; background-color:#e6e6e6"">Ultimas reservas</p>
+                <ol style="width:5cm;height:5cm; position:absolute">
+                    <li>Seat Ibiza</li>
+                    <li>Renault Megane</li>
+                    <li>Ford Fiesta</li>
+                </ol>
                 <asp:Label ID="Label6" CssClass="PerfilbotonReserva" runat="server" Text="Ver historial" 
                     BackColor="Silver" ForeColor="White"></asp:Label>
           </div>		
