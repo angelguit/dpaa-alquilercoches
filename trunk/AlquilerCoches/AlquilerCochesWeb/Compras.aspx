@@ -23,21 +23,46 @@
         </div>
 
             <div id="ComprasCuerpoCoches">
-
                 <p style="text-align:left; background-color:#e6e6e6; text-transform: capitalize; font-size: 12pt;">Resultados</p>
-                <div style="height: 154px">
-                <br />
-                    <asp:Label ID="Label1" runat="server" Text="SEAT LEON 1.9" Font-Overline="False" Font-Underline="True" Font-Size="Medium" Font-Bold="True"></asp:Label>
-                <br />
-                    <asp:Image ID="ComprasFotoCoche" runat="server" Height="96px" 
+
+                <div style="height: 154px; border-bottom-style: outset; border-bottom-width: medium;">
+                    <br />
+                    <asp:Label ID="Label1" runat="server" Text="SEAT LEON, 1.9" Font-Overline="False" Font-Underline="True" Font-Size="Medium" Font-Bold="True"></asp:Label>
+                    <br />
+                    <asp:Image ID="Image2" runat="server" Height="96px" 
                     ImageUrl="~/Imagenes/ImagenesCompras/seat-leon.jpg" Width="165px"/>
 
                     <label id="ComprasLabelDescripcion">Seat León 1.9 en perfecto estado, modelo de 2002, 5 puertas, 115CV con 125.000 Km.</label>
                     <label id="ComprasLabelPrecio">Precio: 9.500 €</label>
+                    <label id="ComprasLabelGarantia">Garantia: 6 meses</label>
                     <button type="button" id="ComprasBotonComprar">Comprar</button> 
                 </div>
 
-            </div>
+                <div style="border-width: medium; height: 154px; border-bottom-style: outset;">
+                    <br />
+                    <asp:Label ID="Label2" runat="server" Text="AUDI A4, 2.2" Font-Overline="False" Font-Underline="True" Font-Size="Medium" Font-Bold="True"></asp:Label>
+                    <br />
+                    <asp:Image ID="Image1" runat="server" Height="96px" 
+                    ImageUrl="~/Imagenes/ImagenesCompras/a4.jpg" Width="165px"/>
 
+                    <label id="ComprasLabelDescripcion">Audi A4 2.2 recién revisado y con ITV pasada, modelo de 2009, 5 puertas, 205CV con 75.000 Km.</label>
+                    <label id="ComprasLabelPrecio">Precio: 14.300 €</label>
+                    <label id="ComprasLabelGarantia">Garantia: 12 meses</label>
+                    <button type="button" id="ComprasBotonComprar">Comprar</button> 
+                </div>
+
+                <div style="border-width: medium; height: 154px; border-bottom-style: outset;">
+                    <br />
+                    <asp:Label ID="Label3" runat="server" Text="FORD FIESTA, 1.2" Font-Overline="False" Font-Underline="True" Font-Size="Medium" Font-Bold="True"></asp:Label>
+                    <br />
+                    <asp:Image ID="Image3" runat="server" Height="96px" 
+                    ImageUrl="~/Imagenes/ImagenesCompras/fiesta.jpg" Width="165px"/>
+
+                    <label id="ComprasLabelDescripcion">Ford Fiesta 1.2, pequeñas rayaduras en los paragolpes, mecánica en perfecto estado, modelo de 2010, 5 puertas, 60CV con 212.500 Km.</label>
+                    <label id="ComprasLabelPrecio">Precio: 3.100 €</label>
+                    <label id="ComprasLabelGarantia">Garantia: No</label>
+                    <button type="button" id="ComprasBotonComprar">Comprar</button> 
+                </div>
+            </div>
     </div>
 </asp:Content>
