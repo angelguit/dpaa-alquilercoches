@@ -10,8 +10,9 @@
                 <p style="text-align:center; background-color:#e6e6e6; text-transform: capitalize; font-size: 14pt;">Vehículos en Venta</p>
 
             <div style="width: 382px; margin-left: 240px">
-                <asp:Menu ID="MenuCompras" runat="server" Orientation="Horizontal" StaticSelectedStyle-BackColor="#666666" 
-                    ForeColor="Black" Font-Italic="True" Font-Size="Medium" StaticHoverStyle-ForeColor="#666666">
+                <asp:Menu ID="MenuCompras" runat="server" Orientation="Horizontal" StaticSelectedStyle-BackColor="#C0C0C0" 
+                    ForeColor="Black" Font-Italic="True" Font-Size="Medium" 
+                    StaticHoverStyle-ForeColor="#666666" BackColor="White" StaticMenuItemStyle-BackColor="#FFFFFF">
                 <Items>
                     <asp:MenuItem Text="Turismos"></asp:MenuItem>
                     <asp:MenuItem Text="Familiares"></asp:MenuItem>
