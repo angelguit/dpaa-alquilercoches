@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MaestraContenedor" runat="server">
  <div id="Cuerpo">	
           <div id="ReservaCuerpoPaso1">
-            <p style="text-align:center; text-decoration: underline; background-color:#e6e6e6">Primer Paso: Seleccion de fechas</p>
+            <p style="text-align:center; text-decoration: underline; background-color:#e6e6e6">Primer Paso: Seleccion de fecha</p>
             <div>
                 <label for="male"">&nbsp Fecha Inicio</label>
                 </br>
@@ -60,5 +60,10 @@
                 &nbsp
                 <button type="button" id="ReservabotonConsulta">Consultar precio</button> 
           </div>		
+          <div id="ReservaCuerpoPaso3">
+                <p style="text-align:center; text-decoration: underline; background-color:#e6e6e6">Tercer Paso: Descuentos</p>
+                <label for="male">&nbsp Codigo promocional:</label>
+                <input type="text" name="conductores" size="10"/>
+          </div>
     </div>
 </asp:Content>
