@@ -30,15 +30,35 @@
     <div id="IndexOfertas">
     </div>
     <div id="IndexReserva">
-    <asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="True"  ></asp:ScriptManager>
-    <ajaxToolkit:CalendarExtender runat="server"
-        TargetControlID="IndexTextFechaInicio"
-        CssClass="IndexFechaInicio"
-        Format="MMMM d, yyyy"
-        PopupButtonID="CalendarioInicio" />
-        <asp:TextBox ID="IndexTextFechaInicio" runat="server"></asp:TextBox>
+        <h1><span></span>Realizar Reserva</h1>
+
+        <asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="True"  ></asp:ScriptManager>
+
+        <ajaxToolkit:CalendarExtender runat="server"
+            TargetControlID="IndexTextFechaInicio"
+            CssClass="IndexFechaInicio"
+            Format="MMMM d, yyyy"
+            PopupButtonID="CalendarioInicio" />
+
+        <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server"
+            TargetControlID="IndexTextFechaFin"
+            CssClass="IndexFechaFin"
+            Format="MMMM d, yyyy"
+            PopupButtonID="CalendarioFin" />
+
+        <h2>Selecciona las fechas de tu reserva</h2>
+        <asp:TextBox ID="IndexTextFechaInicio" runat="server" Height="21px" 
+            Width="82px"></asp:TextBox>
+
         <input type="image" name="CalendarioInicio" 
             id="CalendarioInicio" src="../Imagenes/Calendario.png" 
+            onclick="javascript:MostrarCalendario()" alt="Click para mostrar calendario" 
+            style="border-width:0px;" />
+
+        <asp:TextBox ID="IndexTextFechaFin" runat="server" Height="21px" Width="82px"></asp:TextBox>
+
+        <input type="image" name="CalendarioFin" 
+            id="CalendarioFin" src="../Imagenes/Calendario.png" 
             onclick="javascript:MostrarCalendario()" alt="Click para mostrar calendario" 
             style="border-width:0px;" /><br />
 
