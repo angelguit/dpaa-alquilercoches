@@ -9,9 +9,6 @@
     <div id="Ofertas" title="Ofertas">
     <p style="text-align:center;background-color:#e6e6e6; font-family: verdana;">Ofertas</p>
         
-
-             
-
              <div id="menuContainer">
                  <asp:Menu ID="mnuMainMenu" runat="server" BackColor="#F7F6F3" 
                     DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="Medium" 
