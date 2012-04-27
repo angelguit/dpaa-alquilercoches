@@ -22,6 +22,39 @@
     -webkit-border-radius: 10px;
 }
 
+#ComprasBotonComprar
+{
+    float: right;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    margin-right:10px;
+    margin-top:-25px;
+    padding-left:10px;
+    padding-right:10px;
+}
+
+#ComprasLabelDescripcion
+{
+    float: left;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    margin-left:170px;
+    margin-top:-100px;
+    padding-left:10px;
+    padding-right:10px;
+}
+
+#ComprasLabelPrecio
+{
+    float: left;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    margin-left:170px;
+    margin-top:-70px;
+    padding-left:10px;
+    padding-right:10px;
+}
+
 #ComprasPie
 {
     border: 2px solid grey;
