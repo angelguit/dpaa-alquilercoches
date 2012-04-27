@@ -113,6 +113,18 @@ body
 	border-top: 1px solid grey;
 }
 
+#IndexBoxOfertas
+{
+	text-align:center;
+	margin: 0 auto;
+	width: 220px;
+	height: 180px;
+	border: 1px solid grey;
+	-webkit-border-radius: 1px;
+	-moz-border-radius: 1px;
+	-webkit-box-shadow: -2px -2px 2px #000000;
+	-moz-box-shadow: -2px -2px 2px #000000;
+}
 #IndexReserva
 {
 	border-left: 1px solid grey;
@@ -147,7 +159,6 @@ body
 	text-align: justify;
 	outline: 0px solid #000000;
 }
-
 #IndexLoginC
 {
 	font-size: xx-small !important;
