@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Rent A Car" Language="C#" MasterPageFile="~/Maestra.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="AlquilerCochesWeb.Index" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="IndexIzquierda" ContentPlaceHolderID="MaestraContenedor" runat="server">
+<asp:Content ID="Index" ContentPlaceHolderID="MaestraContenedor" runat="server">
     <div id="IndexPresentacion">
         <div id="IndexTextoPresentacion">
             <p>Rent A Car es una empresa con años de experiencia.</p>
@@ -28,6 +28,7 @@
         <a id="IndexLinkReg" href="Registro.aspx"> &nbsp Registrate &nbsp </a>
     </div>
     <div id="IndexOfertas">
+        <h1><span>Nuestras Ofertas</span></h1>
     </div>
     <div id="IndexReserva">
         <h1><span></span>Realizar Reserva</h1>
@@ -47,6 +48,8 @@
             PopupButtonID="CalendarioFin" />
 
         <h2>Selecciona las fechas de tu reserva</h2>
+        <br />
+        Desde:
         <asp:TextBox ID="IndexTextFechaInicio" runat="server" Height="21px" 
             Width="82px"></asp:TextBox>
 
@@ -54,13 +57,17 @@
             id="CalendarioInicio" src="../Imagenes/Calendario.png" 
             onclick="javascript:MostrarCalendario()" alt="Click para mostrar calendario" 
             style="border-width:0px;" />
-
+        hasta:
         <asp:TextBox ID="IndexTextFechaFin" runat="server" Height="21px" Width="82px"></asp:TextBox>
 
         <input type="image" name="CalendarioFin" 
             id="CalendarioFin" src="../Imagenes/Calendario.png" 
             onclick="javascript:MostrarCalendario()" alt="Click para mostrar calendario" 
             style="border-width:0px;" /><br />
+        <br />
+        <br />
+        <asp:Button ID="IndexBotonReserva" runat="server" Height="44px" Text="Reservar" 
+            Width="85px" onclick="IndexBotonReserva_Click" />
 
     </div>
 </asp:Content>

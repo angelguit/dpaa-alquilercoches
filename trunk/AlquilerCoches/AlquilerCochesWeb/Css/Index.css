@@ -11,13 +11,13 @@ body
 }
 #Cabecera
 {
-	border: 1px solid grey;
 	height: 60px;
 	background-image: url('/Imagenes/Cabecera.png');
 }
 #Menu
 {
-    border: 1px solid grey; 
+    border-top: 1px solid grey; 
+    border-bottom: 1px solid grey;
     text-align: center;
     margin: 0 auto; 
     background-image: url('/Imagenes/Menu.png');
@@ -30,12 +30,11 @@ body
 }
 #Cuerpo
 {
-    border: 1px solid grey;
     height: 590px;
 }
 #Pie
 {
-    border: 1px solid grey;
+    border-top: 1px solid grey;
     height: 20px;
     text-align:center;
     margin: 0 auto;
@@ -66,18 +65,19 @@ body
 #IndexLogin
 {
 	height: 150px;
-	width: 202px;
+	width: 205px;
 	float: left;
-	border: 1px solid grey;
+	border-left: 1px solid grey;
 	background-color: #E6E6FA;
 }
 
 #IndexRegistro
 {
 	height: 150px;
-	width: 202px;
+	width: 205px;
 	float: left;
-	border: 1px solid grey;
+	border-top: 1px solid grey;
+	border-left: 1px solid grey;
 	color: Black;
 	text-decoration: none;
 	text-align: center;
@@ -97,14 +97,20 @@ body
 	-moz-border-radius: 1px;
 	-webkit-box-shadow: -2px -2px 2px #000000;
 	-moz-box-shadow: -2px -2px 2px #000000;
+	font-family: Comic Sans MS;
+}
+#IndexLinkReg:hover
+{
+	background-color: Aqua;
+	font-size:large;
 }
 
 #IndexOfertas
 {
 	height: 290px;
 	width: 402px;
-	background-color: Orange;
 	float: left;
+	border-top: 1px solid grey;
 }
 
 #IndexReserva
@@ -112,9 +118,10 @@ body
 	border-left: 1px solid grey;
 	border-top: 1px solid grey;	
 	height: 290px;
-	width: 400px;
+	width: 403px;
 	float: left;
 	text-align:center;
+	font-size: small;
 }
 
 #IndexTextoPresentacion
@@ -172,11 +179,20 @@ body
 	font-size: xx-small !important;
 	text-align: center;
 }
+#IndexOfertas h1
+{
+	font: bold 30px "Lucida Grande", Arial, sans-serif;
+	color: #464646;
+	text-align: center;
+	text-shadow: 0.1em 0.1em 0.2em black;
+	
+}
 #IndexReserva h1
 {
 	font: bold 30px "Lucida Grande", Arial, sans-serif;
 	color: #464646;
 	text-align: center;
+	text-shadow: 0.1em 0.1em 0.2em black;
 	
 }
 #IndexReserva h2
@@ -184,5 +200,21 @@ body
 	font: normal 10px "Lucida Grande", Arial, sans-serif;
 	color: #464646;
 	text-align: center;
-	margin-top: 6em;
+	margin-top: 4em;
+}
+#IndexTextFechaInicio
+{
+	margin-left: 2em;
+}
+#CalendarioInicio
+{
+	margin-right: 2em;
+}
+#IndexTextFechaFin
+{
+	margin-left:2em;
+}
+#CalendarioFin
+{
+	margin-right: 2em;
 }

@@ -74,11 +74,14 @@
     <Content Include="Css\Reserva.css" />
     <Content Include="Css\Situacion.css" />
     <Content Include="Imagenes\Cabecera.png" />
+    <Content Include="Imagenes\fallback3.png" />
     <Content Include="Imagenes\gradient-dark.png" />
     <Content Include="Imagenes\ImagenesPerfil\Desconocido.jpg" />
     <Content Include="Imagenes\ImagenesReserva\astra.jpg" />
     <Content Include="Imagenes\Menu.png" />
     <Content Include="Imagenes\ImagenesReserva\supercalendario.jpg" />
+    <Content Include="Imagenes\NuevaReserva.png" />
+    <Content Include="Imagenes\oferta.png" />
     <Content Include="Index.aspx" />
     <Content Include="Javascript\Js.js" />
     <Content Include="Ofertas.aspx" />
