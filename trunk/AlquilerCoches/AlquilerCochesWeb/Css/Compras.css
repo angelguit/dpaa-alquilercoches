@@ -1,19 +1,28 @@
 ﻿body 
 {
-    border: 2px solid black;
+    /*border: 2px solid black;
     background-color: Yellow;
-    height: 10%;
+    height: 10%;*/
 }
-#Menu
+#ComprasMenu
 {
     border: 2px solid black; 
     height: 10%;  
 }
-#Cuerpo
+#ComprasCuerpoTitulo
 {
-    border: 2px solid black;
+    border: 2px solid grey;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
 }
-#Pie
+#ComprasCuerpoCoches
 {
-    border: 2px solid black;
+    border: 2px solid grey;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+#ComprasPie
+{
+    border: 2px solid grey;
 }
