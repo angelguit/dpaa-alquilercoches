@@ -23,11 +23,18 @@
         </div>
 
             <div id="ComprasCuerpoCoches">
-                <p style="text-align:left; background-color:#e6e6e6; text-transform: capitalize; font-size: 12pt;">Resultados</p>
-                <div>
-                    <asp:MultiView ID="MultiViewCompras" runat="server">
 
-                    </asp:MultiView>
+                <p style="text-align:left; background-color:#e6e6e6; text-transform: capitalize; font-size: 12pt;">Resultados</p>
+                <div style="height: 154px">
+                <br />
+                    <asp:Label ID="Label1" runat="server" Text="SEAT LEON 1.9" Font-Overline="False" Font-Underline="True" Font-Size="Medium" Font-Bold="True"></asp:Label>
+                <br />
+                    <asp:Image ID="ComprasFotoCoche" runat="server" Height="96px" 
+                    ImageUrl="~/Imagenes/ImagenesCompras/seat-leon.jpg" Width="165px"/>
+
+                    <label id="ComprasLabelDescripcion">Seat León 1.9 en perfecto estado, modelo de 2002, 5 puertas, 115CV con 125.000 Km.</label>
+                    <label id="ComprasLabelPrecio">Precio: 9.500 €</label>
+                    <button type="button" id="ComprasBotonComprar">Comprar</button> 
                 </div>
 
             </div>
