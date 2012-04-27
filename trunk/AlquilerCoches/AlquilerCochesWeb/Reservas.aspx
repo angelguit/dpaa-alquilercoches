@@ -6,7 +6,6 @@
  <div id="Cuerpo">	
           <div id="ReservaCuerpoPaso1">
             <p style="text-align:center; text-decoration: underline; background-color:#e6e6e6">Primer Paso: Seleccion de fecha</p>
-            <div>
                 <label for="male"">&nbsp Fecha Inicio</label>
                 </br>
                 <label for="male"">&nbsp Dia:</label>
@@ -22,8 +21,7 @@
                 <img src="Imagenes/ImagenesReserva/supercalendario.jpg" alt="texto"/>
                 <label for="male">&nbsp Hora:</label>
                 <input type="text" name="horafinal" value="13:00" size="5"/>
-                </br></br>
-            </div>        
+                </br></br>     
           </div>	
           <div id="ReservaCuerpoPaso2">
                 <p style="text-align:center; text-decoration: underline; background-color: #e6e6e6">Segundo paso: Informacion del vehiculo</p>
