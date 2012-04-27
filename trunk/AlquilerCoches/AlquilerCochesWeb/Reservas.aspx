@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MaestraContenedor" runat="server">
  <div id="Cuerpo">	
           <div id="ReservaCuerpoPaso1">
-            <p style="text-align:center; text-decoration: underline;">Primer Paso: Seleccion de fechas</p>
+            <p style="text-align:center; text-decoration: underline; background-color:#e6e6e6">Primer Paso: Seleccion de fechas</p>
             <div>
                 <label for="male"">&nbsp Fecha Inicio</label>
                 </br>
@@ -26,7 +26,7 @@
             </div>        
           </div>	
           <div id="ReservaCuerpoPaso2">
-                <p style="text-align:center; text-decoration: underline;">Segundo paso: Informacion del vehiculo</p>
+                <p style="text-align:center; text-decoration: underline; background-color: #e6e6e6">Segundo paso: Informacion del vehiculo</p>
                 </br>
                 <img src="Imagenes/ImagenesReserva/astra.jpg" alt="texto" id="ReservasFotoCoche"/>
                 <label for="male">&nbsp Categoria:</label>
