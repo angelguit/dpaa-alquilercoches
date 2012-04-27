@@ -50,7 +50,18 @@
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
     margin-left:170px;
-    margin-top:-70px;
+    margin-top:-59px;
+    padding-left:10px;
+    padding-right:10px;
+}
+
+#ComprasLabelGarantia
+{
+    float: left;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    margin-left:170px;
+    margin-top:-38px;
     padding-left:10px;
     padding-right:10px;
 }
