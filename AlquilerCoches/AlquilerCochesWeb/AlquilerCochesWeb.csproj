@@ -77,6 +77,7 @@
     <Content Include="Imagenes\fallback3.png" />
     <Content Include="Imagenes\gradient-dark.png" />
     <Content Include="Imagenes\ImagenesPerfil\Desconocido.jpg" />
+    <Content Include="Imagenes\ImagenesPerfil\logo.jpg" />
     <Content Include="Imagenes\ImagenesReserva\astra.jpg" />
     <Content Include="Imagenes\Menu.png" />
     <Content Include="Imagenes\ImagenesReserva\supercalendario.jpg" />
