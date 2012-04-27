@@ -1,90 +1,69 @@
-﻿body 
-{
-    border: 2px solid black;
-    background-color: Yellow;
-    height: 10%;
-}
-#Menu
-{
-    border: 2px solid black; 
-    height: 10%;  
-}
-#Cuerpo
-{
-    border: 2px solid black;
-}
-#Pie
-{
-    border: 2px solid black;
-}
+﻿
 
-
-
-        #menu 
-        {
-         margin: auto;
-         text-align: center;
-        }
-        #menuContainer
-        {
-            float:right;
-            width: 90%;
-        }
+#menu 
+{
+    margin: auto;
+    text-align: center;
+}
+#menuContainer
+{
+    float:right;
+    width: 90%;
+}
         
-        #Ofertas
-        {
-            border: 1px solid grey; 
-            height: 100%;
-            width: 100%;
-            float:left;
-            margin-left: 2px;
-            margin-top: 2px;
-            -moz-border-radius: 10px; /*radio de los bordes*/
-            -webkit-border-radius: 10px;
-        }
+#Ofertas
+{
+    border: 1px solid grey; 
+    height: 15.4cm;
+    width: 21.15cm;
+    float:left;
+    margin-left: 2px;
+    margin-top: 2px;
+    -moz-border-radius: 10px; /*radio de los bordes*/
+    -webkit-border-radius: 10px;
+}
         
-        #multiview
-        {
+#multiview
+{
             
-            border: 1px solid grey; 
-            height: 90%;
-            width: 90%;
-            float:left;
-            margin-left: 2px;
-            margin-top: 2px;
-            -moz-border-radius: 10px; /*radio de los bordes*/
-            -webkit-border-radius: 10px;
-        }
+    border: 1px solid grey; 
+    height: 13.28cm;
+    width: 20.9cm;
+    float:left;
+    margin-left: 4px;
+    -moz-border-radius: 10px; /*radio de los bordes*/
+    -webkit-border-radius: 10px;
+}
         
-        #OfertasLabelDescripcion
-        {
-            float: left;
-            -moz-border-radius: 10px;
-            -webkit-border-radius: 10px;
-            margin-left:170px;
-            margin-top:-100px;
-            padding-left:10px;
-            padding-right:10px;
-        }
+#OfertasLabelDescripcion
+{
+    float: left;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    margin-left:170px;
+    margin-top:-100px;
+    padding-left:10px;
+    padding-right:10px;
+}
 
-        #OfertasLabelPrecio
-        {
-            float: left;
-            -moz-border-radius: 10px;
-            -webkit-border-radius: 10px;
-            margin-left:170px;
-            margin-top:-59px;
-            padding-left:10px;
-            padding-right:10px;
-        }
+#OfertasLabelPrecio
+{
+        float: left;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    margin-left:170px;
+    margin-top:-59px;
+    padding-left:10px;
+    padding-right:10px;
+}
 
-        #OfertasLabelGarantia
-        {
-            float: left;
-            -moz-border-radius: 10px;
-            -webkit-border-radius: 10px;
-            margin-left:170px;
-            margin-top:-38px;
-            padding-left:10px;
-            padding-right:10px;
-        }
+#OfertasLabelGarantia
+{
+    float: left;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    margin-left:170px;
+    margin-top:-38px;
+    padding-left:10px;
+    padding-right:10px;
+}
