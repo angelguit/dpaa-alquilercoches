@@ -13,5 +13,10 @@ namespace AlquilerCochesWeb
         {
 
         }
+
+        protected void IndexBotonReserva_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Reservas.aspx");
+        }
     }
 }
