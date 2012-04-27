@@ -74,11 +74,13 @@
     <Content Include="Css\Reserva.css" />
     <Content Include="Css\Situacion.css" />
     <Content Include="Imagenes\Cabecera.png" />
+    <Content Include="Imagenes\gradient-dark.png" />
     <Content Include="Imagenes\ImagenesPerfil\Desconocido.jpg" />
     <Content Include="Imagenes\ImagenesReserva\astra.jpg" />
     <Content Include="Imagenes\Menu.png" />
     <Content Include="Imagenes\ImagenesReserva\supercalendario.jpg" />
     <Content Include="Index.aspx" />
+    <Content Include="Javascript\Js.js" />
     <Content Include="Ofertas.aspx" />
     <Content Include="Perfil.aspx" />
     <Content Include="Registro.aspx" />
@@ -157,6 +159,7 @@
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>

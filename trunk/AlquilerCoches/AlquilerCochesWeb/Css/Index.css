@@ -114,6 +114,7 @@ body
 	height: 290px;
 	width: 400px;
 	float: left;
+	text-align:center;
 }
 
 #IndexTextoPresentacion
@@ -170,4 +171,18 @@ body
 {
 	font-size: xx-small !important;
 	text-align: center;
+}
+#IndexReserva h1
+{
+	font: bold 30px "Lucida Grande", Arial, sans-serif;
+	color: #464646;
+	text-align: center;
+	
+}
+#IndexReserva h2
+{
+	font: normal 10px "Lucida Grande", Arial, sans-serif;
+	color: #464646;
+	text-align: center;
+	margin-top: 6em;
 }
