@@ -29,11 +29,6 @@
               });
           }
            
-            
-             
-            
-        
-
     google.maps.event.addDomListener(window, 'load', initialize);
     </script>
 </asp:Content>
@@ -41,19 +36,50 @@
     <div id="SituacionMapa">
         <div id="map_canvas"></div>
     </div>
-    <div id="SituacionContacto">
-         <p style="background-color:#e6e6e6; text-align:center"> Formulario Contacto</p>
-           &nbsp <asp:Label ID="Label1" CssClass="SituacionContactoLabel" runat="server" Text="Nombre:"></asp:Label><asp:TextBox ID="TextBox1" CssClass="SituacionContactoTextBox"
-            runat="server"></asp:TextBox></br></br>
-            <asp:Label ID="Label2" CssClass="SituacionContactoLabel" runat="server" Text="Apellidos:"></asp:Label><asp:TextBox ID="TextBox2" CssClass="SituacionContactoTextBox"
-            runat="server"></asp:TextBox></br></br>
-           &nbsp&nbsp&nbsp&nbsp&nbsp <asp:Label ID="Label3" CssClass="SituacionContactoLabel" runat="server" Text="Email:"></asp:Label><asp:TextBox ID="TextBox3" CssClass="SituacionContactoTextBox"
-            runat="server"></asp:TextBox></br></br>
-           &nbsp<asp:Label ID="Label4" CssClass="SituacionContactoLabel" runat="server" Text="Consulta:"></asp:Label> <textarea style="margin-left:50px" rows="5" cols="26"></textarea><br />
-    
-         <asp:Label ID="Label5" CssClass="RegistrobotonContacto" runat="server" Text="Enviar" 
-                    BackColor="Silver" ForeColor="White"></asp:Label>
-    </div>
+    <form id="formContacto">
+        <div id="SituacionContacto">
+             <p style="background-color:#e6e6e6; text-align:center"> Formulario Contacto</p>
+               &nbsp <asp:Label ID="Label1" CssClass="SituacionContactoLabel" runat="server" Text="Nombre:"></asp:Label>
+               <asp:TextBox ID="TTextBoxNombre" runat="server" CssClass="SituacionContactoTextBox"></asp:TextBox>
+
+               <asp:CustomValidator ID="CustomValidatorNombre" runat="server" 
+                 ErrorMessage="Nombre incorrecto" 
+                 ControlToValidate="TTextboxNombre"
+                 onservervalidate="CustomValidatorNombre_ServerValidate" 
+                 ForeColor="#CC0000"></asp:CustomValidator>
+                </br></br>
+
+                <asp:Label ID="Label2" CssClass="SituacionContactoLabel" runat="server" Text="Apellidos:"></asp:Label>
+                <asp:TextBox ID="TTextBoxApellidos" runat="server" CssClass="SituacionContactoTextBox"></asp:TextBox>
+              
+                <asp:CustomValidator ID="CustomValidatorApellidos" runat="server" 
+                 ErrorMessage="Apellidos incorrecto" 
+                 ControlToValidate="TTextboxApellidos"
+                 onservervalidate="CustomValidatorApellidos_ServerValidate" 
+                 ForeColor="#CC0000"></asp:CustomValidator>
+                </br></br>
+
+               &nbsp&nbsp&nbsp&nbsp&nbsp <asp:Label ID="Label3" CssClass="SituacionContactoLabel" runat="server" Text="Email:"></asp:Label>
+               <asp:TextBox ID="TTextBoxEmail" runat="server" CssClass="SituacionContactoTextBox"></asp:TextBox>
+
+                 <asp:CustomValidator ID="CustomValidatorEmail" runat="server" 
+                 ErrorMessage="Email incorrecto" 
+                 ControlToValidate="TTextboxEmail"
+                 onservervalidate="CustomValidatorEmail_ServerValidate" 
+                 ForeColor="#CC0000"></asp:CustomValidator>
+                </br></br>
+
+
+               &nbsp<asp:Label ID="Label4" CssClass="SituacionContactoLabel" runat="server" Text="Consulta:"></asp:Label> 
+               <textarea ID="TTextArea" style="margin-left:50px" rows="5" cols="26" runat="server"></textarea><br />
+        
+              <asp:Button ID="Button1"  CssClass="RegistrobotonContacto" runat="server" Text="Enviar" onclick="Button1_Click" />
+          <!--  <INPUT TYPE="submit" CssClass="RegistrobotonContacto" onclick="Button1_Click" value="Enviar"></input>-->
+           <!-- <INPUT TYPE="Reset"></input>-->
+          
+        </div>
+    </form>
+
     <div id="SituacionDatosEmpresa">
     <img class="Foto" alt="logo" src="/Imagenes/ImagenesPerfil/logo.jpg" />
     <p style="text-align:center">Telf: 967 123 123 Fax: 967 231 231 Provincia: Alicante Ciudad: Alicante Dirección: Masatusa nº10</p>
