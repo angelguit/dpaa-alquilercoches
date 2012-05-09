@@ -67,7 +67,7 @@ namespace AlquilerCochesWeb
             DataSet dscli = new DataSet();
             dscli = cli.ObtenerDatosClienteConDni("11111111A");
 
-            TTextBoxNombre.Text = dscli.Tables["Clientes"].Rows[0][0].ToString();
+            TTextBoxNombre.Text = dscli.Tables["Cliente"].Rows[0][1].ToString();
             }
             else
             { Button1.Text = "Incorrecto"; }
