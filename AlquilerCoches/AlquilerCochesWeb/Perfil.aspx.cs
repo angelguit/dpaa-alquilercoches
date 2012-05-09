@@ -25,6 +25,53 @@ namespace AlquilerCochesWeb
             Session["direccion"] = TLabelDireccion.Text = dscli.Tables["Cliente"].Rows[0][5].ToString();
             Session["provincia"] = TLabelProvincia.Text = dscli.Tables["Cliente"].Rows[0][6].ToString();
             Session["ciudad"] = TLabelCiudad.Text = dscli.Tables["Cliente"].Rows[0][7].ToString();
+
+            EN.ENReservas re = new ENReservas();
+            DataSet dsre = new DataSet();
+            dsre = re.ObtenerReservas();
+
+            EN.ENVehiculo ve = new ENVehiculo();
+
+            DataSet dsve = new DataSet();
+            DataTable dtvehi = dsve.Tables.Add("DataTableMia");
+            dtvehi.Columns.Add("Matricula", typeof(String));
+            dtvehi.Columns.Add("Marca", typeof(String));
+            dtvehi.Columns.Add("Modelo", typeof(String));
+            dtvehi.Columns.Add("Fecha Inicio", typeof(String));
+            dtvehi.Columns.Add("Fecha Fin", typeof(String));
+
+            if (dsre.Tables["Reservas"].Rows.Count > 0)
+            {
+                for (int i = 0; i < dsre.Tables["Reservas"].Rows.Count; i++)
+                {
+                   string matricula= dsre.Tables["Reservas"].Rows[i][2].ToString();
+                   //Substring nos sirve para recortar el string y quitarle la hora
+                   string fechaini = dsre.Tables["Reservas"].Rows[i][3].ToString().Substring(0,9);
+                   //Substring nos sirve para recortar el string y quitarle la hora
+                   string fechafin = dsre.Tables["Reservas"].Rows[i][4].ToString().Substring(0, 9);
+                   
+
+                   ve.Matricula = matricula;
+                   ve.ObtenerDatosVehiculos();
+
+                   DataRow fila;
+                   fila = dtvehi.NewRow();
+
+                   fila["Matricula"] = ve.Matricula;
+                   fila["Marca"] = ve.Marca;
+                   fila["Modelo"] = ve.Modelo;
+                   fila["Fecha Inicio"] = fechaini;
+                   fila["Fecha Fin"] = fechafin;
+                   //fila["Marca"] = ve.Marca;
+                   dtvehi.Rows.Add(fila);
+
+                }
+            }
+
+
+            TDataGridViewReservas.DataSource = dsve;
+            TDataGridViewReservas.DataBind();
+          
         }
     }
 }

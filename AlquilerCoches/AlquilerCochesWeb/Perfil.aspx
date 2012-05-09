@@ -36,17 +36,30 @@
           </div>	
           <div id="PerfilDatosReservas">
                 <p style="text-align:center; background-color:#e6e6e6"">Ultimas reservas</p>
-                <ol style="width:5cm;height:5cm; position:absolute">
+                <!--<ol style="width:5cm;height:5cm; position:absolute">
                     <li>Seat Ibiza</li>
                     <li>Renault Megane</li>
                     <li>Ford Fiesta</li>
-                </ol>
+                </ol>-->
+              <asp:GridView ID="TDataGridViewReservas" CssClass="TDataGridViewReservas" runat="server" CellPadding="4" 
+                    ForeColor="#333333" GridLines="None">
+                  <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                  <EditRowStyle BackColor="#999999" />
+                  <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                  <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                  <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                  <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                  <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                  <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                  <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                  <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                  <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+                </asp:GridView>
                 <asp:Button ID="Button2"  CssClass="PerfilbotonReserva" runat="server" Text="Ver Historial" />
             
           </div>		
           <div id="PerfilBuscadorFactura">
-           <p style="text-align:center;background-color:#e6e6e6">Imprima una factura</p>
-           
+           <p style="text-align:center;background-color:#e6e6e6">Imprima una factura
            <p>Imprima una copia de una factura de un alquiler realizado en los últimos seis meses. 
            Complete los detalles siguientes para encontrar los alquileres realizados</p>
            
