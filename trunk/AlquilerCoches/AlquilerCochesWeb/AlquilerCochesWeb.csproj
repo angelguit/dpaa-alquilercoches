@@ -70,6 +70,7 @@
     <Content Include="Css\Index.css" />
     <Content Include="Css\Ofertas.css" />
     <Content Include="Css\Perfil.css" />
+    <Content Include="Css\PerfilEditar.css" />
     <Content Include="Css\Registro.css" />
     <Content Include="Css\Reserva.css" />
     <Content Include="Css\Situacion.css" />
@@ -89,6 +90,7 @@
     <Content Include="Javascript\modernizr.custom.41769.js" />
     <Content Include="Ofertas.aspx" />
     <Content Include="Perfil.aspx" />
+    <Content Include="PerfilEditar.aspx" />
     <Content Include="Registro.aspx" />
     <Content Include="Reservas.aspx" />
     <Content Include="Situacion.aspx" />
@@ -138,6 +140,13 @@
     </Compile>
     <Compile Include="Perfil.aspx.designer.cs">
       <DependentUpon>Perfil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PerfilEditar.aspx.cs">
+      <DependentUpon>PerfilEditar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PerfilEditar.aspx.designer.cs">
+      <DependentUpon>PerfilEditar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registro.aspx.cs">

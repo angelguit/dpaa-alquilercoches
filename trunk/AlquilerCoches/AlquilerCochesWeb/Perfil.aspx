@@ -16,8 +16,8 @@
                 <asp:Label ID="Label7" runat="server" Text="Label">Telefono: 645454578</asp:Label></br></br>
                 <asp:Label ID="Label9" runat="server" Text="Label">Email: juanito@gmail.com</asp:Label></br></br>
                 </div>
-                <asp:Label ID="Label5" CssClass="PerfilbotonUsuario" runat="server" Text="Editar" 
-                    BackColor="Silver" ForeColor="White"></asp:Label>
+                
+                 <asp:Button ID="Button1"  CssClass="PerfilbotonUsuario" runat="server" Text="Editar" PostBackUrl="~/PerfilEditar.aspx"/>
             </div>        
           </div>	
           <div id="PerfilDatosReservas">
@@ -27,8 +27,8 @@
                     <li>Renault Megane</li>
                     <li>Ford Fiesta</li>
                 </ol>
-                <asp:Label ID="Label6" CssClass="PerfilbotonReserva" runat="server" Text="Ver historial" 
-                    BackColor="Silver" ForeColor="White"></asp:Label>
+                <asp:Button ID="Button2"  CssClass="PerfilbotonReserva" runat="server" Text="Ver Historial" />
+            
           </div>		
           <div id="PerfilBuscadorFactura">
            <p style="text-align:center;background-color:#e6e6e6">Imprima una factura</p>
@@ -77,15 +77,15 @@
             <option value="03">03</option>
             </select>
            </div>
-                <asp:Label ID="Label10" CssClass="PerfilbotonFactura" runat="server" Text="Buscar" 
-                    BackColor="Silver" ForeColor="White"></asp:Label>
+               <asp:Button ID="Button3"  CssClass="PerfilbotonFactura" runat="server" Text="Buscar" />
+
             <div class="PerfilNumerofactura">
                 <asp:Label ID="Label11" runat="server" Text="Label">Nº Factura:</asp:Label>
                 <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
                 
             </div>
-            <asp:Label ID="Label12" CssClass="PerfilbotonNFactura" runat="server" Text="Imprimir" 
-                    BackColor="Silver" ForeColor="White"></asp:Label>
+            <asp:Button ID="Button4"  CssClass="PerfilbotonNFactura" runat="server" Text="Imprimir" />
+           
           </div>
     </div>
 </asp:Content>
