@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Text.RegularExpressions;
+using EN;
 
 namespace AlquilerCochesWeb
 {
@@ -60,6 +62,12 @@ namespace AlquilerCochesWeb
             TTextBoxApellidos.Text = "";
             TTextBoxEmail.Text = "";
             TTextArea.Value = "";
+
+            EN.ENCliente cli = new ENCliente();
+            DataSet dscli = new DataSet();
+            dscli = cli.ObtenerDatosClienteConDni("11111111A");
+
+            TTextBoxNombre.Text = dscli.Tables["Clientes"].Rows[0][0].ToString();
             }
             else
             { Button1.Text = "Incorrecto"; }
