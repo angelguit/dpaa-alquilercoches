@@ -3,7 +3,9 @@
 <link rel="stylesheet" href="Css/Reserva.css"/>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MaestraContenedor" runat="server">
- <div id="Cuerpo">	
+ <div id="Cuerpo">
+
+    <form id="formularioReserva" onsubmit="enviar">
           <div id="ReservaCuerpoPaso1">
             <p style="text-align:center; text-decoration: underline; background-color:#e6e6e6">Primer Paso: Seleccion de fecha</p>
                 <label for="male"">&nbsp Fecha Inicio</label>
@@ -28,40 +30,35 @@
                 </br>
                 <img src="Imagenes/ImagenesReserva/astra.jpg" alt="texto" id="ReservasFotoCoche"/>
                 <label for="male">&nbsp Categoria:</label>
-                <select>
-                  <option value="volvo">A</option>
-                  <option value="saab">B</option>
-                  <option value="mercedes">C</option>
-                  <option value="audi">D</option>
-                </select> 
+              <asp:DropDownList ID="comboCategorias" runat="server" 
+                    ontextchanged="comboCategorias_TextChanged" 
+                    onselectedindexchanged="comboCategorias_SelectedIndexChanged">
+              </asp:DropDownList>
                 </br></br>
-                <label for="male">&nbsp Marca:</label>
-                <select>
-                  <option value="volvo">Opel</option>
-                  <option value="saab">Ford</option>
-                  <option value="mercedes">Toyota</option>
-                  <option value="audi">Seat</option>
-                </select> 
+                <label for="marcas">&nbsp Marca:</label>
+              <asp:DropDownList ID="comboMarcas" runat="server">
+              </asp:DropDownList>
                 </br></br>
                 <label for="male">&nbsp Modelo:</label>
-                <select>
-                  <option value="volvo">Astra</option>
-                  <option value="saab">Saab</option>
-                  <option value="mercedes">Mercedes</option>
-                  <option value="audi">Audi</option>
-                </select> 
+              <asp:DropDownList ID="comboModelos" runat="server">
+              </asp:DropDownList>
                 </br></br>
                 <label for="male">&nbsp Conductores:</label>
-                <input type="text" name="conductores" size="1"/>
-                
+                <asp:TextBox ID="conductores" runat="server" ></asp:TextBox>
+              <asp:CustomValidator ID="CustomValidator1" runat="server" 
+                    ErrorMessage="Solo numeros" 
+                     ControlToValidate="conductores"
+                    onservervalidate="validacionConductores">
+              </asp:CustomValidator>
                 </br></br>
                 &nbsp
-                <button type="button" id="ReservabotonConsulta">Consultar precio</button> 
           </div>		
           <div id="ReservaCuerpoPaso3">
                 <p style="text-align:center; text-decoration: underline; background-color:#e6e6e6">Tercer Paso: Descuentos</p>
                 <label for="male">&nbsp Codigo promocional:</label>
                 <input type="text" name="conductores" size="10"/>
           </div>
+          <asp:Button ID="ReservabotonConsulta" CssClass="ReservabotonConsulta" runat="server" Text="Consultar precio"/>
+       </form>
     </div>
 </asp:Content>
