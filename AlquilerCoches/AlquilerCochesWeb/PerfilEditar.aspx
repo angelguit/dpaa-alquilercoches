@@ -36,7 +36,7 @@
                        <asp:DropDownList ID="TDropDownListCiudad" runat="server" Height="22px" Width="185px"></asp:DropDownList> <br /> <br /> <br /> 
                
                     <asp:Label ID="Label5" runat="server" Text="Label" Width="90" font-size="14px">Dirección</asp:Label>
-                       <asp:TextBox ID="TTextBoxCiudad" runat="server" Height="17px" Width="178px"></asp:TextBox> <br /> <br /> <br /> 
+                       <asp:TextBox ID="TTextBoxDireccion" runat="server" Height="17px" Width="178px"></asp:TextBox> <br /> <br /> <br /> 
                        
                 
                     <asp:Label ID="Label6" runat="server" Text="Label" Width="90" font-size="14px">Teléfono</asp:Label>
