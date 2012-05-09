@@ -166,7 +166,7 @@ namespace AlquilerCoches
     
             TComboBoxTarifa.Items.Add(tarifa);
             TComboBoxTarifa.SelectedIndex = 0;
-
+          
             if (sexo == "V")
                 TRadioButtonH.Checked = true;
             else if (sexo == "M")
