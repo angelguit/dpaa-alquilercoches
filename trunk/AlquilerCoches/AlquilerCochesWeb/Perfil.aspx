@@ -8,13 +8,27 @@
             <p style="text-align:center;background-color:#e6e6e6">Datos Usuario</p>
             <div>
                 &nbsp;<img class="Foto" alt="usuario" src="/Imagenes/ImagenesPerfil/Desconocido.jpg" /><div class="Perfilbordes">
-                <asp:Label ID="Label1" runat="server" Text="Label">Nombre: Juan</asp:Label></br></br>
-                <asp:Label ID="Label2" runat="server" Text="Label">Apellidos: Solo Saez</asp:Label></br></br>
-                <asp:Label ID="Label3" runat="server" Text="Label">Provincia: Alicante</asp:Label></br></br>
-                <asp:Label ID="Label4" runat="server" Text="Label">Ciudad: Alicante</asp:Label></br></br>
-                <asp:Label ID="Label8" runat="server" Text="Label">Direccion: Victor Ruiz Espla nº10</asp:Label></br></br>
-                <asp:Label ID="Label7" runat="server" Text="Label">Telefono: 645454578</asp:Label></br></br>
-                <asp:Label ID="Label9" runat="server" Text="Label">Email: juanito@gmail.com</asp:Label></br></br>
+                
+                <asp:Label ID="Label1" runat="server" Text="Label">Nombre: </asp:Label>
+                <asp:Label ID="TLabelNombre" runat="server" Text="Label"></asp:Label></br></br>
+
+                <asp:Label ID="Label2" runat="server" Text="Label">Apellidos: </asp:Label>
+                <asp:Label ID="TLabelApellidos" runat="server" Text="Label"></asp:Label></br></br>
+
+                <asp:Label ID="Label3" runat="server" Text="Label">Provincia: </asp:Label>
+                <asp:Label ID="TLabelProvincia" runat="server" Text="Label"></asp:Label></br></br>
+
+                <asp:Label ID="Label4" runat="server" Text="Label">Ciudad: </asp:Label>
+                <asp:Label ID="TLabelCiudad" runat="server" Text="Label"></asp:Label></br></br>
+
+                <asp:Label ID="Label5" runat="server" Text="Label">Dirección: </asp:Label>
+                <asp:Label ID="TLabelDireccion" runat="server" Text="Label"></asp:Label></br></br>
+
+                <asp:Label ID="Label6" runat="server" Text="Label">Telefono: </asp:Label>
+                <asp:Label ID="TLabelTelefono" runat="server" Text="Label"></asp:Label></br></br>
+
+                <asp:Label ID="Label7" runat="server" Text="Label">Email: </asp:Label>
+                <asp:Label ID="TLabelEmail" runat="server" Text="Label"></asp:Label></br></br>
                 </div>
                 
                  <asp:Button ID="Button1"  CssClass="PerfilbotonUsuario" runat="server" Text="Editar" PostBackUrl="~/PerfilEditar.aspx"/>

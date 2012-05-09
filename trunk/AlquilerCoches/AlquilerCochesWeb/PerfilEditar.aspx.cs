@@ -11,7 +11,14 @@ namespace AlquilerCochesWeb
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-
+            TTextBoxNombre.Text = Session["nombre"].ToString();
+            TTextBoxApellidos.Text = Session["apellidos"].ToString();
+            TDropDownListProvincia.Items.Add(Session["provincia"].ToString());
+            TDropDownListCiudad.Items.Add(Session["ciudad"].ToString());
+            TTextBoxEmail.Text = Session["email"].ToString();
+            TTextBoxTelefono.Text = Session["telefono"].ToString();
+            TTextBoxDireccion.Text = Session["direccion"].ToString();
+            
 		}
 	}
 }
