@@ -84,7 +84,9 @@
     <Content Include="Imagenes\NuevaReserva.png" />
     <Content Include="Imagenes\oferta.png" />
     <Content Include="Index.aspx" />
+    <Content Include="Javascript\banner3.js" />
     <Content Include="Javascript\Js.js" />
+    <Content Include="Javascript\modernizr.custom.41769.js" />
     <Content Include="Ofertas.aspx" />
     <Content Include="Perfil.aspx" />
     <Content Include="Registro.aspx" />
