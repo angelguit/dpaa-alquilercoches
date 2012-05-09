@@ -33,6 +33,8 @@
         <div id="IndexBoxOfertas">
             <img alt="Oferta" id="IndexImgOferta" src="Imagenes/oferta.png" />
             <h1>949€</h1>
+            <asp:DropDownList ID="DropDownList1" runat="server">
+            </asp:DropDownList>
         </div>
     </div>
     <div id="IndexReserva">
