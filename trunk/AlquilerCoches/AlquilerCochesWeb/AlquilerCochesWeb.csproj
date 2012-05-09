@@ -73,6 +73,7 @@
     <Content Include="Css\Registro.css" />
     <Content Include="Css\Reserva.css" />
     <Content Include="Css\Situacion.css" />
+    <Content Include="Global.asax" />
     <Content Include="Imagenes\Cabecera.png" />
     <Content Include="Imagenes\fallback3.png" />
     <Content Include="Imagenes\gradient-dark.png" />
@@ -106,6 +107,9 @@
     </Compile>
     <Compile Include="Compras.aspx.designer.cs">
       <DependentUpon>Compras.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
@@ -164,7 +168,20 @@
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\AlquilerCoches\AlquilerCoches.csproj">
+      <Project>{5FD0AA85-9016-41CC-AC3F-66CE4AD7901F}</Project>
+      <Name>AlquilerCoches</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CAD\CAD.csproj">
+      <Project>{614BDE5E-2233-4C75-BD40-4E7CEF8E718C}</Project>
+      <Name>CAD</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EN\EN.csproj">
+      <Project>{AE4CE6A8-C932-4C70-805D-0022B6BC3500}</Project>
+      <Name>EN</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>
