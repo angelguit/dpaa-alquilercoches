@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="Css/Index.css"/>
 </head>
 
-<div id="MargenIzq" style="margin-left:21.36cm"></div> <!-- Estos div se encargan de los degradados en los laterales de la pagina-->
-<div id="MargenDer"></div>
+<div id="PerfilMargenIzq" style="margin-left:21.36cm"></div> <!-- Estos div se encargan de los degradados en los laterales de la pagina-->
+<div id="PerfilMargenDer"></div>
 
 <body>
     <form id="MaestraFormulario" runat="server">
