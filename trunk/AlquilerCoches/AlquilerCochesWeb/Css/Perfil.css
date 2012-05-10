@@ -205,5 +205,15 @@
    /* background: -ms-linear-gradient(left, rgba(0,0,0,0.21) 0%,rgba(0,0,0,0) 100%); /* IE10+ */
    /* background: linear-gradient(left, rgba(0,0,0,0.21) 0%,rgba(0,0,0,0) 100%); /* W3C */
    /* background: progid:DXImageTransform.Microsoft.gradient( startColorstr='#36000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */
-    border: 1px solid grey;
+   
+}
+
+#Apis
+{
+    height: 1cm;
+    width: 15cm;
+    margin-top:3cm;
+    position:absolute;
+    margin-left:4cm;
+    
 }
