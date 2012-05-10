@@ -51,6 +51,38 @@ body
 	color: #7C6F57;
 }
 
+#PerfilMargenIzq
+{
+    height: 18.41cm;
+    width: 5cm;
+    position:absolute;
+    float:left;
+    background: -moz-linear-gradient(left, rgba(0,0,0,0.21) 0%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,0.21)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, rgba(0,0,0,0.21) 0%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, rgba(0,0,0,0.21) 0%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, rgba(0,0,0,0.21) 0%,rgba(0,0,0,0) 100%); /* IE10+ */
+    background: linear-gradient(left, rgba(0,0,0,0.21) 0%,rgba(0,0,0,0) 100%); /* W3C */
+    background: progid:DXImageTransform.Microsoft.gradient( startColorstr='#36000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */
+}
+
+#PerfilMargenDer
+{
+    right:23.5cm;    
+    height: 18.41cm;
+    width: 5cm;
+    position:absolute;
+    float:left;
+    margin-right:5cm;
+    background: -moz-linear-gradient(left,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.21) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.21))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.21) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.21) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.21) 100%); /* IE10+ */
+    background: linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.21) 100%); /* W3C */
+    background: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#36000000',GradientType=1 ); /* IE6-9 */
+}
+
 /*===================== CSS Maestra FIN ===================================*/
 
 /*===================== CSS Indexx ========================================*/
