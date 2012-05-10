@@ -13,6 +13,7 @@
 </head>
 
 <div id="PerfilMargenIzq" style="margin-left:21.36cm"></div>
+<div id="PerfilMargenDer"></div>
 
 <body>
     <form id="MaestraFormulario" runat="server">
