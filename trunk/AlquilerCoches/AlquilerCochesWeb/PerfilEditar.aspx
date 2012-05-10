@@ -30,7 +30,9 @@
                        <asp:TextBox ID="TTextBoxApellidos" runat="server"  Width="178px"></asp:TextBox> <br /> <br /> <br /> 
                             
                     <asp:Label ID="Label3" runat="server" Text="Label" Width="90" font-size="14px">Provincia</asp:Label>
-                        <asp:DropDownList ID="TDropDownListProvincia" runat="server" Height="22px" Width="185px"></asp:DropDownList> <br /> <br /> <br /> 
+                        <asp:DropDownList ID="TDropDownListProvincia" runat="server" Height="22px" 
+                           Width="185px" AutoPostBack="True" onload="TDropDownListProvincia_Load" 
+                           onselectedindexchanged="TDropDownListProvincia_IndexChanged"></asp:DropDownList> <br /> <br /> <br /> 
               
                     <asp:Label ID="Label4" runat="server" Text="Label" Width="90" font-size="14px">Ciudad</asp:Label>
                        <asp:DropDownList ID="TDropDownListCiudad" runat="server" Height="22px" Width="185px"></asp:DropDownList> <br /> <br /> <br /> 
