@@ -36,18 +36,11 @@
 }
 #ReservabotonConsulta
 {
-    float: right;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    margin-right:10px;
-    margin-top:110px;
-    padding-left:10px;
-    padding-right:10px;
+    float:right;
 }
 #ReservaCuerpoPaso3
 {
     border: 2px solid grey;
-    position:absolute;
     width:21.13cm;
 }
 #ReservasFotoCoche
@@ -58,4 +51,17 @@
 #ReservaPie
 {
     border: 2px solid grey;
+}
+
+
+#IndexFechaInicio
+{
+    float:right;
+    background-color:Black;
+    margin-left:30034567896543214567890px;
+}
+
+#IndexFechaFin
+{
+      
 }
