@@ -15,12 +15,15 @@ namespace AlquilerCochesWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            DataSet ds = new DataSet();
-            EN.ENVehiculo envehiculo = new ENVehiculo();
-            ds = envehiculo.ObtenerCategorias();
-            for (int i = 0; i < ds.Tables["Categoria"].Rows.Count; i++)
+            if (comboCategorias.Items.Count==0)
             {
-                comboCategorias.Items.Add(ds.Tables["Categoria"].Rows[i][0].ToString());
+                DataSet ds = new DataSet();
+                EN.ENVehiculo envehiculo = new ENVehiculo();
+                ds = envehiculo.ObtenerCategorias();
+                for (int i = 0; i < ds.Tables["Categoria"].Rows.Count; i++)
+                {
+                    comboCategorias.Items.Add(ds.Tables["Categoria"].Rows[i][0].ToString());
+                }
             }
         }
 
@@ -47,6 +50,7 @@ namespace AlquilerCochesWeb
 
         protected void comboCategorias_TextChanged(object sender, EventArgs e)
         {
+            comboMarcas.Items.Clear();
             DataSet ds = new DataSet();
             EN.ENVehiculo envehiculo = new ENVehiculo();
             ds = envehiculo.ObtenerMarcas(comboCategorias.Text.ToString());
@@ -56,14 +60,16 @@ namespace AlquilerCochesWeb
             }
         }
 
-        protected void comboCategorias_SelectedIndexChanged(object sender, EventArgs e)
+        protected void comboMarcas_TextChanged(object sender, EventArgs e)
         {
+            conductores.Text = "Jorge2";
+            comboModelos.Items.Clear();
             DataSet ds = new DataSet();
             EN.ENVehiculo envehiculo = new ENVehiculo();
-            ds = envehiculo.ObtenerMarcas(comboCategorias.Text.ToString());
-            for (int i = 0; i < ds.Tables["Marcas"].Rows.Count; i++)
+            ds = envehiculo.ObtenerModelosVehiculos(comboCategorias.Text.ToString(),comboMarcas.Text.ToString());
+            for (int i = 0; i < ds.Tables["Modelos"].Rows.Count; i++)
             {
-                comboMarcas.Items.Add(ds.Tables["Marcas"].Rows[i][0].ToString());
+                comboModelos.Items.Add(ds.Tables["Modelos"].Rows[i][0].ToString());
             }
         }
     }
