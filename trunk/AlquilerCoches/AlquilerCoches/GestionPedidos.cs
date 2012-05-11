@@ -203,7 +203,6 @@ namespace AlquilerCoches
                 if (editar == "SI")
                 {
                     enPedidos.EditarPedidos();
-                    MessageBox.Show("yepa");
                     label1.Text = "* Pedido modificado con éxito. *";
 
                 }
