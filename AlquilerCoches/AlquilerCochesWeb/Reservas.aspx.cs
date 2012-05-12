@@ -74,6 +74,13 @@ namespace AlquilerCochesWeb
             {
                 comboMarcas.Items.Add(ds.Tables["Marcas"].Rows[i][0].ToString());
             }
+
+            comboModelos.Items.Clear();
+            ds = envehiculo.ObtenerModelosVehiculos(comboCategorias.Text.ToString(), comboMarcas.Text.ToString());
+            for (int i = 0; i < ds.Tables["Modelos"].Rows.Count; i++)
+            {
+                comboModelos.Items.Add(ds.Tables["Modelos"].Rows[i][0].ToString());
+            }
         }
 
         protected void comboMarcas_TextChanged(object sender, EventArgs e)
