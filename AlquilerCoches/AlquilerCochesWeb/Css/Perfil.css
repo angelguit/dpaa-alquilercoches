@@ -94,15 +94,20 @@
 }
 .PerfilbotonFactura
 {
-    float:left;
-    margin-top:1.2cm;
+    position:absolute;
     margin-left:5cm;
+    margin-top:35px;
     cursor: pointer;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
     border:1px solid #707070;
     padding-left:10px;
     padding-right:10px;
+    margin-bottom:5px;
+}
+#Calendarios
+{
+    position:absolute;
 }
 .Perfilbordes
 {
@@ -132,10 +137,8 @@
     position:absolute;
     margin-left:5px;
     border:1px dotted #707070;
-    padding-left:28px;
-    padding-right:28px;
-    padding-bottom:40px;
-    padding-top:10px;
+    width:7.3cm;
+    height:1.9cm;
     
 }
 .Foto
@@ -161,8 +164,6 @@
 .PerfilbotonNFactura
 {
     float:right;
-    margin-top:1.2cm;
-    margin-right:20px;
     cursor: pointer;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -186,4 +187,9 @@
     position:absolute;
     margin-left:4cm;
     
+}
+
+.AspectoCalendario
+{
+    background-color:#cecece;
 }

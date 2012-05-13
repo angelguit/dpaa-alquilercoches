@@ -166,6 +166,51 @@ namespace AlquilerCochesWeb {
         protected global::System.Web.UI.WebControls.Button Button2;
         
         /// <summary>
+        /// Control ScriptManager1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        
+        /// <summary>
+        /// Control CalendarExtender1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::AjaxControlToolkit.CalendarExtender CalendarExtender1;
+        
+        /// <summary>
+        /// Control CalendarExtender2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::AjaxControlToolkit.CalendarExtender CalendarExtender2;
+        
+        /// <summary>
+        /// Control IndexTextFechaInicio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox IndexTextFechaInicio;
+        
+        /// <summary>
+        /// Control IndexTextFechaFin.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox IndexTextFechaFin;
+        
+        /// <summary>
         /// Control Button3.
         /// </summary>
         /// <remarks>

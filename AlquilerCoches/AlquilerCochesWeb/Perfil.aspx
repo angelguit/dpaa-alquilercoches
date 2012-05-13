@@ -64,6 +64,7 @@
            Complete los detalles siguientes para encontrar los alquileres realizados</p>
            
            <div class="PerfilFechafactura">
+<!--
            <select id="Dias">
             <option value="">-- dd --</option>
             <option value="01">01</option>
@@ -102,16 +103,46 @@
             <option value="01">01</option>
             <option value="02">02</option>
             <option value="03">03</option>
-            </select>
+            </select>-->
+                <div id="Calendarios">
+                   <asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="True"  ></asp:ScriptManager>
+
+                        <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server"
+                            TargetControlID="IndexTextFechaInicio"
+                            CssClass="AspectoCalendario"
+                            Format=" dd/MM/yyyy"
+                            PopupButtonID="CalendarioInicio" />
+                         <ajaxToolkit:CalendarExtender ID="CalendarExtender2" runat="server"
+                            TargetControlID="IndexTextFechaFin"
+                            CssClass="AspectoCalendario"
+                            Format="dd/MM/yyyy"
+                            PopupButtonID="CalendarioFin" 
+                            />
+
+                         &nbsp;Desde:
+                        <asp:TextBox ID="IndexTextFechaInicio" runat="server" Height="21px" 
+                            Width="82px"></asp:TextBox>
+
+                        <input type="image" name="CalendarioInicio" 
+                            id="CalendarioInicio" src="/Imagenes/ImagenesReserva/supercalendario.jpg" 
+                            onclick="javascript:MostrarCalendario()" /></br>
+                        &nbsp;Hasta:&nbsp;
+                        <asp:TextBox ID="IndexTextFechaFin" runat="server" Height="21px" Width="82px"></asp:TextBox>
+
+                        <input type="image" name="CalendarioFin" 
+                            id="CalendarioFin" src="/Imagenes/ImagenesReserva/supercalendario.jpg" 
+                            onclick="javascript:MostrarCalendario()" /><br />
+                </div>
+             <asp:Button ID="Button3"  CssClass="PerfilbotonFactura" runat="server" Text="Buscar" PostBackUrl="~/PerfilFactura.aspx"/>
            </div>
-               <asp:Button ID="Button3"  CssClass="PerfilbotonFactura" runat="server" Text="Buscar" />
+              
 
             <div class="PerfilNumerofactura">
                 <asp:Label ID="Label11" runat="server" Text="Label">Nº Factura:</asp:Label>
                 <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-                
+                <asp:Button ID="Button4"  CssClass="PerfilbotonNFactura" runat="server" Text="Imprimir" />
             </div>
-            <asp:Button ID="Button4"  CssClass="PerfilbotonNFactura" runat="server" Text="Imprimir" />
+            
             
             <div id="Apis">
                 <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" style="margin-top:1cm;">Tweet</a>
