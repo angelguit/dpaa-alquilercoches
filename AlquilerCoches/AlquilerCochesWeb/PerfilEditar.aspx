@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Maestra.Master" AutoEventWireup="true" CodeBehind="PerfilEditar.aspx.cs" Inherits="AlquilerCochesWeb.PerfilEditar" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 <link rel="stylesheet" href="Css/PerfilEditar.css"/>
+
     <style type="text/css">
         #ImagenUsuario
         {

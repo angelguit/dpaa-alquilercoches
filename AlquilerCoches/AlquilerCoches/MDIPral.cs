@@ -11,6 +11,7 @@ namespace AlquilerCoches
 {
     public partial class MDIPral : Form
     {
+
         private int childFormNumber = 0;
         private EN.ENPersonal Personal;
 
