@@ -34,11 +34,11 @@
                             
                             <asp:ListView runat="server" ID="VehiculosListView">
                                 <LayoutTemplate>
-                                <table cellpadding="1" runat="server" id="Vehiculo">
+                                <table cellpadding="3" runat="server" id="Vehiculo">
                                     <tr runat="server" id="itemPlaceholder">
                                     </tr>
                                 </table>
-                                <asp:DataPager runat="server" ID="DataPager" PageSize="3">
+                                <asp:DataPager runat="server" ID="DataPager" PageSize="2">
                                     <Fields>
                                     <asp:NumericPagerField
                                         ButtonCount="5"
@@ -48,6 +48,7 @@
                                 </asp:DataPager>
                                 </LayoutTemplate>
                                 <ItemTemplate>
+                                    <br />
                                     <tr id="Tr1" runat="server">
                                     <td valign="top" colspan="2" align="center" class="Vehiculo">
 	                                    <asp:Label ID="Label2" runat="server" Text='<%#Eval("Matricula") %>' 
@@ -71,11 +72,12 @@
                                         <asp:Label id="Precio"  runat="server" Text='<%#Eval("PrecioVenta")%>'
                                         Font-Bold="True"></asp:Label>
                                         <br />
+                                        <asp:Label id="KM"  runat="server" Text='<%#Eval("KM")%>'
+                                        Font-Bold="True"></asp:Label>
                                         <br />
                                         <button type="button" id="OfertaBotonComprar">Alquilar</button> 
                                     </td>
                                     </tr>
-                                    <br />
                                 </ItemTemplate>
                                 
                                 </asp:ListView>
