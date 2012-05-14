@@ -1,0 +1,60 @@
+﻿body 
+{
+    border: 2px solid grey;
+    width: 806px;
+    margin: 0 auto;
+    /*-moz-border-radius: 10px;
+    -webkit-border-radius: 10px;*/
+    
+}
+
+
+#Cuerpo
+{
+    height: 590px;
+       background-image:url('../Imagenes/factura.jpg');
+}
+#Pie
+{
+    border-top: 1px solid grey;
+    height: 20px;
+    text-align:center;
+    margin: 0 auto;
+    font-size: 0.6em;
+    font-family: Verdana;
+    font-style: normal;
+    font-weight: lighter;
+    font-variant: normal;
+   /* color: #7C6F57;*/
+}
+
+#datosCliente
+{
+    border: 2px solid grey;
+    width:12cm;
+    height:5cm;
+    margin-top:2px;
+    margin-left:4.6cm;
+    position:absolute;
+}
+#datosReserva
+{
+    border: 2px solid grey;
+    width:12cm;
+    height:5cm;
+    margin-top:5cm;
+    margin-left:4.6cm;
+    position:absolute;
+}
+
+#boton
+{
+    width:21.4cm;
+    border-bottom: 1px solid grey;
+}
+
+#Decoracion1
+{
+    position:absolute;
+    margin-left:1cm;
+}

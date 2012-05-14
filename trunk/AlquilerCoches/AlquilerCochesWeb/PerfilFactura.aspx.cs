@@ -42,37 +42,13 @@ namespace AlquilerCochesWeb
                 TDataGridViewFacturaFechas.Visible = false;
                 TTextBoxNumeroFactura.Text = Session["numeroFactura"].ToString();
                 TTextBoxNumeroFactura.Enabled = false;
+
                 
 
                 
             }
  
         }
-
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            /*Process proceso = new Process();
-
-            proceso.StartInfo.Verb = "print";
-            proceso.StartInfo.CreateNoWindow = false;
-            proceso.StartInfo.FileName = "/Descargas/Factura.pdf";
-
-            proceso.Start();
-            proceso.WaitForExit(10000);
-            proceso.CloseMainWindow();
-            proceso.Close();
-           // exito = true;*/
-
-
-            
-        }
-        /*
-        public void Imprimir()
-        {
-            TPrintFormReservas.Print(this, Microsoft.VisualBasic.PowerPacks.Printing.PrintForm.PrintOption.ClientAreaOnly);
-            Close();
-        }
-        */
 
 
     }

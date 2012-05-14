@@ -67,6 +67,7 @@
   <ItemGroup>
     <Content Include="Compras.aspx" />
     <Content Include="Css\Compras.css" />
+    <Content Include="Css\ImpresionReserva.css" />
     <Content Include="Css\Index.css" />
     <Content Include="Css\Ofertas.css" />
     <Content Include="Css\Perfil.css" />
@@ -74,7 +75,6 @@
     <Content Include="Css\Registro.css" />
     <Content Include="Css\Reserva.css" />
     <Content Include="Css\Situacion.css" />
-    <None Include="Descargas\Factura.pdf" />
     <Content Include="Global.asax" />
     <Content Include="Imagenes\Cabecera.png" />
     <Content Include="Imagenes\fallback3.png" />
@@ -86,6 +86,7 @@
     <Content Include="Imagenes\ImagenesReserva\supercalendario.jpg" />
     <Content Include="Imagenes\NuevaReserva.png" />
     <Content Include="Imagenes\oferta.png" />
+    <Content Include="Imagenes\factura.jpg" />
     <Content Include="Index.aspx" />
     <Content Include="Javascript\Js.js" />
     <Content Include="Javascript\modernizr.custom.41769.js" />
@@ -103,6 +104,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="PerfilFactura.aspx" />
+    <Content Include="ImprimirResrva.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Compras.aspx.cs">
@@ -178,6 +180,13 @@
     </Compile>
     <Compile Include="PerfilFactura.aspx.designer.cs">
       <DependentUpon>PerfilFactura.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ImprimirResrva.aspx.cs">
+      <DependentUpon>ImprimirResrva.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ImprimirResrva.aspx.designer.cs">
+      <DependentUpon>ImprimirResrva.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
