@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Configuration;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -74,6 +75,57 @@ namespace AlquilerCochesWeb
             TDataGridViewReservas.DataSource = dsve;
             TDataGridViewReservas.DataBind();
           
+        }
+
+        protected void TButtonFechas_Click(object sender, EventArgs e)
+        {
+            Session["fechaonumero"] = "fecha";//nos creamos esta variable sesion para cuando estemos en el webform PerfilFActura sepamos q venimos desde la fecha
+            bool bien = true;
+            if (IndexTextFechaInicio.Text == "" || IndexTextFechaFin.Text == "") // para controlar cuando se dejan vacio los textbox
+            {
+                CompareValidatorFechas.Visible = true;
+                bien = false;
+            }
+            else
+            {
+
+                if (Page.IsValid)
+                {
+                    CompareValidatorFechas.Visible = false;
+                }
+                else
+                {
+                    CompareValidatorFechas.Visible = true;
+                    bien = false;
+                }
+            }
+
+            if (bien)
+            {
+                Session["fechaPerfilIni"] = IndexTextFechaInicio.Text;
+                Session["fechaPerfilFin"] = IndexTextFechaFin.Text;
+                Server.Transfer("PerfilFactura.aspx");
+            }
+        }
+
+
+        protected void TButtonNumeroFechas_Click(object sender, EventArgs e)
+        {
+            Session["numeroFactura"] = 1;/*TTextBoxNumeroFactura.Text;*/
+            Session["fechaonumero"] = "numero";
+            Server.Transfer("PerfilFactura.aspx");
+            
+            /*string filepath = "/Descargas/Factura.txt";
+            Response.Clear();
+            Response.ContentType = "application/octet-stream";
+            Response.AddHeader("Content-Disposition", "attachment;filename=factura.txt");
+            Response.Flush();
+            Response.WriteFile(filepath);
+            Response.Write("RENT A CAR FACTURA");
+            Response.Write("NºFactura: "+TTextBoxNumeroFactura.Text+"    Dni:11111111A");
+            Response.End();*/
+            
+        
         }
     }
 }

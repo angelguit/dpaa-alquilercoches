@@ -74,6 +74,7 @@
     <Content Include="Css\Registro.css" />
     <Content Include="Css\Reserva.css" />
     <Content Include="Css\Situacion.css" />
+    <None Include="Descargas\Factura.pdf" />
     <Content Include="Global.asax" />
     <Content Include="Imagenes\Cabecera.png" />
     <Content Include="Imagenes\fallback3.png" />

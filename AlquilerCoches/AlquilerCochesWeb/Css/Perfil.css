@@ -104,6 +104,8 @@
     padding-left:10px;
     padding-right:10px;
     margin-bottom:5px;
+    top: 0px;
+    left: 0px;
 }
 #Calendarios
 {
@@ -125,7 +127,7 @@
     -webkit-border-radius: 10px;
     border:1px solid #707070;
     width:14.98cm;
-    height:5cm;
+    height:5.5cm;
     position:absolute;
     margin-left: 232px;
     margin-top:7.2cm;
@@ -192,4 +194,13 @@
 .AspectoCalendario
 {
     background-color:#cecece;
+}
+
+.AspectoError
+{
+    position:absolute;
+    color:Red;
+    margin-top:1.9cm;
+    margin-left:20px;
+    
 }

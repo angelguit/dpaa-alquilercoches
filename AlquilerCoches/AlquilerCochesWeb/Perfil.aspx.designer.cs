@@ -211,13 +211,13 @@ namespace AlquilerCochesWeb {
         protected global::System.Web.UI.WebControls.TextBox IndexTextFechaFin;
         
         /// <summary>
-        /// Control Button3.
+        /// Control TButtonFechas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button3;
+        protected global::System.Web.UI.WebControls.Button TButtonFechas;
         
         /// <summary>
         /// Control Label11.
@@ -229,13 +229,13 @@ namespace AlquilerCochesWeb {
         protected global::System.Web.UI.WebControls.Label Label11;
         
         /// <summary>
-        /// Control TextBox1.
+        /// Control TTextBoxNumeroFactura.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox TTextBoxNumeroFactura;
         
         /// <summary>
         /// Control Button4.
@@ -245,5 +245,14 @@ namespace AlquilerCochesWeb {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button4;
+        
+        /// <summary>
+        /// Control CompareValidatorFechas.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator CompareValidatorFechas;
     }
 }
