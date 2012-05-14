@@ -31,18 +31,57 @@
                         Runat="server">
                         <asp:View ID="View1" runat="server">
                             
+                            
+                            <asp:ListView runat="server" ID="VehiculosListView">
+                                <LayoutTemplate>
+                                <table cellpadding="1" runat="server" id="Vehiculo">
+                                    <tr runat="server" id="itemPlaceholder">
+                                    </tr>
+                                </table>
+                                <asp:DataPager runat="server" ID="DataPager" PageSize="3">
+                                    <Fields>
+                                    <asp:NumericPagerField
+                                        ButtonCount="5"
+                                        PreviousPageText="<--"
+                                        NextPageText="-->" />
+                                    </Fields>
+                                </asp:DataPager>
+                                </LayoutTemplate>
+                                <ItemTemplate>
+                                    <tr id="Tr1" runat="server">
+                                    <td valign="top" colspan="2" align="center" class="Vehiculo">
+	                                    <asp:Label ID="Label2" runat="server" Text='<%#Eval("Matricula") %>' 
+                                         Font-Overline="False" Font-Underline="True" Font-Size="Medium" Font-Bold="True"></asp:Label>
+                                    </td>
+                                    </tr>
 
-                            <div style="height: 154px; border-bottom-style: outset; border-bottom-width: medium;">
-                                <br />
-                                <asp:Label ID="Label1" runat="server" Text="SEAT LEON, 1.9" Font-Overline="False" Font-Underline="True" Font-Size="Medium" Font-Bold="True"></asp:Label>
-                                <br />
-                                <asp:Image ID="Image2" runat="server" Height="96px" 
-                                ImageUrl="~/Imagenes/ImagenesCompras/seat-leon.jpg" Width="165px"/>
 
-                                <label id="OfertasLabelDescripcion">Seat León 1.9 en perfecto estado, modelo de 2002, 5 puertas, 115CV con 125.000 Km.</label>
-                                <label id="OfertasLabelPrecio">Precio: 500 € - 20%</label>
-                                <button type="button" id="OfertaBotonComprar">Alquilar</button> 
-                            </div>
+                                    <tr id="Tr2" style="height:72px" runat="server">
+                                    <td valign="top" class="Imagen">
+                                        <asp:Image ID="Image2" runat="server" Height="96px" 
+                                        ImageUrl="~/Imagenes/ImagenesCompras/seat-leon.jpg" Width="165px"/>
+                                        
+                                    </td>
+                                    <td valign="top" class="DescOferta">
+                                        <asp:Label id="Marca"  runat="server" Text='<%#Eval("Marca") %>'
+                                        Font-Bold="True"> </asp:Label>
+                                        <asp:Label id="Modelo"  runat="server" Text='<%#Eval("Modelo") %>'
+                                        Font-Bold="True"></asp:Label>
+                                        <br />
+                                        <asp:Label id="Precio"  runat="server" Text='<%#Eval("PrecioVenta")%>'
+                                        Font-Bold="True"></asp:Label>
+                                        <br />
+                                        <br />
+                                        <button type="button" id="OfertaBotonComprar">Alquilar</button> 
+                                    </td>
+                                    </tr>
+                                    <br />
+                                </ItemTemplate>
+                                
+                                </asp:ListView>
+
+
+                            
                             
                         </asp:View>        
                         <asp:View ID="View2" runat="server">

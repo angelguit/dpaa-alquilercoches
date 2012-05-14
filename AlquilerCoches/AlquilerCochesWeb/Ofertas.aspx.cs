@@ -14,9 +14,11 @@ namespace AlquilerCochesWeb
 {
     public partial class Ofertas : System.Web.UI.Page
     {
+        private EN.ENVehiculo vehiculo = new EN.ENVehiculo();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            VehiculosListView.DataSource = vehiculo.ObtenerListaVehiculos();
+            VehiculosListView.DataBind();
         }
 
         protected void Menu1_MenuItemClick(object sender, MenuEventArgs e)
