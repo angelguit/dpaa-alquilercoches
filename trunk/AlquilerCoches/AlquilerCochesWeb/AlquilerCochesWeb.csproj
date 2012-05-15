@@ -125,7 +125,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="PerfilFactura.aspx" />
-    <Content Include="ImprimirResrva.aspx" />
+    <Content Include="ImprimirReserva.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Compras.aspx.cs">
@@ -202,12 +202,12 @@
     <Compile Include="PerfilFactura.aspx.designer.cs">
       <DependentUpon>PerfilFactura.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ImprimirResrva.aspx.cs">
-      <DependentUpon>ImprimirResrva.aspx</DependentUpon>
+    <Compile Include="ImprimirReserva.aspx.cs">
+      <DependentUpon>ImprimirReserva.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ImprimirResrva.aspx.designer.cs">
-      <DependentUpon>ImprimirResrva.aspx</DependentUpon>
+    <Compile Include="ImprimirReserva.aspx.designer.cs">
+      <DependentUpon>ImprimirReserva.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

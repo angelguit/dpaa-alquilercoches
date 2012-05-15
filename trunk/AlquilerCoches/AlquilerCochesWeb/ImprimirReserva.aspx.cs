@@ -19,9 +19,10 @@ namespace AlquilerCochesWeb
         {
             BotonImprimir.Visible = false;
             
+
             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Prueba","window.print();", true);
 
-            BotonImprimir.Visible = true;
+            //BotonImprimir.Visible = true;
                 
         }
        
