@@ -305,6 +305,21 @@ namespace EN
             return resultado; 
         }
 
+        public DataSet ObtenerMatriculaReserva(string marca, string modelo,string categoria)
+        {
+            DataSet resultado = new DataSet();
+            try
+            {
+                resultado = cadVehiculo.ObtenerMatriculaReserva(marca, modelo,categoria);
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+
+            return resultado;
+        }
+
         public ArrayList ListaMatriculas
         {
             get { return listaMatriculas; }
