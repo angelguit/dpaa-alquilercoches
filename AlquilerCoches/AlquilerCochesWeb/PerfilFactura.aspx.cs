@@ -20,8 +20,7 @@ namespace AlquilerCochesWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["fechaonumero"].ToString() == "fecha")
-            {
+           
                 string sentencia = "";
                 string fechaIni = Session["fechaPerfilIni"].ToString() + " 0:00:00";
                 string fechaFin = Session["fechaPerfilFin"].ToString() + " 0:00:00";
@@ -35,18 +34,7 @@ namespace AlquilerCochesWeb
                 ds = enRe.ObtenerReservas(); //¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡DENTRO PÔNER sentencia pero no va!!!!!!!!!!!!!!!!
 
                 TDataGridViewFacturaFechas.DataSource = ds;
-                TDataGridViewFacturaFechas.DataBind();
-            }
-            else
-            {
-                TDataGridViewFacturaFechas.Visible = false;
-                TTextBoxNumeroFactura.Text = Session["numeroFactura"].ToString();
-                TTextBoxNumeroFactura.Enabled = false;
-
-                
-
-                
-            }
+                TDataGridViewFacturaFechas.DataBind();  
  
         }
 
