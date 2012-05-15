@@ -36,6 +36,7 @@ namespace AlquilerCochesWeb
 
             DataSet dsve = new DataSet();
             DataTable dtvehi = dsve.Tables.Add("DataTableMia");
+            dtvehi.Columns.Add("Nº Reserva", typeof(String));
             dtvehi.Columns.Add("Matricula", typeof(String));
             dtvehi.Columns.Add("Marca", typeof(String));
             dtvehi.Columns.Add("Modelo", typeof(String));
@@ -45,8 +46,10 @@ namespace AlquilerCochesWeb
 
             if (dsre.Tables["Reservas"].Rows.Count > 0)
             {
-                for (int i = 0; i < dsre.Tables["Reservas"].Rows.Count; i++)
+                for (int i = 0; i < dsre.Tables["Reservas"].Rows.Count && i<4; i++) //4 lo ponemos para limitar a 4 las reservas q se pueden mostrar
                 {
+                   string numeroreserva = dsre.Tables["Reservas"].Rows[i][0].ToString();
+
                    string matricula= dsre.Tables["Reservas"].Rows[i][2].ToString();
                    //Substring nos sirve para recortar el string y quitarle la hora
                    string fechaini = dsre.Tables["Reservas"].Rows[i][3].ToString().Substring(0,9);
@@ -60,6 +63,7 @@ namespace AlquilerCochesWeb
                    DataRow fila;
                    fila = dtvehi.NewRow(); //para crear una nueva fila
 
+                   fila["Nº Reserva"] = numeroreserva;
                    fila["Matricula"] = ve.Matricula;
                    fila["Marca"] = ve.Marca;
                    fila["Modelo"] = ve.Modelo;
@@ -111,9 +115,18 @@ namespace AlquilerCochesWeb
 
         protected void TButtonNumeroFechas_Click(object sender, EventArgs e)
         {
-            Session["numeroFactura"] = 1;/*TTextBoxNumeroFactura.Text;*/
-            Session["fechaonumero"] = "numero";
-            Response.Write("<script>window.open('ImprimirReserva.aspx' ,'Titulo','height=500', 'width=300')</script>");
+            if (TTextBoxNumeroFactura.Text != "")
+            {
+                Session["numeroFactura"] = TTextBoxNumeroFactura.Text;
+
+                Response.Write("<script>window.open('ImprimirReserva.aspx' ,'Factura', 'menubar=yes,scrollbars=yes,height=500, width=720')</script>");
+                //Response.Write("<script>window.open('ImprimirReserva.aspx' ,'Factura', 'menubar=yes,toolbar=yes,scrollbars=yes,status=yes,directories=yes, height=500, width=720')</script>");
+            }
+
+
+
+
+
            // Server.Transfer("");
             
             /*string filepath = "/Descargas/Factura.txt";
