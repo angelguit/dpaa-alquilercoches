@@ -90,6 +90,18 @@ namespace EN
                 throw (ex);
             }
         }
+
+        public DataSet ObtenerReservasPorNumero(int numero)
+        {
+            try
+            {
+                return cadReservas.ObtenerReservas(numero);
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+        }
         public DataSet RellenarCategoria()
         {
             DataSet resultado = new DataSet();
