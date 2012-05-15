@@ -295,5 +295,26 @@ namespace CAD
                 throw (ex);
             }
         }
+
+        public DataSet ObtenerMatriculaReserva(string marca, string modelo,string categoria)
+        {
+            DataSet dsVehiculo = new DataSet();
+
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                String consulta = "";
+                consulta = "Select Matricula from Vehiculo where Modelo='" + modelo + "' and Marca='" + marca + "' and FK_Categoria='" + categoria + "' and Estado='Disponible'";
+                SqlDataAdapter daVehiculo = new SqlDataAdapter(consulta, conexion);
+                daVehiculo.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daVehiculo.Fill(dsVehiculo, "Reserva");
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+
+            return dsVehiculo;
+        }
     }
 }

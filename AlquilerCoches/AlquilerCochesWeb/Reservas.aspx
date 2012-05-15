@@ -52,7 +52,7 @@
           <div id="ReservaCuerpoPaso2">
                 <p style="text-align:center; text-decoration: underline; background-color: #e6e6e6">Segundo paso: Informacion del vehiculo</p>
                 </br>
-                <img src="Imagenes/ImagenesReserva/astra.jpg" alt="texto" id="ReservasFotoCoche"/>
+                <asp:Image ID="ImagenCoche" runat="server" />
                 <label for="male">&nbsp Categoria:</label>
               <asp:DropDownList ID="comboCategorias" runat="server"
                     ontextchanged="comboCategorias_TextChanged"

@@ -41,6 +41,7 @@ namespace AlquilerCochesWeb
                     comboModelos.Items.Add(ds.Tables["Modelos"].Rows[i][0].ToString());
                 }
             }
+            MostrarImagen();
         }
 
         protected void validacionConductores(object source, ServerValidateEventArgs args)
@@ -56,6 +57,20 @@ namespace AlquilerCochesWeb
                 args.IsValid = true;
                 //incorrecto = false;
                 //errorProvider1.SetError(TTextBoxEmail, "");
+            }
+        }
+
+        protected void MostrarImagen()
+        {
+            EN.ENVehiculo vehiculo = new ENVehiculo();
+            DataSet dsMatricula = new DataSet();
+            dsMatricula = vehiculo.ObtenerMatriculaReserva(comboMarcas.Text, comboModelos.Text,comboCategorias.Text);
+
+            string matricula;
+            if (dsMatricula.Tables["Reserva"].Rows.Count >0)
+            {
+                matricula = dsMatricula.Tables["Reserva"].Rows[0][0].ToString();
+                ImagenCoche.ImageUrl = "Imagenes/ImagenesReserva/fotosCoches/" + matricula + ".jpg";
             }
         }
 
@@ -81,6 +96,7 @@ namespace AlquilerCochesWeb
             {
                 comboModelos.Items.Add(ds.Tables["Modelos"].Rows[i][0].ToString());
             }
+            MostrarImagen();
         }
 
         protected void comboMarcas_TextChanged(object sender, EventArgs e)
@@ -93,6 +109,7 @@ namespace AlquilerCochesWeb
             {
                 comboModelos.Items.Add(ds.Tables["Modelos"].Rows[i][0].ToString());
             }
+            MostrarImagen();
         }
     }
 }
