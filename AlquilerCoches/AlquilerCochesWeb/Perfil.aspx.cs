@@ -113,7 +113,8 @@ namespace AlquilerCochesWeb
         {
             Session["numeroFactura"] = 1;/*TTextBoxNumeroFactura.Text;*/
             Session["fechaonumero"] = "numero";
-            Server.Transfer("PerfilFactura.aspx");
+            Response.Write("<script>window.open('ImprimirReserva.aspx' ,'Titulo','height=500', 'width=300')</script>");
+           // Server.Transfer("");
             
             /*string filepath = "/Descargas/Factura.txt";
             Response.Clear();
