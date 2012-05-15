@@ -82,6 +82,13 @@
     <Content Include="Imagenes\ImagenesPerfil\Desconocido.jpg" />
     <Content Include="Imagenes\ImagenesPerfil\logo.jpg" />
     <Content Include="Imagenes\ImagenesReserva\astra.jpg" />
+    <Content Include="Imagenes\ImagenesReserva\fotosCoches\1111AAA.jpg" />
+    <Content Include="Imagenes\ImagenesReserva\fotosCoches\1111AAB.jpg" />
+    <Content Include="Imagenes\ImagenesReserva\fotosCoches\1111AAC.jpg" />
+    <Content Include="Imagenes\ImagenesReserva\fotosCoches\1111AAD.jpg" />
+    <Content Include="Imagenes\ImagenesReserva\fotosCoches\1111AAE.jpg" />
+    <Content Include="Imagenes\ImagenesReserva\fotosCoches\1111AAF.jpg" />
+    <Content Include="Imagenes\ImagenesReserva\fotosCoches\2222AAA.jpg" />
     <Content Include="Imagenes\Menu.png" />
     <Content Include="Imagenes\ImagenesReserva\supercalendario.jpg" />
     <Content Include="Imagenes\NuevaReserva.png" />
