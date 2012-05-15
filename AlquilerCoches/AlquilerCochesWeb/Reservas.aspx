@@ -20,13 +20,13 @@
 
                 <ajaxToolkit:CalendarExtender ID="IndexFechaInicio" runat="server"
                     TargetControlID="IndexTextFechaInicio"
-                    CssClass="IndexFechaInicio"
+                    CssClass="AspectoCalendario"
                     Format="dd/MM/yyyy"
                     PopupButtonID="CalendarioInicio" />
 
                 <ajaxToolkit:CalendarExtender ID="IndexFechaFin" runat="server"
                     TargetControlID="IndexTextFechaFin"
-                    CssClass="IndexFechaFin"
+                    CssClass="AspectoCalendario"
                     Format="dd/MM/yyyy"
                     PopupButtonID="CalendarioFin" />
   
@@ -51,8 +51,7 @@
           </div>	
           <div id="ReservaCuerpoPaso2">
                 <p style="text-align:center; text-decoration: underline; background-color: #e6e6e6">Segundo paso: Informacion del vehiculo</p>
-                </br>
-                <asp:Image ID="ImagenCoche" runat="server" />
+                <asp:Image ID="ImagenCoche" runat="server" CssClass="ReservasFotoCoche" />
                 <label for="male">&nbsp Categoria:</label>
               <asp:DropDownList ID="comboCategorias" runat="server"
                     ontextchanged="comboCategorias_TextChanged"
@@ -83,9 +82,8 @@
                 <label for="male">&nbsp Codigo promocional:</label>
                 <input type="text" name="conductores" size="10"/>
           </div>
-          <div id="ReservabotonConsulta">
           <asp:Button ID="ReservabotonConsulta" CssClass="ReservabotonConsulta" runat="server" Text="Consultar precio"/>
-          </div>
+          
        </form>
     </div>
 </asp:Content>

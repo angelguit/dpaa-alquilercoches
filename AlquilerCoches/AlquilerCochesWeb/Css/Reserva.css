@@ -34,34 +34,20 @@
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
 }
-#ReservabotonConsulta
+.ReservabotonConsulta
 {
     float:right;
 }
-#ReservaCuerpoPaso3
-{
-    border: 2px solid grey;
-    width:21.13cm;
-}
-#ReservasFotoCoche
+.ReservasFotoCoche
 {
     float:right;
-    margin-right:300px;
+    margin-right:25%;
 }
 #ReservaPie
 {
     border: 2px solid grey;
 }
-
-
-#IndexFechaInicio
+.AspectoCalendario
 {
-    float:right;
-    background-color:Black;
-    margin-left:30034567896543214567890px;
-}
-
-#IndexFechaFin
-{
-      
+    background-color:#cecece;
 }
