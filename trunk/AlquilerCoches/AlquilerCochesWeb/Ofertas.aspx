@@ -31,21 +31,23 @@
                         Runat="server">
                         <asp:View ID="View1" runat="server">
                             
-                            
-                            <asp:ListView runat="server" ID="VehiculosListView">
+                            <div id="Listview">
+                            <asp:ListView runat="server" ID="VehiculosListView" >
                                 <LayoutTemplate>
                                 <table cellpadding="3" runat="server" id="Vehiculo">
                                     <tr runat="server" id="itemPlaceholder">
                                     </tr>
                                 </table>
-                                <asp:DataPager runat="server" ID="DataPager" PageSize="2">
-                                    <Fields>
-                                    <asp:NumericPagerField
-                                        ButtonCount="5"
-                                        PreviousPageText="<--"
-                                        NextPageText="-->" />
-                                    </Fields>
-                                </asp:DataPager>
+                                <div id="aspectobotoneslistview">
+                                    <asp:DataPager runat="server" ID="DataPager" PageSize="3">
+                                        <Fields >
+                                        <asp:NumericPagerField 
+                                            ButtonCount="5"
+                                            PreviousPageText="<--"
+                                            NextPageText="-->" />
+                                        </Fields>
+                                    </asp:DataPager>
+                                </div>
                                 </LayoutTemplate>
                                 <ItemTemplate>
                                     <br />
@@ -81,6 +83,7 @@
                                 </ItemTemplate>
                                 
                                 </asp:ListView>
+                                </div>
 
 
                             
