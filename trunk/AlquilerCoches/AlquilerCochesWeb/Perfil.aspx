@@ -102,7 +102,7 @@
      
 
             <div class="PerfilNumerofactura">
-                <asp:Label ID="Label11" runat="server" Text="Label">Nº Factura:</asp:Label>
+                <asp:Label ID="Label11" runat="server" Text="Label">Nº Reserva:</asp:Label>
                 <asp:TextBox ID="TTextBoxNumeroFactura" runat="server"></asp:TextBox>
                 <asp:Button ID="Button4"  CssClass="PerfilbotonNFactura" runat="server" Text="Imprimir" onclick="TButtonNumeroFechas_Click" />
             </div>

@@ -45,8 +45,8 @@
                                         <Fields >
                                         <asp:NumericPagerField 
                                             ButtonCount="5"
-                                            PreviousPageText="<--"
-                                            NextPageText="-->" />
+                                            PreviousPageText="&lt; "
+                                            NextPageText=" &gt;" />
                                         </Fields>
                                     </asp:DataPager>
                                 </div>
