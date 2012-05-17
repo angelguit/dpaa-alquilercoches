@@ -81,6 +81,15 @@
     <Content Include="Imagenes\Calendario.png" />
     <Content Include="Imagenes\fallback3.png" />
     <Content Include="Imagenes\gradient-dark.png" />
+    <Content Include="Imagenes\ImagenesCompra\CochesCompra\0058IIU.jpg" />
+    <Content Include="Imagenes\ImagenesCompra\CochesCompra\1105BCX.jpg" />
+    <Content Include="Imagenes\ImagenesCompra\CochesCompra\1122FFG.jpg" />
+    <Content Include="Imagenes\ImagenesCompra\CochesCompra\3600FFG.jpg" />
+    <Content Include="Imagenes\ImagenesCompra\CochesCompra\4366HJK.jpg" />
+    <Content Include="Imagenes\ImagenesCompra\CochesCompra\4567WWD.jpg" />
+    <Content Include="Imagenes\ImagenesCompra\CochesCompra\4571RTY.jpg" />
+    <Content Include="Imagenes\ImagenesCompra\CochesCompra\7890TTY.jpg" />
+    <Content Include="Imagenes\ImagenesCompra\CochesCompra\8811ABV.jpg" />
     <Content Include="Imagenes\ImagenesPerfil\Desconocido.jpg" />
     <Content Include="Imagenes\ImagenesPerfil\logo.jpg" />
     <Content Include="Imagenes\ImagenesReserva\astra.jpg" />
@@ -234,9 +243,7 @@
       <Name>EN</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Imagenes\ImagenesCompra\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>
