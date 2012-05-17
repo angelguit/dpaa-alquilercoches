@@ -13,10 +13,11 @@
         </div>
     </div>
     <div id="IndexLogin">
+        <asp:Label ID="TLabelBienvenida" runat="server" Text="Label"></asp:Label>
         <asp:Login ID="IndexLoginC" runat="server" Height="150px" Width="202px" 
             LoginButtonText="Acceder" RememberMeText="Recordarme la próxima vez." 
             onauthenticate="IndexLoginC_Authenticate" 
-            DestinationPageUrl="~/Perfil.aspx">
+            DestinationPageUrl="~/Index.aspx">
             <CheckBoxStyle CssClass="IndexCheck" />
             <LabelStyle CssClass="IndexLabel" />
             <LoginButtonStyle CssClass="IndexBotonAcceder" />
@@ -26,6 +27,7 @@
       
     </div>
     <div id="IndexRegistro">
+        <asp:HyperLink ID="HyperLink1" runat="server" Visible="False">Salir</asp:HyperLink>
         <br />
         <br />
         <p>¿No tienes una cuenta Rent A Car?</p>

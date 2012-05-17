@@ -17,7 +17,21 @@ namespace AlquilerCochesWeb
         protected void Page_Load(object sender, EventArgs e)
         {
             
-            RellenarOfertas();            
+            RellenarOfertas();
+            if (Session["Usuario"] != null)
+            {
+                EN.ENCliente enCli = new EN.ENCliente();
+                DataSet ds = new DataSet();
+                ds = enCli.ObtenerDatosClienteConDni(Session["Usuario"].ToString());
+                IndexLoginC.Visible = false;
+                TLabelBienvenida.Text = "Bienvenido " + ds.Tables["Cliente"].Rows[0][1].ToString();
+                TLabelBienvenida.Visible = true;
+            }
+            else
+            {
+                IndexLoginC.Visible = true;
+                TLabelBienvenida.Visible = false;
+            }
         }
 
         protected void IndexBotonReserva_Click(object sender, EventArgs e)
