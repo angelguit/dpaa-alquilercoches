@@ -17,7 +17,7 @@ namespace AlquilerCochesWeb
         private EN.ENVehiculo vehiculo = new EN.ENVehiculo();
         protected void Page_Load(object sender, EventArgs e)
         {
-            switch (MultiView1.ActiveViewIndex)
+            /*switch (MultiView1.ActiveViewIndex)
             {
                 case 0:
                     VehiculosListView.DataSource = vehiculo.ObtenerCochesCategoria("A");
@@ -32,7 +32,7 @@ namespace AlquilerCochesWeb
                     ListView2.DataBind();
                     break;
 
-            }
+            }*/
             
             
         }
