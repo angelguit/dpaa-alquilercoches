@@ -62,7 +62,7 @@
                                     <tr id="Tr2" style="height:72px" runat="server">
                                     <td valign="top" class="Imagen">
                                         <asp:Image ID="Image2" runat="server" Height="96px" 
-                                        ImageUrl="~/Imagenes/ImagenesCompras/seat-leon.jpg" Width="165px"/>
+                                        ImageUrl='<%#"/Imagenes/ImagenesReserva/fotosCoches/" + Eval("Matricula") + ".jpg" %>' Width="165px"/>
                                         
                                     </td>
                                     <td valign="top" class="DescOferta">
