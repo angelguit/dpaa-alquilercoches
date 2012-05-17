@@ -15,6 +15,39 @@
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
 }
+
+#multiview
+{   
+    border: 1px solid grey; 
+    height: 13.28cm;
+    width: 20.9cm;
+    float:left;
+    margin-left: 4px;
+    -moz-border-radius: 10px; /*radio de los bordes*/
+    -webkit-border-radius: 10px;
+}
+
+#Listview
+{
+    background-color:#ececec;
+    height:13cm;
+    width:20.85cm;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    text-align:center;
+    position:absolute;
+}
+
+#aspectobotoneslistview
+{
+     border-top: 1px solid grey;   
+}
+
+#layout
+{
+     position:absolute;    
+}
+
 #ComprasCuerpoCoches
 {
     border: 2px solid grey;
@@ -27,8 +60,8 @@
     float: right;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
-    margin-right:10px;
-    margin-top:-25px;
+    margin-right:100px;
+    margin-top:-205px;
     padding-left:10px;
     padding-right:10px;
 }
