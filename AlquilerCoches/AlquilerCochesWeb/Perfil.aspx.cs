@@ -17,7 +17,7 @@ namespace AlquilerCochesWeb
         {
             EN.ENCliente cli = new ENCliente();
             DataSet dscli = new DataSet();
-            dscli = cli.ObtenerDatosClienteConDni("11111111A");
+            dscli = cli.ObtenerDatosClienteConDni(Session["Usuario"].ToString());
 
             Session["nombre"] = TLabelNombre.Text = dscli.Tables["Cliente"].Rows[0][1].ToString();
             Session["apellidos"] = TLabelApellidos.Text = dscli.Tables["Cliente"].Rows[0][2].ToString();
@@ -29,7 +29,7 @@ namespace AlquilerCochesWeb
 
             EN.ENReservas re = new ENReservas();
             DataSet dsre = new DataSet();
-            dsre = re.ObtenerReservas(); //obtenemos la reserva FALTA ARREGLARLO PARA Q TE DEVUELVA La DNI QUE QIERES
+            dsre = re.ObtenerReservasPorUsuario(Session["Usuario"].ToString()); //obtenemos la reserva FALTA ARREGLARLO PARA Q TE DEVUELVA La del DNI QUE QIERES
 
             // CREAMOS UN DATATABLE(tabla personalizada por mi) Para introducirlo en el dataset y este se introducira en el datagridview
             EN.ENVehiculo ve = new ENVehiculo();

@@ -99,6 +99,27 @@ namespace CAD
             return dsRes;
         }
 
+        public DataSet ObtenerReservasPorUsuario(string sentencia)
+        {
+            DataSet dsRes = new DataSet();
+            SqlDataAdapter daRes;
+            
+            //string insertar = "FK_Cliente ='"+sentencia+"'";
+            string consulta = "Select * from Reservas WHERE Activa = 1 AND FK_Cliente in('"+sentencia+"')";
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                daRes = new SqlDataAdapter(consulta, conexion);
+                daRes.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daRes.Fill(dsRes, "Reservas");
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            return dsRes;
+        }
+
         public int EjecutarSentencia(string comando)
         {
             int affectedRows = -1;

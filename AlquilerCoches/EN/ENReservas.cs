@@ -91,6 +91,18 @@ namespace EN
             }
         }
 
+        public DataSet ObtenerReservasPorUsuario(string sentencia)
+        {
+            try
+            {
+                return cadReservas.ObtenerReservasPorUsuario(sentencia);
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+        }
+
         public DataSet ObtenerReservasPorNumero(int numero)
         {
             try
