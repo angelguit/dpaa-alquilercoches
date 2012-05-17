@@ -174,13 +174,13 @@ namespace AlquilerCochesWeb
         protected void ComprobarUsuario(object source, ServerValidateEventArgs args)
         {
 
-            string user = args.ToString();
+            string user = args.Value.ToLower();
 
             
             
             if (user =="hola") 
             {
-                args.IsValid = true;
+                args.IsValid = false;
             }
 
         }
@@ -188,6 +188,15 @@ namespace AlquilerCochesWeb
         protected void ComprobarTelefono(object source, ServerValidateEventArgs args)
         {
 
+        }
+
+        protected void CustomValidator3_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            if (TTextBoxNombre.Text == "hola")
+            {
+                args.IsValid = false;
+            }
+            else args.IsValid = true;
         }
              
             
