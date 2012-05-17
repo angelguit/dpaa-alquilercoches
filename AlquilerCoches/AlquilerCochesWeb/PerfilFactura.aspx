@@ -17,4 +17,8 @@
         <SortedDescendingCellStyle BackColor="#FFFDF8" />
         <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
     </asp:GridView>
+    <asp:Label ID="LabelAnuncio" runat="server" style="font-size:40px; margin-left:7cm" Text="No hay resultados"></asp:Label></br></br>
+    <asp:Button ID="Button1" runat="server" 
+        style="-moz-border-radius: 10px; -webkit-border-radius: 10px; cursor: pointer; margin-left:10cm" Text="Volver" 
+        onclick="Button1_Click" />
 </asp:Content>

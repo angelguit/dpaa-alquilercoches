@@ -27,8 +27,8 @@ namespace AlquilerCochesWeb
         {
             EN.ENCliente enCiu = new EN.ENCliente();
             DataSet dsCiu = new DataSet();
-            //try
-            //{
+            try
+            {
                 string prov = TDropDownListProvincia.Text.ToString();
                 bool parar = false;
                 // MessageBox.Show(numProvincia.Tables["Provincia"].Rows.Count.ToString());
@@ -44,11 +44,11 @@ namespace AlquilerCochesWeb
                     }
                 }
                 ObtenerCiudades(dsCiu);
-           // }
-           // catch (Exception ex)
-            //{
-              //  throw (ex);
-            //}
+            }
+            catch (Exception ex)
+            {
+               throw (ex);
+            }
         }
         private void ObtenerCiudades(DataSet dsCiu)
         {
@@ -118,6 +118,29 @@ namespace AlquilerCochesWeb
                 //Fin Ciudad
             }
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+            ENCliente cli = new ENCliente();
+            DataSet ds = new DataSet();
+            ds = cli.ObtenerDatosClienteConDni(Session["Usuario"].ToString());
+
+            cli.DNI = ds.Tables["Cliente"].Rows[0][0].ToString();
+            cli.Nombre = TTextBoxNombre.Text;
+            cli.Apellidos = TTextBoxApellidos.Text;
+            cli.Provincia = TDropDownListProvincia.Text;
+            cli.Ciudad = TDropDownListCiudad.Text;
+            cli.Direccion = TTextBoxDireccion.Text;
+            cli.Email = TTextBoxEmail.Text;
+            cli.Tarifa = ds.Tables["Cliente"].Rows[0][8].ToString();
+            cli.Sexo = ds.Tables["Cliente"].Rows[0][9].ToString();
+           // cli.Pass
+
+
+        }
+
+      
       
 	}
 }

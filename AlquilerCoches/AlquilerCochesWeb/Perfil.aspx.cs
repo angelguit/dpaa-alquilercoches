@@ -54,9 +54,9 @@ namespace AlquilerCochesWeb
 
                         string matricula = dsre.Tables["Reservas"].Rows[i][2].ToString();
                         //Substring nos sirve para recortar el string y quitarle la hora
-                        string fechaini = dsre.Tables["Reservas"].Rows[i][3].ToString().Substring(0, 9);
+                        string fechaini = dsre.Tables["Reservas"].Rows[i][3].ToString().Substring(0, 10);
                         //Substring nos sirve para recortar el string y quitarle la hora
-                        string fechafin = dsre.Tables["Reservas"].Rows[i][4].ToString().Substring(0, 9);
+                        string fechafin = dsre.Tables["Reservas"].Rows[i][4].ToString().Substring(0, 10);
 
 
                         ve.Matricula = matricula;
