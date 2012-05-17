@@ -69,6 +69,7 @@
     <Content Include="Css\Compras.css" />
     <Content Include="Css\ImpresionReserva.css" />
     <Content Include="Css\Index.css" />
+    <Content Include="Css\jquery.simplyscroll.css" />
     <Content Include="Css\Ofertas.css" />
     <Content Include="Css\Perfil.css" />
     <Content Include="Css\PerfilEditar.css" />
@@ -77,6 +78,7 @@
     <Content Include="Css\Situacion.css" />
     <Content Include="Global.asax" />
     <Content Include="Imagenes\Cabecera.png" />
+    <Content Include="Imagenes\Calendario.png" />
     <Content Include="Imagenes\fallback3.png" />
     <Content Include="Imagenes\gradient-dark.png" />
     <Content Include="Imagenes\ImagenesPerfil\Desconocido.jpg" />
@@ -109,6 +111,8 @@
     <Content Include="Imagenes\oferta.png" />
     <Content Include="Imagenes\factura.jpg" />
     <Content Include="Index.aspx" />
+    <Content Include="Javascript\jquery.min.js" />
+    <Content Include="Javascript\jquery.simplyscroll.js" />
     <Content Include="Javascript\Js.js" />
     <Content Include="Javascript\modernizr.custom.41769.js" />
     <Content Include="Ofertas.aspx" />

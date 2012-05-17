@@ -31,10 +31,8 @@
         <h1><span>Nuestras Ofertas</span></h1>
 
         <div id="IndexBoxOfertas">
-            <img alt="Oferta" id="IndexImgOferta" src="Imagenes/oferta.png" />
-            <h1>949€</h1>
-            <asp:DropDownList ID="DropDownList1" runat="server">
-            </asp:DropDownList>
+             <ul id="scroller">
+             </ul>
         </div>
     </div>
     <div id="IndexReserva">
