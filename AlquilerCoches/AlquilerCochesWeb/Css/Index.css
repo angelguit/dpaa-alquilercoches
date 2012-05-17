@@ -1,4 +1,9 @@
 ﻿/*===================== CSS Maestra ========================================*/
+html{
+    background: -webkit-radial-gradient(grey, white);
+    background: -moz-radial-gradient(grey, white);
+}
+
 body 
 {
     border: 1px solid grey;
@@ -101,6 +106,7 @@ body
 	float: left;
 	border-left: 1px solid grey;
 	background-color: #E6E6FA;
+	text-align: center;
 }
 
 #IndexRegistro
@@ -196,6 +202,10 @@ body
 	font-size: xx-small !important;
 }
 
+#TLabelBienvenida
+{
+	text-align: center;
+}
 .IndexBotonAcceder
 {
 	text-align: center !important;
