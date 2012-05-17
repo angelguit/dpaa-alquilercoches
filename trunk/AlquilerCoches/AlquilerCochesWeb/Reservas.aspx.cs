@@ -111,5 +111,20 @@ namespace AlquilerCochesWeb
             }
             MostrarImagen();
         }
+
+        protected void ReservabotonConsulta_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void IndexTextFechaFin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected bool Enviar (object sender, EventArgs e)
+        {
+            return false;
+        }
     }
 }

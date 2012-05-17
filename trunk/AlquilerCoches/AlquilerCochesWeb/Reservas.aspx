@@ -1,11 +1,23 @@
 ﻿<%@ Page Title="Rent A Car" Language="C#" MasterPageFile="~/Maestra.Master" AutoEventWireup="true" CodeBehind="Reservas.aspx.cs" Inherits="AlquilerCochesWeb.Reservas" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 <link rel="stylesheet" href="Css/Reserva.css"/>
+    <style type="text/css">
+
+
+.AspectoError
+{
+    position:absolute;
+    color:Red;
+    margin-top:1.9cm;
+    margin-left:20px;
+            top: 194px;
+            left: 251px;
+        }</style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MaestraContenedor" runat="server">
  <div id="Cuerpo">
-
-    <form id="formularioReserva" onsubmit="enviar">
+     
+    <form id="formularioReserva" onsubmit="return enviar()">
           <div id="ReservaCuerpoPaso1">
             <p style="text-align:center; text-decoration: underline; background-color:#e6e6e6">Primer Paso: Seleccion de fecha</p>
                 <label for="male"">&nbsp Fecha Inicio</label>
@@ -31,23 +43,36 @@
                     PopupButtonID="CalendarioFin" />
   
                 <label for="male">&nbsp Hora:</label>
-                <input type="text" name="horainicio" value="13:00" size="5"/>
+                <input type="text" name="horainicio" value="00:00" size="5"/>
 
                 <asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="True"  ></asp:ScriptManager>
 
                 </br></br>
                 <label for="male">&nbsp Fecha Fin</label>
-                </br>
+                                     
+                <asp:CompareValidator ID="CompareValidatorFechas" runat="server"
+                    ErrorMessage="Error, revise las fechas"
+                    ControlToValidate="IndexTextFechaFin"
+                    ControlToCompare="IndexTextFechaInicio"
+                    Operator="GreaterThanEqual"
+                    Type="Date"
+                    EnableViewState="false"
+                    Enabled="true"
+                    CssClass="AspectoError"></asp:CompareValidator>
+                    </br>
                 <label for="male"">&nbsp Dia:</label>
-                <asp:TextBox ID="IndexTextFechaFin" runat="server" Height="21px" Width="82px"></asp:TextBox>
+                <asp:TextBox ID="IndexTextFechaFin" runat="server" Height="21px" Width="82px" 
+                  ontextchanged="IndexTextFechaFin_TextChanged"></asp:TextBox>
                 <input type="image" name="CalendarioFin" 
                     id="CalendarioFin" src="Imagenes/ImagenesReserva/supercalendario.jpg" 
                     onclick="javascript:MostrarCalendario()" alt="Click para mostrar calendario" 
                     style="border-width:0px;" />
 
                 <label for="male">&nbsp Hora:</label>
-                <input type="text" name="horafinal" value="13:00" size="5"/>
-                </br></br>     
+                <input type="text" name="horafinal" value="00:00" size="5"/>
+                </br>
+                     
+                    </br>     
           </div>	
           <div id="ReservaCuerpoPaso2">
                 <p style="text-align:center; text-decoration: underline; background-color: #e6e6e6">Segundo paso: Informacion del vehiculo</p>
@@ -82,7 +107,8 @@
                 <label for="male">&nbsp Codigo promocional:</label>
                 <input type="text" name="conductores" size="10"/>
           </div>
-          <asp:Button ID="ReservabotonConsulta" CssClass="ReservabotonConsulta" runat="server" Text="Consultar precio"/>
+          <asp:Button ID="ReservabotonConsulta" CssClass="ReservabotonConsulta" 
+              runat="server" Text="Consultar precio" onclick="ReservabotonConsulta_Click"/>
           
        </form>
     </div>
