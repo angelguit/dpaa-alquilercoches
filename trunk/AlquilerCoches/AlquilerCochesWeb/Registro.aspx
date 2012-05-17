@@ -51,7 +51,8 @@
                     <asp:Label ID="Label7" runat="server" Text="Label" Width="90" font-size="14px">E-Mail</asp:Label>
                     <asp:TextBox ID="TTextBoxEmail" runat="server" Width="182px"></asp:TextBox> <br /> <br />  <br />   
                 
-                    <asp:Button ID="Button1"  CssClass="PerfilbotonUsuario" runat="server" Text="Enviar" />
+                    <asp:Button ID="Button1"  CssClass="PerfilbotonUsuario" runat="server" 
+                          Text="Enviar" onclick="Button1_Click" />
                        
                     </p>
                      </div>  
