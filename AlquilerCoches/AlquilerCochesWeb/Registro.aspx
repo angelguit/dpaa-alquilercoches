@@ -24,7 +24,10 @@
                    <p style="text-align:center;background-color:#e6e6e6; width: 376px; font-family: verdana;">Nuevo registro</p>
                   <p style="font-family: verdana; height: 521px; margin-left: 28px; width: 345px;">
                     <asp:Label ID="Label1" runat="server" Text="Label" Width="90" font-size="14px">Nombre</asp:Label>
-                       <asp:TextBox ID="TTextBoxNombre" runat="server" Width="178px"></asp:TextBox> <br /> <br /> <br /> 
+                       <asp:TextBox ID="TTextBoxNombre" runat="server" Width="178px"></asp:TextBox> 
+                      <asp:CompareValidator ID="CompareValidator1" runat="server" 
+                          ErrorMessage="CompareValidator"></asp:CompareValidator>
+                      <br /> <br /> <br /> 
       
                     <asp:Label ID="Label2" runat="server" Text="Label" Width="90" font-size="14px">Apellidos</asp:Label>
                        <asp:TextBox ID="TTextBoxApellidos" runat="server"  Width="178px"></asp:TextBox> <br /> <br /> <br /> 
@@ -36,8 +39,7 @@
                            onselectedindexchanged="TDropDownListProvincia_SelectedIndexChanged"></asp:DropDownList> <br /> <br /> <br /> 
               
                     <asp:Label ID="Label4" runat="server" Text="Label" Width="90" font-size="14px">Ciudad</asp:Label>
-                       <asp:DropDownList ID="TDropDownListCiudad" runat="server" Height="22px" 
-                          Width="185px" onselectedindexchanged="TDropDownListCiudad_SelectedIndexChanged"></asp:DropDownList> <br /> <br /> <br /> 
+                       <asp:DropDownList ID="TDropDownListCiudad" runat="server" Height="22px" Width="185px"></asp:DropDownList> <br /> <br /> <br /> 
                
                     <asp:Label ID="Label5" runat="server" Text="Label" Width="90" font-size="14px">Dirección</asp:Label>
                        <asp:TextBox ID="TTextBoxDireccion" runat="server" Height="17px" Width="178px"></asp:TextBox> <br /> <br /> <br /> 

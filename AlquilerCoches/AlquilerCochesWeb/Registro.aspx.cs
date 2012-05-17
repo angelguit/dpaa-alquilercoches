@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data;
 using EN;
+
 
 namespace AlquilerCochesWeb
 {
@@ -40,8 +41,12 @@ namespace AlquilerCochesWeb
                 }
             }
             ObtenerCiudades(dsCiu);
+            // }
+            // catch (Exception ex)
+            //{
+            //  throw (ex);
+            //}
         }
-
         private void ObtenerCiudades(DataSet dsCiu)
         {
             TDropDownListCiudad.DataSource = "";
@@ -58,15 +63,8 @@ namespace AlquilerCochesWeb
 
         }
 
-        protected void TDropDownListCiudad_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
-        }
-
-
         protected void TDropDownListProvincia_Load(object sender, EventArgs e)
         {
-
             //Provincias
 
             EN.ENCliente provincia = new EN.ENCliente();
@@ -84,8 +82,8 @@ namespace AlquilerCochesWeb
                     TDropDownListProvincia.Items.Add(dsProv.Tables["Provincia"].Rows[i][1].ToString());
                 }
 
-                TDropDownListProvincia.SelectedValue = Session["provincia"].ToString(); //valor por defecto
-
+         //       TDropDownListProvincia.SelectedValue = Session["provincia"].ToString(); //valor por defecto
+       
                 //FIN provi
 
                 //Cargar CIudad
@@ -94,7 +92,7 @@ namespace AlquilerCochesWeb
                 DataSet dsCiu = new DataSet();
                 try
                 {
-                    string prov = TDropDownListProvincia.Text.ToString();
+                    string prov = TDropDownListProvincia.SelectedIndex.ToString();  //provincia elegida
                     bool parar = false;
                     // MessageBox.Show(numProvincia.Tables["Provincia"].Rows.Count.ToString());
                     for (int i = 0; i < 53 && parar != true; i++)
@@ -116,11 +114,12 @@ namespace AlquilerCochesWeb
                 }
                 //Fin Ciudad
             }
+        }
 
-
-
-
+        protected void TDropDownListProvincia_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
+
     }
 }
