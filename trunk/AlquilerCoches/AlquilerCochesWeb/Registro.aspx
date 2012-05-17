@@ -23,7 +23,8 @@
                   style="height: 567px; width: 377px; margin-top: 0px; margin-left: 28px;">
                    <p style="text-align:center;background-color:#e6e6e6; width: 376px; font-family: verdana;">Nuevo registro</p>
                   <p style="font-family: verdana; height: 521px; margin-left: 28px; width: 331px;">
-                    <asp:Label ID="Label1" runat="server" Text="Label" Width="90" font-size="14px">Nombre</asp:Label>
+                    <br />
+                    <asp:Label ID="Label1" runat="server" Text="Label" Width="90" font-size="14px">Usuario</asp:Label>
                        <asp:TextBox ID="TTextBoxNombre" runat="server" Width="178px"></asp:TextBox> <br />
                      
                      
@@ -44,11 +45,16 @@
                       <asp:CustomValidator ID="CustomValidator3" runat="server" 
                           ErrorMessage="Usuario ya introducido." 
                           onservervalidate="CustomValidator3_ServerValidate" ForeColor="Red" Font-Size=13px></asp:CustomValidator><br />
+                      <asp:Label ID="Label13" runat="server" Text="Nombre" Width="90"></asp:Label>
+                      <asp:TextBox ID="TextBox4" runat="server" Width="175px"></asp:TextBox>
+                      <br />
+                       <asp:RequiredFieldValidator ID="NombreReq" runat="server" ControlToValidate="TTextBoxNombre" 
+                          ErrorMessage="Introduzca los apellidos." ForeColor="Red" Font-Size=13px></asp:RequiredFieldValidator><br /> 
 
-                        
-      
-                    <asp:Label ID="Label2" runat="server" Text="Label" Width="90" font-size="14px">Apellidos</asp:Label>
+
+                                           <asp:Label ID="Label2" runat="server" Text="Label" Width="90" font-size="14px">Apellidos</asp:Label>
                        <asp:TextBox ID="TTextBoxApellidos" runat="server"  Width="178px"></asp:TextBox> <br /> 
+
                       <asp:RequiredFieldValidator ID="ApellidosReq" runat="server" ControlToValidate="TTextBoxApellidos" 
                           ErrorMessage="Introduzca los apellidos." ForeColor="Red" Font-Size=13px></asp:RequiredFieldValidator><br />
 
@@ -63,7 +69,7 @@
                        <asp:TextBox ID="TextBox2" runat="server"  Width="178px"></asp:TextBox> <br /> 
                       <asp:CompareValidator ID="CompareValidator4" runat="server" 
                           ControlToCompare="TextBox2" ControlToValidate="TextBox1"
-                          ErrorMessage="Contraseña repetida, introduzca otra." ForeColor="Red" Font-Size=13px></asp:CompareValidator>
+                          ErrorMessage="Contraseña errónea vuelva a introducirla." ForeColor="Red" Font-Size=13px></asp:CompareValidator>
                       <br /> 
                           
                          
@@ -84,15 +90,17 @@
                     <asp:Label ID="Label5" runat="server" Text="Label" Width="90" font-size="14px">Dirección</asp:Label>
                        <asp:TextBox ID="TTextBoxDireccion" runat="server" Height="17px" Width="178px"></asp:TextBox> 
                        <asp:RequiredFieldValidator ID="DireccionReq" runat="server" ControlToValidate="TTextBoxDireccion" 
-                          ErrorMessage="Introduzca la dirección." ForeColor="Red" Font-Size=13px></asp:RequiredFieldValidator>
+                          ErrorMessage="Introduzca la dirección." ForeColor="Red" Font-Size=13px ></asp:RequiredFieldValidator>
                        <br />
                        
                 
                     <asp:Label ID="Label6" runat="server" Text="Label" Width="90" font-size="14px">Teléfono</asp:Label>
-                      <asp:TextBox ID="TextBox3" runat="server" Width="179px"></asp:TextBox>
+                      <asp:TextBox ID="TextBox3" runat="server" Width="179px" 
+                          ontextchanged="TextBox3_TextChanged"></asp:TextBox>
                       <br /> 
                         <asp:CustomValidator ID="CustomValidator4" runat="server" 
-                          ErrorMessage="Introduzca el teléfono." ForeColor="Red" Font-Size=13px></asp:CustomValidator>
+                          ErrorMessage="Introduzca el teléfono." ForeColor="Red" Font-Size=13px 
+                          onservervalidate="CustomValidator4_ServerValidate1"></asp:CustomValidator>
 
                        <br />
            
@@ -100,7 +108,7 @@
                     <asp:TextBox ID="TTextBoxEmail" runat="server" Width="182px"></asp:TextBox> <br />
                   <asp:CustomValidator ID="CustomValidator5" runat="server" 
                           ErrorMessage="Introduzca el e-mail." Font-Size=13px ForeColor="Red" ></asp:CustomValidator><br />
-                       <br /><br /><br />
+                       <br />
                 
                     <asp:Button ID="Button1"  CssClass="PerfilbotonUsuario" runat="server" 
                           Text="Enviar" onclick="Button1_Click" />
