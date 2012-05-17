@@ -12,9 +12,9 @@ namespace AlquilerCochesWeb
 {
     public partial class Registro : System.Web.UI.Page
     {
-
+        /*
         private DataSet numProvincia = new DataSet();
-        private bool vengodeload = false;
+        private bool vengodeload = false; */
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -22,6 +22,8 @@ namespace AlquilerCochesWeb
 
         protected void TDropDownListProvincia_TextChanged(object sender, EventArgs e)
         {
+
+            /*
             EN.ENCliente enCiu = new EN.ENCliente();
             DataSet dsCiu = new DataSet();
             //try
@@ -39,14 +41,15 @@ namespace AlquilerCochesWeb
                     dsCiu = enCiu.ObtenerListaCiudades(numprov);
 
                 }
-            }
-            ObtenerCiudades(dsCiu);
+            } 
+            ObtenerCiudades(dsCiu); */
             // }
             // catch (Exception ex)
             //{
             //  throw (ex);
             //}
         }
+        /*
         private void ObtenerCiudades(DataSet dsCiu)
         {
             TDropDownListCiudad.DataSource = "";
@@ -62,11 +65,12 @@ namespace AlquilerCochesWeb
 
 
         }
+         * */
 
         protected void TDropDownListProvincia_Load(object sender, EventArgs e)
         {
             //Provincias
-
+            /*
             EN.ENCliente provincia = new EN.ENCliente();
             DataSet dsProv = new DataSet();
             dsProv = provincia.ObtenerListaProvincias();
@@ -114,6 +118,7 @@ namespace AlquilerCochesWeb
                 }
                 //Fin Ciudad
             }
+             * */
         }
 
         protected void TDropDownListProvincia_SelectedIndexChanged(object sender, EventArgs e)
@@ -123,7 +128,7 @@ namespace AlquilerCochesWeb
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            /*
+           /*
                bool incorrecto=false;
 
                if(incorrecto!=true)
@@ -164,6 +169,25 @@ namespace AlquilerCochesWeb
                     label1.Text = "* Pedido realizado con éxito. *";
                 }
              */
+        }
+
+        protected void ComprobarUsuario(object source, ServerValidateEventArgs args)
+        {
+
+            string user = args.ToString();
+
+            
+            
+            if (user =="hola") 
+            {
+                args.IsValid = true;
+            }
+
+        }
+
+        protected void ComprobarTelefono(object source, ServerValidateEventArgs args)
+        {
+
         }
              
             
