@@ -20,7 +20,7 @@ namespace AlquilerCochesWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            LabelAnuncio.Visible = false;
                 string dni = Session["Usuario"].ToString();
                 string fechaIni = Session["fechaPerfilIni"].ToString();
                 string fechaFin = Session["fechaPerfilFin"].ToString();
@@ -29,12 +29,24 @@ namespace AlquilerCochesWeb
                 DataSet ds = new DataSet();
                 ds = enRe.ObtenerReservasPorFecha(dni,fechaIni,fechaFin); //¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡DENTRO PÔNER sentencia pero no va!!!!!!!!!!!!!!!!
               //Cambiamos el nombre a las columnas del dataset
-                ds.Tables["Reservas"].Columns[1].ColumnName = "Cliente";
-                ds.Tables["Reservas"].Columns[2].ColumnName = "Matricula";
-            
-                TDataGridViewFacturaFechas.DataSource = ds;
-                TDataGridViewFacturaFechas.DataBind();  
- 
+                if (ds.Tables["Reservas"].Rows.Count > 0)
+                {
+                    ds.Tables["Reservas"].Columns[1].ColumnName = "Cliente";
+                    ds.Tables["Reservas"].Columns[2].ColumnName = "Matricula";
+
+                    TDataGridViewFacturaFechas.DataSource = ds;
+                    TDataGridViewFacturaFechas.DataBind();
+                }
+                else
+                {
+                    LabelAnuncio.Visible = true;
+
+                }
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("Perfil.aspx");
         }
 
 

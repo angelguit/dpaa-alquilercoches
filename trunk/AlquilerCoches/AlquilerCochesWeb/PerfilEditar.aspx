@@ -47,8 +47,15 @@
            
                     <asp:Label ID="Label7" runat="server" Text="Label" Width="90" font-size="14px">E-Mail</asp:Label>
                     <asp:TextBox ID="TTextBoxEmail" runat="server" Width="182px"></asp:TextBox> <br /> <br />  <br />   
+
+                    <asp:Label ID="Label8" runat="server" Text="Label" Width="90" font-size="14px">Password</asp:Label>
+                    <asp:TextBox ID="TextBoxPass" runat="server" Width="182px" CausesValidation="False"></asp:TextBox> <br /> <br />  <br />   
+
+                    <asp:Label ID="Label9" runat="server" Text="Label" Width="90" font-size="14px">Password</asp:Label>
+                    <asp:TextBox ID="TextBoxPass2" runat="server" Width="182px" CausesValidation="False" BorderStyle="NotSet"></asp:TextBox> <br /> <br />  <br />   
                 
-                    <asp:Button ID="Button1"  CssClass="PerfilbotonUsuario" runat="server" Text="Enviar" />
+                    <asp:Button ID="ButtonGuardar"  CssClass="PerfilbotonUsuario" runat="server" 
+                           Text="Guardar" onclick="Button1_Click" />
                        
                     </p>
                      </div>  
