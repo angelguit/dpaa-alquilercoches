@@ -10,13 +10,16 @@
     </div>
     <div id="IndexLogin">
         <asp:Login ID="IndexLoginC" runat="server" Height="150px" Width="202px" 
-            LoginButtonText="Acceder" RememberMeText="Recordarme la próxima vez.">
+            LoginButtonText="Acceder" RememberMeText="Recordarme la próxima vez." 
+            onauthenticate="IndexLoginC_Authenticate" 
+            DestinationPageUrl="~/Perfil.aspx">
             <CheckBoxStyle CssClass="IndexCheck" />
             <LabelStyle CssClass="IndexLabel" />
             <LoginButtonStyle CssClass="IndexBotonAcceder" />
             <TextBoxStyle CssClass="IndexTextBox" />
             <TitleTextStyle CssClass="IndexTitle" />
         </asp:Login>
+      
     </div>
     <div id="IndexRegistro">
         <br />
