@@ -163,9 +163,9 @@ namespace AlquilerCochesWeb
                     enPedidos.AnyadirPedidos();
                     label1.Text = "* Pedido realizado con éxito. *";
                 }
+             */
         }
-             * 
-             * /
-
+             
+            
     }
 }
