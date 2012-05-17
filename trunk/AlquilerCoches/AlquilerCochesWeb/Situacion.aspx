@@ -43,7 +43,7 @@
                <asp:TextBox ID="TTextBoxNombre" runat="server" CssClass="SituacionContactoTextBox"></asp:TextBox>
 
                <asp:CustomValidator ID="CustomValidatorNombre" runat="server" 
-                 ErrorMessage="Nombre incorrecto" 
+                 ErrorMessage="Formato incorrecto" 
                  ControlToValidate="TTextboxNombre"
                  onservervalidate="CustomValidatorNombre_ServerValidate" 
                  ForeColor="#CC0000"></asp:CustomValidator>

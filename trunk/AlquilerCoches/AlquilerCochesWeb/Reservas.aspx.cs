@@ -71,6 +71,8 @@ namespace AlquilerCochesWeb
             {
                 matricula = dsMatricula.Tables["Reserva"].Rows[0][0].ToString();
                 ImagenCoche.ImageUrl = "Imagenes/ImagenesReserva/fotosCoches/" + matricula + ".jpg";
+                ImagenCoche.Height = 190;
+                ImagenCoche.Width = 270;
             }
         }
 
