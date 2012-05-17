@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Data;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Text;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using EN;
@@ -11,11 +13,11 @@ namespace AlquilerCochesWeb
 {
     public partial class Index : System.Web.UI.Page
     {
-        private bool aux;
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             
-            
+            RellenarOfertas();            
         }
 
         protected void IndexBotonReserva_Click(object sender, EventArgs e)
@@ -25,9 +27,49 @@ namespace AlquilerCochesWeb
 
         private void RellenarOfertas()
         {
-            EN.ENVehiculo enVe = new EN.ENVehiculo();
+            EN.ENVentas enVe = new EN.ENVentas();
             DataSet ds = new DataSet();
+            ds = enVe.ObtenerListaVentas();
+            ArrayList lista = new ArrayList();
+            StringBuilder cstext1 = new StringBuilder();
+            StringBuilder cstext2 = new StringBuilder();
+
+            if (ds.Tables["Ventas"].Rows.Count > 0)
+            {
+                cstext1.Append("<script type=\"text/javascript\"> var ofertas = document.getElementById(\"IndexBoxOfertas\");");
+                cstext1.Append("var ul = document.createElement(\"ul\");");
+                cstext1.Append("ul.id = \"scroller\";");
+                cstext1.Append("ofertas.appendChild(ul);");
+                
+                for (int i = 0; i < ds.Tables["Ventas"].Rows.Count; i++)
+                {
+                    cstext1.Append("var img = document.createElement(\"img\");");
+                    cstext1.Append("img.title = \"" + ds.Tables["Ventas"].Rows[i][1].ToString() + " " + ds.Tables["Ventas"].Rows[i][2].ToString() + " KM: " + ds.Tables["Ventas"].Rows[i][3].ToString() + " PVP: " + ds.Tables["Ventas"].Rows[i][5].ToString() + "€\";");
+                    cstext1.Append("img.alt = \"" + ds.Tables["Ventas"].Rows[i][2].ToString() + "\";");
+                    cstext1.Append("img.src = \"Imagenes/ImagenesCompra/CochesCompra/" + ds.Tables["Ventas"].Rows[i][0].ToString() + ".jpg\";");
+                    cstext1.Append("img.setAttribute('width','200');");
+                    cstext1.Append("img.setAttribute('height','200');");
+                    cstext1.Append("var a = document.createElement(\"a\");");
+                    cstext1.Append("a.href = \"Ofertas.aspx\";");
+                    cstext1.Append("a.appendChild(img);");
+                    cstext1.Append("var li = document.createElement(\"li\");");
+                    cstext1.Append("li.appendChild(a);");
+                    cstext1.Append("ul.appendChild(li);");
+                    
+                    lista.Add("<a href=\"Ofertas.aspx\"><img title=\"" + ds.Tables["Ventas"].Rows[i][1].ToString() + " " + ds.Tables["Ventas"].Rows[i][2].ToString() + "\" alt=\"" + ds.Tables["Ventas"].Rows[i][2].ToString() + "\" src=\"Imagenes/ImagenesCompra/CochesCompra/" + ds.Tables["Ventas"].Rows[i][0].ToString() + ".jpg\" width=\"200\" height=\"200\"></a>");
+                }
+                cstext1.Append("</");
+                cstext1.Append("script>");
+            }
+
+            cstext2.Append("<script type=\"text/javascript\">");
+            cstext2.Append("$(\"#scroller\").simplyScroll();");
+            cstext2.Append("</");
+            cstext2.Append("script>");
             
+            
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "Rellenar", cstext1.ToString());
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "Rellenar2", cstext2.ToString());
         }
 
         protected void IndexLoginC_Authenticate(object sender, AuthenticateEventArgs e)
@@ -47,14 +89,15 @@ namespace AlquilerCochesWeb
                 else
                 {
                     e.Authenticated = false;
+                    IndexLoginC.FailureText = "Contraseña o usuario incorrecto.";
                 }
+            }
+            else
+            {
+                e.Authenticated = false;
+                IndexLoginC.FailureText = "No existe ese usuario.";
             }
             
         }
-
-        protected void CustomValidatorLogin_ServerValidate(object source, ServerValidateEventArgs args)
-        {
-        }
-
     }
 }

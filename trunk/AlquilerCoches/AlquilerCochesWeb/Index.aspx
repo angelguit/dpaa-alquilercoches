@@ -1,5 +1,9 @@
 ﻿<%@ Page Title="Rent A Car" Language="C#" MasterPageFile="~/Maestra.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="AlquilerCochesWeb.Index" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script src="/Javascript/jquery.min.js" type="text/javascript"></script>
+    <script src="/Javascript/jquery.simplyscroll.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="Css/jquery.simplyscroll.css"/>
+    
 </asp:Content>
 <asp:Content ID="Index" ContentPlaceHolderID="MaestraContenedor" runat="server">
     <div id="IndexPresentacion">
@@ -33,10 +37,7 @@
     <div id="IndexOfertas">
         <h1><span>Nuestras Ofertas</span></h1>
 
-        <div id="IndexBoxOfertas">
-             <ul id="scroller">
-             </ul>
-        </div>
+        <div id="IndexBoxOfertas"></div>
     </div>
     <div id="IndexReserva">
         <h1><span></span>Realizar Reserva</h1>
