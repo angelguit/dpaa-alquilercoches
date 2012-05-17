@@ -121,5 +121,51 @@ namespace AlquilerCochesWeb
 
         }
 
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            /*
+               bool incorrecto=false;
+
+               if(incorrecto!=true)
+               {
+                EN.ENPedidos enPedidos = new EN.ENPedidos();
+
+                string envio = "";
+              
+
+                if (TEnvioButtonOrdinario.Checked==true)
+                {
+                    envio = "Ordinario";
+                }
+                if (TEnvioButtonUrgente.Checked==true)
+                {
+                    envio = "Urgente";
+                }
+
+                enPedidos.IDTransaccion = TIDtextBox.Text; // idtransaccion
+                enPedidos.Proveedor = TProveecomboBox1.Text;  //proveedor
+                enPedidos.Marca = TMarcacomboBox2.Text;  //marca
+                enPedidos.Modelo = TModelocomboBox3.Text;   //modelo
+                enPedidos.Cantidad = numericUpDown1.Text;  //cantidad
+                enPedidos.Observaciones = TObservTextBox.Text;  //observaciones
+                enPedidos.Empleado = TVendedorText.Text; //empleado
+                enPedidos.TipoEnvio = envio;  //tipo de envio
+                enPedidos.EstadoPedido = " Abierto";
+
+                if (editar == "SI")
+                {
+                    enPedidos.EditarPedidos();
+                    label1.Text = "* Pedido modificado con éxito. *";
+
+                }
+                else
+                {
+                    enPedidos.AnyadirPedidos();
+                    label1.Text = "* Pedido realizado con éxito. *";
+                }
+        }
+             * 
+             * /
+
     }
 }
