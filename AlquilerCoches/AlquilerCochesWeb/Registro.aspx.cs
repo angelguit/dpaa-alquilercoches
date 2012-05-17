@@ -128,6 +128,19 @@ namespace AlquilerCochesWeb
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+
+
+
+            if (Page.IsValid)
+            {
+
+                    
+            }
+            else
+            {
+
+
+            }
            /*
                bool incorrecto=false;
 
@@ -197,6 +210,36 @@ namespace AlquilerCochesWeb
                 args.IsValid = false;
             }
             else args.IsValid = true;
+        }
+
+        protected void TTextBoxEmail_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        protected void TTextBoxEmail_TextChanged1(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void CustomValidator5_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+
+        }
+
+        protected void CustomValidator4_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+
+        }
+
+        protected void TextBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void CustomValidator4_ServerValidate1(object source, ServerValidateEventArgs args)
+        {
+
         }
              
             
