@@ -4,12 +4,14 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <script src="/Javascript/jquery.min.js" type="text/javascript"></script>
+    <script src="/Javascript/jquery.simplyscroll.js" type="text/javascript"></script>
     <script src="/Javascript/Js.js" type="text/javascript"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
     <title>Rent A Car</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <link rel="stylesheet" href="Css/Index.css"/>
+    <link rel="stylesheet" href="Css/jquery.simplyscroll.css"/>
 </head>
 
 <div id="PerfilMargenIzq" style="margin-left:21.36cm"></div> <!-- Estos div se encargan de los degradados en los laterales de la pagina-->

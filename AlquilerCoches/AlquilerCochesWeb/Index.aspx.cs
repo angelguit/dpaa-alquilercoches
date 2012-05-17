@@ -13,15 +13,20 @@ namespace AlquilerCochesWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            EN.ENVehiculo enVe = new EN.ENVehiculo();
-            DataSet ds = new DataSet();
-            ds = enVe.ObtenerCategorias();
-            DropDownList1.DataSource = ds;
+            
+            
         }
 
         protected void IndexBotonReserva_Click(object sender, EventArgs e)
         {
             Response.Redirect("Reservas.aspx");
+        }
+
+        private void RellenarOfertas()
+        {
+            EN.ENVehiculo enVe = new EN.ENVehiculo();
+            DataSet ds = new DataSet();
+            
         }
     }
 }
