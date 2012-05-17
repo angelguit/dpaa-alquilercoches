@@ -120,6 +120,36 @@ namespace CAD
             return dsRes;
         }
 
+        public DataSet ObtenerReservasPorFechas(string dni,string fechaini, string fechafin)
+        {
+            DataSet dsRes = new DataSet();
+            SqlDataAdapter daRes;
+
+            //string insertar = "FK_Cliente ='"+sentencia+"'";
+            /*sentencia += " FechaInicio BETWEEN '" + fechaIni + "' AND '" + fechaFin + "'";
+                sentencia += " and FechaFin <= '" + fechaFin + "'";
+                sentencia += " FK_Cliente = 11111111A";*/
+            string[] rayini = fechaini.Split('/');
+            string[] rayfin = fechafin.Split('/');
+
+            string fechini = rayini[2]+"/"+rayini[1]+"/"+rayini[0];
+            string fechfi = rayfin[2] + "/" + rayfin[1] + "/" + rayfin[0];
+
+            string consulta = "Select * from Reservas WHERE Activa = 1 AND FK_Cliente in('" + dni + "') AND FechaInicio BETWEEN '" +fechini+"' AND '" +fechfi+"' AND FechaFin <= '"+fechfi+"'";
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                daRes = new SqlDataAdapter(consulta, conexion);
+                daRes.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daRes.Fill(dsRes, "Reservas");
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            return dsRes;
+        }
+
         public int EjecutarSentencia(string comando)
         {
             int affectedRows = -1;

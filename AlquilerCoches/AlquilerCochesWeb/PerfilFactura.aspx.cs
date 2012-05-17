@@ -21,18 +21,17 @@ namespace AlquilerCochesWeb
         protected void Page_Load(object sender, EventArgs e)
         {
            
-                string sentencia = "";
-                string fechaIni = Session["fechaPerfilIni"].ToString() + " 0:00:00";
-                string fechaFin = Session["fechaPerfilFin"].ToString() + " 0:00:00";
-
-                sentencia += " FechaInicio BETWEEN '" + fechaIni + "' AND '" + fechaFin + "'";
-                sentencia += " and FechaFin <= '" + fechaFin + "'";
-                sentencia += " FK_Cliente = 11111111A";
+                string dni = Session["Usuario"].ToString();
+                string fechaIni = Session["fechaPerfilIni"].ToString();
+                string fechaFin = Session["fechaPerfilFin"].ToString();
 
                 EN.ENReservas enRe = new EN.ENReservas();
                 DataSet ds = new DataSet();
-                ds = enRe.ObtenerReservas(); //¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡DENTRO PÔNER sentencia pero no va!!!!!!!!!!!!!!!!
-
+                ds = enRe.ObtenerReservasPorFecha(dni,fechaIni,fechaFin); //¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡DENTRO PÔNER sentencia pero no va!!!!!!!!!!!!!!!!
+              //Cambiamos el nombre a las columnas del dataset
+                ds.Tables["Reservas"].Columns[1].ColumnName = "Cliente";
+                ds.Tables["Reservas"].Columns[2].ColumnName = "Matricula";
+            
                 TDataGridViewFacturaFechas.DataSource = ds;
                 TDataGridViewFacturaFechas.DataBind();  
  

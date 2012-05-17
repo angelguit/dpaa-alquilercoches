@@ -103,6 +103,17 @@ namespace EN
             }
         }
 
+        public DataSet ObtenerReservasPorFecha(string dni, string fechain, string fechafi)
+        {
+            try
+            {
+                return cadReservas.ObtenerReservasPorFechas(dni,fechain,fechafi);
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+        }
         public DataSet ObtenerReservasPorNumero(int numero)
         {
             try

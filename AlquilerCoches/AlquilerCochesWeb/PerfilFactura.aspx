@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="Css/ImpresionReserva.css" media="print" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MaestraContenedor" runat="server">
-    <asp:GridView ID="TDataGridViewFacturaFechas" style="margin: 0 auto" runat="server" CellPadding="4" 
+    <asp:GridView ID="TDataGridViewFacturaFechas" style="margin: 0 auto; margin-top:20px;" runat="server" CellPadding="4" 
         ForeColor="#333333"  GridLines="None">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <EditRowStyle BackColor="#999999" />
