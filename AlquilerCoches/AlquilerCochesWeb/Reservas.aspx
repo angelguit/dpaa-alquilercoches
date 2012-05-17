@@ -41,15 +41,14 @@
                     CssClass="AspectoCalendario"
                     Format="dd/MM/yyyy"
                     PopupButtonID="CalendarioFin" />
-  
-                <label for="male">&nbsp Hora:</label>
-                <input type="text" name="horainicio" value="00:00" size="5"/>
 
                 <asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="True"  ></asp:ScriptManager>
 
                 </br></br>
                 <label for="male">&nbsp Fecha Fin</label>
                                      
+
+                
                 <asp:CompareValidator ID="CompareValidatorFechas" runat="server"
                     ErrorMessage="Error, revise las fechas"
                     ControlToValidate="IndexTextFechaFin"
@@ -67,9 +66,6 @@
                     id="CalendarioFin" src="Imagenes/ImagenesReserva/supercalendario.jpg" 
                     onclick="javascript:MostrarCalendario()" alt="Click para mostrar calendario" 
                     style="border-width:0px;" />
-
-                <label for="male">&nbsp Hora:</label>
-                <input type="text" name="horafinal" value="00:00" size="5"/>
                 </br>
                      
                     </br>     
@@ -95,7 +91,7 @@
                 <label for="male">&nbsp Conductores:</label>
                 <asp:TextBox ID="conductores" runat="server" ></asp:TextBox>
               <asp:CustomValidator ID="CustomValidator1" runat="server" 
-                    ErrorMessage="Solo numeros" 
+                    ErrorMessage="Incorrecto" 
                      ControlToValidate="conductores"
                     onservervalidate="validacionConductores">
               </asp:CustomValidator>
