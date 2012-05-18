@@ -10,6 +10,15 @@
         <div id="IndexTextoPresentacion">
             <p>Rent A Car es una empresa con años de experiencia.</p>
             <p>Nuestros clientes son nuestra mayor prioridad y esperamos ofrecerle un servicio de su agrado. </p>
+            <br />
+            <div id="Apis">
+                <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" style="margin-top:1cm;">Tweet</a>
+                <iframe src="http://www.facebook.com/plugins/like.php?href=www.rentacar.net" scrolling="no" frameborder="0" style="float:left; width:200px; height:100px;"></iframe> 
+
+                <script type="text/javascript"> !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = "//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } } (document, "script", "twitter-wjs");</script>
+            </div>
+            <br />
+            <br />
         </div>
     </div>
     <div id="IndexLogin">
@@ -24,18 +33,27 @@
             <TextBoxStyle CssClass="IndexTextBox" />
             <TitleTextStyle CssClass="IndexTitle" />
         </asp:Login>
-      
+        <asp:ImageButton ID="IndexLogoUsuario" runat="server" Width= "160px" 
+            Height="180px" onclick="IndexLogoUsuario_Click" /> <br />
+        <asp:PlaceHolder ID="IndexReservaRapida" runat="server">
+            <span>Reserva Rapida</span><br />
+            <asp:RadioButton ID="TRadioButtonUltimaReserva" runat="server" Text="Ultima Reserva" GroupName="Radio" /><br />
+            <asp:RadioButton ID="TRadioButtonReservaHabitual" runat="server" Text="Reserva Habitual" GroupName="Radio" /><br />
+            <asp:Button ID="TButtonReservar" runat="server" Text="Reservar" 
+                onclick="TButtonReservar_Click" />
+        </asp:PlaceHolder>
     </div>
-    <div id="IndexRegistro">
-        <asp:HyperLink ID="HyperLink1" runat="server" Visible="False">Salir</asp:HyperLink>
-        <br />
-        <br />
-        <p>¿No tienes una cuenta Rent A Car?</p>
-        <p>A que estas esperando, consigue todas las ventajas</p>
-        <br />
-        <br />
-        <a id="IndexLinkReg" href="Registro.aspx"> &nbsp Registrate &nbsp </a>
-    </div>
+    <asp:PlaceHolder ID="IndexRegistroPH" runat="server">
+        <div id="IndexRegistro">
+            <br />
+            <br />
+            <p>¿No tienes una cuenta Rent A Car?</p>
+            <p>A que estas esperando, consigue todas las ventajas</p>
+            <br />
+            <br />
+            <a id="IndexLinkReg" href="Registro.aspx"> &nbsp Registrate &nbsp </a>
+        </div>
+     </asp:PlaceHolder>
     <div id="IndexOfertas">
         <h1><span>Nuestras Ofertas</span></h1>
 

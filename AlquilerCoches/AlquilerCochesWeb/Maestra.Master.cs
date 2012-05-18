@@ -16,12 +16,23 @@ namespace AlquilerCochesWeb
             {
                 TMenuMaster.Items[2].Enabled = false;
                 TMenuMaster.Items[2].Text = "";
+                TMenuMaster.Items[7].Enabled = false;
+                TMenuMaster.Items[7].Text = "";
             }
             else
             {
                 TMenuMaster.Items[2].Enabled = true;
                 TMenuMaster.Items[2].Text = "Perfil de Usuario";
+                TMenuMaster.Items[7].Enabled = true;
+                TMenuMaster.Items[7].Text = "Salir";
+                TMenuMaster.Items[1].Enabled = false;
+                TMenuMaster.Items[1].Text = "";
             }
+        }
+
+        protected void TMenuMaster_MenuItemClick(object sender, MenuEventArgs e)
+        {
+
         }
     }
 }

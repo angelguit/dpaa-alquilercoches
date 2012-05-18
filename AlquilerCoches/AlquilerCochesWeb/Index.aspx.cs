@@ -16,7 +16,7 @@ namespace AlquilerCochesWeb
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            StringBuilder cstext1 = new StringBuilder();
             RellenarOfertas();
             if (Session["Usuario"] != null)
             {
@@ -24,13 +24,25 @@ namespace AlquilerCochesWeb
                 DataSet ds = new DataSet();
                 ds = enCli.ObtenerDatosClienteConDni(Session["Usuario"].ToString());
                 IndexLoginC.Visible = false;
+                IndexRegistroPH.Visible = false;
+                cstext1.Append("<script type=\"text/javascript\">");
+                cstext1.Append("var id = document.getElementById(\"IndexLogin\");");
+                cstext1.Append("id.style.height = \"300px\";");
+                cstext1.Append("</");
+                cstext1.Append("script>");
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "Agrandar", cstext1.ToString());
                 TLabelBienvenida.Text = "Bienvenido " + ds.Tables["Cliente"].Rows[0][1].ToString();
                 TLabelBienvenida.Visible = true;
+                IndexLogoUsuario.ImageUrl = "Imagenes/ImagenesPerfil/" + Session["Usuario"].ToString() + ".jpg";
+                IndexLogoUsuario.Visible = true;
+                IndexReservaRapida.Visible = true;
             }
             else
             {
                 IndexLoginC.Visible = true;
                 TLabelBienvenida.Visible = false;
+                IndexLogoUsuario.Visible = false;
+                IndexReservaRapida.Visible = false;
             }
         }
 
@@ -112,6 +124,25 @@ namespace AlquilerCochesWeb
                 IndexLoginC.FailureText = "No existe ese usuario.";
             }
             
+        }
+
+        protected void TButtonReservar_Click(object sender, EventArgs e)
+        {
+            if (TRadioButtonReservaHabitual.Checked)
+            {
+                Session["ReservaRapida"] = "Habitual";
+                Response.Redirect("Reservas.aspx");
+            }
+            else if (TRadioButtonUltimaReserva.Checked)
+            {
+                Session["ReservaRapida"] = "Ultima";
+                Response.Redirect("Reservas.aspx");
+            }
+        }
+
+        protected void IndexLogoUsuario_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("Perfil.aspx");
         }
     }
 }

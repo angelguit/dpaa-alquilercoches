@@ -31,13 +31,58 @@ namespace AlquilerCochesWeb {
         protected global::System.Web.UI.WebControls.Login IndexLoginC;
         
         /// <summary>
-        /// Control HyperLink1.
+        /// Control IndexLogoUsuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
+        protected global::System.Web.UI.WebControls.ImageButton IndexLogoUsuario;
+        
+        /// <summary>
+        /// Control IndexReservaRapida.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder IndexReservaRapida;
+        
+        /// <summary>
+        /// Control TRadioButtonUltimaReserva.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton TRadioButtonUltimaReserva;
+        
+        /// <summary>
+        /// Control TRadioButtonReservaHabitual.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton TRadioButtonReservaHabitual;
+        
+        /// <summary>
+        /// Control TButtonReservar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button TButtonReservar;
+        
+        /// <summary>
+        /// Control IndexRegistroPH.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder IndexRegistroPH;
         
         /// <summary>
         /// Control ScriptManager1.
