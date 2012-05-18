@@ -15,8 +15,6 @@ namespace AlquilerCochesWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Usuario"] != null)
-            {
                 Posterior.ValueToCompare = System.DateTime.Today.ToString();
                 if (comboCategorias.Items.Count == 0)
                 {
@@ -45,11 +43,6 @@ namespace AlquilerCochesWeb
                     }
                 }
                 MostrarImagen();
-            }
-            else
-            {
-                Response.Redirect("ReservaNoRegistrado.aspx");
-            }
         }
 
         protected void validacionConductores(object source, ServerValidateEventArgs args)
@@ -115,15 +108,22 @@ namespace AlquilerCochesWeb
 
         protected void ReservabotonPrecio_Click(object sender, EventArgs e)
         {
-            ReservabotonConsulta.Visible = true;
-            TimeSpan ts = Convert.ToDateTime(IndexTextFechaFin.Text) - Convert.ToDateTime(IndexTextFechaInicio.Text);
-            EN.ENFacturacion enFa = new ENFacturacion();
-            enFa.Categoria = comboCategorias.Text;
-            enFa.Conductores = Int32.Parse(conductores.Text);
-            enFa.Tarifa = "Normal";
-            enFa.Tiempo = ts.Days + 1;
-            enFa.ObtenerPrecio();
-            precio.Text = enFa.PrecioTotal.ToString();
+            if (IndexTextFechaFin.Text!="" && IndexTextFechaInicio.Text!="" && conductores.Text!="")//algo mal
+            {
+                TimeSpan ts = Convert.ToDateTime(IndexTextFechaFin.Text) - Convert.ToDateTime(IndexTextFechaInicio.Text);
+                EN.ENFacturacion enFa = new ENFacturacion();
+                enFa.Categoria = comboCategorias.Text;
+                enFa.Conductores = Int32.Parse(conductores.Text);
+                enFa.Tarifa = "Normal";
+                enFa.Tiempo = ts.Days + 1;
+                enFa.ObtenerPrecio();
+                precio.Text = enFa.PrecioTotal.ToString();
+            }
+
+            if (Session["Usuario"] != null)
+            {
+                ReservabotonConsulta.Visible = true;
+            }
         }
 
         protected void ReservabotonConsulta_Click(object sender, EventArgs e)
@@ -138,7 +138,7 @@ namespace AlquilerCochesWeb
             {
                 dscli = cli.ObtenerDatosClienteConDni(Session["Usuario"].ToString());
                 enRe.Cliente = dscli.Tables["Cliente"].Rows[0][0].ToString();
-                if (!CompareValidatorFechas.IsValid || !CustomValidator1.IsValid)//algo mal
+                if (!CompareValidatorFechas.IsValid || !CustomValidator1.IsValid || !Posterior.IsValid)//algo mal
                 {
 
                 }
@@ -163,7 +163,7 @@ namespace AlquilerCochesWeb
 
                     enRe.AnyadirReserva();
 
-                    
+
                 }
             }
         }
