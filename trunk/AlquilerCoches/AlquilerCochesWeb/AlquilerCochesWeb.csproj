@@ -90,8 +90,12 @@
     <Content Include="Imagenes\ImagenesCompra\CochesCompra\4571RTY.jpg" />
     <Content Include="Imagenes\ImagenesCompra\CochesCompra\7890TTY.jpg" />
     <Content Include="Imagenes\ImagenesCompra\CochesCompra\8811ABV.jpg" />
+    <Content Include="Imagenes\ImagenesPerfil\22222222B.jpg" />
+    <Content Include="Imagenes\ImagenesPerfil\33333333C.jpg" />
     <Content Include="Imagenes\ImagenesPerfil\Desconocido.jpg" />
+    <Content Include="Imagenes\ImagenesPerfil\11111111A.jpg" />
     <Content Include="Imagenes\ImagenesPerfil\logo.jpg" />
+    <Content Include="Imagenes\ImagenesPerfil\PorDefecto\Desconocido.jpg" />
     <Content Include="Imagenes\ImagenesReserva\astra.jpg" />
     <Content Include="Imagenes\ImagenesReserva\fotosCoches\1111AAA.jpg" />
     <Content Include="Imagenes\ImagenesReserva\fotosCoches\1111AAB.jpg" />
@@ -130,6 +134,7 @@
     <Content Include="Registro.aspx" />
     <Content Include="ReservaNoRegistrado.aspx" />
     <Content Include="Reservas.aspx" />
+    <Content Include="Salir.aspx" />
     <Content Include="Situacion.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -208,6 +213,13 @@
     </Compile>
     <Compile Include="Reservas.aspx.designer.cs">
       <DependentUpon>Reservas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Salir.aspx.cs">
+      <DependentUpon>Salir.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Salir.aspx.designer.cs">
+      <DependentUpon>Salir.aspx</DependentUpon>
     </Compile>
     <Compile Include="Situacion.aspx.cs">
       <DependentUpon>Situacion.aspx</DependentUpon>

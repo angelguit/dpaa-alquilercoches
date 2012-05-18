@@ -104,9 +104,15 @@ body
 	height: 150px;
 	width: 205px;
 	float: left;
-	border-left: 1px solid grey;
-	background-color: #E6E6FA;
-	text-align: center;
+	border-left: 1px solid grey !important;
+	background-color: #E6E6FA !important;
+	text-align: center !important;
+}
+
+#IndexReservaRapida
+{
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 9pt;
 }
 
 #IndexRegistro
@@ -202,6 +208,7 @@ body
 	font-size: xx-small !important;
 }
 
+
 #TLabelBienvenida
 {
 	text-align: center;
@@ -270,4 +277,12 @@ body
 #CalendarioFin
 {
 	margin-right: 2em;
+}
+.IndexFechaInicio
+{
+	background-color: White;
+}
+.IndexFechaFin
+{
+	background-color: White;
 }
