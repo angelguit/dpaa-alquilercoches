@@ -118,6 +118,13 @@
               <asp:Button ID="ReservabotonConsulta" CssClass="ReservabotonConsulta" 
                   runat="server" Text="Realizar reserva" onclick="ReservabotonConsulta_Click" Enabled="True" Visible="False" />
           </div>
+          </br>
+          <div id="error">
+              Para realizar una reserva debe estar registrado. 
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Registro.aspx">Registrese</asp:HyperLink>
+            o entre con su 
+            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Index.aspx">cuenta</asp:HyperLink>
+        </div>
        </form>
     </div>
 </asp:Content>
