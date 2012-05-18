@@ -60,8 +60,7 @@
                     CssClass="AspectoError"></asp:CompareValidator>
                     </br>
                 <label for="male"">&nbsp Dia:</label>
-                <asp:TextBox ID="IndexTextFechaFin" runat="server" Height="21px" Width="82px" 
-                  ontextchanged="IndexTextFechaFin_TextChanged"></asp:TextBox>
+                <asp:TextBox ID="IndexTextFechaFin" runat="server" Height="21px" Width="82px"></asp:TextBox>
                 <input type="image" name="CalendarioFin" 
                     id="CalendarioFin" src="Imagenes/ImagenesReserva/supercalendario.jpg" 
                     onclick="javascript:MostrarCalendario()" alt="Click para mostrar calendario" 
