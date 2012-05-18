@@ -76,6 +76,7 @@
     <Content Include="Css\Registro.css" />
     <Content Include="Css\Reserva.css" />
     <Content Include="Css\Situacion.css" />
+    <Content Include="EnviarMail.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Imagenes\Cabecera.png" />
     <Content Include="Imagenes\Calendario.png" />
@@ -153,6 +154,13 @@
     </Compile>
     <Compile Include="Compras.aspx.designer.cs">
       <DependentUpon>Compras.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EnviarMail.aspx.cs">
+      <DependentUpon>EnviarMail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EnviarMail.aspx.designer.cs">
+      <DependentUpon>EnviarMail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
