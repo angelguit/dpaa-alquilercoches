@@ -128,6 +128,7 @@
     <Content Include="Perfil.aspx" />
     <Content Include="PerfilEditar.aspx" />
     <Content Include="Registro.aspx" />
+    <Content Include="ReservaNoRegistrado.aspx" />
     <Content Include="Reservas.aspx" />
     <Content Include="Situacion.aspx" />
     <Content Include="Web.config" />
@@ -193,6 +194,13 @@
     </Compile>
     <Compile Include="Registro.aspx.designer.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReservaNoRegistrado.aspx.cs">
+      <DependentUpon>ReservaNoRegistrado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReservaNoRegistrado.aspx.designer.cs">
+      <DependentUpon>ReservaNoRegistrado.aspx</DependentUpon>
     </Compile>
     <Compile Include="Reservas.aspx.cs">
       <DependentUpon>Reservas.aspx</DependentUpon>
