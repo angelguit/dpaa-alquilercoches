@@ -47,7 +47,14 @@
                 </br></br>
                 <label for="male">&nbsp Fecha Fin</label>
                                      
-
+                <asp:CompareValidator ID="Posterior" runat="server"
+                    ErrorMessage="fecha inicio menor"
+                    ControlToValidate="IndexTextFechaInicio"
+                    Operator="GreaterThan"
+                    Type="String"
+                    EnableViewState="false"
+                    Enabled="true"
+                    CssClass="AspectoError"></asp:CompareValidator>
                 
                 <asp:CompareValidator ID="CompareValidatorFechas" runat="server"
                     ErrorMessage="Error, revise las fechas"

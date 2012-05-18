@@ -15,33 +15,41 @@ namespace AlquilerCochesWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (comboCategorias.Items.Count==0)
+            if (Session["Usuario"] != null)
             {
-                DataSet ds = new DataSet();
-                EN.ENVehiculo envehiculo = new ENVehiculo();
-                ds = envehiculo.ObtenerCategorias();
-                for (int i = 0; i < ds.Tables["Categoria"].Rows.Count; i++)
+                Posterior.ValueToCompare = System.DateTime.Today.ToString();
+                if (comboCategorias.Items.Count == 0)
                 {
-                    comboCategorias.Items.Add(ds.Tables["Categoria"].Rows[i][0].ToString());
-                }
+                    DataSet ds = new DataSet();
+                    EN.ENVehiculo envehiculo = new ENVehiculo();
+                    ds = envehiculo.ObtenerCategorias();
+                    for (int i = 0; i < ds.Tables["Categoria"].Rows.Count; i++)
+                    {
+                        comboCategorias.Items.Add(ds.Tables["Categoria"].Rows[i][0].ToString());
+                    }
 
-                //MARCAS
-                comboMarcas.Items.Clear();
-                ds = envehiculo.ObtenerMarcas(comboCategorias.Text.ToString());
-                for (int i = 0; i < ds.Tables["Marcas"].Rows.Count; i++)
-                {
-                    comboMarcas.Items.Add(ds.Tables["Marcas"].Rows[i][0].ToString());
-                }
+                    //MARCAS
+                    comboMarcas.Items.Clear();
+                    ds = envehiculo.ObtenerMarcas(comboCategorias.Text.ToString());
+                    for (int i = 0; i < ds.Tables["Marcas"].Rows.Count; i++)
+                    {
+                        comboMarcas.Items.Add(ds.Tables["Marcas"].Rows[i][0].ToString());
+                    }
 
-                //VEHICULOS
-                comboModelos.Items.Clear();
-                ds = envehiculo.ObtenerModelosVehiculos(comboCategorias.Text.ToString(), comboMarcas.Text.ToString());
-                for (int i = 0; i < ds.Tables["Modelos"].Rows.Count; i++)
-                {
-                    comboModelos.Items.Add(ds.Tables["Modelos"].Rows[i][0].ToString());
+                    //VEHICULOS
+                    comboModelos.Items.Clear();
+                    ds = envehiculo.ObtenerModelosVehiculos(comboCategorias.Text.ToString(), comboMarcas.Text.ToString());
+                    for (int i = 0; i < ds.Tables["Modelos"].Rows.Count; i++)
+                    {
+                        comboModelos.Items.Add(ds.Tables["Modelos"].Rows[i][0].ToString());
+                    }
                 }
+                MostrarImagen();
             }
-            MostrarImagen();
+            else
+            {
+                Response.Redirect("ReservaNoRegistrado.aspx");
+            }
         }
 
         protected void validacionConductores(object source, ServerValidateEventArgs args)
