@@ -4,7 +4,7 @@
       <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
       <script type="text/javascript">
           function initialize() {
-              var myLatlng = new google.maps.LatLng(38.384189, -0.514841);
+              var myLatlng = new google.maps.LatLng(38.181529, -3.6866);
               var myOptions = {
                   zoom: 8,
                   center: myLatlng,
@@ -36,10 +36,11 @@
     <div id="SituacionMapa">
         <div id="map_canvas"></div>
     </div>
-    <form id="formContacto">
+    <form id="formContacto" action="EnviarMail.aspx" target="_blank" method="post">
         <div id="SituacionContacto">
              <p style="background-color:#e6e6e6; text-align:center"> Formulario Contacto</p>
                &nbsp <asp:Label ID="Label1" CssClass="SituacionContactoLabel" runat="server" Text="Nombre:"></asp:Label>
+               <input name="Nombre" type="text" />
                <asp:TextBox ID="TTextBoxNombre" runat="server" CssClass="SituacionContactoTextBox"></asp:TextBox>
 
                <asp:CustomValidator ID="CustomValidatorNombre" runat="server" 
@@ -73,15 +74,15 @@
                &nbsp<asp:Label ID="Label4" CssClass="SituacionContactoLabel" runat="server" Text="Consulta:"></asp:Label> 
                <textarea ID="TTextArea" style="margin-left:50px" rows="5" cols="26" runat="server"></textarea><br />
         
-              <asp:Button ID="Button1"  CssClass="RegistrobotonContacto" runat="server" Text="Enviar" onclick="Button1_Click" />
-          <!--  <INPUT TYPE="submit" CssClass="RegistrobotonContacto" onclick="Button1_Click" value="Enviar"></input>-->
-           <!-- <INPUT TYPE="Reset"></input>-->
+              <!--<asp:Button ID="Button1"  CssClass="RegistrobotonContacto" runat="server" Text="Enviar" onclick="Button1_Click" />-->
+          <input type="submit" value="Enviar"  />
+           <input type="reset" value="Borrar" />
           
         </div>
     </form>
 
     <div id="SituacionDatosEmpresa">
     <img class="Foto" alt="logo" src="/Imagenes/ImagenesPerfil/logo.jpg" />
-    <p style="text-align:center">Telf: 967 123 123 Fax: 967 231 231 Provincia: Alicante Ciudad: Alicante Dirección: Masatusa nº10</p>
+    <p style="text-align:center">Telf: 967 123 123 Fax: 967 231 231 Provincia: Jaén Ciudad: Guarromán Dirección: Albatera Nº 123, Centro Comercial Las Castañas</p>
     </div>
 </asp:Content>

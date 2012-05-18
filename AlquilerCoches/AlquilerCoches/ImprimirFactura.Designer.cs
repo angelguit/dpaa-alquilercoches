@@ -121,9 +121,9 @@
             this.TLabelCP.BackColor = System.Drawing.Color.Transparent;
             this.TLabelCP.Location = new System.Drawing.Point(6, 87);
             this.TLabelCP.Name = "TLabelCP";
-            this.TLabelCP.Size = new System.Drawing.Size(166, 13);
+            this.TLabelCP.Size = new System.Drawing.Size(147, 13);
             this.TLabelCP.TabIndex = 62;
-            this.TLabelCP.Text = "C.P: 03210 (Guarroman) Albacete";
+            this.TLabelCP.Text = "C.P: 03210 (Guarroman) Jaén";
             // 
             // label1
             // 
