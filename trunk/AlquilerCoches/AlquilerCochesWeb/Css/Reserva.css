@@ -34,7 +34,20 @@
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
 }
+#ReservaCuerpoPaso4
+{
+    border: 2px solid grey;
+    margin-top:5px;
+    margin-left:2px;
+    margin-right:2px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
 .ReservabotonConsulta
+{
+    float:right;
+}
+.ReservabotonPrecio
 {
     float:right;
 }
