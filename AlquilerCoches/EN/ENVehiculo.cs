@@ -320,6 +320,21 @@ namespace EN
             return resultado;
         }
 
+        public DataSet ObtenerCochesCategoria(string cat)
+        {
+            DataSet resultado = new DataSet();
+            try
+            {
+                resultado = cadVehiculo.ObtenerVehiculoCategoria(cat);
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+
+            return resultado;
+        }
+
         public ArrayList ListaMatriculas
         {
             get { return listaMatriculas; }
