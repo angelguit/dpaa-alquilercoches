@@ -113,6 +113,19 @@ namespace AlquilerCochesWeb
             MostrarImagen();
         }
 
+        protected void ReservabotonPrecio_Click(object sender, EventArgs e)
+        {
+            ReservabotonConsulta.Visible = true;
+            TimeSpan ts = Convert.ToDateTime(IndexTextFechaFin.Text) - Convert.ToDateTime(IndexTextFechaInicio.Text);
+            EN.ENFacturacion enFa = new ENFacturacion();
+            enFa.Categoria = comboCategorias.Text;
+            enFa.Conductores = Int32.Parse(conductores.Text);
+            enFa.Tarifa = "Normal";
+            enFa.Tiempo = ts.Days + 1;
+            enFa.ObtenerPrecio();
+            precio.Text = enFa.PrecioTotal.ToString();
+        }
+
         protected void ReservabotonConsulta_Click(object sender, EventArgs e)
         {
             DataSet dsMatricula = new DataSet();

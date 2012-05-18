@@ -20,9 +20,7 @@
     <form id="formularioReserva" onsubmit="return enviar()">
           <div id="ReservaCuerpoPaso1">
             <p style="text-align:center; text-decoration: underline; background-color:#e6e6e6">Primer Paso: Seleccion de fecha</p>
-                <label for="male"">&nbsp Fecha Inicio</label>
-                </br>
-                <label for="male"">&nbsp Dia:</label>
+                <label for="male"">&nbsp Desde:</label>
                 <asp:TextBox ID="IndexTextFechaInicio" runat="server" Height="21px" Width="82px"></asp:TextBox>
 
                 <input type="image" name="CalendarioInicio" 
@@ -44,8 +42,7 @@
 
                 <asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="True"  ></asp:ScriptManager>
 
-                </br></br>
-                <label for="male">&nbsp Fecha Fin</label>
+                
                                      
                 <asp:CompareValidator ID="Posterior" runat="server"
                     ErrorMessage="fecha inicio menor"
@@ -65,8 +62,8 @@
                     EnableViewState="false"
                     Enabled="true"
                     CssClass="AspectoError"></asp:CompareValidator>
-                    </br>
-                <label for="male"">&nbsp Dia:</label>
+
+                <label for="male"">&nbsp Hasta:</label>
                 <asp:TextBox ID="IndexTextFechaFin" runat="server" Height="21px" Width="82px"></asp:TextBox>
                 <input type="image" name="CalendarioFin" 
                     id="CalendarioFin" src="Imagenes/ImagenesReserva/supercalendario.jpg" 
@@ -107,11 +104,20 @@
           <div id="ReservaCuerpoPaso3">
                 <p style="text-align:center; text-decoration: underline; background-color:#e6e6e6">Tercer Paso: Descuentos</p>
                 <label for="male">&nbsp Codigo promocional:</label>
-                <input type="text" name="conductores" size="10"/>
-          </div>
-          <asp:Button ID="ReservabotonConsulta" CssClass="ReservabotonConsulta" 
-              runat="server" Text="Consultar precio" onclick="ReservabotonConsulta_Click"/>
+                <asp:TextBox ID="codigo" runat="server" ></asp:TextBox>
           
+          <asp:Button ID="ReservaBotonPrecio" CssClass="ReservabotonPrecio" 
+              runat="server" Text="Consultar precio" onclick="ReservabotonPrecio_Click"/>
+          </div>
+
+          <div id="ReservaCuerpoPaso4">
+                <p style="text-align:center; text-decoration: underline; background-color:#e6e6e6">Cuarto Paso: Confirmar reserva</p>
+                <label for="male">&nbsp Precio:</label>
+                <asp:TextBox ID="precio" runat="server" ></asp:TextBox>
+          
+              <asp:Button ID="ReservabotonConsulta" CssClass="ReservabotonConsulta" 
+                  runat="server" Text="Realizar reserva" onclick="ReservabotonConsulta_Click" Enabled="True" Visible="False" />
+          </div>
        </form>
     </div>
 </asp:Content>
