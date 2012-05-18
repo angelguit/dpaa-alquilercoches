@@ -48,15 +48,11 @@ namespace AlquilerCochesWeb
         {
             if (!Regex.Match(conductores.Text, @"^[0-9]{1}$").Success)
             {
-                //errorProvider1.SetError(TTextBoxEmail, "Email incorrectos, caracteres invalidos");
-                //incorrecto = true;
                 args.IsValid = false;
             }
             else
             {
                 args.IsValid = true;
-                //incorrecto = false;
-                //errorProvider1.SetError(TTextBoxEmail, "");
             }
         }
 
@@ -74,11 +70,6 @@ namespace AlquilerCochesWeb
                 ImagenCoche.Height = 190;
                 ImagenCoche.Width = 270;
             }
-        }
-
-        protected void comboCategorias_Load(object sender, EventArgs e)
-        {
-
         }
 
         protected void comboCategorias_TextChanged(object sender, EventArgs e)
@@ -116,12 +107,44 @@ namespace AlquilerCochesWeb
 
         protected void ReservabotonConsulta_Click(object sender, EventArgs e)
         {
+            DataSet dsMatricula = new DataSet();
+            EN.ENReservas enRe = new EN.ENReservas();
+            EN.ENVehiculo enVe = new ENVehiculo();
+            EN.ENCliente cli = new ENCliente();
+            DataSet dscli = new DataSet();
 
-        }
+            if (Session["Usuario"] != null)
+            {
+                dscli = cli.ObtenerDatosClienteConDni(Session["Usuario"].ToString());
+                enRe.Cliente = dscli.Tables["Cliente"].Rows[0][0].ToString();
+                if (!CompareValidatorFechas.IsValid || !CustomValidator1.IsValid)//algo mal
+                {
 
-        protected void IndexTextFechaFin_TextChanged(object sender, EventArgs e)
-        {
+                }
+                else
+                {
+                    dsMatricula = enVe.ObtenerMatriculaReserva(comboMarcas.Text, comboModelos.Text, comboCategorias.Text);
+                    if (dsMatricula.Tables["Reserva"].Rows.Count > 0)
+                    {
+                        enRe.Matricula = dsMatricula.Tables["Reserva"].Rows[0][0].ToString();
 
+                        enVe.Matricula = dsMatricula.Tables["Reserva"].Rows[0][0].ToString();
+                        enVe.ObtenerDatosVehiculos();
+                        enVe.Estado = "Reservado";
+                        enVe.EditarVehiculo();
+                    }
+
+                    enRe.Conductores = Int32.Parse(conductores.Text);
+                    enRe.FechaFin = Convert.ToDateTime(IndexTextFechaFin.Text);
+                    enRe.FechaInicio = Convert.ToDateTime(IndexTextFechaInicio.Text);
+                    enRe.Modelo = comboModelos.Text;
+                    enRe.Activa = true;
+
+                    enRe.AnyadirReserva();
+
+                    
+                }
+            }
         }
 
         protected bool Enviar (object sender, EventArgs e)
