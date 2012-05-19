@@ -219,6 +219,7 @@ namespace AlquilerCoches
             }
             ventas.KM = TTextBoxKm.Text;
             ventas.PrecioVenta = TTextBoxPrecioVenta.Text;
+            ventas.Reservado = 0;
         }
 
         private void TListBoxMarcas_SelectedIndexChanged(object sender, EventArgs e)
