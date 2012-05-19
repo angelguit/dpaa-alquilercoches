@@ -3,7 +3,7 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MaestraContenedor" runat="server">
-Para realizar una esta Operacion debe estar registrado. 
+Para realizar esta Operacion debe estar registrado. 
     <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Registro.aspx">Registrese</asp:HyperLink>
     o entre con su 
     <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Index.aspx">cuenta</asp:HyperLink>
