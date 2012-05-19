@@ -35,7 +35,11 @@ namespace AlquilerCochesWeb
                 TLabelBienvenida.Visible = true;
                 IndexLogoUsuario.ImageUrl = "Imagenes/ImagenesPerfil/" + Session["Usuario"].ToString() + ".jpg";
                 IndexLogoUsuario.Visible = true;
-                IndexReservaRapida.Visible = true;
+                LabelError.Visible = false;
+                if (enCli.HaReservado())
+                {
+                    IndexReservaRapida.Visible = true;
+                }
             }
             else
             {

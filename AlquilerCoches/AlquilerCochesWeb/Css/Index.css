@@ -111,8 +111,8 @@ body
 
 #IndexReservaRapida
 {
-	font-family: Verdana, Geneva, sans-serif;
-	font-size: 9pt;
+	font-family: Verdana, Geneva, sans-serif !important;
+	font-size: 6pt !important;
 }
 
 #IndexRegistro
@@ -285,4 +285,9 @@ body
 .IndexFechaFin
 {
 	background-color: White;
+}
+#LabelError
+{
+	font-weight: bold;
+	color: Red;
 }
