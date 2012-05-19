@@ -61,7 +61,7 @@
                                         <asp:Label ID="KM" runat="server" Text='<%#Eval("KM")%>' Font-Bold="True"></asp:Label>
                                     </td>
                                     <td valign="top" class="DescOferta" style="text-align: center; vertical-align: middle;">
-                                        <asp:LinkButton ID="OfertaBotonComprar" runat="server" Text='alquilar'  CommandName='Alquilar' ></asp:LinkButton>>
+                                        <asp:LinkButton ID="OfertaBotonComprar" runat="server" Text='alquilar'  CommandName='Alquilar' CommandArgument='<%#Eval("Matricula") %>'></asp:LinkButton>
                                     </td>
                                 </tr>
                             </ItemTemplate>
@@ -103,7 +103,7 @@
                                         <asp:Label ID="KM" runat="server" Text='<%#Eval("KM")%>' Font-Bold="True"></asp:Label>
                                     </td>
                                     <td valign="top" class="DescOferta" style="text-align: center; vertical-align: middle;">
-                                        <asp:LinkButton ID="OfertaBotonComprar" runat="server" Text='alquilar'  CommandName='Alquilar' ></asp:LinkButton>>
+                                        <asp:LinkButton ID="OfertaBotonComprar" runat="server" Text='alquilar'  CommandName='Alquilar' ></asp:LinkButton>
                                     </td>
                                 </tr>
                             </ItemTemplate>
@@ -144,7 +144,7 @@
                                         <asp:Label ID="KM" runat="server" Text='<%#Eval("KM")%>' Font-Bold="True"></asp:Label>
                                     </td>
                                     <td valign="top" class="DescOferta" style="text-align: center; vertical-align: middle;">
-                                        <asp:LinkButton ID="OfertaBotonComprar" runat="server" Text='alquilar'  CommandName='Alquilar' ></asp:LinkButton>>
+                                        <asp:LinkButton ID="OfertaBotonComprar" runat="server" Text='alquilar'  CommandName='Alquilar' ></asp:LinkButton>
                                     </td>
                                 </tr>
                             </ItemTemplate>
@@ -162,6 +162,33 @@
                             </ItemTemplate>
                         </asp:ListView>
                         <asp:Literal runat="server" ID="Literal1"></asp:Literal>
+                    </asp:View>
+                    <asp:View ID="View5" runat="server">
+                        <table>
+                                <tr id="Tr1" runat="server">
+                                    <td valign="top" colspan="3" align="center" class="Vehiculo">
+                                        <asp:Label ID="Label1" runat="server" Text="SEAT LEON, 1.9" Font-Overline="False" Font-Underline="True" Font-Size="Medium" Font-Bold="True"></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr id="Tr2" runat="server">
+                                    <td valign="top" class="Imagen" style="text-align: center; vertical-align: middle">
+                                        <asp:Image ID="Image2" runat="server" Height="96px" ImageUrl="~/Imagenes/ImagenesCompras/seat-leon.jpg" Width="165px"/>
+                                    </td>
+                                    <td valign="top" class="DescOferta">
+                                        <label id="ComprasLabelDescripcion">Seat León 1.9 en perfecto estado, modelo de 2002, 5 puertas, 115CV con 125.000 Km.</label>
+                                        <br />
+                                        <label id="ComprasLabelPrecio">Precio: 9.500 €</label>
+                                        <br />
+                                        <label id="ComprasLabelGarantia">Garantia: 6 meses</label>
+                                        <br />
+                                    </td>
+                                </tr>
+                                <tr id="Tr3"  runat="server">
+                                    <td valign="top" class="DescOferta" colspan="3" align="center">
+                                        <button type="button" id="ComprasBotonComprar">Comprar</button> 
+                                    </td>
+                                </tr>
+                            </table>
                     </asp:View>
                 </asp:MultiView>
             </div>
