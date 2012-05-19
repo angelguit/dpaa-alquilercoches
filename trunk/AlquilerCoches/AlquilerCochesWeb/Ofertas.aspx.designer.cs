@@ -157,6 +157,33 @@ namespace AlquilerCochesWeb {
         protected global::System.Web.UI.WebControls.Image Image2;
         
         /// <summary>
+        /// Control ComprasLabelDescripcion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ComprasLabelDescripcion;
+        
+        /// <summary>
+        /// Control ComprasLabelPrecio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ComprasLabelPrecio;
+        
+        /// <summary>
+        /// Control ComprasLabelGarantia.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ComprasLabelGarantia;
+        
+        /// <summary>
         /// Control Tr3.
         /// </summary>
         /// <remarks>
