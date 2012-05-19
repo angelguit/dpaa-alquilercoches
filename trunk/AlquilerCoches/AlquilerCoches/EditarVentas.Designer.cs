@@ -57,6 +57,8 @@
             this.TLabelMatricula = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.TLabelTitulo = new System.Windows.Forms.Label();
+            this.TLabelReservado = new System.Windows.Forms.Label();
+            this.TCheckBoxReservado = new System.Windows.Forms.CheckBox();
             this.TGroupBoxDatosVehiculo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -138,6 +140,8 @@
             this.TGroupBoxDatosVehiculo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.TGroupBoxDatosVehiculo.BackColor = System.Drawing.Color.Transparent;
+            this.TGroupBoxDatosVehiculo.Controls.Add(this.TCheckBoxReservado);
+            this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelReservado);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TButtonBorrar);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelObligatorio);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TTextBoxMeses);
@@ -356,6 +360,25 @@
             this.TLabelTitulo.TabIndex = 59;
             this.TLabelTitulo.Text = "Ver y Editar Ventas";
             // 
+            // TLabelReservado
+            // 
+            this.TLabelReservado.AutoSize = true;
+            this.TLabelReservado.Location = new System.Drawing.Point(473, 29);
+            this.TLabelReservado.Name = "TLabelReservado";
+            this.TLabelReservado.Size = new System.Drawing.Size(59, 13);
+            this.TLabelReservado.TabIndex = 50;
+            this.TLabelReservado.Text = "Reservado";
+            // 
+            // TCheckBoxReservado
+            // 
+            this.TCheckBoxReservado.AutoSize = true;
+            this.TCheckBoxReservado.Location = new System.Drawing.Point(476, 51);
+            this.TCheckBoxReservado.Name = "TCheckBoxReservado";
+            this.TCheckBoxReservado.Size = new System.Drawing.Size(56, 17);
+            this.TCheckBoxReservado.TabIndex = 51;
+            this.TCheckBoxReservado.Text = "Sí/No";
+            this.TCheckBoxReservado.UseVisualStyleBackColor = true;
+            // 
             // EditarVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -418,5 +441,7 @@
         private System.Windows.Forms.Label TLabelObligatorio;
         private System.Windows.Forms.Button TButtonBorrar;
         private System.Windows.Forms.Label TLabelTitulo;
+        private System.Windows.Forms.CheckBox TCheckBoxReservado;
+        private System.Windows.Forms.Label TLabelReservado;
     }
 }
