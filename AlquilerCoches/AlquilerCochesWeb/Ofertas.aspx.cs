@@ -55,6 +55,7 @@ namespace AlquilerCochesWeb
                 case 3:
                     break;
                 case 4:
+                    if(vehiculo.Matricula!=null)rellenaView4();
                     break;
 
             }
@@ -94,14 +95,19 @@ namespace AlquilerCochesWeb
         {
             vehiculo.Matricula=e.CommandArgument.ToString();
             rellenaView4();
-            //Image2.ImageUrl = @"/Imagenes/ImagenesReserva/fotosCoches/" + vehiculo.Matricula + ".jpg";
+            //
             /*Server.Transfer("Reservas.aspx");*/
         }
 
         protected void rellenaView4()
         {
+            vehiculo.ObtenerDatosVehiculos();
             MultiView1.ActiveViewIndex = 4;
-            Label1.Text = vehiculo.Matricula;
+            Label1.Text = vehiculo.Marca + " " + vehiculo.Modelo;
+            ComprasLabelDescripcion.Text = "Matricula:  "+ vehiculo.Matricula;
+            ComprasLabelPrecio.Text = "Precio Compra: " + vehiculo.PrecioCompra;
+            ComprasLabelGarantia.Text = "Garantia: " + vehiculo.Garantia;
+            Image2.ImageUrl = @"/Imagenes/ImagenesReserva/fotosCoches/" + vehiculo.Matricula + ".jpg";
         }
 
     }

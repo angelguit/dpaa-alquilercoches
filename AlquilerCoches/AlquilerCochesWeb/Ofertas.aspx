@@ -175,11 +175,11 @@
                                         <asp:Image ID="Image2" runat="server" Height="96px" ImageUrl="~/Imagenes/ImagenesCompras/seat-leon.jpg" Width="165px"/>
                                     </td>
                                     <td valign="top" class="DescOferta">
-                                        <label id="ComprasLabelDescripcion">Seat León 1.9 en perfecto estado, modelo de 2002, 5 puertas, 115CV con 125.000 Km.</label>
+                                        <asp:label ID="ComprasLabelDescripcion"  runat="server" ></asp:label>
                                         <br />
-                                        <label id="ComprasLabelPrecio">Precio: 9.500 €</label>
+                                        <asp:label ID="ComprasLabelPrecio"  runat="server" ></asp:label>
                                         <br />
-                                        <label id="ComprasLabelGarantia">Garantia: 6 meses</label>
+                                        <asp:label ID="ComprasLabelGarantia"  runat="server" ></asp:label>
                                         <br />
                                     </td>
                                 </tr>
