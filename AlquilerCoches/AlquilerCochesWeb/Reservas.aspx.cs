@@ -15,34 +15,52 @@ namespace AlquilerCochesWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-                Posterior.ValueToCompare = System.DateTime.Today.ToString();
-                if (comboCategorias.Items.Count == 0)
+            ///////////////////////////RESERVAS POR INDEX///////////////////////
+            EN.ENCliente enCliente = new ENCliente();
+            if (Session["ReservaRapida"] == "Habitual")
+            {
+                RellenarCocheReserva(enCliente.ReservaFavorita());
+            }
+            if (Session["ReservaRapida"] == "Ultima")
+            {
+                RellenarCocheReserva(enCliente.UltimaReserva());
+            }
+
+
+            //////////////////////LOAD NORMAL DE RESERVAS///////////////////////////////
+            if (Session["Usuario"] == null)
+            {
+                errorRegistrado.Visible = true;
+            }
+            Posterior.ValueToCompare = System.DateTime.Today.ToString();
+            if (comboCategorias.Items.Count == 0)
+            {
+                DataSet ds = new DataSet();
+                EN.ENVehiculo envehiculo = new ENVehiculo();
+                ds = envehiculo.ObtenerCategorias();
+                for (int i = 0; i < ds.Tables["Categoria"].Rows.Count; i++)
                 {
-                    DataSet ds = new DataSet();
-                    EN.ENVehiculo envehiculo = new ENVehiculo();
-                    ds = envehiculo.ObtenerCategorias();
-                    for (int i = 0; i < ds.Tables["Categoria"].Rows.Count; i++)
-                    {
-                        comboCategorias.Items.Add(ds.Tables["Categoria"].Rows[i][0].ToString());
-                    }
-
-                    //MARCAS
-                    comboMarcas.Items.Clear();
-                    ds = envehiculo.ObtenerMarcas(comboCategorias.Text.ToString());
-                    for (int i = 0; i < ds.Tables["Marcas"].Rows.Count; i++)
-                    {
-                        comboMarcas.Items.Add(ds.Tables["Marcas"].Rows[i][0].ToString());
-                    }
-
-                    //VEHICULOS
-                    comboModelos.Items.Clear();
-                    ds = envehiculo.ObtenerModelosVehiculos(comboCategorias.Text.ToString(), comboMarcas.Text.ToString());
-                    for (int i = 0; i < ds.Tables["Modelos"].Rows.Count; i++)
-                    {
-                        comboModelos.Items.Add(ds.Tables["Modelos"].Rows[i][0].ToString());
-                    }
+                    comboCategorias.Items.Add(ds.Tables["Categoria"].Rows[i][0].ToString());
                 }
-                MostrarImagen();
+
+                //MARCAS
+                comboMarcas.Items.Clear();
+                ds = envehiculo.ObtenerMarcas(comboCategorias.Text.ToString());
+                for (int i = 0; i < ds.Tables["Marcas"].Rows.Count; i++)
+                {
+                    comboMarcas.Items.Add(ds.Tables["Marcas"].Rows[i][0].ToString());
+                }
+
+                //VEHICULOS
+                comboModelos.Items.Clear();
+                ds = envehiculo.ObtenerModelosVehiculos(comboCategorias.Text.ToString(), comboMarcas.Text.ToString());
+                for (int i = 0; i < ds.Tables["Modelos"].Rows.Count; i++)
+                {
+                    comboModelos.Items.Add(ds.Tables["Modelos"].Rows[i][0].ToString());
+                }
+            }
+            ////MOSTRAR IMAGENES DE COCHES//
+            MostrarImagen();
         }
 
         protected void validacionConductores(object source, ServerValidateEventArgs args)
@@ -55,6 +73,20 @@ namespace AlquilerCochesWeb
             {
                 args.IsValid = true;
             }
+        }
+
+        protected void RellenarCocheReserva(string matri)
+        {
+            EN.ENVehiculo enVehi = new ENVehiculo();
+            DataSet dsVehi = new DataSet();
+            enVehi.Matricula = matri;
+            enVehi.ObtenerDatosVehiculos();
+            
+            //Vehiculo
+            comboCategorias.Text = enVehi.Categoria;
+            comboMarcas.Text = enVehi.Marca;
+            comboModelos.Text = enVehi.Modelo;
+            MostrarImagen();
         }
 
         protected void MostrarImagen()
