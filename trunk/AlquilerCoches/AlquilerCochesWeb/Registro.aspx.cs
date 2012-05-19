@@ -6,15 +6,15 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using EN;
+using System.Text.RegularExpressions;
+using System.Collections;
 
 
 namespace AlquilerCochesWeb
 {
     public partial class Registro : System.Web.UI.Page
     {
-        /*
-        private DataSet numProvincia = new DataSet();
-        private bool vengodeload = false; */
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -23,102 +23,12 @@ namespace AlquilerCochesWeb
         protected void TDropDownListProvincia_TextChanged(object sender, EventArgs e)
         {
 
-            /*
-            EN.ENCliente enCiu = new EN.ENCliente();
-            DataSet dsCiu = new DataSet();
-            //try
-            //{
-            string prov = TDropDownListProvincia.Text.ToString();
-            bool parar = false;
-            // MessageBox.Show(numProvincia.Tables["Provincia"].Rows.Count.ToString());
-            for (int i = 0; i < 53 && parar != true; i++)
-            {
-                //MessageBox.Show(numProvincia.Tables["Provincia"].Rows[i][1].ToString());
-                if (numProvincia.Tables["Provincia"].Rows[i][1].ToString() == prov)
-                {
-                    string numprov = numProvincia.Tables["Provincia"].Rows[i][0].ToString();// en la posicion 0 esta el id de la provincia
-                    parar = true;
-                    dsCiu = enCiu.ObtenerListaCiudades(numprov);
-
-                }
-            } 
-            ObtenerCiudades(dsCiu); */
-            // }
-            // catch (Exception ex)
-            //{
-            //  throw (ex);
-            //}
         }
-        /*
-        private void ObtenerCiudades(DataSet dsCiu)
-        {
-            TDropDownListCiudad.DataSource = "";
-
-            TDropDownListCiudad.DataSource = dsCiu;
-            TDropDownListCiudad.DataValueField = "municipio"; // en el dataset con DataValueField nos permite elegir la columna que queremos
-            TDropDownListCiudad.DataBind(); //hay que ponerlo para que se muestren bien los datos
-            if (vengodeload == true)
-            {
-                TDropDownListCiudad.SelectedValue = Session["ciudad"].ToString(); // con selectedvalue le decimos que valor queremos que este marcado en el combobox
-                vengodeload = false;
-            }
-
-
-        }
-         * */
+      
 
         protected void TDropDownListProvincia_Load(object sender, EventArgs e)
         {
-            //Provincias
-            /*
-            EN.ENCliente provincia = new EN.ENCliente();
-            DataSet dsProv = new DataSet();
-            dsProv = provincia.ObtenerListaProvincias();
-            numProvincia = dsProv; // nos hacemos esta copia para usarla despues en ciudades
-
-            if (TDropDownListProvincia.Items.Count == 0)
-            {
-                vengodeload = true;
-                TDropDownListProvincia.Items.Clear();
-
-                for (int i = 0; i < dsProv.Tables["Provincia"].Rows.Count; i++)
-                {
-                    TDropDownListProvincia.Items.Add(dsProv.Tables["Provincia"].Rows[i][1].ToString());
-                }
-
-         //       TDropDownListProvincia.SelectedValue = Session["provincia"].ToString(); //valor por defecto
-       
-                //FIN provi
-
-                //Cargar CIudad
-
-                EN.ENCliente enCiu = new EN.ENCliente();
-                DataSet dsCiu = new DataSet();
-                try
-                {
-                    string prov = TDropDownListProvincia.SelectedIndex.ToString();  //provincia elegida
-                    bool parar = false;
-                    // MessageBox.Show(numProvincia.Tables["Provincia"].Rows.Count.ToString());
-                    for (int i = 0; i < 53 && parar != true; i++)
-                    {
-                        //MessageBox.Show(numProvincia.Tables["Provincia"].Rows[i][1].ToString());
-                        if (numProvincia.Tables["Provincia"].Rows[i][1].ToString() == prov)
-                        {
-                            string numprov = numProvincia.Tables["Provincia"].Rows[i][0].ToString();// en la posicion 0 esta el id de la provincia
-                            parar = true;
-                            dsCiu = enCiu.ObtenerListaCiudades(numprov);
-
-                        }
-                    }
-                    ObtenerCiudades(dsCiu);
-                }
-                catch (Exception ex)
-                {
-                    throw (ex);
-                }
-                //Fin Ciudad
-            }
-             * */
+  
         }
 
         protected void TDropDownListProvincia_SelectedIndexChanged(object sender, EventArgs e)
@@ -135,57 +45,29 @@ namespace AlquilerCochesWeb
             {
 
                         EN.ENCliente en_cliente = new EN.ENCliente();
-                         
-                   //     en_cliente.DNI = TT    
+
+                        en_cliente.DNI = TextBoxDni.Text;
+                        en_cliente.Nombre = TextBoxNombre.Text;
+                        en_cliente.Apellidos = TTextBoxApellidos.Text;
+                        en_cliente.Direccion = TTextBoxDireccion.Text;
+                        en_cliente.PassWeb = TextBoxPass2.Text;
+                        en_cliente.Provincia = TDropDownListProvincia.SelectedItem.ToString();
+                        en_cliente.Ciudad = TDropDownListCiudad.SelectedItem.ToString();
+                        en_cliente.Email = TTextBoxEmail.Text;
+                        if (CheckBoxHombre.Checked)
+                        {
+                            en_cliente.Sexo = "H";
+                        }
+                        else
+                        {
+                            en_cliente.Sexo = "M";
+                        }
+
+                        en_cliente.AnyadirCliente();
 
                     
             }
-            else
-            {
-
-                
-            }
-           /*
-               bool incorrecto=false;
-
-               if(incorrecto!=true)
-               {
-                EN.ENPedidos enPedidos = new EN.ENPedidos();
-
-                string envio = "";
-              
-
-                if (TEnvioButtonOrdinario.Checked==true)
-                {
-                    envio = "Ordinario";
-                }
-                if (TEnvioButtonUrgente.Checked==true)
-                {
-                    envio = "Urgente";
-                }
-
-                enPedidos.IDTransaccion = TIDtextBox.Text; // idtransaccion
-                enPedidos.Proveedor = TProveecomboBox1.Text;  //proveedor
-                enPedidos.Marca = TMarcacomboBox2.Text;  //marca
-                enPedidos.Modelo = TModelocomboBox3.Text;   //modelo
-                enPedidos.Cantidad = numericUpDown1.Text;  //cantidad
-                enPedidos.Observaciones = TObservTextBox.Text;  //observaciones
-                enPedidos.Empleado = TVendedorText.Text; //empleado
-                enPedidos.TipoEnvio = envio;  //tipo de envio
-                enPedidos.EstadoPedido = " Abierto";
-
-                if (editar == "SI")
-                {
-                    enPedidos.EditarPedidos();
-                    label1.Text = "* Pedido modificado con éxito. *";
-
-                }
-                else
-                {
-                    enPedidos.AnyadirPedidos();
-                    label1.Text = "* Pedido realizado con éxito. *";
-                }
-             */
+       
         }
 
         protected void ComprobarUsuario(object source, ServerValidateEventArgs args)
@@ -209,13 +91,33 @@ namespace AlquilerCochesWeb
 
         protected void CustomValidator3_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            if (TTextBoxNombre.Text == "hola")
-            {
-                args.IsValid = false;
-            }
-            else args.IsValid = true;
-        }
+           /* string user = "";
+            user = TTextBoxUsuario.Text;
 
+            DataSet ds = new DataSet();
+            EN.ENCliente en_cliente = new EN.ENCliente();
+
+            en_cliente. */
+        }
+        protected void ComprobarDNI(object source, ServerValidateEventArgs args)
+        {
+           string dni = "";
+           dni = TextBoxDni.Text;
+           ArrayList array = new ArrayList();
+
+           DataSet ds = new DataSet();
+           
+           EN.ENCliente en_cliente = new EN.ENCliente();
+           CAD.CADCliente cad_cliente = new CAD.CADCliente();
+           ds=cad_cliente.ObtenerDatosClienteConDni(dni);
+
+
+            
+        
+               args.IsValid = false;
+           
+         // args.IsValid = false; }
+        }
         protected void TTextBoxEmail_TextChanged(object sender, EventArgs e)
         {
             
@@ -244,26 +146,75 @@ namespace AlquilerCochesWeb
         protected void CustomValidator4_ServerValidate1(object source, ServerValidateEventArgs args)
         {
 
+                 if (Regex.Match(TTextBoxEmail.Text, @"^[0-9]{9}$").Success)
+                 {
+
+                         args.IsValid = true;
+                 }
+                 else
+                 {
+                          args.IsValid = false;
+
+                 }
+
+
         }
 
         protected void CustomSexo_ServerValidate1(object source, ServerValidateEventArgs args)
         {
+            if (CheckBoxHombre.Checked || CheckBoxMujer.Checked)
+            {
+                args.IsValid = true;
+            }
+            else
+            {
+                args.IsValid = false;
+            }
 
         }
 
         protected void CustomEmail_ServerValidate1(object source, ServerValidateEventArgs args)
         {
 
+                 if (Regex.Match(TTextBoxEmail.Text, @"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$").Success)
+                 {
+
+                         args.IsValid = true;
+                 }
+                 else
+                 {
+                          args.IsValid = false;
+
+                 }
+
         }
 
         protected void CustomValidatorDNI_ServerValidate1(object source, ServerValidateEventArgs args)
         {
+                if (Regex.Match(TextBoxDni.Text, @"\^[0-9]{8}[A-Za-z]{1}$").Success)
+                {
+
+                    args.IsValid = true;
+                }
+                else
+                {
+                    args.IsValid = false;
+
+                }
+
 
         }
 
         protected void CustomValidator6_ServerValidate(object source, ServerValidateEventArgs args)
         {
-
+            if (Regex.Match(TextBoxDni.Text, @"\^[0-9]{8}[A-Za-z]{1}$").Success)
+            {
+                args.IsValid = true;
+            }
+            else
+            {
+                args.IsValid = false;
+            }
         }
              
             
