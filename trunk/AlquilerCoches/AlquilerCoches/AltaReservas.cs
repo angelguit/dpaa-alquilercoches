@@ -206,7 +206,7 @@ namespace AlquilerCoches
                     TButtonEditar.Visible = true;
                     TRectangleShapeCliente.Visible = true;
 
-                    if (enCliente.ReservasCliente() > 0)
+                    if (enCliente.HaReservado())
                     {
                         TRadioButtonFavorito.Visible = true;
                         TRadioButtonUltimoCoche.Visible = true;
