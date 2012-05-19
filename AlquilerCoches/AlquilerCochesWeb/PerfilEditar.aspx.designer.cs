@@ -31,6 +31,15 @@ namespace AlquilerCochesWeb {
         protected global::System.Web.UI.WebControls.TextBox TTextBoxNombre;
         
         /// <summary>
+        /// Control RegularExpressionValidatorNombre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidatorNombre;
+        
+        /// <summary>
         /// Control Label2.
         /// </summary>
         /// <remarks>
@@ -49,6 +58,15 @@ namespace AlquilerCochesWeb {
         protected global::System.Web.UI.WebControls.TextBox TTextBoxApellidos;
         
         /// <summary>
+        /// Control RegularExpressionValidatorApellidos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidatorApellidos;
+        
+        /// <summary>
         /// Control Label3.
         /// </summary>
         /// <remarks>
@@ -65,6 +83,15 @@ namespace AlquilerCochesWeb {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList TDropDownListProvincia;
+        
+        /// <summary>
+        /// Control RegularExpressionValidatorProvi.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidatorProvi;
         
         /// <summary>
         /// Control Label4.
@@ -103,6 +130,15 @@ namespace AlquilerCochesWeb {
         protected global::System.Web.UI.WebControls.TextBox TTextBoxDireccion;
         
         /// <summary>
+        /// Control RegularExpressionValidatorDirecc.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidatorDirecc;
+        
+        /// <summary>
         /// Control Label6.
         /// </summary>
         /// <remarks>
@@ -119,6 +155,15 @@ namespace AlquilerCochesWeb {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TTextBoxTelefono;
+        
+        /// <summary>
+        /// Control RegularExpressionValidatorTelefono.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidatorTelefono;
         
         /// <summary>
         /// Control Label7.
@@ -139,6 +184,15 @@ namespace AlquilerCochesWeb {
         protected global::System.Web.UI.WebControls.TextBox TTextBoxEmail;
         
         /// <summary>
+        /// Control RegularExpressionValidatorEmail.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidatorEmail;
+        
+        /// <summary>
         /// Control Label8.
         /// </summary>
         /// <remarks>
@@ -157,6 +211,15 @@ namespace AlquilerCochesWeb {
         protected global::System.Web.UI.WebControls.TextBox TTextBoxPass;
         
         /// <summary>
+        /// Control CompareValidatorPass0.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator CompareValidatorPass0;
+        
+        /// <summary>
         /// Control Label9.
         /// </summary>
         /// <remarks>
@@ -173,6 +236,15 @@ namespace AlquilerCochesWeb {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TTextBoxPass2;
+        
+        /// <summary>
+        /// Control CompareValidatorPass.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator CompareValidatorPass;
         
         /// <summary>
         /// Control ButtonGuardar.
