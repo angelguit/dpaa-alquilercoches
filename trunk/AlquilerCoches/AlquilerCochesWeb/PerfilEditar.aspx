@@ -48,12 +48,11 @@
                     <asp:Label ID="Label7" runat="server" Text="Label" Width="90" font-size="14px">E-Mail</asp:Label>
                     <asp:TextBox ID="TTextBoxEmail" runat="server" Width="182px"></asp:TextBox> <br /> <br />  <br />   
 
-                    <asp:Label ID="Label8" runat="server" Text="Label" Width="90" font-size="14px">Password</asp:Label>
-                    <asp:TextBox ID="TextBoxPass" runat="server" Width="182px" CausesValidation="False"></asp:TextBox> <br /> <br />  <br />   
+                    <asp:Label ID="Label8" runat="server" Text="Label" Width="90" font-size="14px">Password(1)</asp:Label> 
+                    <asp:TextBox ID="TTextBoxPass" runat="server"  Width="182px"></asp:TextBox><br /> <br />
 
-                    <asp:Label ID="Label9" runat="server" Text="Label" Width="90" font-size="14px">Password</asp:Label>
-                    <asp:TextBox ID="TextBoxPass2" runat="server" Width="182px" CausesValidation="False" BorderStyle="NotSet"></asp:TextBox> <br /> <br />  <br />   
-                
+                    <asp:Label ID="Label9" runat="server" Text="Label" Width="90" font-size="14px">Password(2)</asp:Label>
+                    <asp:TextBox ID="TTextBoxPass2" runat="server" Width="182px"></asp:TextBox><br /> <br />
                     <asp:Button ID="ButtonGuardar"  CssClass="PerfilbotonUsuario" runat="server" 
                            Text="Guardar" onclick="Button1_Click" />
                        
@@ -78,7 +77,7 @@
                      <asp:FileUpload ID="FileUpload1" runat="server" Width="319px" 
                             style="margin-left: 18px" />
                         <asp:Button ID="ButtonSubirImagen" runat="server" Text="Subir Imagen" 
-                            onclick="ButtonSubirImagen_Click" />
+                            onclick="ButtonSubirImagen_Click"/>
                        <asp:Label id="UploadStatusLabel" runat="server"></asp:Label>
                     
                     

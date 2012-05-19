@@ -148,13 +148,13 @@ namespace AlquilerCochesWeb {
         protected global::System.Web.UI.WebControls.Label Label8;
         
         /// <summary>
-        /// Control TextBoxPass.
+        /// Control TTextBoxPass.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxPass;
+        protected global::System.Web.UI.WebControls.TextBox TTextBoxPass;
         
         /// <summary>
         /// Control Label9.
@@ -166,13 +166,13 @@ namespace AlquilerCochesWeb {
         protected global::System.Web.UI.WebControls.Label Label9;
         
         /// <summary>
-        /// Control TextBoxPass2.
+        /// Control TTextBoxPass2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxPass2;
+        protected global::System.Web.UI.WebControls.TextBox TTextBoxPass2;
         
         /// <summary>
         /// Control ButtonGuardar.

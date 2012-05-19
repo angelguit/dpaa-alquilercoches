@@ -15,12 +15,21 @@ namespace AlquilerCochesWeb
         private bool vengodeload = false;
         protected void Page_Load(object sender, EventArgs e)
 		{
-            FotoUsuario.ImageUrl = "/Imagenes/ImagenesPerfil/" + Session["Usuario"].ToString() + ".jpg";
-            TTextBoxNombre.Text = Session["nombre"].ToString();
-            TTextBoxApellidos.Text = Session["apellidos"].ToString();
-            TTextBoxEmail.Text = Session["email"].ToString();
-            TTextBoxTelefono.Text = Session["telefono"].ToString();
-            TTextBoxDireccion.Text = Session["direccion"].ToString();
+            if (!Page.IsPostBack)
+            {
+                FotoUsuario.ImageUrl = "/Imagenes/ImagenesPerfil/" + Session["Usuario"].ToString() + ".jpg";
+                TTextBoxNombre.Text = Session["nombre"].ToString();
+                TTextBoxApellidos.Text = Session["apellidos"].ToString();
+                TTextBoxEmail.Text = Session["email"].ToString();
+                TTextBoxTelefono.Text = Session["telefono"].ToString();
+                TTextBoxDireccion.Text = Session["direccion"].ToString();
+
+                ENCliente cli = new ENCliente();
+                DataSet ds = new DataSet();
+                ds = cli.ObtenerDatosClienteConDni(Session["Usuario"].ToString());
+
+                TTextBoxPass.Text = ds.Tables["Cliente"].Rows[0][10].ToString();
+            }
            
 		}
 
@@ -122,23 +131,34 @@ namespace AlquilerCochesWeb
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            
+                ENCliente cli = new ENCliente();
+                DataSet ds = new DataSet();
+                ds = cli.ObtenerDatosClienteConDni(Session["Usuario"].ToString());
+         
+                cli.DNI = ds.Tables["Cliente"].Rows[0][0].ToString();
+                Session["nombre"] =  cli.Nombre = TTextBoxNombre.Text;
+                Session["apellidos"] = cli.Apellidos = TTextBoxApellidos.Text;
+                Session["provincia"] = cli.Provincia = TDropDownListProvincia.Text;
+                Session["ciudad"] = cli.Ciudad = TDropDownListCiudad.Text;
+                Session["direccion"] =cli.Direccion = TTextBoxDireccion.Text;
+                Session["email"] = cli.Email = TTextBoxEmail.Text;
+                cli.Tarifa = ds.Tables["Cliente"].Rows[0][8].ToString();
+                cli.Sexo = ds.Tables["Cliente"].Rows[0][9].ToString();
+                cli.PassWeb = TTextBoxPass.Text;
+                TTextBoxPass2.Text = cli.PassWeb;
+                Session["telefono"] = cli.Telefono = Int32.Parse(TTextBoxTelefono.Text);
 
-            ENCliente cli = new ENCliente();
-            DataSet ds = new DataSet();
-            ds = cli.ObtenerDatosClienteConDni(Session["Usuario"].ToString());
+                cli.EditarCliente();
+                // Response.Redirect("Perfil.aspx");
 
-            cli.DNI = ds.Tables["Cliente"].Rows[0][0].ToString();
-            cli.Nombre = TTextBoxNombre.Text;
-            cli.Apellidos = TTextBoxApellidos.Text;
-            cli.Provincia = TDropDownListProvincia.Text;
-            cli.Ciudad = TDropDownListCiudad.Text;
-            cli.Direccion = TTextBoxDireccion.Text;
-            cli.Email = TTextBoxEmail.Text;
-            cli.Tarifa = ds.Tables["Cliente"].Rows[0][8].ToString();
-            cli.Sexo = ds.Tables["Cliente"].Rows[0][9].ToString();
-           // cli.Pass
+                ENCliente clien = new ENCliente();
+                DataSet dscli = new DataSet();
+                dscli = clien.ObtenerDatosClienteConDni(Session["Usuario"].ToString());
 
+                TTextBoxEmail.Text = dscli.Tables["Cliente"].Rows[0][4].ToString();
 
+           
         }
 
         protected void ButtonSubirImagen_Click(object sender, EventArgs e)
@@ -171,7 +191,9 @@ namespace AlquilerCochesWeb
 
                          // Notify the user that the file was uploaded successfully.
                          UploadStatusLabel.Text = "Su imagen ha sido subida correctamente";
-                         Response.Redirect("PerfilEditar.aspx");
+                         //Response.Redirect("PerfilEditar.aspx");
+                        // ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Prueba", "location.reload()", true);
+                      
                      }
                      else
                      {
