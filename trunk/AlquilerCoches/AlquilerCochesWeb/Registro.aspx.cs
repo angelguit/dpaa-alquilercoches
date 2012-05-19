@@ -134,12 +134,16 @@ namespace AlquilerCochesWeb
             if (Page.IsValid)
             {
 
+                        EN.ENCliente en_cliente = new EN.ENCliente();
+                         
+                   //     en_cliente.DNI = TT    
+
                     
             }
             else
             {
 
-
+                
             }
            /*
                bool incorrecto=false;
@@ -238,6 +242,26 @@ namespace AlquilerCochesWeb
         }
 
         protected void CustomValidator4_ServerValidate1(object source, ServerValidateEventArgs args)
+        {
+
+        }
+
+        protected void CustomSexo_ServerValidate1(object source, ServerValidateEventArgs args)
+        {
+
+        }
+
+        protected void CustomEmail_ServerValidate1(object source, ServerValidateEventArgs args)
+        {
+
+        }
+
+        protected void CustomValidatorDNI_ServerValidate1(object source, ServerValidateEventArgs args)
+        {
+
+        }
+
+        protected void CustomValidator6_ServerValidate(object source, ServerValidateEventArgs args)
         {
 
         }
