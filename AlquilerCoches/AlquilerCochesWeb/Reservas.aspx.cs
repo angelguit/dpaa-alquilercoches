@@ -15,19 +15,6 @@ namespace AlquilerCochesWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ///////////////////////////RESERVAS POR INDEX///////////////////////
-            EN.ENCliente enCliente = new ENCliente();
-            
-            if (Session["ReservaRapida"] == "Habitual")
-            {
-                RellenarCocheReserva(enCliente.ReservaFavorita());
-            }
-            if (Session["ReservaRapida"] == "Ultima")
-            {
-                RellenarCocheReserva(enCliente.UltimaReserva());
-            }
-
-
             //////////////////////LOAD NORMAL DE RESERVAS///////////////////////////////
             if (Session["Usuario"] == null)
             {
@@ -52,7 +39,7 @@ namespace AlquilerCochesWeb
                     comboMarcas.Items.Add(ds.Tables["Marcas"].Rows[i][0].ToString());
                 }
 
-                //VEHICULOS
+                //MODELOS
                 comboModelos.Items.Clear();
                 ds = envehiculo.ObtenerModelosVehiculos(comboCategorias.Text.ToString(), comboMarcas.Text.ToString());
                 for (int i = 0; i < ds.Tables["Modelos"].Rows.Count; i++)
@@ -60,6 +47,31 @@ namespace AlquilerCochesWeb
                     comboModelos.Items.Add(ds.Tables["Modelos"].Rows[i][0].ToString());
                 }
             }
+
+            ///////////////////////////RESERVAS POR INDEX///////////////////////
+            EN.ENCliente enCliente = new ENCliente();
+            EN.ENVehiculo enVehi = new ENVehiculo();
+            if (Session["ReservaRapida"] == "Habitual")
+            {
+                string matricula="";
+                enCliente.DNI = Session["Usuario"].ToString();
+                char[] separadores = { '|', ',' };
+                string[] favorito = enCliente.ReservaFavorita().Split(separadores);
+
+                DataSet dsMatricula = new DataSet();
+                //Marca,Modelo,FK_Categoria
+                dsMatricula = enVehi.ObtenerMatriculaReserva(favorito[0], favorito[1], favorito[2]);
+                matricula = dsMatricula.Tables["Reserva"].Rows[0][0].ToString();
+                conductores.Text = matricula;
+
+            }
+            if (Session["ReservaRapida"] == "Ultima")
+            {
+                enCliente.DNI = Session["Usuario"].ToString();
+                RellenarCocheReserva(enCliente.UltimaReserva());
+            }
+
+
             ////MOSTRAR IMAGENES DE COCHES//
             MostrarImagen();
         }
@@ -78,16 +90,40 @@ namespace AlquilerCochesWeb
 
         protected void RellenarCocheReserva(string matri)
         {
+            conductores.Text = matri;
             EN.ENVehiculo enVehi = new ENVehiculo();
             DataSet dsVehi = new DataSet();
             enVehi.Matricula = matri;
             enVehi.ObtenerDatosVehiculos();
-            
+            codigo.Text = enVehi.Marca;
+            precio.Text = enVehi.Modelo;
             //Vehiculo
-            comboCategorias.Text = enVehi.Categoria;
-            comboMarcas.Text = enVehi.Marca;
-            comboModelos.Text = enVehi.Modelo;
-            MostrarImagen();
+            //CATEGORIA
+            for (int i = 0; i < comboCategorias.Items.Count; i++)
+            {
+                if (comboCategorias.Items[i].ToString() == enVehi.Categoria)
+                {
+                    comboCategorias.SelectedIndex = i;
+                }
+            }
+            //MARCA
+            CambiarComboCategorias();
+            for (int i = 0; i < comboMarcas.Items.Count; i++)
+            {
+                if (comboMarcas.Items[i].ToString() == enVehi.Marca)
+                {
+                    comboMarcas.SelectedIndex = i;
+                }
+            }
+            //MODELO
+            CambiarComboMarcas();
+            for (int i = 0; i < comboModelos.Items.Count; i++)
+            {
+                if (comboModelos.Items[i].ToString() == enVehi.Modelo)
+                {
+                    comboModelos.SelectedIndex = i;
+                }
+            }
         }
 
         protected void MostrarImagen()
@@ -106,7 +142,7 @@ namespace AlquilerCochesWeb
             }
         }
 
-        protected void comboCategorias_TextChanged(object sender, EventArgs e)
+        protected void CambiarComboCategorias()
         {
             comboMarcas.Items.Clear();
             DataSet ds = new DataSet();
@@ -116,8 +152,25 @@ namespace AlquilerCochesWeb
             {
                 comboMarcas.Items.Add(ds.Tables["Marcas"].Rows[i][0].ToString());
             }
-
             comboModelos.Items.Clear();
+            ds = envehiculo.ObtenerModelosVehiculos(comboCategorias.Text.ToString(), comboMarcas.Text.ToString());
+            for (int i = 0; i < ds.Tables["Modelos"].Rows.Count; i++)
+            {
+                comboModelos.Items.Add(ds.Tables["Modelos"].Rows[i][0].ToString());
+            }
+            MostrarImagen();
+        }
+
+        protected void comboCategorias_TextChanged(object sender, EventArgs e)
+        {
+            CambiarComboCategorias();
+        }
+
+        protected void CambiarComboMarcas()
+        {
+            comboModelos.Items.Clear();
+            DataSet ds = new DataSet();
+            EN.ENVehiculo envehiculo = new ENVehiculo();
             ds = envehiculo.ObtenerModelosVehiculos(comboCategorias.Text.ToString(), comboMarcas.Text.ToString());
             for (int i = 0; i < ds.Tables["Modelos"].Rows.Count; i++)
             {
@@ -128,15 +181,7 @@ namespace AlquilerCochesWeb
 
         protected void comboMarcas_TextChanged(object sender, EventArgs e)
         {
-            comboModelos.Items.Clear();
-            DataSet ds = new DataSet();
-            EN.ENVehiculo envehiculo = new ENVehiculo();
-            ds = envehiculo.ObtenerModelosVehiculos(comboCategorias.Text.ToString(),comboMarcas.Text.ToString());
-            for (int i = 0; i < ds.Tables["Modelos"].Rows.Count; i++)
-            {
-                comboModelos.Items.Add(ds.Tables["Modelos"].Rows[i][0].ToString());
-            }
-            MostrarImagen();
+            CambiarComboMarcas();
         }
 
         protected void ReservabotonPrecio_Click(object sender, EventArgs e)
