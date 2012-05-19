@@ -184,13 +184,13 @@ namespace AlquilerCochesWeb {
         protected global::System.Web.UI.WebControls.Button ButtonGuardar;
         
         /// <summary>
-        /// Control Image1.
+        /// Control FotoUsuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image1;
+        protected global::System.Web.UI.WebControls.Image FotoUsuario;
         
         /// <summary>
         /// Control FileUpload1.
@@ -200,5 +200,23 @@ namespace AlquilerCochesWeb {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+        
+        /// <summary>
+        /// Control ButtonSubirImagen.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonSubirImagen;
+        
+        /// <summary>
+        /// Control UploadStatusLabel.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label UploadStatusLabel;
     }
 }
