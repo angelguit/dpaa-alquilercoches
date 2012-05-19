@@ -24,6 +24,11 @@ namespace AlquilerCochesWeb
         private EN.ENVehiculo vehiculo = new EN.ENVehiculo();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["Oferta"] != null)
+            {
+                vehiculo.Matricula = Session["Oferta"].ToString();
+                MultiView1.ActiveViewIndex = 4;
+            }
             if (!Page.IsPostBack)
             {
                 List<MyObject> col = new List<MyObject>();
@@ -48,6 +53,8 @@ namespace AlquilerCochesWeb
                     ListView2.DataBind();
                     break;
                 case 3:
+                    break;
+                case 4:
                     break;
 
             }
@@ -85,7 +92,16 @@ namespace AlquilerCochesWeb
 
         protected void VehiculosListView_ItemCommand(object sender, ListViewCommandEventArgs e)
         {
-            Server.Transfer("Reservas.aspx");
+            vehiculo.Matricula=e.CommandArgument.ToString();
+            rellenaView4();
+            //Image2.ImageUrl = @"/Imagenes/ImagenesReserva/fotosCoches/" + vehiculo.Matricula + ".jpg";
+            /*Server.Transfer("Reservas.aspx");*/
+        }
+
+        protected void rellenaView4()
+        {
+            MultiView1.ActiveViewIndex = 4;
+            Label1.Text = vehiculo.Matricula;
         }
 
     }
