@@ -171,6 +171,7 @@ namespace AlquilerCochesWeb
 
                          // Notify the user that the file was uploaded successfully.
                          UploadStatusLabel.Text = "Su imagen ha sido subida correctamente";
+                         Response.Redirect("PerfilEditar.aspx");
                      }
                      else
                      {
