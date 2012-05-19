@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using EN;
+using System.Text.RegularExpressions;
 
 namespace AlquilerCochesWeb
 {
@@ -29,6 +30,7 @@ namespace AlquilerCochesWeb
                 ds = cli.ObtenerDatosClienteConDni(Session["Usuario"].ToString());
 
                 TTextBoxPass.Text = ds.Tables["Cliente"].Rows[0][10].ToString();
+                TTextBoxPass2.Text = TTextBoxPass.Text;
             }
            
 		}
@@ -149,14 +151,11 @@ namespace AlquilerCochesWeb
                 TTextBoxPass2.Text = cli.PassWeb;
                 Session["telefono"] = cli.Telefono = Int32.Parse(TTextBoxTelefono.Text);
 
+
+            // Response.Redirect("Perfil.aspx");
+
+
                 cli.EditarCliente();
-                // Response.Redirect("Perfil.aspx");
-
-                ENCliente clien = new ENCliente();
-                DataSet dscli = new DataSet();
-                dscli = clien.ObtenerDatosClienteConDni(Session["Usuario"].ToString());
-
-                TTextBoxEmail.Text = dscli.Tables["Cliente"].Rows[0][4].ToString();
 
            
         }
@@ -211,8 +210,6 @@ namespace AlquilerCochesWeb
             }
             
         }
-
-      
       
 	}
 }
