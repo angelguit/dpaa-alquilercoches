@@ -39,6 +39,7 @@
             <span>Reserva Rapida</span><br />
             <asp:RadioButton ID="TRadioButtonUltimaReserva" runat="server" Text="Ultima Reserva" GroupName="Radio" /><br />
             <asp:RadioButton ID="TRadioButtonReservaHabitual" runat="server" Text="Reserva Habitual" GroupName="Radio" /><br />
+            <asp:Label ID="LabelError" runat="server" Text="Seleccione un tipo de reserva."></asp:Label>
             <asp:Button ID="TButtonReservar" runat="server" Text="Reservar" 
                 onclick="TButtonReservar_Click" />
         </asp:PlaceHolder>

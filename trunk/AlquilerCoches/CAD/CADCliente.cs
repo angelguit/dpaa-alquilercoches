@@ -238,13 +238,16 @@ namespace CAD
                 SqlDataAdapter daResCliente = new SqlDataAdapter(consulta, conexion);
                 daResCliente.MissingSchemaAction = MissingSchemaAction.AddWithKey;
                 daResCliente.Fill(dsResCliente, "Reservas");
+
+
+                return dsResCliente.Tables["Reservas"].Rows[dsResCliente.Tables["Reservas"].Rows.Count - 1][2].ToString();
+
+                
             }
             catch (Exception ex)
             {
                 throw (ex);
             }
-
-            return dsResCliente.Tables["Reservas"].Rows[dsResCliente.Tables["Reservas"].Rows.Count - 1][2].ToString();
         }
 
         public string ReservaFavorita(string dni)
@@ -293,6 +296,32 @@ namespace CAD
             }
 
             return retorno;
+        }
+
+        public bool HaReservado(string dni)
+        {
+            DataSet dsResCliente = new DataSet();
+            bool retorno = false;
+
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                String consulta = "Select * from Reservas where FK_Cliente = '" + dni + "'";
+                SqlDataAdapter daResCliente = new SqlDataAdapter(consulta, conexion);
+                daResCliente.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daResCliente.Fill(dsResCliente, "Reservas");
+
+                if (dsResCliente.Tables["Reservas"].Rows.Count > 0)
+                {
+                    retorno = true;
+                }
+                
+                return retorno;
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
         }
 
         public bool ExisteClienteCAD(string dni)

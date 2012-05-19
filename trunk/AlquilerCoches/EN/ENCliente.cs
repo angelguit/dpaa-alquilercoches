@@ -264,6 +264,11 @@ namespace EN
             existe = cadCliente.ExisteClienteCAD(dni);
             return existe;
         }
+
+        public bool HaReservado()
+        {
+            return cadCliente.HaReservado(dni);
+        }
     }
 }
 

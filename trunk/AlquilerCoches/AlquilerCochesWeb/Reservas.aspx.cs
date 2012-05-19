@@ -17,6 +17,7 @@ namespace AlquilerCochesWeb
         {
             ///////////////////////////RESERVAS POR INDEX///////////////////////
             EN.ENCliente enCliente = new ENCliente();
+            
             if (Session["ReservaRapida"] == "Habitual")
             {
                 RellenarCocheReserva(enCliente.ReservaFavorita());
