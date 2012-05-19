@@ -77,16 +77,162 @@
             </div>
             </asp:View>  
                   
+        <!--CATEGORIA NUMERO 2-->
             <asp:View ID="View2" runat="server">
-                <br />No hay ninguna oferta para vehículos familiares
+                <div id="Div1">
+                <asp:ListView runat="server" ID="ListView1" >
+                    <LayoutTemplate>
+                        <table cellpadding="3" runat="server" id="Compra">
+                            <tr runat="server" id="itemPlaceholder">
+                            </tr>
+                        </table>
+                        <div id="aspectobotoneslistview">
+                            <asp:DataPager runat="server" ID="DataPager" PageSize="3">
+                                <Fields >
+                                    <asp:NumericPagerField ButtonCount="5" PreviousPageText="<--" NextPageText="-->" />
+                                </Fields>
+                            </asp:DataPager>
+                        </div>
+                    </LayoutTemplate>
+                    <ItemTemplate>
+                        <br />
+                        <tr id="Tr1" runat="server">
+                            <td valign="top" colspan="2" align="center" class="Compra">
+	                            <asp:Label ID="Label2" runat="server" Text='<%#Eval("Matricula") %>' 
+                                    Font-Overline="False" Font-Underline="True" Font-Size="Medium" Font-Bold="True">
+                                 </asp:Label>
+                            </td>
+                        </tr>
+
+
+                        <tr id="Tr2" style="height:72px" runat="server">
+                            <td valign="top" class="Imagen">
+                                <asp:Image ID="Image2" runat="server" Height="96px" 
+                                    ImageUrl='<%#"/Imagenes/ImagenesCompra/" + Eval("Matricula") + ".jpg" %>' Width="165px"/>
+                            </td>
+                            <td valign="top" class="DescOferta">
+                                <asp:Label id="Marca"  runat="server" Text='<%#Eval("Marca") %>' Font-Bold="True"> </asp:Label>
+                                <asp:Label id="Modelo"  runat="server" Text='<%#Eval("Modelo") %>' Font-Bold="True"></asp:Label>
+                            <br />
+                                <asp:Label id="Label1"  runat="server" Text='Precio:' Font-Bold="True"> </asp:Label>
+                                <asp:Label id="Precio"  runat="server" Text='<%#Eval("PrecioVenta")%>' Font-Bold="True"></asp:Label>
+                                <asp:Label id="Label4"  runat="server" Text='€' Font-Bold="True"> </asp:Label>
+                            <br />
+                                <asp:Label id="Label3"  runat="server" Text='KM:' Font-Bold="True"> </asp:Label>
+                                <asp:Label id="KM"  runat="server" Text='<%#Eval("KM")%>' Font-Bold="True"></asp:Label>
+                            <br />
+                                <asp:Button id="ComprasBotonComprar" runat="server" Text='Comprar'></asp:Button> 
+                            </td>
+                        </tr>
+                    </ItemTemplate>
+                </asp:ListView>
+            </div>
             </asp:View> 
                    
+
+        <!--CATEGORIA NUMERO 3-->
             <asp:View ID="View3" runat="server">
-                <br />No hay ninguna oferta para furgonetas
+                <div id="Div2">
+                <asp:ListView runat="server" ID="ListView2" >
+                    <LayoutTemplate>
+                        <table cellpadding="3" runat="server" id="Compra">
+                            <tr runat="server" id="itemPlaceholder">
+                            </tr>
+                        </table>
+                        <div id="aspectobotoneslistview">
+                            <asp:DataPager runat="server" ID="DataPager" PageSize="3">
+                                <Fields >
+                                    <asp:NumericPagerField ButtonCount="5" PreviousPageText="<--" NextPageText="-->" />
+                                </Fields>
+                            </asp:DataPager>
+                        </div>
+                    </LayoutTemplate>
+                    <ItemTemplate>
+                        <br />
+                        <tr id="Tr1" runat="server">
+                            <td valign="top" colspan="2" align="center" class="Compra">
+	                            <asp:Label ID="Label2" runat="server" Text='<%#Eval("Matricula") %>' 
+                                    Font-Overline="False" Font-Underline="True" Font-Size="Medium" Font-Bold="True">
+                                 </asp:Label>
+                            </td>
+                        </tr>
+
+
+                        <tr id="Tr2" style="height:72px" runat="server">
+                            <td valign="top" class="Imagen">
+                                <asp:Image ID="Image2" runat="server" Height="96px" 
+                                    ImageUrl='<%#"/Imagenes/ImagenesCompra/" + Eval("Matricula") + ".jpg" %>' Width="165px"/>
+                            </td>
+                            <td valign="top" class="DescOferta">
+                                <asp:Label id="Marca"  runat="server" Text='<%#Eval("Marca") %>' Font-Bold="True"> </asp:Label>
+                                <asp:Label id="Modelo"  runat="server" Text='<%#Eval("Modelo") %>' Font-Bold="True"></asp:Label>
+                            <br />
+                                <asp:Label id="Label1"  runat="server" Text='Precio:' Font-Bold="True"> </asp:Label>
+                                <asp:Label id="Precio"  runat="server" Text='<%#Eval("PrecioVenta")%>' Font-Bold="True"></asp:Label>
+                                <asp:Label id="Label4"  runat="server" Text='€' Font-Bold="True"> </asp:Label>
+                            <br />
+                                <asp:Label id="Label3"  runat="server" Text='KM:' Font-Bold="True"> </asp:Label>
+                                <asp:Label id="KM"  runat="server" Text='<%#Eval("KM")%>' Font-Bold="True"></asp:Label>
+                            <br />
+                                <asp:Button id="ComprasBotonComprar" runat="server" Text='Comprar'></asp:Button> 
+                            </td>
+                        </tr>
+                    </ItemTemplate>
+                </asp:ListView>
+            </div>
             </asp:View>   
-                 
+        
+        
+        <!--CATEGORIA NUMERO 4-->         
             <asp:View ID="View4" runat="server">
-                <br />No hay ninguna oferta para vehículos especiales
+                <div id="Div3">
+                <asp:ListView runat="server" ID="ListView3" >
+                    <LayoutTemplate>
+                        <table cellpadding="3" runat="server" id="Compra">
+                            <tr runat="server" id="itemPlaceholder">
+                            </tr>
+                        </table>
+                        <div id="aspectobotoneslistview">
+                            <asp:DataPager runat="server" ID="DataPager" PageSize="3">
+                                <Fields >
+                                    <asp:NumericPagerField ButtonCount="5" PreviousPageText="<--" NextPageText="-->" />
+                                </Fields>
+                            </asp:DataPager>
+                        </div>
+                    </LayoutTemplate>
+                    <ItemTemplate>
+                        <br />
+                        <tr id="Tr1" runat="server">
+                            <td valign="top" colspan="2" align="center" class="Compra">
+	                            <asp:Label ID="Label2" runat="server" Text='<%#Eval("Matricula") %>' 
+                                    Font-Overline="False" Font-Underline="True" Font-Size="Medium" Font-Bold="True">
+                                 </asp:Label>
+                            </td>
+                        </tr>
+
+
+                        <tr id="Tr2" style="height:72px" runat="server">
+                            <td valign="top" class="Imagen">
+                                <asp:Image ID="Image2" runat="server" Height="96px" 
+                                    ImageUrl='<%#"/Imagenes/ImagenesCompra/" + Eval("Matricula") + ".jpg" %>' Width="165px"/>
+                            </td>
+                            <td valign="top" class="DescOferta">
+                                <asp:Label id="Marca"  runat="server" Text='<%#Eval("Marca") %>' Font-Bold="True"> </asp:Label>
+                                <asp:Label id="Modelo"  runat="server" Text='<%#Eval("Modelo") %>' Font-Bold="True"></asp:Label>
+                            <br />
+                                <asp:Label id="Label1"  runat="server" Text='Precio:' Font-Bold="True"> </asp:Label>
+                                <asp:Label id="Precio"  runat="server" Text='<%#Eval("PrecioVenta")%>' Font-Bold="True"></asp:Label>
+                                <asp:Label id="Label4"  runat="server" Text='€' Font-Bold="True"> </asp:Label>
+                            <br />
+                                <asp:Label id="Label3"  runat="server" Text='KM:' Font-Bold="True"> </asp:Label>
+                                <asp:Label id="KM"  runat="server" Text='<%#Eval("KM")%>' Font-Bold="True"></asp:Label>
+                            <br />
+                                <asp:Button id="ComprasBotonComprar" runat="server" Text='Comprar'></asp:Button> 
+                            </td>
+                        </tr>
+                    </ItemTemplate>
+                </asp:ListView>
+            </div>
             </asp:View> 
 
             </asp:MultiView>
