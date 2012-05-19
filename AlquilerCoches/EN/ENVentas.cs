@@ -19,6 +19,7 @@ namespace EN
         private string modelo;
         private string km;
         private string garantia;
+        private int reservado;
 
         private ArrayList listaMarcas = new ArrayList();
         private ArrayList listaModelos = new ArrayList();
@@ -77,10 +78,17 @@ namespace EN
             set { garantia = value; }
         }
 
+        public int Reservado
+        {
+            get { return reservado; }
+            set { reservado = value; }
+        }
+
         public void ClearEnVentas()
         {
-            matricula = marca = modelo = garantia = km = "";
+             matricula = marca = modelo = garantia = km = "";
              precioVenta = "";
+             reservado = 0;
         }
 
         public DataSet ObtenerListaVentas()
@@ -167,6 +175,7 @@ namespace EN
                 km = resultado.Tables["Ventas"].Rows[0][3].ToString();
                 garantia = resultado.Tables["Ventas"].Rows[0][4].ToString();
                 precioVenta = resultado.Tables["Ventas"].Rows[0][5].ToString();
+                reservado = Int32.Parse(resultado.Tables["Ventas"].Rows[0][6].ToString());
             }
             catch (Exception ex)
             {
@@ -201,6 +210,7 @@ namespace EN
                 venta.Tables["Ventas"].Rows[0][3] = km;
                 venta.Tables["Ventas"].Rows[0][4] = garantia;
                 venta.Tables["Ventas"].Rows[0][5] = precioVenta;
+                venta.Tables["Ventas"].Rows[0][6] = reservado;
                 cadVentas.EditarVehiculoVenta(venta);
 
             }
@@ -223,6 +233,7 @@ namespace EN
                 linea[3] = km;
                 linea[4] = garantia;
                 linea[5] = precioVenta;
+                linea[6] = reservado;
                 resultado.Tables["Ventas"].Rows.Add(linea);
                 cadVentas.AnyadirVenta(resultado);
             }
