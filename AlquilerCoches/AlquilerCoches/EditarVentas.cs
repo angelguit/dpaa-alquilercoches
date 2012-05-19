@@ -40,6 +40,7 @@ namespace AlquilerCoches
             TGroupBoxDatosVehiculo.Enabled = false;
             TButtonBorrar.Enabled = false;
             TTextBoxMatricula.Enabled = false;
+            TCheckBoxReservado.Checked = false;
         }
 
         private void rellenaMarcas()
@@ -70,6 +71,14 @@ namespace AlquilerCoches
                 TTextBoxMeses.Text = "Meses";
             }
             TTextBoxPrecioVenta.Text = ventas.PrecioVenta.ToString();
+            if (ventas.Reservado != 0)
+            {
+                TCheckBoxReservado.Checked = true;
+            }
+            else
+            {
+                TCheckBoxReservado.Checked = false;
+            }
         }
 
         void guardaCampos()
@@ -87,6 +96,14 @@ namespace AlquilerCoches
             }
             ventas.KM = TTextBoxKm.Text;
             ventas.PrecioVenta = TTextBoxPrecioVenta.Text;
+            if (TCheckBoxReservado.Checked == true)
+            {
+                ventas.Reservado = 1;
+            }
+            else
+            {
+                ventas.Reservado = 0;
+            }
         }
 
         private void TTextBoxMeses_Click(object sender, EventArgs e)
@@ -240,6 +257,7 @@ namespace AlquilerCoches
                 TTextBoxModelo.Text = "";
                 TTextBoxKm.Text = "";
                 TCheckBoxGarantia.Checked = false;
+                TCheckBoxReservado.Checked = false;
                 TTextBoxMeses.Text = "";
                 TTextBoxPrecioVenta.Text = "";
                 errorProvider1.Clear();
@@ -263,6 +281,7 @@ namespace AlquilerCoches
                 TTextBoxMarca.Text = "";
                 TTextBoxModelo.Text = "";
                 TTextBoxKm.Text = "";
+                TCheckBoxReservado.Checked = false;
                 TCheckBoxGarantia.Checked = false;
                 TTextBoxMeses.Text = "";
                 TTextBoxPrecioVenta.Text = "";
