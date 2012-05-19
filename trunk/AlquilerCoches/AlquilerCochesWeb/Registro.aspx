@@ -51,7 +51,7 @@
                       <br />
                       <asp:CustomValidator ID="CustomValidator6" runat="server" 
                           ErrorMessage="Error formato DNI." 
-                          onservervalidate="CustomValidator6_ServerValidate" ForeColor="Red"></asp:CustomValidator>
+                          onservervalidate="CustomValidator6_ServerValidate" ForeColor="Red" Font-Size=13px></asp:CustomValidator>
                       <br />
                       <asp:Label ID="Label13" runat="server" Text="Nombre" Width="90"></asp:Label>
                       <asp:TextBox ID="TextBox4" runat="server" Width="175px"></asp:TextBox>
