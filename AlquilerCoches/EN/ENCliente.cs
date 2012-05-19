@@ -24,6 +24,7 @@ namespace EN
         private string provincia;
         private string sexo;
         private string tarifa;
+        private string passweb;
 
 
         private CAD.CADCliente cadCliente = new CAD.CADCliente();
@@ -77,6 +78,12 @@ namespace EN
         {
             get { return tarifa; }
             set { tarifa = value; }
+        }
+
+        public string PassWeb
+        {
+            get { return passweb; }
+            set { passweb = value; }
         }
 
         public DataSet ObtenerListaCliente(string todo)
@@ -213,6 +220,7 @@ namespace EN
                 cliente.Tables["Cliente"].Rows[0][7] = ciudad.ToString();
                 cliente.Tables["Cliente"].Rows[0][8] = tarifa.ToString();
                 cliente.Tables["Cliente"].Rows[0][9] = sexo.ToString();
+                cliente.Tables["Cliente"].Rows[0][10] = passweb.ToString();
                 cadCliente.EditarCliente(cliente);
 
             }
