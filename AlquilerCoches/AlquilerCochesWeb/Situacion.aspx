@@ -36,12 +36,13 @@
     <div id="SituacionMapa">
         <div id="map_canvas"></div>
     </div>
-    <form id="formContacto" action="EnviarMail.aspx" target="_blank" method="post">
+   <!-- <form id="formContacto" method="post" action="EnviarMail.aspx">-->
         <div id="SituacionContacto">
              <p style="background-color:#e6e6e6; text-align:center"> Formulario Contacto</p>
                &nbsp <asp:Label ID="Label1" CssClass="SituacionContactoLabel" runat="server" Text="Nombre:"></asp:Label>
-               <input name="Nombre" type="text" />
-               <asp:TextBox ID="TTextBoxNombre" runat="server" CssClass="SituacionContactoTextBox"></asp:TextBox>
+              <!-- <input name="Nombre" ID="TTexboxNombre" type="text" />-->
+              <asp:TextBox ID="TTextBoxNombre" runat="server" 
+                 CssClass="SituacionContactoTextBox" ontextchanged="TTextBoxNombre_TextChanged"></asp:TextBox>
 
                <asp:CustomValidator ID="CustomValidatorNombre" runat="server" 
                  ErrorMessage="Formato incorrecto" 
@@ -52,7 +53,7 @@
 
                 <asp:Label ID="Label2" CssClass="SituacionContactoLabel" runat="server" Text="Apellidos:"></asp:Label>
                 <asp:TextBox ID="TTextBoxApellidos" runat="server" CssClass="SituacionContactoTextBox"></asp:TextBox>
-              
+                <!--<input name="Apellidos"ID="TTexBoxApellidos" type="text" />-->
                 <asp:CustomValidator ID="CustomValidatorApellidos" runat="server" 
                  ErrorMessage="Apellidos incorrecto" 
                  ControlToValidate="TTextboxApellidos"
@@ -61,7 +62,8 @@
                 </br></br>
 
                &nbsp&nbsp&nbsp&nbsp&nbsp <asp:Label ID="Label3" CssClass="SituacionContactoLabel" runat="server" Text="Email:"></asp:Label>
-               <asp:TextBox ID="TTextBoxEmail" runat="server" CssClass="SituacionContactoTextBox"></asp:TextBox>
+                <asp:TextBox ID="TTextBoxEmail" runat="server" CssClass="SituacionContactoTextBox"></asp:TextBox>
+               <!-- <input name="Email" ID="TTexBoxEmail" type="text" />-->
 
                  <asp:CustomValidator ID="CustomValidatorEmail" runat="server" 
                  ErrorMessage="Email incorrecto" 
@@ -72,14 +74,15 @@
 
 
                &nbsp<asp:Label ID="Label4" CssClass="SituacionContactoLabel" runat="server" Text="Consulta:"></asp:Label> 
-               <textarea ID="TTextArea" style="margin-left:50px" rows="5" cols="26" runat="server"></textarea><br />
-        
-              <!--<asp:Button ID="Button1"  CssClass="RegistrobotonContacto" runat="server" Text="Enviar" onclick="Button1_Click" />-->
-          <input type="submit" value="Enviar"  />
-           <input type="reset" value="Borrar" />
+               <textarea ID="TTextArea" name="TextArea" style="margin-left:50px" rows="5" cols="26" runat="server"></textarea><br />
+                <asp:Label ID="LabelError"  style="color:Red;" runat="server" Text="Campos Incompletos, rellenelos"></asp:Label>
+                <asp:Label ID="LabelCorrecto" style="color:Green; clear:left" runat="server" Text="Mensaje enviado, gracias"></asp:Label>
+              <asp:Button ID="Button1"  CssClass="RegistrobotonContacto" runat="server" Text="Enviar" onclick="Button1_Click" />
+         <!-- <input type="submit" style=" -moz-border-radius: 10px; -webkit-border-radius: 10px;"value="Enviar"  />
+           <input type="reset" style=" -moz-border-radius: 10px; -webkit-border-radius: 10px;" value="Borrar" />-->
           
         </div>
-    </form>
+  <!--  </form>-->
 
     <div id="SituacionDatosEmpresa">
     <img class="Foto" alt="logo" src="/Imagenes/ImagenesPerfil/logo.jpg" />

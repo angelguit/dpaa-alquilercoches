@@ -15,6 +15,8 @@ namespace AlquilerCochesWeb
        
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+            ImagenUsuario.ImageUrl = "/Imagenes/ImagenesPerfil/" + Session["Usuario"].ToString() + ".jpg";
             EN.ENCliente cli = new ENCliente();
             DataSet dscli = new DataSet();
             if (Session["Usuario"] != null)

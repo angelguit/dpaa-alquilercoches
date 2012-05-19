@@ -70,15 +70,16 @@
                      Por favor, introduce tu foto formato carnet para poder tener una ficha más personalizada. </p>
                     </div>
                     <div id="ImagenUsuario">
-                       <asp:Image ID="Image1" runat="server" alt="usuario" Height="86px" Width="140px" 
-                            src="/Imagenes/ImagenesPerfil/Desconocido.jpg"  />
+                       <asp:Image ID="FotoUsuario" runat="server" CssClass="Foto" alt="usuario" />
 
                     </div>
                     <div id="CargarArchivo">
                     
-                    
-                        <asp:FileUpload ID="FileUpload1" runat="server" Width="319px" 
+                     <asp:FileUpload ID="FileUpload1" runat="server" Width="319px" 
                             style="margin-left: 18px" />
+                        <asp:Button ID="ButtonSubirImagen" runat="server" Text="Subir Imagen" 
+                            onclick="ButtonSubirImagen_Click" />
+                       <asp:Label id="UploadStatusLabel" runat="server"></asp:Label>
                     
                     
                     </div>

@@ -7,6 +7,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Text.RegularExpressions;
 using EN;
+using System.Net.Mail;
+using System.Net;
 
 namespace AlquilerCochesWeb
 {
@@ -14,11 +16,13 @@ namespace AlquilerCochesWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-          
+            // Server.Transfer("EnviarMail.aspx");
+            LabelError.Visible = false;
+            LabelCorrecto.Visible = false;
         }
 
         protected void CustomValidatorNombre_ServerValidate(object source, ServerValidateEventArgs args)
-        {
+        { 
             string username = args.Value.ToLower();
 
             if (TTextBoxNombre.Text != "")
@@ -56,21 +60,57 @@ namespace AlquilerCochesWeb
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            if (Page.IsValid)
-            { Button1.Text = Page.IsValid.ToString();
-            TTextBoxNombre.Text = "";
-            TTextBoxApellidos.Text = "";
-            TTextBoxEmail.Text = "";
-            TTextArea.Value = "";
-
-            EN.ENCliente cli = new ENCliente();
-            DataSet dscli = new DataSet();
-            dscli = cli.ObtenerDatosClienteConDni("11111111A");
-
-            TTextBoxNombre.Text = dscli.Tables["Cliente"].Rows[0][1].ToString();
+            if (TTextBoxNombre.Text == "" || TTextBoxEmail.Text == "" || TTextBoxApellidos.Text == "" || TTextArea.Value == "")
+            {
+                LabelError.Visible = true;
+                LabelCorrecto.Visible = false;
             }
             else
-            { Button1.Text = "Incorrecto"; }
+            {
+                LabelError.Visible = false;
+                LabelCorrecto.Visible = true;
+                if (Page.IsValid)
+                {
+
+                    string listaCorreos = "dsarabia.m@gmail.com"; //donde ira el mensaje
+                    // string listaCorreos2 = "rentacarcontacto@gmail.com"; //donde ira el mensaje
+                    string correoEnvio = "rentacarcontacto@gmail.com";//esta es la cuenta que nos enviara el mensaje
+                    string contraseña = "123456=abc";
+
+
+                    MailMessage mail = new MailMessage();
+                    mail.From = new MailAddress(correoEnvio);
+                    mail.To.Add(listaCorreos);
+                    // mail.To.Add(listaCorreos2);
+                    mail.Subject = "Consulta de: " + TTextBoxEmail.Text.ToString();
+                    //mail.Body = Page.Request.Form["Nombre"].ToString();
+                    mail.Body = "Nombre y apellidos: " + TTextBoxNombre.Text.ToString() + " " + TTextBoxApellidos.Text.ToString()+ "\n\n"+ TTextArea.Value.ToString();
+                    SmtpClient server = new SmtpClient(); //servidor gmail
+                    server.Host = "smtp.gmail.com";
+                    server.Port = 25;
+                    server.EnableSsl = true;
+                    server.Credentials = new NetworkCredential(correoEnvio, contraseña);
+                    server.Send(mail);
+
+                    /* Button1.Text = Page.IsValid.ToString();*/
+                    TTextBoxNombre.Text = "";
+                    TTextBoxApellidos.Text = "";
+                    TTextBoxEmail.Text = "";
+                    TTextArea.Value = "";
+
+                }
+                else
+                { Button1.Text = "Incorrecto"; }
+            }
+
+           
+
+            
+        }
+
+        protected void TTextBoxNombre_TextChanged(object sender, EventArgs e)
+        {
+            LabelCorrecto.Visible = false;
         }
 
     }

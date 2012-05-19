@@ -15,6 +15,7 @@ namespace AlquilerCochesWeb
         private bool vengodeload = false;
         protected void Page_Load(object sender, EventArgs e)
 		{
+            FotoUsuario.ImageUrl = "/Imagenes/ImagenesPerfil/" + Session["Usuario"].ToString() + ".jpg";
             TTextBoxNombre.Text = Session["nombre"].ToString();
             TTextBoxApellidos.Text = Session["apellidos"].ToString();
             TTextBoxEmail.Text = Session["email"].ToString();
@@ -138,6 +139,54 @@ namespace AlquilerCochesWeb
            // cli.Pass
 
 
+        }
+
+        protected void ButtonSubirImagen_Click(object sender, EventArgs e)
+        {
+
+            string saveDir = @"/Imagenes/ImagenesPerfil/";
+
+            // Get the physical file system path for the currently
+            // executing application.
+            string appPath = Request.PhysicalApplicationPath;
+
+            if (FileUpload1.HasFile)
+            {
+                 int fileSize = FileUpload1.PostedFile.ContentLength;
+
+
+                 if (fileSize < 2100000)
+                 {
+                     string fileName = Server.HtmlEncode(FileUpload1.FileName);
+                     string extension = System.IO.Path.GetExtension(fileName);
+
+                     if (extension == ".jpg")
+                     {
+
+                         string savePath = appPath + saveDir +
+                         Server.HtmlEncode(Session["Usuario"].ToString() + ".jpg");
+
+
+                         FileUpload1.SaveAs(savePath);
+
+                         // Notify the user that the file was uploaded successfully.
+                         UploadStatusLabel.Text = "Su imagen ha sido subida correctamente";
+                     }
+                     else
+                     {
+                         UploadStatusLabel.Text = "Su imagen no se ha podido subir porque su extension no es .jpg";
+                     }
+                 }
+                 else
+                     UploadStatusLabel.Text = "Su imagen no se ha podido subir porq supera los 2 MB de tamaño maximo";
+                                         
+            }
+            else
+            {
+                // Notify the user that a file was not uploaded.
+                UploadStatusLabel.Text = "No ha especificado un directorio";
+            }
+            
         }
 
       
