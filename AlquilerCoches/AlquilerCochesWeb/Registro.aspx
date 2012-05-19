@@ -25,38 +25,20 @@
                   <p style="font-family: verdana; height: 521px; margin-left: 28px; width: 331px;">
                
                       
-                    <asp:Label ID="Label1" runat="server" Text="Label" Width="90" font-size="14px">Usuario</asp:Label>
-                       <asp:TextBox ID="TTextBoxNombre" runat="server" Width="178px"></asp:TextBox> <br />
-                     
-                     
-                     
-                     
-                     <!--  <asp:RequiredFieldValidator ID="UserReq" runat="server" ControlToValidate="TTextBoxNombre" 
-                          ErrorMessage="Por favor introduce un usuario!" ForeColor="Red"></asp:RequiredFieldValidator> 
-
-
-
-
-                          -->
-              <!--        <asp:CustomValidator ID="CustomValidator1" ControlToValidate="TTextBoxNombre" 
-                          OnServerValidate="ComprobarUsuario" runat="server" 
-                          ErrorMessage="El usuario ya existe!" ForeColor="Red"></asp:CustomValidator>  -->
-
-                            
-                      <asp:CustomValidator ID="CustomValidator3" runat="server" 
-                          ErrorMessage="Usuario ya introducido." 
-                          onservervalidate="CustomValidator3_ServerValidate" ForeColor="Red" Font-Size=13px></asp:CustomValidator><br />
-                      <asp:Label ID="Label14" runat="server" Text="DNI" Width="90" font-size="14px"></asp:Label>
-                      <asp:TextBox ID="TextBox5" runat="server" Width="173px"></asp:TextBox>
                       <br />
-                      <asp:CustomValidator ID="CustomValidator6" runat="server" 
-                          ErrorMessage="Error formato DNI." 
-                          onservervalidate="CustomValidator6_ServerValidate" ForeColor="Red" Font-Size=13px></asp:CustomValidator>
+                      <asp:Label ID="Label14" runat="server" Text="DNI" Width="90" font-size="15px" 
+                          Font-Underline=true style="font-weight: 700" ></asp:Label>
+                      <asp:TextBox ID="TextBoxDni" runat="server" Width="173px"></asp:TextBox>
+                          <br />
+                      <asp:CustomValidator ID="CustomValidator7" runat="server" 
+                          ErrorMessage="Usuario Repetido!!" 
+                          OnServerValidate="ComprobarDNI" Font-Size=13px 
+                          ForeColor="Red"></asp:CustomValidator>
                       <br />
-                      <asp:Label ID="Label13" runat="server" Text="Nombre" Width="90"></asp:Label>
-                      <asp:TextBox ID="TextBox4" runat="server" Width="175px"></asp:TextBox>
+                      <asp:Label ID="Label13" runat="server" Text="Nombre" Width="90" Font-Size=14px></asp:Label>
+                      <asp:TextBox ID="TextBoxNombre" runat="server" Width="175px"></asp:TextBox>
                       <br />
-                       <asp:RequiredFieldValidator ID="NombreReq" runat="server" ControlToValidate="TTextBoxNombre" 
+                       <asp:RequiredFieldValidator ID="NombreReq" runat="server" ControlToValidate="TextBoxNombre" 
                           ErrorMessage="Introduzca los apellidos." ForeColor="Red" Font-Size=13px></asp:RequiredFieldValidator><br /> 
 
 
@@ -68,15 +50,15 @@
 
 
                       <asp:Label ID="Label8" runat="server" Text="Label" Width="90" font-size="14px">Password(1)</asp:Label>
-                       <asp:TextBox ID="TextBox1" runat="server"  Width="178px"></asp:TextBox> <br /> 
-                      <asp:RequiredFieldValidator ID="ContrasenaReq" runat="server" ControlToValidate="TextBox1" 
+                       <asp:TextBox ID="TextBoxPass1" runat="server"  Width="178px"></asp:TextBox> <br /> 
+                      <asp:RequiredFieldValidator ID="ContrasenaReq" runat="server" ControlToValidate="TextBoxPass1" 
                           ErrorMessage="Introduzca una contraseña." ForeColor="Red" Font-Size=13px></asp:RequiredFieldValidator><br />
                   
                             
                     <asp:Label ID="Label9" runat="server" Text="Label" Width="90" font-size="14px">Password(2)</asp:Label>
-                       <asp:TextBox ID="TextBox2" runat="server"  Width="178px"></asp:TextBox> <br /> 
+                       <asp:TextBox ID="TextBoxPass2" runat="server"  Width="178px"></asp:TextBox> <br /> 
                       <asp:CompareValidator ID="CompareValidator4" runat="server" 
-                          ControlToCompare="TextBox2" ControlToValidate="TextBox1"
+                          ControlToCompare="TextBoxPass1" ControlToValidate="TextBoxPass2"
                           ErrorMessage="Contraseña errónea vuelva a introducirla." ForeColor="Red" Font-Size=13px></asp:CompareValidator>
                       <br /> 
                           
@@ -96,7 +78,7 @@
                         <br />
                
                     <asp:Label ID="Label5" runat="server" Text="Label" Width="90" font-size="14px">Dirección</asp:Label>
-                       <asp:TextBox ID="TTextBoxDireccion" runat="server" Height="17px" Width="226px"></asp:TextBox> 
+                       <asp:TextBox ID="TTextBoxDireccion" runat="server" Height="22px" Width="226px"></asp:TextBox> 
                        <asp:RequiredFieldValidator ID="DireccionReq" runat="server" ControlToValidate="TTextBoxDireccion" 
                           ErrorMessage="Introduzca la dirección." ForeColor="Red" Font-Size=13px ></asp:RequiredFieldValidator>
                        <br />
@@ -117,8 +99,8 @@
                   <asp:CustomValidator ID="CustomValidator5" runat="server" 
                           ErrorMessage="Introduzca el e-mail." Font-Size=13px ForeColor="Red" onservervalidate="CustomEmail_ServerValidate1"></asp:CustomValidator><br />
                        
-                      <asp:CheckBox ID="CheckBox1" runat="server" Text="Hombre" Font-Size=14px/>
-                      <asp:CheckBox ID="CheckBox2" runat="server" Text="Mujer" Font-Size=14px/>
+                      <asp:CheckBox ID="CheckBoxHombre" runat="server" Text="Hombre" Font-Size=14px/>
+                      <asp:CheckBox ID="CheckBoxMujer" runat="server" Text="Mujer" Font-Size=14px/>
                       <br />
                       <asp:CustomValidator ID="CustomSexo" runat="server" 
                           ErrorMessage="Seleccione el sexo" Font-Size=13px ForeColor="Red" onservervalidate="CustomSexo_ServerValidate1" ></asp:CustomValidator>
