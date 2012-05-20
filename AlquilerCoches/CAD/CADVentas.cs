@@ -175,5 +175,25 @@ namespace CAD
             }
         }
 
+        public DataSet ObtenerVehiculoCategoria(string cat)
+        {
+            DataSet dsVehiculo = new DataSet();
+
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                String consulta = "Select * from Ventas where "+ cat ;
+                SqlDataAdapter daVehiculos = new SqlDataAdapter(consulta, conexion);
+                daVehiculos.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daVehiculos.Fill(dsVehiculo, nombreTabla);
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+
+            return dsVehiculo;
+        }
+
     }
 }
