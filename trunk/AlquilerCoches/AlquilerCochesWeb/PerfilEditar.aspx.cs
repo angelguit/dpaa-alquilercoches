@@ -15,7 +15,9 @@ namespace AlquilerCochesWeb
         private DataSet numProvincia = new DataSet();
         private bool vengodeload = false;
         protected void Page_Load(object sender, EventArgs e)
-		{
+        {
+            LabelErrorCampos.Visible = false;
+
             if (!Page.IsPostBack)
             {
                 FotoUsuario.ImageUrl = "/Imagenes/ImagenesPerfil/" + Session["Usuario"].ToString() + ".jpg";
@@ -153,9 +155,17 @@ namespace AlquilerCochesWeb
 
 
             // Response.Redirect("Perfil.aspx");
-
-
-                cli.EditarCliente();
+                if (TTextBoxApellidos.Text == "" || TTextBoxNombre.Text == "" || TTextBoxDireccion.Text == "" || TTextBoxEmail.Text == "" || TTextBoxPass.Text == "" || TTextBoxPass2.Text == "" || TTextBoxTelefono.Text == ""
+                    || TDropDownListProvincia.Text =="" || TDropDownListCiudad.Text =="")
+                {
+                    LabelErrorCampos.Visible = true;
+                }
+                else
+                {
+                    LabelErrorCampos.Visible = false;
+                    cli.EditarCliente();
+                    Server.Transfer("Perfil.aspx");
+                }
 
            
         }

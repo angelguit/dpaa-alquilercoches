@@ -101,7 +101,7 @@
                               ForeColor="#CC0000"></asp:CompareValidator>
                        
                        <br /> <br />
-                       
+                       <asp:Label ID="LabelErrorCampos" style="color:Red" runat="server" Text="Error, rellene los campos correctamente"></asp:Label>
                        <asp:Button ID="ButtonGuardar"  CssClass="PerfilbotonUsuario" runat="server" 
                            Text="Guardar" onclick="Button1_Click" />
                        
