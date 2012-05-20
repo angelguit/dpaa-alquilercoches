@@ -98,7 +98,10 @@ namespace AlquilerCoches
                         TComboBoxCategoria.SelectedIndex = 2;
                     }
                     else
-                        TComboBoxCategoria.SelectedIndex = 3;
+                        if (ventas.Categoria == 4)
+                        {
+                            TComboBoxCategoria.SelectedIndex = 3;
+                        }
                 }
             }
         }
@@ -144,7 +147,10 @@ namespace AlquilerCoches
                     }
                     else
                     {
-                        ventas.Categoria = 4;
+                        if (TComboBoxCategoria.SelectedIndex == 3)
+                        {
+                            ventas.Categoria = 4;
+                        }
                     }
                 }
             }
