@@ -64,7 +64,7 @@ namespace AlquilerCochesWeb
             ventas.EditarVentas();
             ComprasMultiView.ActiveViewIndex = 0;
 
-            /*Session["MailSubject"] = "Consulta de: " + 
+            /*/Session["MailSubject"] = "Consulta de: " + 
             Session["MailBody"] = "Nombre y apellidos: " + TTextBoxNombre.Text.ToString() + " " + TTextBoxApellidos.Text.ToString() + "\n\n Consulta: \n" + TTextArea.Value.ToString();
             Session["MailUser"] = TTextBoxEmail.Text.ToString();
             Session["MailUserSubject"] = "Tu consulta ha sido enviada con éxito";
