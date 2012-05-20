@@ -216,7 +216,7 @@ namespace EN
                 venta.Tables["Ventas"].Rows[0][0] = matricula;
                 venta.Tables["Ventas"].Rows[0][1] = marca;
                 venta.Tables["Ventas"].Rows[0][2] = modelo;
-                venta.Tables["Ventas"].Rows[0][3] = km;
+                venta.Tables["Ventas"].Rows[0][3] = Int32.Parse(km);
                 venta.Tables["Ventas"].Rows[0][4] = garantia;
                 venta.Tables["Ventas"].Rows[0][5] = precioVenta;
                 venta.Tables["Ventas"].Rows[0][6] = reservado;
@@ -240,7 +240,7 @@ namespace EN
                 linea[0] = matricula;
                 linea[1] = marca;
                 linea[2] = modelo;
-                linea[3] = km;
+                linea[3] = Int32.Parse(km);
                 linea[4] = garantia;
                 linea[5] = precioVenta;
                 linea[6] = reservado;
