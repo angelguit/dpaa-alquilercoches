@@ -82,15 +82,15 @@
     <Content Include="Imagenes\Calendario.png" />
     <Content Include="Imagenes\fallback3.png" />
     <Content Include="Imagenes\gradient-dark.png" />
-    <Content Include="Imagenes\ImagenesCompra\CochesCompra\0058IIU.jpg" />
-    <Content Include="Imagenes\ImagenesCompra\CochesCompra\1105BCX.jpg" />
-    <Content Include="Imagenes\ImagenesCompra\CochesCompra\1122FFG.jpg" />
-    <Content Include="Imagenes\ImagenesCompra\CochesCompra\3600FFG.jpg" />
-    <Content Include="Imagenes\ImagenesCompra\CochesCompra\4366HJK.jpg" />
-    <Content Include="Imagenes\ImagenesCompra\CochesCompra\4567WWD.jpg" />
-    <Content Include="Imagenes\ImagenesCompra\CochesCompra\4571RTY.jpg" />
-    <Content Include="Imagenes\ImagenesCompra\CochesCompra\7890TTY.jpg" />
-    <Content Include="Imagenes\ImagenesCompra\CochesCompra\8811ABV.jpg" />
+    <Content Include="Imagenes\ImagenesCompra\CochesCompra\Familiares\0058IIU.jpg" />
+    <Content Include="Imagenes\ImagenesCompra\CochesCompra\Turismos\1105BCX.jpg" />
+    <Content Include="Imagenes\ImagenesCompra\CochesCompra\Especiales\1122FFG.jpg" />
+    <Content Include="Imagenes\ImagenesCompra\CochesCompra\Turismos\3600FFG.jpg" />
+    <Content Include="Imagenes\ImagenesCompra\CochesCompra\Familiares\4366HJK.jpg" />
+    <Content Include="Imagenes\ImagenesCompra\CochesCompra\Turismos\4567WWD.jpg" />
+    <Content Include="Imagenes\ImagenesCompra\CochesCompra\Familiares\4571RTY.jpg" />
+    <Content Include="Imagenes\ImagenesCompra\CochesCompra\Turismos\7890TTY.jpg" />
+    <Content Include="Imagenes\ImagenesCompra\CochesCompra\Familiares\8811ABV.jpg" />
     <Content Include="Imagenes\ImagenesPerfil\22222222B.jpg" />
     <Content Include="Imagenes\ImagenesPerfil\33333333C.jpg" />
     <Content Include="Imagenes\ImagenesPerfil\Desconocido.jpg" />
@@ -271,7 +271,9 @@
       <Name>EN</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Imagenes\ImagenesCompra\CochesCompra\Furgonetas\" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>
