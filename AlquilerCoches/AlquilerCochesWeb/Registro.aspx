@@ -56,7 +56,7 @@
                         <asp:TextBox ID="TTextBoxNombre" runat="server" Width="178px"></asp:TextBox>
                       <br />
                        <asp:RequiredFieldValidator ID="NombreReq" runat="server" ControlToValidate="TTextBoxNombre" 
-                          ErrorMessage="Introduzca los apellidos." ForeColor="Red" Font-Size=13px></asp:RequiredFieldValidator><br /> 
+                          ErrorMessage="Introduzca el nombre." ForeColor="Red" Font-Size=13px></asp:RequiredFieldValidator><br /> 
 
 
                                            <asp:Label ID="Label2" runat="server" Text="Label" Width="90" font-size="14px">Apellidos</asp:Label>
@@ -128,8 +128,7 @@
                     <asp:Button ID="Button1"  CssClass="PerfilbotonUsuario" runat="server" 
                           Text="Enviar" onclick="Button1_Click" />
                        
-
-                        <asp:Label ID="Label15" runat="server" Text="Label"></asp:Label>
+                       <br />
                        
 
                     </p>

@@ -17,6 +17,7 @@ namespace AlquilerCochesWeb
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            
 
         }
 
@@ -135,10 +136,12 @@ namespace AlquilerCochesWeb
 
                 en_cliente.AnyadirCliente();
 
+                RegistroOK registro = new RegistroOK();
 
-                Label15.Text = "asdasdasd";
+                Response.Redirect("RegistroOK.aspx");
 
             }
+           
         }
 
         protected void ComprobarUsuario(object source, ServerValidateEventArgs args)
