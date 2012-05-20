@@ -58,6 +58,10 @@ namespace AlquilerCochesWeb
         protected void ComprasListView_ItemCommand(object sender, ListViewCommandEventArgs e)
         {
             ventas.Matricula = e.CommandArgument.ToString();
+            ventas.ObtenerDatosVehiculos();
+            ventas.Reservado = 1;
+            ventas.EditarVentas();
+            ComprasMultiView.ActiveViewIndex = 0;
             //rellenaView4();
         }
     }
