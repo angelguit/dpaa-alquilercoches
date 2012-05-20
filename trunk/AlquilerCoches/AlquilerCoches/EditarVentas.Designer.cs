@@ -37,6 +37,8 @@
             this.TLabelModelos = new System.Windows.Forms.Label();
             this.TLabelMarcas = new System.Windows.Forms.Label();
             this.TGroupBoxDatosVehiculo = new System.Windows.Forms.GroupBox();
+            this.TCheckBoxReservado = new System.Windows.Forms.CheckBox();
+            this.TLabelReservado = new System.Windows.Forms.Label();
             this.TButtonBorrar = new System.Windows.Forms.Button();
             this.TLabelObligatorio = new System.Windows.Forms.Label();
             this.TTextBoxMeses = new System.Windows.Forms.TextBox();
@@ -57,8 +59,8 @@
             this.TLabelMatricula = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.TLabelTitulo = new System.Windows.Forms.Label();
-            this.TLabelReservado = new System.Windows.Forms.Label();
-            this.TCheckBoxReservado = new System.Windows.Forms.CheckBox();
+            this.TLabelCategoria = new System.Windows.Forms.Label();
+            this.TComboBoxCategoria = new System.Windows.Forms.ComboBox();
             this.TGroupBoxDatosVehiculo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -68,7 +70,7 @@
             // 
             this.TButtonAtras.Image = global::AlquilerCoches.Properties.Resources.Close_icon;
             this.TButtonAtras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.TButtonAtras.Location = new System.Drawing.Point(21, 454);
+            this.TButtonAtras.Location = new System.Drawing.Point(21, 475);
             this.TButtonAtras.Name = "TButtonAtras";
             this.TButtonAtras.Size = new System.Drawing.Size(75, 32);
             this.TButtonAtras.TabIndex = 10;
@@ -140,6 +142,8 @@
             this.TGroupBoxDatosVehiculo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.TGroupBoxDatosVehiculo.BackColor = System.Drawing.Color.Transparent;
+            this.TGroupBoxDatosVehiculo.Controls.Add(this.TComboBoxCategoria);
+            this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelCategoria);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TCheckBoxReservado);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelReservado);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TButtonBorrar);
@@ -162,17 +166,36 @@
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelMatricula);
             this.TGroupBoxDatosVehiculo.Location = new System.Drawing.Point(21, 207);
             this.TGroupBoxDatosVehiculo.Name = "TGroupBoxDatosVehiculo";
-            this.TGroupBoxDatosVehiculo.Size = new System.Drawing.Size(559, 241);
+            this.TGroupBoxDatosVehiculo.Size = new System.Drawing.Size(546, 262);
             this.TGroupBoxDatosVehiculo.TabIndex = 51;
             this.TGroupBoxDatosVehiculo.TabStop = false;
             this.TGroupBoxDatosVehiculo.Text = "DatosVehiculo";
             this.TGroupBoxDatosVehiculo.Enter += new System.EventHandler(this.TGroupBoxDatosVehiculo_Enter);
             // 
+            // TCheckBoxReservado
+            // 
+            this.TCheckBoxReservado.AutoSize = true;
+            this.TCheckBoxReservado.Location = new System.Drawing.Point(95, 183);
+            this.TCheckBoxReservado.Name = "TCheckBoxReservado";
+            this.TCheckBoxReservado.Size = new System.Drawing.Size(56, 17);
+            this.TCheckBoxReservado.TabIndex = 51;
+            this.TCheckBoxReservado.Text = "Sí/No";
+            this.TCheckBoxReservado.UseVisualStyleBackColor = true;
+            // 
+            // TLabelReservado
+            // 
+            this.TLabelReservado.AutoSize = true;
+            this.TLabelReservado.Location = new System.Drawing.Point(30, 187);
+            this.TLabelReservado.Name = "TLabelReservado";
+            this.TLabelReservado.Size = new System.Drawing.Size(59, 13);
+            this.TLabelReservado.TabIndex = 50;
+            this.TLabelReservado.Text = "Reservado";
+            // 
             // TButtonBorrar
             // 
             this.TButtonBorrar.Image = global::AlquilerCoches.Properties.Resources.Delete_icon;
             this.TButtonBorrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.TButtonBorrar.Location = new System.Drawing.Point(448, 187);
+            this.TButtonBorrar.Location = new System.Drawing.Point(465, 204);
             this.TButtonBorrar.Name = "TButtonBorrar";
             this.TButtonBorrar.Size = new System.Drawing.Size(72, 33);
             this.TButtonBorrar.TabIndex = 9;
@@ -184,7 +207,7 @@
             // TLabelObligatorio
             // 
             this.TLabelObligatorio.AutoSize = true;
-            this.TLabelObligatorio.Location = new System.Drawing.Point(6, 187);
+            this.TLabelObligatorio.Location = new System.Drawing.Point(6, 240);
             this.TLabelObligatorio.Name = "TLabelObligatorio";
             this.TLabelObligatorio.Size = new System.Drawing.Size(217, 13);
             this.TLabelObligatorio.TabIndex = 49;
@@ -216,7 +239,7 @@
             // 
             this.TButtonCancelar.Image = global::AlquilerCoches.Properties.Resources.Close_icon;
             this.TButtonCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.TButtonCancelar.Location = new System.Drawing.Point(324, 187);
+            this.TButtonCancelar.Location = new System.Drawing.Point(357, 204);
             this.TButtonCancelar.Name = "TButtonCancelar";
             this.TButtonCancelar.Size = new System.Drawing.Size(86, 33);
             this.TButtonCancelar.TabIndex = 8;
@@ -229,7 +252,7 @@
             // 
             this.TButtonAceptar.Image = global::AlquilerCoches.Properties.Resources.Add_icon;
             this.TButtonAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.TButtonAceptar.Location = new System.Drawing.Point(232, 187);
+            this.TButtonAceptar.Location = new System.Drawing.Point(265, 204);
             this.TButtonAceptar.Name = "TButtonAceptar";
             this.TButtonAceptar.Size = new System.Drawing.Size(86, 33);
             this.TButtonAceptar.TabIndex = 7;
@@ -319,9 +342,9 @@
             // 
             this.pictureBox1.BackgroundImage = global::AlquilerCoches.Properties.Resources.portada1;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(249, 22);
+            this.pictureBox1.Location = new System.Drawing.Point(274, 19);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(204, 155);
+            this.pictureBox1.Size = new System.Drawing.Size(228, 179);
             this.pictureBox1.TabIndex = 31;
             this.pictureBox1.TabStop = false;
             // 
@@ -360,24 +383,27 @@
             this.TLabelTitulo.TabIndex = 59;
             this.TLabelTitulo.Text = "Ver y Editar Ventas";
             // 
-            // TLabelReservado
+            // TLabelCategoria
             // 
-            this.TLabelReservado.AutoSize = true;
-            this.TLabelReservado.Location = new System.Drawing.Point(473, 29);
-            this.TLabelReservado.Name = "TLabelReservado";
-            this.TLabelReservado.Size = new System.Drawing.Size(59, 13);
-            this.TLabelReservado.TabIndex = 50;
-            this.TLabelReservado.Text = "Reservado";
+            this.TLabelCategoria.AutoSize = true;
+            this.TLabelCategoria.Location = new System.Drawing.Point(37, 207);
+            this.TLabelCategoria.Name = "TLabelCategoria";
+            this.TLabelCategoria.Size = new System.Drawing.Size(52, 13);
+            this.TLabelCategoria.TabIndex = 52;
+            this.TLabelCategoria.Text = "Categoria";
             // 
-            // TCheckBoxReservado
+            // TComboBoxCategoria
             // 
-            this.TCheckBoxReservado.AutoSize = true;
-            this.TCheckBoxReservado.Location = new System.Drawing.Point(476, 51);
-            this.TCheckBoxReservado.Name = "TCheckBoxReservado";
-            this.TCheckBoxReservado.Size = new System.Drawing.Size(56, 17);
-            this.TCheckBoxReservado.TabIndex = 51;
-            this.TCheckBoxReservado.Text = "Sí/No";
-            this.TCheckBoxReservado.UseVisualStyleBackColor = true;
+            this.TComboBoxCategoria.FormattingEnabled = true;
+            this.TComboBoxCategoria.Items.AddRange(new object[] {
+            "Turismos",
+            "Familiares",
+            "Furgonetas",
+            "Especiales"});
+            this.TComboBoxCategoria.Location = new System.Drawing.Point(95, 204);
+            this.TComboBoxCategoria.Name = "TComboBoxCategoria";
+            this.TComboBoxCategoria.Size = new System.Drawing.Size(148, 21);
+            this.TComboBoxCategoria.TabIndex = 53;
             // 
             // EditarVentas
             // 
@@ -443,5 +469,7 @@
         private System.Windows.Forms.Label TLabelTitulo;
         private System.Windows.Forms.CheckBox TCheckBoxReservado;
         private System.Windows.Forms.Label TLabelReservado;
+        private System.Windows.Forms.ComboBox TComboBoxCategoria;
+        private System.Windows.Forms.Label TLabelCategoria;
     }
 }
