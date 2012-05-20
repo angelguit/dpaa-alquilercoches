@@ -63,7 +63,7 @@
             
           </div>		
           <div id="PerfilBuscadorFactura">
-           <p style="text-align:center;background-color:#e6e6e6">Imprima una factura
+           <p style="text-align:center;background-color:#e6e6e6">Imprima o busque por fechas una reserva
            <p>Imprima una copia de una factura de un alquiler realizado. 
            Complete los detalles siguientes para encontrar los alquileres realizados</p>
 
