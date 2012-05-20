@@ -4,15 +4,22 @@
     background-color: Yellow;
     height: 10%;*/
 }
-#ComprasMenu
+
+#menuContainer
 {
-    border: 2px solid black; 
-    height: 10%;  
+    float:right;
+    width: 90%;
 }
+
 #ComprasCuerpoTitulo
 {
-    border: 2px solid grey;
-    -moz-border-radius: 10px;
+    border: 1px solid grey; 
+    height: 15.4cm;
+    width: 21.15cm;
+    float:left;
+    margin-left: 2px;
+    margin-top: 2px;
+    -moz-border-radius: 10px; /*radio de los bordes*/
     -webkit-border-radius: 10px;
 }
 
@@ -40,7 +47,8 @@
 
 #aspectobotoneslistview
 {
-     border-top: 1px solid grey;   
+     border-top: 1px solid grey;
+     text-align:center;   
 }
 
 #layout
