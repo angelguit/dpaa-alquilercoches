@@ -41,6 +41,7 @@ namespace AlquilerCoches
             TButtonBorrar.Enabled = false;
             TTextBoxMatricula.Enabled = false;
             TCheckBoxReservado.Checked = false;
+            TComboBoxCategoria.SelectedIndex = -1;
         }
 
         private void rellenaMarcas()
@@ -79,6 +80,27 @@ namespace AlquilerCoches
             {
                 TCheckBoxReservado.Checked = false;
             }
+
+            if (ventas.Categoria == 1)
+            {
+                TComboBoxCategoria.SelectedIndex = 0;
+            }
+            else
+            {
+                if (ventas.Categoria == 2)
+                {
+                    TComboBoxCategoria.SelectedIndex = 1;
+                }
+                else
+                {
+                    if (ventas.Categoria == 3)
+                    {
+                        TComboBoxCategoria.SelectedIndex = 2;
+                    }
+                    else
+                        TComboBoxCategoria.SelectedIndex = 3;
+                }
+            }
         }
 
         void guardaCampos()
@@ -103,6 +125,28 @@ namespace AlquilerCoches
             else
             {
                 ventas.Reservado = 0;
+            }
+            if (TComboBoxCategoria.SelectedIndex == 0)
+            {
+                ventas.Categoria = 1;
+            }
+            else
+            {
+                if (TComboBoxCategoria.SelectedIndex == 1)
+                {
+                    ventas.Categoria = 2;
+                }
+                else
+                {
+                    if (TComboBoxCategoria.SelectedIndex == 2)
+                    {
+                        ventas.Categoria = 3;
+                    }
+                    else
+                    {
+                        ventas.Categoria = 4;
+                    }
+                }
             }
         }
 
@@ -258,6 +302,7 @@ namespace AlquilerCoches
                 TTextBoxKm.Text = "";
                 TCheckBoxGarantia.Checked = false;
                 TCheckBoxReservado.Checked = false;
+                TComboBoxCategoria.SelectedIndex = -1;
                 TTextBoxMeses.Text = "";
                 TTextBoxPrecioVenta.Text = "";
                 errorProvider1.Clear();
@@ -283,6 +328,7 @@ namespace AlquilerCoches
                 TTextBoxKm.Text = "";
                 TCheckBoxReservado.Checked = false;
                 TCheckBoxGarantia.Checked = false;
+                TComboBoxCategoria.SelectedIndex = -1;
                 TTextBoxMeses.Text = "";
                 TTextBoxPrecioVenta.Text = "";
                 errorProvider1.Clear();
