@@ -255,5 +255,20 @@ namespace EN
 
         }
 
+        public DataSet ObtenerCochesCategoria(string cat)
+        {
+            DataSet resultado = new DataSet();
+            try
+            {
+                resultado = cadVentas.ObtenerVehiculoCategoria(cat);
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+
+            return resultado;
+        }
+
     }
 }

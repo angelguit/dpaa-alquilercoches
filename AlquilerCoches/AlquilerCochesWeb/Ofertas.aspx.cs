@@ -21,7 +21,7 @@ namespace AlquilerCochesWeb
     public partial class Ofertas : System.Web.UI.Page
     {
 
-        private EN.ENVehiculo vehiculo = new EN.ENVehiculo();
+        private EN.ENVentas vehiculo = new EN.ENVentas();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["Oferta"] != null)
@@ -42,15 +42,15 @@ namespace AlquilerCochesWeb
             switch (MultiView1.ActiveViewIndex)
             {
                 case 0:
-                    VehiculosListView.DataSource = vehiculo.ObtenerCochesCategoria("A");
+                    VehiculosListView.DataSource = vehiculo.ObtenerCochesCategoria("KM > 5000");
                     VehiculosListView.DataBind();
                     break;
                 case 1:
-                    ListView1.DataSource = vehiculo.ObtenerCochesCategoria("B");
+                    ListView1.DataSource = vehiculo.ObtenerCochesCategoria("KM > 3000 and KM < 5000");
                     ListView1.DataBind();
                     break;
                 case 2:
-                    ListView2.DataSource = vehiculo.ObtenerCochesCategoria("C");
+                    ListView2.DataSource = vehiculo.ObtenerCochesCategoria("KM < 3000 and KM > 1000");
                     ListView2.DataBind();
                     break;
                 case 3:
@@ -68,16 +68,16 @@ namespace AlquilerCochesWeb
         {
             switch (e.Item.Value)
             {
-                case "Clase A":
+                case "Clase 50%":
                     MultiView1.ActiveViewIndex = 0;
                     break;
-                case "Clase B":
+                case "Clase 20%":
                     MultiView1.ActiveViewIndex = 1;
                     break;
-                case "Clase C":
+                case "Clase 10%":
                     MultiView1.ActiveViewIndex = 2;
                     break;
-                case "Clase D":
+                case "Clase 5%":
                     MultiView1.ActiveViewIndex = 3;
                     break;
 
@@ -96,8 +96,6 @@ namespace AlquilerCochesWeb
         {
             vehiculo.Matricula=e.CommandArgument.ToString();
             rellenaView4();
-            //
-            /*Server.Transfer("Reservas.aspx");*/
         }
 
         protected void rellenaView4()
@@ -106,7 +104,7 @@ namespace AlquilerCochesWeb
             MultiView1.ActiveViewIndex = 4;
             Label1.Text = vehiculo.Marca + " " + vehiculo.Modelo;
             ComprasLabelDescripcion.Text = "Matricula:  "+ vehiculo.Matricula;
-            ComprasLabelPrecio.Text = "Precio Compra: " + vehiculo.PrecioCompra;
+            ComprasLabelPrecio.Text = "Precio Compra: " + vehiculo.PrecioVenta;
             ComprasLabelGarantia.Text = "Garantia: " + vehiculo.Garantia;
             Image2.ImageUrl = @"/Imagenes/ImagenesReserva/fotosCoches/" + vehiculo.Matricula + ".jpg";
         }

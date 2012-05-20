@@ -16,10 +16,10 @@
                     <StaticSelectedStyle BackColor="#5D7B9D" />
                     <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
                     <Items>
-                        <asp:MenuItem Text="Clase A"></asp:MenuItem>
-                        <asp:MenuItem Text="Clase B"></asp:MenuItem>
-                        <asp:MenuItem Text="Clase C"></asp:MenuItem>
-                        <asp:MenuItem Text="Clase D"></asp:MenuItem>
+                        <asp:MenuItem Text="Clase 50%"></asp:MenuItem>
+                        <asp:MenuItem Text="Clase 20%"></asp:MenuItem>
+                        <asp:MenuItem Text="Clase 10%"></asp:MenuItem>
+                        <asp:MenuItem Text="Clase 5%"></asp:MenuItem>
                     </Items>
                 </asp:Menu>
             </div>
