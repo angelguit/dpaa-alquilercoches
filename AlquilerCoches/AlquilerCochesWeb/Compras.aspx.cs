@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Text.RegularExpressions;
 
 namespace AlquilerCochesWeb
 {
@@ -62,7 +63,26 @@ namespace AlquilerCochesWeb
             ventas.Reservado = 1;
             ventas.EditarVentas();
             ComprasMultiView.ActiveViewIndex = 0;
-            //rellenaView4();
+
+            /*Session["MailSubject"] = "Consulta de: " + 
+            Session["MailBody"] = "Nombre y apellidos: " + TTextBoxNombre.Text.ToString() + " " + TTextBoxApellidos.Text.ToString() + "\n\n Consulta: \n" + TTextArea.Value.ToString();
+            Session["MailUser"] = TTextBoxEmail.Text.ToString();
+            Session["MailUserSubject"] = "Tu consulta ha sido enviada con éxito";
+            Session["MailUserBody"] = "Esta ha sido tu consulta: \n Nombre y apellidos: " + TTextBoxNombre.Text.ToString() + " " + TTextBoxApellidos.Text.ToString() + "\n\n Consulta: \n" + TTextArea.Value.ToString();
+            Session["MailUrl"] = HttpContext.Current.Request.Url.ToString();
+            Response.Redirect("EnviarMail.aspx");*/
+
+        }
+
+        protected void CustomValidatorEmail_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            string username = args.Value.ToLower();
+
+            if (!Regex.Match(username, @"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$").Success)
+            {
+                args.IsValid = false;
+            }
+            else { args.IsValid = true; }
         }
     }
 }
