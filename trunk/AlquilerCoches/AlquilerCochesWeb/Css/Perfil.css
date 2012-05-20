@@ -70,7 +70,7 @@
 .PerfilbotonUsuario
 {
     float:right;
-    margin-top:1.8cm;
+    margin-top:1.4cm;
     margin-right:0.8cm;
     cursor: pointer;
     -moz-border-radius: 10px;
@@ -82,7 +82,7 @@
 }
 .PerfilbotonReserva
 {
-    margin-left:12cm;
+    margin-left:10cm;
     margin-top: 4cm;
     cursor: pointer;
     -moz-border-radius: 10px;
@@ -185,7 +185,7 @@
 {
     height: 1cm;
     width: 15cm;
-    margin-top:3cm;
+    margin-top:4cm;
     position:absolute;
     margin-left:4cm;
     

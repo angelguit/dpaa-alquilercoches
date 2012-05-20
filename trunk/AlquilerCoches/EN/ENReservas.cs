@@ -125,6 +125,18 @@ namespace EN
                 throw (ex);
             }
         }
+
+        public DataSet ObtenerTodasReservasPorDni(string dni)
+        {
+            try
+            {
+                return cadReservas.ObtenerTodasReservasPorDni(dni);
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+        }
         public DataSet RellenarCategoria()
         {
             DataSet resultado = new DataSet();
