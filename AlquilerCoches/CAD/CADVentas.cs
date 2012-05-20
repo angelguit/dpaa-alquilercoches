@@ -202,7 +202,7 @@ namespace CAD
             try
             {
                 SqlConnection conexion = new SqlConnection(cadenaConexion);
-                String consulta = "Select * from Ventas where Categoria=" + cat;
+                String consulta = "Select * from Ventas where Categoria=" + cat + " and Reservado=" + 0;
                 SqlDataAdapter daVentas = new SqlDataAdapter(consulta, conexion);
                 daVentas.MissingSchemaAction = MissingSchemaAction.AddWithKey;
                 daVentas.Fill(dsVentas, nombreTabla);
