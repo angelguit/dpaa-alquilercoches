@@ -33,13 +33,18 @@
             <TextBoxStyle CssClass="IndexTextBox" />
             <TitleTextStyle CssClass="IndexTitle" />
         </asp:Login>
-        <asp:ImageButton ID="IndexLogoUsuario" runat="server" Width= "160px" 
-            Height="180px" onclick="IndexLogoUsuario_Click" /> <br />
+        <asp:ImageButton ID="IndexLogoUsuario" runat="server" Width= "120px" 
+            Height="140px" onclick="IndexLogoUsuario_Click" /> <br />
         <asp:PlaceHolder ID="IndexReservaRapida" runat="server">
             <span>Reserva Rapida</span><br />
-            <asp:RadioButton ID="TRadioButtonUltimaReserva" runat="server" Text="Ultima Reserva" GroupName="Radio" /><br />
-            <asp:RadioButton ID="TRadioButtonReservaHabitual" runat="server" Text="Reserva Habitual" GroupName="Radio" /><br />
-            <asp:Label ID="LabelError" runat="server" Text="Seleccione un tipo de reserva."></asp:Label>
+            <!--<asp:RadioButton ID="TRadioButtonUltimaReserva" runat="server" Text="Ultima Reserva" GroupName="Radio" /><br />
+            <asp:RadioButton ID="TRadioButtonReservaHabitual" runat="server" Text="Reserva Habitual" GroupName="Radio" /><br />-->
+            <asp:RadioButtonList ID="TRadioButtonList" runat="server" CssClass="RadioButtons">
+                <asp:ListItem>Último Vehículo</asp:ListItem>
+                <asp:ListItem>Vehículo habitual</asp:ListItem>
+            </asp:RadioButtonList>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidatorReservaRapida" runat="server" ErrorMessage="Seleccione vehículo." ControlToValidate="TRadioButtonList" CssClass="AspectoError"></asp:RequiredFieldValidator>
+            <br />
             <asp:Button ID="TButtonReservar" runat="server" Text="Reservar" 
                 onclick="TButtonReservar_Click" />
         </asp:PlaceHolder>
@@ -63,18 +68,22 @@
     <div id="IndexReserva">
         <h1><span></span>Realizar Reserva</h1>
 
-        <asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="True"  ></asp:ScriptManager>
+        <asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="True"  >
+            <Services>
+                <asp:ServiceReference Path="~/ServicioWeb.asmx" />
+            </Services>
+        </asp:ScriptManager>
 
         <ajaxToolkit:CalendarExtender runat="server"
             TargetControlID="IndexTextFechaInicio"
             CssClass="IndexFechaInicio"
-            Format="MMMM d, yyyy"
+            Format="dd/MM/yyyy"
             PopupButtonID="CalendarioInicio" />
 
         <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server"
             TargetControlID="IndexTextFechaFin"
             CssClass="IndexFechaFin"
-            Format="MMMM d, yyyy"
+            Format="dd/MM/yyyy"
             PopupButtonID="CalendarioFin" />
 
         <h2>Selecciona las fechas de tu reserva</h2>
@@ -105,7 +114,7 @@
                     Enabled="true"
                     CssClass="AspectoError"></asp:CompareValidator>
         <asp:CompareValidator ID="CompareValidatorFechas" runat="server"
-                    ErrorMessage="Error, revise las fechas"
+                    ErrorMessage="Fecha fin inferior a la de inicio"
                     ControlToValidate="IndexTextFechaFin"
                     ControlToCompare="IndexTextFechaInicio"
                     Operator="GreaterThanEqual"
@@ -114,7 +123,7 @@
                     Enabled="true"
                     CssClass="AspectoError"></asp:CompareValidator>
         <br />
-        <asp:Button ID="IndexBotonReserva" runat="server" Height="44px" Text="Reservar" 
+        <asp:Button ID="IndexBotonReserva2" runat="server" Height="44px" Text="Reservar" 
             Width="85px" onclick="IndexBotonReserva_Click" />
         
     </div>

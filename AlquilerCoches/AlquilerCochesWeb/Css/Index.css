@@ -113,6 +113,7 @@ body
 {
 	font-family: Verdana, Geneva, sans-serif !important;
 	font-size: 6pt !important;
+	text-align: center !important;
 }
 
 #IndexRegistro
@@ -294,4 +295,10 @@ body
 .AspectoError
 {
     color:Red;
+    font-size: xx-small;
+}
+
+#TRadioButtonList
+{
+	text-align: center !important;
 }

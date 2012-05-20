@@ -26,6 +26,7 @@ namespace AlquilerCochesWeb
         {
             if (Session["Oferta"] != null)
             {
+                
                 vehiculo.Matricula = Session["Oferta"].ToString();
                 MultiView1.ActiveViewIndex = 4;
             }
