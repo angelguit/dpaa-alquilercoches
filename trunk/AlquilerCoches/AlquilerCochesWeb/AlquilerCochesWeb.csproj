@@ -69,6 +69,7 @@
     <Content Include="Css\Compras.css" />
     <Content Include="Css\ImpresionReserva.css" />
     <Content Include="Css\Index.css" />
+    <Content Include="Css\jquery.mobile.structure-1.1.0.min.css" />
     <Content Include="Css\jquery.simplyscroll.css" />
     <Content Include="Css\Ofertas.css" />
     <Content Include="Css\Perfil.css" />
@@ -126,12 +127,14 @@
     <Content Include="Imagenes\factura.jpg" />
     <Content Include="Index.aspx" />
     <Content Include="Javascript\jquery.min.js" />
+    <Content Include="Javascript\jquery.mobile-1.1.0.min.js" />
     <Content Include="Javascript\jquery.simplyscroll.js" />
     <Content Include="Javascript\Js.js" />
     <Content Include="Javascript\modernizr.custom.41769.js" />
     <Content Include="Ofertas.aspx" />
     <Content Include="Perfil.aspx" />
     <Content Include="PerfilEditar.aspx" />
+    <Content Include="RACMobile.aspx" />
     <Content Include="Registro.aspx" />
     <Content Include="ReservaNoRegistrado.aspx" />
     <Content Include="Reservas.aspx" />
@@ -201,6 +204,13 @@
       <DependentUpon>PerfilEditar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RACMobile.aspx.cs">
+      <DependentUpon>RACMobile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RACMobile.aspx.designer.cs">
+      <DependentUpon>RACMobile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Registro.aspx.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

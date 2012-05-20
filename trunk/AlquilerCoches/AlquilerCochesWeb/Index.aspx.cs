@@ -17,6 +17,7 @@ namespace AlquilerCochesWeb
         protected void Page_Load(object sender, EventArgs e)
         {
             StringBuilder cstext1 = new StringBuilder();
+            Posterior.ValueToCompare = System.DateTime.Today.ToString();
             RellenarOfertas();
             if (Session["Usuario"] != null)
             {

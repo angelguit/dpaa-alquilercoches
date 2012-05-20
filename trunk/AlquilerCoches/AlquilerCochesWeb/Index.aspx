@@ -87,6 +87,7 @@
             id="CalendarioInicio" src="../Imagenes/Calendario.png" 
             onclick="javascript:MostrarCalendario()" alt="Click para mostrar calendario" 
             style="border-width:0px;" />
+        
         hasta:
         <asp:TextBox ID="IndexTextFechaFin" runat="server" Height="21px" Width="82px"></asp:TextBox>
 
@@ -95,10 +96,27 @@
             onclick="javascript:MostrarCalendario()" alt="Click para mostrar calendario" 
             style="border-width:0px;" /><br />
         <br />
+        <asp:CompareValidator ID="Posterior" runat="server"
+                    ErrorMessage="Fecha Inicio menor que fecha actual"
+                    ControlToValidate="IndexTextFechaInicio"
+                    Operator="GreaterThanEqual"
+                    Type="String"
+                    EnableViewState="false"
+                    Enabled="true"
+                    CssClass="AspectoError"></asp:CompareValidator>
+        <asp:CompareValidator ID="CompareValidatorFechas" runat="server"
+                    ErrorMessage="Error, revise las fechas"
+                    ControlToValidate="IndexTextFechaFin"
+                    ControlToCompare="IndexTextFechaInicio"
+                    Operator="GreaterThanEqual"
+                    Type="Date"
+                    EnableViewState="false"
+                    Enabled="true"
+                    CssClass="AspectoError"></asp:CompareValidator>
         <br />
         <asp:Button ID="IndexBotonReserva" runat="server" Height="44px" Text="Reservar" 
             Width="85px" onclick="IndexBotonReserva_Click" />
-
+        
     </div>
 </asp:Content>
 
