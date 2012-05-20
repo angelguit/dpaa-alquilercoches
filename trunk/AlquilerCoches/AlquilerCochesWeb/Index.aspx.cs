@@ -17,7 +17,7 @@ namespace AlquilerCochesWeb
         protected void Page_Load(object sender, EventArgs e)
         {
             StringBuilder cstext1 = new StringBuilder();
-            Posterior.ValueToCompare = System.DateTime.Today.ToString();
+            Posterior.ValueToCompare = System.DateTime.Today.AddDays(-1).ToString();
             RellenarOfertas();
             if (Session["Usuario"] != null)
             {
@@ -36,7 +36,6 @@ namespace AlquilerCochesWeb
                 TLabelBienvenida.Visible = true;
                 IndexLogoUsuario.ImageUrl = "Imagenes/ImagenesPerfil/" + Session["Usuario"].ToString() + ".jpg";
                 IndexLogoUsuario.Visible = true;
-                LabelError.Visible = false;
                 if (enCli.HaReservado())
                 {
                     IndexReservaRapida.Visible = true;
@@ -53,9 +52,23 @@ namespace AlquilerCochesWeb
 
         protected void IndexBotonReserva_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Reservas.aspx");
+            if (RequiredFieldValidatorReservaRapida.IsValid)
+            {
+                Response.Redirect("Reservas.aspx");
+            }
         }
 
+        protected void IndexBotonReserva2_Click(object sender, EventArgs e)
+        {
+            if (Posterior.IsValid && CompareValidatorFechas.IsValid)
+            {
+                Session["FechaInicioIndex"] = IndexTextFechaInicio.Text.ToString();
+                Session["FechaFinIndex"] = IndexTextFechaFin.Text.ToString();
+                Response.Redirect("Reservas.aspx");
+            }
+        }
+
+ 
         private void RellenarOfertas()
         {
             EN.ENVentas enVe = new EN.ENVentas();
@@ -64,30 +77,42 @@ namespace AlquilerCochesWeb
             ArrayList lista = new ArrayList();
             StringBuilder cstext1 = new StringBuilder();
             StringBuilder cstext2 = new StringBuilder();
-
+            
             if (ds.Tables["Ventas"].Rows.Count > 0)
             {
                 cstext1.Append("<script type=\"text/javascript\"> var ofertas = document.getElementById(\"IndexBoxOfertas\");");
                 cstext1.Append("var ul = document.createElement(\"ul\");");
                 cstext1.Append("ul.id = \"scroller\";");
                 cstext1.Append("ofertas.appendChild(ul);");
+                string aux = "";
                 
                 for (int i = 0; i < ds.Tables["Ventas"].Rows.Count; i++)
                 {
+                    switch(Int32.Parse(ds.Tables["Ventas"].Rows[i][7].ToString()))
+                    {
+                        case 1: aux = "Turismos/";
+                            break;
+                        case 2: aux = "Familiares/";
+                            break;
+                        case 3: aux = "Furgonetas/";
+                            break;
+                        case 4: aux = "Especiales/";
+                            break;
+                    }
                     cstext1.Append("var img = document.createElement(\"img\");");
                     cstext1.Append("img.title = \"" + ds.Tables["Ventas"].Rows[i][1].ToString() + " " + ds.Tables["Ventas"].Rows[i][2].ToString() + " KM: " + ds.Tables["Ventas"].Rows[i][3].ToString() + " PVP: " + ds.Tables["Ventas"].Rows[i][5].ToString() + "€\";");
                     cstext1.Append("img.alt = \"" + ds.Tables["Ventas"].Rows[i][2].ToString() + "\";");
-                    cstext1.Append("img.src = \"Imagenes/ImagenesCompra/CochesCompra/" + ds.Tables["Ventas"].Rows[i][0].ToString() + ".jpg\";");
+                    cstext1.Append("img.src = \"Imagenes/ImagenesCompra/CochesCompra/" + aux + ds.Tables["Ventas"].Rows[i][0].ToString() + ".jpg\";");
                     cstext1.Append("img.setAttribute('width','200');");
                     cstext1.Append("img.setAttribute('height','200');");
                     cstext1.Append("var a = document.createElement(\"a\");");
                     cstext1.Append("a.href = \"Ofertas.aspx\";");
+                    cstext1.Append("a.setAttribute('onclick','AlquilerCochesWeb.ServicioWeb.RellenarOferta(\"" + ds.Tables["Ventas"].Rows[i][0].ToString() + "\")');");
                     cstext1.Append("a.appendChild(img);");
                     cstext1.Append("var li = document.createElement(\"li\");");
                     cstext1.Append("li.appendChild(a);");
                     cstext1.Append("ul.appendChild(li);");
                     
-                    lista.Add("<a href=\"Ofertas.aspx\"><img title=\"" + ds.Tables["Ventas"].Rows[i][1].ToString() + " " + ds.Tables["Ventas"].Rows[i][2].ToString() + "\" alt=\"" + ds.Tables["Ventas"].Rows[i][2].ToString() + "\" src=\"Imagenes/ImagenesCompra/CochesCompra/" + ds.Tables["Ventas"].Rows[i][0].ToString() + ".jpg\" width=\"200\" height=\"200\"></a>");
                 }
                 cstext1.Append("</");
                 cstext1.Append("script>");

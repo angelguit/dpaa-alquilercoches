@@ -139,6 +139,7 @@
     <Content Include="ReservaNoRegistrado.aspx" />
     <Content Include="Reservas.aspx" />
     <Content Include="Salir.aspx" />
+    <Content Include="ServicioWeb.asmx" />
     <Content Include="Situacion.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -238,6 +239,10 @@
     </Compile>
     <Compile Include="Salir.aspx.designer.cs">
       <DependentUpon>Salir.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ServicioWeb.asmx.cs">
+      <DependentUpon>ServicioWeb.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Situacion.aspx.cs">
       <DependentUpon>Situacion.aspx</DependentUpon>

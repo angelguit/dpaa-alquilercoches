@@ -67,13 +67,22 @@ namespace AlquilerCochesWeb {
         protected global::System.Web.UI.WebControls.RadioButton TRadioButtonReservaHabitual;
         
         /// <summary>
-        /// Control LabelError.
+        /// Control TRadioButtonList.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelError;
+        protected global::System.Web.UI.WebControls.RadioButtonList TRadioButtonList;
+        
+        /// <summary>
+        /// Control RequiredFieldValidatorReservaRapida.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorReservaRapida;
         
         /// <summary>
         /// Control TButtonReservar.
@@ -148,12 +157,12 @@ namespace AlquilerCochesWeb {
         protected global::System.Web.UI.WebControls.CompareValidator CompareValidatorFechas;
         
         /// <summary>
-        /// Control IndexBotonReserva.
+        /// Control IndexBotonReserva2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button IndexBotonReserva;
+        protected global::System.Web.UI.WebControls.Button IndexBotonReserva2;
     }
 }
