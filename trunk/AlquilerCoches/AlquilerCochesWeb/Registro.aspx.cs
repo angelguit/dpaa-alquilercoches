@@ -7,6 +7,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using EN;
 using System.Text.RegularExpressions;
+using System.Collections;
 
 namespace AlquilerCochesWeb
 {
@@ -125,32 +126,52 @@ namespace AlquilerCochesWeb
 
         protected void CustomValidator6_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            if (Regex.Match(TextBox5.Text, @"\^[0-9]{8}[A-Za-z]{1}$").Success)
+
+
+            if (Regex.Match(TextBox5.Text, @"^(([A-Z]\d{8})|(\d{8}[A-Z]))$").Success)
             {
                 CAD.CADCliente cad_cliente = new CAD.CADCliente();
                 bool parar=false;
+                ArrayList array = new ArrayList();
+                string todo="DNI='"+TextBox5.Text+"'"; 
                 DataSet ds = new DataSet();
-                string todo="DNI="+TextBox5.Text;
-
                 ds = cad_cliente.ObtenerTablaCliente(todo);
 
-                for (int i = 0; i < 16 && !parar; i++)
+                Label15.Text = ds.Tables["Clientes"].Rows[0][0].ToString();
+                /*
+                for (int i = 0; i < 16; i++)
                 {
-                    if (ds.Tables["Clientes"].Rows[i][0].ToString() == TextBox5.Text)
-                    {
+                    array.Add(ds.Tables["Clientes"].Rows[i][0].ToString());
 
-                        args.IsValid = false;
-                        parar = true;
-                    }
+
                 }
+                
+                for(int j=0; j<array.Count;j++)
+                {
+                     if(array[j].ToString()==TextBox5.Text)
+                     {
+                         Label15.Text="OK";
+                         args.IsValid=true;
+                         parar=true;
+                     }
+
+                }
+                */
+
+
                 if (!parar)
                 {
                     args.IsValid = true;
+                   // Label15.Text = array[0].ToString();
                 }
             }
             else
             {
                 args.IsValid = false;
+                 Label15.Text = "falso";
+                 
+                
+               
             }
         }
 
