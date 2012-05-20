@@ -30,10 +30,9 @@
                           Font-Underline=true style="font-weight: 700" ></asp:Label>
                       <asp:TextBox ID="TextBoxDni" runat="server" Width="173px"></asp:TextBox>
                           <br />
-                      <asp:CustomValidator ID="CustomValidator7" runat="server" 
-                          ErrorMessage="Usuario Repetido!!" 
-                          OnServerValidate="ComprobarDNI" Font-Size=13px 
-                          ForeColor="Red"></asp:CustomValidator>
+                      <asp:CustomValidator ID="CustomValidator6" runat="server" 
+                          ErrorMessage="Error DNI!" ForeColor="Red" Font-Size=13px 
+                          onservervalidate="CustomValidator6_ServerValidate1" ValidateEmptyText="True"></asp:CustomValidator>
                       <br />
                       <asp:Label ID="Label13" runat="server" Text="Nombre" Width="90" Font-Size=14px></asp:Label>
                       <asp:TextBox ID="TextBoxNombre" runat="server" Width="175px"></asp:TextBox>
@@ -101,11 +100,11 @@
                        
                       <asp:CheckBox ID="CheckBoxHombre" runat="server" Text="Hombre" Font-Size=14px/>
                       <asp:CheckBox ID="CheckBoxMujer" runat="server" Text="Mujer" Font-Size=14px/>
-                      <br />
+                     <br />
                       <asp:CustomValidator ID="CustomSexo" runat="server" 
                           ErrorMessage="Seleccione el sexo" Font-Size=13px ForeColor="Red" onservervalidate="CustomSexo_ServerValidate1" ></asp:CustomValidator>
                        
-                    <br /> 
+                   
                     <asp:Button ID="Button1"  CssClass="PerfilbotonUsuario" runat="server" 
                           Text="Enviar" onclick="Button1_Click" />
                        

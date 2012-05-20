@@ -102,24 +102,25 @@ namespace AlquilerCochesWeb
         protected void ComprobarDNI(object source, ServerValidateEventArgs args)
         {
            string dni = "";
-           dni = TextBoxDni.Text;
-           ArrayList array = new ArrayList();
 
-           DataSet ds = new DataSet();
-           
-           EN.ENCliente en_cliente = new EN.ENCliente();
-           CAD.CADCliente cad_cliente = new CAD.CADCliente();
-           ds=cad_cliente.ObtenerDatosClienteConDni(dni);
-
-
-            
-        
-               args.IsValid = false;
-           
-         // args.IsValid = false; }
         }
         protected void TTextBoxEmail_TextChanged(object sender, EventArgs e)
         {
+            string dni = "";
+            dni = TextBoxDni.Text;
+            ArrayList array = new ArrayList();
+
+            DataSet ds = new DataSet();
+
+            EN.ENCliente en_cliente = new EN.ENCliente();
+            CAD.CADCliente cad_cliente = new CAD.CADCliente();
+            ds = cad_cliente.ObtenerDatosClienteConDni(dni);
+
+
+
+
+          //  args.IsValid = false;
+           
             
         }
 
@@ -215,6 +216,15 @@ namespace AlquilerCochesWeb
             {
                 args.IsValid = false;
             }
+        }
+
+        protected void CustomValidator6_ServerValidate1(object source, ServerValidateEventArgs args)
+        {
+            if (TextBoxDni.Text == "hola")
+            {
+                args.IsValid = false;
+            }
+            else { args.IsValid = true; }
         }
              
             
