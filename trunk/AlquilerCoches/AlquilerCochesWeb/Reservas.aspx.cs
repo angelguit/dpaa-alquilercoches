@@ -16,11 +16,7 @@ namespace AlquilerCochesWeb
         protected void Page_Load(object sender, EventArgs e)
         {
             //////////////////////LOAD NORMAL DE RESERVAS///////////////////////////////
-            if (Session["Usuario"] == null)
-            {
-                errorRegistrado.Visible = true;
-            }
-            Posterior.ValueToCompare = System.DateTime.Today.ToString();
+            Posterior.ValueToCompare = System.DateTime.Today.AddDays(-1).ToString();
             if (comboCategorias.Items.Count == 0)
             {
                 DataSet ds = new DataSet();
@@ -48,30 +44,55 @@ namespace AlquilerCochesWeb
                 }
             }
 
-            ///////////////////////////RESERVAS POR INDEX///////////////////////
-            EN.ENCliente enCliente = new ENCliente();
-            EN.ENVehiculo enVehi = new ENVehiculo();
-            if (Session["ReservaRapida"] == "Habitual")
+            ///////////////////////////RESERVAS COCHES///////////////////////
+            if (!Page.IsPostBack)//SOLO ENTRA SI ES LA PRIMERA VEZ QUE SE CARGA LA PAGINA
             {
-                string matricula="";
-                enCliente.DNI = Session["Usuario"].ToString();
-                char[] separadores = { '|', ',' };
-                string[] favorito = enCliente.ReservaFavorita().Split(separadores);
+                EN.ENCliente enCliente = new ENCliente();
+                EN.ENVehiculo enVehi = new ENVehiculo();
 
-                DataSet dsMatricula = new DataSet();
-                //Marca,Modelo,FK_Categoria
-                dsMatricula = enVehi.ObtenerMatriculaReserva(favorito[0], favorito[1], favorito[2]);
-                matricula = dsMatricula.Tables["Reserva"].Rows[0][0].ToString();
-                conductores.Text = matricula;
+                if (Session["Usuario"] != null)
+                {
 
+                    enCliente.DNI = Session["Usuario"].ToString();
+
+                    if (Session["ReservaRapida"] == "Habitual")
+                    {
+                        Session["ReservaRapida"] = null;
+                        string matricula = "";
+
+                        char[] separadores = { '|', ',' };
+                        string[] favorito = enCliente.ReservaFavorita().Split(separadores);
+
+                        DataSet dsMatricula = new DataSet();
+                        //Marca,Modelo,FK_Categoria
+                        dsMatricula = enVehi.ObtenerMatriculaReserva(favorito[0], favorito[1], favorito[2]);
+                        matricula = dsMatricula.Tables["Reserva"].Rows[0][0].ToString();
+                        RellenarCocheReserva(matricula);
+
+                    }
+                    if (Session["ReservaRapida"] == "Ultima")
+                    {
+                        Session["ReservaRapida"] = null;
+                        enCliente.DNI = Session["Usuario"].ToString();
+                        RellenarCocheReserva(enCliente.UltimaReserva());
+                        
+                    }
+                }
+                else
+                {
+                    errorRegistrado.Visible = true;
+                }
+
+
+                /////////////////////////////FECHAS//////////////////////////
+                if (Session["FechaInicioIndex"] != null && Session["FechaFinIndex"] != null)
+                {
+                    IndexTextFechaInicio.Text = Session["FechaInicioIndex"].ToString();
+                    IndexTextFechaFin.Text = Session["FechaFinIndex"].ToString();
+                    Session["FechaInicioIndex"] = null;
+                    Session["FechaFinIndex"] = null;
+                }
             }
-            if (Session["ReservaRapida"] == "Ultima")
-            {
-                enCliente.DNI = Session["Usuario"].ToString();
-                RellenarCocheReserva(enCliente.UltimaReserva());
-            }
-
-
             ////MOSTRAR IMAGENES DE COCHES//
             MostrarImagen();
         }
@@ -90,40 +111,56 @@ namespace AlquilerCochesWeb
 
         protected void RellenarCocheReserva(string matri)
         {
-            conductores.Text = matri;
             EN.ENVehiculo enVehi = new ENVehiculo();
             DataSet dsVehi = new DataSet();
             enVehi.Matricula = matri;
             enVehi.ObtenerDatosVehiculos();
-            codigo.Text = enVehi.Marca;
-            precio.Text = enVehi.Modelo;
-            //Vehiculo
-            //CATEGORIA
-            for (int i = 0; i < comboCategorias.Items.Count; i++)
+
+            if (enVehi.Estado == "Disponible")
             {
-                if (comboCategorias.Items[i].ToString() == enVehi.Categoria)
+                //Vehiculo
+                //CATEGORIA
+                for (int i = 0; i < comboCategorias.Items.Count; i++)
                 {
-                    comboCategorias.SelectedIndex = i;
+                    if (comboCategorias.Items[i].ToString() == enVehi.Categoria)
+                    {
+                        comboCategorias.SelectedIndex = i;
+                    }
+                }
+                //MARCA
+                CambiarComboCategorias();
+                for (int i = 0; i < comboMarcas.Items.Count; i++)
+                {
+                    if (comboMarcas.Items[i].ToString() == enVehi.Marca)
+                    {
+                        comboMarcas.SelectedIndex = i;
+                    }
+                }
+                //MODELO
+                CambiarComboMarcas();
+                for (int i = 0; i < comboModelos.Items.Count; i++)
+                {
+                    if (comboModelos.Items[i].ToString() == enVehi.Modelo)
+                    {
+                        comboModelos.SelectedIndex = i;
+                    }
                 }
             }
-            //MARCA
-            CambiarComboCategorias();
-            for (int i = 0; i < comboMarcas.Items.Count; i++)
+            else
             {
-                if (comboMarcas.Items[i].ToString() == enVehi.Marca)
+                errorReserva.Visible = true;
+
+                for (int i = 0; i < comboCategorias.Items.Count; i++)
                 {
-                    comboMarcas.SelectedIndex = i;
+                    if (comboCategorias.Items[i].ToString() == enVehi.Categoria)
+                    {
+                        comboCategorias.SelectedIndex = i;
+                    }
                 }
+                CambiarComboCategorias();
+                CambiarComboMarcas();
             }
-            //MODELO
-            CambiarComboMarcas();
-            for (int i = 0; i < comboModelos.Items.Count; i++)
-            {
-                if (comboModelos.Items[i].ToString() == enVehi.Modelo)
-                {
-                    comboModelos.SelectedIndex = i;
-                }
-            }
+            
         }
 
         protected void MostrarImagen()
@@ -163,6 +200,8 @@ namespace AlquilerCochesWeb
 
         protected void comboCategorias_TextChanged(object sender, EventArgs e)
         {
+            ReservabotonConsulta.Visible = false;
+            precio.Text = "";
             CambiarComboCategorias();
         }
 
@@ -181,12 +220,15 @@ namespace AlquilerCochesWeb
 
         protected void comboMarcas_TextChanged(object sender, EventArgs e)
         {
+            ReservabotonConsulta.Visible = false;
+            precio.Text = "";
             CambiarComboMarcas();
         }
 
         protected void ReservabotonPrecio_Click(object sender, EventArgs e)
         {
-            if (IndexTextFechaFin.Text!="" && IndexTextFechaInicio.Text!="" && conductores.Text!="")//algo mal
+            errorReserva.Visible = false;
+            if (IndexTextFechaFin.Text != "" && IndexTextFechaInicio.Text != "" && conductores.Text != "" && Int32.Parse(conductores.Text)<10)//algo mal
             {
                 TimeSpan ts = Convert.ToDateTime(IndexTextFechaFin.Text) - Convert.ToDateTime(IndexTextFechaInicio.Text);
                 EN.ENFacturacion enFa = new ENFacturacion();
@@ -196,11 +238,11 @@ namespace AlquilerCochesWeb
                 enFa.Tiempo = ts.Days + 1;
                 enFa.ObtenerPrecio();
                 precio.Text = enFa.PrecioTotal.ToString();
-            }
 
-            if (Session["Usuario"] != null)
-            {
-                ReservabotonConsulta.Visible = true;
+                if (Session["Usuario"] != null)
+                {
+                    ReservabotonConsulta.Visible = true;
+                }
             }
         }
 
@@ -240,8 +282,6 @@ namespace AlquilerCochesWeb
                     enRe.Activa = true;
 
                     enRe.AnyadirReserva();
-
-
                 }
             }
         }

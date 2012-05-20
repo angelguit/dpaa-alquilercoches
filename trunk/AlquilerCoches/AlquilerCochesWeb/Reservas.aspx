@@ -1,23 +1,21 @@
 ﻿<%@ Page Title="Rent A Car" Language="C#" MasterPageFile="~/Maestra.Master" AutoEventWireup="true" CodeBehind="Reservas.aspx.cs" Inherits="AlquilerCochesWeb.Reservas" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 <link rel="stylesheet" href="Css/Reserva.css"/>
-    <style type="text/css">
 
-
-.AspectoError
-{
-    position:absolute;
-    color:Red;
-    margin-top:1.9cm;
-    margin-left:20px;
-            top: 194px;
-            left: 251px;
-        }</style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MaestraContenedor" runat="server">
  <div id="Cuerpo">
      
     <form id="formularioReserva" onsubmit="return enviar()">
+            <asp:Panel id="errorRegistrado" runat="server" Visible="False">
+          Para realizar una reserva debe estar registrado. 
+            <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Registro.aspx">Registrese</asp:HyperLink>
+            o entre con su 
+            <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Index.aspx">cuenta</asp:HyperLink>
+        </asp:Panel>
+        <asp:Panel id="errorReserva" runat="server" Visible="False">
+          El coche ya esta reservado. A continuacion le mostramos un modelo similar.
+        </asp:Panel>
           <div id="ReservaCuerpoPaso1">
             <p style="text-align:center; text-decoration: underline; background-color:#e6e6e6">Primer Paso: Seleccion de fecha</p>
                 <label for="male"">&nbsp Desde:</label>
@@ -42,10 +40,17 @@
 
                 <asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="True"  ></asp:ScriptManager>
 
-                
+                <label for="male"">&nbsp Hasta:</label>
+                <asp:TextBox ID="IndexTextFechaFin" runat="server" Height="21px" Width="82px"></asp:TextBox>
+                <input type="image" name="CalendarioFin" 
+                    id="CalendarioFin" src="Imagenes/ImagenesReserva/supercalendario.jpg" 
+                    onclick="javascript:MostrarCalendario()" alt="Click para mostrar calendario" 
+                    style="border-width:0px;" />
+                </br>
+                     
                                      
                 <asp:CompareValidator ID="Posterior" runat="server"
-                    ErrorMessage="fecha inicio menor"
+                    ErrorMessage="Error, revise las fechas"
                     ControlToValidate="IndexTextFechaInicio"
                     Operator="GreaterThan"
                     Type="String"
@@ -62,15 +67,6 @@
                     EnableViewState="false"
                     Enabled="true"
                     CssClass="AspectoError"></asp:CompareValidator>
-
-                <label for="male"">&nbsp Hasta:</label>
-                <asp:TextBox ID="IndexTextFechaFin" runat="server" Height="21px" Width="82px"></asp:TextBox>
-                <input type="image" name="CalendarioFin" 
-                    id="CalendarioFin" src="Imagenes/ImagenesReserva/supercalendario.jpg" 
-                    onclick="javascript:MostrarCalendario()" alt="Click para mostrar calendario" 
-                    style="border-width:0px;" />
-                </br>
-                     
                     </br>     
           </div>	
           <div id="ReservaCuerpoPaso2">
@@ -119,12 +115,7 @@
                   runat="server" Text="Realizar reserva" onclick="ReservabotonConsulta_Click" Enabled="True" Visible="False" />
           </div>
           </br>
-        <asp:Panel id="errorRegistrado" runat="server" Visible="False">
-          Para realizar una reserva debe estar registrado. 
-            <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Registro.aspx">Registrese</asp:HyperLink>
-            o entre con su 
-            <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Index.aspx">cuenta</asp:HyperLink>
-        </asp:Panel>
+
           
        </form>
     </div>
