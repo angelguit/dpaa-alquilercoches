@@ -31,13 +31,13 @@ namespace AlquilerCochesWeb {
         protected global::System.Web.UI.WebControls.TextBox TextBoxDni;
         
         /// <summary>
-        /// Control CustomValidator6.
+        /// Control CustomValidatorNombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator CustomValidator6;
+        protected global::System.Web.UI.WebControls.CustomValidator CustomValidatorNombre;
         
         /// <summary>
         /// Control Label13.
@@ -247,15 +247,6 @@ namespace AlquilerCochesWeb {
         protected global::System.Web.UI.WebControls.TextBox TextBox3;
         
         /// <summary>
-        /// Control CustomValidator4.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator CustomValidator4;
-        
-        /// <summary>
         /// Control Label7.
         /// </summary>
         /// <remarks>
@@ -274,15 +265,6 @@ namespace AlquilerCochesWeb {
         protected global::System.Web.UI.WebControls.TextBox TTextBoxEmail;
         
         /// <summary>
-        /// Control CustomValidator5.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator CustomValidator5;
-        
-        /// <summary>
         /// Control CheckBoxHombre.
         /// </summary>
         /// <remarks>
@@ -299,15 +281,6 @@ namespace AlquilerCochesWeb {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox CheckBoxMujer;
-        
-        /// <summary>
-        /// Control CustomSexo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator CustomSexo;
         
         /// <summary>
         /// Control Button1.

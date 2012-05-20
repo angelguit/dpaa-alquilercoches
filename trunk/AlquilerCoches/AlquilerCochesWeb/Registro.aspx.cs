@@ -43,7 +43,7 @@ namespace AlquilerCochesWeb
 
             if (Page.IsValid)
             {
-
+                /*
                         EN.ENCliente en_cliente = new EN.ENCliente();
 
                         en_cliente.DNI = TextBoxDni.Text;
@@ -65,7 +65,7 @@ namespace AlquilerCochesWeb
 
                         en_cliente.AnyadirCliente();
 
-                    
+                    */
             }
        
         }
@@ -225,6 +225,37 @@ namespace AlquilerCochesWeb
                 args.IsValid = false;
             }
             else { args.IsValid = true; }
+
+
+        }
+
+        protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            if (TextBoxDni.Text == "hola")
+                args.IsValid = true;
+
+
+        }
+
+        protected void CustomValidatorNombre_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            string username = args.Value.ToLower();
+
+            if (TextBoxDni.Text != "")
+            {
+
+                if (!Regex.Match(TextBoxDni.Text, @"^[A-Za-zñÑáéíóúÁÉÍÓÚçÇ\s]{3,30}$").Success)
+                {
+                    args.IsValid = false;
+             
+                }
+                else { args.IsValid = true;
+           
+                }
+            }
+            else { args.IsValid = false;
+        
+            }
         }
              
             
