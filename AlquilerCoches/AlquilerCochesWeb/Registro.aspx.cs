@@ -130,40 +130,44 @@ namespace AlquilerCochesWeb
 
             if (Regex.Match(TextBox5.Text, @"^(([A-Z]\d{8})|(\d{8}[A-Z]))$").Success)
             {
-                CAD.CADCliente cad_cliente = new CAD.CADCliente();
+                EN.ENCliente en_cliente = new EN.ENCliente();
                 bool parar=false;
                 ArrayList array = new ArrayList();
                 string todo="DNI='"+TextBox5.Text+"'"; 
                 DataSet ds = new DataSet();
-                ds = cad_cliente.ObtenerTablaCliente(todo);
+                ds = en_cliente.ObtenerListaCliente(todo);
 
-                Label15.Text = ds.Tables["Clientes"].Rows[0][0].ToString();
-                /*
-                for (int i = 0; i < 16; i++)
-                {
-                    array.Add(ds.Tables["Clientes"].Rows[i][0].ToString());
-
-
-                }
+                Label15.Text = ds.Tables["Cliente"].Rows[0][0].ToString();
                 
-                for(int j=0; j<array.Count;j++)
+                for (int i = 0; i < 4; i++)
                 {
-                     if(array[j].ToString()==TextBox5.Text)
-                     {
-                         Label15.Text="OK";
-                         args.IsValid=true;
-                         parar=true;
-                     }
-
+                  //  array.Add(ds.Tables["Cliente"].Rows[i][0].ToString());
                 }
-                */
 
+                for (int j = 0; j < array.Count && !parar; j++)
+                {
+                    if (array[j].ToString() == TextBox5.Text)
+                    {
+                        parar = true;
+                        args.IsValid = false;
+                    }
+                }
 
+                
+               /* for (int i = 0; i < 16; i++)
+                {
+                    if (ds.Tables["Cliente"].Rows[i][0].ToString() == TextBox5.Text)
+                    {
+                        parar = true;
+                        args.IsValid = false;
+                    }
+                }*/
                 if (!parar)
                 {
                     args.IsValid = true;
-                   // Label15.Text = array[0].ToString();
+
                 }
+               
             }
             else
             {
