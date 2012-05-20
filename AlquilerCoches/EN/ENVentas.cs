@@ -270,5 +270,20 @@ namespace EN
             return resultado;
         }
 
+        public DataSet ObtenerVentasCategoria(int cat)
+        {
+            DataSet resultado = new DataSet();
+            try
+            {
+                resultado = cadVentas.ObtenerVentasCategoria(cat);
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+
+            return resultado;
+        }
+
     }
 }
