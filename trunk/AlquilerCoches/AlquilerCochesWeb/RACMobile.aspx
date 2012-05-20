@@ -6,9 +6,9 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="Css/jquery.mobile.structure-1.1.0.min.css" rel="Stylesheet" type="text/css" />
     <script src="/Javascript/jquery.min.js" type="text/javascript"></script>
     <script src="Javascript/jquery.mobile-1.1.0.min.js" type="text/javascript"></script>
-    <link href="Css/jquery.mobile.structure-1.1.0.min.css" rel="Stylesheet" type="text/css" />
     <title>RAC Mobile</title>
 </head>
 <body>

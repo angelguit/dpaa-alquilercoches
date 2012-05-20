@@ -72,12 +72,12 @@ namespace AlquilerCochesWeb
                 if (Page.IsValid)
                 {
 
-                    string listaCorreos = "dsarabia.m@gmail.com"; //donde ira el mensaje
+                    /*string listaCorreos = "dsarabia.m@gmail.com"; //donde ira el mensaje
                     // string listaCorreos2 = "rentacarcontacto@gmail.com"; //donde ira el mensaje
                     string correoEnvio = "rentacarcontacto@gmail.com";//esta es la cuenta que nos enviara el mensaje
                     string contraseña = "123456=abc";
 
-
+                    
                     MailMessage mail = new MailMessage();
                     mail.From = new MailAddress(correoEnvio);
                     mail.To.Add(listaCorreos);
@@ -93,6 +93,13 @@ namespace AlquilerCochesWeb
                     server.Send(mail);
 
                     /* Button1.Text = Page.IsValid.ToString();*/
+                    Session["MailSubject"] = "Consulta de: " + TTextBoxEmail.Text.ToString();
+                    Session["MailBody"] = "Nombre y apellidos: " + TTextBoxNombre.Text.ToString() + " " + TTextBoxApellidos.Text.ToString()+ "\n\n Consulta: \n"+ TTextArea.Value.ToString();
+                    Session["MailUser"] = TTextBoxEmail.Text.ToString();
+                    Session["MailUserSubject"] = "Tu consulta ha sido enviada con éxito";
+                    Session["MailUserBody"] = "Esta ha sido tu consulta: \n Nombre y apellidos: " + TTextBoxNombre.Text.ToString() + " " + TTextBoxApellidos.Text.ToString() + "\n\n Consulta: \n" + TTextArea.Value.ToString();
+                    Session["MailUrl"] = HttpContext.Current.Request.Url.ToString();
+                    Response.Redirect("EnviarMail.aspx");
                     TTextBoxNombre.Text = "";
                     TTextBoxApellidos.Text = "";
                     TTextBoxEmail.Text = "";
