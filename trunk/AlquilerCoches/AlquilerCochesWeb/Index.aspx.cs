@@ -50,14 +50,6 @@ namespace AlquilerCochesWeb
             }
         }
 
-        protected void IndexBotonReserva_Click(object sender, EventArgs e)
-        {
-            if (RequiredFieldValidatorReservaRapida.IsValid)
-            {
-                Response.Redirect("Reservas.aspx");
-            }
-        }
-
         protected void IndexBotonReserva2_Click(object sender, EventArgs e)
         {
             if (Posterior.IsValid && CompareValidatorFechas.IsValid)
@@ -158,14 +150,16 @@ namespace AlquilerCochesWeb
 
         protected void TButtonReservar_Click(object sender, EventArgs e)
         {
-            if (TRadioButtonReservaHabitual.Checked)
+            if (RequiredFieldValidatorReservaRapida.IsValid)
             {
-                Session["ReservaRapida"] = "Habitual";
-                Response.Redirect("Reservas.aspx");
-            }
-            else if (TRadioButtonUltimaReserva.Checked)
-            {
-                Session["ReservaRapida"] = "Ultima";
+                if (TRadioButtonReservaHabitual.Checked)
+                {
+                    Session["ReservaRapida"] = "Habitual";
+                }
+                if (TRadioButtonUltimaReserva.Checked)
+                {
+                    Session["ReservaRapida"] = "Ultima";
+                }
                 Response.Redirect("Reservas.aspx");
             }
         }
