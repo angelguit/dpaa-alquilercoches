@@ -67,13 +67,15 @@
 
 
                       <asp:Label ID="Label8" runat="server" Text="Label" Width="90" font-size="14px">Password(1)</asp:Label>
-                       <asp:TextBox ID="TextBox1" runat="server"  Width="178px"></asp:TextBox> <br /> 
+                       <asp:TextBox ID="TextBox1" runat="server"  Width="178px" TextMode="Password"
+                            ontextchanged="TextBox1_TextChanged"></asp:TextBox> <br /> 
                       <asp:RequiredFieldValidator ID="ContrasenaReq" runat="server" ControlToValidate="TextBox1" 
                           ErrorMessage="Introduzca una contraseña." ForeColor="Red" Font-Size=13px></asp:RequiredFieldValidator><br />
                   
                             
                     <asp:Label ID="Label9" runat="server" Text="Label" Width="90" font-size="14px">Password(2)</asp:Label>
-                       <asp:TextBox ID="TextBox2" runat="server"  Width="178px"></asp:TextBox> <br /> 
+                       <asp:TextBox ID="TextBox2" runat="server"  Width="178px" TextMode="Password"
+                       ></asp:TextBox> <br /> 
                       <asp:CompareValidator ID="CompareValidator4" runat="server" 
                           ControlToCompare="TextBox2" ControlToValidate="TextBox1"
                           ErrorMessage="Contraseña errónea vuelva a introducirla." ForeColor="Red" Font-Size=13px></asp:CompareValidator>
@@ -111,8 +113,7 @@
 
                        <br />
            
-                    <asp:Label ID="Label7" runat="server" Text="Label" Width="90" font-size="14px" 
-                          style="height: 17px">E-Mail</asp:Label>
+                    <asp:Label ID="Label7" runat="server" Text="Label" Width="90" font-size="14px">E-Mail</asp:Label>
                     <asp:TextBox ID="TTextBoxEmail" runat="server" Width="182px"></asp:TextBox> <br />
                   <asp:CustomValidator ID="CustomValidator5" runat="server" 
                           ErrorMessage="Introduzca el e-mail." Font-Size=13px ForeColor="Red" onservervalidate="CustomEmail_ServerValidate1"></asp:CustomValidator><br />
@@ -126,6 +127,9 @@
                     <br /> 
                     <asp:Button ID="Button1"  CssClass="PerfilbotonUsuario" runat="server" 
                           Text="Enviar" onclick="Button1_Click" />
+                       
+
+                        <asp:Label ID="Label15" runat="server" Text="Label"></asp:Label>
                        
 
                     </p>

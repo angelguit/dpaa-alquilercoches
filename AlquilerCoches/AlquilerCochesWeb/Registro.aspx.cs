@@ -129,11 +129,15 @@ namespace AlquilerCochesWeb
                 en_cliente.Telefono = Convert.ToInt32(TextBox3.Text);
                 if (CheckBox1.Checked)
                 {
-                    en_cliente.Sexo = "Hombre";
+                    en_cliente.Sexo = "H";
                 }
-                else { en_cliente.Sexo = "Mujer"; }
+                else { en_cliente.Sexo = "M"; }
 
                 en_cliente.AnyadirCliente();
+
+
+                Label15.Text = "asdasdasd";
+
             }
         }
 
@@ -181,7 +185,7 @@ namespace AlquilerCochesWeb
 
         protected void CustomValidator4_ServerValidate1(object source, ServerValidateEventArgs args)
         {
-            if (Regex.Match(TTextBoxEmail.Text, @"^[0-9]{9}$").Success)
+            if (Regex.Match(TextBox3.Text, @"^[0-9]{9}$").Success)
             {
 
                 args.IsValid = true;
@@ -249,39 +253,11 @@ namespace AlquilerCochesWeb
                 }
        
 
-                /*
-
-                for (int i = 0; i < 1; i++)
-                {
-                    array.Add(ds.Tables["Cliente"].Rows[i]["DNI"].ToString());
-                }
-
-                for (int j = 0; j < array.Count && !parar; j++)
-                {
-                    if (array[j].ToString() == TextBox5.Text)
-                    {
-                        parar = true;
-                        args.IsValid = false;
-                    }
-                }
+                
 
                 
-               /* for (int i = 0; i < 16; i++)
-                {
-                    if (ds.Tables["Cliente"].Rows[i][0].ToString() == TextBox5.Text)
-                    {
-                        parar = true;
-                        args.IsValid = false;
-                    }
-                }*/ 
-                /*
-                if (!parar)
-                {
-                   
-                    args.IsValid = false;
-
-                }
-               */
+               
+              
             }
             else
             {
@@ -291,6 +267,16 @@ namespace AlquilerCochesWeb
                 
                
             }
+        }
+
+        protected void PasswordRecovery1_SendingMail(object sender, MailMessageEventArgs e)
+        {
+
+        }
+
+        protected void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
 
