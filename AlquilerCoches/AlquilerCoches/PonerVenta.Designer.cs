@@ -57,6 +57,8 @@
             this.TLabelMatricula = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.TLabelTitulo = new System.Windows.Forms.Label();
+            this.TLabelCategoria = new System.Windows.Forms.Label();
+            this.TComboBoxCategoria = new System.Windows.Forms.ComboBox();
             this.TGroupBoxDatosVehiculo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TPictureBoxCoche)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -140,6 +142,8 @@
             this.TGroupBoxDatosVehiculo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.TGroupBoxDatosVehiculo.BackColor = System.Drawing.Color.Transparent;
+            this.TGroupBoxDatosVehiculo.Controls.Add(this.TComboBoxCategoria);
+            this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelCategoria);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TButtonCancelar);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TLabelObligatorio);
             this.TGroupBoxDatosVehiculo.Controls.Add(this.TTextBoxMeses);
@@ -169,7 +173,7 @@
             // 
             this.TButtonCancelar.Image = global::AlquilerCoches.Properties.Resources.Close_icon;
             this.TButtonCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.TButtonCancelar.Location = new System.Drawing.Point(348, 190);
+            this.TButtonCancelar.Location = new System.Drawing.Point(364, 183);
             this.TButtonCancelar.Name = "TButtonCancelar";
             this.TButtonCancelar.Size = new System.Drawing.Size(84, 37);
             this.TButtonCancelar.TabIndex = 6;
@@ -182,7 +186,7 @@
             // TLabelObligatorio
             // 
             this.TLabelObligatorio.AutoSize = true;
-            this.TLabelObligatorio.Location = new System.Drawing.Point(22, 202);
+            this.TLabelObligatorio.Location = new System.Drawing.Point(13, 221);
             this.TLabelObligatorio.Name = "TLabelObligatorio";
             this.TLabelObligatorio.Size = new System.Drawing.Size(217, 13);
             this.TLabelObligatorio.TabIndex = 49;
@@ -224,7 +228,7 @@
             // 
             this.TButtonVender.Image = global::AlquilerCoches.Properties.Resources.Add_icon;
             this.TButtonVender.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.TButtonVender.Location = new System.Drawing.Point(246, 190);
+            this.TButtonVender.Location = new System.Drawing.Point(262, 183);
             this.TButtonVender.Name = "TButtonVender";
             this.TButtonVender.Size = new System.Drawing.Size(78, 37);
             this.TButtonVender.TabIndex = 5;
@@ -359,6 +363,28 @@
             this.TLabelTitulo.TabIndex = 49;
             this.TLabelTitulo.Text = "Poner en Venta";
             // 
+            // TLabelCategoria
+            // 
+            this.TLabelCategoria.AutoSize = true;
+            this.TLabelCategoria.Location = new System.Drawing.Point(39, 187);
+            this.TLabelCategoria.Name = "TLabelCategoria";
+            this.TLabelCategoria.Size = new System.Drawing.Size(52, 13);
+            this.TLabelCategoria.TabIndex = 50;
+            this.TLabelCategoria.Text = "Categoria";
+            // 
+            // TComboBoxCategoria
+            // 
+            this.TComboBoxCategoria.FormattingEnabled = true;
+            this.TComboBoxCategoria.Items.AddRange(new object[] {
+            "Turismos",
+            "Familiares",
+            "Furgonetas",
+            "Especiales"});
+            this.TComboBoxCategoria.Location = new System.Drawing.Point(97, 184);
+            this.TComboBoxCategoria.Name = "TComboBoxCategoria";
+            this.TComboBoxCategoria.Size = new System.Drawing.Size(159, 21);
+            this.TComboBoxCategoria.TabIndex = 51;
+            // 
             // PonerVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -421,6 +447,8 @@
         private System.Windows.Forms.Label TLabelObligatorio;
         private System.Windows.Forms.Button TButtonCancelar;
         private System.Windows.Forms.Label TLabelTitulo;
+        private System.Windows.Forms.ComboBox TComboBoxCategoria;
+        private System.Windows.Forms.Label TLabelCategoria;
 
     }
 }

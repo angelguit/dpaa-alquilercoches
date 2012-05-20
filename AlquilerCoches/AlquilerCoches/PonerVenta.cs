@@ -34,6 +34,7 @@ namespace AlquilerCoches
             TTextBoxModelo.Text = "";
             TTextBoxKm.Text = "";
             TCheckBoxGarantia.Checked = false;
+            TComboBoxCategoria.SelectedIndex = -1;
             TTextBoxMeses.Text = "";
             TTextBoxPrecioVenta.Text = "";
             errorProvider1.Clear();
@@ -151,7 +152,6 @@ namespace AlquilerCoches
 
         private void TButtonVender_Click(object sender, EventArgs e)
         {
-            //MODIFICAR COSAS PARA AÑADIR LA VENTA A LA BD
             if (incorrecto == false && TTextBoxPrecioVenta.Text != "")
             {
                 if (MessageBox.Show("¿Desea poner en venta?\n El vehículo dejará de estar disponible para alquiler.", "¿VENDER?", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.OK)
@@ -202,6 +202,7 @@ namespace AlquilerCoches
             TTextBoxMarca.Text = vehiculos.Marca;
             TTextBoxModelo.Text = vehiculos.Modelo;
             TTextBoxKm.Text = vehiculos.KM.ToString();
+            TComboBoxCategoria.SelectedIndex = 0;
         }
 
         void guardaCampos()
@@ -216,6 +217,31 @@ namespace AlquilerCoches
             else
             {
                 ventas.Garantia = "0";
+            }
+            if (TComboBoxCategoria.SelectedIndex == 0)
+            {
+                ventas.Categoria = 1;
+            }
+            else
+            {
+                if (TComboBoxCategoria.SelectedIndex == 1)
+                {
+                    ventas.Categoria = 2;
+                }
+                else
+                {
+                    if (TComboBoxCategoria.SelectedIndex == 2)
+                    {
+                        ventas.Categoria = 3;
+                    }
+                    else
+                    {
+                        if (TComboBoxCategoria.SelectedIndex == 3)
+                        {
+                            ventas.Categoria = 4;
+                        }
+                    }
+                }
             }
             ventas.KM = TTextBoxKm.Text;
             ventas.PrecioVenta = TTextBoxPrecioVenta.Text;
