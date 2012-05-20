@@ -131,17 +131,27 @@ namespace AlquilerCochesWeb
             if (Regex.Match(TextBox5.Text, @"^(([A-Z]\d{8})|(\d{8}[A-Z]))$").Success)
             {
                 EN.ENCliente en_cliente = new EN.ENCliente();
-                bool parar=false;
-                ArrayList array = new ArrayList();
-                string todo="DNI='"+TextBox5.Text+"'"; 
+               // bool parar=false;
+               // ArrayList array = new ArrayList();
+               // string todo="DNI='"+TextBox5.Text+"'"; 
+
+                string dni = TextBox5.Text;
                 DataSet ds = new DataSet();
                 ds = null;
-                ds = en_cliente.ObtenerListaCliente(todo);
-                DataColumn colum = new DataColumn();
-                Label15.Text = ds.Tables["Cliente"].Rows[0]["DNI"].ToString();
+                ds = en_cliente.ObtenerDatosClienteConDni(dni);
+                //DataColumn colum = new DataColumn();
+                if (ds.Tables["Cliente"].Rows.Count == 0) // si el dataset no tiene ningun resultado quiere decir q no hay ningun dni con el valor que le hemos pasado en la base de datos
+                {
+                    //Label15.Text = ds.Tables["Cliente"].Rows[0][0].ToString();
+                    args.IsValid = true;
+                }
+                else
+                {
+                    args.IsValid = false;
+                }
        
 
-                
+                /*
 
                 for (int i = 0; i < 1; i++)
                 {
@@ -165,18 +175,19 @@ namespace AlquilerCochesWeb
                         parar = true;
                         args.IsValid = false;
                     }
-                }*/
+                }*/ 
+                /*
                 if (!parar)
                 {
                     args.IsValid = true;
 
                 }
-               
+               */
             }
             else
             {
                 args.IsValid = false;
-                 Label15.Text = "falso";
+                 //Label15.Text = "falso";
                  
                 
                
