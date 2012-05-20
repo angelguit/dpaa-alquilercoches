@@ -36,8 +36,26 @@ namespace AlquilerCochesWeb
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            EN.ENCliente en_cliente = new EN.ENCliente();
+            if (Page.IsValid)
+            {
+                en_cliente.DNI = TextBox5.Text;
+                en_cliente.Nombre = TTextBoxNombre.Text;
+                en_cliente.Apellidos = TTextBoxApellidos.Text;
+                en_cliente.PassWeb = TextBox1.Text;
+                en_cliente.Direccion = TTextBoxDireccion.Text;
+                en_cliente.Provincia = TDropDownListProvincia.SelectedItem.ToString();
+                en_cliente.Ciudad = TDropDownListCiudad.SelectedItem.ToString();
+                en_cliente.Email = TTextBoxEmail.Text;
+                en_cliente.Telefono = Convert.ToInt32(TextBox3.Text);
+                if (CheckBox1.Checked)
+                {
+                    en_cliente.Sexo = "Hombre";
+                }
+                else { en_cliente.Sexo = "Mujer"; }
 
-            
+                en_cliente.AnyadirCliente();
+            }
         }
 
         protected void ComprobarUsuario(object source, ServerValidateEventArgs args)
@@ -137,13 +155,14 @@ namespace AlquilerCochesWeb
 
                 string dni = TextBox5.Text;
                 DataSet ds = new DataSet();
-                ds = null;
+               
                 ds = en_cliente.ObtenerDatosClienteConDni(dni);
                 //DataColumn colum = new DataColumn();
                 if (ds.Tables["Cliente"].Rows.Count == 0) // si el dataset no tiene ningun resultado quiere decir q no hay ningun dni con el valor que le hemos pasado en la base de datos
                 {
                     //Label15.Text = ds.Tables["Cliente"].Rows[0][0].ToString();
                     args.IsValid = true;
+                   
                 }
                 else
                 {
@@ -179,7 +198,8 @@ namespace AlquilerCochesWeb
                 /*
                 if (!parar)
                 {
-                    args.IsValid = true;
+                   
+                    args.IsValid = false;
 
                 }
                */

@@ -128,9 +128,6 @@
                           Text="Enviar" onclick="Button1_Click" />
                        
 
-                        <asp:Label ID="Label15" runat="server" Text=""></asp:Label>
-                       
-
                     </p>
                      </div>  
                 </div>
