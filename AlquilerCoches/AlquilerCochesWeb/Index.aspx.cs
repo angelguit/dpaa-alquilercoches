@@ -152,11 +152,11 @@ namespace AlquilerCochesWeb
         {
             if (RequiredFieldValidatorReservaRapida.IsValid)
             {
-                if (TRadioButtonReservaHabitual.Checked)
+                if (TRadioButtonList.SelectedIndex == 1)
                 {
                     Session["ReservaRapida"] = "Habitual";
                 }
-                if (TRadioButtonUltimaReserva.Checked)
+                else
                 {
                     Session["ReservaRapida"] = "Ultima";
                 }
