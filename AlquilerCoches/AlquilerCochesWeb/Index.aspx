@@ -124,7 +124,7 @@
                     CssClass="AspectoError"></asp:CompareValidator>
         <br />
         <asp:Button ID="IndexBotonReserva2" runat="server" Height="44px" Text="Reservar" 
-            Width="85px" onclick="IndexBotonReserva_Click" />
+            Width="85px" onclick="IndexBotonReserva2_Click" />
         
     </div>
 </asp:Content>
