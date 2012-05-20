@@ -135,13 +135,17 @@ namespace AlquilerCochesWeb
                 ArrayList array = new ArrayList();
                 string todo="DNI='"+TextBox5.Text+"'"; 
                 DataSet ds = new DataSet();
+                ds = null;
                 ds = en_cliente.ObtenerListaCliente(todo);
+                DataColumn colum = new DataColumn();
+                Label15.Text = ds.Tables["Cliente"].Rows[0]["DNI"].ToString();
+       
 
-                Label15.Text = ds.Tables["Cliente"].Rows[0][0].ToString();
                 
-                for (int i = 0; i < 4; i++)
+
+                for (int i = 0; i < 1; i++)
                 {
-                  //  array.Add(ds.Tables["Cliente"].Rows[i][0].ToString());
+                    array.Add(ds.Tables["Cliente"].Rows[i]["DNI"].ToString());
                 }
 
                 for (int j = 0; j < array.Count && !parar; j++)
