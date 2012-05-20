@@ -123,9 +123,8 @@
                     </div>
                     <div id="CargarArchivo">
                     
-                     <asp:FileUpload ID="FileUpload1" runat="server" Width="319px" 
-                            style="margin-left: 18px" />
-                        <asp:Button ID="ButtonSubirImagen" runat="server" Text="Subir Imagen" 
+                     <asp:FileUpload ID="FileUpload1" style="margin-left: 18px" runat="server" Width="319px" /></br>
+                        <asp:Button ID="ButtonSubirImagen" style="margin-left:18px;" runat="server" Text="Subir Imagen" 
                             onclick="ButtonSubirImagen_Click"/>
                        <asp:Label id="UploadStatusLabel" runat="server"></asp:Label>
                     
