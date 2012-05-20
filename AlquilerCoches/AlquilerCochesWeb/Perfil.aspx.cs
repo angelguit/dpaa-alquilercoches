@@ -114,6 +114,7 @@ namespace AlquilerCochesWeb
 
             if (bien)
             {
+                Session["HistorialOFechas"] = "fechas"; //esta variable session sirve para pasarsela a la pagina perfilfactura y poder eligir que hacer si mostrar datagrid por fechas o datagrid con todas las reservas
                 Session["fechaPerfilIni"] = IndexTextFechaInicio.Text;
                 Session["fechaPerfilFin"] = IndexTextFechaFin.Text;
                 Server.Transfer("PerfilFactura.aspx");
@@ -121,7 +122,13 @@ namespace AlquilerCochesWeb
         }
 
 
-        protected void TButtonNumeroFechas_Click(object sender, EventArgs e)
+        protected void Button2_Click(object sender, EventArgs e) // ver historial
+        {
+            Session["HistorialOFechas"] = "historial"; //esta variable session sirve para pasarsela a la pagina perfilfactura y poder eligir que hacer si mostrar datagrid por fechas o datagrid con todas las reservas
+            Server.Transfer("PerfilFactura.aspx");
+        }
+
+        protected void TButtonNumeroFactura_Click(object sender, EventArgs e)
         {
             if (TTextBoxNumeroFactura.Text != "")
             {
@@ -131,12 +138,8 @@ namespace AlquilerCochesWeb
                 //Response.Write("<script>window.open('ImprimirReserva.aspx' ,'Factura', 'menubar=yes,toolbar=yes,scrollbars=yes,status=yes,directories=yes, height=500, width=720')</script>");
             }
 
+            // Server.Transfer("");
 
-
-
-
-           // Server.Transfer("");
-            
             /*string filepath = "/Descargas/Factura.txt";
             Response.Clear();
             Response.ContentType = "application/octet-stream";
@@ -146,8 +149,6 @@ namespace AlquilerCochesWeb
             Response.Write("RENT A CAR FACTURA");
             Response.Write("NºFactura: "+TTextBoxNumeroFactura.Text+"    Dni:11111111A");
             Response.End();*/
-            
-        
         }
     }
 }

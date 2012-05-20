@@ -120,6 +120,26 @@ namespace CAD
             return dsRes;
         }
 
+        public DataSet ObtenerTodasReservasPorDni(string sentencia)
+        {
+            DataSet dsRes = new DataSet();
+            SqlDataAdapter daRes;
+
+            string consulta = "Select * from Reservas WHERE FK_Cliente in('" + sentencia + "')";
+            try
+            {
+                SqlConnection conexion = new SqlConnection(cadenaConexion);
+                daRes = new SqlDataAdapter(consulta, conexion);
+                daRes.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                daRes.Fill(dsRes, "Reservas");
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            return dsRes;
+        }
+
         public DataSet ObtenerReservasPorFechas(string dni,string fechaini, string fechafin)
         {
             DataSet dsRes = new DataSet();

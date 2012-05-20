@@ -38,7 +38,7 @@
             </div>        
           </div>	
           <div id="PerfilDatosReservas">
-                <p style="text-align:center; background-color:#e6e6e6"">Ultimas reservas</p>
+                <p style="text-align:center; background-color:#e6e6e6"">Ultimas reservas activas</p>
                 <!--<ol style="width:5cm;height:5cm; position:absolute">
                     <li>Seat Ibiza</li>
                     <li>Renault Megane</li>
@@ -58,12 +58,13 @@
                   <SortedDescendingCellStyle BackColor="#FFFDF8" />
                   <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
                 </asp:GridView>
-                <asp:Button ID="Button2"  CssClass="PerfilbotonReserva" runat="server" Text="Ver Historial" />
+                <asp:Button ID="ButtonVerhistorial"  CssClass="PerfilbotonReserva" 
+                    runat="server" Text="Historial completo" ToolTip="Todas las reservas que el usuario ha realizado" onclick="Button2_Click" />
             
           </div>		
           <div id="PerfilBuscadorFactura">
            <p style="text-align:center;background-color:#e6e6e6">Imprima una factura
-           <p>Imprima una copia de una factura de un alquiler realizado en los últimos seis meses. 
+           <p>Imprima una copia de una factura de un alquiler realizado. 
            Complete los detalles siguientes para encontrar los alquileres realizados</p>
 
                <div class="PerfilFechafactura">
@@ -106,7 +107,8 @@
             <div class="PerfilNumerofactura">
                 <asp:Label ID="Label11" runat="server" Text="Label">Nº Reserva:</asp:Label>
                 <asp:TextBox ID="TTextBoxNumeroFactura" runat="server"></asp:TextBox>
-                <asp:Button ID="Button4"  CssClass="PerfilbotonNFactura" runat="server" Text="Imprimir" onclick="TButtonNumeroFechas_Click" />
+                <asp:Button ID="Button4"  CssClass="PerfilbotonNFactura" runat="server" 
+                    Text="Imprimir" onclick="TButtonNumeroFactura_Click" />
             </div>
             
             
