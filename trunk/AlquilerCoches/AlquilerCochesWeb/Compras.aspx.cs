@@ -13,9 +13,52 @@ namespace AlquilerCochesWeb
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ComprasListView.DataSource = ventas.ObtenerListaVentas();
-            ComprasListView.DataBind();
+            switch (ComprasMultiView.ActiveViewIndex)
+            {
+                case 0:
+                    ComprasListView.DataSource = ventas.ObtenerVentasCategoria(1);
+                    ComprasListView.DataBind();
+                    break;
+                case 1:
+                    ListView1.DataSource = ventas.ObtenerVentasCategoria(2);
+                    ListView1.DataBind();
+                    break;
+                case 2:
+                    ListView2.DataSource = ventas.ObtenerVentasCategoria(3);
+                    ListView2.DataBind();
+                    break;
+                case 3:
+                    ListView3.DataSource = ventas.ObtenerVentasCategoria(4);
+                    ListView3.DataBind();
+                    break;
+            }
+        }
 
+        protected void ComprasMenu_MenuItemClick(object sender, MenuEventArgs e)
+        {
+            switch (e.Item.Value)
+            {
+                case "Turismos":
+                    ComprasMultiView.ActiveViewIndex = 0;
+                    break;
+                case "Familiares":
+                    ComprasMultiView.ActiveViewIndex = 1;
+                    break;
+                case "Furgonetas":
+                    ComprasMultiView.ActiveViewIndex = 2;
+                    break;
+                case "Especiales":
+                    ComprasMultiView.ActiveViewIndex = 3;
+                    break;
+
+            }
+            Page_Load(null, null);
+        }
+
+        protected void ComprasListView_ItemCommand(object sender, ListViewCommandEventArgs e)
+        {
+            ventas.Matricula = e.CommandArgument.ToString();
+            //rellenaView4();
         }
     }
 }
