@@ -28,7 +28,7 @@ namespace AlquilerCochesWeb
                 mail.Body = Session["MailUserBody"].ToString();
                 SmtpClient server = new SmtpClient();
                 server.Host = "smtp.gmail.com";//Usamos el servidor gmail
-                server.Port = 25;
+                server.Port = 587;
                 server.EnableSsl = true;
                 server.Credentials = new NetworkCredential(correoEnvio, contraseña);
                 server.Send(mail);
@@ -45,7 +45,7 @@ namespace AlquilerCochesWeb
                 mail2.Body = Session["MailBody"].ToString();
                 SmtpClient server = new SmtpClient();
                 server.Host = "smtp.gmail.com";
-                server.Port = 25;
+                server.Port = 587;
                 server.EnableSsl = true;
                 server.Credentials = new NetworkCredential(correoEnvio, contraseña);
                 server.Send(mail2);
