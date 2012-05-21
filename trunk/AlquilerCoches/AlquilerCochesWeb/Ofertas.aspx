@@ -201,10 +201,11 @@
                                     </td>
                                 </tr>
                                 <tr id="Tr2" runat="server">
-                                    <td valign="top" class="Imagen" style="text-align: center; vertical-align: middle">
+                                    <td valign="top" class="Imagen" 
+                                        style="text-align: center; vertical-align: middle" width="70%">
                                         <asp:Image ID="Image3" runat="server" Height="96px" Width="165px"/>
                                     </td>
-                                    <td valign="top" class="DescOferta">
+                                    <td valign="top" class="DescOferta" width="100%">
                                         <asp:label ID="ComprasLabelDescripcion"  runat="server" ></asp:label>
                                         <br />
                                         <asp:label ID="ComprasLabelPrecio"  runat="server" ></asp:label>
@@ -217,6 +218,14 @@
                             </table>
                             <asp:LinkButton ID="OfertaComprar" runat="server" Text='Comprar'  
                             CommandName='Comprar' onclick="OfertaComprar_Click"></asp:LinkButton>
+                    </asp:View>
+                    <asp:View ID="View6" runat="server">
+                        
+                        <label style="vertical-align: middle; text-align: center">
+                            La operación ha sido registrada con exito.
+                        </label>
+                    
+                    
                     </asp:View>
                 </asp:MultiView>
             </div>
