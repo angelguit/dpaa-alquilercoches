@@ -149,7 +149,7 @@
     <Content Include="Perfil.aspx" />
     <Content Include="PerfilEditar.aspx" />
     <Content Include="RACMobile.aspx" />
-    <Content Include="RACMobileDonde.aspx" />
+    <Content Include="RACMobileLogin.aspx" />
     <Content Include="README.jQuery.vsdoc.txt" />
     <Content Include="Registro.aspx" />
     <Content Include="RegistroFinalizado.aspx" />
@@ -234,12 +234,12 @@
     <Compile Include="RACMobile.aspx.designer.cs">
       <DependentUpon>RACMobile.aspx</DependentUpon>
     </Compile>
-    <Compile Include="RACMobileDonde.aspx.cs">
-      <DependentUpon>RACMobileDonde.aspx</DependentUpon>
+    <Compile Include="RACMobileLogin.aspx.cs">
+      <DependentUpon>RACMobileLogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="RACMobileDonde.aspx.designer.cs">
-      <DependentUpon>RACMobileDonde.aspx</DependentUpon>
+    <Compile Include="RACMobileLogin.aspx.designer.cs">
+      <DependentUpon>RACMobileLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Registro.aspx.cs">
       <DependentUpon>Registro.aspx</DependentUpon>

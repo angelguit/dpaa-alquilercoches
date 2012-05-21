@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RACMobile.aspx.cs" Inherits="AlquilerCochesWeb.RACMobile" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RACMobile.aspx.cs" Inherits="AlquilerCochesWeb.RACMobile" EnableSessionState="True" %>
 
 <!DOCTYPE html>
 
@@ -19,18 +19,18 @@
 <div data-role="page" id="home" data-title="Home">
     <div data-role="header" data-position="inline" data-theme="a">
         <a href="Index.aspx" data-icon="arrow-u" data-theme="b" rel="external">Web</a>
-        <h1>RACMobile</h1>
+        <h1 id = "tit">RACMobile</h1>
         <a href="#login" data-icon="check" data-theme="b">Login</a>
     </div><!-- /header -->
     <div data-role="content">
-        <ul data-role="listview" data-filter="true" data-theme="a" data-dividertheme="b" data-inset="true">
+        <ul data-role="listview" data-filter="false" data-theme="a" data-dividertheme="b" data-inset="true">
             <li data-role="list-divider">Menú</li>
-            <li><a href="#">Registro</a></li>
-            <li><a href="#login">Login</a></li>
-            <li><a href="#">Ofertas</a></li>
+            <li id ="lireg"><a href="#">Registro</a></li>
+            <li id="lilogin"><a href="#login">Login</a></li>
+            <li><a href="#Compras">Ofertas</a></li>
             <li><a href="#">Reservas</a></li>
-            <li><a href="#">Compras</a></li>
-            <li><a href="RACMobileDonde.aspx">¿Donde estamos?</a></li>
+            <li><a href="#Compras">Compras</a></li>
+            <li><a href="#donde">¿Donde estamos?</a></li>
         </ul>
     </div><!-- /content -->
  
@@ -47,7 +47,7 @@
     </div><!-- /header -->
  
     <div data-role="content" data-theme="a">
-        <form action="#" method="post" id="login">
+        <form action="RACMobileLogin.aspx" method="post" id="login">
             <div data-role="fieldcontain">
                 <label for="username">Usuario</label>
                 <input type="text" name="_username" id="username" placeholder="Nombre de usuario" autofocus required/>
@@ -73,5 +73,38 @@
         <h4>&copy; Rent A Car</h4>
     </div><!-- /footer -->
 </div><!-- /page login -->
+
+<!-- Compras -->
+<div data-role="page" id="compras" data-title="Compras">
+    <div data-role="header" data-theme="b">
+        <h1>Ofertas</h1>
+        <a href="#home" data-icon="home" data-iconpos="notext" class="ui-btn-right"></a>
+    </div><!-- /header -->
+ 
+    <div data-role="content" data-theme="a" style="text-align:center;">
+        <ul id="Ofertas" data-role="listview" data-filter="false" data-theme="a" data-dividertheme="b" data-inset="true">
+        </ul>
+    </div><!-- /content -->
+ 
+    <div data-role="footer" data-theme="b">
+        <h4>&copy; Rent A Car</h4>
+    </div><!-- /footer -->
+</div><!-- /page donde -->
+
+<!-- Donde estamos -->
+<div data-role="page" id="donde" data-title="Donde">
+    <div data-role="header" data-theme="b">
+        <h1>¿Donde estamos?</h1>
+        <a href="#home" data-icon="home" data-iconpos="notext" class="ui-btn-right"></a>
+    </div><!-- /header -->
+ 
+    <div data-role="content" data-theme="a" style="text-align:center;">
+        <img src="https://maps.googleapis.com/maps/api/staticmap?center=Guarroman&amp;zoom=14&amp;size=288x200&amp;markers=Guarroman&amp;sensor=false" width="288" height="200" />
+    </div><!-- /content -->
+ 
+    <div data-role="footer" data-theme="b">
+        <h4>&copy; Rent A Car</h4>
+    </div><!-- /footer -->
+</div><!-- /page donde -->
 </body>
 </html>
