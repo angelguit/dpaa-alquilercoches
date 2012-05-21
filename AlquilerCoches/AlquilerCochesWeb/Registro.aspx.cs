@@ -141,6 +141,28 @@ namespace AlquilerCochesWeb
                 Button2_Click(null, null);
 
 
+                Session["nombre"] = TTextBoxNombre.Text;
+                Session["apellidos"] = TTextBoxApellidos.Text;
+                Session["telefono"] = TextBox3.Text;
+                Session["email"] = TTextBoxEmail.Text;
+                Session["direccion"] = TTextBoxDireccion.Text;
+                Session["provincia"] = TDropDownListProvincia.SelectedItem.ToString();
+                Session["ciudad"] = TDropDownListCiudad.SelectedItem.ToString();
+
+
+
+
+                Session["MailSubject"] = "Registro de : " + Session["email"].ToString();
+                Session["MailBody"] = "Nombre y apellidos: " + Session["nombre"].ToString() + " " + Session["apellidos"].ToString()
+                    + " .Este cliente se ha dado de alta en nuestra base de datos.";
+                Session["MailUser"] = Session["email"].ToString();
+                Session["MailUserSubject"] = "El registro con Rent a Car se ha realizado éxito";
+                Session["MailUserBody"] = "Recuerde hacerse fan de nuestro facebook.Y no se olvide de la suscripción del programa de puntos.";
+                Session["MailUrl"] = HttpContext.Current.Request.Url.ToString();
+                Response.Redirect("EnviarMail.aspx");
+                
+
+               
                 Response.Redirect("RegistroFinalizado.aspx");
 
             }
