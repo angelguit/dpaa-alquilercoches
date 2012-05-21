@@ -78,8 +78,12 @@ namespace AlquilerCochesWeb
 
         protected void VehiculosListView_ItemCommand(object sender, ListViewCommandEventArgs e)
         {
-            vehiculo.Matricula=e.CommandArgument.ToString();
-            rellenaView4();
+            if (e.CommandName.ToString() == "Alquilar")
+            {
+                vehiculo.Matricula = e.CommandArgument.ToString();
+                rellenaView4();
+            }
+            
         }
 
         protected void rellenaView4()
@@ -107,6 +111,35 @@ namespace AlquilerCochesWeb
                     break;
             } 
             Image3.ImageUrl += vehiculo.Matricula + ".jpg";
+
+            if (Int32.Parse(vehiculo.KM) < 100000)
+                ComprasLabelPrecio.Text += " - 20%";
+            else if (Int32.Parse(vehiculo.KM) < 150000)
+                ComprasLabelPrecio.Text += " - 25%";
+            else
+                ComprasLabelPrecio.Text += " - 30%";
+        }
+
+        protected void OfertaComprar_Click(object sender, EventArgs e)
+        {
+            if (Session["Usuario"] == null)
+            {
+                Server.Transfer("ReservaNoRegistrado.aspx");
+            }
+            else
+            {
+                vehiculo.ObtenerDatosVehiculos();
+                vehiculo.Reservado = 1;
+                if (Int32.Parse(vehiculo.KM) < 100000)
+                    vehiculo.PrecioVenta = ((int.Parse(vehiculo.PrecioVenta)*20 / 100)).ToString();
+                else if (Int32.Parse(vehiculo.KM) < 150000)
+                    vehiculo.PrecioVenta = ((int.Parse(vehiculo.PrecioVenta) * 25 / 100)).ToString();
+                else
+                    vehiculo.PrecioVenta = ((int.Parse(vehiculo.PrecioVenta) * 30 / 100)).ToString();
+
+                vehiculo.EditarVentas();
+            }
+
         }
 
     }
