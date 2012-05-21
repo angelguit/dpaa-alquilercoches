@@ -136,10 +136,10 @@ namespace AlquilerCochesWeb
                 else { en_cliente.Sexo = "M"; }
 
                 en_cliente.AnyadirCliente();
-
+/*
                 RegistroOK registro = new RegistroOK();
 
-                Response.Redirect("RegistroOK.aspx");
+                Response.Redirect("RegistroOK.aspx");*/
 
             }
            
