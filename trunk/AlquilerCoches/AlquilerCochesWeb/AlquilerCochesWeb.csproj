@@ -87,6 +87,7 @@
     <Content Include="Css\Perfil.css" />
     <Content Include="Css\PerfilEditar.css" />
     <Content Include="Css\Registro.css" />
+    <Content Include="Css\RegistroFinalizado.css" />
     <Content Include="Css\Reserva.css" />
     <Content Include="Css\Situacion.css" />
     <Content Include="EnviarMail.aspx" />
@@ -149,6 +150,7 @@
     <Content Include="PerfilEditar.aspx" />
     <Content Include="RACMobile.aspx" />
     <Content Include="Registro.aspx" />
+    <Content Include="RegistroFinalizado.aspx" />
     <Content Include="ReservaNoRegistrado.aspx" />
     <Content Include="Reservas.aspx" />
     <Content Include="Salir.aspx" />
@@ -236,6 +238,13 @@
     </Compile>
     <Compile Include="Registro.aspx.designer.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroFinalizado.aspx.cs">
+      <DependentUpon>RegistroFinalizado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistroFinalizado.aspx.designer.cs">
+      <DependentUpon>RegistroFinalizado.aspx</DependentUpon>
     </Compile>
     <Compile Include="ReservaNoRegistrado.aspx.cs">
       <DependentUpon>ReservaNoRegistrado.aspx</DependentUpon>
