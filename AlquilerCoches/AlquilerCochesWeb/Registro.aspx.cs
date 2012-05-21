@@ -140,6 +140,7 @@ namespace AlquilerCochesWeb
                 
                 Button2_Click(null, null);
 
+
                 Response.Redirect("RegistroFinalizado.aspx");
 
             }
@@ -285,6 +286,7 @@ namespace AlquilerCochesWeb
         {
 
         }
+        
 
         protected void Button2_Click(object sender, EventArgs e)
         {
