@@ -217,7 +217,7 @@
                                 
                             </table>
                             <asp:LinkButton ID="OfertaComprar" runat="server" Text='Comprar'  
-                            CommandName='Comprar' onclick="OfertaComprar_Click"></asp:LinkButton>
+                            CommandName='Comprar' style="float:right" onclick="OfertaComprar_Click"></asp:LinkButton>
                     </asp:View>
                     <asp:View ID="View6" runat="server">
                         
