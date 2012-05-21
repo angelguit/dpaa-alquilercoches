@@ -133,6 +133,20 @@ namespace AlquilerCochesWeb
                     Session["Usuario"] = IndexLoginC.UserName.ToString();
                     e.Authenticated = true;
 
+                    EN.ENCliente cli = new ENCliente();
+                    DataSet dscli = new DataSet();
+                    if (Session["Usuario"] != null)
+                    {
+                        dscli = cli.ObtenerDatosClienteConDni(Session["Usuario"].ToString());
+
+                        Session["nombre"] = dscli.Tables["Cliente"].Rows[0][1].ToString();
+                        Session["apellidos"] = dscli.Tables["Cliente"].Rows[0][2].ToString();
+                        Session["telefono"] = dscli.Tables["Cliente"].Rows[0][3].ToString();
+                        Session["email"] = dscli.Tables["Cliente"].Rows[0][4].ToString();
+                        Session["direccion"] = dscli.Tables["Cliente"].Rows[0][5].ToString();
+                        Session["provincia"] = dscli.Tables["Cliente"].Rows[0][6].ToString();
+                        Session["ciudad"] = dscli.Tables["Cliente"].Rows[0][7].ToString();
+                    }
                 }
                 else
                 {
