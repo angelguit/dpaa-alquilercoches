@@ -232,9 +232,13 @@ namespace AlquilerCochesWeb
             {
                 TimeSpan ts = Convert.ToDateTime(IndexTextFechaFin.Text) - Convert.ToDateTime(IndexTextFechaInicio.Text);
                 EN.ENFacturacion enFa = new ENFacturacion();
+                EN.ENCliente enCli = new ENCliente();
+                DataSet dsCli = new DataSet();
+                dsCli= enCli.ObtenerDatosClienteConDni(Session["Usuario"].ToString());
+                
                 enFa.Categoria = comboCategorias.Text;
                 enFa.Conductores = Int32.Parse(conductores.Text);
-                enFa.Tarifa = "Normal";
+                enFa.Tarifa = dsCli.Tables["Cliente"].Rows[0][8].ToString();
                 enFa.Tiempo = ts.Days + 1;
                 enFa.ObtenerPrecio();
                 precio.Text = enFa.PrecioTotal.ToString();
