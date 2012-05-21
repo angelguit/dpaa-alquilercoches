@@ -155,6 +155,9 @@
                             style="margin-left: 18px" />
                     
                     
+                            <asp:Label id="UploadStatusLabel" runat="server"></asp:Label>
+                    
+                    
                     </div>
           </div>		
           
