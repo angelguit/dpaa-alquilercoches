@@ -12,11 +12,12 @@ namespace AlquilerCochesWeb
     public partial class EnviarMail : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {            
-           // string listaCorreos = "adrims1986@gmail.com"; //donde ira el mensaje
+        { 
+           
             string listaCorreos = "adrims1986@gmail.com,dsarabia.m@gmail.com,javiumbe@gmail.com,jorgedgm11@gmail.com,angelcastejon2@gmail.com"; //donde ira el mensaje
             string correoEnvio = "rentacarcontacto@gmail.com";//esta es la cuenta que nos enviara el mensaje
             string contraseña = "123456=abc";
+            
 
             if (Session["MailUser"] != null)
             {
@@ -24,10 +25,9 @@ namespace AlquilerCochesWeb
                 mail.From = new MailAddress(correoEnvio);
                 mail.To.Add(Session["MailUser"].ToString());
                 mail.Subject = Session["MailUserSubject"].ToString();
-                //mail.Body = Page.Request.Form["Nombre"].ToString();
                 mail.Body = Session["MailUserBody"].ToString();
-                SmtpClient server = new SmtpClient(); //servidor gmail
-                server.Host = "smtp.gmail.com";
+                SmtpClient server = new SmtpClient();
+                server.Host = "smtp.gmail.com";//Usamos el servidor gmail
                 server.Port = 25;
                 server.EnableSsl = true;
                 server.Credentials = new NetworkCredential(correoEnvio, contraseña);
@@ -42,9 +42,8 @@ namespace AlquilerCochesWeb
                 mail2.From = new MailAddress(correoEnvio);
                 mail2.To.Add(listaCorreos);
                 mail2.Subject = Session["MailSubject"].ToString();
-                //mail.Body = Page.Request.Form["Nombre"].ToString();
                 mail2.Body = Session["MailBody"].ToString();
-                SmtpClient server = new SmtpClient(); //servidor gmail
+                SmtpClient server = new SmtpClient();
                 server.Host = "smtp.gmail.com";
                 server.Port = 25;
                 server.EnableSsl = true;
@@ -53,8 +52,9 @@ namespace AlquilerCochesWeb
                 Session["MailSubject"] = null;
                 Session["MailBody"] = null;
             }
-
-            Response.Redirect(Session["MailUrl"].ToString());
+            string url = Session["MailUrl"].ToString();
+            Session["MailUrl"] = null;
+            Response.Redirect(url);
         }
     }
 }
