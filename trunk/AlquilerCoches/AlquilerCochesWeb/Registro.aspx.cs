@@ -224,11 +224,12 @@ namespace AlquilerCochesWeb
 
         protected void CustomSexo_ServerValidate1(object source, ServerValidateEventArgs args)
         {
-            if (CheckBox1.Checked || CheckBox2.Checked)
+            if ((CheckBox1.Checked && CheckBox2.Checked) || (CheckBox1.Checked ==false && CheckBox2.Checked) ==false)
             {
-                args.IsValid = true;
+                
+                args.IsValid = false;
             }
-            else { args.IsValid = false; } 
+            else { args.IsValid = true; } 
         }
 
         protected void CustomEmail_ServerValidate1(object source, ServerValidateEventArgs args)
