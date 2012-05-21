@@ -17,7 +17,9 @@
           El coche ya esta reservado. A continuacion le mostramos un modelo similar.
         </asp:Panel>
           <div id="ReservaCuerpoPaso1">
+          
             <p style="text-align:center; text-decoration: underline; background-color:#e6e6e6">Primer Paso: Seleccion de fecha</p>
+            </br>
                 <label for="male"">&nbsp Desde:</label>
                 <asp:TextBox ID="IndexTextFechaInicio" runat="server" Height="21px" Width="82px"></asp:TextBox>
 
@@ -71,6 +73,7 @@
           </div>	
           <div id="ReservaCuerpoPaso2">
                 <p style="text-align:center; text-decoration: underline; background-color: #e6e6e6">Segundo paso: Informacion del vehiculo</p>
+                          </br>
                 <asp:Image ID="ImagenCoche" runat="server" CssClass="ReservasFotoCoche" />
                 <label for="male">&nbsp Categoria:</label>
               <asp:DropDownList ID="comboCategorias" runat="server"
@@ -95,19 +98,14 @@
                     onservervalidate="validacionConductores">
               </asp:CustomValidator>
                 </br></br>
-                &nbsp
-          </div>		
-          <div id="ReservaCuerpoPaso3">
-                <p style="text-align:center; text-decoration: underline; background-color:#e6e6e6">Tercer Paso: Descuentos</p>
-                <label for="male">&nbsp Codigo promocional:</label>
-                <asp:TextBox ID="codigo" runat="server" ></asp:TextBox>
-          
-          <asp:Button ID="ReservaBotonPrecio" CssClass="ReservabotonPrecio" 
+                </br></br>
+            <asp:Button ID="Button1" CssClass="ReservabotonPrecio" 
               runat="server" Text="Consultar precio" onclick="ReservabotonPrecio_Click"/>
-          </div>
+              </br></br>
+          </div>		
 
           <div id="ReservaCuerpoPaso4">
-                <p style="text-align:center; text-decoration: underline; background-color:#e6e6e6">Cuarto Paso: Confirmar reserva</p>
+                <p style="text-align:center; text-decoration: underline; background-color:#e6e6e6">Tercer Paso: Confirmar reserva</p>
                 <label for="male">&nbsp Precio:</label>
                 <asp:TextBox ID="precio" runat="server" ></asp:TextBox>
           
