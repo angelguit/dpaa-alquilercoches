@@ -33,8 +33,8 @@
             <TextBoxStyle CssClass="IndexTextBox" />
             <TitleTextStyle CssClass="IndexTitle" />
         </asp:Login>
-        <asp:ImageButton ID="IndexLogoUsuario" runat="server" Width= "120px" 
-            Height="140px" onclick="IndexLogoUsuario_Click" /> <br />
+        <a href="Perfil.aspx"><asp:ImageButton ID="IndexLogoUsuario" runat="server" Width= "120px" 
+            Height="140px" /></a> <br />
         <asp:PlaceHolder ID="IndexReservaRapida" runat="server">
             <span>Reserva Rapida</span><br />
             <!--<asp:RadioButton ID="TRadioButtonUltimaReserva" runat="server" Text="Ultima Reserva" GroupName="Radio" /><br />
