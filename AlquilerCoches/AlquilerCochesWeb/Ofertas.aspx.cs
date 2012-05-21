@@ -150,6 +150,8 @@ namespace AlquilerCochesWeb
                     + "\n\n Tiene reservado este coche durante 3 días. Pase por nuestras oficinas para tomar todos los datos necesarios y completar la compra.";
                 Session["MailUrl"] = HttpContext.Current.Request.Url.ToString();
                 Response.Redirect("EnviarMail.aspx");
+
+                MultiView1.ActiveViewIndex = 5;
             }
 
         }
