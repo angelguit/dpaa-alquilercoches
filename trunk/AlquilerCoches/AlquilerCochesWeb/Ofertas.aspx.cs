@@ -13,11 +13,6 @@ using System.Web.UI.HtmlControls;
 namespace AlquilerCochesWeb
 {
 
-    public class MyObject
-    {
-        public String MyProperty { get; set; }
-    } 
-
     public partial class Ofertas : System.Web.UI.Page
     {
 
@@ -29,31 +24,26 @@ namespace AlquilerCochesWeb
                 
                 vehiculo.Matricula = Session["Oferta"].ToString();
                 MultiView1.ActiveViewIndex = 4;
-            }
-            if (!Page.IsPostBack)
-            {
-                List<MyObject> col = new List<MyObject>();
-                col.Add(new MyObject { MyProperty = "test 1" });
-                col.Add(new MyObject { MyProperty = "test 2" });
-                ListView3.DataSource = col;
-                ListView3.DataBind();
+                Session["Oferta"] = null;
             }
 
             switch (MultiView1.ActiveViewIndex)
             {
                 case 0:
-                    VehiculosListView.DataSource = vehiculo.ObtenerCochesCategoria("KM > 5000");
+                    VehiculosListView.DataSource = vehiculo.ObtenerCochesCategoria("KM > 5000 and Categoria=1");
                     VehiculosListView.DataBind();
                     break;
                 case 1:
-                    ListView1.DataSource = vehiculo.ObtenerCochesCategoria("KM > 3000 and KM < 5000");
+                    ListView1.DataSource = vehiculo.ObtenerCochesCategoria("KM > 5000 and Categoria=2");
                     ListView1.DataBind();
                     break;
                 case 2:
-                    ListView2.DataSource = vehiculo.ObtenerCochesCategoria("KM < 3000 and KM > 1000");
+                    ListView2.DataSource = vehiculo.ObtenerCochesCategoria("KM > 5000 and Categoria=3");
                     ListView2.DataBind();
                     break;
                 case 3:
+                    ListView2.DataSource = vehiculo.ObtenerCochesCategoria("KM > 5000 and Categoria=4");
+                    ListView2.DataBind();
                     break;
                 case 4:
                     if(vehiculo.Matricula!=null)rellenaView4();
@@ -68,28 +58,22 @@ namespace AlquilerCochesWeb
         {
             switch (e.Item.Value)
             {
-                case "Clase 50%":
+                case "Turismos":
                     MultiView1.ActiveViewIndex = 0;
                     break;
-                case "Clase 20%":
+                case "Familiares":
                     MultiView1.ActiveViewIndex = 1;
                     break;
-                case "Clase 10%":
+                case "Furgonetas":
                     MultiView1.ActiveViewIndex = 2;
                     break;
-                case "Clase 5%":
+                case "Especiales":
                     MultiView1.ActiveViewIndex = 3;
                     break;
 
             }
             Page_Load(null,null);
             
-        }
-
-        protected void ListView1_ItemCommand(object sender, ListViewCommandEventArgs e)
-        {
-            Literal1.Text = "You clicked the " + (String)e.CommandArgument + " button";
-            Server.Transfer("Reservas.aspx");
         }
 
         protected void VehiculosListView_ItemCommand(object sender, ListViewCommandEventArgs e)
@@ -106,7 +90,23 @@ namespace AlquilerCochesWeb
             ComprasLabelDescripcion.Text = "Matricula:  "+ vehiculo.Matricula;
             ComprasLabelPrecio.Text = "Precio Compra: " + vehiculo.PrecioVenta;
             ComprasLabelGarantia.Text = "Garantia: " + vehiculo.Garantia;
-            Image2.ImageUrl = @"/Imagenes/ImagenesReserva/fotosCoches/" + vehiculo.Matricula + ".jpg";
+            Image3.ImageUrl = @"/Imagenes/ImagenesCompra/CochesCompra/";
+            switch (vehiculo.Categoria)
+            {
+                case 1:
+                    Image3.ImageUrl += "Turismos/";
+                    break;
+                case 2:
+                    Image3.ImageUrl+="Familiares/";
+                    break;
+                case 3:
+                    Image3.ImageUrl+="Furgonetas/";
+                    break;
+                case 4:
+                    Image3.ImageUrl+="Especiales/";
+                    break;
+            } 
+            Image3.ImageUrl += vehiculo.Matricula + ".jpg";
         }
 
     }
