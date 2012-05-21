@@ -73,16 +73,5 @@ namespace AlquilerCochesWeb
             Response.Redirect("EnviarMail.aspx");*/
 
         }
-
-        protected void CustomValidatorEmail_ServerValidate(object source, ServerValidateEventArgs args)
-        {
-            string username = args.Value.ToLower();
-
-            if (!Regex.Match(username, @"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$").Success)
-            {
-                args.IsValid = false;
-            }
-            else { args.IsValid = true; }
-        }
     }
 }

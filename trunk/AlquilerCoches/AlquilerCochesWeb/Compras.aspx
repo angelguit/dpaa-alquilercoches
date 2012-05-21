@@ -73,13 +73,6 @@
                                 <asp:Label id="KM"  runat="server" Text='<%#Eval("KM")%>' Font-Bold="True"></asp:Label>
                             <br />
                                 <td valign="top" class="DescOferta" style="text-align: center; vertical-align: middle;">
-                                    <asp:Label ID="Label5" runat="server" Text="Email:"></asp:Label>
-                                    <asp:TextBox ID="TTextBoxEmail" runat="server"></asp:TextBox>
-                                    <asp:CustomValidator ID="CustomValidatorEmail" runat="server" 
-                                        ErrorMessage="Email incorrecto" 
-                                        ControlToValidate="TTextBoxEmail"
-                                        onservervalidate="CustomValidatorEmail_ServerValidate" 
-                                        ForeColor="#CC0000"></asp:CustomValidator>
                                     <asp:LinkButton ID="BotonComprar" runat="server" Text='Comprar'  CommandName='Comprar' CommandArgument='<%#Eval("Matricula") %>'></asp:LinkButton>
                                 </td>
                             </td>
@@ -132,13 +125,6 @@
                                 <asp:Label id="KM"  runat="server" Text='<%#Eval("KM")%>' Font-Bold="True"></asp:Label>
                             <br />
                                 <td valign="top" class="DescOferta" style="text-align: center; vertical-align: middle;">
-                                    <asp:Label ID="Label5" runat="server" Text="Email:"></asp:Label>
-                                    <asp:TextBox ID="TTextBoxEmail" runat="server"></asp:TextBox>
-                                    <asp:CustomValidator ID="CustomValidatorEmail" runat="server" 
-                                        ErrorMessage="Email incorrecto" 
-                                        ControlToValidate="TTextBoxEmail"
-                                        onservervalidate="CustomValidatorEmail_ServerValidate" 
-                                        ForeColor="#CC0000"></asp:CustomValidator>
                                     <asp:LinkButton ID="BotonComprar" runat="server" Text='Comprar'  CommandName='Comprar' CommandArgument='<%#Eval("Matricula") %>'></asp:LinkButton>    
                                 </td>
                             </td>
@@ -191,13 +177,6 @@
                                 <asp:Label id="KM"  runat="server" Text='<%#Eval("KM")%>' Font-Bold="True"></asp:Label>
                             <br />
                                 <td valign="top" class="DescOferta" style="text-align: center; vertical-align: middle;">
-                                    <asp:Label ID="Label5" runat="server" Text="Email:"></asp:Label>
-                                    <asp:TextBox ID="TTextBoxEmail" runat="server"></asp:TextBox>
-                                    <asp:CustomValidator ID="CustomValidatorEmail" runat="server" 
-                                        ErrorMessage="Email incorrecto" 
-                                        ControlToValidate="TTextBoxEmail"
-                                        onservervalidate="CustomValidatorEmail_ServerValidate" 
-                                        ForeColor="#CC0000"></asp:CustomValidator>
                                     <asp:LinkButton ID="BotonComprar" runat="server" Text='Comprar'  CommandName='Comprar' CommandArgument='<%#Eval("Matricula") %>'></asp:LinkButton>
                                 </td>
                             </td>
@@ -250,13 +229,6 @@
                                 <asp:Label id="KM"  runat="server" Text='<%#Eval("KM")%>' Font-Bold="True"></asp:Label>
                             <br />
                                 <td valign="top" class="DescOferta" style="text-align: center; vertical-align: middle;">
-                                    <asp:Label ID="Label5" runat="server" Text="Email:"></asp:Label>
-                                    <asp:TextBox ID="TTextBoxEmail" runat="server"></asp:TextBox>
-                                    <asp:CustomValidator ID="CustomValidatorEmail" runat="server" 
-                                        ErrorMessage="Email incorrecto" 
-                                        ControlToValidate="TTextBoxEmail"
-                                        onservervalidate="CustomValidatorEmail_ServerValidate" 
-                                        ForeColor="#CC0000"></asp:CustomValidator>
                                     <asp:LinkButton ID="BotonComprar" runat="server" Text='Comprar'  CommandName='Comprar' CommandArgument='<%#Eval("Matricula") %>'></asp:LinkButton>
                                 </td>
                             </td>
