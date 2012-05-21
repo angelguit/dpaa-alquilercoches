@@ -42,7 +42,7 @@
                                 runat="server" 
                                 
                                 style="font-size: small; color: #000000; margin-left: 206px; margin-top: 72px" 
-                                BorderColor="Black">
+                                BorderColor="Black" onauthenticate="Login1_Authenticate">
                             </asp:Login>
                             </h3>
                         
