@@ -58,19 +58,30 @@ namespace AlquilerCochesWeb
 
         protected void ComprasListView_ItemCommand(object sender, ListViewCommandEventArgs e)
         {
-            ventas.Matricula = e.CommandArgument.ToString();
-            ventas.ObtenerDatosVehiculos();
-            ventas.Reservado = 1;
-            ventas.EditarVentas();
-            ComprasMultiView.ActiveViewIndex = 0;
+            if (Session["Usuario"] == null)
+            {
+                Server.Transfer("ReservaNoRegistrado.aspx");
+            }
+            else
+            {                
+                ventas.Matricula = e.CommandArgument.ToString();
+                ventas.ObtenerDatosVehiculos();
+                ventas.Reservado = 1;
+                ventas.EditarVentas();
+                ComprasMultiView.ActiveViewIndex = 0;
 
-            /*/Session["MailSubject"] = "Consulta de: " + 
-            Session["MailBody"] = "Nombre y apellidos: " + TTextBoxNombre.Text.ToString() + " " + TTextBoxApellidos.Text.ToString() + "\n\n Consulta: \n" + TTextArea.Value.ToString();
-            Session["MailUser"] = TTextBoxEmail.Text.ToString();
-            Session["MailUserSubject"] = "Tu consulta ha sido enviada con éxito";
-            Session["MailUserBody"] = "Esta ha sido tu consulta: \n Nombre y apellidos: " + TTextBoxNombre.Text.ToString() + " " + TTextBoxApellidos.Text.ToString() + "\n\n Consulta: \n" + TTextArea.Value.ToString();
-            Session["MailUrl"] = HttpContext.Current.Request.Url.ToString();
-            Response.Redirect("EnviarMail.aspx");*/
+                Session["MailSubject"] = "Reserva de compra de: " + Session["email"].ToString();
+                Session["MailBody"] = "Nombre y apellidos: " + Session["nombre"].ToString() + " " + Session["apellidos"].ToString() 
+                    + "\n\n Este cliente ha realizado una reserva del coche: \n Matrícula: " + ventas.Matricula + "\n Modelo: " + ventas.Marca + " " + ventas.Modelo
+                    + "\n KM: " + ventas.KM.ToString() + "\n Precio: " + ventas.PrecioVenta + "\n Garantía: " + ventas.Garantia; 
+                Session["MailUser"] = Session["email"].ToString();
+                Session["MailUserSubject"] = "La reserva se ha realizado con éxito.";
+                Session["MailUserBody"] = "Has realizado una reserva del coche: \n Matrícula: " + ventas.Matricula + "\n Modelo: " + ventas.Marca + " " + ventas.Modelo
+                    + "\n KM: " + ventas.KM.ToString() + "\n Precio: " + ventas.PrecioVenta + "\n Garantía: " + ventas.Garantia
+                    + "\n\n Tiene reservado este coche durante 3 días. Pase por nuestras oficinas para tomar todos los datos necesarios y completar la compra.";
+                Session["MailUrl"] = HttpContext.Current.Request.Url.ToString();
+                Response.Redirect("EnviarMail.aspx");
+            }
 
         }
     }
