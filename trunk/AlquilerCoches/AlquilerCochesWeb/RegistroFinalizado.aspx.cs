@@ -54,6 +54,8 @@ namespace AlquilerCochesWeb
                 Session["provincia"]= dscli.Tables["Cliente"].Rows[0][6].ToString();
                 Session["ciudad"] = dscli.Tables["Cliente"].Rows[0][7].ToString();
             }
+
+            Response.Redirect("Index.aspx");
                 }
                 else
                 {
