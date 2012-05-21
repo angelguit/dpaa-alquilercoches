@@ -128,6 +128,7 @@ namespace AlquilerCochesWeb
                 en_cliente.Ciudad = TDropDownListCiudad.SelectedItem.ToString();
                 en_cliente.Email = TTextBoxEmail.Text;
                 en_cliente.Telefono = Convert.ToInt32(TextBox3.Text);
+               
                 if (CheckBox1.Checked)
                 {
                     en_cliente.Sexo = "H";
@@ -272,12 +273,14 @@ namespace AlquilerCochesWeb
             }
         }
 
-        protected void PasswordRecovery1_SendingMail(object sender, MailMessageEventArgs e)
+      
+
+        protected void TextBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        protected void TextBox1_TextChanged(object sender, EventArgs e)
+        protected void IndexLoginC_Authenticate(object sender, AuthenticateEventArgs e)
         {
 
         }
