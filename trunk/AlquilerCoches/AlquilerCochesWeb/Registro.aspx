@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Maestra.Master" AutoEventWireup="true" CodeBehind="Registro.aspx.cs" Inherits="AlquilerCochesWeb.Registro" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-<link rel="stylesheet" href="Css/Registro.css"/>
+    <link rel="stylesheet" href="Css/Registro.css"/>
     <style type="text/css">
         #ImagenUsuario
         {
@@ -15,7 +15,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MaestraContenedor" runat="server">
- <div id="Cuerpo">	
+    <div id="Cuerpo">	
           <div id="PerfilDatosUsuario">
             <div>
             <!--    &nbsp;<img class="Foto" alt="usuario" src="/Imagenes/ImagenesPerfil/Desconocido.jpg" /><div class="Perfilbordes">  -->
@@ -97,7 +97,7 @@
                         <br />
                
                     <asp:Label ID="Label5" runat="server" Text="Label" Width="90" font-size="14px">Dirección</asp:Label>
-                       <asp:TextBox ID="TTextBoxDireccion" runat="server" Height="17px" Width="226px"></asp:TextBox> 
+                       <asp:TextBox ID="TTextBoxDireccion" runat="server" Height="22px" Width="179px"></asp:TextBox> 
                        <asp:RequiredFieldValidator ID="DireccionReq" runat="server" ControlToValidate="TTextBoxDireccion" 
                           ErrorMessage="Introduzca la dirección." ForeColor="Red" Font-Size="13px" ></asp:RequiredFieldValidator>
                        <br />
@@ -163,7 +163,7 @@
           
                 
             <asp:Label ID="Label12" CssClass="PerfilbotonNFactura" runat="server" Text="Imprimir" 
-                    BackColor="Silver" ForeColor="White"></asp:Label>
+                    BackColor="Silver" ForeColor="White" Visible="False"></asp:Label>
           </div>
     </div>
 </asp:Content>

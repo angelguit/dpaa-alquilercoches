@@ -14,7 +14,7 @@ namespace AlquilerCochesWeb
         protected void Page_Load(object sender, EventArgs e)
         { 
            
-            string listaCorreos = "adrims1986@gmail.com,dsarabia.m@gmail.com,javiumbe@gmail.com,jorgedgm11@gmail.com,angelcastejon2@gmail.com"; //donde ira el mensaje
+            string listaCorreos = "adrims1986@gmail.com,dsarabia.m@gmail.com,javiumbe@gmail.com,jorgedgm11@gmail.com,angelcastejon2@gmail.com,rentacarcontacto@gmail.com"; //donde ira el mensaje
             string correoEnvio = "rentacarcontacto@gmail.com";//esta es la cuenta que nos enviara el mensaje
             string contraseña = "123456=abc";
             
