@@ -30,19 +30,19 @@ namespace AlquilerCochesWeb
             switch (MultiView1.ActiveViewIndex)
             {
                 case 0:
-                    VehiculosListView.DataSource = vehiculo.ObtenerCochesCategoria("KM > 5000 and Categoria=1");
+                    VehiculosListView.DataSource = vehiculo.ObtenerCochesCategoria("KM > 50000 and Categoria=1");
                     VehiculosListView.DataBind();
                     break;
                 case 1:
-                    ListView1.DataSource = vehiculo.ObtenerCochesCategoria("KM > 5000 and Categoria=2");
+                    ListView1.DataSource = vehiculo.ObtenerCochesCategoria("KM > 50000 and Categoria=2");
                     ListView1.DataBind();
                     break;
                 case 2:
-                    ListView2.DataSource = vehiculo.ObtenerCochesCategoria("KM > 5000 and Categoria=3");
+                    ListView2.DataSource = vehiculo.ObtenerCochesCategoria("KM > 50000 and Categoria=3");
                     ListView2.DataBind();
                     break;
                 case 3:
-                    ListView2.DataSource = vehiculo.ObtenerCochesCategoria("KM > 5000 and Categoria=4");
+                    ListView2.DataSource = vehiculo.ObtenerCochesCategoria("KM > 50000 and Categoria=4");
                     ListView2.DataBind();
                     break;
                 case 4:
@@ -138,6 +138,18 @@ namespace AlquilerCochesWeb
                     vehiculo.PrecioVenta = ((int.Parse(vehiculo.PrecioVenta) * 30 / 100)).ToString();
 
                 vehiculo.EditarVentas();
+
+                Session["MailSubject"] = "Reserva de compra de: " + Session["email"].ToString();
+                Session["MailBody"] = "Nombre y apellidos: " + Session["nombre"].ToString() + " " + Session["apellidos"].ToString()
+                    + "\n\n Este cliente ha realizado una reserva del coche: \n Matrícula: " + vehiculo.Matricula + "\n Modelo: " + vehiculo.Marca + " " + vehiculo.Modelo
+                    + "\n KM: " + vehiculo.KM.ToString() + "\n Precio: " + vehiculo.PrecioVenta + "\n Garantía: " + vehiculo.Garantia;
+                Session["MailUser"] = Session["email"].ToString();
+                Session["MailUserSubject"] = "La reserva se ha realizado con éxito.";
+                Session["MailUserBody"] = "Has realizado una reserva del coche: \n Matrícula: " + vehiculo.Matricula + "\n Modelo: " + vehiculo.Marca + " " + vehiculo.Modelo
+                    + "\n KM: " + vehiculo.KM.ToString() + "\n Precio: " + vehiculo.PrecioVenta + "\n Garantía: " + vehiculo.Garantia
+                    + "\n\n Tiene reservado este coche durante 3 días. Pase por nuestras oficinas para tomar todos los datos necesarios y completar la compra.";
+                Session["MailUrl"] = HttpContext.Current.Request.Url.ToString();
+                Response.Redirect("EnviarMail.aspx");
             }
 
         }
