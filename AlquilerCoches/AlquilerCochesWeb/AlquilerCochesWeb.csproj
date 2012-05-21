@@ -149,14 +149,16 @@
     <Content Include="Perfil.aspx" />
     <Content Include="PerfilEditar.aspx" />
     <Content Include="RACMobile.aspx" />
+    <Content Include="RACMobileDonde.aspx" />
+    <Content Include="README.jQuery.vsdoc.txt" />
     <Content Include="Registro.aspx" />
     <Content Include="RegistroFinalizado.aspx" />
     <Content Include="ReservaNoRegistrado.aspx" />
     <Content Include="Reservas.aspx" />
     <Content Include="Salir.aspx" />
-    <Content Include="Scripts\jquery-1.6.4-vsdoc.js" />
-    <Content Include="Scripts\jquery-1.6.4.js" />
-    <Content Include="Scripts\jquery-1.6.4.min.js" />
+    <Content Include="Scripts\jquery-1.7.2-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.7.2.js" />
+    <Content Include="Scripts\jquery-1.7.2.min.js" />
     <Content Include="Scripts\jquery.mobile-1.1.0.js" />
     <Content Include="Scripts\jquery.mobile-1.1.0.min.js" />
     <Content Include="ServicioWeb.asmx" />
@@ -231,6 +233,13 @@
     </Compile>
     <Compile Include="RACMobile.aspx.designer.cs">
       <DependentUpon>RACMobile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RACMobileDonde.aspx.cs">
+      <DependentUpon>RACMobileDonde.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RACMobileDonde.aspx.designer.cs">
+      <DependentUpon>RACMobileDonde.aspx</DependentUpon>
     </Compile>
     <Compile Include="Registro.aspx.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
