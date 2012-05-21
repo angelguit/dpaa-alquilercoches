@@ -137,6 +137,7 @@ namespace AlquilerCochesWeb
 
                 en_cliente.AnyadirCliente();
 
+                
                 Button2_Click(null, null);
 
                 Response.Redirect("RegistroFinalizado.aspx");
