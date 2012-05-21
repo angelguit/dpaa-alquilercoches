@@ -195,6 +195,7 @@ namespace EN
                 linea[7] = ciudad;
                 linea[8] = tarifa;
                 linea[9] = sexo;
+                linea[10] = passweb;
                 resultado.Tables["Cliente"].Rows.Add(linea);
                 cadCliente.AnyadirCliente(resultado);
             }
