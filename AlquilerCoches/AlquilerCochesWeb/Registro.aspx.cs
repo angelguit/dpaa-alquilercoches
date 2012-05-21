@@ -224,7 +224,7 @@ namespace AlquilerCochesWeb
 
         protected void CustomSexo_ServerValidate1(object source, ServerValidateEventArgs args)
         {
-            if ((CheckBox1.Checked && CheckBox2.Checked) || (CheckBox1.Checked ==false && CheckBox2.Checked) ==false)
+            if ((CheckBox1.Checked && CheckBox2.Checked) || (!CheckBox1.Checked && !CheckBox2.Checked))
             {
                 
                 args.IsValid = false;
@@ -355,6 +355,10 @@ namespace AlquilerCochesWeb
             {
                 // Notify the user that a file was not uploaded.
                 UploadStatusLabel.Text = "No ha especificado un directorio";
+                string sourceFile = appPath + saveDir + "PorDefecto/Desconocido.jpg";
+                string savePath2 = appPath + saveDir +
+                            TextBox5.Text + ".jpg";
+                System.IO.File.Copy(sourceFile, savePath2, true);
             }
         }
 

@@ -42,7 +42,7 @@ namespace EN
             linea[3] = fechaInicio;
             linea[4] = fechaFin;
             linea[5] = conductores;
-            linea[6] = activa;
+            linea[6] = 1;
             res.Tables["Reservas"].Rows.Add(linea);
             cadReservas.AnyadirReserva(res);
         }
