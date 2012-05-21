@@ -128,7 +128,7 @@ namespace AlquilerCochesWeb
                 en_cliente.Ciudad = TDropDownListCiudad.SelectedItem.ToString();
                 en_cliente.Email = TTextBoxEmail.Text;
                 en_cliente.Telefono = Convert.ToInt32(TextBox3.Text);
-               
+
                 if (CheckBox1.Checked)
                 {
                     en_cliente.Sexo = "H";
@@ -137,7 +137,7 @@ namespace AlquilerCochesWeb
 
                 en_cliente.AnyadirCliente();
 
-                
+
                 Button2_Click(null, null);
 
 
@@ -158,17 +158,14 @@ namespace AlquilerCochesWeb
                 Session["MailUser"] = Session["email"].ToString();
                 Session["MailUserSubject"] = "El registro con Rent a Car se ha realizado éxito";
                 Session["MailUserBody"] = "Recuerde hacerse fan de nuestro facebook.Y no se olvide de la suscripción del programa de puntos.";
-                Session["MailUrl"] = HttpContext.Current.Request.Url.ToString();
+                Session["MailUrl"] = "http://localhost:1227/RegistroFinalizado.aspx";
                 Response.Redirect("EnviarMail.aspx");
-                
 
                
-                Response.Redirect("RegistroFinalizado.aspx");
-
             }
-           
-        }
 
+
+        }      
         protected void ComprobarUsuario(object source, ServerValidateEventArgs args)
         {
 
