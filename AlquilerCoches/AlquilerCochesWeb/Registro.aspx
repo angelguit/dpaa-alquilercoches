@@ -122,7 +122,7 @@
                       <asp:CheckBox ID="CheckBox2" runat="server" Text="Mujer" Font-Size=14px/>
                       <br />
                       <asp:CustomValidator ID="CustomSexo" runat="server" 
-                          ErrorMessage="Seleccione el sexo" Font-Size=13px ForeColor="Red" onservervalidate="CustomSexo_ServerValidate1" ></asp:CustomValidator>
+                          ErrorMessage="Seleccione un sexo" Font-Size=13px ForeColor="Red" onservervalidate="CustomSexo_ServerValidate1" ></asp:CustomValidator>
                        
                     
                     <asp:Button ID="Button1"  CssClass="PerfilbotonUsuario" runat="server" 
