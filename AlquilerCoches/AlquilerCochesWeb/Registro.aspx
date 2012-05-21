@@ -44,15 +44,15 @@
                             
                     
                       <asp:Label ID="Label14" runat="server" Text="DNI" Width="90" font-size="14px" 
-                            style="font-weight: 700; text-decoration: underline"></asp:Label>
+                            style="font-weight: 700; "></asp:Label>
                       <asp:TextBox ID="TextBox5" runat="server" Width="173px"></asp:TextBox>
                       <br />
                       <asp:CustomValidator ID="CustomValidator6" runat="server" 
                           ErrorMessage="Error DNI." 
                           onservervalidate="CustomValidator6_ServerValidate" ForeColor="Red" 
-                            ControlToValidate="TextBox5" ValidateEmptyText="True" Font-Size=13px></asp:CustomValidator>
+                            ControlToValidate="TextBox5" ValidateEmptyText="True" Font-Size="13px"></asp:CustomValidator>
                       <br />
-                      <asp:Label ID="Label13" runat="server" Text="Nombre" Width="90"></asp:Label>
+                      <asp:Label ID="Label13" runat="server" Text="Nombre" Width="90" Font-Size="14px"></asp:Label>
                         <asp:TextBox ID="TTextBoxNombre" runat="server" Width="178px"></asp:TextBox>
                       <br />
                        <asp:RequiredFieldValidator ID="NombreReq" runat="server" ControlToValidate="TTextBoxNombre" 
@@ -63,7 +63,7 @@
                        <asp:TextBox ID="TTextBoxApellidos" runat="server"  Width="178px"></asp:TextBox> <br /> 
 
                       <asp:RequiredFieldValidator ID="ApellidosReq" runat="server" ControlToValidate="TTextBoxApellidos" 
-                          ErrorMessage="Introduzca los apellidos." ForeColor="Red" Font-Size=13px></asp:RequiredFieldValidator><br />
+                          ErrorMessage="Introduzca los apellidos." ForeColor="Red" Font-Size="13px"></asp:RequiredFieldValidator><br />
 
 
                       <asp:Label ID="Label8" runat="server" Text="Label" Width="90" font-size="14px">Password(1)</asp:Label>
@@ -93,13 +93,13 @@
                     <asp:Label ID="Label4" runat="server" Text="Label" Width="90" font-size="14px">Ciudad</asp:Label>
                        <asp:DropDownList ID="TDropDownListCiudad" runat="server" Height="22px" Width="185px"></asp:DropDownList>
                        <asp:RequiredFieldValidator ID="CiudadReq" runat="server" ControlToValidate="TDropDownListCiudad" 
-                          ErrorMessage="Introduzca la ciudad." ForeColor="Red" Font-Size=13px></asp:RequiredFieldValidator>
+                          ErrorMessage="Introduzca la ciudad." ForeColor="Red" Font-Size="13px"></asp:RequiredFieldValidator>
                         <br />
                
                     <asp:Label ID="Label5" runat="server" Text="Label" Width="90" font-size="14px">Dirección</asp:Label>
                        <asp:TextBox ID="TTextBoxDireccion" runat="server" Height="17px" Width="226px"></asp:TextBox> 
                        <asp:RequiredFieldValidator ID="DireccionReq" runat="server" ControlToValidate="TTextBoxDireccion" 
-                          ErrorMessage="Introduzca la dirección." ForeColor="Red" Font-Size=13px ></asp:RequiredFieldValidator>
+                          ErrorMessage="Introduzca la dirección." ForeColor="Red" Font-Size="13px" ></asp:RequiredFieldValidator>
                        <br />
                        
                 
@@ -124,7 +124,7 @@
                       <asp:CustomValidator ID="CustomSexo" runat="server" 
                           ErrorMessage="Seleccione el sexo" Font-Size=13px ForeColor="Red" onservervalidate="CustomSexo_ServerValidate1" ></asp:CustomValidator>
                        
-                    <br /> 
+                    
                     <asp:Button ID="Button1"  CssClass="PerfilbotonUsuario" runat="server" 
                           Text="Enviar" onclick="Button1_Click" />
                        

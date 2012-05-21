@@ -40,7 +40,9 @@
                                 class="style1"> Gracias por confiar en nosotros y no se olvide hacerse fan 
                             de nuestro <span class="style2">facebook</span>.<asp:Login ID="Login1" 
                                 runat="server" 
-                                style="font-size: small; color: #000000; margin-left: 206px; margin-top: 72px">
+                                
+                                style="font-size: small; color: #000000; margin-left: 206px; margin-top: 72px" 
+                                BorderColor="Black">
                             </asp:Login>
                             </h3>
                         

@@ -17,7 +17,15 @@ namespace AlquilerCochesWeb
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            TextBox1.Text = "";
+            TextBox2.Text = "";
+            TextBox3.Text = "";
+            TextBox5.Text = "";
+            TTextBoxDireccion.Text = "";
+            TTextBoxEmail.Text = "";
+            TTextBoxNombre.Text = "";
+            TTextBoxApellidos.Text = "";
+           
 
         }
 
