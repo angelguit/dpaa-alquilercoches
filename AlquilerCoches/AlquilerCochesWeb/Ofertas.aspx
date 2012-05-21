@@ -16,10 +16,10 @@
                     <StaticSelectedStyle BackColor="#5D7B9D" />
                     <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
                     <Items>
-                        <asp:MenuItem Text="Clase 50%"></asp:MenuItem>
-                        <asp:MenuItem Text="Clase 20%"></asp:MenuItem>
-                        <asp:MenuItem Text="Clase 10%"></asp:MenuItem>
-                        <asp:MenuItem Text="Clase 5%"></asp:MenuItem>
+                        <asp:MenuItem Text="Turismos"></asp:MenuItem>
+                        <asp:MenuItem Text="Familiares"></asp:MenuItem>
+                        <asp:MenuItem Text="Furgonetas"></asp:MenuItem>
+                        <asp:MenuItem Text="Especiales"></asp:MenuItem>
                     </Items>
                 </asp:Menu>
             </div>
@@ -49,19 +49,19 @@
                                 </tr>
                                 <tr id="Tr2" runat="server">
                                     <td valign="top" class="Imagen" style="text-align: center; vertical-align: middle">
-                                        <asp:Image ID="Image2" runat="server" Height="96px" ImageUrl='<%#"/Imagenes/ImagenesReserva/fotosCoches/" + Eval("Matricula") + ".jpg" %>'
+                                        <asp:Image ID="Image2" runat="server" Height="96px" ImageUrl='<%#"/Imagenes/ImagenesCompra/CochesCompra/Turismos/" + Eval("Matricula") + ".jpg" %>'
                                             Width="165px" ImageAlign="Left" />
                                     </td>
                                     <td valign="top" class="DescOferta">
                                         <asp:Label ID="Marca" runat="server" Text='<%#Eval("Marca") %>' Font-Bold="True"> </asp:Label>
                                         <asp:Label ID="Modelo" runat="server" Text='<%#Eval("Modelo") %>' Font-Bold="True"></asp:Label>
                                         <br></br>
-                                        <asp:Label ID="Precio" runat="server" Text='<%#Eval("PrecioVenta")%>' Font-Bold="True"></asp:Label>
+                                        <asp:Label ID="Precio" runat="server" Text='<%# "Precio: " + Eval("PrecioVenta")%>' Font-Bold="True"></asp:Label>
                                         <br></br>
-                                        <asp:Label ID="KM" runat="server" Text='<%#Eval("KM")%>' Font-Bold="True"></asp:Label>
+                                        <asp:Label ID="KM" runat="server" Text='<%#"KM: " + Eval("KM")%>' Font-Bold="True"></asp:Label>
                                     </td>
                                     <td valign="top" class="DescOferta" style="text-align: center; vertical-align: middle;">
-                                        <asp:LinkButton ID="OfertaBotonComprar" runat="server" Text='alquilar'  CommandName='Alquilar' CommandArgument='<%#Eval("Matricula") %>'></asp:LinkButton>
+                                        <asp:LinkButton ID="OfertaBotonComprar" runat="server" Text='Ver Descuento'  CommandName='Alquilar' CommandArgument='<%#Eval("Matricula") %>'></asp:LinkButton>
                                     </td>
                                 </tr>
                             </ItemTemplate>
@@ -91,19 +91,19 @@
                                 </tr>
                                 <tr id="Tr2" runat="server">
                                     <td valign="top" class="Imagen" style="text-align: center; vertical-align: middle">
-                                        <asp:Image ID="Image2" runat="server" Height="96px" ImageUrl='<%#"/Imagenes/ImagenesReserva/fotosCoches/" + Eval("Matricula") + ".jpg" %>'
+                                        <asp:Image ID="Image2" runat="server" Height="96px" ImageUrl='<%#"/Imagenes/ImagenesCompra/CochesCompra/Familiares/" + Eval("Matricula") + ".jpg" %>'
                                             Width="165px" ImageAlign="Left" />
                                     </td>
                                     <td valign="top" class="DescOferta">
                                         <asp:Label ID="Marca" runat="server" Text='<%#Eval("Marca") %>' Font-Bold="True"> </asp:Label>
                                         <asp:Label ID="Modelo" runat="server" Text='<%#Eval("Modelo") %>' Font-Bold="True"></asp:Label>
                                         <br></br>
-                                        <asp:Label ID="Precio" runat="server" Text='<%#Eval("PrecioVenta")%>' Font-Bold="True"></asp:Label>
+                                        <asp:Label ID="Precio" runat="server" Text='<%# "Precio: " + Eval("PrecioVenta")%>' Font-Bold="True"></asp:Label>
                                         <br></br>
-                                        <asp:Label ID="KM" runat="server" Text='<%#Eval("KM")%>' Font-Bold="True"></asp:Label>
+                                        <asp:Label ID="KM" runat="server" Text='<%#"KM: " + Eval("KM")%>' Font-Bold="True"></asp:Label>
                                     </td>
                                     <td valign="top" class="DescOferta" style="text-align: center; vertical-align: middle;">
-                                        <asp:LinkButton ID="OfertaBotonComprar" runat="server" Text='alquilar'  CommandName='Alquilar' ></asp:LinkButton>
+                                        <asp:LinkButton ID="OfertaBotonComprar" runat="server" Text='Ver Descuento'  CommandName='Alquilar' CommandArgument='<%#Eval("Matricula") %>'></asp:LinkButton>
                                     </td>
                                 </tr>
                             </ItemTemplate>
@@ -132,33 +132,63 @@
                                 </tr>
                                 <tr id="Tr2" runat="server">
                                     <td valign="top" class="Imagen" style="text-align: center; vertical-align: middle">
-                                        <asp:Image ID="Image2" runat="server" Height="96px" ImageUrl='<%#"/Imagenes/ImagenesReserva/fotosCoches/" + Eval("Matricula") + ".jpg" %>'
+                                        <asp:Image ID="Image2" runat="server" Height="96px" ImageUrl='<%#"/Imagenes/ImagenesCompra/CochesCompra/Furgonetas/" + Eval("Matricula") + ".jpg" %>'
                                             Width="165px" ImageAlign="Left" />
                                     </td>
                                     <td valign="top" class="DescOferta">
                                         <asp:Label ID="Marca" runat="server" Text='<%#Eval("Marca") %>' Font-Bold="True"> </asp:Label>
                                         <asp:Label ID="Modelo" runat="server" Text='<%#Eval("Modelo") %>' Font-Bold="True"></asp:Label>
                                         <br></br>
-                                        <asp:Label ID="Precio" runat="server" Text='<%#Eval("PrecioVenta")%>' Font-Bold="True"></asp:Label>
+                                        <asp:Label ID="Precio" runat="server" Text='<%# "Precio: " + Eval("PrecioVenta")%>' Font-Bold="True"></asp:Label>
                                         <br></br>
-                                        <asp:Label ID="KM" runat="server" Text='<%#Eval("KM")%>' Font-Bold="True"></asp:Label>
+                                        <asp:Label ID="KM" runat="server" Text='<%#"KM: " + Eval("KM")%>' Font-Bold="True"></asp:Label>
                                     </td>
                                     <td valign="top" class="DescOferta" style="text-align: center; vertical-align: middle;">
-                                        <asp:LinkButton ID="OfertaBotonComprar" runat="server" Text='alquilar'  CommandName='Alquilar' ></asp:LinkButton>
+                                        <asp:LinkButton ID="OfertaBotonComprar" runat="server" Text='Ver Descuento'  CommandName='Alquilar' CommandArgument='<%#Eval("Matricula") %>'></asp:LinkButton>
                                     </td>
                                 </tr>
                             </ItemTemplate>
                         </asp:ListView>
                     </asp:View>
                     <asp:View ID="View4" runat="server">
-                        <asp:ListView ItemPlaceholderID="Test" runat="server" ID="ListView3" 
-                            onitemcommand="ListView1_ItemCommand">
+                        <asp:ListView runat="server" ID="ListView3" 
+                            onitemcommand="VehiculosListView_ItemCommand">
                             <LayoutTemplate>
-                                <asp:Literal runat="server" ID="Test"></asp:Literal>
+                                <table cellpadding="0" runat="server" id="Vehiculo"  width="100%" border="0">
+                                    <tr runat="server" id="itemPlaceholder"></tr>
+                                </table>
+                                <div id="aspectobotoneslistview">
+                                    <asp:DataPager runat="server" ID="DataPager" PageSize="3">
+                                        <Fields>
+                                            <asp:NumericPagerField ButtonCount="5" PreviousPageText="&lt; " NextPageText=" &gt;" />
+                                        </Fields>
+                                    </asp:DataPager>
+                                </div>
                             </LayoutTemplate>
                             <ItemTemplate>
-                                <asp:Literal ID="Literal1" runat="server" Text='<%# Eval("MyProperty") %>'></asp:Literal>
-                                <asp:Button ID="Button1" runat="server" Text='<%# Eval("MyProperty") %>' CommandArgument='<%# Eval("MyProperty") %>' /><br />
+                                <tr id="Tr1" runat="server">
+                                    <td valign="top" colspan="3" align="center" class="Vehiculo">
+                                        <asp:Label ID="Matricula" runat="server" Text='<%#Eval("Matricula") %>' Font-Overline="False"
+                                            Font-Underline="True" Font-Size="Medium" Font-Bold="True"></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr id="Tr2" runat="server">
+                                    <td valign="top" class="Imagen" style="text-align: center; vertical-align: middle">
+                                        <asp:Image ID="Image2" runat="server" Height="96px" ImageUrl='<%#"/Imagenes/ImagenesCompra/CochesCompra/Especiales/" + Eval("Matricula") + ".jpg" %>'
+                                            Width="165px" ImageAlign="Left" />
+                                    </td>
+                                    <td valign="top" class="DescOferta">
+                                        <asp:Label ID="Marca" runat="server" Text='<%#Eval("Marca") %>' Font-Bold="True"> </asp:Label>
+                                        <asp:Label ID="Modelo" runat="server" Text='<%#Eval("Modelo") %>' Font-Bold="True"></asp:Label>
+                                        <br></br>
+                                        <asp:Label ID="Precio" runat="server" Text='<%# "Precio: " + Eval("PrecioVenta")%>' Font-Bold="True"></asp:Label>
+                                        <br></br>
+                                        <asp:Label ID="KM" runat="server" Text='<%#"KM: " + Eval("KM")%>' Font-Bold="True"></asp:Label>
+                                    </td>
+                                    <td valign="top" class="DescOferta" style="text-align: center; vertical-align: middle;">
+                                        <asp:LinkButton ID="OfertaBotonComprar" runat="server" Text='Ver Descuento'  CommandName='Alquilar' CommandArgument='<%#Eval("Matricula") %>'></asp:LinkButton>
+                                    </td>
+                                </tr>
                             </ItemTemplate>
                         </asp:ListView>
                         <asp:Literal runat="server" ID="Literal1"></asp:Literal>
@@ -172,7 +202,7 @@
                                 </tr>
                                 <tr id="Tr2" runat="server">
                                     <td valign="top" class="Imagen" style="text-align: center; vertical-align: middle">
-                                        <asp:Image ID="Image2" runat="server" Height="96px" ImageUrl="~/Imagenes/ImagenesCompras/seat-leon.jpg" Width="165px"/>
+                                        <asp:Image ID="Image3" runat="server" Height="96px" Width="165px"/>
                                     </td>
                                     <td valign="top" class="DescOferta">
                                         <asp:label ID="ComprasLabelDescripcion"  runat="server" ></asp:label>
