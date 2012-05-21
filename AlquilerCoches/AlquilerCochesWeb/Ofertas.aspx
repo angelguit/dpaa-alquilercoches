@@ -196,7 +196,7 @@
                     <asp:View ID="View5" runat="server">
                         <table>
                                 <tr id="Tr1" runat="server">
-                                    <td valign="top" colspan="3" align="center" class="Vehiculo">
+                                    <td valign="top" colspan="2" align="center" class="Vehiculo">
                                         <asp:Label ID="Label1" runat="server" Text="SEAT LEON, 1.9" Font-Overline="False" Font-Underline="True" Font-Size="Medium" Font-Bold="True"></asp:Label>
                                     </td>
                                 </tr>
@@ -213,12 +213,10 @@
                                         <br />
                                     </td>
                                 </tr>
-                                <tr id="Tr3"  runat="server">
-                                    <td valign="top" class="DescOferta" colspan="3" align="center">
-                                        <button type="button" id="ComprasBotonComprar">Comprar</button> 
-                                    </td>
-                                </tr>
+                                
                             </table>
+                            <asp:LinkButton ID="OfertaComprar" runat="server" Text='Comprar'  
+                            CommandName='Comprar' onclick="OfertaComprar_Click"></asp:LinkButton>
                     </asp:View>
                 </asp:MultiView>
             </div>
