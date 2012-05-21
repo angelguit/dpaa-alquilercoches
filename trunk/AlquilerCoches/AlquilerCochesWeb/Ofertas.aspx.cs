@@ -150,9 +150,10 @@ namespace AlquilerCochesWeb
                     + "\n KM: " + vehiculo.KM.ToString() + "\n Precio: " + vehiculo.PrecioVenta + "\n Garantía: " + vehiculo.Garantia
                     + "\n\n Tiene reservado este coche durante 3 días. Pase por nuestras oficinas para tomar todos los datos necesarios y completar la compra.";
                 Session["MailUrl"] = HttpContext.Current.Request.Url.ToString();
+                MultiView1.ActiveViewIndex = 5;
                 Response.Redirect("EnviarMail.aspx");
 
-                MultiView1.ActiveViewIndex = 5;
+                
             }
 
         }
