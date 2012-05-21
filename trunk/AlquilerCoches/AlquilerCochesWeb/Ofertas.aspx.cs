@@ -91,7 +91,7 @@ namespace AlquilerCochesWeb
             vehiculo.ObtenerDatosVehiculos();
             MultiView1.ActiveViewIndex = 4;
             Label1.Text = vehiculo.Marca + " " + vehiculo.Modelo;
-            ComprasLabelDescripcion.Text = "Matricula:  "+ vehiculo.Matricula;
+            ComprasLabelDescripcion.Text = vehiculo.Matricula;
             ComprasLabelPrecio.Text = "Precio Compra: " + vehiculo.PrecioVenta;
             ComprasLabelGarantia.Text = "Garantia: " + vehiculo.Garantia;
             Image3.ImageUrl = @"/Imagenes/ImagenesCompra/CochesCompra/";
@@ -128,6 +128,7 @@ namespace AlquilerCochesWeb
             }
             else
             {
+                vehiculo.Matricula = ComprasLabelDescripcion.Text;
                 vehiculo.ObtenerDatosVehiculos();
                 vehiculo.Reservado = 1;
                 if (Int32.Parse(vehiculo.KM) < 100000)
