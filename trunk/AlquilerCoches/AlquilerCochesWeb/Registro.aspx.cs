@@ -137,7 +137,7 @@ namespace AlquilerCochesWeb
 
                 en_cliente.AnyadirCliente();
 
-              
+                Button2_Click(null, null);
 
                 Response.Redirect("RegistroFinalizado.aspx");
 
@@ -283,6 +283,56 @@ namespace AlquilerCochesWeb
         protected void IndexLoginC_Authenticate(object sender, AuthenticateEventArgs e)
         {
 
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+
+            string saveDir = @"/Imagenes/ImagenesPerfil/";
+
+            // Get the physical file system path for the currently
+            // executing application.
+            string appPath = Request.PhysicalApplicationPath;
+
+            if (FileUpload1.HasFile)
+            {
+                int fileSize = FileUpload1.PostedFile.ContentLength;
+
+
+                if (fileSize < 2100000)
+                {
+                    string fileName = Server.HtmlEncode(FileUpload1.FileName);
+                    string extension = System.IO.Path.GetExtension(fileName);
+
+                    if (extension == ".jpg")
+                    {
+
+                        string savePath = appPath + saveDir +
+                            TextBox5.Text + ".jpg";
+
+
+                        FileUpload1.SaveAs(savePath);
+
+                        // Notify the user that the file was uploaded successfully.
+                        UploadStatusLabel.Text = "Su imagen ha sido subida correctamente";
+                        //Response.Redirect("PerfilEditar.aspx");
+                        // ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Prueba", "location.reload()", true);
+                        Image1.ImageUrl = "/Imagenes/ImagenesPerfil/" + TextBox5.Text + ".jpg";
+                    }
+                    else
+                    {
+                        UploadStatusLabel.Text = "Su imagen no se ha podido subir porque su extension no es .jpg";
+                    }
+                }
+                else
+                    UploadStatusLabel.Text = "Su imagen no se ha podido subir porq supera los 2 MB de tamaño maximo";
+
+            }
+            else
+            {
+                // Notify the user that a file was not uploaded.
+                UploadStatusLabel.Text = "No ha especificado un directorio";
+            }
         }
 
 
